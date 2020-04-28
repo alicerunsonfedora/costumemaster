@@ -1,6 +1,6 @@
-# Applied AI Principles with GameplayKit (Independent Project Proposal)
+# Applied AI Principles with GameplayKit
 
-![Intent](intent.png)
+![Intent](.github/intent.png)
 
 ## Objective
 
