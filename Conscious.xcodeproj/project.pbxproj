@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B424F45DB8000300B7 /* Tileset.sks */; };
+		BF2514B724F45E01000300B7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B624F45E01000300B7 /* GameScene.sks */; };
 		BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAD624A8BDD400996890 /* AppDelegate.swift */; };
-		BF6FBAD924A8BDD400996890 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBAD824A8BDD400996890 /* GameScene.sks */; };
 		BF6FBADB24A8BDD400996890 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBADA24A8BDD400996890 /* Actions.sks */; };
 		BF6FBADD24A8BDD400996890 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBADC24A8BDD400996890 /* GameScene.swift */; };
 		BF6FBADF24A8BDD400996890 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBADE24A8BDD400996890 /* ViewController.swift */; };
@@ -36,9 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF2514B424F45DB8000300B7 /* Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tileset.sks; sourceTree = "<group>"; };
+		BF2514B624F45E01000300B7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		BF6FBAD324A8BDD400996890 /* Conscious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conscious.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6FBAD624A8BDD400996890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF6FBAD824A8BDD400996890 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		BF6FBADA24A8BDD400996890 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		BF6FBADC24A8BDD400996890 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		BF6FBADE24A8BDD400996890 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				BF6FBAE224A8BDDB00996890 /* Main.storyboard */,
 				BF6FBAE524A8BDDB00996890 /* Info.plist */,
 				BF6FBAE624A8BDDB00996890 /* Conscious.entitlements */,
+				BF2514B424F45DB8000300B7 /* Tileset.sks */,
 			);
 			path = Conscious;
 			sourceTree = "<group>";
@@ -141,8 +144,8 @@
 		BF7DFDCC24F41E3F008D09AA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				BF6FBAD824A8BDD400996890 /* GameScene.sks */,
 				BF6FBADA24A8BDD400996890 /* Actions.sks */,
+				BF2514B624F45E01000300B7 /* GameScene.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -260,7 +263,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF6FBAD924A8BDD400996890 /* GameScene.sks in Resources */,
+				BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */,
+				BF2514B724F45E01000300B7 /* GameScene.sks in Resources */,
 				BF6FBAE124A8BDDB00996890 /* Assets.xcassets in Resources */,
 				BF6FBADB24A8BDD400996890 /* Actions.sks in Resources */,
 				BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */,
