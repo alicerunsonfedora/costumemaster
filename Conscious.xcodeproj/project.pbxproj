@@ -110,11 +110,8 @@
 		BF6FBAD524A8BDD400996890 /* Conscious */ = {
 			isa = PBXGroup;
 			children = (
-				BF6FBAD624A8BDD400996890 /* AppDelegate.swift */,
-				BF6FBAD824A8BDD400996890 /* GameScene.sks */,
-				BF6FBADA24A8BDD400996890 /* Actions.sks */,
-				BF6FBADC24A8BDD400996890 /* GameScene.swift */,
-				BF6FBADE24A8BDD400996890 /* ViewController.swift */,
+				BF7DFDCD24F41E48008D09AA /* Classes */,
+				BF7DFDCC24F41E3F008D09AA /* Scenes */,
 				BF6FBAE024A8BDDB00996890 /* Assets.xcassets */,
 				BF6FBAE224A8BDDB00996890 /* Main.storyboard */,
 				BF6FBAE524A8BDDB00996890 /* Info.plist */,
@@ -139,6 +136,25 @@
 				BF6FBAFC24A8BDDB00996890 /* Info.plist */,
 			);
 			path = ConsciousUITests;
+			sourceTree = "<group>";
+		};
+		BF7DFDCC24F41E3F008D09AA /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BF6FBAD824A8BDD400996890 /* GameScene.sks */,
+				BF6FBADA24A8BDD400996890 /* Actions.sks */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		BF7DFDCD24F41E48008D09AA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BF6FBAD624A8BDD400996890 /* AppDelegate.swift */,
+				BF6FBADC24A8BDD400996890 /* GameScene.swift */,
+				BF6FBADE24A8BDD400996890 /* ViewController.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
