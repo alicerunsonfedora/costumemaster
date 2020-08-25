@@ -35,7 +35,6 @@ class ViewController: NSViewController {
                     view.showsFPS = true
                     view.showsNodeCount = true
                     view.shouldCullNonVisibleNodes = true
-                    view.showsPhysics = true
                 }
             }
         }

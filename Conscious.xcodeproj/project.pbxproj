@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B424F45DB8000300B7 /* Tileset.sks */; };
 		BF2514B724F45E01000300B7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B624F45E01000300B7 /* GameScene.sks */; };
+		BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69F2C224F4B11200BBF518 /* Alerts.swift */; };
 		BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAD624A8BDD400996890 /* AppDelegate.swift */; };
 		BF6FBADB24A8BDD400996890 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBADA24A8BDD400996890 /* Actions.sks */; };
 		BF6FBADD24A8BDD400996890 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBADC24A8BDD400996890 /* GameScene.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		BF2514B424F45DB8000300B7 /* Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tileset.sks; sourceTree = "<group>"; };
 		BF2514B624F45E01000300B7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		BF69F2C224F4B11200BBF518 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		BF6FBAD324A8BDD400996890 /* Conscious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conscious.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6FBAD624A8BDD400996890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6FBADA24A8BDD400996890 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF69F2C124F4B10100BBF518 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BF69F2C224F4B11200BBF518 /* Alerts.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		BF6FBACA24A8BDD400996890 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +126,7 @@
 		BF6FBAD524A8BDD400996890 /* Conscious */ = {
 			isa = PBXGroup;
 			children = (
+				BF69F2C124F4B10100BBF518 /* Utilities */,
 				BFC78F3724F486DC004E85A9 /* Enums */,
 				BF7DFDCD24F41E48008D09AA /* Classes */,
 				BF7DFDCC24F41E3F008D09AA /* Scenes */,
@@ -326,6 +337,7 @@
 				BFC78F3924F486EF004E85A9 /* PlayerCostumeType.swift in Sources */,
 				BF6FBADD24A8BDD400996890 /* GameScene.swift in Sources */,
 				BFC78F3D24F48731004E85A9 /* Player.swift in Sources */,
+				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
 				BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

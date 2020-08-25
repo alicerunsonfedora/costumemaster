@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// An enumerated representation of costume types.
 public enum PlayerCostumeType: String {
     case `default` = "Default"
     case bird = "Bird"
