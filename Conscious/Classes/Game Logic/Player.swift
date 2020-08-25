@@ -22,6 +22,9 @@ class Player: SKSpriteNode {
     /// A queue of all available costumes the olayer can switch to.
     private var costumeQueue: [PlayerCostumeType] = [.bird, .flashDrive, .sorceress]
 
+    /// Whether the player is currently playing an animation.
+    private var animating: Bool = false
+
     // MARK: COMPUTED PROPERTIES
 
     /// The SKTexture frames that play when a player is changing costumes.
@@ -39,6 +42,17 @@ class Player: SKSpriteNode {
             frames.append(animations.textureNamed(name))
         }
 
+        return frames
+    }
+    
+    /// The walk cycle animation when moving south.
+    private var forwardWalkCycle: [SKTexture] {
+        let animations = SKTextureAtlas(named: "Player_Forward_\(self.costume.rawValue)")
+        var frames: [SKTexture] = []
+        for item in 0..<animations.textureNames.count {
+            let name = "sprite_\(item)"
+            frames.append(animations.textureNamed(name))
+        }
         return frames
     }
 
@@ -103,6 +117,7 @@ class Player: SKSpriteNode {
         self.parent?.addChild(ghostSprite)
 
         // Play the animations and remove the ghost from the player's node heirarchy.
+        self.animating = true
         self.run(SKAction.sequence([
             SKAction.run {
                 ghostSprite.run(SKAction.sequence([
@@ -115,6 +130,7 @@ class Player: SKSpriteNode {
             SKAction.animate(with: self.changingFrames, timePerFrame: 0.1, resize: false, restore: true),
             SKAction.run { ghostSprite.removeFromParent() }
         ]))
+        self.animating = false
 
         // Return the costume type.
         return self.costume
@@ -124,39 +140,61 @@ class Player: SKSpriteNode {
     ///
     /// Use this when needing to apply an impulse directly on the player to cause a movement to occur. In other
     /// instances, using `move(_ direction: PlayerMoveDirection, unit: CGSize)` is preferred.
+    /// Additionally, this method does not handle the proper animation to play when moving in a direction.
     ///
     /// - Parameter delta: A vector that represents the delta to move by.
     public func move(_ delta: CGVector) {
         self.physicsBody?.applyImpulse(delta)
     }
 
-    /// Stop the player from moving.
+    /// Stop the player from moving and remove all current animations.
     public func halt() {
         if self.physicsBody?.velocity != .zero {
             self.physicsBody?.velocity = .zero
+            self.removeAllActions()
+            self.animating = false
         }
     }
 
     /// Move the player in a given direction, relative to the size of the world.
     ///
     /// This method is typically preferred since AI agents can call this method instead of calculating the delta
-    /// beforehand.
+    /// beforehand. This method also handles any animations that need to be added to make sure the player
+    /// has an appropriate animation while walking.
     ///
     /// - Parameter direction: The direction the player will move in.
     /// - Parameter unit: The base unit to calculate the movement delta, relatively.
     public func move(_ direction: PlayerMoveDirection, unit: CGSize) {
+        // Create the delta vector and animation
         var delta = CGVector(dx: 0, dy: 0)
+        var action: SKAction?
+
+        // Calculate the correct delta based on the direction and generate the proper animation.
         switch direction {
         case .north:
             delta.dy += unit.height / 2
         case .south:
             delta.dy -= unit.height / 2
+            action = SKAction.animate(
+                with: self.forwardWalkCycle,
+                timePerFrame: 0.5,
+                resize: false,
+                restore: true
+            )
         case .east:
             delta.dx += unit.width / 2
         case .west:
             delta.dx -= unit.width / 2
         }
+
+        // Call the move method with the new delta.
         self.move(delta)
+
+        // If we found an animation, play it and set animating to true.
+        if action != nil && !self.animating {
+            self.run(SKAction.repeatForever(action!))
+            self.animating = true
+        }
 
     }
 

@@ -20,6 +20,10 @@
 		BF6FBAFB24A8BDDB00996890 /* ConsciousUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAFA24A8BDDB00996890 /* ConsciousUITests.swift */; };
 		BFC78F3924F486EF004E85A9 /* PlayerCostumeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */; };
 		BFC78F3D24F48731004E85A9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC78F3C24F48731004E85A9 /* Player.swift */; };
+		BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */; };
+		BFD8795624F5A2FF00552EDD /* Player_Forward_USB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */; };
+		BFD8795724F5A2FF00552EDD /* Player_Forward_Default.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */; };
+		BFD8795824F5A2FF00552EDD /* Player_Forward_Sorceress.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795424F5A2FF00552EDD /* Player_Forward_Sorceress.atlas */; };
 		BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */; };
 		BFED62C024F5954000BB6AA2 /* Change.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFED62BF24F5954000BB6AA2 /* Change.atlas */; };
 /* End PBXBuildFile section */
@@ -66,6 +70,10 @@
 		BF6FBB0B24A8BF2000996890 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
 		BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCostumeType.swift; sourceTree = "<group>"; };
 		BFC78F3C24F48731004E85A9 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Bird.atlas; sourceTree = "<group>"; };
+		BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_USB.atlas; sourceTree = "<group>"; };
+		BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Default.atlas; sourceTree = "<group>"; };
+		BFD8795424F5A2FF00552EDD /* Player_Forward_Sorceress.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Sorceress.atlas; sourceTree = "<group>"; };
 		BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMoveDirection.swift; sourceTree = "<group>"; };
 		BFED62BF24F5954000BB6AA2 /* Change.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Change.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,13 +116,12 @@
 			children = (
 				BF6FBB0B24A8BF2000996890 /* .github */,
 				BF6FBB0A24A8BF1400996890 /* .gitignore */,
-				BF6FBB0924A8BE2600996890 /* PROPOSAL.md */,
-				BF6FBB0824A8BE2600996890 /* README.md */,
-				BFED62BF24F5954000BB6AA2 /* Change.atlas */,
 				BF6FBAD524A8BDD400996890 /* Conscious */,
 				BF6FBAEE24A8BDDB00996890 /* ConsciousTests */,
 				BF6FBAF924A8BDDB00996890 /* ConsciousUITests */,
 				BF6FBAD424A8BDD400996890 /* Products */,
+				BF6FBB0924A8BE2600996890 /* PROPOSAL.md */,
+				BF6FBB0824A8BE2600996890 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +138,7 @@
 		BF6FBAD524A8BDD400996890 /* Conscious */ = {
 			isa = PBXGroup;
 			children = (
+				BFD8795024F5A2E600552EDD /* Texture Atlases */,
 				BF69F2C124F4B10100BBF518 /* Utilities */,
 				BFC78F3724F486DC004E85A9 /* Enums */,
 				BF7DFDCD24F41E48008D09AA /* Classes */,
@@ -205,6 +213,18 @@
 				BFC78F3C24F48731004E85A9 /* Player.swift */,
 			);
 			path = "Game Logic";
+			sourceTree = "<group>";
+		};
+		BFD8795024F5A2E600552EDD /* Texture Atlases */ = {
+			isa = PBXGroup;
+			children = (
+				BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */,
+				BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */,
+				BFD8795424F5A2FF00552EDD /* Player_Forward_Sorceress.atlas */,
+				BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */,
+				BFED62BF24F5954000BB6AA2 /* Change.atlas */,
+			);
+			path = "Texture Atlases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,11 +333,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */,
+				BFD8795724F5A2FF00552EDD /* Player_Forward_Default.atlas in Resources */,
 				BFED62C024F5954000BB6AA2 /* Change.atlas in Resources */,
 				BF2514B724F45E01000300B7 /* GameScene.sks in Resources */,
+				BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */,
 				BF6FBAE124A8BDDB00996890 /* Assets.xcassets in Resources */,
 				BF6FBADB24A8BDD400996890 /* Actions.sks in Resources */,
 				BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */,
+				BFD8795824F5A2FF00552EDD /* Player_Forward_Sorceress.atlas in Resources */,
+				BFD8795624F5A2FF00552EDD /* Player_Forward_USB.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
