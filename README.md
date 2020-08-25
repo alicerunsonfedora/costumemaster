@@ -1,10 +1,11 @@
 # Conscious
 
-<img src="bird_idle.png" align="right" />
+<img src="bird_idle.png" align="right"  style="padding-right: 32px;"/>
 
 **Applied AI with GameplayKit**
 
-A game about changing costumes that artificial intelligence agents can play.
+An acclaimed costume designer and software engineer finds herself trapped in an abandoned factory with no clue how she got there.
+Traverse through the factory and escape using a small set of costumes to do different things. Can you make it out of the factory alive?
 
 ## Objective
 
@@ -43,3 +44,7 @@ The following practices are also being implemented with SwiftLint:
 <!-- Links in page -->
 [milestones]: https://github.com/alicerunsonfedora/CS400/milestones?direction=asc&sort=due_date&state=open
 [linter]: https://realm.github.io/SwiftLint/
+
+---
+
+(C) 2020 Marquis Kurt. All rights reserved.
