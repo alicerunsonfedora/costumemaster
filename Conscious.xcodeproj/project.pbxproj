@@ -17,6 +17,8 @@
 		BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBAE224A8BDDB00996890 /* Main.storyboard */; };
 		BF6FBAF024A8BDDB00996890 /* ConsciousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAEF24A8BDDB00996890 /* ConsciousTests.swift */; };
 		BF6FBAFB24A8BDDB00996890 /* ConsciousUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAFA24A8BDDB00996890 /* ConsciousUITests.swift */; };
+		BFC78F3924F486EF004E85A9 /* PlayerCostumeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */; };
+		BFC78F3D24F48731004E85A9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC78F3C24F48731004E85A9 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		BF6FBB0924A8BE2600996890 /* PROPOSAL.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PROPOSAL.md; sourceTree = "<group>"; };
 		BF6FBB0A24A8BF1400996890 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BF6FBB0B24A8BF2000996890 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
+		BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCostumeType.swift; sourceTree = "<group>"; };
+		BFC78F3C24F48731004E85A9 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		BF6FBAD524A8BDD400996890 /* Conscious */ = {
 			isa = PBXGroup;
 			children = (
+				BFC78F3724F486DC004E85A9 /* Enums */,
 				BF7DFDCD24F41E48008D09AA /* Classes */,
 				BF7DFDCC24F41E3F008D09AA /* Scenes */,
 				BF6FBAE024A8BDDB00996890 /* Assets.xcassets */,
@@ -153,11 +158,36 @@
 		BF7DFDCD24F41E48008D09AA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				BF6FBAD624A8BDD400996890 /* AppDelegate.swift */,
+				BFC78F3B24F48726004E85A9 /* Game Logic */,
+				BFC78F3A24F48715004E85A9 /* App */,
 				BF6FBADC24A8BDD400996890 /* GameScene.swift */,
-				BF6FBADE24A8BDD400996890 /* ViewController.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		BFC78F3724F486DC004E85A9 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		BFC78F3A24F48715004E85A9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BF6FBAD624A8BDD400996890 /* AppDelegate.swift */,
+				BF6FBADE24A8BDD400996890 /* ViewController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BFC78F3B24F48726004E85A9 /* Game Logic */ = {
+			isa = PBXGroup;
+			children = (
+				BFC78F3C24F48731004E85A9 /* Player.swift */,
+			);
+			path = "Game Logic";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +323,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6FBADF24A8BDD400996890 /* ViewController.swift in Sources */,
+				BFC78F3924F486EF004E85A9 /* PlayerCostumeType.swift in Sources */,
 				BF6FBADD24A8BDD400996890 /* GameScene.swift in Sources */,
+				BFC78F3D24F48731004E85A9 /* Player.swift in Sources */,
 				BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

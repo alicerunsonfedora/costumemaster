@@ -11,7 +11,7 @@ import Carbon.HIToolbox
 
 class GameScene: SKScene {
     
-    var playerNode: SKSpriteNode?
+    var playerNode: Player?
     var playerCamera: SKCameraNode?
     var unit: CGSize?
     
@@ -62,15 +62,12 @@ class GameScene: SKScene {
                     sprite.position = CGPoint(x: spritePosition.x + origin.x, y: spritePosition.y + origin.y)
                     
                     if (defined.name == "Main") {
-                        self.playerNode = sprite
-                        let physicsBody = SKPhysicsBody(texture: texture, size: texture.textureRect().size)
-                        physicsBody.restitution = 0.2
-                        physicsBody.friction = 0.3
-                        physicsBody.isDynamic = true
-                        physicsBody.allowsRotation = false
-                        physicsBody.affectedByGravity = false
-                        physicsBody.mass = 76.02
-                        self.playerNode?.physicsBody = physicsBody
+                        self.playerNode = Player(texture: texture)
+                        self.playerNode?.position = sprite.position
+                        self.playerNode?.zPosition = 1
+                        self.playerNode?.isHidden = false
+                        self.addChild(self.playerNode!)
+                        sprite.removeFromParent()
                     }
                 }
             }
@@ -98,20 +95,20 @@ class GameScene: SKScene {
         switch Int(event.keyCode) {
         case kVK_ANSI_W, kVK_UpArrow:
             delta.dy = (self.unit?.width ?? 1) / 2
+            self.playerNode?.move(delta)
         case kVK_ANSI_S, kVK_DownArrow:
             delta.dy = -1 * ((self.unit?.width ?? 1) / 2)
+            self.playerNode?.move(delta)
         case kVK_ANSI_A, kVK_LeftArrow:
             delta.dx = -1 * ((self.unit?.width ?? 1) / 2)
+            self.playerNode?.move(delta)
         case kVK_ANSI_D, kVK_RightArrow:
             delta.dx = (self.unit?.width ?? 1) / 2
+            self.playerNode?.move(delta)
+        case kVK_ANSI_F:
+            let _ = self.playerNode?.nextCostume()
         default:
             break
-        }
-        
-        let moveAction = SKAction.move(by: delta, duration: 3)
-        self.playerNode?.run(moveAction)
-        if self.playerNode?.physicsBody?.allContactedBodies() == [] {
-            self.camera?.run(moveAction)
         }
     }
 }
