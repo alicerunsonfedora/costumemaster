@@ -24,8 +24,15 @@
 		BFD8795624F5A2FF00552EDD /* Player_Forward_USB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */; };
 		BFD8795724F5A2FF00552EDD /* Player_Forward_Default.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */; };
 		BFD8795824F5A2FF00552EDD /* Player_Forward_Sorceress.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795424F5A2FF00552EDD /* Player_Forward_Sorceress.atlas */; };
+		BFD8795B24F5AE7F00552EDD /* Player_Backward_Bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795924F5AE7F00552EDD /* Player_Backward_Bird.atlas */; };
+		BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795A24F5AE7F00552EDD /* Player_Backward_Default.atlas */; };
+		BFD8795E24F5B60900552EDD /* GameSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8795D24F5B60900552EDD /* GameSetup.swift */; };
+		BFD8796024F5B61D00552EDD /* GameTileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8795F24F5B61D00552EDD /* GameTileType.swift */; };
+		BFD8796324F5C63C00552EDD /* Player_Backward_USB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8796224F5C63C00552EDD /* Player_Backward_USB.atlas */; };
+		BFD8796524F5C68700552EDD /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8796424F5C68700552EDD /* Animations.swift */; };
+		BFD8796F24F5CA4000552EDD /* Player_Backward_Sorceress.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8796E24F5CA4000552EDD /* Player_Backward_Sorceress.atlas */; };
 		BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */; };
-		BFED62C024F5954000BB6AA2 /* Change.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFED62BF24F5954000BB6AA2 /* Change.atlas */; };
+		BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,8 +81,15 @@
 		BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_USB.atlas; sourceTree = "<group>"; };
 		BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Default.atlas; sourceTree = "<group>"; };
 		BFD8795424F5A2FF00552EDD /* Player_Forward_Sorceress.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Sorceress.atlas; sourceTree = "<group>"; };
+		BFD8795924F5AE7F00552EDD /* Player_Backward_Bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Backward_Bird.atlas; sourceTree = "<group>"; };
+		BFD8795A24F5AE7F00552EDD /* Player_Backward_Default.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Backward_Default.atlas; sourceTree = "<group>"; };
+		BFD8795D24F5B60900552EDD /* GameSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetup.swift; sourceTree = "<group>"; };
+		BFD8795F24F5B61D00552EDD /* GameTileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTileType.swift; sourceTree = "<group>"; };
+		BFD8796224F5C63C00552EDD /* Player_Backward_USB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Backward_USB.atlas; sourceTree = "<group>"; };
+		BFD8796424F5C68700552EDD /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		BFD8796E24F5CA4000552EDD /* Player_Backward_Sorceress.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Backward_Sorceress.atlas; sourceTree = "<group>"; };
 		BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMoveDirection.swift; sourceTree = "<group>"; };
-		BFED62BF24F5954000BB6AA2 /* Change.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Change.atlas; sourceTree = "<group>"; };
+		BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Change.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				BF69F2C224F4B11200BBF518 /* Alerts.swift */,
+				BFD8795D24F5B60900552EDD /* GameSetup.swift */,
+				BFD8796424F5C68700552EDD /* Animations.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -114,14 +130,11 @@
 		BF6FBACA24A8BDD400996890 = {
 			isa = PBXGroup;
 			children = (
-				BF6FBB0B24A8BF2000996890 /* .github */,
-				BF6FBB0A24A8BF1400996890 /* .gitignore */,
 				BF6FBAD524A8BDD400996890 /* Conscious */,
 				BF6FBAEE24A8BDDB00996890 /* ConsciousTests */,
 				BF6FBAF924A8BDDB00996890 /* ConsciousUITests */,
+				BFD8796124F5BA8A00552EDD /* Metadata */,
 				BF6FBAD424A8BDD400996890 /* Products */,
-				BF6FBB0924A8BE2600996890 /* PROPOSAL.md */,
-				BF6FBB0824A8BE2600996890 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +207,7 @@
 			children = (
 				BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */,
 				BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */,
+				BFD8795F24F5B61D00552EDD /* GameTileType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -218,13 +232,28 @@
 		BFD8795024F5A2E600552EDD /* Texture Atlases */ = {
 			isa = PBXGroup;
 			children = (
+				BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */,
+				BFD8795924F5AE7F00552EDD /* Player_Backward_Bird.atlas */,
+				BFD8795A24F5AE7F00552EDD /* Player_Backward_Default.atlas */,
+				BFD8796E24F5CA4000552EDD /* Player_Backward_Sorceress.atlas */,
+				BFD8796224F5C63C00552EDD /* Player_Backward_USB.atlas */,
 				BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */,
 				BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */,
 				BFD8795424F5A2FF00552EDD /* Player_Forward_Sorceress.atlas */,
 				BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */,
-				BFED62BF24F5954000BB6AA2 /* Change.atlas */,
 			);
 			path = "Texture Atlases";
+			sourceTree = "<group>";
+		};
+		BFD8796124F5BA8A00552EDD /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				BF6FBB0B24A8BF2000996890 /* .github */,
+				BF6FBB0A24A8BF1400996890 /* .gitignore */,
+				BF6FBB0824A8BE2600996890 /* README.md */,
+				BF6FBB0924A8BE2600996890 /* PROPOSAL.md */,
+			);
+			name = Metadata;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,12 +363,16 @@
 			files = (
 				BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */,
 				BFD8795724F5A2FF00552EDD /* Player_Forward_Default.atlas in Resources */,
-				BFED62C024F5954000BB6AA2 /* Change.atlas in Resources */,
+				BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */,
+				BFD8796F24F5CA4000552EDD /* Player_Backward_Sorceress.atlas in Resources */,
+				BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */,
+				BFD8795B24F5AE7F00552EDD /* Player_Backward_Bird.atlas in Resources */,
 				BF2514B724F45E01000300B7 /* GameScene.sks in Resources */,
 				BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */,
 				BF6FBAE124A8BDDB00996890 /* Assets.xcassets in Resources */,
 				BF6FBADB24A8BDD400996890 /* Actions.sks in Resources */,
 				BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */,
+				BFD8796324F5C63C00552EDD /* Player_Backward_USB.atlas in Resources */,
 				BFD8795824F5A2FF00552EDD /* Player_Forward_Sorceress.atlas in Resources */,
 				BFD8795624F5A2FF00552EDD /* Player_Forward_USB.atlas in Resources */,
 			);
@@ -409,7 +442,10 @@
 				BFC78F3924F486EF004E85A9 /* PlayerCostumeType.swift in Sources */,
 				BF6FBADD24A8BDD400996890 /* GameScene.swift in Sources */,
 				BFC78F3D24F48731004E85A9 /* Player.swift in Sources */,
+				BFD8796024F5B61D00552EDD /* GameTileType.swift in Sources */,
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
+				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
+				BFD8795E24F5B60900552EDD /* GameSetup.swift in Sources */,
 				BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */,
 				BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */,
 			);

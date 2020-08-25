@@ -19,7 +19,7 @@ class Player: SKSpriteNode {
     /// Thre current costume the player is wearing.
     public var costume: PlayerCostumeType = .default
 
-    /// A queue of all available costumes the olayer can switch to.
+    /// A queue of all available costumes the player can switch to.
     private var costumeQueue: [PlayerCostumeType] = [.bird, .flashDrive, .sorceress]
 
     /// Whether the player is currently playing an animation.
@@ -29,31 +29,17 @@ class Player: SKSpriteNode {
 
     /// The SKTexture frames that play when a player is changing costumes.
     private var changingFrames: [SKTexture] {
-        let animations = SKTextureAtlas(named: "Change.atlas")
-        var frames: [SKTexture] = []
-
-        for iter in 0..<animations.textureNames.count {
-            let name = "sprite_0\(iter)"
-            frames.append(animations.textureNamed(name))
-        }
-
-        for iter in 0..<animations.textureNames.count {
-            let name = "sprite_0\(animations.textureNames.count - 1 - iter)"
-            frames.append(animations.textureNamed(name))
-        }
-
-        return frames
+        return animated(fromAtlas: SKTextureAtlas(named: "Player_Change"), reversable: true)
     }
-    
+
     /// The walk cycle animation when moving south.
     private var forwardWalkCycle: [SKTexture] {
-        let animations = SKTextureAtlas(named: "Player_Forward_\(self.costume.rawValue)")
-        var frames: [SKTexture] = []
-        for item in 0..<animations.textureNames.count {
-            let name = "sprite_\(item)"
-            frames.append(animations.textureNamed(name))
-        }
-        return frames
+        return animated(fromAtlas: SKTextureAtlas(named: "Player_Forward_\(self.costume.rawValue)"))
+    }
+
+    /// The walk cycle animation when moving north.
+    private var backwardWalkCycle: [SKTexture] {
+        return animated(fromAtlas: SKTextureAtlas(named: "Player_Backward_\(self.costume.rawValue)"))
     }
 
     /// Initialize the player.
@@ -81,6 +67,21 @@ class Player: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: STATIC METHODS
+
+    /// Get the list of costumes from a given ID.
+    /// - Parameter id: An integer representing the ID of costumes available.
+    // swiftlint:disable:next identifier_name
+    public static func getCostumeSet(id: Int) -> [PlayerCostumeType] {
+        let defaultSet: [PlayerCostumeType] = [.default, .bird, .flashDrive, .sorceress]
+        if id == 0 {
+            return [PlayerCostumeType.default]
+        } else {
+            let upperBound = id + 1
+            return defaultSet[..<upperBound].map { costume in costume }
+        }
+    }
+
     // MARK: METHODS
 
     /// Instantiate this node's physics body.
@@ -95,20 +96,15 @@ class Player: SKSpriteNode {
         self.physicsBody?.mass = 76.02 / 8
     }
 
-    /// Switch to the next available costume.
-    /// - Returns: The next costume the player has switched to.
-    public func nextCostume() -> PlayerCostumeType {
-        // Stop any previous movement.
+    /// Animate a costume change.
+    /// - Parameter costume: The costume that the player is currently wearing or will switch from.
+    private func animateCostumeChange(startingWith costume: PlayerCostumeType) {
+        // Halt the player's movement.
         self.halt()
-
-        // Re-order the queue.
-        let currentCostume = self.costume
-        self.costume = self.costumeQueue.remove(at: 0)
-        self.costumeQueue.append(currentCostume)
 
         // Create a ghost sprite for animation purposes.
         let ghostSprite = SKSpriteNode(
-            texture: SKTexture(imageNamed: "Player (Idle, \(currentCostume.rawValue))"),
+            texture: SKTexture(imageNamed: "Player (Idle, \(costume.rawValue))"),
             size: self.size
         )
         ghostSprite.position = self.position
@@ -131,10 +127,39 @@ class Player: SKSpriteNode {
             SKAction.run { ghostSprite.removeFromParent() }
         ]))
         self.animating = false
+    }
+
+    /// Switch to the previous costume.
+    /// - Returns: The previous costume the player is now wearing.
+    public func previousCostume() -> PlayerCostumeType {
+        // Re-order the queue.
+        let currentCostume = self.costume
+        self.costume = self.costumeQueue.popLast() ?? .default
+        self.costumeQueue.insert(currentCostume, at: 0)
+
+        // Start animating costume changes.
+        self.animateCostumeChange(startingWith: currentCostume)
 
         // Return the costume type.
         return self.costume
     }
+
+    /// Switch to the next available costume.
+    /// - Returns: The next costume the player has switched to.
+    public func nextCostume() -> PlayerCostumeType {
+        // Re-order the queue.
+        let currentCostume = self.costume
+        self.costume = self.costumeQueue.remove(at: 0)
+        self.costumeQueue.append(currentCostume)
+
+        // Start animating costume changes.
+        self.animateCostumeChange(startingWith: currentCostume)
+
+        // Return the costume type.
+        return self.costume
+    }
+
+    // MARK: MOVEMENT METHODS
 
     /// Move the player by a specific amount.
     ///
@@ -173,6 +198,12 @@ class Player: SKSpriteNode {
         switch direction {
         case .north:
             delta.dy += unit.height / 2
+            action = SKAction.animate(
+                with: self.backwardWalkCycle,
+                timePerFrame: 0.5,
+                resize: false,
+                restore: true
+            )
         case .south:
             delta.dy -= unit.height / 2
             action = SKAction.animate(
@@ -196,18 +227,5 @@ class Player: SKSpriteNode {
             self.animating = true
         }
 
-    }
-
-    /// Get the list of costumes from a given ID.
-    /// - Parameter id: An integer representing the ID of costumes available.
-    // swiftlint:disable:next identifier_name
-    public static func getCostumeSet(id: Int) -> [PlayerCostumeType] {
-        let defaultSet: [PlayerCostumeType] = [.default, .bird, .flashDrive, .sorceress]
-        if id == 0 {
-            return [PlayerCostumeType.default]
-        } else {
-            let upperBound = id + 1
-            return defaultSet[..<upperBound].map { costume in costume }
-        }
     }
 }

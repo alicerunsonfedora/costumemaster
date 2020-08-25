@@ -13,9 +13,17 @@ import Carbon.HIToolbox
 class GameScene: SKScene {
 
     // MARK: STORED PROPERTIES
+
+    /// The player node in the level.
     var playerNode: Player?
+
+    /// The camera attached to the player.
     var playerCamera: SKCameraNode?
+
+    /// The base unit size for a given tile in a level.
     var unit: CGSize?
+
+    // MARK: CONSTRUCTION METHODS
 
     /// Create children nodes from a tile map node and add them to the scene's view heirarchy.
     private func setupTilemap() {
@@ -45,6 +53,7 @@ class GameScene: SKScene {
                     let spriteX = CGFloat(col) * mapUnit.width - mapHalfWidth + (mapUnit.width / 2)
                     let spriteY = CGFloat(row) * mapUnit.height - mapHalfHeight + (mapUnit.height / 2)
                     let spritePosition = CGPoint(x: spriteX, y: spriteY)
+                    let tileType = getTileType(fromDefinition: defined)
 
                     // Create the sprite node.
                     let sprite = SKSpriteNode(texture: texture)
@@ -52,26 +61,10 @@ class GameScene: SKScene {
                     sprite.zPosition = 1
                     sprite.isHidden = false
 
-                    // Give the walls a physics body.
-                    if (defined.name?.contains("wall")) != nil {
-                        let physicsBody = SKPhysicsBody(texture: texture, size: texture.size())
-                        physicsBody.restitution = 0
-                        physicsBody.linearDamping = 1000
-                        physicsBody.friction = 0.7
-
-                        physicsBody.affectedByGravity = false
-                        physicsBody.isDynamic = false
-                        physicsBody.isResting = true
-                        physicsBody.allowsRotation = false
-                        sprite.physicsBody = physicsBody
-                    }
-
-                    // Add the node to the parent scene's tree and update the position.
-                    self.addChild(sprite)
-                    sprite.position = CGPoint(x: spritePosition.x + origin.x, y: spritePosition.y + origin.y)
-
-                    // Instantiate the node as a player if the texture's name matches.
-                    if defined.name == "Main" {
+                    switch tileType {
+                    case .wall:
+                        sprite.physicsBody = getWallPhysicsBody(with: texture)
+                    case .player:
                         var costumes: [PlayerCostumeType] = [.default]
                         if let costumeEntry = self.userData?["availableCostumes"] {
                             costumes = Player.getCostumeSet(id: costumeEntry as? Int ?? 0)
@@ -81,8 +74,13 @@ class GameScene: SKScene {
                         self.playerNode?.zPosition = 1
                         self.playerNode?.isHidden = false
                         self.addChild(self.playerNode!)
-                        sprite.removeFromParent()
+                    default:
+                        break
                     }
+
+                    // Add the node to the parent scene's node heirarchy and update the position.
+                    if tileType != .player { self.addChild(sprite) }
+                    sprite.position = CGPoint(x: spritePosition.x + origin.x, y: spritePosition.y + origin.y)
                 }
             }
         }
@@ -92,7 +90,6 @@ class GameScene: SKScene {
         tilemap.removeFromParent()
     }
 
-    // MARK: METHODS
     override func sceneDidLoad() {
 
         // Get the camera for this scene.
@@ -151,6 +148,10 @@ class GameScene: SKScene {
         // Check for the costume switching key and switch to the next available costume.
         case kVK_ANSI_F:
             _ = self.playerNode?.nextCostume()
+        case kVK_ANSI_G:
+            _ = self.playerNode?.previousCostume()
+
+        // Catch-all case.
         default:
             break
 
@@ -166,5 +167,12 @@ class GameScene: SKScene {
         default:
             break
         }
+    }
+
+    // MARK: DESTRUCTION METHODS
+    override func willMove(from view: SKView) {
+
+        // Remove all children from the view heirarchy to save memory.
+        self.removeAllChildren()
     }
 }
