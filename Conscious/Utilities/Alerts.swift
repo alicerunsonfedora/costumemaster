@@ -14,7 +14,10 @@ import Cocoa
 /// - Parameter withTitle: The title of the alert.
 /// - Parameter level: The level of importance for the alert.
 /// - Parameter handler: An escaping closure that handles the alert's response when given.
-func sendAlert(_ message: String, withTitle: String?, level: NSAlert.Style, handler: @escaping ((NSApplication.ModalResponse) -> Void)) {
+func sendAlert(_ message: String,
+               withTitle: String?,
+               level: NSAlert.Style,
+               handler: @escaping ((NSApplication.ModalResponse) -> Void)) {
     let alert = NSAlert()
     alert.alertStyle = level
     alert.messageText = withTitle ?? Bundle.main.className

@@ -17,22 +17,8 @@ class GameScene: SKScene {
     var playerCamera: SKCameraNode?
     var unit: CGSize?
 
-    // MARK: METHODS
-    override func sceneDidLoad() {
-
-        // Get the camera for this scene.
-        guard let pCam = childNode(withName: "Camera") as? SKCameraNode else {
-            sendAlert(
-                "Check the appropriate level file and ensure an SKCameraNode called \"Camera\" exists.",
-                withTitle: "The camera for this map is missing.",
-                level: .critical) { _ in
-                NSApplication.shared.terminate(nil)
-            }
-            return
-        }
-        self.playerCamera = pCam
-        self.playerCamera?.setScale(0.5)
-
+    /// Create children nodes from a tile map node and add them to the scene's view heirarchy.
+    private func setupTilemap() {
         // Get the tilemap for this scene.
         guard let tilemap = childNode(withName: "Tile Map Node") as? SKTileMapNode else {
             sendAlert(
@@ -52,13 +38,13 @@ class GameScene: SKScene {
         let origin = tilemap.position
 
         // Seperate the tilemap into several nodes.
-        for y in 0..<tilemap.numberOfColumns {
-            for x in 0..<tilemap.numberOfRows {
-                if let defined = tilemap.tileDefinition(atColumn: y, row: x) {
+        for col in 0..<tilemap.numberOfColumns {
+            for row in 0..<tilemap.numberOfRows {
+                if let defined = tilemap.tileDefinition(atColumn: col, row: row) {
                     let texture = defined.textures[0]
-                    let _x = CGFloat(y) * mapUnit.width - mapHalfWidth + (mapUnit.width / 2)
-                    let _y = CGFloat(x) * mapUnit.height - mapHalfHeight + (mapUnit.height / 2)
-                    let spritePosition = CGPoint(x: _x, y: _y)
+                    let spriteX = CGFloat(col) * mapUnit.width - mapHalfWidth + (mapUnit.width / 2)
+                    let spriteY = CGFloat(row) * mapUnit.height - mapHalfHeight + (mapUnit.height / 2)
+                    let spritePosition = CGPoint(x: spriteX, y: spriteY)
 
                     // Create the sprite node.
                     let sprite = SKSpriteNode(texture: texture)
@@ -104,11 +90,31 @@ class GameScene: SKScene {
         // Delete the tilemap from memory.
         tilemap.tileSet = SKTileSet(tileGroups: [])
         tilemap.removeFromParent()
+    }
+
+    // MARK: METHODS
+    override func sceneDidLoad() {
+
+        // Get the camera for this scene.
+        guard let pCam = childNode(withName: "Camera") as? SKCameraNode else {
+            sendAlert(
+                "Check the appropriate level file and ensure an SKCameraNode called \"Camera\" exists.",
+                withTitle: "The camera for this map is missing.",
+                level: .critical) { _ in
+                NSApplication.shared.terminate(nil)
+            }
+            return
+        }
+        self.playerCamera = pCam
+        self.playerCamera?.setScale(0.5)
+
+        self.setupTilemap()
 
         // Check that a player was generated.
         if playerNode == nil {
             sendAlert(
-                "Check the appropriate level file and ensure the SKTileMapNode includes a tile definition for the player.",
+                "Check the appropriate level file and ensure the SKTileMapNode includes a tile definition for the"
+                + " player.",
                 withTitle: "The player for this map is missing.",
                 level: .critical) { _ in
                 NSApplication.shared.terminate(self)

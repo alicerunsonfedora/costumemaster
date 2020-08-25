@@ -21,6 +21,7 @@ class ViewController: NSViewController {
         if let scene = GKScene(fileNamed: "GameScene") {
 
             // Get the SKScene from the loaded GKScene
+            // swiftlint:disable:next force_cast
             if let sceneNode = scene.rootNode as! GameScene? {
 
                 // Set the scale mode to scale to fit the window

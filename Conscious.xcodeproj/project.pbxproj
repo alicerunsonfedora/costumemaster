@@ -21,6 +21,7 @@
 		BFC78F3924F486EF004E85A9 /* PlayerCostumeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */; };
 		BFC78F3D24F48731004E85A9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC78F3C24F48731004E85A9 /* Player.swift */; };
 		BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */; };
+		BFED62C024F5954000BB6AA2 /* Change.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFED62BF24F5954000BB6AA2 /* Change.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCostumeType.swift; sourceTree = "<group>"; };
 		BFC78F3C24F48731004E85A9 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMoveDirection.swift; sourceTree = "<group>"; };
+		BFED62BF24F5954000BB6AA2 /* Change.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Change.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		BF6FBACA24A8BDD400996890 = {
 			isa = PBXGroup;
 			children = (
+				BFED62BF24F5954000BB6AA2 /* Change.atlas */,
 				BF6FBB0B24A8BF2000996890 /* .github */,
 				BF6FBB0A24A8BF1400996890 /* .gitignore */,
 				BF6FBB0924A8BE2600996890 /* PROPOSAL.md */,
@@ -211,6 +214,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF6FBAFF24A8BDDB00996890 /* Build configuration list for PBXNativeTarget "Conscious" */;
 			buildPhases = (
+				BFED62BE24F5930600BB6AA2 /* Autocorrect with SwiftLint */,
+				BFED62BC24F5907B00BB6AA2 /* Run SwiftLint */,
 				BF6FBACF24A8BDD400996890 /* Sources */,
 				BF6FBAD024A8BDD400996890 /* Frameworks */,
 				BF6FBAD124A8BDD400996890 /* Resources */,
@@ -308,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */,
+				BFED62C024F5954000BB6AA2 /* Change.atlas in Resources */,
 				BF2514B724F45E01000300B7 /* GameScene.sks in Resources */,
 				BF6FBAE124A8BDDB00996890 /* Assets.xcassets in Resources */,
 				BF6FBADB24A8BDD400996890 /* Actions.sks in Resources */,
@@ -330,6 +336,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BFED62BC24F5907B00BB6AA2 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint >/dev/null; then\n        swiftlint --config \"$SRCROOT/.swiftlint.yml\"\n    fi\nfi\n";
+		};
+		BFED62BE24F5930600BB6AA2 /* Autocorrect with SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Autocorrect with SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Type a script or drag a script file from your workspace to insert its path.\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint >/dev/null; then\n        swiftlint autocorrect\n    fi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BF6FBACF24A8BDD400996890 /* Sources */ = {
