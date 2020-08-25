@@ -1,5 +1,7 @@
 # Conscious
 
+<img src="bird_idle.png" align="right" />
+
 **Applied AI with GameplayKit**
 
 A game about changing costumes that artificial intelligence agents can play.
