@@ -1,6 +1,6 @@
 # Conscious
 
-<img src="bird_idle.png" align="right"  style="padding-right: 32px;"/>
+<img src="icon.png" align="right"  style="padding-right: 32px;"/>
 
 **Applied AI with GameplayKit**
 
