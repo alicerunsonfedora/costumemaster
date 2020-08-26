@@ -12,7 +12,7 @@ import SpriteKit
 ///
 /// The player class is a subclass of SKSpriteNode that contains additional logic for handling player changes such as
 /// costume switching.
-class Player: SKSpriteNode {
+public class Player: SKSpriteNode {
 
     // MARK: STORED PROPERTIES
 
@@ -150,6 +150,7 @@ class Player: SKSpriteNode {
             )},
             SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(self.costume.rawValue))")),
             SKAction.run {  self.texture?.filteringMode = .nearest },
+            SKAction.playSoundFileNamed("changeCostume", waitForCompletion: false),
             SKAction.animate(with: self.changingFrames, timePerFrame: 0.1, resize: false, restore: true),
             SKAction.run { ghostSprite.removeFromParent(); self.removeAllChildren() }
         ]))

@@ -10,6 +10,11 @@
 		BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B424F45DB8000300B7 /* Tileset.sks */; };
 		BF2514B724F45E01000300B7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B624F45E01000300B7 /* GameScene.sks */; };
 		BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */; };
+		BF3A0B7524F6C42500575F72 /* changeCostume.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B7424F6C42500575F72 /* changeCostume.wav */; };
+		BF3A0B7824F6CB0C00575F72 /* GameSignalReceivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7724F6CB0C00575F72 /* GameSignalReceivable.swift */; };
+		BF3A0B7A24F6CB4D00575F72 /* GameSignalSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7924F6CB4D00575F72 /* GameSignalSender.swift */; };
+		BF3A0B7C24F6CB9900575F72 /* GameSignalMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7B24F6CB9900575F72 /* GameSignalMethod.swift */; };
+		BF3A0B7F24F6EB4900575F72 /* GameSignalInputMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */; };
 		BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69F2C224F4B11200BBF518 /* Alerts.swift */; };
 		BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAD624A8BDD400996890 /* AppDelegate.swift */; };
 		BF6FBADB24A8BDD400996890 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBADA24A8BDD400996890 /* Actions.sks */; };
@@ -62,6 +67,11 @@
 		BF2514B424F45DB8000300B7 /* Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tileset.sks; sourceTree = "<group>"; };
 		BF2514B624F45E01000300B7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDataConfiguration.swift; sourceTree = "<group>"; };
+		BF3A0B7424F6C42500575F72 /* changeCostume.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = changeCostume.wav; sourceTree = "<group>"; };
+		BF3A0B7724F6CB0C00575F72 /* GameSignalReceivable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalReceivable.swift; sourceTree = "<group>"; };
+		BF3A0B7924F6CB4D00575F72 /* GameSignalSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalSender.swift; sourceTree = "<group>"; };
+		BF3A0B7B24F6CB9900575F72 /* GameSignalMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalMethod.swift; sourceTree = "<group>"; };
+		BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalInputMethod.swift; sourceTree = "<group>"; };
 		BF69F2C224F4B11200BBF518 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		BF6FBAD324A8BDD400996890 /* Costumemaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Costumemaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6FBAD624A8BDD400996890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +147,32 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
+		BF3A0B7324F6C41E00575F72 /* SFX */ = {
+			isa = PBXGroup;
+			children = (
+				BF3A0B7424F6C42500575F72 /* changeCostume.wav */,
+			);
+			path = SFX;
+			sourceTree = "<group>";
+		};
+		BF3A0B7624F6C44C00575F72 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				BF6FBAE624A8BDDB00996890 /* Conscious.entitlements */,
+				BF6FBAE524A8BDDB00996890 /* Info.plist */,
+				BF6FBAE224A8BDDB00996890 /* Main.storyboard */,
+			);
+			path = Metadata;
+			sourceTree = "<group>";
+		};
+		BF3A0B7D24F6D4E500575F72 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BF3A0B7724F6CB0C00575F72 /* GameSignalReceivable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		BF69F2C124F4B10100BBF518 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,17 +208,17 @@
 		BF6FBAD524A8BDD400996890 /* Conscious */ = {
 			isa = PBXGroup;
 			children = (
+				BF6FBAE024A8BDDB00996890 /* Assets.xcassets */,
+				BF7DFDCD24F41E48008D09AA /* Classes */,
+				BFC78F3724F486DC004E85A9 /* Enums */,
+				BF3A0B7624F6C44C00575F72 /* Metadata */,
+				BF3A0B7D24F6D4E500575F72 /* Protocols */,
+				BF7DFDCC24F41E3F008D09AA /* Scenes */,
+				BF3A0B7324F6C41E00575F72 /* SFX */,
 				BF3A0B7024F6B71200575F72 /* Structs */,
 				BFD8795024F5A2E600552EDD /* Texture Atlases */,
-				BF69F2C124F4B10100BBF518 /* Utilities */,
-				BFC78F3724F486DC004E85A9 /* Enums */,
-				BF7DFDCD24F41E48008D09AA /* Classes */,
-				BF7DFDCC24F41E3F008D09AA /* Scenes */,
-				BF6FBAE024A8BDDB00996890 /* Assets.xcassets */,
-				BF6FBAE224A8BDDB00996890 /* Main.storyboard */,
-				BF6FBAE524A8BDDB00996890 /* Info.plist */,
-				BF6FBAE624A8BDDB00996890 /* Conscious.entitlements */,
 				BF2514B424F45DB8000300B7 /* Tileset.sks */,
+				BF69F2C124F4B10100BBF518 /* Utilities */,
 			);
 			path = Conscious;
 			sourceTree = "<group>";
@@ -230,6 +266,8 @@
 				BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */,
 				BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */,
 				BFD8795F24F5B61D00552EDD /* GameTileType.swift */,
+				BF3A0B7B24F6CB9900575F72 /* GameSignalMethod.swift */,
+				BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -247,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC78F3C24F48731004E85A9 /* Player.swift */,
+				BF3A0B7924F6CB4D00575F72 /* GameSignalSender.swift */,
 			);
 			path = "Game Logic";
 			sourceTree = "<group>";
@@ -395,6 +434,7 @@
 				BFD8797624F5DE3E00552EDD /* Player_Side_USB.atlas in Resources */,
 				BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */,
 				BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */,
+				BF3A0B7524F6C42500575F72 /* changeCostume.wav in Resources */,
 				BFD8795B24F5AE7F00552EDD /* Player_Backward_Bird.atlas in Resources */,
 				BFD8797524F5DE3E00552EDD /* Player_Side_Sorceress.atlas in Resources */,
 				BF2514B724F45E01000300B7 /* GameScene.sks in Resources */,
@@ -468,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3A0B7824F6CB0C00575F72 /* GameSignalReceivable.swift in Sources */,
 				BF6FBADF24A8BDD400996890 /* ViewController.swift in Sources */,
 				BFC78F3924F486EF004E85A9 /* PlayerCostumeType.swift in Sources */,
 				BF6FBADD24A8BDD400996890 /* GameScene.swift in Sources */,
@@ -476,10 +517,13 @@
 				BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */,
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
+				BF3A0B7C24F6CB9900575F72 /* GameSignalMethod.swift in Sources */,
 				BFD8795E24F5B60900552EDD /* GameSetup.swift in Sources */,
+				BF3A0B7A24F6CB4D00575F72 /* GameSignalSender.swift in Sources */,
 				BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */,
 				BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */,
 				BFD8797924F5FDA800552EDD /* CGVector.swift in Sources */,
+				BF3A0B7F24F6EB4900575F72 /* GameSignalInputMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,12 +690,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Conscious/Conscious.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Conscious/Metadata/Conscious.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = Conscious/Info.plist;
+				INFOPLIST_FILE = Conscious/Metadata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -668,12 +712,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Conscious/Conscious.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Conscious/Metadata/Conscious.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = Conscious/Info.plist;
+				INFOPLIST_FILE = Conscious/Metadata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
