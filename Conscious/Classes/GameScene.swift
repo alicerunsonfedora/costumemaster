@@ -55,6 +55,9 @@ class GameScene: SKScene {
                     let spritePosition = CGPoint(x: spriteX, y: spriteY)
                     let tileType = getTileType(fromDefinition: defined)
 
+                    // Change the texure's filtering method to allow pixelation.
+                    texture.filteringMode = .nearest
+
                     // Create the sprite node.
                     let sprite = SKSpriteNode(texture: texture)
                     sprite.position = spritePosition

@@ -25,6 +25,9 @@ class Player: SKSpriteNode {
     /// Whether the player is currently playing an animation.
     private var animating: Bool = false
 
+    /// Whether the player is changing costumes.
+    private var isChangingCostumes: Bool = false
+
     // MARK: COMPUTED PROPERTIES
 
     /// The SKTexture frames that play when a player is changing costumes.
@@ -47,6 +50,8 @@ class Player: SKSpriteNode {
         return animated(fromAtlas: SKTextureAtlas(named: "Player_Side_\(self.costume.rawValue)"))
     }
 
+    // MARK: CONSTRUCTOR
+
     /// Initialize the player.
     /// - Parameter texture: A texture to apply to the sprite.
     /// - Parameter allowCostumes: A list of all of the allowed costumes for a particular level.
@@ -57,15 +62,17 @@ class Player: SKSpriteNode {
         var costumes = allowCostumes
         self.costume = costumes.remove(at: 0)
         self.costumeQueue = costumes
+        self.texture?.filteringMode = .nearest
     }
 
     /// Initialize the player.
-    /// - Parameter texture: A texture to apple to the sprite.
+    /// - Parameter texture: A texture to apply to the sprite.
     /// - Parameter color: The color of the sprite.
     /// - Parameter size: The size of the sprite.
     override init(texture: SKTexture?, color: NSColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
         self.instantiatePhysicsBody(fromTexture: texture!)
+        self.texture?.filteringMode = .nearest
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -106,6 +113,7 @@ class Player: SKSpriteNode {
     private func animateCostumeChange(startingWith costume: PlayerCostumeType) {
         // Halt the player's movement.
         self.halt()
+        self.isChangingCostumes = true
 
         // Create a ghost sprite for animation purposes.
         let ghostSprite = SKSpriteNode(
@@ -115,6 +123,7 @@ class Player: SKSpriteNode {
         ghostSprite.position = self.position
         ghostSprite.zPosition = self.zPosition - 1
         ghostSprite.isHidden = false
+        ghostSprite.texture?.filteringMode = .nearest
         self.parent?.addChild(ghostSprite)
 
         // Play the animations and remove the ghost from the player's node heirarchy.
@@ -122,21 +131,26 @@ class Player: SKSpriteNode {
         self.run(SKAction.sequence([
             SKAction.run {
                 ghostSprite.run(SKAction.sequence([
-                    SKAction.wait(forDuration: 0.9),
+                    SKAction.wait(forDuration: Double(self.changingFrames.count) / 2 / 10),
                     SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(self.costume.rawValue))")),
-                    SKAction.wait(forDuration: 1.1)
+                    SKAction.wait(forDuration: Double(self.changingFrames.count) / 0.61 / 10)
                 ])
             )},
             SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(self.costume.rawValue))")),
+            SKAction.run {  self.texture?.filteringMode = .nearest },
             SKAction.animate(with: self.changingFrames, timePerFrame: 0.1, resize: false, restore: true),
-            SKAction.run { ghostSprite.removeFromParent() }
+            SKAction.run { ghostSprite.removeFromParent(); self.removeAllChildren() }
         ]))
         self.animating = false
+        self.isChangingCostumes = false
     }
 
     /// Switch to the previous costume.
     /// - Returns: The previous costume the player is now wearing.
     public func previousCostume() -> PlayerCostumeType {
+        // Don't initiate another change if we're already changing costumes.
+        if self.isChangingCostumes { return self.costume }
+
         // Re-order the queue.
         let currentCostume = self.costume
         self.costume = self.costumeQueue.popLast() ?? .default
@@ -152,6 +166,9 @@ class Player: SKSpriteNode {
     /// Switch to the next available costume.
     /// - Returns: The next costume the player has switched to.
     public func nextCostume() -> PlayerCostumeType {
+        // Don't initiate another change if we're already changing costumes.
+        if self.isChangingCostumes { return self.costume }
+
         // Re-order the queue.
         let currentCostume = self.costume
         self.costume = self.costumeQueue.remove(at: 0)
@@ -183,6 +200,7 @@ class Player: SKSpriteNode {
         self.removeAllActions()
         self.animating = false
         if self.xScale < 0 { self.xScale *= -1 }
+        self.run(SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(self.costume.rawValue))")))
     }
 
     /// Move the player in a given direction, relative to the size of the world.
@@ -194,6 +212,9 @@ class Player: SKSpriteNode {
     /// - Parameter direction: The direction the player will move in.
     /// - Parameter unit: The base unit to calculate the movement delta, relatively.
     public func move(_ direction: PlayerMoveDirection, unit: CGSize) {
+        // Stop if we're changing costumes.
+        if self.isChangingCostumes { return }
+
         // Create the delta vector and animation
         var delta = CGVector(dx: 0, dy: 0)
         var action: SKAction?
