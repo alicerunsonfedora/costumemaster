@@ -15,6 +15,9 @@
 		BF3A0B7A24F6CB4D00575F72 /* GameSignalSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7924F6CB4D00575F72 /* GameSignalSender.swift */; };
 		BF3A0B7C24F6CB9900575F72 /* GameSignalMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7B24F6CB9900575F72 /* GameSignalMethod.swift */; };
 		BF3A0B7F24F6EB4900575F72 /* GameSignalInputMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */; };
+		BF3A0B8124F703F400575F72 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8024F703F400575F72 /* MainMenu.sks */; };
+		BF3A0B8424F7046900575F72 /* LevelExitDoor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8324F7046900575F72 /* LevelExitDoor.swift */; };
+		BF3A0B8624F70B8900575F72 /* GameSceneUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8524F70B8900575F72 /* GameSceneUtils.swift */; };
 		BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69F2C224F4B11200BBF518 /* Alerts.swift */; };
 		BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAD624A8BDD400996890 /* AppDelegate.swift */; };
 		BF6FBADB24A8BDD400996890 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBADA24A8BDD400996890 /* Actions.sks */; };
@@ -72,6 +75,9 @@
 		BF3A0B7924F6CB4D00575F72 /* GameSignalSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalSender.swift; sourceTree = "<group>"; };
 		BF3A0B7B24F6CB9900575F72 /* GameSignalMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalMethod.swift; sourceTree = "<group>"; };
 		BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalInputMethod.swift; sourceTree = "<group>"; };
+		BF3A0B8024F703F400575F72 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
+		BF3A0B8324F7046900575F72 /* LevelExitDoor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExitDoor.swift; sourceTree = "<group>"; };
+		BF3A0B8524F70B8900575F72 /* GameSceneUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneUtils.swift; sourceTree = "<group>"; };
 		BF69F2C224F4B11200BBF518 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		BF6FBAD324A8BDD400996890 /* Costumemaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Costumemaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6FBAD624A8BDD400996890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +179,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		BF3A0B8224F7044500575F72 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				BF3A0B8324F7046900575F72 /* LevelExitDoor.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
 		BF69F2C124F4B10100BBF518 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +194,7 @@
 				BFD8795D24F5B60900552EDD /* GameSetup.swift */,
 				BFD8796424F5C68700552EDD /* Animations.swift */,
 				BFD8797824F5FDA800552EDD /* CGVector.swift */,
+				BF3A0B8524F70B8900575F72 /* GameSceneUtils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -246,6 +261,7 @@
 			children = (
 				BF6FBADA24A8BDD400996890 /* Actions.sks */,
 				BF2514B624F45E01000300B7 /* GameScene.sks */,
+				BF3A0B8024F703F400575F72 /* MainMenu.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -284,6 +300,7 @@
 		BFC78F3B24F48726004E85A9 /* Game Logic */ = {
 			isa = PBXGroup;
 			children = (
+				BF3A0B8224F7044500575F72 /* Environment */,
 				BFC78F3C24F48731004E85A9 /* Player.swift */,
 				BF3A0B7924F6CB4D00575F72 /* GameSignalSender.swift */,
 			);
@@ -439,6 +456,7 @@
 				BFD8797524F5DE3E00552EDD /* Player_Side_Sorceress.atlas in Resources */,
 				BF2514B724F45E01000300B7 /* GameScene.sks in Resources */,
 				BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */,
+				BF3A0B8124F703F400575F72 /* MainMenu.sks in Resources */,
 				BF6FBAE124A8BDDB00996890 /* Assets.xcassets in Resources */,
 				BF6FBADB24A8BDD400996890 /* Actions.sks in Resources */,
 				BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */,
@@ -518,6 +536,8 @@
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
 				BF3A0B7C24F6CB9900575F72 /* GameSignalMethod.swift in Sources */,
+				BF3A0B8624F70B8900575F72 /* GameSceneUtils.swift in Sources */,
+				BF3A0B8424F7046900575F72 /* LevelExitDoor.swift in Sources */,
 				BFD8795E24F5B60900552EDD /* GameSetup.swift in Sources */,
 				BF3A0B7A24F6CB4D00575F72 /* GameSignalSender.swift in Sources */,
 				BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */,

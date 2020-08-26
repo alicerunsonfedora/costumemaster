@@ -13,8 +13,19 @@ import SpriteKit
 /// - Returns: The respective tile type as `GameTileType`.
 public func getTileType(fromDefinition tile: SKTileDefinition) -> GameTileType {
     if let name = tile.name {
-        if name.starts(with: "wall") { return .wall }
-        if name == "Main" { return .player }
+        switch name {
+        case name where name.starts(with: "wall"):
+            return .wall
+        case name where name.starts(with: "exit"):
+            return .exit
+        case "Main":
+            return .player
+        default:
+            return .unknown
+        }
+//        if name.starts(with: "wall") { return .wall }
+//        if name == "Main" { return .player }
+//        if name.starts(with: "exit") { return .exit }
     }
     return .unknown
 }

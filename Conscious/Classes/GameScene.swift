@@ -26,6 +26,14 @@ class GameScene: SKScene {
     /// The configuration for this level.
     var configuration: LevelDataConfiguration?
 
+    /// The level's signal senders.
+    var switches: [GameSignalSender]?
+
+    /// The level's signal responders.
+    var receivers: [GameSignalReceivable]?
+
+    var exitNode: LevelExitDoor?
+
     // MARK: CONSTRUCTION METHODS
 
     /// Create children nodes from a tile map node and add them to the scene's view heirarchy.
@@ -63,7 +71,10 @@ class GameScene: SKScene {
 
                     // Create the sprite node.
                     let sprite = SKSpriteNode(texture: texture)
-                    sprite.position = spritePosition
+                    sprite.position = CGPoint(
+                        x: spritePosition.x + origin.x,
+                        y: spritePosition.y + origin.y
+                    )
                     sprite.zPosition = 1
                     sprite.isHidden = false
 
@@ -73,19 +84,30 @@ class GameScene: SKScene {
                     case .player:
                         self.playerNode = Player(
                             texture: texture,
-                            allowCostumes: Player.getCostumeSet(id: self.configuration?.costumeID ?? 0)
+                            allowCostumes: Player.getCostumeSet(id: self.configuration?.costumeID ?? 0),
+                            startingWith: self.configuration?.startWithCostume ?? .default
                         )
                         self.playerNode?.position = sprite.position
-                        self.playerNode?.zPosition = 1
+                        self.playerNode?.zPosition = 2
                         self.playerNode?.isHidden = false
                         self.addChild(self.playerNode!)
+                    case .exit:
+                        let receiver = LevelExitDoor(
+                            fromInput: self.switches ?? [],
+                            reverseSignal: false,
+                            baseTexture: "exit"
+                        )
+                        receiver.activationMethod = .anyInput
+                        receiver.position = sprite.position
+                        receiver.playerListener = self.playerNode
+                        self.receivers?.append(receiver)
+                        self.exitNode = receiver
                     default:
                         break
                     }
 
                     // Add the node to the parent scene's node heirarchy and update the position.
                     if tileType != .player { self.addChild(sprite) }
-                    sprite.position = CGPoint(x: spritePosition.x + origin.x, y: spritePosition.y + origin.y)
                 }
             }
         }
@@ -125,6 +147,10 @@ class GameScene: SKScene {
         self.playerCamera = pCam
         self.playerCamera?.setScale(0.5)
 
+        // Set up the switches and receivers before parsing the tilemap.
+        self.switches = []
+        self.receivers = []
+
         self.setupTilemap()
 
         // Check that a player was generated.
@@ -149,6 +175,16 @@ class GameScene: SKScene {
         // Update the camera's position.
         if self.camera?.position != self.playerNode?.position {
             self.camera?.run(SKAction.move(to: self.playerNode?.position ?? CGPoint(x: 0, y: 0), duration: 1))
+        }
+    }
+
+    override func didFinishUpdate() {
+
+        // Run the receiving function on the exit door.
+        self.exitNode?.receive(with: self.playerNode, event: nil) { _ in
+            if let scene = SKScene(fileNamed: self.configuration?.linksToNextScene ?? "MainMenu") {
+                self.view?.presentScene(scene, transition: SKTransition.fade(with: .black, duration: 2.0))
+            }
         }
     }
 
@@ -187,12 +223,5 @@ class GameScene: SKScene {
         default:
             break
         }
-    }
-
-    // MARK: DESTRUCTION METHODS
-    override func willMove(from view: SKView) {
-
-        // Remove all children from the view heirarchy to save memory.
-        self.removeAllChildren()
     }
 }

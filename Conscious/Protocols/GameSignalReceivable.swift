@@ -40,6 +40,4 @@ protocol GameSignalReceivable {
     /// - Parameter baseTexture: The name of the base texture to use when creating texture states.
     init(fromInput inputs: [GameSignalSender], reverseSignal: Bool, baseTexture: String)
 
-    /// A method that executes when the receiver has received input signals.
-    func onReceive()
 }

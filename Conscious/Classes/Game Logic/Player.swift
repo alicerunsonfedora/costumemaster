@@ -20,7 +20,7 @@ public class Player: SKSpriteNode {
     public var costume: PlayerCostumeType = .default
 
     /// A queue of all available costumes the player can switch to.
-    private var costumeQueue: [PlayerCostumeType] = [.bird, .flashDrive, .sorceress]
+    private var costumeQueue: [PlayerCostumeType] = [.flashDrive, .bird, .sorceress]
 
     /// Whether the player is currently playing an animation.
     private var animating: Bool = false
@@ -79,6 +79,22 @@ public class Player: SKSpriteNode {
 
     /// Initialize the player.
     /// - Parameter texture: A texture to apply to the sprite.
+    /// - Parameter allowCostumes: A list of all of the allowed costumes for a particular level.
+    /// - Parameter costume: The costume the player starts with.
+    public init(texture: SKTexture?, allowCostumes: [PlayerCostumeType], startingWith costume: PlayerCostumeType) {
+        super.init(texture: texture, color: NSColor.clear, size: texture!.size())
+        self.instantiatePhysicsBody(fromTexture: texture!)
+
+        var costumes = allowCostumes
+        costumes.removeAll(where: { cost in cost == costume })
+        self.costume = costume
+        self.costumeQueue = costumes
+        self.texture = SKTexture(imageNamed: "Player (Idle, \(costume.rawValue))")
+        self.texture?.filteringMode = .nearest
+    }
+
+    /// Initialize the player.
+    /// - Parameter texture: A texture to apply to the sprite.
     /// - Parameter color: The color of the sprite.
     /// - Parameter size: The size of the sprite.
     override init(texture: SKTexture?, color: NSColor, size: CGSize) {
@@ -97,7 +113,7 @@ public class Player: SKSpriteNode {
     /// - Parameter id: An integer representing the ID of costumes available.
     // swiftlint:disable:next identifier_name
     public static func getCostumeSet(id: Int) -> [PlayerCostumeType] {
-        let defaultSet: [PlayerCostumeType] = [.default, .bird, .flashDrive, .sorceress]
+        let defaultSet: [PlayerCostumeType] = [.default, .flashDrive, .bird, .sorceress]
         if id == 0 {
             return [PlayerCostumeType.default]
         } else {
@@ -148,10 +164,10 @@ public class Player: SKSpriteNode {
                     SKAction.wait(forDuration: Double(self.changingFrames.count) / 0.61 / 10)
                 ])
             )},
+            SKAction.playSoundFileNamed("changeCostume", waitForCompletion: false),
+            SKAction.animate(with: self.changingFrames, timePerFrame: 0.1, resize: false, restore: false),
             SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(self.costume.rawValue))")),
             SKAction.run {  self.texture?.filteringMode = .nearest },
-            SKAction.playSoundFileNamed("changeCostume", waitForCompletion: false),
-            SKAction.animate(with: self.changingFrames, timePerFrame: 0.1, resize: false, restore: true),
             SKAction.run { ghostSprite.removeFromParent(); self.removeAllChildren() }
         ]))
         self.animating = false

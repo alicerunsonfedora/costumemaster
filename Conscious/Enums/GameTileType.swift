@@ -10,5 +10,6 @@ import Foundation
 public enum GameTileType {
     case player
     case wall
+    case exit
     case unknown
 }

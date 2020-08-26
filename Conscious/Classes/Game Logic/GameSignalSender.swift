@@ -19,6 +19,9 @@ public class GameSignalSender: SKSpriteNode {
     /// The method that this input will activate. Default is by player intervention.
     public var activationMethod: GameSignalInputMethod = .activeByPlayerIntervention
 
+    /// The input's associated receiver.
+    var receiver: GameSignalReceivable?
+
     /// The name of the base texture for this input.
     var baseTexture: String
 
@@ -92,10 +95,8 @@ public class GameSignalSender: SKSpriteNode {
                     ]
                 )
             )
-            break
         case .activeOncePermanently:
             self.toggle()
-            break
         }
     }
 }
