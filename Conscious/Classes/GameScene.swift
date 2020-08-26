@@ -94,9 +94,9 @@ class GameScene: SKScene {
         tilemap.tileSet = SKTileSet(tileGroups: [])
         tilemap.removeFromParent()
     }
-    
+
     // MARK: SCENE LOADING
-    
+
     override func sceneDidLoad() {
 
         // Instantiate the level configuration.
