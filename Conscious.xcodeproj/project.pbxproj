@@ -35,6 +35,7 @@
 		BFD8797524F5DE3E00552EDD /* Player_Side_Sorceress.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8797224F5DE3E00552EDD /* Player_Side_Sorceress.atlas */; };
 		BFD8797624F5DE3E00552EDD /* Player_Side_USB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8797324F5DE3E00552EDD /* Player_Side_USB.atlas */; };
 		BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8797424F5DE3E00552EDD /* Player_Side_Bird.atlas */; };
+		BFD8797924F5FDA800552EDD /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8797824F5FDA800552EDD /* CGVector.swift */; };
 		BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */; };
 		BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */; };
 /* End PBXBuildFile section */
@@ -96,6 +97,7 @@
 		BFD8797224F5DE3E00552EDD /* Player_Side_Sorceress.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Side_Sorceress.atlas; sourceTree = "<group>"; };
 		BFD8797324F5DE3E00552EDD /* Player_Side_USB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Side_USB.atlas; sourceTree = "<group>"; };
 		BFD8797424F5DE3E00552EDD /* Player_Side_Bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Side_Bird.atlas; sourceTree = "<group>"; };
+		BFD8797824F5FDA800552EDD /* CGVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGVector.swift; sourceTree = "<group>"; };
 		BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMoveDirection.swift; sourceTree = "<group>"; };
 		BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Change.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 				BF69F2C224F4B11200BBF518 /* Alerts.swift */,
 				BFD8795D24F5B60900552EDD /* GameSetup.swift */,
 				BFD8796424F5C68700552EDD /* Animations.swift */,
+				BFD8797824F5FDA800552EDD /* CGVector.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				BFD8795E24F5B60900552EDD /* GameSetup.swift in Sources */,
 				BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */,
 				BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */,
+				BFD8797924F5FDA800552EDD /* CGVector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

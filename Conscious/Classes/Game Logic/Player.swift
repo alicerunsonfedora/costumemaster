@@ -50,6 +50,18 @@ class Player: SKSpriteNode {
         return animated(fromAtlas: SKTextureAtlas(named: "Player_Side_\(self.costume.rawValue)"))
     }
 
+    /// The player's mass, accounting for the costume.
+    private var mass: CGFloat {
+        switch self.costume {
+        case .default, .sorceress:
+            return 9.05
+        case .bird:
+            return 8.95
+        case .flashDrive:
+            return 18.1
+        }
+    }
+
     // MARK: CONSTRUCTOR
 
     /// Initialize the player.
@@ -105,7 +117,7 @@ class Player: SKSpriteNode {
         self.physicsBody?.isDynamic = true
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.mass = 76.02 / 8
+        self.physicsBody?.mass = self.mass
     }
 
     /// Animate a costume change.
@@ -143,6 +155,7 @@ class Player: SKSpriteNode {
         ]))
         self.animating = false
         self.isChangingCostumes = false
+        self.physicsBody?.mass = self.mass
     }
 
     /// Switch to the previous costume.
@@ -191,7 +204,15 @@ class Player: SKSpriteNode {
     ///
     /// - Parameter delta: A vector that represents the delta to move by.
     public func move(_ delta: CGVector) {
-        self.physicsBody?.applyImpulse(delta)
+        var newDelta = delta
+        let maximumNegativeVelocity = CGVector(dx: -1.4, dy: -1.4)
+        let maximumPositiveVelocity = CGVector(dx: 1.4, dy: 1.4)
+        if newDelta < maximumNegativeVelocity {
+            newDelta = CGVector(dx: newDelta.dx + 1.4, dy: newDelta.dy + 1.4)
+        } else if newDelta > maximumPositiveVelocity {
+            newDelta = CGVector(dx: newDelta.dy - (newDelta.dx - 1.4), dy: newDelta.dy - (newDelta.dx - 1.4))
+        }
+        self.physicsBody?.applyImpulse(newDelta)
     }
 
     /// Stop the player from moving and remove all current animations.
