@@ -12,16 +12,16 @@ import SpriteKit
 public class GameSignalSender: SKSpriteNode {
 
     // MARK: STORED PROPERTIES
-    
+
     /// Whether the input is currently active. Defaults to false.
     public var active: Bool = false
-    
+
     /// The method that this input will activate. Default is by player intervention.
     public var activationMethod: GameSignalInputMethod = .activeByPlayerIntervention
-    
+
     /// The name of the base texture for this input.
     var baseTexture: String
-    
+
     /// The number of seconds it takes for the input to toggle.
     var cooldown: Double
 
@@ -46,7 +46,7 @@ public class GameSignalSender: SKSpriteNode {
         )
         self.texture = self.activeTexture
     }
-    
+
     // MARK: CONSTRUCTOR
     /// Initialize the input.
     /// - Parameter textureName: The name of the texture for this input.
@@ -63,7 +63,6 @@ public class GameSignalSender: SKSpriteNode {
         )
         self.texture = self.activeTexture
     }
-    
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -74,7 +73,7 @@ public class GameSignalSender: SKSpriteNode {
     private func toggle() {
         self.active.toggle()
     }
-    
+
     /// Activate the input given an event and player.
     /// - Parameter event: The event handler to listen to and track.
     /// - Parameter player: The player to watch and track.
