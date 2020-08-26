@@ -63,7 +63,7 @@
 		BF2514B624F45E01000300B7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDataConfiguration.swift; sourceTree = "<group>"; };
 		BF69F2C224F4B11200BBF518 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
-		BF6FBAD324A8BDD400996890 /* Conscious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conscious.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF6FBAD324A8BDD400996890 /* Costumemaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Costumemaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6FBAD624A8BDD400996890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6FBADA24A8BDD400996890 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		BF6FBADC24A8BDD400996890 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 		BF6FBAD424A8BDD400996890 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF6FBAD324A8BDD400996890 /* Conscious.app */,
+				BF6FBAD324A8BDD400996890 /* Costumemaster.app */,
 				BF6FBAEB24A8BDDB00996890 /* ConsciousTests.xctest */,
 				BF6FBAF624A8BDDB00996890 /* ConsciousUITests.xctest */,
 			);
@@ -285,9 +285,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF6FBAD224A8BDD400996890 /* Conscious */ = {
+		BF6FBAD224A8BDD400996890 /* Costumemaster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF6FBAFF24A8BDDB00996890 /* Build configuration list for PBXNativeTarget "Conscious" */;
+			buildConfigurationList = BF6FBAFF24A8BDDB00996890 /* Build configuration list for PBXNativeTarget "Costumemaster" */;
 			buildPhases = (
 				BFED62BE24F5930600BB6AA2 /* Autocorrect with SwiftLint */,
 				BFED62BC24F5907B00BB6AA2 /* Run SwiftLint */,
@@ -299,9 +299,9 @@
 			);
 			dependencies = (
 			);
-			name = Conscious;
+			name = Costumemaster;
 			productName = Conscious;
-			productReference = BF6FBAD324A8BDD400996890 /* Conscious.app */;
+			productReference = BF6FBAD324A8BDD400996890 /* Costumemaster.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BF6FBAEA24A8BDDB00996890 /* ConsciousTests */ = {
@@ -375,7 +375,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF6FBAD224A8BDD400996890 /* Conscious */,
+				BF6FBAD224A8BDD400996890 /* Costumemaster */,
 				BF6FBAEA24A8BDDB00996890 /* ConsciousTests */,
 				BF6FBAF524A8BDDB00996890 /* ConsciousUITests */,
 			);
@@ -504,12 +504,12 @@
 /* Begin PBXTargetDependency section */
 		BF6FBAED24A8BDDB00996890 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BF6FBAD224A8BDD400996890 /* Conscious */;
+			target = BF6FBAD224A8BDD400996890 /* Costumemaster */;
 			targetProxy = BF6FBAEC24A8BDDB00996890 /* PBXContainerItemProxy */;
 		};
 		BF6FBAF824A8BDDB00996890 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BF6FBAD224A8BDD400996890 /* Conscious */;
+			target = BF6FBAD224A8BDD400996890 /* Costumemaster */;
 			targetProxy = BF6FBAF724A8BDDB00996890 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -781,7 +781,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF6FBAFF24A8BDDB00996890 /* Build configuration list for PBXNativeTarget "Conscious" */ = {
+		BF6FBAFF24A8BDDB00996890 /* Build configuration list for PBXNativeTarget "Costumemaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF6FBB0024A8BDDB00996890 /* Debug */,

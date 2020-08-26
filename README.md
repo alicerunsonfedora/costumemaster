@@ -1,4 +1,4 @@
-# Conscious
+# Costumemaster (Codename "Conscious")
 
 <img src="icon.png" align="right"  style="padding-right: 32px;"/>
 
