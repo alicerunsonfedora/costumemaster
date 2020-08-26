@@ -1,0 +1,9 @@
+excluded:
+  - ConsciousTests
+  - ConsciousUITests
+
+opt_in_rules:
+  - empty_count
+
+disabled_rules:
+  - function_body_length

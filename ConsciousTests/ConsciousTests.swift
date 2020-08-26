@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Conscious
+@testable import Costumemaster
 
 class ConsciousTests: XCTestCase {
 
