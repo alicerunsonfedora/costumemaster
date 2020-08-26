@@ -23,6 +23,9 @@ class GameScene: SKScene {
     /// The base unit size for a given tile in a level.
     var unit: CGSize?
 
+    /// The configuration for this level.
+    var configuration: LevelDataConfiguration?
+
     // MARK: CONSTRUCTION METHODS
 
     /// Create children nodes from a tile map node and add them to the scene's view heirarchy.
@@ -68,11 +71,10 @@ class GameScene: SKScene {
                     case .wall:
                         sprite.physicsBody = getWallPhysicsBody(with: texture)
                     case .player:
-                        var costumes: [PlayerCostumeType] = [.default]
-                        if let costumeEntry = self.userData?["availableCostumes"] {
-                            costumes = Player.getCostumeSet(id: costumeEntry as? Int ?? 0)
-                        }
-                        self.playerNode = Player(texture: texture, allowCostumes: costumes)
+                        self.playerNode = Player(
+                            texture: texture,
+                            allowCostumes: Player.getCostumeSet(id: self.configuration?.costumeID ?? 0)
+                        )
                         self.playerNode?.position = sprite.position
                         self.playerNode?.zPosition = 1
                         self.playerNode?.isHidden = false
@@ -92,8 +94,23 @@ class GameScene: SKScene {
         tilemap.tileSet = SKTileSet(tileGroups: [])
         tilemap.removeFromParent()
     }
-
+    
+    // MARK: SCENE LOADING
+    
     override func sceneDidLoad() {
+
+        // Instantiate the level configuration.
+        guard let userData = self.userData else {
+            sendAlert(
+                "Check that the level file contains data in the User Data.",
+                withTitle: "User Data Missing",
+                level: .critical
+            ) { _ in
+                NSApplication.shared.terminate(nil)
+            }
+            return
+        }
+        self.configuration = LevelDataConfiguration(from: userData)
 
         // Get the camera for this scene.
         guard let pCam = childNode(withName: "Camera") as? SKCameraNode else {

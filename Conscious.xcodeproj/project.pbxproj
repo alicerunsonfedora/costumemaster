@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B424F45DB8000300B7 /* Tileset.sks */; };
 		BF2514B724F45E01000300B7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B624F45E01000300B7 /* GameScene.sks */; };
+		BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */; };
 		BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69F2C224F4B11200BBF518 /* Alerts.swift */; };
 		BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAD624A8BDD400996890 /* AppDelegate.swift */; };
 		BF6FBADB24A8BDD400996890 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBADA24A8BDD400996890 /* Actions.sks */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		BF2514B424F45DB8000300B7 /* Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tileset.sks; sourceTree = "<group>"; };
 		BF2514B624F45E01000300B7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDataConfiguration.swift; sourceTree = "<group>"; };
 		BF69F2C224F4B11200BBF518 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		BF6FBAD324A8BDD400996890 /* Conscious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conscious.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6FBAD624A8BDD400996890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF3A0B7024F6B71200575F72 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
 		BF69F2C124F4B10100BBF518 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 		BF6FBAD524A8BDD400996890 /* Conscious */ = {
 			isa = PBXGroup;
 			children = (
+				BF3A0B7024F6B71200575F72 /* Structs */,
 				BFD8795024F5A2E600552EDD /* Texture Atlases */,
 				BF69F2C124F4B10100BBF518 /* Utilities */,
 				BFC78F3724F486DC004E85A9 /* Enums */,
@@ -462,6 +473,7 @@
 				BF6FBADD24A8BDD400996890 /* GameScene.swift in Sources */,
 				BFC78F3D24F48731004E85A9 /* Player.swift in Sources */,
 				BFD8796024F5B61D00552EDD /* GameTileType.swift in Sources */,
+				BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */,
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
 				BFD8795E24F5B60900552EDD /* GameSetup.swift in Sources */,
