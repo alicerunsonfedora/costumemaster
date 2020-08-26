@@ -42,6 +42,11 @@ class Player: SKSpriteNode {
         return animated(fromAtlas: SKTextureAtlas(named: "Player_Backward_\(self.costume.rawValue)"))
     }
 
+    /// The walk cycle animation when moving north.
+    private var sidewardWalkCycle: [SKTexture] {
+        return animated(fromAtlas: SKTextureAtlas(named: "Player_Side_\(self.costume.rawValue)"))
+    }
+
     /// Initialize the player.
     /// - Parameter texture: A texture to apply to the sprite.
     /// - Parameter allowCostumes: A list of all of the allowed costumes for a particular level.
@@ -174,11 +179,10 @@ class Player: SKSpriteNode {
 
     /// Stop the player from moving and remove all current animations.
     public func halt() {
-        if self.physicsBody?.velocity != .zero {
-            self.physicsBody?.velocity = .zero
-            self.removeAllActions()
-            self.animating = false
-        }
+        if self.physicsBody?.velocity != .zero { self.physicsBody?.velocity = .zero }
+        self.removeAllActions()
+        self.animating = false
+        if self.xScale < 0 { self.xScale *= -1 }
     }
 
     /// Move the player in a given direction, relative to the size of the world.
@@ -214,8 +218,20 @@ class Player: SKSpriteNode {
             )
         case .east:
             delta.dx += unit.width / 2
+            action = SKAction.animate(
+                with: self.sidewardWalkCycle,
+                timePerFrame: 0.25,
+                resize: false,
+                restore: true
+            )
         case .west:
             delta.dx -= unit.width / 2
+            action = SKAction.animate(
+                with: self.sidewardWalkCycle,
+                timePerFrame: 0.25,
+                resize: false,
+                restore: true
+            )
         }
 
         // Call the move method with the new delta.
@@ -224,6 +240,9 @@ class Player: SKSpriteNode {
         // If we found an animation, play it and set animating to true.
         if action != nil && !self.animating {
             self.run(SKAction.repeatForever(action!))
+            if direction == .west {
+                self.xScale *= -1
+            }
             self.animating = true
         }
 

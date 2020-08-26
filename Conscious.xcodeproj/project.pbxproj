@@ -31,6 +31,10 @@
 		BFD8796324F5C63C00552EDD /* Player_Backward_USB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8796224F5C63C00552EDD /* Player_Backward_USB.atlas */; };
 		BFD8796524F5C68700552EDD /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8796424F5C68700552EDD /* Animations.swift */; };
 		BFD8796F24F5CA4000552EDD /* Player_Backward_Sorceress.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8796E24F5CA4000552EDD /* Player_Backward_Sorceress.atlas */; };
+		BFD8797124F5D8BB00552EDD /* Player_Side_Default.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8797024F5D8BB00552EDD /* Player_Side_Default.atlas */; };
+		BFD8797524F5DE3E00552EDD /* Player_Side_Sorceress.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8797224F5DE3E00552EDD /* Player_Side_Sorceress.atlas */; };
+		BFD8797624F5DE3E00552EDD /* Player_Side_USB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8797324F5DE3E00552EDD /* Player_Side_USB.atlas */; };
+		BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8797424F5DE3E00552EDD /* Player_Side_Bird.atlas */; };
 		BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */; };
 		BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */; };
 /* End PBXBuildFile section */
@@ -88,6 +92,10 @@
 		BFD8796224F5C63C00552EDD /* Player_Backward_USB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Backward_USB.atlas; sourceTree = "<group>"; };
 		BFD8796424F5C68700552EDD /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		BFD8796E24F5CA4000552EDD /* Player_Backward_Sorceress.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Backward_Sorceress.atlas; sourceTree = "<group>"; };
+		BFD8797024F5D8BB00552EDD /* Player_Side_Default.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Side_Default.atlas; sourceTree = "<group>"; };
+		BFD8797224F5DE3E00552EDD /* Player_Side_Sorceress.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Side_Sorceress.atlas; sourceTree = "<group>"; };
+		BFD8797324F5DE3E00552EDD /* Player_Side_USB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Side_USB.atlas; sourceTree = "<group>"; };
+		BFD8797424F5DE3E00552EDD /* Player_Side_Bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Side_Bird.atlas; sourceTree = "<group>"; };
 		BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMoveDirection.swift; sourceTree = "<group>"; };
 		BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Change.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +240,10 @@
 		BFD8795024F5A2E600552EDD /* Texture Atlases */ = {
 			isa = PBXGroup;
 			children = (
+				BFD8797424F5DE3E00552EDD /* Player_Side_Bird.atlas */,
+				BFD8797224F5DE3E00552EDD /* Player_Side_Sorceress.atlas */,
+				BFD8797324F5DE3E00552EDD /* Player_Side_USB.atlas */,
+				BFD8797024F5D8BB00552EDD /* Player_Side_Default.atlas */,
 				BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */,
 				BFD8795924F5AE7F00552EDD /* Player_Backward_Bird.atlas */,
 				BFD8795A24F5AE7F00552EDD /* Player_Backward_Default.atlas */,
@@ -362,11 +374,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */,
+				BFD8797124F5D8BB00552EDD /* Player_Side_Default.atlas in Resources */,
 				BFD8795724F5A2FF00552EDD /* Player_Forward_Default.atlas in Resources */,
 				BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */,
 				BFD8796F24F5CA4000552EDD /* Player_Backward_Sorceress.atlas in Resources */,
+				BFD8797624F5DE3E00552EDD /* Player_Side_USB.atlas in Resources */,
+				BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */,
 				BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */,
 				BFD8795B24F5AE7F00552EDD /* Player_Backward_Bird.atlas in Resources */,
+				BFD8797524F5DE3E00552EDD /* Player_Side_Sorceress.atlas in Resources */,
 				BF2514B724F45E01000300B7 /* GameScene.sks in Resources */,
 				BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */,
 				BF6FBAE124A8BDDB00996890 /* Assets.xcassets in Resources */,
