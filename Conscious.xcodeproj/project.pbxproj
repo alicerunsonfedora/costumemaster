@@ -87,7 +87,7 @@
 		BF3A0B8D24F733FB00575F72 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		BF3A0B8F24F7355200575F72 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		BF69F2C224F4B11200BBF518 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
-		BF6FBAD324A8BDD400996890 /* Costumemaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Costumemaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF6FBAD324A8BDD400996890 /* The Costumemaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Costumemaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6FBAD624A8BDD400996890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6FBADA24A8BDD400996890 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		BF6FBADC24A8BDD400996890 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -217,6 +217,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		BF3A0B9124F743CD00575F72 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BF6FBADC24A8BDD400996890 /* GameScene.swift */,
+				BF3A0B8F24F7355200575F72 /* MainMenu.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		BF69F2C124F4B10100BBF518 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,7 +252,7 @@
 		BF6FBAD424A8BDD400996890 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF6FBAD324A8BDD400996890 /* Costumemaster.app */,
+				BF6FBAD324A8BDD400996890 /* The Costumemaster.app */,
 				BF6FBAEB24A8BDDB00996890 /* ConsciousTests.xctest */,
 				BF6FBAF624A8BDDB00996890 /* ConsciousUITests.xctest */,
 			);
@@ -296,10 +305,9 @@
 		BF7DFDCD24F41E48008D09AA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				BFC78F3B24F48726004E85A9 /* Game Logic */,
 				BFC78F3A24F48715004E85A9 /* App */,
-				BF6FBADC24A8BDD400996890 /* GameScene.swift */,
-				BF3A0B8F24F7355200575F72 /* MainMenu.swift */,
+				BFC78F3B24F48726004E85A9 /* Game Logic */,
+				BF3A0B9124F743CD00575F72 /* Scenes */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -385,7 +393,7 @@
 			);
 			name = Costumemaster;
 			productName = Conscious;
-			productReference = BF6FBAD324A8BDD400996890 /* Costumemaster.app */;
+			productReference = BF6FBAD324A8BDD400996890 /* The Costumemaster.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BF6FBAEA24A8BDDB00996890 /* ConsciousTests */ = {
@@ -754,7 +762,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.conscious;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "The $(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -776,7 +784,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.conscious;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "The $(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

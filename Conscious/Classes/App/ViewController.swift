@@ -9,9 +9,18 @@ import Cocoa
 import SpriteKit
 import GameplayKit
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSWindowDelegate {
 
     @IBOutlet var skView: SKView!
+
+    override func viewDidAppear() {
+        self.view.window?.delegate = self
+    }
+
+    func windowShouldClose(_ sender: NSWindow) -> Bool {
+        NSApplication.shared.terminate(self)
+        return true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

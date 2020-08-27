@@ -26,10 +26,12 @@ class MainMenuScene: SKScene {
     /// The lable node for the "Quit Game" button.
     var quitButton: SKLabelNode?
 
+    private var setCharacterAttributes: Bool = false
+
     override func sceneDidLoad() {
 
         // Reset the scale mode to fit accordingly.
-        self.scaleMode = .resizeFill
+        self.scaleMode = .aspectFill
 
         // Instantiate the appropriate label nodes and add their fonts, respectively.
         if let label = self.childNode(withName: "smallLabel") as? SKLabelNode {
@@ -75,8 +77,17 @@ class MainMenuScene: SKScene {
         }
     }
 
+    override func rightMouseDown(with event: NSEvent) {
+        // Grab where the player clicked.
+        let tappedLocation = event.location(in: self)
+
+        if self.atPoint(tappedLocation) == self.character {
+            self.getCharacterAttributes()
+        }
+    }
+
     /// Start the game by presenting the first level scene.
-    func startAction() {
+    private func startAction() {
         self.startButton?.fontColor = NSColor.init(named: "AccentColor")
         if let firstScene = SKScene(fileNamed: "GameScene") {
             self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
@@ -84,9 +95,18 @@ class MainMenuScene: SKScene {
     }
 
     /// Close the application.
-    func quitAction() {
+    private func quitAction() {
         self.startButton?.fontColor = NSColor.init(named: "AccentColor")
         NSApplication.shared.terminate(nil)
+    }
+
+    /// Reset the character attributes.
+    private func getCharacterAttributes() {
+        self.character?.texture = SKTexture(
+            imageNamed: self.setCharacterAttributes ? "Character_Unmodeled" : "Character"
+        )
+        self.character?.texture?.filteringMode = .nearest
+        self.setCharacterAttributes.toggle()
     }
 
 }
