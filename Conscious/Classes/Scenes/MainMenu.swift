@@ -23,6 +23,9 @@ class MainMenuScene: SKScene {
     /// The label node for the "Start Game" button.
     var startButton: SKLabelNode?
 
+    /// The label node for the "Options" button.
+    var optionsButton: SKLabelNode?
+
     /// The lable node for the "Quit Game" button.
     var quitButton: SKLabelNode?
 
@@ -49,6 +52,11 @@ class MainMenuScene: SKScene {
             self.startButton?.fontName = "Cabin Regular"
         }
 
+        if let options = self.childNode(withName: "showOptions") as? SKLabelNode {
+            self.optionsButton = options
+            self.optionsButton?.fontName = "Cabin Regular"
+        }
+
         if let quit = self.childNode(withName: "quitGame") as? SKLabelNode {
             self.quitButton = quit
             self.quitButton?.fontName = "Cabin Regular"
@@ -66,14 +74,16 @@ class MainMenuScene: SKScene {
         // Grab where the player clicked.
         let tappedLocation = event.location(in: self)
 
-        // If the player clicked "Start Game", start the game.
-        if self.atPoint(tappedLocation) == self.startButton {
+        // Hook up the button's location tap to the respective action and run it.
+        switch self.atPoint(tappedLocation) {
+        case self.startButton:
             self.startAction()
-        }
-
-        // If the player clicked "Quit Game", close the application.
-        if self.atPoint(tappedLocation) == self.quitButton {
-            self.quitAction()
+        case self.optionsButton:
+            self.optionsAction()
+        case self.quitButton:
+            quitAction()
+        default:
+            break
         }
     }
 
@@ -91,6 +101,13 @@ class MainMenuScene: SKScene {
         self.startButton?.fontColor = NSColor.init(named: "AccentColor")
         if let firstScene = SKScene(fileNamed: "GameScene") {
             self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
+        }
+    }
+
+    /// Show the app's preferences pane.
+    private func optionsAction() {
+        if let delegate = NSApplication.shared.delegate as? AppDelegate {
+            delegate.instantiatePreferencesWindow(self)
         }
     }
 

@@ -13,6 +13,8 @@ class ViewController: NSViewController, NSWindowDelegate {
 
     @IBOutlet var skView: SKView!
 
+    private var settings: Preferences = Preferences()
+
     override func viewDidAppear() {
         self.view.window?.delegate = self
     }
@@ -25,6 +27,8 @@ class ViewController: NSViewController, NSWindowDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.settings = Preferences()
+
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
         if let scene = GKScene(fileNamed: "MainMenu") {
@@ -34,11 +38,10 @@ class ViewController: NSViewController, NSWindowDelegate {
                 // Present the scene
                 if let view = self.skView {
                     view.presentScene(sceneNode)
-
                     view.ignoresSiblingOrder = true
-
-                    view.showsFPS = true
-                    view.showsNodeCount = true
+                    view.showsFPS = settings.showFramesPerSecond
+                    view.showsNodeCount = settings.showNodeCount
+                    view.showsPhysics = settings.showPhysicsBodies
                     view.shouldCullNonVisibleNodes = true
                 }
             }

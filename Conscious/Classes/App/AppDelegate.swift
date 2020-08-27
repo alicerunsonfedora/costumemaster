@@ -9,9 +9,7 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-    /// Show the preferences window for this application.
-    func instantiatePreferencesWindow() {
+    @IBAction func instantiatePreferencesWindow(_ sender: Any) {
         let prefs = NSStoryboard.init(name: NSStoryboard.Name("Preferences"), bundle: nil)
         guard let controller: NSWindowController = prefs.instantiateController(
                 withIdentifier: "mainWindowController"
