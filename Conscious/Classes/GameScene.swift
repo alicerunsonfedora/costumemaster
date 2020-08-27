@@ -121,6 +121,9 @@ class GameScene: SKScene {
 
     override func sceneDidLoad() {
 
+        // Set the correct scaling mode.
+        self.scaleMode = .resizeFill
+
         // Instantiate the level configuration.
         guard let userData = self.userData else {
             sendAlert(

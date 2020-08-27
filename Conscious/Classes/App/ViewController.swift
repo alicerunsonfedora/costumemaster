@@ -18,15 +18,10 @@ class ViewController: NSViewController {
 
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
-        if let scene = GKScene(fileNamed: "GameScene") {
+        if let scene = GKScene(fileNamed: "MainMenu") {
 
-            // Get the SKScene from the loaded GKScene
             // swiftlint:disable:next force_cast
-            if let sceneNode = scene.rootNode as! GameScene? {
-
-                // Set the scale mode to scale to fit the window
-                sceneNode.scaleMode = .resizeFill
-
+            if let sceneNode = scene.rootNode as! MainMenuScene? {
                 // Present the scene
                 if let view = self.skView {
                     view.presentScene(sceneNode)

@@ -18,6 +18,10 @@
 		BF3A0B8124F703F400575F72 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8024F703F400575F72 /* MainMenu.sks */; };
 		BF3A0B8424F7046900575F72 /* LevelExitDoor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8324F7046900575F72 /* LevelExitDoor.swift */; };
 		BF3A0B8624F70B8900575F72 /* GameSceneUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8524F70B8900575F72 /* GameSceneUtils.swift */; };
+		BF3A0B8A24F733C400575F72 /* Cabin-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8924F733C400575F72 /* Cabin-Regular.ttf */; };
+		BF3A0B8C24F733F300575F72 /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8B24F733EE00575F72 /* DancingScript-VariableFont_wght.ttf */; };
+		BF3A0B8E24F733FB00575F72 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8D24F733FB00575F72 /* README.txt */; };
+		BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8F24F7355200575F72 /* MainMenu.swift */; };
 		BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69F2C224F4B11200BBF518 /* Alerts.swift */; };
 		BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAD624A8BDD400996890 /* AppDelegate.swift */; };
 		BF6FBADB24A8BDD400996890 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBADA24A8BDD400996890 /* Actions.sks */; };
@@ -78,6 +82,10 @@
 		BF3A0B8024F703F400575F72 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
 		BF3A0B8324F7046900575F72 /* LevelExitDoor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExitDoor.swift; sourceTree = "<group>"; };
 		BF3A0B8524F70B8900575F72 /* GameSceneUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneUtils.swift; sourceTree = "<group>"; };
+		BF3A0B8924F733C400575F72 /* Cabin-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Regular.ttf"; sourceTree = "<group>"; };
+		BF3A0B8B24F733EE00575F72 /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		BF3A0B8D24F733FB00575F72 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		BF3A0B8F24F7355200575F72 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		BF69F2C224F4B11200BBF518 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		BF6FBAD324A8BDD400996890 /* Costumemaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Costumemaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6FBAD624A8BDD400996890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +195,28 @@
 			path = Environment;
 			sourceTree = "<group>";
 		};
+		BF3A0B8724F7339900575F72 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BF6FBAE024A8BDDB00996890 /* Assets.xcassets */,
+				BF3A0B8824F733AE00575F72 /* Fonts */,
+				BF3A0B7324F6C41E00575F72 /* SFX */,
+				BFD8795024F5A2E600552EDD /* Texture Atlases */,
+				BF2514B424F45DB8000300B7 /* Tileset.sks */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BF3A0B8824F733AE00575F72 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BF3A0B8924F733C400575F72 /* Cabin-Regular.ttf */,
+				BF3A0B8B24F733EE00575F72 /* DancingScript-VariableFont_wght.ttf */,
+				BF3A0B8D24F733FB00575F72 /* README.txt */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		BF69F2C124F4B10100BBF518 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,16 +253,13 @@
 		BF6FBAD524A8BDD400996890 /* Conscious */ = {
 			isa = PBXGroup;
 			children = (
-				BF6FBAE024A8BDDB00996890 /* Assets.xcassets */,
+				BF3A0B8724F7339900575F72 /* Assets */,
 				BF7DFDCD24F41E48008D09AA /* Classes */,
 				BFC78F3724F486DC004E85A9 /* Enums */,
 				BF3A0B7624F6C44C00575F72 /* Metadata */,
 				BF3A0B7D24F6D4E500575F72 /* Protocols */,
 				BF7DFDCC24F41E3F008D09AA /* Scenes */,
-				BF3A0B7324F6C41E00575F72 /* SFX */,
 				BF3A0B7024F6B71200575F72 /* Structs */,
-				BFD8795024F5A2E600552EDD /* Texture Atlases */,
-				BF2514B424F45DB8000300B7 /* Tileset.sks */,
 				BF69F2C124F4B10100BBF518 /* Utilities */,
 			);
 			path = Conscious;
@@ -272,6 +299,7 @@
 				BFC78F3B24F48726004E85A9 /* Game Logic */,
 				BFC78F3A24F48715004E85A9 /* App */,
 				BF6FBADC24A8BDD400996890 /* GameScene.swift */,
+				BF3A0B8F24F7355200575F72 /* MainMenu.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -449,8 +477,11 @@
 				BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */,
 				BFD8796F24F5CA4000552EDD /* Player_Backward_Sorceress.atlas in Resources */,
 				BFD8797624F5DE3E00552EDD /* Player_Side_USB.atlas in Resources */,
+				BF3A0B8E24F733FB00575F72 /* README.txt in Resources */,
 				BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */,
 				BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */,
+				BF3A0B8A24F733C400575F72 /* Cabin-Regular.ttf in Resources */,
+				BF3A0B8C24F733F300575F72 /* DancingScript-VariableFont_wght.ttf in Resources */,
 				BF3A0B7524F6C42500575F72 /* changeCostume.wav in Resources */,
 				BFD8795B24F5AE7F00552EDD /* Player_Backward_Bird.atlas in Resources */,
 				BFD8797524F5DE3E00552EDD /* Player_Side_Sorceress.atlas in Resources */,
@@ -533,6 +564,7 @@
 				BFC78F3D24F48731004E85A9 /* Player.swift in Sources */,
 				BFD8796024F5B61D00552EDD /* GameTileType.swift in Sources */,
 				BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */,
+				BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */,
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
 				BF3A0B7C24F6CB9900575F72 /* GameSignalMethod.swift in Sources */,
