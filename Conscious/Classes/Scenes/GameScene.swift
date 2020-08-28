@@ -34,6 +34,8 @@ class GameScene: SKScene {
 
     var exitNode: LevelExitDoor?
 
+    var walls: [SKSpriteNode]?
+
     // MARK: CONSTRUCTION METHODS
 
     /// Create children nodes from a tile map node and add them to the scene's view heirarchy.
@@ -81,6 +83,7 @@ class GameScene: SKScene {
                     switch tileType {
                     case .wall:
                         sprite.physicsBody = getWallPhysicsBody(with: texture)
+                        self.walls?.append(sprite)
                     case .player:
                         self.playerNode = Player(
                             texture: texture,
@@ -154,6 +157,9 @@ class GameScene: SKScene {
         self.switches = []
         self.receivers = []
 
+        // Set up the list of walls.
+        self.walls = []
+
         self.setupTilemap()
 
         // Check that a player was generated.
@@ -174,6 +180,17 @@ class GameScene: SKScene {
     }
 
     // MARK: EVENT TRIGGERS
+
+    /// Check the wall states and update their physics bodies.
+    /// - Parameter costume: The costume to run the checks against.
+    func checkWallStates(with costume: PlayerCostumeType?) {
+        self.walls?.forEach { (wall: SKSpriteNode) in
+            wall.physicsBody = costume == .bird
+                                ? nil
+                                : getWallPhysicsBody(with: wall.texture!)
+        }
+    }
+
     override func update(_ currentTime: TimeInterval) {
         // Update the camera's position.
         if self.camera?.position != self.playerNode?.position {
@@ -182,7 +199,6 @@ class GameScene: SKScene {
     }
 
     override func didFinishUpdate() {
-
         // Run the receiving function on the exit door.
         self.exitNode?.receive(with: self.playerNode, event: nil) { _ in
             if let scene = SKScene(fileNamed: self.configuration?.linksToNextScene ?? "MainMenu") {
@@ -206,10 +222,11 @@ class GameScene: SKScene {
 
         // Check for the costume switching key and switch to the next available costume.
         case kVK_ANSI_F:
-            _ = self.playerNode?.nextCostume()
+            let costume = self.playerNode?.nextCostume()
+            self.checkWallStates(with: costume)
         case kVK_ANSI_G:
-            _ = self.playerNode?.previousCostume()
-
+            let costume = self.playerNode?.previousCostume()
+            self.checkWallStates(with: costume)
         // Catch-all case.
         default:
             break
