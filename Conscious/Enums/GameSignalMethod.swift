@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// An enumeration that represents the different requirements for an output to activate.
 public enum GameSignalMethod {
     case anyInput
     case allInputs
