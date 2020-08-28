@@ -27,7 +27,7 @@ xcuserdata/
 *.ipa
 *.dSYM.zip
 *.dSYM
-
+**.xcodeproj/xcshareddata/
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
