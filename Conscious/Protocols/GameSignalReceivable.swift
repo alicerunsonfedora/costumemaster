@@ -33,11 +33,16 @@ protocol GameSignalReceivable {
     /// Whether the receiver is active.
     var active: Bool { get }
 
+    /// The position of the output in context with the level world.
+    /// - Note: Use `self.position` to determine the position of the _actual_ note.
+    var levelPosition: CGPoint { get set }
+
     // MARK: METHODS
     /// Initialize a game receiver.
     /// - Parameter inputs: The inputs that the receiver will listen to for signal updates.
     /// - Parameter reverseSignal: Whether to reverse the signal.
     /// - Parameter baseTexture: The name of the base texture to use when creating texture states.
-    init(fromInput inputs: [GameSignalSender], reverseSignal: Bool, baseTexture: String)
+    /// - Parameter location: The location of the output in context with the level.
+    init(fromInput inputs: [GameSignalSender], reverseSignal: Bool, baseTexture: String, at location: CGPoint)
 
 }

@@ -14,10 +14,10 @@ import Foundation
 struct SwitchRequisite {
 
     /// The location in the map that corresponds to the output.
-    var outputLocation: (Int, Int)
+    var outputLocation: CGPoint
 
     /// A list of locations that correspond to the inputs.
-    var requiredInputs: [(Int, Int)]
+    var requiredInputs: [CGPoint]
 
     /// The requisite for the output to be activated.
     var requisite: GameSignalMethod?

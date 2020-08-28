@@ -106,6 +106,18 @@ class MainMenuScene: SKScene {
         }
     }
 
+    override func didFinishUpdate() {
+        // Update character preferences based on UserDefaults.
+        if AppDelegate.preferences.canShowUnmodeledOnMenu {
+            self.character?.texture = SKTexture(
+                imageNamed: AppDelegate.preferences.showUnmodeledOnMenu
+                    ? "Character_Unmodeled"
+                    : "Character"
+            )
+            self.character?.texture?.filteringMode = .nearest
+        }
+    }
+
     /// Start the game by presenting the first level scene.
     private func startAction() {
         self.startButton?.fontColor = NSColor.init(named: "AccentColor")

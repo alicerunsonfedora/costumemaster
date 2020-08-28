@@ -32,9 +32,14 @@ class GameScene: SKScene {
     /// The level's signal responders.
     var receivers: [GameSignalReceivable]?
 
+    /// The exit door for this level.
     var exitNode: LevelExitDoor?
 
+    /// The walls that encapsulate the player in this level.
     var walls: [SKSpriteNode]?
+
+    /// The list of mappings for each output and the required inputs.
+    var requisites: [SwitchRequisite] = []
 
     // MARK: CONSTRUCTION METHODS
 
@@ -105,9 +110,10 @@ class GameScene: SKScene {
                         sprite.zPosition = -999
                     case .exit:
                         let receiver = LevelExitDoor(
-                            fromInput: self.switches ?? [],
+                            fromInput: [],
                             reverseSignal: false,
-                            baseTexture: "exit"
+                            baseTexture: "exit",
+                            at: CGPoint(x: col, y: row)
                         )
                         receiver.activationMethod = .anyInput
                         receiver.position = sprite.position
@@ -127,6 +133,93 @@ class GameScene: SKScene {
         // Delete the tilemap from memory.
         tilemap.tileSet = SKTileSet(tileGroups: [])
         tilemap.removeFromParent()
+    }
+
+    // MARK: SWITCH REQUISITE CONSTRUCTORS
+
+    /// Parse the user data for switch requisites and hook up the inputs and outputs accordingly.
+    private func parseRequisiteData() {
+
+        // Only run this if there's user data for the scene.
+        if let userDataFields = self.userData {
+
+            // Iterate through every key in the user data, looking for "requisite_"
+            for key in userDataFields.keyEnumerator() {
+                if let keyName = key as? String {
+                    if !keyName.starts(with: "requisite_") { continue }
+
+                    // Assume the format of the key is "resuisite_COL_ROW".
+                    var parts = keyName.split(separator: "_")
+                    parts.removeFirst()
+                    if parts.first == nil || parts.last == nil { continue }
+
+                    // Create a tuple of the output location.
+                    let outputLocation = CGPoint(x: Int(parts.first!) ?? -1, y: Int(parts.last!) ?? -1)
+
+                    // If we have an associated value for this, parse it.
+                    if let valueData = userDataFields.value(forKey: keyName) as? String {
+
+                        // Split the value into parts with the format "METHOD;COL,ROW;COL,ROW".
+                        var valueParts = valueData.split(separator: ";")
+                        if valueParts.count < 1 { continue }
+
+                        // Determine the method of activation and create an input list.
+                        let type = SwitchRequisite.getRequisite(from: String(valueParts.removeFirst()))
+                        var inputs: [CGPoint] = []
+
+                        // Parse the inputs, create a tuple, and add it to the input list.
+                        for input in valueParts {
+                            let coordinates = input.split(separator: ",")
+                            if coordinates.count < 2 { continue }
+                            inputs.append(
+                                CGPoint(x: Int(coordinates.first!) ?? -1, y: Int(coordinates.last!) ?? -1)
+                            )
+                        }
+
+                        // Finally, stitch together the requisite and add it to the list.
+                        self.requisites.append(
+                            SwitchRequisite(outputLocation: outputLocation, requiredInputs: inputs, requisite: type)
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    /// Parse the requisites and hook up the appropriate signal senders to their receivers.
+    private func parseRequisites() {
+        for req in self.requisites {
+            if let correspondingOutputs = self.receivers?.filter({rec in rec.levelPosition == req.outputLocation}) {
+                if correspondingOutputs.isEmpty {
+                    continue
+                }
+                if correspondingOutputs.count > 1 {
+                    sendAlert(
+                        "The level configuration has duplicate mappings for the output at \(req.outputLocation)."
+                        + " Ensure that the user data file contains the correct mappings.",
+                        withTitle: "Duplicate mappings found.",
+                        level: .critical
+                    ) { _ in
+                        if let scene = SKScene(fileNamed: "MainMenu") {
+                            self.view?.presentScene(scene)
+                        }
+                    }
+                }
+
+                var output = correspondingOutputs.first
+
+                if let inputs = self.switches?.filter({ (inp: GameSignalSender) in
+                                                        req.requiredInputs.contains(inp.levelPosition) }) {
+                    if inputs.isEmpty {
+                        print("Warn: Inputs for requisite \(req) don't exist.")
+                    }
+                    for input in inputs {
+                        output?.inputs.append(input)
+                        output?.activationMethod = req.requisite ?? .noInput
+                    }
+                }
+            }
+        }
     }
 
     // MARK: SCENE LOADING
@@ -160,7 +253,7 @@ class GameScene: SKScene {
             return
         }
         self.playerCamera = pCam
-        self.playerCamera?.setScale(0.5)
+        self.playerCamera?.setScale(0.75)
 
         // Set up the switches and receivers before parsing the tilemap.
         self.switches = []
@@ -169,7 +262,10 @@ class GameScene: SKScene {
         // Set up the list of walls.
         self.walls = []
 
+        // Create switch requisites, parse the tilemap, then hook tp the signals/receivers according to the requisites.
+        self.parseRequisiteData()
         self.setupTilemap()
+        self.parseRequisites()
 
         // Check that a player was generated.
         if playerNode == nil {

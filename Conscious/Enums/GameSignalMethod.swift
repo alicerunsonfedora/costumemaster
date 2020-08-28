@@ -11,4 +11,5 @@ import Foundation
 public enum GameSignalMethod {
     case anyInput
     case allInputs
+    case noInput
 }

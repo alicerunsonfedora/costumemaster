@@ -22,6 +22,8 @@ public class LevelExitDoor: SKSpriteNode, GameSignalReceivable {
 
     var playerListener: Player?
 
+    var levelPosition: CGPoint
+
     // MARK: COMPUTED PROPERTIES
     var activeTexture: SKTexture {
         return SKTexture(imageNamed: baseTextureName + (self.active ? "_on" : "_off"))
@@ -33,15 +35,23 @@ public class LevelExitDoor: SKSpriteNode, GameSignalReceivable {
             return !inputs.map { (input: GameSignalSender) in input.active }.contains(false) || self.defaultOn
         case .anyInput:
             return inputs.map { (input: GameSignalSender) in input.active }.contains(true) || self.defaultOn
+        case .noInput:
+            return true
         }
     }
 
     // MARK: CONSTRUCTORS
-    required init(fromInput inputs: [GameSignalSender], reverseSignal: Bool, baseTexture: String) {
+    required init(
+        fromInput inputs: [GameSignalSender],
+        reverseSignal: Bool,
+        baseTexture: String,
+        at location: CGPoint
+    ) {
         self.defaultOn = inputs.isEmpty
         self.inputs = inputs
         self.baseTextureName = baseTexture
         self.activationMethod = .allInputs
+        self.levelPosition = location
         if reverseSignal { self.defaultOn.toggle() }
 
         super.init(

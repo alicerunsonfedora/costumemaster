@@ -28,6 +28,10 @@ public class GameSignalSender: SKSpriteNode {
     /// The number of seconds it takes for the input to toggle.
     var cooldown: Double
 
+    /// The position of this input in context with the level.
+    /// - Note: Use `self.position` for position of the _actual_ node.
+    let levelPosition: CGPoint
+
     // MARK: COMPUTED PROPERTIES
     /// The texture for this input, accounting for active states.
     var activeTexture: SKTexture {
@@ -38,10 +42,11 @@ public class GameSignalSender: SKSpriteNode {
     /// Initialize the input.
     /// - Parameter textureName: The name of the texture for this input.
     /// - Parameter inputMethod: The means of which this input will be activated by.
-    public init(textureName: String, by inputMethod: GameSignalInputMethod) {
+    public init(textureName: String, by inputMethod: GameSignalInputMethod, at position: CGPoint) {
         self.baseTexture = textureName
         self.activationMethod = inputMethod
         self.cooldown = 0
+        self.levelPosition = position
         super.init(
             texture: SKTexture(imageNamed: textureName + "_off"),
             color: .clear,
@@ -55,10 +60,16 @@ public class GameSignalSender: SKSpriteNode {
     /// - Parameter textureName: The name of the texture for this input.
     /// - Parameter inputMethod: The means of which this input will be activated by.
     /// - Parameter timer: The number of seconds it takes for this input to toggle states.
-    public init(textureName: String, by inputMethod: GameSignalInputMethod, with timer: Double) {
+    public init(
+        textureName: String,
+        by inputMethod: GameSignalInputMethod,
+        at position: CGPoint,
+        with timer: Double
+    ) {
         self.baseTexture = textureName
         self.cooldown = timer
         self.activationMethod = inputMethod
+        self.levelPosition = position
         super.init(
             texture: SKTexture(imageNamed: textureName + "_off"),
             color: .clear,
@@ -83,7 +94,6 @@ public class GameSignalSender: SKSpriteNode {
     public func activate(with event: NSEvent?, player: Player?) {
         switch activationMethod {
         case .activeByPlayerIntervention:
-            // TODO: Complete this method
             break
         case .activeOnTimer:
             self.run(
