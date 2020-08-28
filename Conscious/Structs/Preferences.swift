@@ -11,6 +11,15 @@ struct Preferences {
 
     private var initCall: Bool = false
 
+    // MARK: GENERAL
+    public var cameraScale: Float {
+        didSet {
+            if !initCall {
+                UserDefaults.standard.setValue(cameraScale, forKey: "cameraScale")
+            }
+        }
+    }
+
     // MARK: SOUND
     public var playChangeSound: Bool {
         didSet {
@@ -61,11 +70,28 @@ struct Preferences {
 
     init() {
         self.initCall = true
-        self.playChangeSound = UserDefaults.standard.bool(forKey: "soundPlayChangeNoise")
-        self.showUnmodeledOnMenu = UserDefaults.standard.bool(forKey: "advShowUnmodeledOnMenu")
-        self.showNodeCount = UserDefaults.standard.bool(forKey: "debugShowNodeCount")
-        self.showFramesPerSecond = UserDefaults.standard.bool(forKey: "debugShowFPS")
-        self.showPhysicsBodies = UserDefaults.standard.bool(forKey: "debugShowPhysics")
+        let prefs = UserDefaults.standard
+        if prefs.value(forKey: "cameraScale") == nil {
+            prefs.setValue(0.75, forKey: "cameraScale")
+        }
+        self.cameraScale = prefs.float(forKey: "cameraScale")
+
+        if prefs.value(forKey: "soundPlayChangeNoise") == nil {
+            prefs.setValue(true, forKey: "soundPlayChangeNoise")
+        }
+        self.playChangeSound = prefs.bool(forKey: "soundPlayChangeNoise")
+
+        for pref in ["advShowUnmodeledOnMenu", "debugShowNodeCount", "debugShowFPS", "debugShowPhysics"] {
+            if prefs.value(forKey: pref) == nil {
+                prefs.setValue(false, forKey: pref)
+            }
+        }
+
+        self.showUnmodeledOnMenu = prefs.bool(forKey: "advShowUnmodeledOnMenu")
+        self.showNodeCount = prefs.bool(forKey: "debugShowNodeCount")
+        self.showFramesPerSecond = prefs.bool(forKey: "debugShowFPS")
+        self.showPhysicsBodies = prefs.bool(forKey: "debugShowPhysics")
+
         self.initCall = false
     }
 }

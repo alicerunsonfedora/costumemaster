@@ -253,7 +253,7 @@ class GameScene: SKScene {
             return
         }
         self.playerCamera = pCam
-        self.playerCamera?.setScale(0.75)
+        self.playerCamera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
 
         // Set up the switches and receivers before parsing the tilemap.
         self.switches = []
@@ -284,6 +284,25 @@ class GameScene: SKScene {
         self.playerCamera!.position = self.playerNode!.position
     }
 
+    // MARK: LIFE CYCLE UPDATES
+
+    override func update(_ currentTime: TimeInterval) {
+        // Update the camera's position.
+        if self.camera?.position != self.playerNode?.position {
+            self.camera?.run(SKAction.move(to: self.playerNode?.position ?? CGPoint(x: 0, y: 0), duration: 1))
+        }
+        self.camera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
+    }
+
+    override func didFinishUpdate() {
+        // Run the receiving function on the exit door.
+        self.exitNode?.receive(with: self.playerNode, event: nil) { _ in
+            if let scene = SKScene(fileNamed: self.configuration?.linksToNextScene ?? "MainMenu") {
+                self.view?.presentScene(scene, transition: SKTransition.fade(with: .black, duration: 2.0))
+            }
+        }
+    }
+
     // MARK: EVENT TRIGGERS
 
     /// Check the wall states and update their physics bodies.
@@ -293,22 +312,6 @@ class GameScene: SKScene {
             wall.physicsBody = costume == .bird
                                 ? nil
                                 : getWallPhysicsBody(with: wall.texture!)
-        }
-    }
-
-    override func update(_ currentTime: TimeInterval) {
-        // Update the camera's position.
-        if self.camera?.position != self.playerNode?.position {
-            self.camera?.run(SKAction.move(to: self.playerNode?.position ?? CGPoint(x: 0, y: 0), duration: 1))
-        }
-    }
-
-    override func didFinishUpdate() {
-        // Run the receiving function on the exit door.
-        self.exitNode?.receive(with: self.playerNode, event: nil) { _ in
-            if let scene = SKScene(fileNamed: self.configuration?.linksToNextScene ?? "MainMenu") {
-                self.view?.presentScene(scene, transition: SKTransition.fade(with: .black, duration: 2.0))
-            }
         }
     }
 
