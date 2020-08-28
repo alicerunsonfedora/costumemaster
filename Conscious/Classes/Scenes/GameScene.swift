@@ -82,7 +82,10 @@ class GameScene: SKScene {
 
                     switch tileType {
                     case .wall:
-                        sprite.physicsBody = getWallPhysicsBody(with: texture)
+                        let wallTexture = defined.name == "wall_edge"
+                            ? SKTexture(imageNamed: "wall_edge_physics_mask")
+                            : texture
+                        sprite.physicsBody = getWallPhysicsBody(with: wallTexture)
                         self.walls?.append(sprite)
                     case .player:
                         self.playerNode = Player(
@@ -94,6 +97,12 @@ class GameScene: SKScene {
                         self.playerNode?.zPosition = 2
                         self.playerNode?.isHidden = false
                         self.addChild(self.playerNode!)
+
+                        sprite.texture = SKTexture(imageNamed: "floor")
+                        sprite.zPosition = -999
+                        self.addChild(sprite)
+                    case .floor:
+                        sprite.zPosition = -999
                     case .exit:
                         let receiver = LevelExitDoor(
                             fromInput: self.switches ?? [],

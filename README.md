@@ -4,8 +4,9 @@
 
 **Applied AI with GameplayKit**
 
-An acclaimed costume designer and software engineer finds herself trapped in an abandoned factory with no clue how she got there.
-Traverse through the factory and escape using a small set of costumes to do different things. Can you make it out of the factory alive?
+An acclaimed costume designer and software engineer wakes up from a blackout to an eerily familiar scene. But, something isn't
+quite... right.... Traverse through a dream-like, constantly changing bedroom and office and get out as quickly as you can. Can you
+make it out and figure out what's going on?
 
 ## Objective
 

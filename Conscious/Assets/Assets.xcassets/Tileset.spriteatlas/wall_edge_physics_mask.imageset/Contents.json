@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "wall_side.png",
+      "filename" : "wall_physics_mask.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
