@@ -7,9 +7,10 @@
 
 import Foundation
 import SpriteKit
+import GameKit
 
 /// The scene class for the main menu.
-class MainMenuScene: SKScene {
+class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
 
     /// The label node for the word "The".
     var labelSmall: SKLabelNode?
@@ -26,13 +27,32 @@ class MainMenuScene: SKScene {
     /// The label node for the "Options" button.
     var optionsButton: SKLabelNode?
 
-    /// The lable node for the "Quit Game" button.
+    /// The label node for the "Quit Game" button.
     var quitButton: SKLabelNode?
+
+    /// The Game Center sprite node for the Game Center dashboard.
+    /// - Note: This should only be used in older versions of macOS. In macOS 11.0, the GKAccessPoint is used instead.
+    var gameCenterButton: SKSpriteNode?
 
     /// The level of interactivity from this scene.
     private var interactiveLevel: Int = 0
 
     private var setCharacterAttributes: Bool = false
+
+    /// Instantiate the Game Center access point.
+    ///
+    /// In macOS 11.0, this will use the native access point and put it in the bottom left. For older versions, a sprite
+    /// node will be used to present a game center view.
+    func setUpGameCenterProperties() {
+        if #available(OSX 11.0, *) {
+            self.gameCenterButton?.isHidden = true
+            GKAccessPoint.shared.location = .bottomLeading
+            GKAccessPoint.shared.showHighlights = true
+            GKAccessPoint.shared.isActive = true
+        } else {
+
+        }
+    }
 
     override func sceneDidLoad() {
 
@@ -76,6 +96,12 @@ class MainMenuScene: SKScene {
             self.character?.texture?.filteringMode = .nearest
         }
 
+        if let gCenter = self.childNode(withName: "gameCenter") as? SKSpriteNode {
+            self.gameCenterButton = gCenter
+        }
+
+        // Display the Game Center access point.
+        self.setUpGameCenterProperties()
     }
 
     override func mouseDown(with event: NSEvent) {
@@ -90,6 +116,8 @@ class MainMenuScene: SKScene {
             self.optionsAction()
         case self.quitButton:
             quitAction()
+        case self.gameCenterButton where self.gameCenterButton?.isHidden != true:
+            self.gameCenterAction()
         default:
             break
         }
@@ -123,6 +151,11 @@ class MainMenuScene: SKScene {
         self.startButton?.fontColor = NSColor.init(named: "AccentColor")
         if let firstScene = SKScene(fileNamed: "GameScene") {
             self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
+
+            // Disable the access point when in an actual level.
+            if #available(OSX 11.0, *) {
+                GKAccessPoint.shared.isActive = false
+            }
         }
     }
 
@@ -148,6 +181,8 @@ class MainMenuScene: SKScene {
         var title = ""
         var message = ""
 
+        print(self.interactiveLevel)
+
         if let menuData = plist(from: "MenuContent") {
             if let data = menuData["Click_\(self.interactiveLevel)"] as? NSDictionary {
                 title = data["Title"] as? String ?? ""
@@ -161,6 +196,36 @@ class MainMenuScene: SKScene {
             AppDelegate.preferences.showUnmodeledOnMenu = true
             self.character?.texture = SKTexture(imageNamed: "Character_Unmodeled")
             self.character?.texture?.filteringMode = .nearest
+
+            let achivement = GKAchievement(identifier: "costumemaster.face_reveal")
+            achivement.percentComplete = 100.0
+            GKAchievement.report([achivement]) { error in
+                if error != nil {
+                    sendAlert(
+                        "\(error?.localizedDescription)",
+                        withTitle: "Couldn't Sync Achievement",
+                        level: .critical
+                    ) { _ in }
+                }
+            }
+        }
+    }
+
+    // MARK: GAME CENTER
+
+    /// Open the Game Center dashboard.
+    /// - Note: This may not works as intended!
+    private func gameCenterAction() {
+        let gameCenterController = GKGameCenterViewController()
+        gameCenterController.gameCenterDelegate = self
+        if let sceneViewController = self.view?.window?.contentViewController {
+            sceneViewController.presentAsSheet(gameCenterController)
+        }
+    }
+
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        if let sceneViewController = self.view?.window?.contentViewController {
+            sceneViewController.dismiss(gameCenterViewController)
         }
     }
 
