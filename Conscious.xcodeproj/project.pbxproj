@@ -53,11 +53,14 @@
 		BFD8797624F5DE3E00552EDD /* Player_Side_USB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8797324F5DE3E00552EDD /* Player_Side_USB.atlas */; };
 		BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8797424F5DE3E00552EDD /* Player_Side_Bird.atlas */; };
 		BFD8797924F5FDA800552EDD /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8797824F5FDA800552EDD /* CGVector.swift */; };
+		BFDBE7AE24F955EE00FD75BF /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDBE7AD24F955EE00FD75BF /* GameKit.framework */; };
 		BFE6475424F8853800230F93 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = BFE6475324F8853800230F93 /* OFL.txt */; };
 		BFE6475624F88B1300230F93 /* SwitchRequisite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE6475524F88B1300230F93 /* SwitchRequisite.swift */; };
 		BFE6475824F8B03500230F93 /* MenuTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFE6475724F8B03500230F93 /* MenuTileset.sks */; };
 		BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */; };
 		BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */; };
+		BFFF892C24F93FF800D405CC /* PropertyLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFF892B24F93FF800D405CC /* PropertyLists.swift */; };
+		BFFF892D24F943E400D405CC /* MenuContent.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFF892A24F93F6A00D405CC /* MenuContent.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,11 +138,14 @@
 		BFD8797324F5DE3E00552EDD /* Player_Side_USB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Side_USB.atlas; sourceTree = "<group>"; };
 		BFD8797424F5DE3E00552EDD /* Player_Side_Bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Side_Bird.atlas; sourceTree = "<group>"; };
 		BFD8797824F5FDA800552EDD /* CGVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGVector.swift; sourceTree = "<group>"; };
+		BFDBE7AD24F955EE00FD75BF /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		BFE6475324F8853800230F93 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		BFE6475524F88B1300230F93 /* SwitchRequisite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchRequisite.swift; sourceTree = "<group>"; };
 		BFE6475724F8B03500230F93 /* MenuTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuTileset.sks; sourceTree = "<group>"; };
 		BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMoveDirection.swift; sourceTree = "<group>"; };
 		BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Change.atlas; sourceTree = "<group>"; };
+		BFFF892A24F93F6A00D405CC /* MenuContent.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MenuContent.plist; sourceTree = "<group>"; };
+		BFFF892B24F93FF800D405CC /* PropertyLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyLists.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFDBE7AE24F955EE00FD75BF /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +197,7 @@
 			children = (
 				BF6FBAE624A8BDDB00996890 /* Conscious.entitlements */,
 				BF6FBAE524A8BDDB00996890 /* Info.plist */,
+				BFFF892A24F93F6A00D405CC /* MenuContent.plist */,
 			);
 			path = Metadata;
 			sourceTree = "<group>";
@@ -250,6 +258,7 @@
 				BFD8796424F5C68700552EDD /* Animations.swift */,
 				BFD8797824F5FDA800552EDD /* CGVector.swift */,
 				BF3A0B8524F70B8900575F72 /* GameSceneUtils.swift */,
+				BFFF892B24F93FF800D405CC /* PropertyLists.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -262,6 +271,7 @@
 				BF6FBAF924A8BDDB00996890 /* ConsciousUITests */,
 				BFD8796124F5BA8A00552EDD /* Metadata */,
 				BF6FBAD424A8BDD400996890 /* Products */,
+				BFDBE7AC24F955EE00FD75BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -411,6 +421,14 @@
 			name = Metadata;
 			sourceTree = "<group>";
 		};
+		BFDBE7AC24F955EE00FD75BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFDBE7AD24F955EE00FD75BF /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -516,6 +534,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFF892D24F943E400D405CC /* MenuContent.plist in Resources */,
 				BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */,
 				BFD8797124F5D8BB00552EDD /* Player_Side_Default.atlas in Resources */,
 				BFE6475824F8B03500230F93 /* MenuTileset.sks in Resources */,
@@ -628,6 +647,7 @@
 				BF3A0B7F24F6EB4900575F72 /* GameSignalInputMethod.swift in Sources */,
 				BF63E65B24F84BAC00429247 /* GeneralPrefsViewController.swift in Sources */,
 				BF63E65924F84B2000429247 /* PreferencesViewController.swift in Sources */,
+				BFFF892C24F93FF800D405CC /* PropertyLists.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

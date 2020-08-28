@@ -29,6 +29,9 @@ class MainMenuScene: SKScene {
     /// The lable node for the "Quit Game" button.
     var quitButton: SKLabelNode?
 
+    /// The level of interactivity from this scene.
+    private var interactiveLevel: Int = 0
+
     private var setCharacterAttributes: Bool = false
 
     override func sceneDidLoad() {
@@ -65,6 +68,11 @@ class MainMenuScene: SKScene {
         // Get the character sprite and change the interpolation method to nearest neighbor.
         if let char = self.childNode(withName: "character") as? SKSpriteNode {
             self.character = char
+
+            if AppDelegate.preferences.canShowUnmodeledOnMenu && AppDelegate.preferences.showUnmodeledOnMenu {
+                self.character?.texture = SKTexture(imageNamed: "Character_Unmodeled")
+            }
+
             self.character?.texture?.filteringMode = .nearest
         }
 
@@ -92,7 +100,9 @@ class MainMenuScene: SKScene {
         let tappedLocation = event.location(in: self)
 
         if self.atPoint(tappedLocation) == self.character {
-            self.getCharacterAttributes()
+            if !AppDelegate.preferences.canShowUnmodeledOnMenu {
+                self.getCharacterAttributes()
+            }
         }
     }
 
@@ -117,13 +127,29 @@ class MainMenuScene: SKScene {
         NSApplication.shared.terminate(nil)
     }
 
-    /// Reset the character attributes.
+    /// Get the appropriate attributes for the character and update the scene.
+    ///
+    /// This is primarily inspired by Chumbus from Apollo for iOS where a player has to keep interacting with the
+    /// character on the main menu.
     private func getCharacterAttributes() {
-        self.character?.texture = SKTexture(
-            imageNamed: self.setCharacterAttributes ? "Character_Unmodeled" : "Character"
-        )
-        self.character?.texture?.filteringMode = .nearest
-        self.setCharacterAttributes.toggle()
+        self.interactiveLevel += 1
+        var title = ""
+        var message = ""
+
+        if let menuData = plist(from: "MenuContent") {
+            if let data = menuData["Click_\(self.interactiveLevel)"] as? NSDictionary {
+                title = data["Title"] as? String ?? ""
+                message = data["Message"] as? String ?? ""
+                sendAlert(message, withTitle: title, level: .informational) { _ in }
+            }
+        }
+
+        if self.interactiveLevel == 10000 {
+            UserDefaults.standard.setValue(true, forKey: "advShowUnmodeledOnMenuAbility")
+            AppDelegate.preferences.showUnmodeledOnMenu = true
+            self.character?.texture = SKTexture(imageNamed: "Character_Unmodeled")
+            self.character?.texture?.filteringMode = .nearest
+        }
     }
 
 }

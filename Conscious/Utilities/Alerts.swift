@@ -20,9 +20,13 @@ func sendAlert(_ message: String,
                handler: @escaping ((NSApplication.ModalResponse) -> Void)) {
     let alert = NSAlert()
     alert.alertStyle = level
-    alert.messageText = withTitle ?? Bundle.main.className
+    alert.messageText = withTitle ?? "The Costumemaster"
     alert.informativeText = message
     alert.addButton(withTitle: "OK")
-    let response = alert.runModal()
-    handler(response)
+
+    if let window = NSApplication.shared.mainWindow {
+        alert.beginSheetModal(for: window, completionHandler: handler)
+    } else {
+        handler(alert.runModal())
+    }
 }

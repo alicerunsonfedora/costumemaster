@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Click_1</key>
+	<dict>
+		<key>Message</key>
+		<string>Why did you poke me?</string>
+		<key>Title</key>
+		<string>Ow!</string>
+	</dict>
+	<key>Click_2</key>
+	<dict>
+		<key>Message</key>
+		<string>Really? Again?</string>
+		<key>Title</key>
+		<string>Ow!</string>
+	</dict>
+	<key>Click_5</key>
+	<dict>
+		<key>Message</key>
+		<string>Shouldn&apos;t you be playing the game now?</string>
+		<key>Title</key>
+		<string>OK, come on...</string>
+	</dict>
+	<key>Click_10</key>
+	<dict>
+		<key>Message</key>
+		<string>You&apos;re pretty persistent with this...</string>
+		<key>Title</key>
+		<string>Are you OK?</string>
+	</dict>
+	<key>Click_25</key>
+	<dict>
+		<key>Message</key>
+		<string>I&apos;m getting concerned here.</string>
+		<key>Title</key>
+		<string>Can you not?</string>
+	</dict>
+	<key>Click_50</key>
+	<dict>
+		<key>Message</key>
+		<string>Come on. I&apos;m talking to you here...</string>
+		<key>Title</key>
+		<string>This is what I can do without.</string>
+	</dict>
+	<key>Click_150</key>
+	<dict>
+		<key>Message</key>
+		<string>There&apos;s a game waiting to be played here aaaand you&apos;re wasting time poking me. I don&apos;t know how to feel about this.</string>
+		<key>Title</key>
+		<string>Seriously?</string>
+	</dict>
+	<key>Click_300</key>
+	<dict>
+		<key>Message</key>
+		<string>OK, you&apos;ve been at this for a minute... why?</string>
+		<key>Title</key>
+		<string>This is annoying.</string>
+	</dict>
+	<key>Click_500</key>
+	<dict>
+		<key>Message</key>
+		<string>Please, just stop it already! There&apos;s nothing to see here.</string>
+		<key>Title</key>
+		<string>I&apos;M NOT CHUMBUS</string>
+	</dict>
+	<key>Click_1000</key>
+	<dict>
+		<key>Message</key>
+		<string>... you&apos;re still going at this? You&apos;re not just gonna stop, aren&apos;t you?</string>
+		<key>Title</key>
+		<string>SERIOUSLY?!</string>
+	</dict>
+	<key>Click_2500</key>
+	<dict>
+		<key>Message</key>
+		<string>What do you want from me?</string>
+		<key>Title</key>
+		<string>Stop poking at me.</string>
+	</dict>
+	<key>Click_5000</key>
+	<dict>
+		<key>Message</key>
+		<string>Do you want to see my face or something?</string>
+		<key>Title</key>
+		<string>What do you want?!</string>
+	</dict>
+	<key>Click_7500</key>
+	<dict>
+		<key>Message</key>
+		<string>That really is what you want, isn&apos;t it? Maybe you should play the game and find out that way.</string>
+		<key>Title</key>
+		<string>You&apos;re joking, right?</string>
+	</dict>
+	<key>Click_10000</key>
+	<dict>
+		<key>Message</key>
+		<string>I&apos;ll do a face reveal. Jeez, I can&apos;t believe you&apos;ve spent all this time poking me just for that. Maybe when you&apos;re done staring at me you can actually pla the game like you&apos;re supposed to.</string>
+		<key>Title</key>
+		<string>Alright! FINE!</string>
+	</dict>
+</dict>
+</plist>

@@ -12,7 +12,7 @@
                 <windowController storyboardIdentifier="mainWindowController" id="hu2-BS-Ydy" sceneMemberID="viewController">
                     <window key="window" title="Preferences" separatorStyle="line" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" frameAutosaveName="" animationBehavior="default" toolbarStyle="preference" id="6La-Ub-AIu">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <windowPositionMask key="initialPositionMask" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="239" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
                         <view key="contentView" id="7ix-Nv-lpk">
@@ -62,11 +62,11 @@
             <objects>
                 <viewController title="Advanced" id="GoQ-6j-Ej1" customClass="AdvancedPrefsViewController" customModule="The_Costumemaster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ppn-gD-Zxh">
-                        <rect key="frame" x="0.0" y="0.0" width="604" height="124"/>
+                        <rect key="frame" x="0.0" y="0.0" width="604" height="155"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tud-Va-ZWi">
-                                <rect key="frame" x="75" y="88" width="97" height="16"/>
+                                <rect key="frame" x="75" y="119" width="97" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Debug options:" id="xT0-2m-bvo">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -74,40 +74,50 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aTd-Xh-SUT">
-                                <rect key="frame" x="176" y="87" width="132" height="18"/>
+                                <rect key="frame" x="176" y="118" width="132" height="18"/>
                                 <buttonCell key="cell" type="check" title="Show node count" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="KSa-vs-tKC">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Zh-W8-2tE">
-                                <rect key="frame" x="176" y="65" width="87" height="18"/>
+                                <rect key="frame" x="176" y="96" width="87" height="18"/>
                                 <buttonCell key="cell" type="check" title="Show FPS" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="zx4-lI-O3P">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7E-2g-jPS">
-                                <rect key="frame" x="176" y="43" width="153" height="18"/>
+                                <rect key="frame" x="176" y="74" width="153" height="18"/>
                                 <buttonCell key="cell" type="check" title="Show physics bodies" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dFF-ar-ZEh">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ei-0X-bfQ">
-                                <rect key="frame" x="179" y="20" width="377" height="16"/>
+                                <rect key="frame" x="179" y="51" width="377" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Debugging settings will take effect when restarting the game." id="CHd-qO-SIE">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AJ9-1x-gHH">
+                                <rect key="frame" x="75" y="19" width="220" height="18"/>
+                                <buttonCell key="cell" type="check" title="Show character with face reveal" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="OQA-NF-BSM">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="aTd-Xh-SUT" firstAttribute="top" secondItem="ppn-gD-Zxh" secondAttribute="top" constant="20" symbolic="YES" id="49Q-Of-mgj"/>
                             <constraint firstItem="Tud-Va-ZWi" firstAttribute="top" secondItem="ppn-gD-Zxh" secondAttribute="top" constant="20" symbolic="YES" id="4dS-DD-h47"/>
                             <constraint firstItem="9Zh-W8-2tE" firstAttribute="top" secondItem="aTd-Xh-SUT" secondAttribute="bottom" constant="6" symbolic="YES" id="6jg-gh-6Qu"/>
+                            <constraint firstItem="AJ9-1x-gHH" firstAttribute="top" secondItem="0Ei-0X-bfQ" secondAttribute="bottom" constant="15" id="GId-A9-DzZ"/>
                             <constraint firstItem="B7E-2g-jPS" firstAttribute="top" secondItem="9Zh-W8-2tE" secondAttribute="bottom" constant="6" symbolic="YES" id="TSz-5I-Nzn"/>
+                            <constraint firstItem="AJ9-1x-gHH" firstAttribute="leading" secondItem="ppn-gD-Zxh" secondAttribute="leading" constant="77" id="hB8-Lp-2yF"/>
+                            <constraint firstAttribute="bottom" secondItem="AJ9-1x-gHH" secondAttribute="bottom" constant="20" symbolic="YES" id="hJD-21-Atk"/>
                             <constraint firstItem="Tud-Va-ZWi" firstAttribute="leading" secondItem="ppn-gD-Zxh" secondAttribute="leading" constant="77" id="jYD-Zf-g0y"/>
                             <constraint firstItem="0Ei-0X-bfQ" firstAttribute="top" secondItem="B7E-2g-jPS" secondAttribute="bottom" constant="8" symbolic="YES" id="rwj-NJ-uc5"/>
                             <constraint firstItem="aTd-Xh-SUT" firstAttribute="leading" secondItem="Tud-Va-ZWi" secondAttribute="trailing" constant="8" symbolic="YES" id="zaZ-GD-l9d"/>
@@ -117,11 +127,12 @@
                         <outlet property="frameCountCheckbox" destination="9Zh-W8-2tE" id="uW6-H8-ZyL"/>
                         <outlet property="nodeCountCheckbox" destination="aTd-Xh-SUT" id="ikk-xL-jq1"/>
                         <outlet property="physicsCheckbox" destination="B7E-2g-jPS" id="OCl-dQ-hp5"/>
+                        <outlet property="unmodeledCheckbox" destination="AJ9-1x-gHH" id="j3o-nP-9EY"/>
                     </connections>
                 </viewController>
                 <customObject id="JRZ-ZP-OXi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072" y="492"/>
+            <point key="canvasLocation" x="1072" y="507.5"/>
         </scene>
         <!--General-->
         <scene sceneID="4aO-E8-nar">
