@@ -11,7 +11,7 @@
             <objects>
                 <windowController storyboardIdentifier="mainWindowController" id="hu2-BS-Ydy" sceneMemberID="viewController">
                     <window key="window" title="Preferences" separatorStyle="line" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" frameAutosaveName="" animationBehavior="default" toolbarStyle="preference" id="6La-Ub-AIu">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="239" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
@@ -36,7 +36,7 @@
             <objects>
                 <tabViewController storyboardIdentifier="tabController" selectedTabViewItemIndex="0" tabStyle="toolbar" id="SJ5-Sf-xOl" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem label="General" identifier="" image="gearshape" catalog="system" id="NHL-d2-vhT"/>
+                        <tabViewItem label="General" image="gearshape" catalog="system" id="r3Y-PC-mfZ"/>
                         <tabViewItem label="Advanced" identifier="" image="gearshape.2" catalog="system" id="bbR-0q-238"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="j9k-4W-pne">
@@ -49,40 +49,13 @@
                     </tabView>
                     <connections>
                         <outlet property="tabView" destination="j9k-4W-pne" id="Tu0-4H-XSw"/>
-                        <segue destination="U9z-Fg-aff" kind="relationship" relationship="tabItems" id="r0F-OW-Ijt"/>
+                        <segue destination="HcG-VG-dar" kind="relationship" relationship="tabItems" id="hva-8W-55S"/>
                         <segue destination="GoQ-6j-Ej1" kind="relationship" relationship="tabItems" id="3Nl-wv-l2f"/>
                     </connections>
                 </tabViewController>
                 <customObject id="Rj5-Qe-qR7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319" y="312"/>
-        </scene>
-        <!--General-->
-        <scene sceneID="9O0-hu-0WR">
-            <objects>
-                <viewController title="General" id="U9z-Fg-aff" customClass="GeneralPrefsViewController" customModule="The_Costumemaster" customModuleProvider="target" sceneMemberID="viewController">
-                    <customView key="view" id="dmo-2h-EHw">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="224"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UiV-jv-13w">
-                                <rect key="frame" x="61" y="104" width="328" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Options will be added to the game as it is developed." id="jdH-z5-uZW">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="UiV-jv-13w" firstAttribute="centerY" secondItem="dmo-2h-EHw" secondAttribute="centerY" id="aGH-yW-hFw"/>
-                            <constraint firstItem="UiV-jv-13w" firstAttribute="centerX" secondItem="dmo-2h-EHw" secondAttribute="centerX" id="dpV-w3-z63"/>
-                        </constraints>
-                    </customView>
-                </viewController>
-                <customObject id="1K6-H9-PEm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="995" y="139"/>
+            <point key="canvasLocation" x="262" y="492"/>
         </scene>
         <!--Advanced-->
         <scene sceneID="Ok3-bb-5EQ">
@@ -149,6 +122,55 @@
                 <customObject id="JRZ-ZP-OXi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1072" y="492"/>
+        </scene>
+        <!--General-->
+        <scene sceneID="4aO-E8-nar">
+            <objects>
+                <viewController title="General" id="HcG-VG-dar" customClass="GeneralPrefsViewController" customModule="The_Costumemaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="qBv-nQ-jfu">
+                        <rect key="frame" x="0.0" y="0.0" width="604" height="155"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k3j-Px-Lm4">
+                                <rect key="frame" x="75" y="119" width="93" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Sound effects:" id="SQn-P5-iJV">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FhT-xs-UkG">
+                                <rect key="frame" x="172" y="118" width="197" height="18"/>
+                                <buttonCell key="cell" type="check" title="Play costume change sound" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0qX-xU-mwW">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZBI-Ep-er8">
+                                <rect key="frame" x="18" y="20" width="290" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Settings will be updated as the game develops." id="FLX-Cm-7tg">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="k3j-Px-Lm4" firstAttribute="top" secondItem="qBv-nQ-jfu" secondAttribute="top" constant="20" symbolic="YES" id="1V0-ia-hUL"/>
+                            <constraint firstItem="ZBI-Ep-er8" firstAttribute="leading" secondItem="qBv-nQ-jfu" secondAttribute="leading" constant="20" symbolic="YES" id="Ito-M6-FQP"/>
+                            <constraint firstItem="FhT-xs-UkG" firstAttribute="top" secondItem="qBv-nQ-jfu" secondAttribute="top" constant="20" symbolic="YES" id="Wme-Df-1QV"/>
+                            <constraint firstItem="k3j-Px-Lm4" firstAttribute="leading" secondItem="qBv-nQ-jfu" secondAttribute="leading" constant="77" id="YzU-Uu-iD9"/>
+                            <constraint firstItem="FhT-xs-UkG" firstAttribute="leading" secondItem="k3j-Px-Lm4" secondAttribute="trailing" constant="8" symbolic="YES" id="mOM-ZL-D7t"/>
+                            <constraint firstAttribute="bottom" secondItem="ZBI-Ep-er8" secondAttribute="bottom" constant="20" symbolic="YES" id="rUq-1R-HcY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changeSoundCheckbox" destination="FhT-xs-UkG" id="2Ws-0P-LoZ"/>
+                    </connections>
+                </viewController>
+                <customObject id="kfI-Vu-fFt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072" y="61.5"/>
         </scene>
     </scenes>
     <resources>

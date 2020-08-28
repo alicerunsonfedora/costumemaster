@@ -164,7 +164,11 @@ public class Player: SKSpriteNode {
                     SKAction.wait(forDuration: Double(self.changingFrames.count) / 0.61 / 10)
                 ])
             )},
-            SKAction.playSoundFileNamed("changeCostume", waitForCompletion: false),
+            SKAction.run {
+                if AppDelegate.preferences.playChangeSound {
+                    self.run(SKAction.playSoundFileNamed("changeCostume", waitForCompletion: false))
+                }
+            },
             SKAction.animate(with: self.changingFrames, timePerFrame: 0.1, resize: false, restore: false),
             SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(self.costume.rawValue))")),
             SKAction.run {  self.texture?.filteringMode = .nearest },

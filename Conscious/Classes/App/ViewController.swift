@@ -13,7 +13,7 @@ class ViewController: NSViewController, NSWindowDelegate {
 
     @IBOutlet var skView: SKView!
 
-    private var settings: Preferences = Preferences()
+    private var settings: Preferences = AppDelegate.preferences
 
     override func viewDidAppear() {
         self.view.window?.delegate = self

@@ -12,16 +12,16 @@ import Foundation
 /// This structure is used to describe what inputs will trigger an output, and how many inputs are needed to
 /// activate the switch.
 struct SwitchRequisite {
-    
+
     /// The location in the map that corresponds to the output.
     var outputLocation: (Int, Int)
-    
+
     /// A list of locations that correspond to the inputs.
     var requiredInputs: [(Int, Int)]
-    
+
     /// The requisite for the output to be activated.
     var requisite: GameSignalMethod?
-    
+
     /// Get the requisite for a given output based on a configuration string.
     /// - Parameter string: The string to read and convert into a requisite.
     /// - Returns: The input requisite, or a null type if no requisites match.
