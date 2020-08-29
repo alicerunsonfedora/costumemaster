@@ -9,7 +9,7 @@ import Foundation
 import SpriteKit
 
 /// A base protocol that defines an object that receives signals from inputs.
-protocol GameSignalReceivable {
+protocol GameSignalReceivable: SKNode {
 
     // MARK: STORED PROPERTIES
 

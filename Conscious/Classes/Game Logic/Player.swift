@@ -188,6 +188,8 @@ public class Player: SKSpriteNode {
     /// Switch to the previous costume.
     /// - Returns: The previous costume the player is now wearing.
     public func previousCostume() -> PlayerCostumeType {
+        if self.costumeQueue.isEmpty { return self.costume }
+
         // Don't initiate another change if we're already changing costumes.
         if self.isChangingCostumes { return self.costume }
 
@@ -206,6 +208,8 @@ public class Player: SKSpriteNode {
     /// Switch to the next available costume.
     /// - Returns: The next costume the player has switched to.
     public func nextCostume() -> PlayerCostumeType {
+        if self.costumeQueue.isEmpty { return self.costume }
+
         // Don't initiate another change if we're already changing costumes.
         if self.isChangingCostumes { return self.costume }
 

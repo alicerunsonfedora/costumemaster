@@ -133,10 +133,8 @@ class GameScene: SKScene {
             }
         }
 
-        for node in self.switches { self.addChild(node) }
-
-        // swiftlint:disable:next force_cast
-        for node in self.receivers { self.addChild(node as! SKNode) }
+        for node in self.switches { node.zPosition -= 5; self.addChild(node) }
+        for node in self.receivers { node.zPosition -= 5; self.addChild(node) }
 
         // Delete the tilemap from memory.
         tilemap.tileSet = SKTileSet(tileGroups: [])
@@ -144,7 +142,7 @@ class GameScene: SKScene {
 
         // Finally, clump all of the non-player sprites under the structure node to prevent scene
         // overbearing.
-        self.structure.zPosition = -1
+        self.structure.zPosition = -5
         self.addChild(self.structure)
     }
 
@@ -218,14 +216,9 @@ class GameScene: SKScene {
                     }
                 }
             }
-
-            var output = correspondingOutputs.first
-
+            let output = correspondingOutputs.first
             let inputs = self.switches
-            if inputs.isEmpty {
-                print("Warn: Inputs for requisite \(req) don't exist.")
-                continue
-            }
+            if inputs.isEmpty { continue }
             for input in inputs where req.requiredInputs.contains(input.levelPosition) {
                 output?.inputs.append(input)
                 output?.activationMethod = req.requisite ?? .noInput
