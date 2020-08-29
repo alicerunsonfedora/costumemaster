@@ -91,7 +91,7 @@ class GameScene: SKScene {
                         self.playerNode = Player(
                             texture: texture,
                             allowCostumes: Player.getCostumeSet(id: self.configuration?.costumeID ?? 0),
-                            startingWith: self.configuration?.startWithCostume ?? .default
+                            startingWith: self.configuration?.startWithCostume ?? .flashDrive
                         )
                         self.playerNode?.position = sprite.position
                         self.addChild(self.playerNode!)

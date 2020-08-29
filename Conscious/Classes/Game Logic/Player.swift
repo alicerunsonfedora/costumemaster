@@ -17,10 +17,10 @@ public class Player: SKSpriteNode {
     // MARK: STORED PROPERTIES
 
     /// Thre current costume the player is wearing.
-    public var costume: PlayerCostumeType = .default
+    public var costume: PlayerCostumeType = .flashDrive
 
     /// A queue of all available costumes the player can switch to.
-    private var costumeQueue: [PlayerCostumeType] = [.flashDrive, .bird, .sorceress]
+    private var costumeQueue: [PlayerCostumeType] = [.bird, .sorceress, .default]
 
     /// Whether the player is currently playing an animation.
     private var animating: Bool = false
@@ -113,11 +113,14 @@ public class Player: SKSpriteNode {
 
     /// Get the list of costumes from a given ID.
     /// - Parameter id: An integer representing the ID of costumes available.
-    // swiftlint:disable:next identifier_name
+    /// - Note: In most cases, IDs will range from 0-2, 0 being the default scenario (flash drive), and 2 being all
+    /// available costumes (flash drive, bird, and sorceress). In cases where a player can take off a costume,
+    /// use ID 3.
     public static func getCostumeSet(id: Int) -> [PlayerCostumeType] {
-        let defaultSet: [PlayerCostumeType] = [.default, .flashDrive, .bird, .sorceress]
+        // swiftlint:disable:previous identifier_name
+        let defaultSet: [PlayerCostumeType] = [.flashDrive, .bird, .sorceress, .default]
         if id == 0 {
-            return [PlayerCostumeType.default]
+            return [PlayerCostumeType.flashDrive]
         } else {
             let upperBound = id + 1
             return defaultSet[..<upperBound].map { costume in costume }
