@@ -19,8 +19,14 @@ class ControlsPrefsViewController: PreferencesViewController {
     @IBOutlet weak var previousCostumeView: NSView!
     @IBOutlet weak var useView: NSView!
 
-    private let moveUpRecorder = KeyboardShortcuts.RecorderCocoa(for: .moveUp)
-    private let moveDownRecorder = KeyboardShortcuts.RecorderCocoa(for: .moveDown)
+    private let moveUpRecorder = KeyboardShortcuts.RecorderCocoa(
+        for: .moveUp,
+        onChange: ControlsPrefsViewController.stripModifiers(.moveUp)
+    )
+    private let moveDownRecorder = KeyboardShortcuts.RecorderCocoa(
+        for: .moveDown,
+        onChange: ControlsPrefsViewController.stripModifiers(.moveDown)
+    )
     private let moveLeftRecorder = KeyboardShortcuts.RecorderCocoa(for: .moveLeft)
     private let moveRightRecorder = KeyboardShortcuts.RecorderCocoa(for: .moveRight)
     private let nextCostumeRecorder = KeyboardShortcuts.RecorderCocoa(for: .nextCostume)
@@ -41,6 +47,22 @@ class ControlsPrefsViewController: PreferencesViewController {
     }
 
     @IBAction func resetShortcuts(_ sender: Any?) {
-        KeyboardShortcuts.reset([.moveUp, .moveRight, .moveDown, .moveLeft, .nextCostume, .previousCostume, .use])
+        KeyboardShortcuts.resetAll()
+    }
+
+    /// Strip the modifiers from a shortcut and re-apply the shortcut.
+    ///
+    /// This is passed to the KeyboardShortcuts's shortcut recorder since a modifier key is required to set a shortcut.
+    /// This only triggers when using the Control key (^) as the modifier.
+    /// - Parameter name: The shortcut to strip the mofidier for.
+    /// - Returns: A function that will strip the modifier.
+    static func stripModifiers(_ name: KeyboardShortcuts.Name) ->
+        (_ shortcut: KeyboardShortcuts.Shortcut?) -> Void {
+        return { (_ short: KeyboardShortcuts.Shortcut?) in
+            if short?.modifiers == [NSEvent.ModifierFlags.control] {
+                let newShortcut: KeyboardShortcuts.Shortcut? = KeyboardShortcuts.Shortcut(short?.key ?? .f19)
+                KeyboardShortcuts.setShortcut(newShortcut, for: name)
+            }
+        }
     }
 }
