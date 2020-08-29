@@ -200,15 +200,18 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
             self.character?.texture = SKTexture(imageNamed: "Character_Unmodeled")
             self.character?.texture?.filteringMode = .nearest
 
-            let achivement = GKAchievement(identifier: "costumemaster.face_reveal")
-            achivement.percentComplete = 100.0
-            GKAchievement.report([achivement]) { error in
-                if error != nil {
-                    sendAlert(
-                        "\(error?.localizedDescription)",
-                        withTitle: "Couldn't Sync Achievement",
-                        level: .critical
-                    ) { _ in }
+            // Unlock the "Face Reveal" achievement in Game Center.
+            if GKLocalPlayer.local.isAuthenticated {
+                let achivement = GKAchievement(identifier: "costumemaster.face_reveal")
+                achivement.percentComplete = 100.0
+                GKAchievement.report([achivement]) { error in
+                    if error != nil {
+                        sendAlert(
+                            "\(error?.localizedDescription)",
+                            withTitle: "Couldn't Sync Achievement",
+                            level: .critical
+                        ) { _ in }
+                    }
                 }
             }
         }

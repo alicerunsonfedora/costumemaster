@@ -28,34 +28,31 @@ class GameScene: SKScene {
     var configuration: LevelDataConfiguration?
 
     /// The level's signal senders.
-    var switches: [GameSignalSender]?
+    var switches: [GameSignalSender] = []
 
     /// The level's signal responders.
-    var receivers: [GameSignalReceivable]?
+    var receivers: [GameSignalReceivable] = []
 
     /// The exit door for this level.
     var exitNode: LevelExitDoor?
 
-    /// The walls that encapsulate the player in this level.
-    var walls: [SKSpriteNode]?
-
     /// The list of mappings for each output and the required inputs.
     var requisites: [SwitchRequisite] = []
 
+    /// A child node that stores the structure of the level.
     var structure: SKNode = SKNode()
 
     // MARK: CONSTRUCTION METHODS
 
     /// Create children nodes from a tile map node and add them to the scene's view heirarchy.
+    // swiftlint:disable:next cyclomatic_complexity
     private func setupTilemap() {
         // Get the tilemap for this scene.
         guard let tilemap = childNode(withName: "Tile Map Node") as? SKTileMapNode else {
             sendAlert(
                 "Check the appropriate level file and ensure an SKTilemapNode called \"Tile Map Node\" exists.",
                 withTitle: "The tilemap for this map is missing.",
-                level: .critical) { _ in
-                NSApplication.shared.terminate(nil)
-            }
+                level: .critical) { _ in NSApplication.shared.terminate(nil) }
             return
         }
 
@@ -73,7 +70,6 @@ class GameScene: SKScene {
                     let texture = defined.textures[0]
                     let spriteX = CGFloat(col) * mapUnit.width - mapHalfWidth + (mapUnit.width / 2)
                     let spriteY = CGFloat(row) * mapUnit.height - mapHalfHeight + (mapUnit.height / 2)
-                    let spritePosition = CGPoint(x: spriteX, y: spriteY)
                     let tileType = getTileType(fromDefinition: defined)
 
                     // Change the texure's filtering method to allow pixelation.
@@ -81,20 +77,16 @@ class GameScene: SKScene {
 
                     // Create the sprite node.
                     let sprite = SKSpriteNode(texture: texture)
-                    sprite.position = CGPoint(
-                        x: spritePosition.x + origin.x,
-                        y: spritePosition.y + origin.y
-                    )
+                    sprite.position = CGPoint(x: spriteX + origin.x, y: spriteY + origin.y)
                     sprite.zPosition = 1
                     sprite.isHidden = false
 
                     switch tileType {
                     case .wall:
-                        let wallTexture = defined.name == "wall_edge"
-                            ? SKTexture(imageNamed: "wall_edge_physics_mask")
-                            : texture
+                        let wallTexture = defined.name == "wall_edge" ? "wall_edge_physics_mask" : defined.name!
                         sprite.physicsBody = getWallPhysicsBody(with: wallTexture)
-                        self.walls?.append(sprite)
+                        sprite.name = "wall_\(col)_\(row)"
+                        self.structure.addChild(sprite)
                     case .player:
                         self.playerNode = Player(
                             texture: texture,
@@ -102,15 +94,13 @@ class GameScene: SKScene {
                             startingWith: self.configuration?.startWithCostume ?? .default
                         )
                         self.playerNode?.position = sprite.position
-                        self.playerNode?.zPosition = 2
-                        self.playerNode?.isHidden = false
                         self.addChild(self.playerNode!)
-
                         sprite.texture = SKTexture(imageNamed: "floor")
                         sprite.zPosition = -999
                         self.addChild(sprite)
                     case .floor:
                         sprite.zPosition = -999
+                        self.structure.addChild(sprite)
                     case .exit:
                         let receiver = LevelExitDoor(
                             fromInput: [],
@@ -121,24 +111,32 @@ class GameScene: SKScene {
                         receiver.activationMethod = .anyInput
                         receiver.position = sprite.position
                         receiver.playerListener = self.playerNode
-                        self.receivers?.append(receiver)
+                        self.receivers.append(receiver)
                         self.exitNode = receiver
                     case .lever:
+                        let definedTextureName = defined.name?.replacingOccurrences(of: "_on", with: "")
+                            ?? "lever_wallup"
                         let lever = GameSignalSender(
-                            textureName: defined.name ?? "lever_wallup_off",
+                            textureName: definedTextureName,
                             by: .activeOncePermanently,
                             at: CGPoint(x: col, y: row)
                         )
-                        self.switches?.append(lever)
+                        lever.position = sprite.position
+                        if definedTextureName == "lever_wallup" {
+                            lever.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
+                        }
+                        self.switches.append(lever)
                     default:
                         break
                     }
-
-                    // Add the node to the parent scene's node heirarchy and update the position.
-                    if tileType != .player { self.structure.addChild(sprite) }
                 }
             }
         }
+
+        for node in self.switches { self.addChild(node) }
+
+        // swiftlint:disable:next force_cast
+        for node in self.receivers { self.addChild(node as! SKNode) }
 
         // Delete the tilemap from memory.
         tilemap.tileSet = SKTileSet(tileGroups: [])
@@ -204,36 +202,35 @@ class GameScene: SKScene {
     /// Parse the requisites and hook up the appropriate signal senders to their receivers.
     private func parseRequisites() {
         for req in self.requisites {
-            if let correspondingOutputs = self.receivers?.filter({rec in rec.levelPosition == req.outputLocation}) {
-                if correspondingOutputs.isEmpty {
-                    continue
-                }
-                if correspondingOutputs.count > 1 {
-                    sendAlert(
-                        "The level configuration has duplicate mappings for the output at \(req.outputLocation)."
-                        + " Ensure that the user data file contains the correct mappings.",
-                        withTitle: "Duplicate mappings found.",
-                        level: .critical
-                    ) { _ in
-                        if let scene = SKScene(fileNamed: "MainMenu") {
-                            self.view?.presentScene(scene)
-                        }
-                    }
-                }
-
-                var output = correspondingOutputs.first
-
-                if let inputs = self.switches?.filter({ (inp: GameSignalSender) in
-                                                        req.requiredInputs.contains(inp.levelPosition) }) {
-                    if inputs.isEmpty {
-                        print("Warn: Inputs for requisite \(req) don't exist.")
-                    }
-                    for input in inputs {
-                        output?.inputs.append(input)
-                        output?.activationMethod = req.requisite ?? .noInput
+            let correspondingOutputs = self.receivers.filter({rec in rec.levelPosition == req.outputLocation})
+            if correspondingOutputs.isEmpty {
+                continue
+            }
+            if correspondingOutputs.count > 1 {
+                sendAlert(
+                    "The level configuration has duplicate mappings for the output at \(req.outputLocation)."
+                    + " Ensure that the user data file contains the correct mappings.",
+                    withTitle: "Duplicate mappings found.",
+                    level: .critical
+                ) { _ in
+                    if let scene = SKScene(fileNamed: "MainMenu") {
+                        self.view?.presentScene(scene)
                     }
                 }
             }
+
+            var output = correspondingOutputs.first
+
+            let inputs = self.switches
+            if inputs.isEmpty {
+                print("Warn: Inputs for requisite \(req) don't exist.")
+                continue
+            }
+            for input in inputs where req.requiredInputs.contains(input.levelPosition) {
+                output?.inputs.append(input)
+                output?.activationMethod = req.requisite ?? .noInput
+            }
+            output?.updateInputs()
         }
     }
 
@@ -250,9 +247,7 @@ class GameScene: SKScene {
                 "Check that the level file contains data in the User Data.",
                 withTitle: "User Data Missing",
                 level: .critical
-            ) { _ in
-                NSApplication.shared.terminate(nil)
-            }
+            ) { _ in NSApplication.shared.terminate(nil) }
             return
         }
         self.configuration = LevelDataConfiguration(from: userData)
@@ -262,20 +257,11 @@ class GameScene: SKScene {
             sendAlert(
                 "Check the appropriate level file and ensure an SKCameraNode called \"Camera\" exists.",
                 withTitle: "The camera for this map is missing.",
-                level: .critical) { _ in
-                NSApplication.shared.terminate(nil)
-            }
+                level: .critical) { _ in NSApplication.shared.terminate(nil) }
             return
         }
         self.playerCamera = pCam
         self.playerCamera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
-
-        // Set up the switches and receivers before parsing the tilemap.
-        self.switches = []
-        self.receivers = []
-
-        // Set up the list of walls.
-        self.walls = []
 
         // Create switch requisites, parse the tilemap, then hook tp the signals/receivers according to the requisites.
         self.parseRequisiteData()
@@ -288,9 +274,7 @@ class GameScene: SKScene {
                 "Check the appropriate level file and ensure the SKTileMapNode includes a tile definition for the"
                 + " player.",
                 withTitle: "The player for this map is missing.",
-                level: .critical) { _ in
-                NSApplication.shared.terminate(self)
-            }
+                level: .critical) { _ in NSApplication.shared.terminate(self) }
             return
         }
 
@@ -308,13 +292,16 @@ class GameScene: SKScene {
             self.camera?.run(SKAction.move(to: self.playerNode?.position ?? CGPoint(x: 0, y: 0), duration: 1))
         }
         self.camera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
+        self.receivers.forEach { output in output.update() }
     }
 
     override func didFinishUpdate() {
         // Run the receiving function on the exit door.
-        self.exitNode?.receive(with: self.playerNode, event: nil) { _ in
-            if let scene = SKScene(fileNamed: self.configuration?.linksToNextScene ?? "MainMenu") {
-                self.view?.presentScene(scene, transition: SKTransition.fade(with: .black, duration: 2.0))
+        if self.exitNode?.active == true {
+            self.exitNode?.receive(with: self.playerNode, event: nil) { _ in
+                if let scene = SKScene(fileNamed: self.configuration?.linksToNextScene ?? "MainMenu") {
+                    self.view?.presentScene(scene, transition: SKTransition.fade(with: .black, duration: 2.0))
+                }
             }
         }
     }
@@ -324,24 +311,23 @@ class GameScene: SKScene {
     /// Check the wall states and update their physics bodies.
     /// - Parameter costume: The costume to run the checks against.
     func checkWallStates(with costume: PlayerCostumeType?) {
-        self.walls?.forEach { (wall: SKSpriteNode) in
-            wall.physicsBody = costume == .bird
-                                ? nil
-                                : getWallPhysicsBody(with: wall.texture!)
+        for node in self.structure.children where node.name != nil && node.name!.starts(with: "wall_") {
+            if let wall = node as? SKSpriteNode {
+                wall.physicsBody = costume == .bird ? nil : getWallPhysicsBody(with: wall.texture!)
+            }
         }
     }
 
     public override func keyDown(with event: NSEvent) {
         switch Int(event.keyCode) {
-
         // Check for movement keys and move the player node in the respective directions.
-        case kVK_ANSI_W, kVK_UpArrow:
+        case kVK_ANSI_W:
             self.playerNode?.move(.north, unit: self.unit!)
-        case kVK_ANSI_S, kVK_DownArrow:
+        case kVK_ANSI_S:
             self.playerNode?.move(.south, unit: self.unit!)
-        case kVK_ANSI_A, kVK_LeftArrow:
+        case kVK_ANSI_A:
             self.playerNode?.move(.west, unit: self.unit!)
-        case kVK_ANSI_D, kVK_RightArrow:
+        case kVK_ANSI_D:
             self.playerNode?.move(.east, unit: self.unit!)
 
         // Check for the costume switching key and switch to the next available costume.
@@ -351,6 +337,16 @@ class GameScene: SKScene {
         case kVK_ANSI_G:
             let costume = self.playerNode?.previousCostume()
             self.checkWallStates(with: costume)
+
+        // Activate any switches where the player is required to interact with them.
+        case kVK_ANSI_E:
+            guard let location = self.playerNode?.position else { break }
+            let inputs = self.switches
+            for input in inputs where input.position.distance(between: location) < (self.unit?.width ?? 128) / 2
+                && input.activationMethod != .activeByPlayerIntervention {
+                input.activate(with: event, player: self.playerNode)
+            }
+
         // Catch-all case.
         default:
             break

@@ -16,13 +16,21 @@ public class LevelExitDoor: SKSpriteNode, GameSignalReceivable {
 
     var activationMethod: GameSignalMethod
 
-    var inputs: [GameSignalSender]
+    var inputs: [GameSignalSender] {
+        didSet {
+            if reverseSignal {
+                self.defaultOn.toggle()
+            }
+        }
+    }
 
     var baseTextureName: String
 
     var playerListener: Player?
 
     var levelPosition: CGPoint
+
+    private var reverseSignal: Bool = false
 
     // MARK: COMPUTED PROPERTIES
     var activeTexture: SKTexture {
@@ -47,11 +55,13 @@ public class LevelExitDoor: SKSpriteNode, GameSignalReceivable {
         baseTexture: String,
         at location: CGPoint
     ) {
-        self.defaultOn = inputs.isEmpty
+        self.defaultOn = reverseSignal
         self.inputs = inputs
         self.baseTextureName = baseTexture
         self.activationMethod = .allInputs
         self.levelPosition = location
+
+        self.reverseSignal = reverseSignal
         if reverseSignal { self.defaultOn.toggle() }
 
         super.init(
@@ -62,6 +72,7 @@ public class LevelExitDoor: SKSpriteNode, GameSignalReceivable {
 
         self.inputs.forEach { input in input.receiver = self }
         self.texture = self.activeTexture
+        self.physicsBody = instantiatePhysicsBody()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -71,20 +82,24 @@ public class LevelExitDoor: SKSpriteNode, GameSignalReceivable {
     // MARK: METHODS
 
     private func instantiatePhysicsBody() -> SKPhysicsBody {
-        return getWallPhysicsBody(with: self.activeTexture)
+        return getWallPhysicsBody(with: SKTexture(imageNamed: "wall_edge_physics_mask"))
     }
 
     func receive(with player: Player?, event: NSEvent?, handler: ((Any?) -> Void)) {
-        if self.active {
-            self.physicsBody = nil
-        } else {
-            self.physicsBody = instantiatePhysicsBody()
-            return
-        }
         if let position = player?.position {
             if position.distance(between: self.position) < (self.texture?.size().width ?? 1) / 4 {
                 handler(nil)
             }
+        }
+    }
+
+    func update() {
+        self.texture = self.activeTexture
+    }
+
+    func updateInputs() {
+        for input in self.inputs {
+            input.receiver = self
         }
     }
 

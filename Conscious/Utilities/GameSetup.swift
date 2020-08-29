@@ -20,6 +20,8 @@ public func getTileType(fromDefinition tile: SKTileDefinition) -> GameTileType {
             return .exit
         case name where name.starts(with: "lever"):
             return .lever
+        case "floor":
+            return .floor
         case "Main":
             return .player
         default:
@@ -31,6 +33,7 @@ public func getTileType(fromDefinition tile: SKTileDefinition) -> GameTileType {
 
 /// Create a physics body for a wall with a given texture.
 /// - Parameter texture: The texture to assign the wall's physics body to.
+/// - Returns: A physics body that matches the texture.
 public func getWallPhysicsBody(with texture: SKTexture) -> SKPhysicsBody {
     let physicsBody = SKPhysicsBody(texture: texture, size: texture.size())
     physicsBody.restitution = 0
@@ -41,4 +44,11 @@ public func getWallPhysicsBody(with texture: SKTexture) -> SKPhysicsBody {
     physicsBody.isResting = true
     physicsBody.allowsRotation = false
     return physicsBody
+}
+
+/// Create a physics body for a wall with a given texture.
+/// - Parameter texture: The texture to assign the wall's physics body to.
+/// - Returns: A physics body that matches the texture.
+public func getWallPhysicsBody(with textureName: String) -> SKPhysicsBody {
+    return getWallPhysicsBody(with: SKTexture(imageNamed: textureName))
 }

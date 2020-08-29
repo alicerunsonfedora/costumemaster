@@ -86,6 +86,7 @@ public class GameSignalSender: SKSpriteNode {
     /// Toggle the active state for this input.
     private func toggle() {
         self.active.toggle()
+        self.texture = self.activeTexture
     }
 
     /// Activate the input given an event and player.

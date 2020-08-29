@@ -45,4 +45,12 @@ protocol GameSignalReceivable {
     /// - Parameter location: The location of the output in context with the level.
     init(fromInput inputs: [GameSignalSender], reverseSignal: Bool, baseTexture: String, at location: CGPoint)
 
+    /// Update the properties of the receiver's sprite.
+    /// - Important: Do not store logic-related function such as activity status inside this method. This method
+    /// is used specifically to make visual changes on every frame.
+    func update()
+
+    /// Update the status of this receiver based on new inputs.
+    func updateInputs()
+
 }

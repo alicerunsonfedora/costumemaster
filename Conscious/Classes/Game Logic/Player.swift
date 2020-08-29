@@ -101,6 +101,8 @@ public class Player: SKSpriteNode {
         super.init(texture: texture, color: color, size: size)
         self.instantiatePhysicsBody(fromTexture: texture!)
         self.texture?.filteringMode = .nearest
+        self.zPosition = 10
+        self.isHidden = false
     }
 
     required init?(coder aDecoder: NSCoder) {
