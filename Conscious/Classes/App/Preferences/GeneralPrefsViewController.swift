@@ -13,6 +13,10 @@ class GeneralPrefsViewController: PreferencesViewController {
     @IBOutlet weak var changeSoundCheckbox: NSButton!
     @IBOutlet weak var cameraScaleSlider: NSSlider!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
     override func viewWillAppear() {
         self.changeSoundCheckbox.state = self.preferences.playChangeSound ? .on : .off
         self.cameraScaleSlider.doubleValue = Double(self.preferences.cameraScale * 100)

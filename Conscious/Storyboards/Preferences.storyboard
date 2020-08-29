@@ -9,14 +9,14 @@
         <!--Window Controller-->
         <scene sceneID="AoB-uL-Uzq">
             <objects>
-                <windowController storyboardIdentifier="mainWindowController" id="hu2-BS-Ydy" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="mainWindowController" id="hu2-BS-Ydy" customClass="PreferencesWindowController" customModule="The_Costumemaster" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Preferences" separatorStyle="line" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" frameAutosaveName="" animationBehavior="default" toolbarStyle="preference" id="6La-Ub-AIu">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="239" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="239" width="306" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
                         <view key="contentView" id="7ix-Nv-lpk">
-                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <rect key="frame" x="0.0" y="0.0" width="306" height="270"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </view>
                         <connections>
@@ -29,7 +29,7 @@
                 </windowController>
                 <customObject id="5wy-lX-5yX" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319" y="-169"/>
+            <point key="canvasLocation" x="232" y="-169"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="XC0-az-Qin">
@@ -37,6 +37,7 @@
                 <tabViewController storyboardIdentifier="tabController" selectedTabViewItemIndex="0" tabStyle="toolbar" id="SJ5-Sf-xOl" sceneMemberID="viewController">
                     <tabViewItems>
                         <tabViewItem label="General" image="gearshape" catalog="system" id="r3Y-PC-mfZ"/>
+                        <tabViewItem label="Controls" image="keyboard" catalog="system" id="2qA-lM-RW5"/>
                         <tabViewItem label="Advanced" identifier="" image="gearshape.2" catalog="system" id="bbR-0q-238"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="j9k-4W-pne">
@@ -50,6 +51,7 @@
                     <connections>
                         <outlet property="tabView" destination="j9k-4W-pne" id="Tu0-4H-XSw"/>
                         <segue destination="HcG-VG-dar" kind="relationship" relationship="tabItems" id="hva-8W-55S"/>
+                        <segue destination="r0b-5m-PTW" kind="relationship" relationship="tabItems" id="Pjn-Qe-ehy"/>
                         <segue destination="GoQ-6j-Ej1" kind="relationship" relationship="tabItems" id="3Nl-wv-l2f"/>
                     </connections>
                 </tabViewController>
@@ -132,7 +134,7 @@
                 </viewController>
                 <customObject id="JRZ-ZP-OXi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072" y="507.5"/>
+            <point key="canvasLocation" x="1072" y="710"/>
         </scene>
         <!--General-->
         <scene sceneID="4aO-E8-nar">
@@ -212,9 +214,166 @@
             </objects>
             <point key="canvasLocation" x="1072" y="44"/>
         </scene>
+        <!--Controls-->
+        <scene sceneID="1Qp-P0-IIJ">
+            <objects>
+                <viewController title="Controls" id="r0b-5m-PTW" customClass="ControlsPrefsViewController" customModule="The_Costumemaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="JwK-aQ-ioB">
+                        <rect key="frame" x="0.0" y="0.0" width="448" height="347"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N6P-RZ-IML">
+                                <rect key="frame" x="119" y="311" width="60" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Move up:" id="pBy-gH-sc3">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UO6-eb-Ku3">
+                                <rect key="frame" x="102" y="281" width="77" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Move down:" id="T1x-Y0-kXG">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TSI-6B-TsN">
+                                <rect key="frame" x="115" y="251" width="64" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Move left:" id="Ck3-xj-zQU">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9e1-KQ-9cn">
+                                <rect key="frame" x="106" y="221" width="73" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Move right:" id="VHA-9H-AHe">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RZO-hP-YyF">
+                                <rect key="frame" x="54" y="177" width="125" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Wear next costume:" id="7Qt-bB-em6">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zII-6Y-0zb">
+                                <rect key="frame" x="28" y="147" width="151" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Wear previous costume:" id="dz5-6W-3L8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DTc-La-Uae">
+                                <rect key="frame" x="74" y="103" width="105" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Use item/switch:" id="h0K-mM-jMp">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="1cG-bK-8kI">
+                                <rect key="frame" x="185" y="308" width="155" height="22"/>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="PqE-9f-Ajf">
+                                <rect key="frame" x="185" y="278" width="155" height="22"/>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="nJq-Y2-uvI">
+                                <rect key="frame" x="185" y="248" width="155" height="22"/>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="vJP-Tj-3BQ">
+                                <rect key="frame" x="185" y="218" width="155" height="22"/>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="fsA-SB-gYG">
+                                <rect key="frame" x="185" y="174" width="155" height="22"/>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="DHn-JX-VOP">
+                                <rect key="frame" x="185" y="144" width="155" height="22"/>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="val-1n-zoY">
+                                <rect key="frame" x="185" y="100" width="155" height="22"/>
+                            </customView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gl3-Vj-F0O">
+                                <rect key="frame" x="336" y="13" width="99" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Reset All" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="acI-G2-YbQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="resetShortcuts:" target="r0b-5m-PTW" id="MKC-To-lRz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="DHn-JX-VOP" firstAttribute="trailing" secondItem="val-1n-zoY" secondAttribute="trailing" id="0cY-0U-9RE"/>
+                            <constraint firstItem="nJq-Y2-uvI" firstAttribute="top" secondItem="PqE-9f-Ajf" secondAttribute="bottom" constant="8" symbolic="YES" id="0p0-Nz-VBr"/>
+                            <constraint firstItem="nJq-Y2-uvI" firstAttribute="centerY" secondItem="TSI-6B-TsN" secondAttribute="centerY" id="1il-nm-oET"/>
+                            <constraint firstItem="N6P-RZ-IML" firstAttribute="leading" secondItem="JwK-aQ-ioB" secondAttribute="leading" constant="121" id="3My-g0-qd2"/>
+                            <constraint firstItem="vJP-Tj-3BQ" firstAttribute="top" secondItem="nJq-Y2-uvI" secondAttribute="bottom" constant="8" symbolic="YES" id="3p5-aH-Bb0"/>
+                            <constraint firstItem="PqE-9f-Ajf" firstAttribute="centerY" secondItem="UO6-eb-Ku3" secondAttribute="centerY" id="4Vh-Sg-3tN"/>
+                            <constraint firstItem="PqE-9f-Ajf" firstAttribute="leading" secondItem="nJq-Y2-uvI" secondAttribute="leading" id="5kB-Xf-iBW"/>
+                            <constraint firstItem="UO6-eb-Ku3" firstAttribute="top" secondItem="N6P-RZ-IML" secondAttribute="bottom" constant="14" id="6RO-2A-T13"/>
+                            <constraint firstItem="vJP-Tj-3BQ" firstAttribute="leading" secondItem="fsA-SB-gYG" secondAttribute="leading" id="7Qo-FQ-4Gs"/>
+                            <constraint firstItem="val-1n-zoY" firstAttribute="top" secondItem="DHn-JX-VOP" secondAttribute="bottom" constant="22" id="99K-Vd-1rg"/>
+                            <constraint firstItem="PqE-9f-Ajf" firstAttribute="top" secondItem="1cG-bK-8kI" secondAttribute="bottom" constant="8" symbolic="YES" id="CvD-1g-3gs"/>
+                            <constraint firstItem="vJP-Tj-3BQ" firstAttribute="trailing" secondItem="fsA-SB-gYG" secondAttribute="trailing" id="DpA-uU-ip8"/>
+                            <constraint firstItem="DTc-La-Uae" firstAttribute="top" secondItem="zII-6Y-0zb" secondAttribute="bottom" constant="28" id="F3d-JE-a60"/>
+                            <constraint firstItem="nJq-Y2-uvI" firstAttribute="leading" secondItem="TSI-6B-TsN" secondAttribute="trailing" constant="8" symbolic="YES" id="GJe-an-zOR"/>
+                            <constraint firstItem="TSI-6B-TsN" firstAttribute="top" secondItem="UO6-eb-Ku3" secondAttribute="bottom" constant="14" id="Grz-gt-SVt"/>
+                            <constraint firstItem="RZO-hP-YyF" firstAttribute="top" secondItem="9e1-KQ-9cn" secondAttribute="bottom" constant="28" id="Hn1-PN-wCI"/>
+                            <constraint firstAttribute="trailing" secondItem="1cG-bK-8kI" secondAttribute="trailing" constant="108" id="J8I-d9-Rhs"/>
+                            <constraint firstItem="9e1-KQ-9cn" firstAttribute="top" secondItem="TSI-6B-TsN" secondAttribute="bottom" constant="14" id="KEF-0S-ffI"/>
+                            <constraint firstItem="N6P-RZ-IML" firstAttribute="top" secondItem="JwK-aQ-ioB" secondAttribute="top" constant="20" symbolic="YES" id="M7X-VQ-Bxh"/>
+                            <constraint firstItem="nJq-Y2-uvI" firstAttribute="trailing" secondItem="vJP-Tj-3BQ" secondAttribute="trailing" id="NPS-4z-MkX"/>
+                            <constraint firstItem="DHn-JX-VOP" firstAttribute="leading" secondItem="zII-6Y-0zb" secondAttribute="trailing" constant="8" symbolic="YES" id="NtK-gZ-Hyt"/>
+                            <constraint firstItem="1cG-bK-8kI" firstAttribute="trailing" secondItem="PqE-9f-Ajf" secondAttribute="trailing" id="SrE-sE-rFQ"/>
+                            <constraint firstItem="vJP-Tj-3BQ" firstAttribute="centerY" secondItem="9e1-KQ-9cn" secondAttribute="centerY" id="T8F-y1-HZs"/>
+                            <constraint firstItem="1cG-bK-8kI" firstAttribute="leading" secondItem="PqE-9f-Ajf" secondAttribute="leading" id="UNC-32-aqy"/>
+                            <constraint firstItem="zII-6Y-0zb" firstAttribute="top" secondItem="RZO-hP-YyF" secondAttribute="bottom" constant="14" id="UiF-OQ-9F1"/>
+                            <constraint firstItem="vJP-Tj-3BQ" firstAttribute="leading" secondItem="9e1-KQ-9cn" secondAttribute="trailing" constant="8" symbolic="YES" id="ZRm-iZ-THn"/>
+                            <constraint firstItem="val-1n-zoY" firstAttribute="centerY" secondItem="DTc-La-Uae" secondAttribute="centerY" id="ZTm-98-6cf"/>
+                            <constraint firstItem="fsA-SB-gYG" firstAttribute="leading" secondItem="DHn-JX-VOP" secondAttribute="leading" id="ZVq-ol-Lqk"/>
+                            <constraint firstItem="fsA-SB-gYG" firstAttribute="centerY" secondItem="RZO-hP-YyF" secondAttribute="centerY" id="aWg-wI-i6C"/>
+                            <constraint firstItem="DHn-JX-VOP" firstAttribute="top" secondItem="fsA-SB-gYG" secondAttribute="bottom" constant="8" symbolic="YES" id="bj5-jg-rj9"/>
+                            <constraint firstItem="val-1n-zoY" firstAttribute="leading" secondItem="DTc-La-Uae" secondAttribute="trailing" constant="8" symbolic="YES" id="exR-em-6FZ"/>
+                            <constraint firstItem="fsA-SB-gYG" firstAttribute="trailing" secondItem="DHn-JX-VOP" secondAttribute="trailing" id="hr5-WV-YNE"/>
+                            <constraint firstItem="fsA-SB-gYG" firstAttribute="leading" secondItem="RZO-hP-YyF" secondAttribute="trailing" constant="8" symbolic="YES" id="lN0-UU-ano"/>
+                            <constraint firstItem="1cG-bK-8kI" firstAttribute="top" secondItem="JwK-aQ-ioB" secondAttribute="top" constant="17" id="oe3-Yj-1Af"/>
+                            <constraint firstItem="DHn-JX-VOP" firstAttribute="centerY" secondItem="zII-6Y-0zb" secondAttribute="centerY" id="qnb-rV-xId"/>
+                            <constraint firstItem="PqE-9f-Ajf" firstAttribute="trailing" secondItem="nJq-Y2-uvI" secondAttribute="trailing" id="rpV-zD-yIy"/>
+                            <constraint firstItem="PqE-9f-Ajf" firstAttribute="leading" secondItem="UO6-eb-Ku3" secondAttribute="trailing" constant="8" symbolic="YES" id="s3u-t5-iUl"/>
+                            <constraint firstItem="nJq-Y2-uvI" firstAttribute="leading" secondItem="vJP-Tj-3BQ" secondAttribute="leading" id="tM5-Dw-h6p"/>
+                            <constraint firstItem="DHn-JX-VOP" firstAttribute="leading" secondItem="val-1n-zoY" secondAttribute="leading" id="tNw-LO-bly"/>
+                            <constraint firstItem="1cG-bK-8kI" firstAttribute="leading" secondItem="N6P-RZ-IML" secondAttribute="trailing" constant="8" symbolic="YES" id="uHg-OF-St3"/>
+                            <constraint firstItem="fsA-SB-gYG" firstAttribute="top" secondItem="vJP-Tj-3BQ" secondAttribute="bottom" constant="22" id="wkm-xN-psa"/>
+                            <constraint firstItem="1cG-bK-8kI" firstAttribute="centerY" secondItem="N6P-RZ-IML" secondAttribute="centerY" id="xQf-Z3-DT0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="moveDownView" destination="PqE-9f-Ajf" id="OYj-pi-vJd"/>
+                        <outlet property="moveLeftView" destination="nJq-Y2-uvI" id="M1Y-2i-fCX"/>
+                        <outlet property="moveRightView" destination="vJP-Tj-3BQ" id="vLM-ZK-82h"/>
+                        <outlet property="moveUpView" destination="1cG-bK-8kI" id="6HK-0h-ucp"/>
+                        <outlet property="nextCostumeView" destination="fsA-SB-gYG" id="X3g-BP-Wbb"/>
+                        <outlet property="previousCostumeView" destination="DHn-JX-VOP" id="ME3-xT-dbR"/>
+                        <outlet property="useView" destination="val-1n-zoY" id="aRD-OW-hA9"/>
+                    </connections>
+                </viewController>
+                <customObject id="4WF-Xr-JlL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="994" y="390.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="gearshape" catalog="system" width="16" height="16"/>
         <image name="gearshape.2" catalog="system" width="20" height="16"/>
+        <image name="keyboard" catalog="system" width="19" height="13"/>
     </resources>
 </document>

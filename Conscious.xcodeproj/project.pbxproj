@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BF0D2C1C24FADC4E00AEF86F /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = BF0D2C1B24FADC4E00AEF86F /* KeyboardShortcuts */; };
+		BF0D2C1E24FADD1F00AEF86F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */; };
+		BF0D2C2024FAE86B00AEF86F /* ControlsPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D2C1F24FAE86B00AEF86F /* ControlsPrefsViewController.swift */; };
+		BF109CD724FAFD6F00F06E47 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109CD624FAFD6F00F06E47 /* PreferencesWindowController.swift */; };
 		BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B424F45DB8000300B7 /* Tileset.sks */; };
 		BF2514B724F45E01000300B7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B624F45E01000300B7 /* GameScene.sks */; };
 		BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */; };
@@ -81,6 +84,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		BF0D2C1F24FAE86B00AEF86F /* ControlsPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsPrefsViewController.swift; sourceTree = "<group>"; };
+		BF109CD624FAFD6F00F06E47 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		BF2514B424F45DB8000300B7 /* Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tileset.sks; sourceTree = "<group>"; };
 		BF2514B624F45E01000300B7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDataConfiguration.swift; sourceTree = "<group>"; };
@@ -259,6 +265,7 @@
 				BFD8797824F5FDA800552EDD /* CGVector.swift */,
 				BF3A0B8524F70B8900575F72 /* GameSceneUtils.swift */,
 				BFFF892B24F93FF800D405CC /* PropertyLists.swift */,
+				BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -353,6 +360,8 @@
 				BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */,
 				BF63E65824F84B2000429247 /* PreferencesViewController.swift */,
 				BF63E65A24F84BAC00429247 /* GeneralPrefsViewController.swift */,
+				BF0D2C1F24FAE86B00AEF86F /* ControlsPrefsViewController.swift */,
+				BF109CD624FAFD6F00F06E47 /* PreferencesWindowController.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -637,6 +646,7 @@
 				BFC78F3D24F48731004E85A9 /* Player.swift in Sources */,
 				BFD8796024F5B61D00552EDD /* GameTileType.swift in Sources */,
 				BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */,
+				BF0D2C2024FAE86B00AEF86F /* ControlsPrefsViewController.swift in Sources */,
 				BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */,
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
@@ -644,7 +654,9 @@
 				BF3A0B8624F70B8900575F72 /* GameSceneUtils.swift in Sources */,
 				BF3A0B8424F7046900575F72 /* LevelExitDoor.swift in Sources */,
 				BFD8795E24F5B60900552EDD /* GameSetup.swift in Sources */,
+				BF109CD724FAFD6F00F06E47 /* PreferencesWindowController.swift in Sources */,
 				BF3A0B7A24F6CB4D00575F72 /* GameSignalSender.swift in Sources */,
+				BF0D2C1E24FADD1F00AEF86F /* Keyboard.swift in Sources */,
 				BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */,
 				BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */,
 				BFD8797924F5FDA800552EDD /* CGVector.swift in Sources */,
