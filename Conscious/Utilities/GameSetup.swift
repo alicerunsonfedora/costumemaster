@@ -18,14 +18,13 @@ public func getTileType(fromDefinition tile: SKTileDefinition) -> GameTileType {
             return .wall
         case name where name.starts(with: "exit"):
             return .exit
+        case name where name.starts(with: "lever"):
+            return .lever
         case "Main":
             return .player
         default:
             return .unknown
         }
-//        if name.starts(with: "wall") { return .wall }
-//        if name == "Main" { return .player }
-//        if name.starts(with: "exit") { return .exit }
     }
     return .unknown
 }

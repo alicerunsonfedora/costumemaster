@@ -12,5 +12,6 @@ public enum GameTileType {
     case wall
     case exit
     case floor
+    case lever
     case unknown
 }

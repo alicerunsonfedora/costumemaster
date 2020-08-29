@@ -86,12 +86,19 @@
 		<key>Title</key>
 		<string>What do you want?!</string>
 	</dict>
-	<key>Click_7500</key>
+	<key>Click_5500</key>
 	<dict>
 		<key>Message</key>
 		<string>That really is what you want, isn&apos;t it? Maybe you should play the game and find out that way.</string>
 		<key>Title</key>
 		<string>You&apos;re joking, right?</string>
+	</dict>
+	<key>Click_7500</key>
+	<dict>
+		<key>Message</key>
+		<string>Then how about we say... if you get to... ten thousand clicks, I&apos;ll do a face reveal? Ha! Good luck getting there.</string>
+		<key>Title</key>
+		<string>Alright, then...</string>
 	</dict>
 	<key>Click_10000</key>
 	<dict>

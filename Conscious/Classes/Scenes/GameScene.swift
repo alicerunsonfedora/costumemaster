@@ -123,6 +123,13 @@ class GameScene: SKScene {
                         receiver.playerListener = self.playerNode
                         self.receivers?.append(receiver)
                         self.exitNode = receiver
+                    case .lever:
+                        let lever = GameSignalSender(
+                            textureName: defined.name ?? "lever_wallup_off",
+                            by: .activeOncePermanently,
+                            at: CGPoint(x: col, y: row)
+                        )
+                        self.switches?.append(lever)
                     default:
                         break
                     }
