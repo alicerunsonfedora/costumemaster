@@ -148,6 +148,7 @@ public class Player: SKSpriteNode {
             texture: SKTexture(imageNamed: "Player (Idle, \(costume.rawValue))"),
             size: self.size
         )
+        ghostSprite.name = "ghost"
         ghostSprite.position = self.position
         ghostSprite.zPosition = self.zPosition - 1
         ghostSprite.isHidden = false

@@ -41,6 +41,8 @@ class GameScene: SKScene {
     /// The list of mappings for each output and the required inputs.
     var requisites: [SwitchRequisite] = []
 
+    var structure: SKNode = SKNode()
+
     // MARK: CONSTRUCTION METHODS
 
     /// Create children nodes from a tile map node and add them to the scene's view heirarchy.
@@ -125,7 +127,7 @@ class GameScene: SKScene {
                     }
 
                     // Add the node to the parent scene's node heirarchy and update the position.
-                    if tileType != .player { self.addChild(sprite) }
+                    if tileType != .player { self.structure.addChild(sprite) }
                 }
             }
         }
@@ -133,6 +135,11 @@ class GameScene: SKScene {
         // Delete the tilemap from memory.
         tilemap.tileSet = SKTileSet(tileGroups: [])
         tilemap.removeFromParent()
+
+        // Finally, clump all of the non-player sprites under the structure node to prevent scene
+        // overbearing.
+        self.structure.zPosition = -1
+        self.addChild(self.structure)
     }
 
     // MARK: SWITCH REQUISITE CONSTRUCTORS
