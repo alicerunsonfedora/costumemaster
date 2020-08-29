@@ -5,6 +5,7 @@
 //  Created by Marquis Kurt on 6/28/20.
 //
 
+import GameKit
 import SpriteKit
 import GameplayKit
 import Carbon.HIToolbox
@@ -289,6 +290,7 @@ class GameScene: SKScene {
         // Update the camera and its position.
         self.camera = playerCamera
         self.playerCamera!.position = self.playerNode!.position
+
     }
 
     // MARK: LIFE CYCLE UPDATES

@@ -49,9 +49,17 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
             GKAccessPoint.shared.location = .bottomLeading
             GKAccessPoint.shared.showHighlights = true
             GKAccessPoint.shared.isActive = true
-        } else {
-
+            GKAccessPoint.shared.parentWindow = self.view?.window
         }
+    }
+
+    override func didMove(to view: SKView) {
+        if let gCenter = self.childNode(withName: "gameCenter") as? SKSpriteNode {
+            self.gameCenterButton = gCenter
+        }
+
+        // Display the Game Center access point.
+        self.setUpGameCenterProperties()
     }
 
     override func sceneDidLoad() {
@@ -95,13 +103,6 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
 
             self.character?.texture?.filteringMode = .nearest
         }
-
-        if let gCenter = self.childNode(withName: "gameCenter") as? SKSpriteNode {
-            self.gameCenterButton = gCenter
-        }
-
-        // Display the Game Center access point.
-        self.setUpGameCenterProperties()
     }
 
     override func mouseDown(with event: NSEvent) {
@@ -149,13 +150,15 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
     /// Start the game by presenting the first level scene.
     private func startAction() {
         self.startButton?.fontColor = NSColor.init(named: "AccentColor")
+        if #available(OSX 11.0, *) {
+            // TODO: Re-enable this once the issue is resolved in GameKit.
+            // GKAccessPoint.shared.isActive = false
+        }
         if let firstScene = SKScene(fileNamed: "GameScene") {
-            self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
-
             // Disable the access point when in an actual level.
-            if #available(OSX 11.0, *) {
-                GKAccessPoint.shared.isActive = false
-            }
+
+            self.removeAllChildren()
+            self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
         }
     }
 
