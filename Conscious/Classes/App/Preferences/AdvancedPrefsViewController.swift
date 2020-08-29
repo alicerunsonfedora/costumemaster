@@ -15,6 +15,10 @@ class AdvancedPrefsViewController: PreferencesViewController {
     @IBOutlet weak var frameCountCheckbox: NSButton!
     @IBOutlet weak var physicsCheckbox: NSButton!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
     override func viewWillAppear() {
         self.unmodeledCheckbox.state = preferences.showUnmodeledOnMenu ? .on : .off
         self.nodeCountCheckbox.state = preferences.showNodeCount ? .on : .off

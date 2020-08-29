@@ -8,7 +8,8 @@
 import GameKit
 import SpriteKit
 import GameplayKit
-import Carbon.HIToolbox
+import KeyboardShortcuts
+//import Carbon.HIToolbox
 
 /// The base class for a given level.
 ///
@@ -292,7 +293,6 @@ class GameScene: SKScene {
         // Update the camera and its position.
         self.camera = playerCamera
         self.playerCamera!.position = self.playerNode!.position
-
     }
 
     // MARK: LIFE CYCLE UPDATES
@@ -331,26 +331,27 @@ class GameScene: SKScene {
 
     public override func keyDown(with event: NSEvent) {
         switch Int(event.keyCode) {
+
         // Check for movement keys and move the player node in the respective directions.
-        case kVK_ANSI_W:
+        case KeyboardShortcuts.getShortcut(for: .moveUp)?.carbonKeyCode:
             self.playerNode?.move(.north, unit: self.unit!)
-        case kVK_ANSI_S:
+        case KeyboardShortcuts.getShortcut(for: .moveDown)?.carbonKeyCode:
             self.playerNode?.move(.south, unit: self.unit!)
-        case kVK_ANSI_A:
+        case KeyboardShortcuts.getShortcut(for: .moveLeft)?.carbonKeyCode:
             self.playerNode?.move(.west, unit: self.unit!)
-        case kVK_ANSI_D:
+        case KeyboardShortcuts.getShortcut(for: .moveRight)?.carbonKeyCode:
             self.playerNode?.move(.east, unit: self.unit!)
 
         // Check for the costume switching key and switch to the next available costume.
-        case kVK_ANSI_F:
+        case KeyboardShortcuts.getShortcut(for: .nextCostume)?.carbonKeyCode:
             let costume = self.playerNode?.nextCostume()
             self.checkWallStates(with: costume)
-        case kVK_ANSI_G:
+        case KeyboardShortcuts.getShortcut(for: .previousCostume)?.carbonKeyCode:
             let costume = self.playerNode?.previousCostume()
             self.checkWallStates(with: costume)
 
         // Activate any switches where the player is required to interact with them.
-        case kVK_ANSI_E:
+        case KeyboardShortcuts.getShortcut(for: .use)?.carbonKeyCode:
             guard let location = self.playerNode?.position else { break }
             let inputs = self.switches
             for input in inputs where input.position.distance(between: location) < (self.unit?.width ?? 128) / 2
@@ -366,13 +367,14 @@ class GameScene: SKScene {
     }
 
     public override func keyUp(with event: NSEvent) {
-        switch Int(event.keyCode) {
-
-        // Stop movement when a movement key is released.
-        case kVK_ANSI_W, kVK_ANSI_S, kVK_ANSI_A, kVK_ANSI_D, kVK_UpArrow, kVK_DownArrow, kVK_LeftArrow, kVK_RightArrow:
+        let movementKeys = [
+            KeyboardShortcuts.getShortcut(for: .moveUp)?.carbonKeyCode,
+            KeyboardShortcuts.getShortcut(for: .moveLeft)?.carbonKeyCode,
+            KeyboardShortcuts.getShortcut(for: .moveRight)?.carbonKeyCode,
+            KeyboardShortcuts.getShortcut(for: .moveDown)?.carbonKeyCode
+        ]
+        if movementKeys.contains(Int(event.keyCode)) {
             self.playerNode?.halt()
-        default:
-            break
         }
     }
 }

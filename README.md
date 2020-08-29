@@ -21,6 +21,7 @@ To view the milestones for this project, visit the [Milestones page in this repo
 
 - Xcode 11 or higher
 - macOS 10.15 (Catalina) or higher
+- [KeyboardShortcuts][keys] (added when cloning)
 - (Optional, but recommended) [SwiftLint][linter]
 
 Clone the Xcode project and then run the `Conscious` scheme to build the project in Xcode.
@@ -45,6 +46,7 @@ The following practices are also being implemented with SwiftLint:
 <!-- Links in page -->
 [milestones]: https://github.com/alicerunsonfedora/CS400/milestones?direction=asc&sort=due_date&state=open
 [linter]: https://realm.github.io/SwiftLint/
+[keys]: https://github.com/sindresorhus/KeyboardShortcuts
 
 ---
 
