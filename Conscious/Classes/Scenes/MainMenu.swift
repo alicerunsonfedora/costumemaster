@@ -155,8 +155,6 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
             // GKAccessPoint.shared.isActive = false
         }
         if let firstScene = SKScene(fileNamed: "GameScene") {
-            // Disable the access point when in an actual level.
-
             self.removeAllChildren()
             self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
         }
