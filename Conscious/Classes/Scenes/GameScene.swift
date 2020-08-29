@@ -11,6 +11,23 @@ import GameplayKit
 import Carbon.HIToolbox
 
 /// The base class for a given level.
+///
+/// Typically, a level consists of a camera and tilemap which gets parsed into separate nodes. The scene also contains
+/// important data that provides additional context for the level's configuration.
+///
+/// - Requires: A tile map node called "Tile Map Node". Automapping _should_ be disabled, and the tileset should be
+/// "Costumemaster Default".
+/// - Requires: A camera node called "Camera".
+/// - Requires: `availableCostumes` field in user data: (Int) determines which costumes are available.
+/// See also: `Player.getCostumeSet`.
+/// - Requires: `levelLink` field in user data: (String) determines the next scene to display after this scene ends.
+/// - Requires: `startingCostume` field in user data: (String) determines which costume the player starts with.
+/// - Requires: `requisite_COL_ROW` field(s) in user data: (String) determines what outputs require certain inputs.
+/// Columns go from left to right, and rows go from bottom to top. The format for a requisite string is
+/// `"METHOD;COL,ROW;"`, where `METHOD` can be `AND` or `OR`, and every predicate afterwards is the coordinate
+/// to a corresponding input. For example: setting the key `requisite_1_1` to `AND;2,1;3,1;` will tell the scene
+/// to connect the output at (1, 1) to the inputs (2, 1) and (3, 1) while also making the connect an `AND` connection
+/// where both inputs must be active to activate the output.
 class GameScene: SKScene {
 
     // MARK: STORED PROPERTIES
@@ -45,8 +62,9 @@ class GameScene: SKScene {
     // MARK: CONSTRUCTION METHODS
 
     /// Create children nodes from a tile map node and add them to the scene's view heirarchy.
-    // swiftlint:disable:next cyclomatic_complexity
     private func setupTilemap() {
+        // swiftlint:disable:previous cyclomatic_complexity
+
         // Get the tilemap for this scene.
         guard let tilemap = childNode(withName: "Tile Map Node") as? SKTileMapNode else {
             sendAlert(

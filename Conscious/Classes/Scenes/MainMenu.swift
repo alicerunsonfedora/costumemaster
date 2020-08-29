@@ -207,7 +207,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
                 GKAchievement.report([achivement]) { error in
                     if error != nil {
                         sendAlert(
-                            "\(error?.localizedDescription)",
+                            String(describing: error),
                             withTitle: "Couldn't Sync Achievement",
                             level: .critical
                         ) { _ in }
