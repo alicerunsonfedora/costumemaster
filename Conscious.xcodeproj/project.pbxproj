@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF0D2C1C24FADC4E00AEF86F /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = BF0D2C1B24FADC4E00AEF86F /* KeyboardShortcuts */; };
 		BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B424F45DB8000300B7 /* Tileset.sks */; };
 		BF2514B724F45E01000300B7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B624F45E01000300B7 /* GameScene.sks */; };
 		BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */; };
@@ -152,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFDBE7AE24F955EE00FD75BF /* GameKit.framework in Frameworks */,
+				BF0D2C1C24FADC4E00AEF86F /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +446,9 @@
 			dependencies = (
 			);
 			name = Costumemaster;
+			packageProductDependencies = (
+				BF0D2C1B24FADC4E00AEF86F /* KeyboardShortcuts */,
+			);
 			productName = Conscious;
 			productReference = BF6FBAD324A8BDD400996890 /* The Costumemaster.app */;
 			productType = "com.apple.product-type.application";
@@ -515,6 +520,9 @@
 				Base,
 			);
 			mainGroup = BF6FBACA24A8BDD400996890;
+			packageReferences = (
+				BF0D2C1A24FADC4E00AEF86F /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+			);
 			productRefGroup = BF6FBAD424A8BDD400996890 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -741,7 +749,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -796,7 +804,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -973,6 +981,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF0D2C1A24FADC4E00AEF86F /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF0D2C1B24FADC4E00AEF86F /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF0D2C1A24FADC4E00AEF86F /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF6FBACB24A8BDD400996890 /* Project object */;
 }
