@@ -20,7 +20,11 @@ public func getTileType(fromDefinition tile: SKTileDefinition) -> GameTileType {
             return .exit
         case name where name.starts(with: "lever"):
             return .lever
-        case "floor":
+        case name where name.starts(with: "computer") && name.contains("_T1"):
+            return .computerT1
+        case name where name.starts(with: "computer") && name.contains("_T2"):
+            return .computerT2
+        case name where name.starts(with: "floor"):
             return .floor
         case "Main":
             return .player

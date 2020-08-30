@@ -19,6 +19,9 @@ public class GameSignalSender: SKSpriteNode {
     /// The method that this input will activate. Default is by player intervention.
     public var activationMethod: GameSignalInputMethod = .activeByPlayerIntervention
 
+    /// The kind of sender. Defaults to a trigger.
+    public var kind: GameSignalKind = .trigger
+
     /// The input's associated receiver.
     var receiver: GameSignalReceivable?
 

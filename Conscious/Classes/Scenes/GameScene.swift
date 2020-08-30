@@ -141,10 +141,25 @@ class GameScene: SKScene {
                             at: CGPoint(x: col, y: row)
                         )
                         lever.position = sprite.position
+                        lever.kind = .lever
                         if definedTextureName == "lever_wallup" {
                             lever.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
                         }
                         self.switches.append(lever)
+                    case .computerT1, .computerT2:
+                        let name = defined.name?
+                            .replacingOccurrences(of: "_on_T1", with: "")
+                            .replacingOccurrences(of: "_on_T2", with: "")
+                            ?? "computer_wallup"
+                        let computer = GameSignalSender(
+                            textureName: name,
+                            by: .activeOncePermanently,
+                            at: CGPoint(x: col, y: row)
+                        )
+                        computer.position = sprite.position
+                        computer.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
+                        computer.kind = tileType == .computerT1 ? .computerT1 : .computerT2
+                        self.switches.append(computer)
                     default:
                         break
                     }
@@ -356,7 +371,20 @@ class GameScene: SKScene {
             let inputs = self.switches
             for input in inputs where input.position.distance(between: location) < (self.unit?.width ?? 128) / 2
                 && input.activationMethod != .activeByPlayerIntervention {
-                input.activate(with: event, player: self.playerNode)
+                switch input.kind {
+                case .lever:
+                    input.activate(with: event, player: self.playerNode)
+                case .computerT1:
+                    if self.playerNode?.costume == PlayerCostumeType.bird {
+                        input.activate(with: event, player: self.playerNode)
+                    }
+                case .computerT2:
+                    if self.playerNode?.costume == PlayerCostumeType.flashDrive {
+                        input.activate(with: event, player: self.playerNode)
+                    }
+                default:
+                    break
+                }
             }
 
         // Catch-all case.
