@@ -154,7 +154,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
             // TODO: Re-enable this once the issue is resolved in GameKit.
             // GKAccessPoint.shared.isActive = false
         }
-        if let firstScene = SKScene(fileNamed: "GameScene") {
+        if let firstScene = SKScene(fileNamed: "Sample") {
             self.removeAllChildren()
             self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
         }

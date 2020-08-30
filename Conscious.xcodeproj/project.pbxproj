@@ -15,7 +15,7 @@
 		BF109CDB24FB26FB00F06E47 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109CDA24FB26FB00F06E47 /* Store.swift */; };
 		BF109CDD24FB31F400F06E47 /* Achievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109CDC24FB31F400F06E47 /* Achievements.swift */; };
 		BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B424F45DB8000300B7 /* Tileset.sks */; };
-		BF2514B724F45E01000300B7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B624F45E01000300B7 /* GameScene.sks */; };
+		BF2514B724F45E01000300B7 /* Sample.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B624F45E01000300B7 /* Sample.sks */; };
 		BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */; };
 		BF3A0B7524F6C42500575F72 /* changeCostume.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B7424F6C42500575F72 /* changeCostume.wav */; };
 		BF3A0B7824F6CB0C00575F72 /* GameSignalReceivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7724F6CB0C00575F72 /* GameSignalReceivable.swift */; };
@@ -95,7 +95,7 @@
 		BF109CDA24FB26FB00F06E47 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		BF109CDC24FB31F400F06E47 /* Achievements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievements.swift; sourceTree = "<group>"; };
 		BF2514B424F45DB8000300B7 /* Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tileset.sks; sourceTree = "<group>"; };
-		BF2514B624F45E01000300B7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		BF2514B624F45E01000300B7 /* Sample.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Sample.sks; sourceTree = "<group>"; };
 		BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDataConfiguration.swift; sourceTree = "<group>"; };
 		BF3A0B7424F6C42500575F72 /* changeCostume.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = changeCostume.wav; sourceTree = "<group>"; };
 		BF3A0B7724F6CB0C00575F72 /* GameSignalReceivable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalReceivable.swift; sourceTree = "<group>"; };
@@ -339,7 +339,7 @@
 		BF7DFDCC24F41E3F008D09AA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				BF2514B624F45E01000300B7 /* GameScene.sks */,
+				BF2514B624F45E01000300B7 /* Sample.sks */,
 				BF3A0B8024F703F400575F72 /* MainMenu.sks */,
 			);
 			path = Scenes;
@@ -576,7 +576,7 @@
 				BF3A0B7524F6C42500575F72 /* changeCostume.wav in Resources */,
 				BFD8795B24F5AE7F00552EDD /* Player_Backward_Bird.atlas in Resources */,
 				BFD8797524F5DE3E00552EDD /* Player_Side_Sorceress.atlas in Resources */,
-				BF2514B724F45E01000300B7 /* GameScene.sks in Resources */,
+				BF2514B724F45E01000300B7 /* Sample.sks in Resources */,
 				BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */,
 				BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */,
 				BF3A0B8124F703F400575F72 /* MainMenu.sks in Resources */,

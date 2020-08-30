@@ -23,4 +23,23 @@ extension KeyboardShortcuts {
     static func resetAll() {
         KeyboardShortcuts.reset([.moveUp, .moveRight, .moveDown, .moveLeft, .nextCostume, .previousCostume, .use])
     }
+
+    /// The shortcut properties for the movement keys.
+    static var movementKeys: [Shortcut?] {
+        return [
+            KeyboardShortcuts.getShortcut(for: .moveDown),
+            KeyboardShortcuts.getShortcut(for: .moveUp),
+            KeyboardShortcuts.getShortcut(for: .moveLeft),
+            KeyboardShortcuts.getShortcut(for: .moveRight)
+        ]
+    }
+
+    /// The shortcut properties for auxiliary keys such as using and costume changing.
+    static var auxiliaryKeys: [Shortcut?] {
+        return [
+            KeyboardShortcuts.getShortcut(for: .nextCostume),
+            KeyboardShortcuts.getShortcut(for: .previousCostume),
+            KeyboardShortcuts.getShortcut(for: .use)
+        ]
+    }
 }

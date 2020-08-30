@@ -327,6 +327,10 @@ class GameScene: SKScene {
         }
     }
 
+    override func willMove(from view: SKView) {
+        GameStore.shared.lastSavedScene = self.scene?.name ?? ""
+    }
+
     // MARK: EVENT TRIGGERS
 
     /// Check the wall states and update their physics bodies.
@@ -387,12 +391,7 @@ class GameScene: SKScene {
     }
 
     public override func keyUp(with event: NSEvent) {
-        let movementKeys = [
-            KeyboardShortcuts.getShortcut(for: .moveUp)?.carbonKeyCode,
-            KeyboardShortcuts.getShortcut(for: .moveLeft)?.carbonKeyCode,
-            KeyboardShortcuts.getShortcut(for: .moveRight)?.carbonKeyCode,
-            KeyboardShortcuts.getShortcut(for: .moveDown)?.carbonKeyCode
-        ]
+        let movementKeys = KeyboardShortcuts.movementKeys.map { key in key?.carbonKeyCode }
         if movementKeys.contains(Int(event.keyCode)) {
             self.playerNode?.halt()
         }
