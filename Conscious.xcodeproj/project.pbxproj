@@ -66,6 +66,8 @@
 		BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */; };
 		BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */; };
 		BFEE78C324FBF1FC006FBFF0 /* GameAchievments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEE78C224FBF1FC006FBFF0 /* GameAchievments.swift */; };
+		BFEE78C524FBFDB4006FBFF0 /* PauseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEE78C424FBFDB4006FBFF0 /* PauseScene.swift */; };
+		BFEE78C724FC04EC006FBFF0 /* PauseMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFEE78C624FC04EC006FBFF0 /* PauseMenu.sks */; };
 		BFFF892C24F93FF800D405CC /* PropertyLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFF892B24F93FF800D405CC /* PropertyLists.swift */; };
 		BFFF892D24F943E400D405CC /* MenuContent.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFF892A24F93F6A00D405CC /* MenuContent.plist */; };
 /* End PBXBuildFile section */
@@ -157,6 +159,8 @@
 		BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMoveDirection.swift; sourceTree = "<group>"; };
 		BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Change.atlas; sourceTree = "<group>"; };
 		BFEE78C224FBF1FC006FBFF0 /* GameAchievments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAchievments.swift; sourceTree = "<group>"; };
+		BFEE78C424FBFDB4006FBFF0 /* PauseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseScene.swift; sourceTree = "<group>"; };
+		BFEE78C624FC04EC006FBFF0 /* PauseMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PauseMenu.sks; sourceTree = "<group>"; };
 		BFFF892A24F93F6A00D405CC /* MenuContent.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MenuContent.plist; sourceTree = "<group>"; };
 		BFFF892B24F93FF800D405CC /* PropertyLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyLists.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -261,6 +265,7 @@
 			children = (
 				BF6FBADC24A8BDD400996890 /* GameScene.swift */,
 				BF3A0B8F24F7355200575F72 /* MainMenu.swift */,
+				BFEE78C424FBFDB4006FBFF0 /* PauseScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 			children = (
 				BF2514B624F45E01000300B7 /* Sample.sks */,
 				BF3A0B8024F703F400575F72 /* MainMenu.sks */,
+				BFEE78C624FC04EC006FBFF0 /* PauseMenu.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -569,6 +575,7 @@
 				BFD8796F24F5CA4000552EDD /* Player_Backward_Sorceress.atlas in Resources */,
 				BFD8797624F5DE3E00552EDD /* Player_Side_USB.atlas in Resources */,
 				BFE6475424F8853800230F93 /* OFL.txt in Resources */,
+				BFEE78C724FC04EC006FBFF0 /* PauseMenu.sks in Resources */,
 				BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */,
 				BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */,
 				BF3A0B8A24F733C400575F72 /* Cabin-Regular.ttf in Resources */,
@@ -659,6 +666,7 @@
 				BFBEB33524F847F600162B06 /* AdvancedPrefsViewController.swift in Sources */,
 				BFC78F3D24F48731004E85A9 /* Player.swift in Sources */,
 				BFD8796024F5B61D00552EDD /* GameTileType.swift in Sources */,
+				BFEE78C524FBFDB4006FBFF0 /* PauseScene.swift in Sources */,
 				BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */,
 				BF0D2C2024FAE86B00AEF86F /* ControlsPrefsViewController.swift in Sources */,
 				BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */,

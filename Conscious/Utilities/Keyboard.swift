@@ -16,6 +16,7 @@ extension KeyboardShortcuts.Name {
     static let previousCostume = Self("previousCostume", default: Shortcut(.g))
     static let nextCostume = Self("nextCostume", default: Shortcut(.f))
     static let use = Self("use", default: Shortcut(.e))
+    static let pause = Self("pause", default: Shortcut(.escape))
 }
 
 extension KeyboardShortcuts {
@@ -39,7 +40,8 @@ extension KeyboardShortcuts {
         return [
             KeyboardShortcuts.getShortcut(for: .nextCostume),
             KeyboardShortcuts.getShortcut(for: .previousCostume),
-            KeyboardShortcuts.getShortcut(for: .use)
+            KeyboardShortcuts.getShortcut(for: .use),
+            KeyboardShortcuts.getShortcut(for: .pause)
         ]
     }
 }
