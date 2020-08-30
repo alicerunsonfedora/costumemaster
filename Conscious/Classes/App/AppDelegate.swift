@@ -23,6 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         ) as? NSWindowController else {
             return
         }
+        controller.window?.parent = NSApplication.shared.mainWindow
         controller.showWindow(self)
     }
 
