@@ -21,10 +21,12 @@ understanding of agents and apply these concepts by implementing and comparing a
 
 ## Roadmap
 
-- Milestone 1: Working Game (September 21, 2020)
-- Milestone 2: Adding Apple's Agents (Oct. 19, 2020)
-- Milestone 3: Add Custom Agent and Beat Apple (November 9, 2020)
-- Milestone 4: Presentation and Cleanup
+| Status | Due Date | Milestone |
+| ------ | ----------- | ----------- |
+| 🟡 | September 21, 2020 | Working Game |
+| 🔴 | October 19, 2020 | Adding Apple's agents with GameplayKit |
+| 🔴 | November 9, 2020 | Adding custom agents and beating Apple |
+| 🔴 | November 16, 2020 | Final presentation and cleanup |
 
 Details on these milestones can be found on the [Milestones page in this repository's issues][milestones].
 
@@ -39,6 +41,16 @@ Details on these milestones can be found on the [Milestones page in this reposit
 
 Clone the Xcode project, ensure that dependencies are install with the Swift Package Manager, and then run the `Conscious` scheme to 
 build the project in Xcode.
+
+### Game Center
+
+The Costumemaster integrates with Game Center to allow players to earn achievements, challenge others, and rank in the leaderboards
+for the best scores on levels (scoring system similar to what AI agents use). Game Center is a service that requires an Apple Developer
+account and an app registered in App Store connect with the bundle identifier of the game. To test Game Center achievements, make
+sure that you update the build identifier in the project to the app's identifier in App Store Connect and make sure that the achievements
+with the IDs listed in [GameAchievements.swift][gcachieve] in the Achievements list of the Game Center section.
+
+![Game Center](gamecenter.png)
 
 ### About SwiftLint
 
@@ -62,6 +74,7 @@ The following practices are also being implemented with SwiftLint:
 [milestones]: https://github.com/alicerunsonfedora/CS400/milestones?direction=asc&sort=due_date&state=open
 [linter]: https://realm.github.io/SwiftLint/
 [keys]: https://github.com/sindresorhus/KeyboardShortcuts
+[gcachieve]: ./Conscious/Enums/GameAchievments.swift
 
 ---
 
