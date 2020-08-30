@@ -16,6 +16,12 @@ class ViewController: NSViewController, NSWindowDelegate {
     /// A private tunnled copy of AppDelegate's preferences.
     private var settings: Preferences = AppDelegate.preferences
 
+    /// The root scene for this controller.
+    ///
+    /// This is typically used when switching between scenes, but wanting to preserve the scene's state.
+    /// Use this sparingly.
+    var rootScene: SKScene?
+
     /// Sign in to Game Center and present the resulting controller.
     func authenticateWithGameCenter() {
         let localPlayer = GKLocalPlayer.local

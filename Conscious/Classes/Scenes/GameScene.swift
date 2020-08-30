@@ -359,8 +359,11 @@ class GameScene: SKScene {
     }
 
     private func getPauseScene() {
-        if let paused = SKScene(fileNamed: "PauseMenu") {
-            self.addChild(paused)
+        if let paused = SKScene(fileNamed: "PauseMenu") as? PauseScene {
+            if let controller = self.view?.window?.contentViewController as? ViewController {
+                controller.rootScene = self
+                self.view?.presentScene(paused, transition: SKTransition.crossFade(withDuration: 0.1))
+            }
         }
     }
 

@@ -58,8 +58,11 @@ class PauseScene: SKScene {
     }
 
     private func mainMenuAction() {
-        if let scene = SKScene(fileNamed: "MainMenu") as? MainMenuScene {
-            self.view?.presentScene(scene)
+        confirm("You'll lose any unsaved progress.", withTitle: "Go back to menu?", level: .warning) { resp in
+            if resp.rawValue != 1000 { return }
+            if let scene = SKScene(fileNamed: "MainMenu") as? MainMenuScene {
+                self.view?.presentScene(scene)
+            }
         }
     }
 
@@ -70,12 +73,21 @@ class PauseScene: SKScene {
     }
 
     private func resumeAction() {
-        self.removeFromParent()
+        if let controller = self.view?.window?.contentViewController as? ViewController {
+            if controller.rootScene == nil { return }
+            self.view?.presentScene(controller.rootScene!, transition: SKTransition.fade(withDuration: 0.10))
+            controller.rootScene = nil
+        }
     }
 
     private func restartAction() {
-        if let restartedScene = SKScene(fileNamed: self.name ?? "GameScene") as? GameScene {
-            self.view?.presentScene(restartedScene)
+        confirm("You'll lose any unsaved progress.", withTitle: "Restart the level?", level: .warning) { resp in
+            if resp.rawValue != 1000 { return }
+            if let controller = self.view?.window?.contentViewController as? ViewController {
+                if let scene = SKScene(fileNamed: controller.rootScene?.name ?? "") {
+                    self.view?.presentScene(scene, transition: SKTransition.fade(withDuration: 1.0))
+                }
+            }
         }
     }
 
