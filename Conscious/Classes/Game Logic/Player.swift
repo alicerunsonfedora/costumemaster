@@ -7,6 +7,7 @@
 
 import Foundation
 import SpriteKit
+import GameKit
 
 /// A class representation of the game player.
 ///
@@ -16,8 +17,26 @@ public class Player: SKSpriteNode {
 
     // MARK: STORED PROPERTIES
 
+    /// Whether the player is being initialized.
+    private var inInit: Bool = false
+
     /// Thre current costume the player is wearing.
-    public var costume: PlayerCostumeType = .flashDrive
+    public var costume: PlayerCostumeType = .flashDrive {
+        didSet {
+            if !inInit {
+                switch costume {
+                case .flashDrive:
+                    GameStore.shared.costumeIncrementUSB += 1
+                case .bird:
+                    GameStore.shared.costumeIncrementBird += 1
+                case .sorceress:
+                    GameStore.shared.costumeIncrementSorceress += 1
+                default:
+                    break
+                }
+            }
+        }
+    }
 
     /// A queue of all available costumes the player can switch to.
     private var costumeQueue: [PlayerCostumeType] = [.bird, .sorceress, .default]
@@ -201,6 +220,9 @@ public class Player: SKSpriteNode {
         // Start animating costume changes.
         self.animateCostumeChange(startingWith: currentCostume)
 
+        // Check for any achievements with Game Center.
+        self.checkAchievementStatus()
+
         // Return the costume type.
         return self.costume
     }
@@ -221,8 +243,28 @@ public class Player: SKSpriteNode {
         // Start animating costume changes.
         self.animateCostumeChange(startingWith: currentCostume)
 
+        // Check for any achievements with Game Center.
+        self.checkAchievementStatus()
+
         // Return the costume type.
         return self.costume
+    }
+
+    private func checkAchievementStatus() {
+        switch self.costume {
+        case .flashDrive:
+            break
+        case .bird:
+            if GameStore.shared.costumeIncrementBird == 1 {
+                GKAchievement.earn(with: "costumemaster.new_bird")
+            }
+        case .sorceress:
+            if GameStore.shared.costumeIncrementSorceress == 1 {
+                GKAchievement.earn(with: "costumemaster.new_sorceress")
+            }
+        case .default:
+            GKAchievement.earn(with: "costumemaster.end_reveal")
+        }
     }
 
     // MARK: MOVEMENT METHODS

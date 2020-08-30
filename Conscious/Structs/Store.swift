@@ -10,6 +10,10 @@ import Foundation
 /// A structure that represents the game's store data.
 struct GameStore {
 
+    /// A shared copy of the game store.
+    static var shared: GameStore = GameStore()
+
+    /// Whether the store is being initialized.
     private var inInit: Bool = false
 
     /// The last scene that was loaded before the game ended.
