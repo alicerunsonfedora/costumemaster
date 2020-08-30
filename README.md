@@ -1,4 +1,4 @@
-# Costumemaster (Codename "Conscious")
+# The Costumemaster (Codename "Conscious")
 
 <img src="icon.png" align="right"  style="padding-right: 32px;"/>
 
@@ -8,12 +8,25 @@ An acclaimed costume designer and software engineer wakes up from a blackout to 
 quite... right.... Traverse through a dream-like, constantly changing bedroom and office and get out as quickly as you can. Can you
 make it out and figure out what's going on?
 
+## Features
+
+- 🕹 **Works with Game Center**: Challenge your friends and earn achievements!
+- 🍎 **Designed for macOS**: Written completely in Swift, SpriteKit, and GameplayKit!
+- ⚙️ **Configurable**: Customize keyboard shortcuts and other preferences with ease!
+
 ## Objective
 
 The primary objective of this project is to take the concepts from _CS440: Principles of Artificial Intelligence_ and build a better 
 understanding of agents and apply these concepts by implementing and comparing agents in a video game.
 
-To view the milestones for this project, visit the [Milestones page in this repository's issues][milestones].
+## Roadmap
+
+- Milestone 1: Working Game (September 21, 2020)
+- Milestone 2: Adding Apple's Agents (Oct. 19, 2020)
+- Milestone 3: Add Custom Agent and Beat Apple (November 9, 2020)
+- Milestone 4: Presentation and Cleanup
+
+Details on these milestones can be found on the [Milestones page in this repository's issues][milestones].
 
 ## Build instructions
 
@@ -24,7 +37,8 @@ To view the milestones for this project, visit the [Milestones page in this repo
 - [KeyboardShortcuts][keys] (added when cloning)
 - (Optional, but recommended) [SwiftLint][linter]
 
-Clone the Xcode project and then run the `Conscious` scheme to build the project in Xcode.
+Clone the Xcode project, ensure that dependencies are install with the Swift Package Manager, and then run the `Conscious` scheme to 
+build the project in Xcode.
 
 ### About SwiftLint
 
@@ -38,6 +52,7 @@ The following practices are also being implemented with SwiftLint:
 
 - Lines should be no longer than 120 characters long, similar to PEP8 standards with Python.
 - Function body length will be ignored.
+- Bodies for types should not exceed 400 lines (warnings issues at 250 lines).
 
 ## Quick Links
 
