@@ -15,7 +15,6 @@ import KeyboardShortcuts
 ///
 /// Typically, a level consists of a camera and tilemap which gets parsed into separate nodes. The scene also contains
 /// important data that provides additional context for the level's configuration.
-///
 /// - Requires: A tile map node called "Tile Map Node". Automapping _should_ be disabled, and the tileset should be
 /// "Costumemaster Default".
 /// - Requires: A camera node called "Camera".
@@ -235,9 +234,7 @@ class GameScene: SKScene {
     private func parseRequisites() {
         for req in self.requisites {
             let correspondingOutputs = self.receivers.filter({rec in rec.levelPosition == req.outputLocation})
-            if correspondingOutputs.isEmpty {
-                continue
-            }
+            if correspondingOutputs.isEmpty { continue }
             if correspondingOutputs.count > 1 {
                 sendAlert(
                     "The level configuration has duplicate mappings for the output at \(req.outputLocation)."
@@ -313,7 +310,6 @@ class GameScene: SKScene {
     // MARK: LIFE CYCLE UPDATES
 
     override func update(_ currentTime: TimeInterval) {
-        // Update the camera's position.
         if self.camera?.position != self.playerNode?.position {
             self.camera?.run(SKAction.move(to: self.playerNode?.position ?? CGPoint(x: 0, y: 0), duration: 1))
         }
@@ -322,7 +318,6 @@ class GameScene: SKScene {
     }
 
     override func didFinishUpdate() {
-        // Run the receiving function on the exit door.
         if self.exitNode?.active == true {
             self.exitNode?.receive(with: self.playerNode, event: nil) { _ in
                 if let scene = SKScene(fileNamed: self.configuration?.linksToNextScene ?? "MainMenu") {
@@ -369,8 +364,6 @@ class GameScene: SKScene {
 
     public override func keyDown(with event: NSEvent) {
         switch Int(event.keyCode) {
-
-        // Check for movement keys and move the player node in the respective directions.
         case KeyboardShortcuts.getShortcut(for: .moveUp)?.carbonKeyCode:
             self.playerNode?.move(.north, unit: self.unit!)
         case KeyboardShortcuts.getShortcut(for: .moveDown)?.carbonKeyCode:
@@ -379,19 +372,14 @@ class GameScene: SKScene {
             self.playerNode?.move(.west, unit: self.unit!)
         case KeyboardShortcuts.getShortcut(for: .moveRight)?.carbonKeyCode:
             self.playerNode?.move(.east, unit: self.unit!)
-
-        // Check for the costume switching key and switch to the next available costume.
         case KeyboardShortcuts.getShortcut(for: .nextCostume)?.carbonKeyCode:
             let costume = self.playerNode?.nextCostume()
             self.checkWallStates(with: costume)
         case KeyboardShortcuts.getShortcut(for: .previousCostume)?.carbonKeyCode:
             let costume = self.playerNode?.previousCostume()
             self.checkWallStates(with: costume)
-
-        // Activate any switches where the player is required to interact with them.
         case KeyboardShortcuts.getShortcut(for: .use)?.carbonKeyCode:
             checkInputStates(event)
-        // Catch-all case.
         default:
             break
 
