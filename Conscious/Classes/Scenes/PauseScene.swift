@@ -51,6 +51,12 @@ class PauseScene: SKScene {
         }
     }
 
+    override func keyDown(with event: NSEvent) {
+        if Int(event.keyCode) == KeyboardShortcuts.getShortcut(for: .pause)?.carbonKeyCode {
+            self.resumeAction()
+        }
+    }
+
     private func mainMenuAction() {
         if let scene = SKScene(fileNamed: "MainMenu") as? MainMenuScene {
             self.view?.presentScene(scene)

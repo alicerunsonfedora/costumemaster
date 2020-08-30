@@ -31,7 +31,6 @@ import KeyboardShortcuts
 class GameScene: SKScene {
 
     // MARK: STORED PROPERTIES
-
     /// The player node in the level.
     var playerNode: Player?
 
@@ -60,7 +59,6 @@ class GameScene: SKScene {
     var structure: SKNode = SKNode()
 
     // MARK: CONSTRUCTION METHODS
-
     /// Create children nodes from a tile map node and add them to the scene's view heirarchy.
     private func setupTilemap() {
         // swiftlint:disable:previous cyclomatic_complexity
@@ -180,10 +178,8 @@ class GameScene: SKScene {
     }
 
     // MARK: SWITCH REQUISITE CONSTRUCTORS
-
     /// Parse the user data for switch requisites and hook up the inputs and outputs accordingly.
     private func parseRequisiteData() {
-
         // Only run this if there's user data for the scene.
         if let userDataFields = self.userData {
 
@@ -259,9 +255,7 @@ class GameScene: SKScene {
     }
 
     // MARK: SCENE LOADING
-
     override func sceneDidLoad() {
-
         // Set the correct scaling mode.
         self.scaleMode = .resizeFill
 
@@ -308,7 +302,6 @@ class GameScene: SKScene {
     }
 
     // MARK: LIFE CYCLE UPDATES
-
     override func update(_ currentTime: TimeInterval) {
         if self.camera?.position != self.playerNode?.position {
             self.camera?.run(SKAction.move(to: self.playerNode?.position ?? CGPoint(x: 0, y: 0), duration: 1))
@@ -332,7 +325,6 @@ class GameScene: SKScene {
     }
 
     // MARK: EVENT TRIGGERS
-
     /// Check the wall states and update their physics bodies.
     /// - Parameter costume: The costume to run the checks against.
     func checkWallStates(with costume: PlayerCostumeType?) {
@@ -366,6 +358,12 @@ class GameScene: SKScene {
         }
     }
 
+    private func getPauseScene() {
+        if let paused = SKScene(fileNamed: "PauseMenu") {
+            self.addChild(paused)
+        }
+    }
+
     public override func keyDown(with event: NSEvent) {
         switch Int(event.keyCode) {
         case KeyboardShortcuts.getShortcut(for: .moveUp)?.carbonKeyCode:
@@ -383,7 +381,9 @@ class GameScene: SKScene {
             let costume = self.playerNode?.previousCostume()
             self.checkWallStates(with: costume)
         case KeyboardShortcuts.getShortcut(for: .use)?.carbonKeyCode:
-            checkInputStates(event)
+            self.checkInputStates(event)
+        case KeyboardShortcuts.getShortcut(for: .pause)?.carbonKeyCode:
+            self.getPauseScene()
         default:
             break
 
@@ -392,8 +392,6 @@ class GameScene: SKScene {
 
     public override func keyUp(with event: NSEvent) {
         let movementKeys = KeyboardShortcuts.movementKeys.map { key in key?.carbonKeyCode }
-        if movementKeys.contains(Int(event.keyCode)) {
-            self.playerNode?.halt()
-        }
+        if movementKeys.contains(Int(event.keyCode)) { self.playerNode?.halt() }
     }
 }
