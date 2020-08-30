@@ -65,6 +65,7 @@
 		BFE6475824F8B03500230F93 /* MenuTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFE6475724F8B03500230F93 /* MenuTileset.sks */; };
 		BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */; };
 		BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */; };
+		BFEE78C324FBF1FC006FBFF0 /* GameAchievments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEE78C224FBF1FC006FBFF0 /* GameAchievments.swift */; };
 		BFFF892C24F93FF800D405CC /* PropertyLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFF892B24F93FF800D405CC /* PropertyLists.swift */; };
 		BFFF892D24F943E400D405CC /* MenuContent.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFF892A24F93F6A00D405CC /* MenuContent.plist */; };
 /* End PBXBuildFile section */
@@ -155,6 +156,7 @@
 		BFE6475724F8B03500230F93 /* MenuTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuTileset.sks; sourceTree = "<group>"; };
 		BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMoveDirection.swift; sourceTree = "<group>"; };
 		BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Change.atlas; sourceTree = "<group>"; };
+		BFEE78C224FBF1FC006FBFF0 /* GameAchievments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAchievments.swift; sourceTree = "<group>"; };
 		BFFF892A24F93F6A00D405CC /* MenuContent.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MenuContent.plist; sourceTree = "<group>"; };
 		BFFF892B24F93FF800D405CC /* PropertyLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyLists.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -383,6 +385,7 @@
 				BF3A0B7B24F6CB9900575F72 /* GameSignalMethod.swift */,
 				BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */,
 				BF109CD824FB20B400F06E47 /* GameSignalKind.swift */,
+				BFEE78C224FBF1FC006FBFF0 /* GameAchievments.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF3A0B7824F6CB0C00575F72 /* GameSignalReceivable.swift in Sources */,
+				BFEE78C324FBF1FC006FBFF0 /* GameAchievments.swift in Sources */,
 				BF109CD924FB20B400F06E47 /* GameSignalKind.swift in Sources */,
 				BF6FBADF24A8BDD400996890 /* ViewController.swift in Sources */,
 				BFBEB33324F8439900162B06 /* Preferences.swift in Sources */,

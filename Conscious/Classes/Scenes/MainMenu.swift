@@ -199,7 +199,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
             self.character?.texture?.filteringMode = .nearest
 
             // Unlock the "Face Reveal" achievement in Game Center.
-            GKAchievement.earn(with: "costumemaster.face_reveal")
+            GKAchievement.earn(with: .faceReveal)
         }
     }
 

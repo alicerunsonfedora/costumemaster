@@ -250,20 +250,21 @@ public class Player: SKSpriteNode {
         return self.costume
     }
 
+    /// Check the current  ostume increments and determine whether to grant an achievement.
     private func checkAchievementStatus() {
         switch self.costume {
         case .flashDrive:
             break
         case .bird:
             if GameStore.shared.costumeIncrementBird == 1 {
-                GKAchievement.earn(with: "costumemaster.new_bird")
+                GKAchievement.earn(with: .newBird)
             }
         case .sorceress:
             if GameStore.shared.costumeIncrementSorceress == 1 {
-                GKAchievement.earn(with: "costumemaster.new_sorceress")
+                GKAchievement.earn(with: .newSorceress)
             }
         case .default:
-            GKAchievement.earn(with: "costumemaster.end_reveal")
+            GKAchievement.earn(with: .endReveal)
         }
     }
 

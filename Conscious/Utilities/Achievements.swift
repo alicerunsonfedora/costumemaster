@@ -26,6 +26,12 @@ extension GKAchievement {
         }
     }
 
+    /// Earn an achievement with a given achievement.
+    /// - Parameter achievementName: The game achievement that the player will earn.
+    static func earn(with achievementName: GameAchievement) {
+        GKAchievement.earn(with: achievementName.rawValue)
+    }
+
     /// Update the progress on an achievement.
     static func updateProgress(on identifier: String, to percent: Double) {
         if !GKLocalPlayer.local.isAuthenticated { return }
@@ -40,5 +46,12 @@ extension GKAchievement {
                 return
             }
         }
+    }
+
+    /// Update the progress on earning an achievmeent.
+    /// - Parameter achievementName: The achievement that the player has progressed on.
+    /// - Parameter percent: The percent complete.
+    static func updateProgress(on achievementName: GameAchievement, to percent: Double) {
+        GKAchievement.updateProgress(on: achievementName.rawValue, to: percent)
     }
 }
