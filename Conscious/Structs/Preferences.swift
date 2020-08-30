@@ -34,6 +34,24 @@ struct Preferences {
         }
     }
 
+    public var playComputerSound: Bool {
+        didSet {
+            if !initCall {
+                UserDefaults.standard.setValue(playChangeSound, forKey: "soundPlayComputerNoise")
+
+            }
+        }
+    }
+
+    public var playLeverSound: Bool {
+        didSet {
+            if !initCall {
+                UserDefaults.standard.setValue(playChangeSound, forKey: "soundPlayLeverNoise")
+
+            }
+        }
+    }
+
     // MARK: ADVANCED PROPERTIES
     public var canShowUnmodeledOnMenu: Bool {
         return UserDefaults.standard.bool(forKey: "advShowUnmodeledOnMenuAbility")
@@ -80,10 +98,15 @@ struct Preferences {
         }
         self.cameraScale = prefs.float(forKey: "cameraScale")
 
-        if prefs.value(forKey: "soundPlayChangeNoise") == nil {
-            prefs.setValue(true, forKey: "soundPlayChangeNoise")
+        for pref in ["soundPlayChangeNoise", "soundPlayLeverNoise", "soundPlayComputerNoise"] {
+            if prefs.value(forKey: pref) == nil {
+                prefs.setValue(true, forKey: pref)
+            }
         }
+
         self.playChangeSound = prefs.bool(forKey: "soundPlayChangeNoise")
+        self.playLeverSound = prefs.bool(forKey: "soundPlayLeverNoise")
+        self.playComputerSound = prefs.bool(forKey: "soundPlayComputerNoise")
 
         for pref in ["advShowUnmodeledOnMenu", "debugShowNodeCount", "debugShowFPS", "debugShowPhysics"] {
             if prefs.value(forKey: pref) == nil {

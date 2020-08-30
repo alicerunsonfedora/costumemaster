@@ -14,6 +14,9 @@
 		BF109CD924FB20B400F06E47 /* GameSignalKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109CD824FB20B400F06E47 /* GameSignalKind.swift */; };
 		BF109CDB24FB26FB00F06E47 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109CDA24FB26FB00F06E47 /* Store.swift */; };
 		BF109CDD24FB31F400F06E47 /* Achievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109CDC24FB31F400F06E47 /* Achievements.swift */; };
+		BF153F9124FC3DF3007B20B4 /* leverToggle.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF153F8E24FC3DF3007B20B4 /* leverToggle.wav */; };
+		BF153F9224FC3DF3007B20B4 /* cantUse.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF153F8F24FC3DF3007B20B4 /* cantUse.wav */; };
+		BF153F9324FC3DF3007B20B4 /* computerPowerOn.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF153F9024FC3DF3007B20B4 /* computerPowerOn.wav */; };
 		BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B424F45DB8000300B7 /* Tileset.sks */; };
 		BF2514B724F45E01000300B7 /* Sample.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B624F45E01000300B7 /* Sample.sks */; };
 		BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */; };
@@ -96,6 +99,9 @@
 		BF109CD824FB20B400F06E47 /* GameSignalKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalKind.swift; sourceTree = "<group>"; };
 		BF109CDA24FB26FB00F06E47 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		BF109CDC24FB31F400F06E47 /* Achievements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievements.swift; sourceTree = "<group>"; };
+		BF153F8E24FC3DF3007B20B4 /* leverToggle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = leverToggle.wav; sourceTree = "<group>"; };
+		BF153F8F24FC3DF3007B20B4 /* cantUse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cantUse.wav; sourceTree = "<group>"; };
+		BF153F9024FC3DF3007B20B4 /* computerPowerOn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = computerPowerOn.wav; sourceTree = "<group>"; };
 		BF2514B424F45DB8000300B7 /* Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tileset.sks; sourceTree = "<group>"; };
 		BF2514B624F45E01000300B7 /* Sample.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Sample.sks; sourceTree = "<group>"; };
 		BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDataConfiguration.swift; sourceTree = "<group>"; };
@@ -208,6 +214,9 @@
 			isa = PBXGroup;
 			children = (
 				BF3A0B7424F6C42500575F72 /* changeCostume.wav */,
+				BF153F8F24FC3DF3007B20B4 /* cantUse.wav */,
+				BF153F9024FC3DF3007B20B4 /* computerPowerOn.wav */,
+				BF153F8E24FC3DF3007B20B4 /* leverToggle.wav */,
 			);
 			path = SFX;
 			sourceTree = "<group>";
@@ -578,9 +587,11 @@
 				BFD8797624F5DE3E00552EDD /* Player_Side_USB.atlas in Resources */,
 				BFE6475424F8853800230F93 /* OFL.txt in Resources */,
 				BFEE78C724FC04EC006FBFF0 /* PauseMenu.sks in Resources */,
+				BF153F9224FC3DF3007B20B4 /* cantUse.wav in Resources */,
 				BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */,
 				BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */,
 				BF3A0B8A24F733C400575F72 /* Cabin-Regular.ttf in Resources */,
+				BF153F9124FC3DF3007B20B4 /* leverToggle.wav in Resources */,
 				BF3A0B8C24F733F300575F72 /* DancingScript-VariableFont_wght.ttf in Resources */,
 				BF3A0B7524F6C42500575F72 /* changeCostume.wav in Resources */,
 				BFD8795B24F5AE7F00552EDD /* Player_Backward_Bird.atlas in Resources */,
@@ -588,6 +599,7 @@
 				BF2514B724F45E01000300B7 /* Sample.sks in Resources */,
 				BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */,
 				BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */,
+				BF153F9324FC3DF3007B20B4 /* computerPowerOn.wav in Resources */,
 				BF3A0B8124F703F400575F72 /* MainMenu.sks in Resources */,
 				BF6FBAE124A8BDDB00996890 /* Assets.xcassets in Resources */,
 				BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */,

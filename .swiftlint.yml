@@ -11,3 +11,7 @@ disabled_rules:
 type_body_length:
   - 250 # warning
   - 400 # error
+
+file_length:
+  - 500 # warning
+  - 1000 # error
