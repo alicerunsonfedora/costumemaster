@@ -344,6 +344,29 @@ class GameScene: SKScene {
         }
     }
 
+    /// Check the state of the inputs.
+    func checkInputStates(_ event: NSEvent) {
+        guard let location = self.playerNode?.position else { return }
+        let inputs = self.switches
+        for input in inputs where input.position.distance(between: location) < (self.unit?.width ?? 128) / 2
+            && input.activationMethod != .activeByPlayerIntervention {
+            switch input.kind {
+            case .lever:
+                input.activate(with: event, player: self.playerNode)
+            case .computerT1:
+                if self.playerNode?.costume == PlayerCostumeType.bird {
+                    input.activate(with: event, player: self.playerNode)
+                }
+            case .computerT2:
+                if self.playerNode?.costume == PlayerCostumeType.flashDrive {
+                    input.activate(with: event, player: self.playerNode)
+                }
+            default:
+                break
+            }
+        }
+    }
+
     public override func keyDown(with event: NSEvent) {
         switch Int(event.keyCode) {
 
@@ -367,26 +390,7 @@ class GameScene: SKScene {
 
         // Activate any switches where the player is required to interact with them.
         case KeyboardShortcuts.getShortcut(for: .use)?.carbonKeyCode:
-            guard let location = self.playerNode?.position else { break }
-            let inputs = self.switches
-            for input in inputs where input.position.distance(between: location) < (self.unit?.width ?? 128) / 2
-                && input.activationMethod != .activeByPlayerIntervention {
-                switch input.kind {
-                case .lever:
-                    input.activate(with: event, player: self.playerNode)
-                case .computerT1:
-                    if self.playerNode?.costume == PlayerCostumeType.bird {
-                        input.activate(with: event, player: self.playerNode)
-                    }
-                case .computerT2:
-                    if self.playerNode?.costume == PlayerCostumeType.flashDrive {
-                        input.activate(with: event, player: self.playerNode)
-                    }
-                default:
-                    break
-                }
-            }
-
+            checkInputStates(event)
         // Catch-all case.
         default:
             break
