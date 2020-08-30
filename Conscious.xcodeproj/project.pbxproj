@@ -161,6 +161,7 @@
 		BFEE78C224FBF1FC006FBFF0 /* GameAchievments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAchievments.swift; sourceTree = "<group>"; };
 		BFEE78C424FBFDB4006FBFF0 /* PauseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseScene.swift; sourceTree = "<group>"; };
 		BFEE78C624FC04EC006FBFF0 /* PauseMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PauseMenu.sks; sourceTree = "<group>"; };
+		BFEE78C824FC1E61006FBFF0 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		BFFF892A24F93F6A00D405CC /* MenuContent.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MenuContent.plist; sourceTree = "<group>"; };
 		BFFF892B24F93FF800D405CC /* PropertyLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyLists.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -443,6 +444,7 @@
 				BF6FBB0A24A8BF1400996890 /* .gitignore */,
 				BF6FBB0824A8BE2600996890 /* README.md */,
 				BF6FBB0924A8BE2600996890 /* PROPOSAL.md */,
+				BFEE78C824FC1E61006FBFF0 /* LICENSE.txt */,
 			);
 			name = Metadata;
 			sourceTree = "<group>";

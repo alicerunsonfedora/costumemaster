@@ -13,6 +13,7 @@ make it out and figure out what's going on?
 - 🕹 **Works with Game Center**: Challenge your friends and earn achievements!
 - 🍎 **Designed for macOS**: Written completely in Swift, SpriteKit, and GameplayKit!
 - ⚙️ **Configurable**: Customize keyboard shortcuts and other preferences with ease!
+- 📖 **Open source**:  Licensed under Mozilla Public License v2.0!
 
 ## Objective
 
@@ -70,12 +71,13 @@ The following practices are also being implemented with SwiftLint:
 
 - [Project Proposal](PROPOSAL.md)
 
+---
+
+(C) 2020 Marquis Kurt. All rights reserved. Game Center, the Game Center logo, SF Symbols, and macOS are registered trademarks of 
+Apple Inc.
+
 <!-- Links in page -->
 [milestones]: https://github.com/alicerunsonfedora/CS400/milestones?direction=asc&sort=due_date&state=open
 [linter]: https://realm.github.io/SwiftLint/
 [keys]: https://github.com/sindresorhus/KeyboardShortcuts
 [gcachieve]: ./Conscious/Enums/GameAchievments.swift
-
----
-
-(C) 2020 Marquis Kurt. All rights reserved.
