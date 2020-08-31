@@ -43,8 +43,20 @@ class ViewController: NSViewController, NSWindowDelegate {
     }
 
     func windowShouldClose(_ sender: NSWindow) -> Bool {
-        NSApplication.shared.terminate(self)
-        return true
+        var shouldClose = false
+        if self.skView.scene?.name == "MainMenu" {
+            NSApplication.shared.terminate(self)
+            return true
+        }
+        confirm("Any unsaved progress will be lost.",
+                withTitle: "Are you sure you want to quit?",
+                level: .warning) { resp in
+            if resp.rawValue == 1000 {
+                NSApplication.shared.terminate(self)
+                shouldClose = true
+            }
+        }
+        return shouldClose
     }
 
     override func viewDidLoad() {
