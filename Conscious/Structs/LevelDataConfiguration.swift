@@ -22,18 +22,26 @@ public struct LevelDataConfiguration {
     /// The costume the player will start with by default.
     public let startWithCostume: PlayerCostumeType
 
+    let requisites: [SwitchRequisite]
+
     /// A default level configuration with no costumes loaded and the next scene set to the main menu.
     static var `default`: LevelDataConfiguration {
-        return LevelDataConfiguration(costumeID: 0, nextScene: "MainMenu", startingWith: .default)
+        return LevelDataConfiguration(costumeID: 0, nextScene: "MainMenu", startingWith: .default, under: [])
     }
 
     /// Initialize a level configuration.
     /// - Parameter costumeID: The costume ID that determines what costumes are available.
     /// - Parameter nextScene: The SKScene name that will load after the scene attached to this configuration.
-    public init(costumeID: Int, nextScene: String, startingWith costume: PlayerCostumeType) {
+    init(
+        costumeID: Int,
+        nextScene: String,
+        startingWith costume: PlayerCostumeType,
+        under requisites: [SwitchRequisite]
+    ) {
         self.costumeID = costumeID
         self.linksToNextScene = nextScene
         self.startWithCostume = costume
+        self.requisites = requisites
     }
 
     /// Initialize a level configuration.
@@ -44,5 +52,60 @@ public struct LevelDataConfiguration {
         self.startWithCostume = PlayerCostumeType(
             rawValue: userData["startingCostume"] as? String ?? "Default"
         ) ?? .default
+        self.requisites = LevelDataConfiguration.parseRequisites(from: userData)
+    }
+
+    /// Parse a given dictionary into a list of requisites.
+    ///
+    /// This method will read a dictionary, filter for fields with the format `"requisite_COL_ROW"`, and proceed to
+    /// parse t he resulting value as data about how the output is defined.
+    ///
+    /// The format for a requisite string is `"METHOD;COL,ROW;"`, where `METHOD` can be `AND` or `OR`, and every
+    /// predicate afterwards is the coordinate to a corresponding input. For example: setting the key `requisite_1_1`
+    /// to `AND;2,1;3,1;` will tell the scene to connect the output at (1, 1) to the inputs (2, 1) and (3, 1) while also
+    /// making the connect an `AND` connection where both inputs must be active to activate the output.
+    ///
+    /// - Parameter dictionary: The dictionary to read from.
+    /// - Returns: A list of requisites for switches and outputs.
+    static func parseRequisites(from dictionary: NSMutableDictionary) -> [SwitchRequisite] {
+        var requisites: [SwitchRequisite] = []
+
+        for key in dictionary.keyEnumerator() {
+            if var dataKey = key as? String {
+                if !dataKey.starts(with: "requisite_") { continue }
+                dataKey = dataKey.replacingOccurrences(of: "requisite_", with: "")
+                let requisiteCoordinates = dataKey.split(separator: "_")
+                if requisiteCoordinates.first == nil { continue }
+
+                let outputLocation = CGPoint(
+                    x: Int(requisiteCoordinates.first!) ?? -1,
+                    y: Int(requisiteCoordinates.last!) ?? -1
+                )
+                var type: GameSignalMethod?
+                var inputLocations: [CGPoint] = []
+
+                if let valueData = dictionary.value(forKey: "requisite_" + dataKey) as? String {
+                    var parsed = valueData.split(separator: ";")
+                    if parsed.isEmpty { continue }
+
+                    type = SwitchRequisite.getRequisite(from: String(parsed.removeFirst()))
+                    for input in parsed {
+                        let coords = input.split(separator: ",")
+                        if coords.count != 2 { continue }
+                        inputLocations.append(
+                            CGPoint(
+                                x: Int(coords.first!) ?? -1,
+                                y: Int(coords.last!) ?? -1
+                            )
+                        )
+                    }
+                }
+
+                requisites.append(
+                    SwitchRequisite(outputLocation: outputLocation, requiredInputs: inputLocations, requisite: type)
+                )
+            }
+        }
+        return requisites
     }
 }
