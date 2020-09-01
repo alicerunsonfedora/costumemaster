@@ -277,7 +277,7 @@ public class Player: SKSpriteNode {
             GKAchievement.earn(with: .endReveal)
         }
     }
-    
+
     /// Update the player's data.
     public func update() {
         for child in self.children where child.name == "ghost" && !self.isChangingCostumes {
