@@ -28,6 +28,9 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
     /// The label node for the "Start Game" button.
     var startButton: SKLabelNode?
 
+    /// The label node for the "Resume Game" button.
+    var resumeButton: SKLabelNode?
+
     /// The label node for the "Options" button.
     var optionsButton: SKLabelNode?
 
@@ -97,6 +100,15 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
             self.quitButton?.fontName = "Cabin Regular"
         }
 
+        if let resume = self.childNode(withName: "resumeGame") as? SKLabelNode {
+            self.resumeButton = resume
+            self.resumeButton?.fontName = "Cabin Regular"
+
+            if GameStore.shared.lastSavedScene == "" {
+                self.resumeButton?.alpha = 0.1
+            }
+        }
+
         // Get the character sprite and change the interpolation method to nearest neighbor.
         if let char = self.childNode(withName: "character") as? SKSpriteNode {
             self.character = char
@@ -117,6 +129,8 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         switch self.atPoint(tappedLocation) {
         case self.startButton:
             self.startAction()
+        case self.resumeButton where GameStore.shared.lastSavedScene != "":
+            self.resumeAction()
         case self.optionsButton:
             self.optionsAction()
         case self.quitButton:
@@ -159,7 +173,18 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
             // GKAccessPoint.shared.isActive = false
         }
         if let firstScene = SKScene(fileNamed: "Sample") {
-            self.removeAllChildren()
+            self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
+        }
+    }
+
+    /// Resume the game by loading the last saved scene.
+    private func resumeAction() {
+        self.resumeButton?.fontColor = NSColor.init(named: "AccentColor")
+        if #available(OSX 11.0, *) {
+            // TODO: Re-enable this once the issue is resolved in GameKit.
+            // GKAccessPoint.shared.isActive = false
+        }
+        if let firstScene = SKScene(fileNamed: GameStore.shared.lastSavedScene) {
             self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
         }
     }
