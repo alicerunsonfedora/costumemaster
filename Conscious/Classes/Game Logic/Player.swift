@@ -211,7 +211,10 @@ public class Player: SKSpriteNode {
     /// Switch to the previous costume.
     /// - Returns: The previous costume the player is now wearing.
     public func previousCostume() -> PlayerCostumeType {
-        if self.costumeQueue.isEmpty { return self.costume }
+        if self.costumeQueue.isEmpty {
+            self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: true))
+            return self.costume
+        }
 
         // Don't initiate another change if we're already changing costumes.
         if self.isChangingCostumes { return self.costume }
@@ -234,7 +237,10 @@ public class Player: SKSpriteNode {
     /// Switch to the next available costume.
     /// - Returns: The next costume the player has switched to.
     public func nextCostume() -> PlayerCostumeType {
-        if self.costumeQueue.isEmpty { return self.costume }
+        if self.costumeQueue.isEmpty {
+            self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: true))
+            return self.costume
+        }
 
         // Don't initiate another change if we're already changing costumes.
         if self.isChangingCostumes { return self.costume }
@@ -269,6 +275,13 @@ public class Player: SKSpriteNode {
             }
         case .default:
             GKAchievement.earn(with: .endReveal)
+        }
+    }
+    
+    /// Update the player's data.
+    public func update() {
+        for child in self.children where child.name == "ghost" && !self.isChangingCostumes {
+            child.removeFromParent()
         }
     }
 

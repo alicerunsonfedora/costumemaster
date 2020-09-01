@@ -312,6 +312,7 @@ class GameScene: SKScene {
         }
         self.camera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
         self.receivers.forEach { output in output.update() }
+        self.playerNode?.update()
     }
 
     override func didFinishUpdate() {
