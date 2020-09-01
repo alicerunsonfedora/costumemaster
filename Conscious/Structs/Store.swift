@@ -56,6 +56,14 @@ struct GameStore {
         }
     }
 
+    /// Reset the game store to their default values.
+    mutating func clear() {
+        costumeIncrementBird = 0
+        costumeIncrementSorceress = 0
+        costumeIncrementUSB = 0
+        lastSavedScene = ""
+    }
+
     init() {
         self.inInit = true
         if UserDefaults.store.value(forKey: "lastSavedScene") == nil {

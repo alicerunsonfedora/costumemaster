@@ -31,6 +31,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         controller.showWindow(self)
     }
 
+    @IBAction func clearStore(_ sender: Any) {
+        confirm(
+            "Clearing the game store will reset your statistics and clear your current game session's save data. This "
+            + "will not affect your achievements and leaderboards in Game Center. This action cannot be undone.",
+            withTitle: "Clear Game Store?",
+            level: .warning
+        ) { response in
+            if response.rawValue != 1000 { return }
+            GameStore.shared.clear()
+        }
+    }
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }

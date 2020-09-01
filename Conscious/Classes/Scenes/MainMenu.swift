@@ -163,6 +163,10 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
             )
             self.character?.texture?.filteringMode = .nearest
         }
+
+        if GameStore.shared.lastSavedScene == "" {
+            self.resumeButton?.alpha = 0.1
+        }
     }
 
     /// Start the game by presenting the first level scene.
