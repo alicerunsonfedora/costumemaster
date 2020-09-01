@@ -14,7 +14,7 @@ import Foundation
 public enum GameTileType {
     case player
     case wall
-    case exit
+    case door
     case floor
     case lever
     case computerT1

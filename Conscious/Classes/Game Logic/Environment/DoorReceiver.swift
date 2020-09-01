@@ -12,8 +12,8 @@
 import Foundation
 import SpriteKit
 
-/// An exit door.
-public class LevelExitDoor: SKSpriteNode, GameSignalReceivable {
+/// A class that represents a door. This is commonly used for exit doors, but can be adapted to use any door.
+public class DoorReceiver: SKSpriteNode, GameSignalReceivable {
 
     // MARK: STORED PROPERTIES
     var defaultOn: Bool

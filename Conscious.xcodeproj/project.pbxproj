@@ -26,7 +26,7 @@
 		BF3A0B7C24F6CB9900575F72 /* GameSignalMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7B24F6CB9900575F72 /* GameSignalMethod.swift */; };
 		BF3A0B7F24F6EB4900575F72 /* GameSignalInputMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */; };
 		BF3A0B8124F703F400575F72 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8024F703F400575F72 /* MainMenu.sks */; };
-		BF3A0B8424F7046900575F72 /* LevelExitDoor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8324F7046900575F72 /* LevelExitDoor.swift */; };
+		BF3A0B8424F7046900575F72 /* DoorReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8324F7046900575F72 /* DoorReceiver.swift */; };
 		BF3A0B8624F70B8900575F72 /* GameSceneUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8524F70B8900575F72 /* GameSceneUtils.swift */; };
 		BF3A0B8A24F733C400575F72 /* Cabin-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8924F733C400575F72 /* Cabin-Regular.ttf */; };
 		BF3A0B8C24F733F300575F72 /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8B24F733EE00575F72 /* DancingScript-VariableFont_wght.ttf */; };
@@ -113,7 +113,7 @@
 		BF3A0B7B24F6CB9900575F72 /* GameSignalMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalMethod.swift; sourceTree = "<group>"; };
 		BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalInputMethod.swift; sourceTree = "<group>"; };
 		BF3A0B8024F703F400575F72 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
-		BF3A0B8324F7046900575F72 /* LevelExitDoor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExitDoor.swift; sourceTree = "<group>"; };
+		BF3A0B8324F7046900575F72 /* DoorReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorReceiver.swift; sourceTree = "<group>"; };
 		BF3A0B8524F70B8900575F72 /* GameSceneUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneUtils.swift; sourceTree = "<group>"; };
 		BF3A0B8924F733C400575F72 /* Cabin-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Regular.ttf"; sourceTree = "<group>"; };
 		BF3A0B8B24F733EE00575F72 /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; };
@@ -246,7 +246,7 @@
 		BF3A0B8224F7044500575F72 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
-				BF3A0B8324F7046900575F72 /* LevelExitDoor.swift */,
+				BF3A0B8324F7046900575F72 /* DoorReceiver.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -697,7 +697,7 @@
 				BF3A0B7C24F6CB9900575F72 /* GameSignalMethod.swift in Sources */,
 				BF3A0B8624F70B8900575F72 /* GameSceneUtils.swift in Sources */,
 				BF109CDD24FB31F400F06E47 /* Achievements.swift in Sources */,
-				BF3A0B8424F7046900575F72 /* LevelExitDoor.swift in Sources */,
+				BF3A0B8424F7046900575F72 /* DoorReceiver.swift in Sources */,
 				BFD8795E24F5B60900552EDD /* GameSetup.swift in Sources */,
 				BF109CD724FAFD6F00F06E47 /* PreferencesWindowController.swift in Sources */,
 				BF6B98E524FDD36A00A206FF /* Intro.swift in Sources */,

@@ -20,8 +20,8 @@ public func getTileType(fromDefinition tile: SKTileDefinition) -> GameTileType {
         switch name {
         case name where name.starts(with: "wall"):
             return .wall
-        case name where name.starts(with: "exit"):
-            return .exit
+        case name where name.starts(with: "door"):
+            return .door
         case name where name.starts(with: "lever"):
             return .lever
         case name where name.starts(with: "computer") && name.contains("_T1"):

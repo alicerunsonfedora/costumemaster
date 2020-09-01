@@ -13,7 +13,6 @@ import GameKit
 import SpriteKit
 import GameplayKit
 import KeyboardShortcuts
-//import Carbon.HIToolbox
 
 /// The base class for a given level.
 ///
@@ -54,7 +53,7 @@ class GameScene: SKScene {
     var receivers: [GameSignalReceivable] = []
 
     /// The exit door for this level.
-    var exitNode: LevelExitDoor?
+    var exitNode: DoorReceiver?
 
     /// The list of mappings for each output and the required inputs.
     var requisites: [SwitchRequisite] = []
@@ -121,11 +120,11 @@ class GameScene: SKScene {
                     case .floor:
                         sprite.zPosition = -999
                         self.structure.addChild(sprite)
-                    case .exit:
-                        let receiver = LevelExitDoor(
+                    case .door:
+                        let receiver = DoorReceiver(
                             fromInput: [],
                             reverseSignal: false,
-                            baseTexture: "exit",
+                            baseTexture: "door",
                             at: CGPoint(x: col, y: row)
                         )
                         receiver.activationMethod = .anyInput
