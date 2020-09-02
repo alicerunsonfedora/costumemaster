@@ -26,11 +26,7 @@ import KeyboardShortcuts
 /// - Requires: `levelLink` field in user data: (String) determines the next scene to display after this scene ends.
 /// - Requires: `startingCostume` field in user data: (String) determines which costume the player starts with.
 /// - Requires: `requisite_COL_ROW` field(s) in user data: (String) determines what outputs require certain inputs.
-/// Columns go from left to right, and rows go from bottom to top. The format for a requisite string is
-/// `"METHOD;COL,ROW;"`, where `METHOD` can be `AND` or `OR`, and every predicate afterwards is the coordinate
-/// to a corresponding input. For example: setting the key `requisite_1_1` to `AND;2,1;3,1;` will tell the scene
-/// to connect the output at (1, 1) to the inputs (2, 1) and (3, 1) while also making the connect an `AND` connection
-/// where both inputs must be active to activate the output.
+/// - See Also: `LevelDataConfiguration.parseRequisites`
 class GameScene: SKScene {
 
     // MARK: STORED PROPERTIES
@@ -54,9 +50,6 @@ class GameScene: SKScene {
 
     /// The exit door for this level.
     var exitNode: DoorReceiver?
-
-    /// The list of mappings for each output and the required inputs.
-    var requisites: [SwitchRequisite] = []
 
     /// A child node that stores the structure of the level.
     var structure: SKNode = SKNode()
@@ -131,7 +124,6 @@ class GameScene: SKScene {
                         receiver.position = sprite.position
                         receiver.playerListener = self.playerNode
                         self.receivers.append(receiver)
-                        self.exitNode = receiver
                     case .lever:
                         let definedTextureName = defined.name?.replacingOccurrences(of: "_on", with: "")
                             ?? "lever_wallup"
@@ -170,6 +162,12 @@ class GameScene: SKScene {
         for node in self.switches { node.zPosition -= 5; self.addChild(node) }
         for node in self.receivers { node.zPosition -= 5; self.addChild(node) }
 
+        for node in self.receivers where node.levelPosition == self.configuration?.exitLocation {
+            if let door = node as? DoorReceiver {
+                self.exitNode = door
+            }
+        }
+
         // Delete the tilemap from memory.
         tilemap.tileSet = SKTileSet(tileGroups: [])
         tilemap.removeFromParent()
@@ -180,80 +178,34 @@ class GameScene: SKScene {
         self.addChild(self.structure)
     }
 
-    // MARK: SWITCH REQUISITE CONSTRUCTORS
-    /// Parse the user data for switch requisites and hook up the inputs and outputs accordingly.
-    private func parseRequisiteData() {
-        // Only run this if there's user data for the scene.
-        if let userDataFields = self.userData {
-
-            // Iterate through every key in the user data, looking for "requisite_"
-            for key in userDataFields.keyEnumerator() {
-                if let keyName = key as? String {
-                    if !keyName.starts(with: "requisite_") { continue }
-
-                    // Assume the format of the key is "resuisite_COL_ROW".
-                    var parts = keyName.split(separator: "_")
-                    parts.removeFirst()
-                    if parts.first == nil || parts.last == nil { continue }
-
-                    // Create a tuple of the output location.
-                    let outputLocation = CGPoint(x: Int(parts.first!) ?? -1, y: Int(parts.last!) ?? -1)
-
-                    // If we have an associated value for this, parse it.
-                    if let valueData = userDataFields.value(forKey: keyName) as? String {
-
-                        // Split the value into parts with the format "METHOD;COL,ROW;COL,ROW".
-                        var valueParts = valueData.split(separator: ";")
-                        if valueParts.count < 1 { continue }
-
-                        // Determine the method of activation and create an input list.
-                        let type = SwitchRequisite.getRequisite(from: String(valueParts.removeFirst()))
-                        var inputs: [CGPoint] = []
-
-                        // Parse the inputs, create a tuple, and add it to the input list.
-                        for input in valueParts {
-                            let coordinates = input.split(separator: ",")
-                            if coordinates.count < 2 { continue }
-                            inputs.append(
-                                CGPoint(x: Int(coordinates.first!) ?? -1, y: Int(coordinates.last!) ?? -1)
-                            )
-                        }
-
-                        // Finally, stitch together the requisite and add it to the list.
-                        self.requisites.append(
-                            SwitchRequisite(outputLocation: outputLocation, requiredInputs: inputs, requisite: type)
-                        )
-                    }
-                }
-            }
-        }
-    }
-
+    // MARK: SWITCH REQUISITE HANDLERS
     /// Parse the requisites and hook up the appropriate signal senders to their receivers.
-    private func parseRequisites() {
-        for req in self.requisites {
-            let correspondingOutputs = self.receivers.filter({rec in rec.levelPosition == req.outputLocation})
-            if correspondingOutputs.isEmpty { continue }
-            if correspondingOutputs.count > 1 {
-                sendAlert(
-                    "The level configuration has duplicate mappings for the output at \(req.outputLocation)."
-                    + " Ensure that the user data file contains the correct mappings.",
-                    withTitle: "Duplicate mappings found.",
-                    level: .critical
-                ) { _ in
-                    if let scene = SKScene(fileNamed: "MainMenu") {
-                        self.view?.presentScene(scene)
+    private func linkSignalsAndReceivers() {
+        if let requisites = self.configuration?.requisites {
+            for req in requisites {
+                let correspondingOutputs = self.receivers.filter({rec in rec.levelPosition == req.outputLocation})
+                if correspondingOutputs.isEmpty { continue }
+                if correspondingOutputs.count > 1 {
+                    sendAlert(
+                        "The level configuration has duplicate mappings for the output at \(req.outputLocation)."
+                        + " Ensure that the user data file contains the correct mappings.",
+                        withTitle: "Duplicate mappings found.",
+                        level: .critical
+                    ) { _ in
+                        if let scene = SKScene(fileNamed: "MainMenu") {
+                            self.view?.presentScene(scene)
+                        }
                     }
                 }
+                let output = correspondingOutputs.first
+                let inputs = self.switches
+                if inputs.isEmpty { continue }
+                for input in inputs where req.requiredInputs.contains(input.levelPosition) {
+                    output?.inputs.append(input)
+                    output?.activationMethod = req.requisite ?? .noInput
+                }
+                output?.updateInputs()
             }
-            let output = correspondingOutputs.first
-            let inputs = self.switches
-            if inputs.isEmpty { continue }
-            for input in inputs where req.requiredInputs.contains(input.levelPosition) {
-                output?.inputs.append(input)
-                output?.activationMethod = req.requisite ?? .noInput
-            }
-            output?.updateInputs()
         }
     }
 
@@ -285,9 +237,8 @@ class GameScene: SKScene {
         self.playerCamera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
 
         // Create switch requisites, parse the tilemap, then hook tp the signals/receivers according to the requisites.
-        self.parseRequisiteData()
         self.setupTilemap()
-        self.parseRequisites()
+        self.linkSignalsAndReceivers()
 
         // Check that a player was generated.
         if playerNode == nil {
