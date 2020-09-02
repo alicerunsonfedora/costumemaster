@@ -124,7 +124,6 @@ class GameScene: SKScene {
                         receiver.position = sprite.position
                         receiver.playerListener = self.playerNode
                         self.receivers.append(receiver)
-                        self.exitNode = receiver
                     case .lever:
                         let definedTextureName = defined.name?.replacingOccurrences(of: "_on", with: "")
                             ?? "lever_wallup"
@@ -162,6 +161,12 @@ class GameScene: SKScene {
 
         for node in self.switches { node.zPosition -= 5; self.addChild(node) }
         for node in self.receivers { node.zPosition -= 5; self.addChild(node) }
+
+        for node in self.receivers where node.levelPosition == self.configuration?.exitLocation {
+            if let door = node as? DoorReceiver {
+                self.exitNode = door
+            }
+        }
 
         // Delete the tilemap from memory.
         tilemap.tileSet = SKTileSet(tileGroups: [])

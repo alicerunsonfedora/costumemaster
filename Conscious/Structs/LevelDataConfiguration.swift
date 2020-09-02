@@ -22,26 +22,40 @@ public struct LevelDataConfiguration {
     /// The costume the player will start with by default.
     public let startWithCostume: PlayerCostumeType
 
+    /// The matrix location of the exit door.
+    public let exitLocation: CGPoint
+
     let requisites: [SwitchRequisite]
 
     /// A default level configuration with no costumes loaded and the next scene set to the main menu.
     static var `default`: LevelDataConfiguration {
-        return LevelDataConfiguration(costumeID: 0, nextScene: "MainMenu", startingWith: .default, under: [])
+        return LevelDataConfiguration(
+            costumeID: 0,
+            nextScene: "MainMenu",
+            startingWith: .default,
+            under: [],
+            with: CGPoint(x: 0, y: 0)
+        )
     }
 
     /// Initialize a level configuration.
     /// - Parameter costumeID: The costume ID that determines what costumes are available.
     /// - Parameter nextScene: The SKScene name that will load after the scene attached to this configuration.
+    /// - Parameter costume: The type of costume the player starts with.
+    /// - Parameter requisites: The requisites list for all inputs and and outputs.
+    /// - Parameter exit: The matrix location of the exit.
     init(
         costumeID: Int,
         nextScene: String,
         startingWith costume: PlayerCostumeType,
-        under requisites: [SwitchRequisite]
+        under requisites: [SwitchRequisite],
+        with exit: CGPoint
     ) {
         self.costumeID = costumeID
         self.linksToNextScene = nextScene
         self.startWithCostume = costume
         self.requisites = requisites
+        self.exitLocation = exit
     }
 
     /// Initialize a level configuration.
@@ -53,6 +67,14 @@ public struct LevelDataConfiguration {
             rawValue: userData["startingCostume"] as? String ?? "Default"
         ) ?? .default
         self.requisites = LevelDataConfiguration.parseRequisites(from: userData)
+        var exit = CGPoint(x: 0, y: 0)
+        if let exitData = userData["exitAt"] as? String {
+            let exitCoords = exitData.split(separator: ",")
+            if !exitCoords.isEmpty {
+                exit = CGPoint(x: Int(exitCoords.first!) ?? -1, y: Int(exitCoords.last!) ?? -1)
+            }
+        }
+        self.exitLocation = exit
     }
 
     /// Parse a given dictionary into a list of requisites.
