@@ -17,6 +17,8 @@
 		BF153F9124FC3DF3007B20B4 /* leverToggle.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF153F8E24FC3DF3007B20B4 /* leverToggle.wav */; };
 		BF153F9224FC3DF3007B20B4 /* cantUse.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF153F8F24FC3DF3007B20B4 /* cantUse.wav */; };
 		BF153F9324FC3DF3007B20B4 /* computerPowerOn.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF153F9024FC3DF3007B20B4 /* computerPowerOn.wav */; };
+		BF1A5940250014BD000929CF /* Tilemaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A593F250014BD000929CF /* Tilemaps.swift */; };
+		BF1A59422500155A000929CF /* TilemapParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A59412500155A000929CF /* TilemapParseData.swift */; };
 		BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B424F45DB8000300B7 /* Tileset.sks */; };
 		BF2514B724F45E01000300B7 /* Sample.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B624F45E01000300B7 /* Sample.sks */; };
 		BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */; };
@@ -104,6 +106,8 @@
 		BF153F8E24FC3DF3007B20B4 /* leverToggle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = leverToggle.wav; sourceTree = "<group>"; };
 		BF153F8F24FC3DF3007B20B4 /* cantUse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cantUse.wav; sourceTree = "<group>"; };
 		BF153F9024FC3DF3007B20B4 /* computerPowerOn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = computerPowerOn.wav; sourceTree = "<group>"; };
+		BF1A593F250014BD000929CF /* Tilemaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tilemaps.swift; sourceTree = "<group>"; };
+		BF1A59412500155A000929CF /* TilemapParseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilemapParseData.swift; sourceTree = "<group>"; };
 		BF2514B424F45DB8000300B7 /* Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tileset.sks; sourceTree = "<group>"; };
 		BF2514B624F45E01000300B7 /* Sample.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Sample.sks; sourceTree = "<group>"; };
 		BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDataConfiguration.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 				BFBEB33224F8439900162B06 /* Preferences.swift */,
 				BFE6475524F88B1300230F93 /* SwitchRequisite.swift */,
 				BF109CDA24FB26FB00F06E47 /* Store.swift */,
+				BF1A59412500155A000929CF /* TilemapParseData.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				BFFF892B24F93FF800D405CC /* PropertyLists.swift */,
 				BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */,
 				BF109CDC24FB31F400F06E47 /* Achievements.swift */,
+				BF1A593F250014BD000929CF /* Tilemaps.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -686,6 +692,7 @@
 				BFE6475624F88B1300230F93 /* SwitchRequisite.swift in Sources */,
 				BFBEB33524F847F600162B06 /* AdvancedPrefsViewController.swift in Sources */,
 				BFC78F3D24F48731004E85A9 /* Player.swift in Sources */,
+				BF1A59422500155A000929CF /* TilemapParseData.swift in Sources */,
 				BFD8796024F5B61D00552EDD /* GameTileType.swift in Sources */,
 				BFEE78C524FBFDB4006FBFF0 /* PauseScene.swift in Sources */,
 				BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */,
@@ -693,6 +700,7 @@
 				BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */,
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
+				BF1A5940250014BD000929CF /* Tilemaps.swift in Sources */,
 				BF109CDB24FB26FB00F06E47 /* Store.swift in Sources */,
 				BF3A0B7C24F6CB9900575F72 /* GameSignalMethod.swift in Sources */,
 				BF3A0B8624F70B8900575F72 /* GameSceneUtils.swift in Sources */,
