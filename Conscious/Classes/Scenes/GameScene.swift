@@ -273,6 +273,13 @@ class GameScene: SKScene {
         }
     }
 
+    func checkDoorStates() {
+        for node in self.receivers where node is DoorReceiver && node != self.exitNode {
+            guard let door = node as? DoorReceiver else { return }
+            door.togglePhysicsBody()
+        }
+    }
+
     /// Check the state of the inputs.
     func checkInputStates(_ event: NSEvent) {
         var didTrigger = false
@@ -301,6 +308,7 @@ class GameScene: SKScene {
             default:
                 self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: false))
             }
+            checkDoorStates()
         }
         if !didTrigger { self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: false)) }
     }
