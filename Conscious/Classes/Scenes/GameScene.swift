@@ -68,94 +68,73 @@ class GameScene: SKScene {
             return
         }
 
-        // Calculate information about the tilemap's size.
+        // Instantiate the unit first.
         let mapUnit = tilemap.tileSize
         self.unit = mapUnit
-        let mapHalfWidth = CGFloat(tilemap.numberOfColumns) / (mapUnit.width * 2)
-        let mapHalfHeight = CGFloat(tilemap.numberOfRows) / (mapUnit.height * 2)
-        let origin = tilemap.position
 
-        // Seperate the tilemap into several nodes.
-        for col in 0..<tilemap.numberOfColumns {
-            for row in 0..<tilemap.numberOfRows {
-                if let defined = tilemap.tileDefinition(atColumn: col, row: row) {
-                    let texture = defined.textures[0]
-                    let spriteX = CGFloat(col) * mapUnit.width - mapHalfWidth + (mapUnit.width / 2)
-                    let spriteY = CGFloat(row) * mapUnit.height - mapHalfHeight + (mapUnit.height / 2)
-                    let tileType = getTileType(fromDefinition: defined)
-
-                    // Change the texure's filtering method to allow pixelation.
-                    texture.filteringMode = .nearest
-
-                    // Create the sprite node.
-                    let sprite = SKSpriteNode(texture: texture)
-                    sprite.position = CGPoint(x: spriteX + origin.x, y: spriteY + origin.y)
-                    sprite.zPosition = 1
-                    sprite.isHidden = false
-
-                    switch tileType {
-                    case .wall:
-                        let wallTexture = defined.name == "wall_edge" ? "wall_edge_physics_mask" : defined.name!
-                        sprite.physicsBody = getWallPhysicsBody(with: wallTexture)
-                        sprite.name = "wall_\(col)_\(row)"
-                        self.structure.addChild(sprite)
-                    case .player:
-                        self.playerNode = Player(
-                            texture: texture,
-                            allowCostumes: Player.getCostumeSet(id: self.configuration?.costumeID ?? 0),
-                            startingWith: self.configuration?.startWithCostume ?? .flashDrive
-                        )
-                        self.playerNode?.position = sprite.position
-                        self.addChild(self.playerNode!)
-                        sprite.texture = SKTexture(imageNamed: "floor")
-                        sprite.zPosition = -999
-                        self.addChild(sprite)
-                    case .floor:
-                        sprite.zPosition = -999
-                        self.structure.addChild(sprite)
-                    case .door:
-                        let receiver = DoorReceiver(
-                            fromInput: [],
-                            reverseSignal: false,
-                            baseTexture: "door",
-                            at: CGPoint(x: col, y: row)
-                        )
-                        receiver.activationMethod = .anyInput
-                        receiver.position = sprite.position
-                        receiver.playerListener = self.playerNode
-                        self.receivers.append(receiver)
-                    case .lever:
-                        let definedTextureName = defined.name?.replacingOccurrences(of: "_on", with: "")
-                            ?? "lever_wallup"
-                        let lever = GameSignalSender(
-                            textureName: definedTextureName,
-                            by: .activeOncePermanently,
-                            at: CGPoint(x: col, y: row)
-                        )
-                        lever.position = sprite.position
-                        lever.kind = .lever
-                        if definedTextureName == "lever_wallup" {
-                            lever.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
-                        }
-                        self.switches.append(lever)
-                    case .computerT1, .computerT2:
-                        let name = defined.name?
-                            .replacingOccurrences(of: "_on_T1", with: "")
-                            .replacingOccurrences(of: "_on_T2", with: "")
-                            ?? "computer_wallup"
-                        let computer = GameSignalSender(
-                            textureName: name,
-                            by: .activeOncePermanently,
-                            at: CGPoint(x: col, y: row)
-                        )
-                        computer.position = sprite.position
-                        computer.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
-                        computer.kind = tileType == .computerT1 ? .computerT1 : .computerT2
-                        self.switches.append(computer)
-                    default:
-                        break
-                    }
+        // Parse the tilemap and set up the nodes accordingly.
+        tilemap.parse { data in
+            switch getTileType(fromDefinition: data.definition) {
+            case .wall:
+                let wallTexture = data.definition.name == "wall_edge" ? "wall_edge_physics_mask" : data.definition.name!
+                data.sprite.physicsBody = getWallPhysicsBody(with: wallTexture)
+                data.sprite.name = "wall_\(data.column)_\(data.row)"
+                self.structure.addChild(data.sprite)
+            case .player:
+                self.playerNode = Player(
+                    texture: data.texture,
+                    allowCostumes: Player.getCostumeSet(id: self.configuration?.costumeID ?? 0),
+                    startingWith: self.configuration?.startWithCostume ?? .flashDrive
+                )
+                self.playerNode?.position = data.sprite.position
+                self.addChild(self.playerNode!)
+                data.sprite.texture = SKTexture(imageNamed: "floor")
+                data.sprite.zPosition = -999
+                self.addChild(data.sprite)
+            case .floor:
+                data.sprite.zPosition = -999
+                self.structure.addChild(data.sprite)
+            case .door:
+                let receiver = DoorReceiver(
+                    fromInput: [],
+                    reverseSignal: false,
+                    baseTexture: "door",
+                    at: CGPoint(x: data.column, y: data.row)
+                )
+                receiver.activationMethod = .anyInput
+                receiver.position = data.sprite.position
+                receiver.playerListener = self.playerNode
+                self.receivers.append(receiver)
+            case .lever:
+                let definedTextureName = data.definition.name?.replacingOccurrences(of: "_on", with: "")
+                    ?? "lever_wallup"
+                let lever = GameSignalSender(
+                    textureName: definedTextureName,
+                    by: .activeOncePermanently,
+                    at: CGPoint(x: data.column, y: data.row)
+                )
+                lever.position = data.sprite.position
+                lever.kind = .lever
+                if definedTextureName == "lever_wallup" {
+                    lever.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
                 }
+                self.switches.append(lever)
+            case .computerT1, .computerT2:
+                let name = data.definition.name?
+                    .replacingOccurrences(of: "_on_T1", with: "")
+                    .replacingOccurrences(of: "_on_T2", with: "")
+                    ?? "computer_wallup"
+                let computer = GameSignalSender(
+                    textureName: name,
+                    by: .activeOncePermanently,
+                    at: CGPoint(x: data.column, y: data.row)
+                )
+                computer.position = data.sprite.position
+                computer.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
+                computer.kind = getTileType(fromDefinition: data.definition) == .computerT1 ? .computerT1 : .computerT2
+                self.switches.append(computer)
+            default:
+                break
             }
         }
 
