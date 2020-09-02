@@ -191,7 +191,7 @@ class GameScene: SKScene {
     // MARK: SCENE LOADING
     override func sceneDidLoad() {
         // Set the correct scaling mode.
-        self.scaleMode = .resizeFill
+        self.scaleMode = .aspectFill
 
         // Instantiate the level configuration.
         guard let userData = self.userData else {
@@ -247,9 +247,7 @@ class GameScene: SKScene {
     override func didFinishUpdate() {
         if self.exitNode?.active == true {
             self.exitNode?.receive(with: self.playerNode, event: nil) { _ in
-                if let scene = SKScene(fileNamed: self.configuration?.linksToNextScene ?? "MainMenu") {
-                    self.view?.presentScene(scene, transition: SKTransition.fade(with: .black, duration: 2.0))
-                }
+                self.callScene(name: self.configuration?.linksToNextScene)
             }
         }
     }
@@ -263,9 +261,8 @@ class GameScene: SKScene {
     /// - Parameter costume: The costume to run the checks against.
     func checkWallStates(with costume: PlayerCostumeType?) {
         for node in self.structure.children where node.name != nil && node.name!.starts(with: "wall_") {
-            if let wall = node as? SKSpriteNode {
-                wall.physicsBody = costume == .bird ? nil : getWallPhysicsBody(with: wall.texture!)
-            }
+            guard let wall = node as? SKSpriteNode else { return }
+            wall.physicsBody = costume == .bird ? nil : getWallPhysicsBody(with: wall.texture!)
         }
     }
 
@@ -302,12 +299,14 @@ class GameScene: SKScene {
     }
 
     private func getPauseScene() {
-        if let paused = SKScene(fileNamed: "PauseMenu") as? PauseScene {
-            if let controller = self.view?.window?.contentViewController as? ViewController {
-                controller.rootScene = self
-                self.view?.presentScene(paused, transition: SKTransition.crossFade(withDuration: 0.1))
-            }
-        }
+        guard let controller = self.view?.window?.contentViewController as? ViewController else { return }
+        controller.rootScene = self
+        self.callScene(name: "PauseMenu")
+    }
+
+    private func callScene(name: String?) {
+        guard let scene = SKScene(fileNamed: name ?? "MainMenu") else { return }
+        self.view?.presentScene(scene, transition: SKTransition.fade(with: .black, duration: 1.0))
     }
 
     public override func keyDown(with event: NSEvent) {
