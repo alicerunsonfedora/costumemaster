@@ -73,7 +73,10 @@ class GameScene: SKScene {
         self.unit = mapUnit
 
         // Parse the tilemap and set up the nodes accordingly.
-        tilemap.parse { data in
+        tilemap.parse { (data: TilemapParseData) in
+            // Offset by one to prevent texture collisions.
+            data.sprite.size = CGSize(width: data.unit.width + 1, height: data.unit.height + 1)
+
             switch getTileType(fromDefinition: data.definition) {
             case .wall:
                 let wallTexture = data.definition.name == "wall_edge" ? "wall_edge_physics_mask" : data.definition.name!
@@ -87,6 +90,7 @@ class GameScene: SKScene {
                     startingWith: self.configuration?.startWithCostume ?? .flashDrive
                 )
                 self.playerNode?.position = data.sprite.position
+                self.playerNode?.size = data.sprite.size
                 self.addChild(self.playerNode!)
                 data.sprite.texture = SKTexture(imageNamed: "floor")
                 data.sprite.zPosition = -999
@@ -104,6 +108,7 @@ class GameScene: SKScene {
                 receiver.activationMethod = .anyInput
                 receiver.position = data.sprite.position
                 receiver.playerListener = self.playerNode
+                receiver.size = data.sprite.size
                 self.receivers.append(receiver)
             case .lever:
                 let definedTextureName = data.definition.name?.replacingOccurrences(of: "_on", with: "")
@@ -115,6 +120,7 @@ class GameScene: SKScene {
                 )
                 lever.position = data.sprite.position
                 lever.kind = .lever
+                lever.size = data.sprite.size
                 if definedTextureName == "lever_wallup" {
                     lever.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
                 }
@@ -130,6 +136,7 @@ class GameScene: SKScene {
                     at: CGPoint(x: data.column, y: data.row)
                 )
                 computer.position = data.sprite.position
+                computer.size = data.sprite.size
                 computer.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
                 computer.kind = getTileType(fromDefinition: data.definition) == .computerT1 ? .computerT1 : .computerT2
                 self.switches.append(computer)
