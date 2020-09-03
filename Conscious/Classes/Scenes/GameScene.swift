@@ -79,9 +79,10 @@ class GameScene: SKScene {
 
             switch getTileType(fromDefinition: data.definition) {
             case .wall:
-                let wallTexture = data.definition.name == "wall_edge" ? "wall_edge_physics_mask" : data.definition.name!
+                guard let wallName = data.definition.name else { return }
+                let wallTexture = wallName.starts(with: "wall_edge") ? "wall_edge_physics_mask" : wallName
                 data.sprite.physicsBody = getWallPhysicsBody(with: wallTexture)
-                data.sprite.name = "wall_\(data.column)_\(data.row)"
+                data.sprite.name = "wall_\(data.column)_\(data.row)\(wallName.starts(with: "wall_edge") ? "_edge": ""))"
                 self.structure.addChild(data.sprite)
             case .player:
                 self.playerNode = Player(
@@ -269,7 +270,9 @@ class GameScene: SKScene {
     func checkWallStates(with costume: PlayerCostumeType?) {
         for node in self.structure.children where node.name != nil && node.name!.starts(with: "wall_") {
             guard let wall = node as? SKSpriteNode else { return }
-            wall.physicsBody = costume == .bird ? nil : getWallPhysicsBody(with: wall.texture!)
+            guard let name = wall.name else { return }
+            let body = name.contains("_edge") ? "wall_edge_physics_mask" : "wall_top"
+            wall.physicsBody = costume == .bird ? nil : getWallPhysicsBody(with: body)
         }
     }
 
