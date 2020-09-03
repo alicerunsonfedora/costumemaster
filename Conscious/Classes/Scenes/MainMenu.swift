@@ -56,7 +56,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
             GKAccessPoint.shared.location = .bottomLeading
             GKAccessPoint.shared.showHighlights = true
             GKAccessPoint.shared.isActive = true
-            GKAccessPoint.shared.parentWindow = NSApplication.shared.mainWindow
+            GKAccessPoint.shared.parentWindow = self.view?.window
         }
     }
 
@@ -173,8 +173,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
     private func startAction() {
         self.startButton?.fontColor = NSColor.init(named: "AccentColor")
         if #available(OSX 11.0, *) {
-            // TODO: Re-enable this once the issue is resolved in GameKit.
-            // GKAccessPoint.shared.isActive = false
+             GKAccessPoint.shared.isActive = false
         }
         if let firstScene = SKScene(fileNamed: "Intro") {
             self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
@@ -185,8 +184,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
     private func resumeAction() {
         self.resumeButton?.fontColor = NSColor.init(named: "AccentColor")
         if #available(OSX 11.0, *) {
-            // TODO: Re-enable this once the issue is resolved in GameKit.
-            // GKAccessPoint.shared.isActive = false
+             GKAccessPoint.shared.isActive = false
         }
         if let firstScene = SKScene(fileNamed: GameStore.shared.lastSavedScene) {
             self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
