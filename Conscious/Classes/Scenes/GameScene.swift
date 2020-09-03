@@ -63,8 +63,8 @@ class GameScene: SKScene {
         guard let tilemap = childNode(withName: "Tile Map Node") as? SKTileMapNode else {
             sendAlert(
                 "Check the appropriate level file and ensure an SKTilemapNode called \"Tile Map Node\" exists.",
-                withTitle: "The tilemap for this map is missing.",
-                level: .critical) { _ in NSApplication.shared.terminate(nil) }
+                withTitle: "The tilemap for the map \"\(self.name ?? "GameScene")\" is missing.",
+                level: .critical) { _ in self.callScene(name: "MainMenu") }
             return
         }
 
@@ -176,13 +176,9 @@ class GameScene: SKScene {
                     sendAlert(
                         "The level configuration has duplicate mappings for the output at \(req.outputLocation)."
                         + " Ensure that the user data file contains the correct mappings.",
-                        withTitle: "Duplicate mappings found.",
+                        withTitle: "The map \"\(self.name ?? "GameScene")\" contains duplicate entries.",
                         level: .critical
-                    ) { _ in
-                        if let scene = SKScene(fileNamed: "MainMenu") {
-                            self.view?.presentScene(scene)
-                        }
-                    }
+                    ) { _ in self.callScene(name: "MainMenu") }
                 }
                 let output = correspondingOutputs.first
                 let inputs = self.switches
@@ -205,9 +201,9 @@ class GameScene: SKScene {
         guard let userData = self.userData else {
             sendAlert(
                 "Check that the level file contains data in the User Data.",
-                withTitle: "User Data Missing",
+                withTitle: "The properties for \"\(self.name ?? "GameScene")\" are missing.",
                 level: .critical
-            ) { _ in NSApplication.shared.terminate(nil) }
+            ) { _ in self.callScene(name: "MainMenu") }
             return
         }
         self.configuration = LevelDataConfiguration(from: userData)
@@ -216,8 +212,8 @@ class GameScene: SKScene {
         guard let pCam = childNode(withName: "Camera") as? SKCameraNode else {
             sendAlert(
                 "Check the appropriate level file and ensure an SKCameraNode called \"Camera\" exists.",
-                withTitle: "The camera for this map is missing.",
-                level: .critical) { _ in NSApplication.shared.terminate(nil) }
+                withTitle: "The camera for the map \"\(self.name ?? "GameScene")\" is missing.",
+                level: .critical) { _ in self.callScene(name: "MainMenu") }
             return
         }
         self.playerCamera = pCam
@@ -232,8 +228,8 @@ class GameScene: SKScene {
             sendAlert(
                 "Check the appropriate level file and ensure the SKTileMapNode includes a tile definition for the"
                 + " player.",
-                withTitle: "The player for this map is missing.",
-                level: .critical) { _ in NSApplication.shared.terminate(self) }
+                withTitle: "The player for the map \"\(self.name ?? "GameScene")\" is missing.",
+                level: .critical) { _ in self.callScene(name: "MainMenu") }
             return
         }
 
