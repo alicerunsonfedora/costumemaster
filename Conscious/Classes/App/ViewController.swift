@@ -20,6 +20,9 @@ class ViewController: NSViewController, NSWindowDelegate {
     /// A private tunnled copy of AppDelegate's preferences.
     private var settings: Preferences = AppDelegate.preferences
 
+    /// The arguments passed with the application.
+    private var arguments: CommandLineArguments = CommandLine.parse()
+
     /// The root scene for this controller.
     ///
     /// This is typically used when switching between scenes, but wanting to preserve the scene's state.
@@ -63,20 +66,20 @@ class ViewController: NSViewController, NSWindowDelegate {
         super.viewDidLoad()
 
         self.settings = Preferences()
+        self.arguments = CommandLine.parse()
 
-        // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
-        // including entities and graphs.
-        guard let scene = GKScene(fileNamed: "MainMenu") else {
+        let levelName = self.arguments.startLevel ?? "MainMenu"
+        guard let scene = GKScene(fileNamed: levelName) else {
             sendAlert(
                 "Please reinstall the game.",
-                withTitle: "Main Menu is missing",
+                withTitle: "The scene \(levelName) is missing.",
                 level: .critical
             ) { _ in NSApplication.shared.terminate(nil) }
             return
         }
 
         // swiftlint:disable:next force_cast
-        guard let sceneNode = scene.rootNode as! MainMenuScene? else {
+        guard let sceneNode = scene.rootNode as! SKScene? else {
             return
         }
 
