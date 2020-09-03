@@ -15,3 +15,10 @@ type_body_length:
 file_length:
   - 500 # warning
   - 1000 # error
+
+custom_rules:
+  unneeded_filter:
+    name: "Possible Unneeded Filter"
+    regex: ".filter(\\s?)\\{(.+)\\}\\s+for (\\w+) in (\\w+) \\{\\s*(.+)\\s*\\}"
+    message: "Filter might be unneeded; try using the for-where clause to iterate over a filter."
+    severity: warning

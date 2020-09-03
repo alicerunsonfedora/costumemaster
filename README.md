@@ -65,7 +65,9 @@ The following practices are also being implemented with SwiftLint:
 
 - Lines should be no longer than 120 characters long, similar to PEP8 standards with Python.
 - Function body length will be ignored.
-- Bodies for types should not exceed 400 lines (warnings issues at 250 lines).
+- Bodies for types should not exceed 400 lines (warnings issued at 250 lines).
+- Files should not exceed 1000 lines (warnings issued at 500 lines).
+- When possible, avoid making a filtered list and iterating over it; use the `for x in x where y` format instead.
 
 ## Quick Links
 
