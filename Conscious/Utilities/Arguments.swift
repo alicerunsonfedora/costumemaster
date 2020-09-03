@@ -17,7 +17,7 @@ extension CommandLine {
     static func parse() -> CommandLineArguments {
         return CommandLineArguments(startLevel: CommandLine.getArgument(of: "--start-level"))
     }
-    
+
     /// Get the resulting value of a passed argument.
     /// - Parameter flag: The argument to get the value of.
     /// - Returns: The string value from the argument, or nil if it doesn't exit.
