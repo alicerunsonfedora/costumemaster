@@ -325,14 +325,15 @@ class GameScene: SKScene {
     }
 
     public override func keyDown(with event: NSEvent) {
+        guard let changing = self.playerNode?.isChangingCostumes else { return }
         switch Int(event.keyCode) {
-        case KeyboardShortcuts.getShortcut(for: .moveUp)?.carbonKeyCode:
+        case KeyboardShortcuts.getShortcut(for: .moveUp)?.carbonKeyCode where !changing:
             self.playerNode?.move(.north, unit: self.unit!)
-        case KeyboardShortcuts.getShortcut(for: .moveDown)?.carbonKeyCode:
+        case KeyboardShortcuts.getShortcut(for: .moveDown)?.carbonKeyCode where !changing:
             self.playerNode?.move(.south, unit: self.unit!)
-        case KeyboardShortcuts.getShortcut(for: .moveLeft)?.carbonKeyCode:
+        case KeyboardShortcuts.getShortcut(for: .moveLeft)?.carbonKeyCode where !changing:
             self.playerNode?.move(.west, unit: self.unit!)
-        case KeyboardShortcuts.getShortcut(for: .moveRight)?.carbonKeyCode:
+        case KeyboardShortcuts.getShortcut(for: .moveRight)?.carbonKeyCode where !changing:
             self.playerNode?.move(.east, unit: self.unit!)
         case KeyboardShortcuts.getShortcut(for: .nextCostume)?.carbonKeyCode:
             let costume = self.playerNode?.nextCostume()

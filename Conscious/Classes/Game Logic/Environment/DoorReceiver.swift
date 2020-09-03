@@ -106,7 +106,7 @@ public class DoorReceiver: SKSpriteNode, GameSignalReceivable {
             input.receiver = self
         }
     }
-    
+
     /// Toggle the physics body for the door.
     /// - Note: This method should apply for all doors that are not exits.
     func togglePhysicsBody() {

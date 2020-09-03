@@ -49,7 +49,7 @@ public class Player: SKSpriteNode {
     private var animating: Bool = false
 
     /// Whether the player is changing costumes.
-    private var isChangingCostumes: Bool = false
+    var isChangingCostumes: Bool = false
 
     // MARK: COMPUTED PROPERTIES
 
@@ -200,11 +200,12 @@ public class Player: SKSpriteNode {
             },
             SKAction.animate(with: self.changingFrames, timePerFrame: 0.1, resize: false, restore: false),
             SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(self.costume.rawValue))")),
-            SKAction.run {  self.texture?.filteringMode = .nearest },
-            SKAction.run { ghostSprite.removeFromParent(); self.removeAllChildren() }
+            SKAction.run { self.texture?.filteringMode = .nearest },
+            SKAction.run { self.isChangingCostumes = false },
+            SKAction.run { ghostSprite.removeFromParent() }
         ]))
+
         self.animating = false
-        self.isChangingCostumes = false
         self.physicsBody?.mass = self.mass
     }
 
@@ -280,8 +281,10 @@ public class Player: SKSpriteNode {
 
     /// Update the player's data.
     public func update() {
-        for child in self.children where child.name == "ghost" && !self.isChangingCostumes {
-            child.removeFromParent()
+        if let parentNodes = self.parent?.children {
+            for child in parentNodes where child.name == "ghost" && !self.isChangingCostumes {
+                child.removeFromParent()
+            }
         }
     }
 
