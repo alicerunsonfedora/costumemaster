@@ -20,6 +20,13 @@ class GameLever: GameSignalSender {
         self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
     }
 
+    override func activate(with event: NSEvent?, player: Player?) {
+        super.activate(with: event, player: player)
+        if AppDelegate.preferences.playLeverSound {
+            self.run(SKAction.playSoundFileNamed("leverToggle", waitForCompletion: true))
+        }
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

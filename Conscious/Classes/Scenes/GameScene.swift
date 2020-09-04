@@ -116,6 +116,12 @@ class GameScene: SKScene {
                 lever.position = data.sprite.position
                 lever.size = data.sprite.size
                 self.switches.append(lever)
+            case .alarmClock:
+                let alarm = GameAlarmClock(at: CGPoint(x: data.column, y: data.row))
+                alarm.position = data.sprite.position
+                alarm.size = data.sprite.size
+                self.switches.append(alarm)
+                print(alarm)
             case .computerT1, .computerT2:
                 let computer = GameComputer(
                     at: CGPoint(x: data.column, y: data.row),
@@ -273,20 +279,15 @@ class GameScene: SKScene {
             switch input.kind {
             case .lever:
                 input.activate(with: event, player: self.playerNode)
-                if AppDelegate.preferences.playLeverSound {
-                    self.run(SKAction.playSoundFileNamed("leverToggle", waitForCompletion: true))
-                }
             case .computerT1, .computerT2:
                 switch self.playerNode?.costume {
                 case .bird where input.kind == .computerT1, .flashDrive where input.kind == .computerT2:
                     input.activate(with: event, player: self.playerNode)
-                    if AppDelegate.preferences.playComputerSound {
-                        self.run(SKAction.playSoundFileNamed("computerPowerOn", waitForCompletion: true))
-                    }
                 default:
                     self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: false))
                 }
-
+            case .alarmClock:
+                input.activate(with: event, player: self.playerNode)
             default:
                 self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: false))
             }

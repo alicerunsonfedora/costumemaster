@@ -1,5 +1,5 @@
 //
-//  AlarmClock.swift
+//  GameAlarmClock.swift
 //  Costumemaster
 //
 //  Created by Marquis Kurt on 9/4/20.
@@ -12,16 +12,17 @@
 import Foundation
 import SpriteKit
 
-class AlarmClock: GameSignalSender {
-    
+class GameAlarmClock: GameSignalSender {
+
     init(with delay: Double = 3.0, at position: CGPoint) {
         super.init(textureName: "alarm_clock_wallup", by: .activeOnTimer, at: position)
         self.cooldown = delay
+        self.kind = .alarmClock
         self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }
