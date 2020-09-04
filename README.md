@@ -1,6 +1,8 @@
-# The Costumemaster (Codename "Conscious")
+<div>
 
-<img src="icon.png" align="right"  style="padding-right: 32px;"/>
+# ![The Costumemaster](logomark.svg)
+
+</div>
 
 **Applied AI with GameplayKit**
 
@@ -14,6 +16,8 @@ make it out and figure out what's going on?
 - 🍎 **Designed for macOS**: Written completely in Swift, SpriteKit, and GameplayKit!
 - ⚙️ **Configurable**: Customize keyboard shortcuts and other preferences with ease!
 - 📖 **Open source**:  Licensed under Mozilla Public License v2.0!
+
+![In-game screenshot](.readme/game.png)
 
 ## Objective
 
@@ -51,7 +55,7 @@ account and an app registered in App Store connect with the bundle identifier of
 sure that you update the build identifier in the project to the app's identifier in App Store Connect and make sure that the achievements
 with the IDs listed in [GameAchievements.swift][gcachieve] in the Achievements list of the Game Center section.
 
-![Game Center](gamecenter.png)
+![Game Center](.readme/gamecenter.png)
 
 ### About SwiftLint
 
