@@ -132,6 +132,11 @@ class GameScene: SKScene {
                 computer.position = data.sprite.position
                 computer.size = data.sprite.size
                 self.switches.append(computer)
+            case .pressurePlate:
+                let plate = GamePressurePlate(at: CGPoint(x: data.column, y: data.row))
+                plate.position = data.sprite.position
+                plate.size = data.sprite.size
+                self.switches.append(plate)
             default:
                 break
             }

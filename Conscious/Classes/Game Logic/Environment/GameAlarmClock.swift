@@ -21,7 +21,7 @@ class GameAlarmClock: GameSignalSender {
         self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
     }
 
-    override func activate(with event: NSEvent?, player: Player?) {
+    override func activate(with event: NSEvent?, player: Player?, objects: [SKSpriteNode?]) {
         super.activate(with: event, player: player)
         if AppDelegate.preferences.playAlarmSound {
             self.run(SKAction.playSoundFileNamed("alarmEnable", waitForCompletion: true))

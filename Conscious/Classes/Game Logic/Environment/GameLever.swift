@@ -20,7 +20,7 @@ class GameLever: GameSignalSender {
         self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
     }
 
-    override func activate(with event: NSEvent?, player: Player?) {
+    override func activate(with event: NSEvent?, player: Player?, objects: [SKSpriteNode?]) {
         super.activate(with: event, player: player)
         if AppDelegate.preferences.playLeverSound {
             self.run(SKAction.playSoundFileNamed("leverToggle", waitForCompletion: true))

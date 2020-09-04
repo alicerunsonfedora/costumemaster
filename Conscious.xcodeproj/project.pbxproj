@@ -53,6 +53,7 @@
 		BFAD134A25028C0F0074DCBA /* GameAlarmClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD134925028C0F0074DCBA /* GameAlarmClock.swift */; };
 		BFAD134D250298970074DCBA /* alarmEnable.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFAD134B250298970074DCBA /* alarmEnable.wav */; };
 		BFAD134E250298970074DCBA /* alarmDisable.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFAD134C250298970074DCBA /* alarmDisable.wav */; };
+		BFAD13502502AFDE0074DCBA /* PressurePlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD134F2502AFDE0074DCBA /* PressurePlate.swift */; };
 		BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBEB33024F80ACE00162B06 /* Preferences.storyboard */; };
 		BFBEB33324F8439900162B06 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33224F8439900162B06 /* Preferences.swift */; };
 		BFBEB33524F847F600162B06 /* AdvancedPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */; };
@@ -161,6 +162,7 @@
 		BFAD134925028C0F0074DCBA /* GameAlarmClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAlarmClock.swift; sourceTree = "<group>"; };
 		BFAD134B250298970074DCBA /* alarmEnable.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmEnable.wav; sourceTree = "<group>"; };
 		BFAD134C250298970074DCBA /* alarmDisable.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmDisable.wav; sourceTree = "<group>"; };
+		BFAD134F2502AFDE0074DCBA /* PressurePlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressurePlate.swift; sourceTree = "<group>"; };
 		BFBEB33024F80ACE00162B06 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		BFBEB33224F8439900162B06 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPrefsViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				BFAD1345250285F60074DCBA /* GameLever.swift */,
 				BFAD1347250286E20074DCBA /* GameComputer.swift */,
 				BFAD134925028C0F0074DCBA /* GameAlarmClock.swift */,
+				BFAD134F2502AFDE0074DCBA /* PressurePlate.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 				BFAD1348250286E20074DCBA /* GameComputer.swift in Sources */,
 				BFEE78C524FBFDB4006FBFF0 /* PauseScene.swift in Sources */,
 				BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */,
+				BFAD13502502AFDE0074DCBA /* PressurePlate.swift in Sources */,
 				BF0D2C2024FAE86B00AEF86F /* ControlsPrefsViewController.swift in Sources */,
 				BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */,
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,

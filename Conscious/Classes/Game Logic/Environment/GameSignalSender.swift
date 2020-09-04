@@ -96,13 +96,25 @@ public class GameSignalSender: SKSpriteNode {
         self.texture = self.activeTexture
     }
 
+    private func setActiveState() {
+        self.active = true
+        self.texture = self.activeTexture
+    }
+
+    private func setInactiveState() {
+        self.active = false
+        self.texture = self.activeTexture
+    }
+
     /// Activate the input given an event and player.
     /// - Parameter event: The event handler to listen to and track.
     /// - Parameter player: The player to watch and track.
-    public func activate(with event: NSEvent?, player: Player?) {
+    public func activate(with event: NSEvent?, player: Player?, objects: [SKSpriteNode?] = []) {
         switch activationMethod {
         case .activeByPlayerIntervention:
-            break
+            if shouldActivateOnIntervention(with: player, objects: objects) {
+                self.setActiveState()
+            } else { self.setInactiveState() }
         case .activeOnTimer:
             self.run(
                 SKAction.sequence(
@@ -117,6 +129,16 @@ public class GameSignalSender: SKSpriteNode {
         case .activeOncePermanently:
             self.toggle()
         }
+    }
+
+    /// Whether the input should turn on/off based on player or object intervention.
+    /// - Parameter player: The player to listen to for intervention.
+    /// - Parameter objects: The objects to listen to for intervention.
+    /// - Returns: Whether the input should activate given the intervention criteria.
+    /// - Important: This method should be implemented on inputs that listen to player intervention.
+    /// This will default to false otherwise.
+    public func shouldActivateOnIntervention(with player: Player?, objects: [SKSpriteNode?]) -> Bool {
+        return false
     }
 
     /// Run any post-deactivation methods.
