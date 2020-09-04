@@ -25,6 +25,10 @@ public struct LevelDataConfiguration {
     /// The matrix location of the exit door.
     public let exitLocation: CGPoint
 
+    /// The default amount of time on alarm clock timers.
+    public let defaultTimerDelay: Double
+
+    /// A list of the requisites for switches and receivers.
     let requisites: [SwitchRequisite]
 
     /// A default level configuration with no costumes loaded and the next scene set to the main menu.
@@ -34,7 +38,8 @@ public struct LevelDataConfiguration {
             nextScene: "MainMenu",
             startingWith: .default,
             under: [],
-            with: CGPoint(x: 0, y: 0)
+            with: CGPoint(x: 0, y: 0),
+            timed: 3.0
         )
     }
 
@@ -49,13 +54,15 @@ public struct LevelDataConfiguration {
         nextScene: String,
         startingWith costume: PlayerCostumeType,
         under requisites: [SwitchRequisite],
-        with exit: CGPoint
+        with exit: CGPoint,
+        timed delay: Double
     ) {
         self.costumeID = costumeID
         self.linksToNextScene = nextScene
         self.startWithCostume = costume
         self.requisites = requisites
         self.exitLocation = exit
+        self.defaultTimerDelay = delay
     }
 
     /// Initialize a level configuration.
@@ -66,6 +73,7 @@ public struct LevelDataConfiguration {
         self.startWithCostume = PlayerCostumeType(
             rawValue: userData["startingCostume"] as? String ?? "Default"
         ) ?? .default
+        self.defaultTimerDelay = Double(userData["timer"] as? Int ?? 3)
         self.requisites = LevelDataConfiguration.parseRequisites(from: userData)
         var exit = CGPoint(x: 0, y: 0)
         if let exitData = userData["exitAt"] as? String {

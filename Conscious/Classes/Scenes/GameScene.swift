@@ -117,11 +117,13 @@ class GameScene: SKScene {
                 lever.size = data.sprite.size
                 self.switches.append(lever)
             case .alarmClock:
-                let alarm = GameAlarmClock(at: CGPoint(x: data.column, y: data.row))
+                let alarm = GameAlarmClock(
+                    with: self.configuration?.defaultTimerDelay ?? 3.0,
+                    at: CGPoint(x: data.column, y: data.row)
+                )
                 alarm.position = data.sprite.position
                 alarm.size = data.sprite.size
                 self.switches.append(alarm)
-                print(alarm)
             case .computerT1, .computerT2:
                 let computer = GameComputer(
                     at: CGPoint(x: data.column, y: data.row),
@@ -291,8 +293,8 @@ class GameScene: SKScene {
             default:
                 self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: false))
             }
-            checkDoorStates()
         }
+        checkDoorStates()
         if !didTrigger { self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: false)) }
     }
 
