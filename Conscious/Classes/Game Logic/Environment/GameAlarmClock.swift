@@ -23,13 +23,13 @@ class GameAlarmClock: GameSignalSender {
 
     override func activate(with event: NSEvent?, player: Player?) {
         super.activate(with: event, player: player)
-        if AppDelegate.preferences.playLeverSound {
+        if AppDelegate.preferences.playAlarmSound {
             self.run(SKAction.playSoundFileNamed("alarmEnable", waitForCompletion: true))
         }
     }
 
     override func onDeactivate(with event: NSEvent?, player: Player?) {
-        if AppDelegate.preferences.playLeverSound {
+        if AppDelegate.preferences.playAlarmSound {
             self.run(
                 SKAction.repeat(SKAction.playSoundFileNamed("alarmDisable", waitForCompletion: true), count: 2)
             )
