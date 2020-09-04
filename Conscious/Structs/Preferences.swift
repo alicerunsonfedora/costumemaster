@@ -37,7 +37,7 @@ struct Preferences {
     public var playComputerSound: Bool {
         didSet {
             if !initCall {
-                UserDefaults.standard.setValue(playChangeSound, forKey: "soundPlayComputerNoise")
+                UserDefaults.standard.setValue(playComputerSound, forKey: "soundPlayComputerNoise")
 
             }
         }
@@ -46,7 +46,16 @@ struct Preferences {
     public var playLeverSound: Bool {
         didSet {
             if !initCall {
-                UserDefaults.standard.setValue(playChangeSound, forKey: "soundPlayLeverNoise")
+                UserDefaults.standard.setValue(playLeverSound, forKey: "soundPlayLeverNoise")
+
+            }
+        }
+    }
+
+    public var playAlarmSound: Bool {
+        didSet {
+            if !initCall {
+                UserDefaults.standard.setValue(playAlarmSound, forKey: "soundPlayAlarmNoise")
 
             }
         }
@@ -98,7 +107,7 @@ struct Preferences {
         }
         self.cameraScale = prefs.float(forKey: "cameraScale")
 
-        for pref in ["soundPlayChangeNoise", "soundPlayLeverNoise", "soundPlayComputerNoise"] {
+        for pref in ["soundPlayChangeNoise", "soundPlayLeverNoise", "soundPlayComputerNoise", "soundPlayAlarmNoise"] {
             if prefs.value(forKey: pref) == nil {
                 prefs.setValue(true, forKey: pref)
             }
@@ -107,6 +116,7 @@ struct Preferences {
         self.playChangeSound = prefs.bool(forKey: "soundPlayChangeNoise")
         self.playLeverSound = prefs.bool(forKey: "soundPlayLeverNoise")
         self.playComputerSound = prefs.bool(forKey: "soundPlayComputerNoise")
+        self.playAlarmSound = prefs.bool(forKey: "soundPlayAlarmNoise")
 
         for pref in ["advShowUnmodeledOnMenu", "debugShowNodeCount", "debugShowFPS", "debugShowPhysics"] {
             if prefs.value(forKey: pref) == nil {

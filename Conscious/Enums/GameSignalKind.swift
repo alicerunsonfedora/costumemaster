@@ -17,4 +17,6 @@ public enum GameSignalKind {
     case computerT2
     case lever
     case trigger
+    case alarmClock
+    case pressurePlate
 }

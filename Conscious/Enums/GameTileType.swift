@@ -19,5 +19,7 @@ public enum GameTileType {
     case lever
     case computerT1
     case computerT2
+    case alarmClock
+    case pressurePlate
     case unknown
 }

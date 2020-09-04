@@ -16,6 +16,9 @@ import SpriteKit
 /// - Parameter tile: The tile definition to look up the type for.
 /// - Returns: The respective tile type as `GameTileType`.
 public func getTileType(fromDefinition tile: SKTileDefinition) -> GameTileType {
+    // swiftlint:disable:previous cyclomatic_complexity
+    // This will inevitably cause cyclomatic complexity, but this is the best way as of right now to determine the type
+    // of tile we're working with.
     if let name = tile.name {
         switch name {
         case name where name.starts(with: "wall"):
@@ -30,6 +33,10 @@ public func getTileType(fromDefinition tile: SKTileDefinition) -> GameTileType {
             return .computerT2
         case name where name.starts(with: "floor"):
             return .floor
+        case name where name.starts(with: "alarm_clock"):
+            return .alarmClock
+        case name where name.starts(with: "plate"):
+            return .pressurePlate
         case "Main":
             return .player
         default:

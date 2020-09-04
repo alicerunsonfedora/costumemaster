@@ -112,35 +112,31 @@ class GameScene: SKScene {
                 receiver.size = data.sprite.size
                 self.receivers.append(receiver)
             case .lever:
-                let definedTextureName = data.definition.name?.replacingOccurrences(of: "_on", with: "")
-                    ?? "lever_wallup"
-                let lever = GameSignalSender(
-                    textureName: definedTextureName,
-                    by: .activeOncePermanently,
+                let lever = GameLever(at: CGPoint(x: data.column, y: data.row))
+                lever.position = data.sprite.position
+                lever.size = data.sprite.size
+                self.switches.append(lever)
+            case .alarmClock:
+                let alarm = GameAlarmClock(
+                    with: self.configuration?.defaultTimerDelay ?? 3.0,
                     at: CGPoint(x: data.column, y: data.row)
                 )
-                lever.position = data.sprite.position
-                lever.kind = .lever
-                lever.size = data.sprite.size
-                if definedTextureName == "lever_wallup" {
-                    lever.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
-                }
-                self.switches.append(lever)
+                alarm.position = data.sprite.position
+                alarm.size = data.sprite.size
+                self.switches.append(alarm)
             case .computerT1, .computerT2:
-                let name = data.definition.name?
-                    .replacingOccurrences(of: "_on_T1", with: "")
-                    .replacingOccurrences(of: "_on_T2", with: "")
-                    ?? "computer_wallup"
-                let computer = GameSignalSender(
-                    textureName: name,
-                    by: .activeOncePermanently,
-                    at: CGPoint(x: data.column, y: data.row)
+                let computer = GameComputer(
+                    at: CGPoint(x: data.column, y: data.row),
+                    with: getTileType(fromDefinition: data.definition) == .computerT1
                 )
                 computer.position = data.sprite.position
                 computer.size = data.sprite.size
-                computer.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
-                computer.kind = getTileType(fromDefinition: data.definition) == .computerT1 ? .computerT1 : .computerT2
                 self.switches.append(computer)
+            case .pressurePlate:
+                let plate = GamePressurePlate(at: CGPoint(x: data.column, y: data.row))
+                plate.position = data.sprite.position
+                plate.size = data.sprite.size
+                self.switches.append(plate)
             default:
                 break
             }
@@ -249,6 +245,14 @@ class GameScene: SKScene {
     }
 
     override func didFinishUpdate() {
+        for input in self.switches where input.activationMethod == .activeByPlayerIntervention {
+            switch input.kind {
+            case .pressurePlate:
+                input.activate(with: nil, player: self.playerNode, objects: [])
+            default:
+                break
+            }
+        }
         if self.exitNode?.active == true {
             self.exitNode?.receive(with: self.playerNode, event: nil) { _ in
                 self.callScene(name: self.configuration?.linksToNextScene)
@@ -290,25 +294,20 @@ class GameScene: SKScene {
             switch input.kind {
             case .lever:
                 input.activate(with: event, player: self.playerNode)
-                if AppDelegate.preferences.playLeverSound {
-                    self.run(SKAction.playSoundFileNamed("leverToggle", waitForCompletion: true))
-                }
             case .computerT1, .computerT2:
                 switch self.playerNode?.costume {
                 case .bird where input.kind == .computerT1, .flashDrive where input.kind == .computerT2:
                     input.activate(with: event, player: self.playerNode)
-                    if AppDelegate.preferences.playComputerSound {
-                        self.run(SKAction.playSoundFileNamed("computerPowerOn", waitForCompletion: true))
-                    }
                 default:
                     self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: false))
                 }
-
+            case .alarmClock:
+                input.activate(with: event, player: self.playerNode)
             default:
                 self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: false))
             }
-            checkDoorStates()
         }
+        checkDoorStates()
         if !didTrigger { self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: false)) }
     }
 
