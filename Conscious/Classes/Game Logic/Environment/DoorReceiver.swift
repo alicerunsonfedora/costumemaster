@@ -16,10 +16,13 @@ import SpriteKit
 public class DoorReceiver: SKSpriteNode, GameSignalReceivable {
 
     // MARK: STORED PROPERTIES
+    /// Whether the door is on by default.
     var defaultOn: Bool
 
+    /// The method of how this door will be activated.
     var activationMethod: GameSignalMethod
 
+    /// The list of inputs that activate the door.
     var inputs: [GameSignalSender] {
         didSet {
             if reverseSignal {
@@ -28,19 +31,24 @@ public class DoorReceiver: SKSpriteNode, GameSignalReceivable {
         }
     }
 
+    /// The base texture name for the door.
     var baseTextureName: String
 
+    /// The player listener for this door.
     var playerListener: Player?
 
+    /// The position of this door in the world matrix.
     var levelPosition: CGPoint
 
     private var reverseSignal: Bool = false
 
     // MARK: COMPUTED PROPERTIES
+    /// The activation-based texture for this door.
     var activeTexture: SKTexture {
         return SKTexture(imageNamed: baseTextureName + (self.active ? "_on" : "_off"))
     }
 
+    /// Whether the door is activated.
     var active: Bool {
         switch activationMethod {
         case .allInputs:
@@ -85,10 +93,12 @@ public class DoorReceiver: SKSpriteNode, GameSignalReceivable {
 
     // MARK: METHODS
 
+    /// Initialize the physics body for the door.
     private func instantiatePhysicsBody() -> SKPhysicsBody {
         return getWallPhysicsBody(with: SKTexture(imageNamed: "wall_edge_physics_mask"))
     }
 
+    /// Receive input from a player or event.
     func receive(with player: Player?, event: NSEvent?, handler: ((Any?) -> Void)) {
         if let position = player?.position {
             if position.distance(between: self.position) < (self.texture?.size().width ?? 1) / 4 {
@@ -97,10 +107,12 @@ public class DoorReceiver: SKSpriteNode, GameSignalReceivable {
         }
     }
 
+    /// Update the texture for this door.
     func update() {
         self.texture = self.activeTexture
     }
 
+    /// Update the list of inputs and their receivers.
     func updateInputs() {
         for input in self.inputs {
             input.receiver = self

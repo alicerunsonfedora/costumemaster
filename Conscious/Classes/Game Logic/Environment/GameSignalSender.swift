@@ -96,11 +96,13 @@ public class GameSignalSender: SKSpriteNode {
         self.texture = self.activeTexture
     }
 
+    /// Set the state of this input as active.
     private func setActiveState() {
         self.active = true
         self.texture = self.activeTexture
     }
 
+    /// Set the state of this input as inactive.
     private func setInactiveState() {
         self.active = false
         self.texture = self.activeTexture
@@ -145,6 +147,9 @@ public class GameSignalSender: SKSpriteNode {
         return false
     }
 
+    /// Run any post-activation methods.
+    /// - Parameter event: The event handler that triggered the activation.
+    /// - Parameter player: The player that triggered the activation.
     public func onActivate(with event: NSEvent?, player: Player?) {
         print("onActivate has not been implemented.")
     }

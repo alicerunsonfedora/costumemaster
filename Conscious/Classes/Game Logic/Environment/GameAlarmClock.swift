@@ -12,8 +12,12 @@
 import Foundation
 import SpriteKit
 
+/// A class representation of an alarm clock (timer).
 class GameAlarmClock: GameSignalSender {
 
+    /// Initialze an alarm clock.
+    /// - Parameter delay: The number of seconds it takes for the alarm clock to turn off.
+    /// - Parameter position: The world matrix position of the alarm clock.
     init(with delay: Double = 3.0, at position: CGPoint) {
         super.init(textureName: "alarm_clock_wallup", by: .activeOnTimer, at: position)
         self.cooldown = delay
@@ -21,6 +25,10 @@ class GameAlarmClock: GameSignalSender {
         self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
     }
 
+    /// Activate an alarm clock.
+    /// - Parameter event: The event handler to listen to and track.
+    /// - Parameter player: The player to watch and track.
+    /// - Parameter objects: The list of objects to listen to.
     override func activate(with event: NSEvent?, player: Player?, objects: [SKSpriteNode?]) {
         super.activate(with: event, player: player)
         if AppDelegate.preferences.playAlarmSound {
@@ -28,6 +36,7 @@ class GameAlarmClock: GameSignalSender {
         }
     }
 
+    /// Play the alarm when deactivated.
     override func onDeactivate(with event: NSEvent?, player: Player?) {
         if AppDelegate.preferences.playAlarmSound {
             self.run(

@@ -32,6 +32,10 @@ class GamePressurePlate: GameSignalSender {
         fatalError("init(coder:) has not been implemented")
     }
 
+    /// Whether the input should turn on/off based on player or object intervention.
+    /// - Parameter player: The player to listen to for intervention.
+    /// - Parameter objects: The objects to listen to for intervention.
+    /// - Returns: Whether the input should activate given the intervention criteria.
     public override func shouldActivateOnIntervention(with player: Player?, objects: [SKSpriteNode?]) -> Bool {
         for object in objects where object?.physicsBody?.mass ?? 0 >= 50 {
             if object?.position.distance(between: self.position) ?? 0 < 64 { return true }
