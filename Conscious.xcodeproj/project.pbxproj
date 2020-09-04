@@ -48,6 +48,8 @@
 		BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBAE224A8BDDB00996890 /* Main.storyboard */; };
 		BF6FBAF024A8BDDB00996890 /* ConsciousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAEF24A8BDDB00996890 /* ConsciousTests.swift */; };
 		BF6FBAFB24A8BDDB00996890 /* ConsciousUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAFA24A8BDDB00996890 /* ConsciousUITests.swift */; };
+		BFAD1346250285F60074DCBA /* GameLever.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD1345250285F60074DCBA /* GameLever.swift */; };
+		BFAD1348250286E20074DCBA /* GameComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD1347250286E20074DCBA /* GameComputer.swift */; };
 		BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBEB33024F80ACE00162B06 /* Preferences.storyboard */; };
 		BFBEB33324F8439900162B06 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33224F8439900162B06 /* Preferences.swift */; };
 		BFBEB33524F847F600162B06 /* AdvancedPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */; };
@@ -151,6 +153,8 @@
 		BF6FBB0924A8BE2600996890 /* PROPOSAL.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PROPOSAL.md; sourceTree = "<group>"; };
 		BF6FBB0A24A8BF1400996890 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BF6FBB0B24A8BF2000996890 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
+		BFAD1345250285F60074DCBA /* GameLever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLever.swift; sourceTree = "<group>"; };
+		BFAD1347250286E20074DCBA /* GameComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameComputer.swift; sourceTree = "<group>"; };
 		BFBEB33024F80ACE00162B06 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		BFBEB33224F8439900162B06 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPrefsViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +264,8 @@
 			children = (
 				BF3A0B7924F6CB4D00575F72 /* GameSignalSender.swift */,
 				BF3A0B8324F7046900575F72 /* DoorReceiver.swift */,
+				BFAD1345250285F60074DCBA /* GameLever.swift */,
+				BFAD1347250286E20074DCBA /* GameComputer.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -712,6 +718,7 @@
 				BFEE78C324FBF1FC006FBFF0 /* GameAchievments.swift in Sources */,
 				BF109CD924FB20B400F06E47 /* GameSignalKind.swift in Sources */,
 				BF6FBADF24A8BDD400996890 /* ViewController.swift in Sources */,
+				BFAD1346250285F60074DCBA /* GameLever.swift in Sources */,
 				BF2B5E4925016D2D001EC2E7 /* Arguments.swift in Sources */,
 				BFBEB33324F8439900162B06 /* Preferences.swift in Sources */,
 				BFC78F3924F486EF004E85A9 /* PlayerCostumeType.swift in Sources */,
@@ -721,6 +728,7 @@
 				BFC78F3D24F48731004E85A9 /* Player.swift in Sources */,
 				BF1A59422500155A000929CF /* TilemapParseData.swift in Sources */,
 				BFD8796024F5B61D00552EDD /* GameTileType.swift in Sources */,
+				BFAD1348250286E20074DCBA /* GameComputer.swift in Sources */,
 				BFEE78C524FBFDB4006FBFF0 /* PauseScene.swift in Sources */,
 				BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */,
 				BF0D2C2024FAE86B00AEF86F /* ControlsPrefsViewController.swift in Sources */,

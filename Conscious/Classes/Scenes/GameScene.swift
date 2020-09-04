@@ -112,34 +112,17 @@ class GameScene: SKScene {
                 receiver.size = data.sprite.size
                 self.receivers.append(receiver)
             case .lever:
-                let definedTextureName = data.definition.name?.replacingOccurrences(of: "_on", with: "")
-                    ?? "lever_wallup"
-                let lever = GameSignalSender(
-                    textureName: definedTextureName,
-                    by: .activeOncePermanently,
-                    at: CGPoint(x: data.column, y: data.row)
-                )
+                let lever = GameLever(at: CGPoint(x: data.column, y: data.row))
                 lever.position = data.sprite.position
-                lever.kind = .lever
                 lever.size = data.sprite.size
-                if definedTextureName == "lever_wallup" {
-                    lever.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
-                }
                 self.switches.append(lever)
             case .computerT1, .computerT2:
-                let name = data.definition.name?
-                    .replacingOccurrences(of: "_on_T1", with: "")
-                    .replacingOccurrences(of: "_on_T2", with: "")
-                    ?? "computer_wallup"
-                let computer = GameSignalSender(
-                    textureName: name,
-                    by: .activeOncePermanently,
-                    at: CGPoint(x: data.column, y: data.row)
+                let computer = GameComputer(
+                    at: CGPoint(x: data.column, y: data.row),
+                    with: getTileType(fromDefinition: data.definition) == .computerT1
                 )
                 computer.position = data.sprite.position
                 computer.size = data.sprite.size
-                computer.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
-                computer.kind = getTileType(fromDefinition: data.definition) == .computerT1 ? .computerT1 : .computerT2
                 self.switches.append(computer)
             default:
                 break
