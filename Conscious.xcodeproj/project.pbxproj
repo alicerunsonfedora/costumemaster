@@ -59,6 +59,8 @@
 		BFBEB33524F847F600162B06 /* AdvancedPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */; };
 		BFC78F3924F486EF004E85A9 /* PlayerCostumeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */; };
 		BFC78F3D24F48731004E85A9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC78F3C24F48731004E85A9 /* Player.swift */; };
+		BFD10ED72502CF0400BCDAA9 /* plateOn.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFD10ED52502CF0400BCDAA9 /* plateOn.wav */; };
+		BFD10ED82502CF0400BCDAA9 /* plateOff.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFD10ED62502CF0400BCDAA9 /* plateOff.wav */; };
 		BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */; };
 		BFD8795624F5A2FF00552EDD /* Player_Forward_USB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */; };
 		BFD8795724F5A2FF00552EDD /* Player_Forward_Default.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */; };
@@ -168,6 +170,8 @@
 		BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPrefsViewController.swift; sourceTree = "<group>"; };
 		BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCostumeType.swift; sourceTree = "<group>"; };
 		BFC78F3C24F48731004E85A9 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		BFD10ED52502CF0400BCDAA9 /* plateOn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plateOn.wav; sourceTree = "<group>"; };
+		BFD10ED62502CF0400BCDAA9 /* plateOff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plateOff.wav; sourceTree = "<group>"; };
 		BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Bird.atlas; sourceTree = "<group>"; };
 		BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_USB.atlas; sourceTree = "<group>"; };
 		BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Default.atlas; sourceTree = "<group>"; };
@@ -243,10 +247,12 @@
 			children = (
 				BFAD134C250298970074DCBA /* alarmDisable.wav */,
 				BFAD134B250298970074DCBA /* alarmEnable.wav */,
-				BF3A0B7424F6C42500575F72 /* changeCostume.wav */,
 				BF153F8F24FC3DF3007B20B4 /* cantUse.wav */,
+				BF3A0B7424F6C42500575F72 /* changeCostume.wav */,
 				BF153F9024FC3DF3007B20B4 /* computerPowerOn.wav */,
 				BF153F8E24FC3DF3007B20B4 /* leverToggle.wav */,
+				BFD10ED62502CF0400BCDAA9 /* plateOff.wav */,
+				BFD10ED52502CF0400BCDAA9 /* plateOn.wav */,
 			);
 			path = SFX;
 			sourceTree = "<group>";
@@ -644,6 +650,7 @@
 				BFD8797624F5DE3E00552EDD /* Player_Side_USB.atlas in Resources */,
 				BFE6475424F8853800230F93 /* OFL.txt in Resources */,
 				BFEE78C724FC04EC006FBFF0 /* PauseMenu.sks in Resources */,
+				BFD10ED72502CF0400BCDAA9 /* plateOn.wav in Resources */,
 				BF153F9224FC3DF3007B20B4 /* cantUse.wav in Resources */,
 				BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */,
 				BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */,
@@ -653,6 +660,7 @@
 				BF3A0B7524F6C42500575F72 /* changeCostume.wav in Resources */,
 				BFD8795B24F5AE7F00552EDD /* Player_Backward_Bird.atlas in Resources */,
 				BFD8797524F5DE3E00552EDD /* Player_Side_Sorceress.atlas in Resources */,
+				BFD10ED82502CF0400BCDAA9 /* plateOff.wav in Resources */,
 				BF2514B724F45E01000300B7 /* Sample.sks in Resources */,
 				BF4A451F2501B683008BDD5A /* Entry.sks in Resources */,
 				BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */,

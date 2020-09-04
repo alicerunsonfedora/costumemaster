@@ -114,7 +114,11 @@ public class GameSignalSender: SKSpriteNode {
         case .activeByPlayerIntervention:
             if shouldActivateOnIntervention(with: player, objects: objects) {
                 self.setActiveState()
-            } else { self.setInactiveState() }
+                self.onActivate(with: event, player: player)
+            } else {
+                self.setInactiveState()
+                self.onDeactivate(with: event, player: player)
+            }
         case .activeOnTimer:
             self.run(
                 SKAction.sequence(
@@ -139,6 +143,10 @@ public class GameSignalSender: SKSpriteNode {
     /// This will default to false otherwise.
     public func shouldActivateOnIntervention(with player: Player?, objects: [SKSpriteNode?]) -> Bool {
         return false
+    }
+
+    public func onActivate(with event: NSEvent?, player: Player?) {
+        print("onActivate has not been implemented.")
     }
 
     /// Run any post-deactivation methods.

@@ -12,8 +12,17 @@
 import Foundation
 import SpriteKit
 
+/// An input that uses pressure sensitivity to activate.
 class GamePressurePlate: GameSignalSender {
 
+    /// Whether the player left the range of the plate. Defaults to true.
+    private var leftRange: Bool = true
+
+    /// Whether the player is in range of the plate. Defaults to false.
+    private var inRange: Bool = false
+
+    /// Initialize a pressure plate.
+    /// - Parameter position: The position of the plate in the matrix.
     public init(at position: CGPoint) {
         super.init(textureName: "plate", by: .activeByPlayerIntervention, at: position)
         self.kind = .pressurePlate
@@ -24,11 +33,33 @@ class GamePressurePlate: GameSignalSender {
     }
 
     public override func shouldActivateOnIntervention(with player: Player?, objects: [SKSpriteNode?]) -> Bool {
-        if player?.position.distance(between: self.position) ?? 0 < 64 { return true }
+        if player?.position.distance(between: self.position) ?? 0 <= 64 { return true }
         for object in objects where object?.physicsBody?.mass ?? 0 >= 50 {
             if object?.position.distance(between: self.position) ?? 0 < 64 { return true }
         }
         return false
+    }
+
+    public override func onActivate(with event: NSEvent?, player: Player?) {
+        self.leftRange = false
+        if !self.inRange {
+            self.run(SKAction.sequence([
+                SKAction.run { self.inRange = true },
+                SKAction.playSoundFileNamed("plateOn", waitForCompletion: true)
+            ]))
+        }
+    }
+
+    public override func onDeactivate(with event: NSEvent?, player: Player?) {
+        if let playerPos = player?.position {
+            if playerPos.distance(between: self.position) >= 16 && !self.leftRange {
+                self.run(SKAction.sequence([
+                    SKAction.run { self.leftRange = true },
+                    SKAction.run { self.inRange = false },
+                    SKAction.playSoundFileNamed("plateOff", waitForCompletion: true)
+                ]))
+            }
+        }
     }
 
 }

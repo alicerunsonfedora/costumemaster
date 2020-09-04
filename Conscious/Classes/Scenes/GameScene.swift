@@ -245,6 +245,14 @@ class GameScene: SKScene {
     }
 
     override func didFinishUpdate() {
+        for input in self.switches where input.activationMethod == .activeByPlayerIntervention {
+            switch input.kind {
+            case .pressurePlate:
+                input.activate(with: nil, player: self.playerNode, objects: [])
+            default:
+                break
+            }
+        }
         if self.exitNode?.active == true {
             self.exitNode?.receive(with: self.playerNode, event: nil) { _ in
                 self.callScene(name: self.configuration?.linksToNextScene)
