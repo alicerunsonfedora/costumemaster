@@ -21,6 +21,21 @@ class GameAlarmClock: GameSignalSender {
         self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
     }
 
+    override func activate(with event: NSEvent?, player: Player?) {
+        super.activate(with: event, player: player)
+        if AppDelegate.preferences.playLeverSound {
+            self.run(SKAction.playSoundFileNamed("alarmEnable", waitForCompletion: true))
+        }
+    }
+
+    override func onDeactivate(with event: NSEvent?, player: Player?) {
+        if AppDelegate.preferences.playLeverSound {
+            self.run(
+                SKAction.repeat(SKAction.playSoundFileNamed("alarmDisable", waitForCompletion: true), count: 2)
+            )
+        }
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

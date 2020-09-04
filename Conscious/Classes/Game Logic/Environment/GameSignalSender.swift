@@ -109,12 +109,20 @@ public class GameSignalSender: SKSpriteNode {
                     [
                         SKAction.run { self.toggle() },
                         SKAction.wait(forDuration: self.cooldown),
-                        SKAction.run { self.toggle() }
+                        SKAction.run { self.toggle() },
+                        SKAction.run { self.onDeactivate(with: event, player: player) }
                     ]
                 )
             )
         case .activeOncePermanently:
             self.toggle()
         }
+    }
+
+    /// Run any post-deactivation methods.
+    /// - Parameter event: The event handler that triggered the activation.
+    /// - Parameter player: The player that triggered the activation.
+    public func onDeactivate(with event: NSEvent?, player: Player?) {
+        print("onDeactivate has not been implemented.")
     }
 }

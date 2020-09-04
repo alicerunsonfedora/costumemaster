@@ -51,6 +51,8 @@
 		BFAD1346250285F60074DCBA /* GameLever.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD1345250285F60074DCBA /* GameLever.swift */; };
 		BFAD1348250286E20074DCBA /* GameComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD1347250286E20074DCBA /* GameComputer.swift */; };
 		BFAD134A25028C0F0074DCBA /* GameAlarmClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD134925028C0F0074DCBA /* GameAlarmClock.swift */; };
+		BFAD134D250298970074DCBA /* alarmEnable.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFAD134B250298970074DCBA /* alarmEnable.wav */; };
+		BFAD134E250298970074DCBA /* alarmDisable.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFAD134C250298970074DCBA /* alarmDisable.wav */; };
 		BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBEB33024F80ACE00162B06 /* Preferences.storyboard */; };
 		BFBEB33324F8439900162B06 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33224F8439900162B06 /* Preferences.swift */; };
 		BFBEB33524F847F600162B06 /* AdvancedPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */; };
@@ -157,6 +159,8 @@
 		BFAD1345250285F60074DCBA /* GameLever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLever.swift; sourceTree = "<group>"; };
 		BFAD1347250286E20074DCBA /* GameComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameComputer.swift; sourceTree = "<group>"; };
 		BFAD134925028C0F0074DCBA /* GameAlarmClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAlarmClock.swift; sourceTree = "<group>"; };
+		BFAD134B250298970074DCBA /* alarmEnable.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmEnable.wav; sourceTree = "<group>"; };
+		BFAD134C250298970074DCBA /* alarmDisable.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmDisable.wav; sourceTree = "<group>"; };
 		BFBEB33024F80ACE00162B06 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		BFBEB33224F8439900162B06 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPrefsViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 		BF3A0B7324F6C41E00575F72 /* SFX */ = {
 			isa = PBXGroup;
 			children = (
+				BFAD134C250298970074DCBA /* alarmDisable.wav */,
+				BFAD134B250298970074DCBA /* alarmEnable.wav */,
 				BF3A0B7424F6C42500575F72 /* changeCostume.wav */,
 				BF153F8F24FC3DF3007B20B4 /* cantUse.wav */,
 				BF153F9024FC3DF3007B20B4 /* computerPowerOn.wav */,
@@ -629,6 +635,7 @@
 				BFD8797124F5D8BB00552EDD /* Player_Side_Default.atlas in Resources */,
 				BFE6475824F8B03500230F93 /* MenuTileset.sks in Resources */,
 				BFD8795724F5A2FF00552EDD /* Player_Forward_Default.atlas in Resources */,
+				BFAD134E250298970074DCBA /* alarmDisable.wav in Resources */,
 				BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */,
 				BFD8796F24F5CA4000552EDD /* Player_Backward_Sorceress.atlas in Resources */,
 				BFD8797624F5DE3E00552EDD /* Player_Side_USB.atlas in Resources */,
@@ -654,6 +661,7 @@
 				BFD8796324F5C63C00552EDD /* Player_Backward_USB.atlas in Resources */,
 				BFD8795824F5A2FF00552EDD /* Player_Forward_Sorceress.atlas in Resources */,
 				BFD8795624F5A2FF00552EDD /* Player_Forward_USB.atlas in Resources */,
+				BFAD134D250298970074DCBA /* alarmEnable.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
