@@ -10,4 +10,5 @@ bundle exec jazzy \
 --exclude=/*/Classes/App/* \
 --build-tool-arguments -workspace,Conscious.xcodeproj/project.xcworkspace,-scheme,"Conscious"
 rm -r build
+echo costumemaster.marquiskurt.net >> docs/CNAME
 echo "Done."

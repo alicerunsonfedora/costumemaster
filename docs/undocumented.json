@@ -1,0 +1,740 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/DoorReceiver.swift",
+      "line": 90,
+      "symbol": "DoorReceiver.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameAlarmClock.swift",
+      "line": 48,
+      "symbol": "GameAlarmClock.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameComputer.swift",
+      "line": 27,
+      "symbol": "GameComputer.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameHeavyObject.swift",
+      "line": 15,
+      "symbol": "GameHeavyObject",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameHeavyObject.swift",
+      "line": 17,
+      "symbol": "GameHeavyObject.location",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameHeavyObject.swift",
+      "line": 19,
+      "symbol": "GameHeavyObject.carrying",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameHeavyObject.swift",
+      "line": 23,
+      "symbol": "GameHeavyObject.init(with:at:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameHeavyObject.swift",
+      "line": 30,
+      "symbol": "GameHeavyObject.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameHeavyObject.swift",
+      "line": 34,
+      "symbol": "GameHeavyObject.attach(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameHeavyObject.swift",
+      "line": 44,
+      "symbol": "GameHeavyObject.resign(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameLever.swift",
+      "line": 26,
+      "symbol": "GameLever.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameSignalSender.swift",
+      "line": 88,
+      "symbol": "GameSignalSender.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/PressurePlate.swift",
+      "line": 31,
+      "symbol": "GamePressurePlate.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Player.swift",
+      "line": 131,
+      "symbol": "Player.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
+      "line": 208,
+      "symbol": "GameScene.sceneDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
+      "line": 254,
+      "symbol": "GameScene.update(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
+      "line": 263,
+      "symbol": "GameScene.didFinishUpdate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
+      "line": 279,
+      "symbol": "GameScene.willMove(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
+      "line": 295,
+      "symbol": "GameScene.checkDoorStates()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
+      "line": 347,
+      "symbol": "GameScene.keyDown(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
+      "line": 375,
+      "symbol": "GameScene.keyUp(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "line": 16,
+      "symbol": "IntroScene",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "line": 18,
+      "symbol": "IntroScene.character",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "line": 20,
+      "symbol": "IntroScene.moveUpKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "line": 21,
+      "symbol": "IntroScene.moveLeftKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "line": 22,
+      "symbol": "IntroScene.moveRightKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "line": 23,
+      "symbol": "IntroScene.moveDownKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "line": 24,
+      "symbol": "IntroScene.prevCostumeKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "line": 25,
+      "symbol": "IntroScene.nextCostumeKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "line": 26,
+      "symbol": "IntroScene.useKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "line": 28,
+      "symbol": "IntroScene.startButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "line": 31,
+      "symbol": "IntroScene.sceneDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "line": 99,
+      "symbol": "IntroScene.mouseDown(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/MainMenu.swift",
+      "line": 63,
+      "symbol": "MainMenuScene.didMove(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/MainMenu.swift",
+      "line": 72,
+      "symbol": "MainMenuScene.sceneDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/MainMenu.swift",
+      "line": 124,
+      "symbol": "MainMenuScene.mouseDown(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/MainMenu.swift",
+      "line": 145,
+      "symbol": "MainMenuScene.rightMouseDown(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/MainMenu.swift",
+      "line": 156,
+      "symbol": "MainMenuScene.didFinishUpdate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/MainMenu.swift",
+      "line": 249,
+      "symbol": "MainMenuScene.gameCenterViewControllerDidFinish(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "line": 16,
+      "symbol": "PauseScene",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "line": 18,
+      "symbol": "PauseScene.mainMenuButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "line": 19,
+      "symbol": "PauseScene.optionsButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "line": 20,
+      "symbol": "PauseScene.resumeButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "line": 21,
+      "symbol": "PauseScene.restartButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "line": 23,
+      "symbol": "PauseScene.sceneDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "line": 41,
+      "symbol": "PauseScene.mouseDown(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "line": 58,
+      "symbol": "PauseScene.keyDown(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameSignalInputMethod.swift",
+      "line": 16,
+      "symbol": "GameSignalInputMethod.activeOncePermanently",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameSignalInputMethod.swift",
+      "line": 17,
+      "symbol": "GameSignalInputMethod.activeByPlayerIntervention",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameSignalInputMethod.swift",
+      "line": 18,
+      "symbol": "GameSignalInputMethod.activeOnTimer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameSignalKind.swift",
+      "line": 16,
+      "symbol": "GameSignalKind.computerT1",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameSignalKind.swift",
+      "line": 17,
+      "symbol": "GameSignalKind.computerT2",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameSignalKind.swift",
+      "line": 18,
+      "symbol": "GameSignalKind.lever",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameSignalKind.swift",
+      "line": 19,
+      "symbol": "GameSignalKind.trigger",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameSignalKind.swift",
+      "line": 20,
+      "symbol": "GameSignalKind.alarmClock",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameSignalKind.swift",
+      "line": 21,
+      "symbol": "GameSignalKind.pressurePlate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameSignalMethod.swift",
+      "line": 16,
+      "symbol": "GameSignalMethod.anyInput",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameSignalMethod.swift",
+      "line": 17,
+      "symbol": "GameSignalMethod.allInputs",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameSignalMethod.swift",
+      "line": 18,
+      "symbol": "GameSignalMethod.noInput",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
+      "line": 14,
+      "symbol": "GameTileType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
+      "line": 15,
+      "symbol": "GameTileType.player",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
+      "line": 16,
+      "symbol": "GameTileType.wall",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
+      "line": 17,
+      "symbol": "GameTileType.door",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
+      "line": 18,
+      "symbol": "GameTileType.floor",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
+      "line": 19,
+      "symbol": "GameTileType.lever",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
+      "line": 20,
+      "symbol": "GameTileType.computerT1",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
+      "line": 21,
+      "symbol": "GameTileType.computerT2",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
+      "line": 22,
+      "symbol": "GameTileType.alarmClock",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
+      "line": 23,
+      "symbol": "GameTileType.pressurePlate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
+      "line": 24,
+      "symbol": "GameTileType.heavyObject",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
+      "line": 25,
+      "symbol": "GameTileType.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/PlayerCostumeType.swift",
+      "line": 16,
+      "symbol": "PlayerCostumeType.default",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/PlayerCostumeType.swift",
+      "line": 17,
+      "symbol": "PlayerCostumeType.bird",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/PlayerCostumeType.swift",
+      "line": 18,
+      "symbol": "PlayerCostumeType.flashDrive",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/PlayerCostumeType.swift",
+      "line": 19,
+      "symbol": "PlayerCostumeType.sorceress",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/PlayerMoveDirection.swift",
+      "line": 16,
+      "symbol": "PlayerMoveDirection.north",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/PlayerMoveDirection.swift",
+      "line": 17,
+      "symbol": "PlayerMoveDirection.south",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/PlayerMoveDirection.swift",
+      "line": 18,
+      "symbol": "PlayerMoveDirection.east",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/PlayerMoveDirection.swift",
+      "line": 19,
+      "symbol": "PlayerMoveDirection.west",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Structs/Preferences.swift",
+      "line": 14,
+      "symbol": "Preferences",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Structs/Preferences.swift",
+      "line": 19,
+      "symbol": "Preferences.cameraScale",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Structs/Preferences.swift",
+      "line": 28,
+      "symbol": "Preferences.playChangeSound",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Structs/Preferences.swift",
+      "line": 37,
+      "symbol": "Preferences.playComputerSound",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Structs/Preferences.swift",
+      "line": 46,
+      "symbol": "Preferences.playLeverSound",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Structs/Preferences.swift",
+      "line": 55,
+      "symbol": "Preferences.playAlarmSound",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Structs/Preferences.swift",
+      "line": 65,
+      "symbol": "Preferences.canShowUnmodeledOnMenu",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Structs/Preferences.swift",
+      "line": 69,
+      "symbol": "Preferences.showUnmodeledOnMenu",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Structs/Preferences.swift",
+      "line": 78,
+      "symbol": "Preferences.showNodeCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Structs/Preferences.swift",
+      "line": 86,
+      "symbol": "Preferences.showFramesPerSecond",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Structs/Preferences.swift",
+      "line": 94,
+      "symbol": "Preferences.showPhysicsBodies",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Structs/Preferences.swift",
+      "line": 102,
+      "symbol": "Preferences.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Structs/Store.swift",
+      "line": 67,
+      "symbol": "GameStore.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Animations.swift",
+      "line": 15,
+      "symbol": "animated(fromAtlas:reversable:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/CGVector.swift",
+      "line": 15,
+      "symbol": "CGVector.>(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/CGVector.swift",
+      "line": 18,
+      "symbol": "CGVector.<(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/GameSetup.swift",
+      "line": 73,
+      "symbol": "getHeavyObjectPhysicsBody(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/GameSetup.swift",
+      "line": 85,
+      "symbol": "getHeavyObjectPhysicsBody(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Keyboard.swift",
+      "line": 16,
+      "symbol": "KeyboardShortcuts.Name.moveUp",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Keyboard.swift",
+      "line": 17,
+      "symbol": "KeyboardShortcuts.Name.moveDown",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Keyboard.swift",
+      "line": 18,
+      "symbol": "KeyboardShortcuts.Name.moveLeft",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Keyboard.swift",
+      "line": 19,
+      "symbol": "KeyboardShortcuts.Name.moveRight",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Keyboard.swift",
+      "line": 20,
+      "symbol": "KeyboardShortcuts.Name.previousCostume",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Keyboard.swift",
+      "line": 21,
+      "symbol": "KeyboardShortcuts.Name.nextCostume",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Keyboard.swift",
+      "line": 22,
+      "symbol": "KeyboardShortcuts.Name.use",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Keyboard.swift",
+      "line": 23,
+      "symbol": "KeyboardShortcuts.Name.pause",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/marquiskurt/Developer/CS400"
+}
