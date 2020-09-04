@@ -1,7 +1,7 @@
 <div>
-
-# ![The Costumemaster](logomark.svg)
-
+<h1>
+<img src="https://github.com/alicerunsonfedora/CS400/raw/root/logomark.svg" alt="The Costumemaster"/>
+</h1>
 </div>
 
 **Applied AI with GameplayKit**
@@ -17,12 +17,14 @@ make it out and figure out what's going on?
 - ⚙️ **Configurable**: Customize keyboard shortcuts and other preferences with ease!
 - 📖 **Open source**:  Licensed under Mozilla Public License v2.0!
 
-![In-game screenshot](.readme/game.png)
+![In-game screenshot](https://github.com/alicerunsonfedora/CS400/raw/root/.readme/game.png)
 
 ## Objective
 
 The primary objective of this project is to take the concepts from _CS440: Principles of Artificial Intelligence_ and build a better 
 understanding of agents and apply these concepts by implementing and comparing agents in a video game.
+
+More information on the objective of this repository can be found in the [design proposal][proposal].
 
 ## Roadmap
 
@@ -55,7 +57,7 @@ account and an app registered in App Store connect with the bundle identifier of
 sure that you update the build identifier in the project to the app's identifier in App Store Connect and make sure that the achievements
 with the IDs listed in [GameAchievements.swift][gcachieve] in the Achievements list of the Game Center section.
 
-![Game Center](.readme/gamecenter.png)
+![Game Center](https://github.com/alicerunsonfedora/CS400/raw/root/.readme/gamecenter.png)
 
 ### About SwiftLint
 
@@ -80,10 +82,6 @@ Documentation is handled by [Jazzy][jazzy], a documentation generator provided b
 1. Run `bundle install` to install the dependencies needed. In some cases, you may need to set parameters for installing sqlite3 or for installing the Xcode Command Line Tools.
 2. Run `docs_build.sh` to build the docs.
 
-## Quick Links
-
-- [Project Proposal](PROPOSAL.md)
-
 ---
 
 (C) 2020 Marquis Kurt. All rights reserved. Game Center, the Game Center logo, SF Symbols, and macOS are registered trademarks of 
@@ -95,3 +93,4 @@ Apple Inc.
 [keys]: https://github.com/sindresorhus/KeyboardShortcuts
 [gcachieve]: ./Conscious/Enums/GameAchievments.swift
 [jazzy]: https://github.com/realm/jazzy
+[proposal]: PROPOSAL.md
