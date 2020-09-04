@@ -32,6 +32,8 @@ public func getTileType(fromDefinition tile: SKTileDefinition) -> GameTileType {
             return .floor
         case name where name.starts(with: "alarm_clock"):
             return .alarmClock
+        case name where name.starts(with: "plate"):
+            return .pressurePlate
         case "Main":
             return .player
         default:
