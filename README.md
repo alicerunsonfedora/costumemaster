@@ -73,6 +73,13 @@ The following practices are also being implemented with SwiftLint:
 - Files should not exceed 1000 lines (warnings issued at 500 lines).
 - When possible, avoid making a filtered list and iterating over it; use the `for x in x where y` format instead.
 
+### Documentation
+
+Documentation is handled by [Jazzy][jazzy], a documentation generator provided by Realm. Follow the instructions to build the documentation:
+
+1. Run `bundle install` to install the dependencies needed. In some cases, you may need to set parameters for installing sqlite3 or for installing the Xcode Command Line Tools.
+2. Run `docs_build.sh` to build the docs.
+
 ## Quick Links
 
 - [Project Proposal](PROPOSAL.md)
@@ -87,3 +94,4 @@ Apple Inc.
 [linter]: https://realm.github.io/SwiftLint/
 [keys]: https://github.com/sindresorhus/KeyboardShortcuts
 [gcachieve]: ./Conscious/Enums/GameAchievments.swift
+[jazzy]: https://github.com/realm/jazzy
