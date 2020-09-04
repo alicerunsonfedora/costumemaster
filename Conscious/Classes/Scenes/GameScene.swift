@@ -320,7 +320,7 @@ class GameScene: SKScene {
 
     private func callScene(name: String?) {
         guard let scene = SKScene(fileNamed: name ?? "MainMenu") else { return }
-        self.view?.presentScene(scene, transition: SKTransition.fade(with: .black, duration: 1.0))
+        self.view?.presentScene(scene, transition: SKTransition.fade(with: .black, duration: 1.5))
     }
 
     public override func keyDown(with event: NSEvent) {

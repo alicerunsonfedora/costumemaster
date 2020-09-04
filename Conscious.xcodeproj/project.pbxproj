@@ -35,6 +35,7 @@
 		BF3A0B8A24F733C400575F72 /* Cabin-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8924F733C400575F72 /* Cabin-Regular.ttf */; };
 		BF3A0B8C24F733F300575F72 /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8B24F733EE00575F72 /* DancingScript-VariableFont_wght.ttf */; };
 		BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8F24F7355200575F72 /* MainMenu.swift */; };
+		BF4A451F2501B683008BDD5A /* Entry.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF4A451E2501B683008BDD5A /* Entry.sks */; };
 		BF63E65924F84B2000429247 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63E65824F84B2000429247 /* PreferencesViewController.swift */; };
 		BF63E65B24F84BAC00429247 /* GeneralPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63E65A24F84BAC00429247 /* GeneralPrefsViewController.swift */; };
 		BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69F2C224F4B11200BBF518 /* Alerts.swift */; };
@@ -126,6 +127,7 @@
 		BF3A0B8924F733C400575F72 /* Cabin-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Regular.ttf"; sourceTree = "<group>"; };
 		BF3A0B8B24F733EE00575F72 /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		BF3A0B8F24F7355200575F72 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		BF4A451E2501B683008BDD5A /* Entry.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Entry.sks; sourceTree = "<group>"; };
 		BF63E65824F84B2000429247 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		BF63E65A24F84BAC00429247 /* GeneralPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPrefsViewController.swift; sourceTree = "<group>"; };
 		BF69F2C224F4B11200BBF518 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
@@ -295,6 +297,25 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		BF4A451C2501B563008BDD5A /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				BF3A0B8024F703F400575F72 /* MainMenu.sks */,
+				BFEE78C624FC04EC006FBFF0 /* PauseMenu.sks */,
+				BF6B98E224FDD03900A206FF /* Intro.sks */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		BF4A451D2501B575008BDD5A /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				BF2514B624F45E01000300B7 /* Sample.sks */,
+				BF4A451E2501B683008BDD5A /* Entry.sks */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
 		BF69F2C124F4B10100BBF518 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,10 +392,8 @@
 		BF7DFDCC24F41E3F008D09AA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				BF2514B624F45E01000300B7 /* Sample.sks */,
-				BF3A0B8024F703F400575F72 /* MainMenu.sks */,
-				BFEE78C624FC04EC006FBFF0 /* PauseMenu.sks */,
-				BF6B98E224FDD03900A206FF /* Intro.sks */,
+				BF4A451D2501B575008BDD5A /* Levels */,
+				BF4A451C2501B563008BDD5A /* Interfaces */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -616,6 +635,7 @@
 				BFD8795B24F5AE7F00552EDD /* Player_Backward_Bird.atlas in Resources */,
 				BFD8797524F5DE3E00552EDD /* Player_Side_Sorceress.atlas in Resources */,
 				BF2514B724F45E01000300B7 /* Sample.sks in Resources */,
+				BF4A451F2501B683008BDD5A /* Entry.sks in Resources */,
 				BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */,
 				BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */,
 				BF153F9324FC3DF3007B20B4 /* computerPowerOn.wav in Resources */,

@@ -101,7 +101,7 @@ class IntroScene: SKScene {
 
         if self.atPoint(location) == self.startButton {
             self.startButton?.color = .controlAccentColor
-            if let scene = SKScene(fileNamed: "Sample") {
+            if let scene = SKScene(fileNamed: "Entry") {
                 self.view?.presentScene(scene, transition: SKTransition.fade(withDuration: 2.0))
             }
         }
