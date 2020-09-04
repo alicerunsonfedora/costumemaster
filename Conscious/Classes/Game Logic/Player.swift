@@ -270,6 +270,9 @@ public class Player: SKSpriteNode {
             switch GameStore.shared.costumeIncrementBird {
             case 1:
                 GKAchievement.earn(with: .newBird)
+                GKAchievement.updateProgress(on: .quickfooted, to: 1.0)
+            case let count where count < 100:
+                GKAchievement.updateProgress(on: .quickfooted, to: Double(count))
             case 100:
                 GKAchievement.earn(with: .quickfooted)
             default:
