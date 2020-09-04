@@ -267,8 +267,13 @@ public class Player: SKSpriteNode {
         case .flashDrive:
             break
         case .bird:
-            if GameStore.shared.costumeIncrementBird == 1 {
+            switch GameStore.shared.costumeIncrementBird {
+            case 1:
                 GKAchievement.earn(with: .newBird)
+            case 100:
+                GKAchievement.earn(with: .quickfooted)
+            default:
+                break
             }
         case .sorceress:
             if GameStore.shared.costumeIncrementSorceress == 1 {

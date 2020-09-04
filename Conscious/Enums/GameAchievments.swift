@@ -28,4 +28,8 @@ public enum GameAchievement: String {
     /// Underneath it All: Found out who you are.
     /// - **ID**: costumemaster.end_reveal
     case endReveal = "costumemaster.end_reveal"
+
+    /// Quickfooted: Switch to the bird costume at least 100 times.
+    /// - **ID**: costumemaster.quickfooted
+    case quickfooted = "costumemaster.quickfooted"
 }

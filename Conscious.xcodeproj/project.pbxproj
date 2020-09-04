@@ -258,6 +258,7 @@
 		BF3A0B8224F7044500575F72 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				BF3A0B7924F6CB4D00575F72 /* GameSignalSender.swift */,
 				BF3A0B8324F7046900575F72 /* DoorReceiver.swift */,
 			);
 			path = Environment;
@@ -458,7 +459,6 @@
 			children = (
 				BF3A0B8224F7044500575F72 /* Environment */,
 				BFC78F3C24F48731004E85A9 /* Player.swift */,
-				BF3A0B7924F6CB4D00575F72 /* GameSignalSender.swift */,
 			);
 			path = "Game Logic";
 			sourceTree = "<group>";
