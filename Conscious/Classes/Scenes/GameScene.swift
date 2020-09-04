@@ -48,6 +48,9 @@ class GameScene: SKScene {
     /// The level's signal responders.
     var receivers: [GameSignalReceivable] = []
 
+    /// Interactable objects in the level.
+    var interactables: [GameHeavyObject] = []
+
     /// The exit door for this level.
     var exitNode: DoorReceiver?
 
@@ -137,6 +140,18 @@ class GameScene: SKScene {
                 plate.position = data.sprite.position
                 plate.size = data.sprite.size
                 self.switches.append(plate)
+            case .heavyObject:
+                let object = GameHeavyObject(
+                    with: data.definition.name?.replacingOccurrences(of: "floor_ho_", with: "") ?? "cabinet",
+                    at: CGPoint(x: data.column, y: data.row)
+                )
+                object.position = data.sprite.position
+                object.zPosition = self.playerNode?.zPosition ?? 5
+                object.size = data.sprite.size
+                self.interactables.append(object)
+                data.sprite.texture = SKTexture(imageNamed: "floor")
+                data.sprite.zPosition = -999
+                self.addChild(data.sprite)
             default:
                 break
             }
@@ -144,6 +159,7 @@ class GameScene: SKScene {
 
         for node in self.switches { node.zPosition -= 5; self.addChild(node) }
         for node in self.receivers { node.zPosition -= 5; self.addChild(node) }
+        for node in self.interactables { self.addChild(node) }
 
         for node in self.receivers where node.levelPosition == self.configuration?.exitLocation {
             if let door = node as? DoorReceiver {
@@ -248,7 +264,7 @@ class GameScene: SKScene {
         for input in self.switches where input.activationMethod == .activeByPlayerIntervention {
             switch input.kind {
             case .pressurePlate:
-                input.activate(with: nil, player: self.playerNode, objects: [])
+                input.activate(with: nil, player: self.playerNode, objects: self.interactables)
             default:
                 break
             }
@@ -311,6 +327,12 @@ class GameScene: SKScene {
         if !didTrigger { self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: false)) }
     }
 
+    private func grabItems() {
+        for item in interactables {
+            if item.carrying { item.resign(from: self.playerNode )} else { item.attach(to: self.playerNode) }
+        }
+    }
+
     private func getPauseScene() {
         guard let controller = self.view?.window?.contentViewController as? ViewController else { return }
         controller.rootScene = self
@@ -341,6 +363,7 @@ class GameScene: SKScene {
             self.checkWallStates(with: costume)
         case KeyboardShortcuts.getShortcut(for: .use)?.carbonKeyCode:
             self.checkInputStates(event)
+            self.grabItems()
         case KeyboardShortcuts.getShortcut(for: .pause)?.carbonKeyCode:
             self.getPauseScene()
         default:

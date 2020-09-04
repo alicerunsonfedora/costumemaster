@@ -31,6 +31,8 @@ public func getTileType(fromDefinition tile: SKTileDefinition) -> GameTileType {
             return .computerT1
         case name where name.starts(with: "computer") && name.contains("_T2"):
             return .computerT2
+        case name where name.contains("_ho"):
+            return .heavyObject
         case name where name.starts(with: "floor"):
             return .floor
         case name where name.starts(with: "alarm_clock"):
@@ -66,4 +68,20 @@ public func getWallPhysicsBody(with texture: SKTexture) -> SKPhysicsBody {
 /// - Returns: A physics body that matches the texture.
 public func getWallPhysicsBody(with textureName: String) -> SKPhysicsBody {
     return getWallPhysicsBody(with: SKTexture(imageNamed: textureName))
+}
+
+public func getHeavyObjectPhysicsBody(with texture: SKTexture) -> SKPhysicsBody {
+    let physicsBody = SKPhysicsBody(texture: texture, size: texture.size())
+    physicsBody.mass = 100
+    physicsBody.linearDamping = 50
+    physicsBody.friction = 1.0
+    physicsBody.isDynamic = true
+    physicsBody.isResting = true
+    physicsBody.allowsRotation = false
+    physicsBody.affectedByGravity = false
+    return physicsBody
+}
+
+public func getHeavyObjectPhysicsBody(with textureName: String) -> SKPhysicsBody {
+    return getHeavyObjectPhysicsBody(with: SKTexture(imageNamed: textureName))
 }

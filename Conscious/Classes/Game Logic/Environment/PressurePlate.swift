@@ -33,10 +33,10 @@ class GamePressurePlate: GameSignalSender {
     }
 
     public override func shouldActivateOnIntervention(with player: Player?, objects: [SKSpriteNode?]) -> Bool {
-        if player?.position.distance(between: self.position) ?? 0 <= 64 { return true }
         for object in objects where object?.physicsBody?.mass ?? 0 >= 50 {
             if object?.position.distance(between: self.position) ?? 0 < 64 { return true }
         }
+        if player?.position.distance(between: self.position) ?? 0 <= 64 { return true }
         return false
     }
 
