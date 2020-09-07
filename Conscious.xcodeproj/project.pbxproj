@@ -56,6 +56,7 @@
 		BFAD134E250298970074DCBA /* alarmDisable.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFAD134C250298970074DCBA /* alarmDisable.wav */; };
 		BFAD13502502AFDE0074DCBA /* PressurePlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD134F2502AFDE0074DCBA /* PressurePlate.swift */; };
 		BFBCA1C62506A883001FFA91 /* Simultaneous.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFBCA1C52506A883001FFA91 /* Simultaneous.sks */; };
+		BFBCA1C82506B0E5001FFA91 /* Swiftly.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFBCA1C72506B0E5001FFA91 /* Swiftly.sks */; };
 		BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBEB33024F80ACE00162B06 /* Preferences.storyboard */; };
 		BFBEB33324F8439900162B06 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33224F8439900162B06 /* Preferences.swift */; };
 		BFBEB33524F847F600162B06 /* AdvancedPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */; };
@@ -169,6 +170,7 @@
 		BFAD134C250298970074DCBA /* alarmDisable.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmDisable.wav; sourceTree = "<group>"; };
 		BFAD134F2502AFDE0074DCBA /* PressurePlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressurePlate.swift; sourceTree = "<group>"; };
 		BFBCA1C52506A883001FFA91 /* Simultaneous.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Simultaneous.sks; sourceTree = "<group>"; };
+		BFBCA1C72506B0E5001FFA91 /* Swiftly.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Swiftly.sks; sourceTree = "<group>"; };
 		BFBEB33024F80ACE00162B06 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		BFBEB33224F8439900162B06 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPrefsViewController.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				BF4A451E2501B683008BDD5A /* Entry.sks */,
 				BF8C30F1250304B700A29425 /* Hacker.sks */,
 				BFBCA1C52506A883001FFA91 /* Simultaneous.sks */,
+				BFBCA1C72506B0E5001FFA91 /* Swiftly.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				BF3A0B8A24F733C400575F72 /* Cabin-Regular.ttf in Resources */,
 				BF153F9124FC3DF3007B20B4 /* leverToggle.wav in Resources */,
 				BF3A0B8C24F733F300575F72 /* DancingScript-VariableFont_wght.ttf in Resources */,
+				BFBCA1C82506B0E5001FFA91 /* Swiftly.sks in Resources */,
 				BF3A0B7524F6C42500575F72 /* changeCostume.wav in Resources */,
 				BFD8795B24F5AE7F00552EDD /* Player_Backward_Bird.atlas in Resources */,
 				BFD8797524F5DE3E00552EDD /* Player_Side_Sorceress.atlas in Resources */,
