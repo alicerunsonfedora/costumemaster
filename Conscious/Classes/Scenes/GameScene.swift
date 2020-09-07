@@ -209,6 +209,10 @@ class GameScene: SKScene {
         // Set the correct scaling mode.
         self.scaleMode = .aspectFill
 
+        if let skybox = NSColor(named: "Skybox") {
+            self.backgroundColor = skybox
+        }
+
         // Instantiate the level configuration.
         guard let userData = self.userData else {
             sendAlert(

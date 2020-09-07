@@ -55,6 +55,7 @@
 		BFAD134D250298970074DCBA /* alarmEnable.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFAD134B250298970074DCBA /* alarmEnable.wav */; };
 		BFAD134E250298970074DCBA /* alarmDisable.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFAD134C250298970074DCBA /* alarmDisable.wav */; };
 		BFAD13502502AFDE0074DCBA /* PressurePlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD134F2502AFDE0074DCBA /* PressurePlate.swift */; };
+		BFBCA1C62506A883001FFA91 /* Simultaneous.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFBCA1C52506A883001FFA91 /* Simultaneous.sks */; };
 		BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBEB33024F80ACE00162B06 /* Preferences.storyboard */; };
 		BFBEB33324F8439900162B06 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33224F8439900162B06 /* Preferences.swift */; };
 		BFBEB33524F847F600162B06 /* AdvancedPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */; };
@@ -167,6 +168,7 @@
 		BFAD134B250298970074DCBA /* alarmEnable.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmEnable.wav; sourceTree = "<group>"; };
 		BFAD134C250298970074DCBA /* alarmDisable.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmDisable.wav; sourceTree = "<group>"; };
 		BFAD134F2502AFDE0074DCBA /* PressurePlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressurePlate.swift; sourceTree = "<group>"; };
+		BFBCA1C52506A883001FFA91 /* Simultaneous.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Simultaneous.sks; sourceTree = "<group>"; };
 		BFBEB33024F80ACE00162B06 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		BFBEB33224F8439900162B06 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPrefsViewController.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 			children = (
 				BF4A451E2501B683008BDD5A /* Entry.sks */,
 				BF8C30F1250304B700A29425 /* Hacker.sks */,
+				BFBCA1C52506A883001FFA91 /* Simultaneous.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				BFD8797624F5DE3E00552EDD /* Player_Side_USB.atlas in Resources */,
 				BFE6475424F8853800230F93 /* OFL.txt in Resources */,
 				BF8C30F2250304B700A29425 /* Hacker.sks in Resources */,
+				BFBCA1C62506A883001FFA91 /* Simultaneous.sks in Resources */,
 				BFEE78C724FC04EC006FBFF0 /* PauseMenu.sks in Resources */,
 				BFD10ED72502CF0400BCDAA9 /* plateOn.wav in Resources */,
 				BF153F9224FC3DF3007B20B4 /* cantUse.wav in Resources */,
