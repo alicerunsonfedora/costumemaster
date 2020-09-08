@@ -95,6 +95,23 @@
                         <div class="abstract">
                           <p>A data structure used to determine the properties of a level based on a user data dictionary.</p>
 
+<p>The user data dictionary requires the following fields:</p>
+
+<ul>
+<li><code>exitAt</code> field: (String) determines column and row coordinates to the exit node.</li>
+<li><code>availableCostumes</code> field: (Int) determines which costumes are available.</li>
+<li><code>levelLink</code> field: (String) determines the next scene to display after this scene ends.</li>
+<li><code>startingCostume</code> field: (String) determines which costume the player starts with.</li>
+<li><code>requisite_COL_ROW</code> field(s): (String) determines what outputs require certain inputs.</li>
+</ul>
+
+<p>These fields are not required but can be added to extend the configuration:</p>
+
+<ul>
+<li><code>achievementTrigger</code> field: (String) determines the achievement to trigger when passing
+through an achievement trigger.</li>
+</ul>
+
                           <a href="Structs/LevelDataConfiguration.html" class="slightly-smaller">See more</a>
                         </div>
                         <div class="declaration">

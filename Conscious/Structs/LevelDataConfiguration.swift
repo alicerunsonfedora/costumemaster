@@ -12,6 +12,17 @@
 import Foundation
 
 /// A data structure used to determine the properties of a level based on a user data dictionary.
+///
+/// The user data dictionary requires the following fields:
+/// - `exitAt` field: (String) determines column and row coordinates to the exit node.
+/// - `availableCostumes` field: (Int) determines which costumes are available.
+/// - `levelLink` field: (String) determines the next scene to display after this scene ends.
+/// - `startingCostume` field: (String) determines which costume the player starts with.
+/// - `requisite_COL_ROW` field(s): (String) determines what outputs require certain inputs.
+///
+/// These fields are not required but can be added to extend the configuration:
+/// - `achievementTrigger` field: (String) determines the achievement to trigger when passing
+/// through an achievement trigger.
 public struct LevelDataConfiguration {
     /// The ID that determines what costumes are avaiable, with 0 indicating no costumes annd 3 indicating all costumes.
     public let costumeID: Int

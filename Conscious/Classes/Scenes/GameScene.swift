@@ -21,12 +21,7 @@ import KeyboardShortcuts
 /// - Requires: A tile map node called "Tile Map Node". Automapping _should_ be disabled, and the tileset should be
 /// "Costumemaster Default".
 /// - Requires: A camera node called "Camera".
-/// - Requires: `availableCostumes` field in user data: (Int) determines which costumes are available.
-/// See also: `Player.getCostumeSet`.
-/// - Requires: `levelLink` field in user data: (String) determines the next scene to display after this scene ends.
-/// - Requires: `startingCostume` field in user data: (String) determines which costume the player starts with.
-/// - Requires: `requisite_COL_ROW` field(s) in user data: (String) determines what outputs require certain inputs.
-/// - See Also: `LevelDataConfiguration.parseRequisites`
+/// - Requires: Level configuration data in the scene's user data. See also: `LevelDataConfiguration`.
 class GameScene: SKScene {
 
     // MARK: STORED PROPERTIES
