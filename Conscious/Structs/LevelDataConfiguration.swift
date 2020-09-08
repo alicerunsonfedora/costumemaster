@@ -102,7 +102,7 @@ public struct LevelDataConfiguration {
             }
         }
         self.exitLocation = exit
-        self.achievementTrigger = GameAchievement(rawValue: userData["achieveTrigger"] as? String ?? "null")
+        self.achievementTrigger = GameAchievement(rawValue: userData["achievementTrigger"] as? String ?? "null")
     }
 
     /// Parse a given dictionary into a list of requisites.

@@ -23,6 +23,10 @@ class GameAchievementTrigger: GameSignalSender {
     /// Whether the trigger had been activated.
     var didActivate: Bool = false
 
+    override var activeTexture: SKTexture {
+        return SKTexture(imageNamed: "floor")
+    }
+
     /// Initialize a Game Center trigger.
     /// - Parameter achievement: The game achievement to earn when passing through.
     /// - Parameter location: The level position of the trigger.
@@ -30,6 +34,7 @@ class GameAchievementTrigger: GameSignalSender {
         self.gameAchievement = achievement
         super.init(textureName: "floor", by: .activeByPlayerIntervention, at: location)
         self.kind = .trigger
+        print(self.gameAchievement)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -49,5 +54,9 @@ class GameAchievementTrigger: GameSignalSender {
         if let achievementID = self.gameAchievement {
             GKAchievement.earn(with: achievementID)
         }
+    }
+
+    public override func onDeactivate(with event: NSEvent?, player: Player?) {
+
     }
 }
