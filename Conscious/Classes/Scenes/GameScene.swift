@@ -99,6 +99,14 @@ class GameScene: SKScene {
                 data.sprite.texture = SKTexture(imageNamed: "floor")
                 data.sprite.zPosition = -999
                 self.addChild(data.sprite)
+            case .triggerGameCenter:
+                let trigger = GameAchievementTrigger(
+                    with: self.configuration?.achievementTrigger,
+                    at: CGPoint(x: data.column, y: data.row)
+                )
+                trigger.position = data.sprite.position
+                trigger.size = data.sprite.size
+                self.switches.append(trigger)
             case .floor:
                 data.sprite.zPosition = -999
                 self.structure.addChild(data.sprite)
@@ -267,7 +275,7 @@ class GameScene: SKScene {
     override func didFinishUpdate() {
         for input in self.switches where input.activationMethod == .activeByPlayerIntervention {
             switch input.kind {
-            case .pressurePlate:
+            case .pressurePlate, .trigger:
                 input.activate(with: nil, player: self.playerNode, objects: self.interactables)
             default:
                 break

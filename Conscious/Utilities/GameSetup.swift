@@ -33,6 +33,8 @@ public func getTileType(fromDefinition tile: SKTileDefinition) -> GameTileType {
             return .computerT2
         case name where name.contains("_ho"):
             return .heavyObject
+        case "trigger_gc":
+            return .triggerGameCenter
         case name where name.starts(with: "floor"):
             return .floor
         case name where name.starts(with: "alarm_clock"):

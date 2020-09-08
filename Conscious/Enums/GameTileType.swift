@@ -22,5 +22,6 @@ public enum GameTileType {
     case alarmClock
     case pressurePlate
     case heavyObject
+    case triggerGameCenter
     case unknown
 }

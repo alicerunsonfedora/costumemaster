@@ -9,7 +9,7 @@
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameAchievementTrigger.swift",
-      "line": 30,
+      "line": 35,
       "symbol": "GameAchievementTrigger.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -107,49 +107,49 @@
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 208,
+      "line": 216,
       "symbol": "GameScene.sceneDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 258,
+      "line": 266,
       "symbol": "GameScene.update(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 267,
+      "line": 275,
       "symbol": "GameScene.didFinishUpdate()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 283,
+      "line": 291,
       "symbol": "GameScene.willMove(from:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 299,
+      "line": 307,
       "symbol": "GameScene.checkDoorStates()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 351,
+      "line": 359,
       "symbol": "GameScene.keyDown(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 379,
+      "line": 387,
       "symbol": "GameScene.keyUp(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -500,6 +500,13 @@
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
       "line": 25,
+      "symbol": "GameTileType.triggerGameCenter",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Enums/GameTileType.swift",
+      "line": 26,
       "symbol": "GameTileType.unknown",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
@@ -674,14 +681,14 @@
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/GameSetup.swift",
-      "line": 73,
+      "line": 75,
       "symbol": "getHeavyObjectPhysicsBody(with:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/GameSetup.swift",
-      "line": 85,
+      "line": 87,
       "symbol": "getHeavyObjectPhysicsBody(with:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
