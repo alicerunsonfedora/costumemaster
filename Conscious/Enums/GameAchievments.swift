@@ -32,4 +32,8 @@ public enum GameAchievement: String {
     /// Quickfooted: Switch to the bird costume at least 100 times.
     /// - **ID**: costumemaster.quickfooted
     case quickfooted = "costumemaster.quickfooted"
+
+    /// It's About Perspective: Break out of bounds and find the secret.
+    /// - **ID**: costumemaster.superliminal
+    case superliminal = "costumemaster.superliminal"
 }

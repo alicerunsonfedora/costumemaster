@@ -81,6 +81,7 @@
 		BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8797424F5DE3E00552EDD /* Player_Side_Bird.atlas */; };
 		BFD8797924F5FDA800552EDD /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8797824F5FDA800552EDD /* CGVector.swift */; };
 		BFDBE7AE24F955EE00FD75BF /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDBE7AD24F955EE00FD75BF /* GameKit.framework */; };
+		BFDF94E62507FE42004F5BE7 /* GameAchievementTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF94E52507FE42004F5BE7 /* GameAchievementTrigger.swift */; };
 		BFE6475424F8853800230F93 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = BFE6475324F8853800230F93 /* OFL.txt */; };
 		BFE6475624F88B1300230F93 /* SwitchRequisite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE6475524F88B1300230F93 /* SwitchRequisite.swift */; };
 		BFE6475824F8B03500230F93 /* MenuTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFE6475724F8B03500230F93 /* MenuTileset.sks */; };
@@ -195,6 +196,7 @@
 		BFD8797424F5DE3E00552EDD /* Player_Side_Bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Side_Bird.atlas; sourceTree = "<group>"; };
 		BFD8797824F5FDA800552EDD /* CGVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGVector.swift; sourceTree = "<group>"; };
 		BFDBE7AD24F955EE00FD75BF /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		BFDF94E52507FE42004F5BE7 /* GameAchievementTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAchievementTrigger.swift; sourceTree = "<group>"; };
 		BFE6475324F8853800230F93 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		BFE6475524F88B1300230F93 /* SwitchRequisite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchRequisite.swift; sourceTree = "<group>"; };
 		BFE6475724F8B03500230F93 /* MenuTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuTileset.sks; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				BFAD134925028C0F0074DCBA /* GameAlarmClock.swift */,
 				BFAD134F2502AFDE0074DCBA /* PressurePlate.swift */,
 				BF8C30EF2502E0BD00A29425 /* GameHeavyObject.swift */,
+				BFDF94E52507FE42004F5BE7 /* GameAchievementTrigger.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				BFEE78C524FBFDB4006FBFF0 /* PauseScene.swift in Sources */,
 				BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */,
 				BFAD13502502AFDE0074DCBA /* PressurePlate.swift in Sources */,
+				BFDF94E62507FE42004F5BE7 /* GameAchievementTrigger.swift in Sources */,
 				BF0D2C2024FAE86B00AEF86F /* ControlsPrefsViewController.swift in Sources */,
 				BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */,
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,

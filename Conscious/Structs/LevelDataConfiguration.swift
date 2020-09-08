@@ -31,6 +31,9 @@ public struct LevelDataConfiguration {
     /// A list of the requisites for switches and receivers.
     let requisites: [SwitchRequisite]
 
+    /// The achievement to earn when passing through the achievement trigger, if one exists.
+    let achievementTrigger: GameAchievement?
+
     /// A default level configuration with no costumes loaded and the next scene set to the main menu.
     static var `default`: LevelDataConfiguration {
         return LevelDataConfiguration(
@@ -39,7 +42,8 @@ public struct LevelDataConfiguration {
             startingWith: .default,
             under: [],
             with: CGPoint(x: 0, y: 0),
-            timed: 3.0
+            timed: 3.0,
+            earning: nil
         )
     }
 
@@ -49,13 +53,16 @@ public struct LevelDataConfiguration {
     /// - Parameter costume: The type of costume the player starts with.
     /// - Parameter requisites: The requisites list for all inputs and and outputs.
     /// - Parameter exit: The matrix location of the exit.
+    /// - Parameter delay: The default number of seconds for a timer to be active for.
+    /// - Parameter achievement: The game achievement to earn when passing through an achievement trigger.
     init(
         costumeID: Int,
         nextScene: String,
         startingWith costume: PlayerCostumeType,
         under requisites: [SwitchRequisite],
         with exit: CGPoint,
-        timed delay: Double
+        timed delay: Double,
+        earning achievement: GameAchievement?
     ) {
         self.costumeID = costumeID
         self.linksToNextScene = nextScene
@@ -63,6 +70,7 @@ public struct LevelDataConfiguration {
         self.requisites = requisites
         self.exitLocation = exit
         self.defaultTimerDelay = delay
+        self.achievementTrigger = achievement
     }
 
     /// Initialize a level configuration.
@@ -83,6 +91,7 @@ public struct LevelDataConfiguration {
             }
         }
         self.exitLocation = exit
+        self.achievementTrigger = GameAchievement(rawValue: userData["achieveTrigger"] as? String ?? "null")
     }
 
     /// Parse a given dictionary into a list of requisites.

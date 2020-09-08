@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="../index.html">The Costumemaster</a>
-          <span class="no-mobile"> (59% documented)</span>
+          <span class="no-mobile"> (60% documented)</span>
         </p>
     
         <p class="header-right">
@@ -224,6 +224,33 @@
                   <li class="item">
                     <div>
                       <code>
+                      <a name="/s:17The_Costumemaster22LevelDataConfigurationV18achievementTriggerAA15GameAchievementOSgvp"></a>
+                      <a name="//apple_ref/swift/Property/achievementTrigger" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster22LevelDataConfigurationV18achievementTriggerAA15GameAchievementOSgvp">achievementTrigger</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>The achievement to earn when passing through the achievement trigger, if one exists.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">achievementTrigger</span><span class="p">:</span> <span class="kt"><a href="../Enums/GameAchievement.html">GameAchievement</a></span><span class="p">?</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
                       <a name="/s:17The_Costumemaster22LevelDataConfigurationV7defaultACvpZ"></a>
                       <a name="//apple_ref/swift/Variable/default" class="dashAnchor"></a>
                       <a class="token" href="#/s:17The_Costumemaster22LevelDataConfigurationV7defaultACvpZ">default</a>
@@ -251,9 +278,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster22LevelDataConfigurationV9costumeID9nextScene12startingWith5under4with5timedACSi_SSAA17PlayerCostumeTypeOSayAA15SwitchRequisiteVGSo7CGPointVSdtcfc"></a>
-                      <a name="//apple_ref/swift/Method/init(costumeID:nextScene:startingWith:under:with:timed:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster22LevelDataConfigurationV9costumeID9nextScene12startingWith5under4with5timedACSi_SSAA17PlayerCostumeTypeOSayAA15SwitchRequisiteVGSo7CGPointVSdtcfc">init(costumeID:<wbr>nextScene:<wbr>startingWith:<wbr>under:<wbr>with:<wbr>timed:<wbr>)</a>
+                      <a name="/s:17The_Costumemaster22LevelDataConfigurationV9costumeID9nextScene12startingWith5under4with5timed7earningACSi_SSAA17PlayerCostumeTypeOSayAA15SwitchRequisiteVGSo7CGPointVSdAA15GameAchievementOSgtcfc"></a>
+                      <a name="//apple_ref/swift/Method/init(costumeID:nextScene:startingWith:under:with:timed:earning:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster22LevelDataConfigurationV9costumeID9nextScene12startingWith5under4with5timed7earningACSi_SSAA17PlayerCostumeTypeOSayAA15SwitchRequisiteVGSo7CGPointVSdAA15GameAchievementOSgtcfc">init(costumeID:<wbr>nextScene:<wbr>startingWith:<wbr>under:<wbr>with:<wbr>timed:<wbr>earning:<wbr>)</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -274,7 +301,8 @@
     <span class="n">startingWith</span> <span class="nv">costume</span><span class="p">:</span> <span class="kt"><a href="../Enums/PlayerCostumeType.html">PlayerCostumeType</a></span><span class="p">,</span>
     <span class="n">under</span> <span class="nv">requisites</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SwitchRequisite.html">SwitchRequisite</a></span><span class="p">],</span>
     <span class="n">with</span> <span class="nv">exit</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">,</span>
-    <span class="n">timed</span> <span class="nv">delay</span><span class="p">:</span> <span class="kt">Double</span>
+    <span class="n">timed</span> <span class="nv">delay</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span>
+    <span class="n">earning</span> <span class="nv">achievement</span><span class="p">:</span> <span class="kt"><a href="../Enums/GameAchievement.html">GameAchievement</a></span><span class="p">?</span>
 <span class="p">)</span></code></pre>
 
                           </div>
@@ -340,6 +368,30 @@
                                 <td>
                                   <div>
                                     <p>The matrix location of the exit.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>delay</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The default number of seconds for a timer to be active for.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>achievement</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The game achievement to earn when passing through an achievement trigger.</p>
                                   </div>
                                 </td>
                               </tr>
@@ -467,6 +519,9 @@ making the connect an <code>AND</code> connection where both inputs must be acti
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
                   <a href="../Classes/DoorReceiver.html">DoorReceiver</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/GameAchievementTrigger.html">GameAchievementTrigger</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="../Classes/GameAlarmClock.html">GameAlarmClock</a>
@@ -626,7 +681,7 @@ making the connect an <code>AND</code> connection where both inputs must be acti
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-09-04)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-09-08)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

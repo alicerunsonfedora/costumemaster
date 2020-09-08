@@ -8,6 +8,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameAchievementTrigger.swift",
+      "line": 30,
+      "symbol": "GameAchievementTrigger.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameAlarmClock.swift",
       "line": 48,
       "symbol": "GameAlarmClock.init(coder:)",
@@ -107,42 +114,42 @@
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 254,
+      "line": 258,
       "symbol": "GameScene.update(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 263,
+      "line": 267,
       "symbol": "GameScene.didFinishUpdate()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 279,
+      "line": 283,
       "symbol": "GameScene.willMove(from:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 295,
+      "line": 299,
       "symbol": "GameScene.checkDoorStates()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 347,
+      "line": 351,
       "symbol": "GameScene.keyDown(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 375,
+      "line": 379,
       "symbol": "GameScene.keyUp(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
