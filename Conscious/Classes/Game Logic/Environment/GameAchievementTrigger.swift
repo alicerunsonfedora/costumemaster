@@ -34,7 +34,6 @@ class GameAchievementTrigger: GameSignalSender {
         self.gameAchievement = achievement
         super.init(textureName: "floor", by: .activeByPlayerIntervention, at: location)
         self.kind = .trigger
-        print(self.gameAchievement)
     }
 
     required init?(coder aDecoder: NSCoder) {
