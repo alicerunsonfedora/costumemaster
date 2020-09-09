@@ -276,6 +276,7 @@ class GameScene: SKScene {
                 break
             }
         }
+        self.checkDoorStates()
         if self.exitNode?.active == true {
             self.exitNode?.receive(with: self.playerNode, event: nil) { _ in
                 self.callScene(name: self.configuration?.linksToNextScene)
@@ -330,7 +331,6 @@ class GameScene: SKScene {
                 self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: false))
             }
         }
-        checkDoorStates()
         if !didTrigger { self.run(SKAction.playSoundFileNamed("cantUse", waitForCompletion: false)) }
     }
 

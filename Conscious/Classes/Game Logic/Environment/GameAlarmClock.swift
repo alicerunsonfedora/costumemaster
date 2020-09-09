@@ -25,12 +25,7 @@ class GameAlarmClock: GameSignalSender {
         self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
     }
 
-    /// Activate an alarm clock.
-    /// - Parameter event: The event handler to listen to and track.
-    /// - Parameter player: The player to watch and track.
-    /// - Parameter objects: The list of objects to listen to.
-    override func activate(with event: NSEvent?, player: Player?, objects: [SKSpriteNode?]) {
-        super.activate(with: event, player: player)
+    override func onActivate(with event: NSEvent?, player: Player?) {
         if AppDelegate.preferences.playAlarmSound {
             self.run(SKAction.playSoundFileNamed("alarmEnable", waitForCompletion: true))
         }

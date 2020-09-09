@@ -54,7 +54,7 @@ public class DoorReceiver: SKSpriteNode, GameSignalReceivable {
         case .allInputs:
             return !inputs.map { (input: GameSignalSender) in input.active }.contains(false) || self.defaultOn
         case .anyInput:
-            return inputs.map { (input: GameSignalSender) in input.active }.contains(true) || self.defaultOn
+            return !inputs.filter { (input: GameSignalSender) in input.active == true }.isEmpty || self.defaultOn
         case .noInput:
             return true
         }
@@ -82,7 +82,7 @@ public class DoorReceiver: SKSpriteNode, GameSignalReceivable {
             size: SKTexture(imageNamed: baseTexture + "_off").size()
         )
 
-        self.inputs.forEach { input in input.receiver = self }
+        self.inputs.forEach { input in input.receivers.append(self) }
         self.texture = self.activeTexture
         self.physicsBody = instantiatePhysicsBody()
     }
@@ -115,14 +115,17 @@ public class DoorReceiver: SKSpriteNode, GameSignalReceivable {
     /// Update the list of inputs and their receivers.
     func updateInputs() {
         for input in self.inputs {
-            input.receiver = self
+            input.receivers.append(self)
         }
     }
 
     /// Toggle the physics body for the door.
     /// - Note: This method should apply for all doors that are not exits.
     func togglePhysicsBody() {
-        self.physicsBody = self.active ? nil : self.instantiatePhysicsBody()
+        if self.active && self.physicsBody != nil { self.physicsBody = nil }
+        if !self.active && self.physicsBody == nil {
+            self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
+        }
     }
 
 }

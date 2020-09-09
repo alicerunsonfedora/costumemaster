@@ -27,7 +27,7 @@ public class GameSignalSender: SKSpriteNode {
     public var kind: GameSignalKind = .trigger
 
     /// The input's associated receiver.
-    var receiver: GameSignalReceivable?
+    var receivers: [GameSignalReceivable]
 
     /// The name of the base texture for this input.
     var baseTexture: String
@@ -54,6 +54,7 @@ public class GameSignalSender: SKSpriteNode {
         self.activationMethod = inputMethod
         self.cooldown = 0
         self.levelPosition = position
+        self.receivers = []
         super.init(
             texture: SKTexture(imageNamed: textureName + "_off"),
             color: .clear,
@@ -77,6 +78,7 @@ public class GameSignalSender: SKSpriteNode {
         self.cooldown = timer
         self.activationMethod = inputMethod
         self.levelPosition = position
+        self.receivers = []
         super.init(
             texture: SKTexture(imageNamed: textureName + "_off"),
             color: .clear,
@@ -100,6 +102,9 @@ public class GameSignalSender: SKSpriteNode {
     private func setActiveState() {
         self.active = true
         self.texture = self.activeTexture
+        for receiver in self.receivers {
+            receiver.update()
+        }
     }
 
     /// Set the state of this input as inactive.
@@ -125,15 +130,16 @@ public class GameSignalSender: SKSpriteNode {
             self.run(
                 SKAction.sequence(
                     [
-                        SKAction.run { self.toggle() },
+                        SKAction.run { self.setActiveState() },
+                        SKAction.run { self.onActivate(with: event, player: player) },
                         SKAction.wait(forDuration: self.cooldown),
-                        SKAction.run { self.toggle() },
+                        SKAction.run { self.setInactiveState() },
                         SKAction.run { self.onDeactivate(with: event, player: player) }
                     ]
                 )
             )
         case .activeOncePermanently:
-            self.toggle()
+            self.setActiveState()
         }
     }
 
