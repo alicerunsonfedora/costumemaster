@@ -19,6 +19,7 @@ extension GKAchievement {
         if !GKLocalPlayer.local.isAuthenticated { return }
         let achievement = GKAchievement(identifier: identifier)
         achievement.percentComplete = 100
+        achievement.showsCompletionBanner = true
         GKAchievement.report([achievement]) { error in
             guard error == nil else {
                 sendAlert(
