@@ -81,6 +81,7 @@
 		BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8797424F5DE3E00552EDD /* Player_Side_Bird.atlas */; };
 		BFD8797924F5FDA800552EDD /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8797824F5FDA800552EDD /* CGVector.swift */; };
 		BFDBE7AE24F955EE00FD75BF /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDBE7AD24F955EE00FD75BF /* GameKit.framework */; };
+		BFDC7B3B25096B1E00ED4DB9 /* alarmTick.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFDC7B3A25096B1E00ED4DB9 /* alarmTick.wav */; };
 		BFDF94E62507FE42004F5BE7 /* GameAchievementTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF94E52507FE42004F5BE7 /* GameAchievementTrigger.swift */; };
 		BFDF94E825080C3D004F5BE7 /* Boundary.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFDF94E725080C3D004F5BE7 /* Boundary.sks */; };
 		BFDF94EA25084600004F5BE7 /* Rushed.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFDF94E925084600004F5BE7 /* Rushed.sks */; };
@@ -198,6 +199,7 @@
 		BFD8797424F5DE3E00552EDD /* Player_Side_Bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Side_Bird.atlas; sourceTree = "<group>"; };
 		BFD8797824F5FDA800552EDD /* CGVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGVector.swift; sourceTree = "<group>"; };
 		BFDBE7AD24F955EE00FD75BF /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		BFDC7B3A25096B1E00ED4DB9 /* alarmTick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmTick.wav; sourceTree = "<group>"; };
 		BFDF94E52507FE42004F5BE7 /* GameAchievementTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAchievementTrigger.swift; sourceTree = "<group>"; };
 		BFDF94E725080C3D004F5BE7 /* Boundary.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Boundary.sks; sourceTree = "<group>"; };
 		BFDF94E925084600004F5BE7 /* Rushed.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rushed.sks; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 		BF3A0B7324F6C41E00575F72 /* SFX */ = {
 			isa = PBXGroup;
 			children = (
+				BFDC7B3A25096B1E00ED4DB9 /* alarmTick.wav */,
 				BFAD134C250298970074DCBA /* alarmDisable.wav */,
 				BFAD134B250298970074DCBA /* alarmEnable.wav */,
 				BF153F8F24FC3DF3007B20B4 /* cantUse.wav */,
@@ -689,6 +692,7 @@
 				BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */,
 				BF153F9324FC3DF3007B20B4 /* computerPowerOn.wav in Resources */,
 				BF3A0B8124F703F400575F72 /* MainMenu.sks in Resources */,
+				BFDC7B3B25096B1E00ED4DB9 /* alarmTick.wav in Resources */,
 				BF6FBAE124A8BDDB00996890 /* Assets.xcassets in Resources */,
 				BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */,
 				BFD8796324F5C63C00552EDD /* Player_Backward_USB.atlas in Resources */,

@@ -28,6 +28,13 @@ class GameAlarmClock: GameSignalSender {
     override func onActivate(with event: NSEvent?, player: Player?) {
         if AppDelegate.preferences.playAlarmSound {
             self.run(SKAction.playSoundFileNamed("alarmEnable", waitForCompletion: true))
+            let tick = SKAction.sequence(
+                [
+                    SKAction.playSoundFileNamed("alarmTick", waitForCompletion: true),
+                    SKAction.wait(forDuration: 1.0)
+                ]
+            )
+            self.run(SKAction.repeat(tick, count: Int(self.cooldown - 1)))
         }
     }
 
