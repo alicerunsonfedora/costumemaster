@@ -36,4 +36,8 @@ public enum GameAchievement: String {
     /// It's About Perspective: Break out of bounds and find the secret.
     /// - **ID**: costumemaster.superliminal
     case superliminal = "costumemaster.superliminal"
+
+    /// Overclocker: Complete the level "Divergent" in 100 seconds or less.
+    /// - **ID**: costumemaster.overclocker"
+    case overclocker = "costumemaster.overclocker"
 }
