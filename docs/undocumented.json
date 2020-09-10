@@ -114,43 +114,92 @@
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 261,
+      "line": 271,
       "symbol": "GameScene.update(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 270,
+      "line": 280,
       "symbol": "GameScene.didFinishUpdate()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 287,
+      "line": 297,
       "symbol": "GameScene.willMove(from:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 303,
+      "line": 313,
       "symbol": "GameScene.checkDoorStates()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 354,
+      "line": 367,
       "symbol": "GameScene.keyDown(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 382,
+      "line": 395,
       "symbol": "GameScene.keyUp(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/AboutScene.swift",
+      "line": 12,
+      "symbol": "AboutScene",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/AboutScene.swift",
+      "line": 14,
+      "symbol": "AboutScene.backButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/AboutScene.swift",
+      "line": 15,
+      "symbol": "AboutScene.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/AboutScene.swift",
+      "line": 16,
+      "symbol": "AboutScene.versionString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/AboutScene.swift",
+      "line": 25,
+      "symbol": "AboutScene.sceneDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/AboutScene.swift",
+      "line": 59,
+      "symbol": "AboutScene.mouseDown(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/AboutScene.swift",
+      "line": 67,
+      "symbol": "AboutScene.keyDown(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -254,28 +303,28 @@
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/MainMenu.swift",
-      "line": 124,
+      "line": 133,
       "symbol": "MainMenuScene.mouseDown(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/MainMenu.swift",
-      "line": 145,
+      "line": 154,
       "symbol": "MainMenuScene.rightMouseDown(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/MainMenu.swift",
-      "line": 156,
+      "line": 165,
       "symbol": "MainMenuScene.didFinishUpdate()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/MainMenu.swift",
-      "line": 249,
+      "line": 258,
       "symbol": "MainMenuScene.gameCenterViewControllerDidFinish(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

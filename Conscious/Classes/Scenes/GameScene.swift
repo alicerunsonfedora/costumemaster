@@ -255,6 +255,16 @@ class GameScene: SKScene {
         // Update the camera and its position.
         self.camera = playerCamera
         self.playerCamera!.position = self.playerNode!.position
+
+        let music = SKAudioNode(fileNamed: ["September", "November"].randomElement() ?? "September")
+        music.name = "music"
+        music.autoplayLooped = true
+        music.isPositional = false
+        music.run(SKAction.sequence([
+            SKAction.changeVolume(to: 0.25, duration: 0.01),
+            SKAction.play()
+        ]))
+        self.addChild(music)
     }
 
     // MARK: LIFE CYCLE UPDATES
@@ -348,6 +358,9 @@ class GameScene: SKScene {
 
     private func callScene(name: String?) {
         guard let scene = SKScene(fileNamed: name ?? "MainMenu") else { return }
+        if let music = self.childNode(withName: "music") as? SKAudioNode {
+            music.run(SKAction.changeVolume(to: 0.0, duration: 0.25))
+        }
         self.view?.presentScene(scene, transition: SKTransition.fade(with: .black, duration: 1.5))
     }
 

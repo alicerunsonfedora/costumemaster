@@ -119,6 +119,15 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
 
             self.character?.texture?.filteringMode = .nearest
         }
+
+        let music = SKAudioNode(fileNamed: "Smoldering")
+        music.autoplayLooped = true
+        music.isPositional = false
+        music.run(SKAction.sequence([
+            SKAction.changeVolume(to: 0.25, duration: 0.01),
+            SKAction.play()
+        ]))
+        self.addChild(music)
     }
 
     override func mouseDown(with event: NSEvent) {

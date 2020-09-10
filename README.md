@@ -85,7 +85,7 @@ Documentation is handled by [Jazzy][jazzy], a documentation generator provided b
 ---
 
 (C) 2020 Marquis Kurt. All rights reserved. Game Center, the Game Center logo, SF Symbols, and macOS are registered trademarks of 
-Apple Inc.
+Apple Inc. Music written by Kai Engel.
 
 <!-- Links in page -->
 [milestones]: https://github.com/alicerunsonfedora/CS400/milestones?direction=asc&sort=due_date&state=open
