@@ -10,6 +10,7 @@
 //
 
 import Cocoa
+import SpriteKit
 import KeyboardShortcuts
 
 @NSApplicationMain
@@ -40,6 +41,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         ) { response in
             if response.rawValue != 1000 { return }
             GameStore.shared.clear()
+        }
+    }
+
+    @IBAction func showAbout(_ sender: Any) {
+        if let controller = NSApplication.shared.mainWindow?.contentViewController as? ViewController {
+            if let view = controller.view as? SKView {
+                guard let aboutScreen = SKScene(fileNamed: "About") else { return }
+                if view.scene != nil { controller.rootScene = view.scene }
+                view.presentScene(aboutScreen)
+            }
         }
     }
 
