@@ -40,9 +40,14 @@ class ChallengeGameScene: GameScene {
     }
 
     /// Move to the next view and calculate the final challenge scores.
+    ///
+    /// Challenge scores are activated only when the player is near the exit and the exit is activated.
     override func willMove(from view: SKView) {
         super.willMove(from: view)
-        self.willCalcuateChallengeResults()
+        guard let playerPos = self.playerNode?.position else { return }
+        if self.exitNode?.position.distance(between: playerPos) ?? 128 < 64 && self.exitNode?.active == true {
+            self.willCalcuateChallengeResults()
+        }
     }
 
     /// Run any challenge calculations after a given event.
