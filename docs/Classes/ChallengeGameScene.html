@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>PlayerCostumeType Enumeration Reference</title>
+    <title>ChallengeGameScene Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,8 +11,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/PlayerCostumeType" class="dashAnchor"></a>
-    <a title="PlayerCostumeType Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Class/ChallengeGameScene" class="dashAnchor"></a>
+    <a title="ChallengeGameScene Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -36,7 +36,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          PlayerCostumeType Enumeration Reference
+          ChallengeGameScene Class Reference
         </p>
       </div>
     </div>
@@ -45,15 +45,19 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>PlayerCostumeType</h1>
+              <h1>ChallengeGameScene</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">PlayerCostumeType</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ChallengeGameScene</span> <span class="p">:</span> <span class="kt"><a href="../Classes/GameScene.html">GameScene</a></span></code></pre>
 
                   </div>
                 </div>
-              <p>An enumerated representation of costume types.</p>
+              <p>An extended class of the game level scene dedicated to challenges.</p>
+
+<p>Levels that use this subclass add extra components to track things such as steps taken, solution times,
+and costume changes. The purpose of this subclass is to provide extensions to the level for challenges
+for things such as achievements, leaderboards, and &ldquo;advanced levels&rdquo;.</p>
 
             </section>
             <section class="section task-group-section">
@@ -62,9 +66,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster17PlayerCostumeTypeO7defaultyA2CmF"></a>
-                      <a name="//apple_ref/swift/Element/default" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster17PlayerCostumeTypeO7defaultyA2CmF">default</a>
+                      <a name="/s:17The_Costumemaster18ChallengeGameSceneC11currentTimeSdvp"></a>
+                      <a name="//apple_ref/swift/Property/currentTime" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster18ChallengeGameSceneC11currentTimeSdvp">currentTime</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -72,14 +76,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>The current time in this level.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="p">`</span><span class="nv">default</span><span class="p">`</span> <span class="o">=</span> <span class="s">"Default"</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">currentTime</span><span class="p">:</span> <span class="kt">TimeInterval</span></code></pre>
 
                           </div>
                         </div>
@@ -89,9 +93,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster17PlayerCostumeTypeO4birdyA2CmF"></a>
-                      <a name="//apple_ref/swift/Element/bird" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster17PlayerCostumeTypeO4birdyA2CmF">bird</a>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)ChallengeGameScene(im)update:"></a>
+                      <a name="//apple_ref/swift/Method/update(_:)" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)ChallengeGameScene(im)update:">update(_:<wbr>)</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -99,14 +103,60 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Run the standard level game loop and update the challenge states as necessary.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">bird</span> <span class="o">=</span> <span class="s">"Bird"</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="n">_</span> <span class="nv">currentTime</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>currentTime</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The current time when running the update.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)ChallengeGameScene(im)willMoveFromView:"></a>
+                      <a name="//apple_ref/swift/Method/willMove(from:)" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)ChallengeGameScene(im)willMoveFromView:">willMove(from:<wbr>)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Move to the next view and calculate the final challenge scores.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">willMove</span><span class="p">(</span><span class="n">from</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">SKView</span><span class="p">)</span></code></pre>
 
                           </div>
                         </div>
@@ -116,9 +166,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster17PlayerCostumeTypeO10flashDriveyA2CmF"></a>
-                      <a name="//apple_ref/swift/Element/flashDrive" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster17PlayerCostumeTypeO10flashDriveyA2CmF">flashDrive</a>
+                      <a name="/s:17The_Costumemaster18ChallengeGameSceneC012willCalcuateC7ResultsyyF"></a>
+                      <a name="//apple_ref/swift/Method/willCalcuateChallengeResults()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster18ChallengeGameSceneC012willCalcuateC7ResultsyyF">willCalcuateChallengeResults()</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -126,41 +176,19 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Run any challenge calculations after a given event.</p>
+
+<p>For levels with a time-based challenge, this method should be overridden to fit the appropriate
+calculations and grant any leaderboard status or achievement, respectively. This method will
+automatically trigger when the scene moves (<code>SKScene.willMove</code>) and should not be called
+directly.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">flashDrive</span> <span class="o">=</span> <span class="s">"USB"</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster17PlayerCostumeTypeO9sorceressyA2CmF"></a>
-                      <a name="//apple_ref/swift/Element/sorceress" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster17PlayerCostumeTypeO9sorceressyA2CmF">sorceress</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">sorceress</span> <span class="o">=</span> <span class="s">"Sorceress"</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">willCalcuateChallengeResults</span><span class="p">()</span></code></pre>
 
                           </div>
                         </div>

@@ -9,14 +9,14 @@
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameAchievementTrigger.swift",
-      "line": 35,
+      "line": 39,
       "symbol": "GameAchievementTrigger.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameAlarmClock.swift",
-      "line": 48,
+      "line": 50,
       "symbol": "GameAlarmClock.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -86,7 +86,7 @@
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Game Logic/Environment/GameSignalSender.swift",
-      "line": 88,
+      "line": 90,
       "symbol": "GameSignalSender.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -128,14 +128,14 @@
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 286,
+      "line": 287,
       "symbol": "GameScene.willMove(from:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 302,
+      "line": 303,
       "symbol": "GameScene.checkDoorStates()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
