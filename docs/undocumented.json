@@ -155,182 +155,182 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/Intro.swift",
       "line": 16,
       "symbol": "IntroScene",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/Intro.swift",
       "line": 18,
       "symbol": "IntroScene.character",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/Intro.swift",
       "line": 20,
       "symbol": "IntroScene.moveUpKey",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/Intro.swift",
       "line": 21,
       "symbol": "IntroScene.moveLeftKey",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/Intro.swift",
       "line": 22,
       "symbol": "IntroScene.moveRightKey",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/Intro.swift",
       "line": 23,
       "symbol": "IntroScene.moveDownKey",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/Intro.swift",
       "line": 24,
       "symbol": "IntroScene.prevCostumeKey",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/Intro.swift",
       "line": 25,
       "symbol": "IntroScene.nextCostumeKey",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/Intro.swift",
       "line": 26,
       "symbol": "IntroScene.useKey",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/Intro.swift",
       "line": 28,
       "symbol": "IntroScene.startButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/Intro.swift",
       "line": 31,
       "symbol": "IntroScene.sceneDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Intro.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/Intro.swift",
       "line": 99,
       "symbol": "IntroScene.mouseDown(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/MainMenu.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/MainMenu.swift",
       "line": 63,
       "symbol": "MainMenuScene.didMove(to:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/MainMenu.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/MainMenu.swift",
       "line": 72,
       "symbol": "MainMenuScene.sceneDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/MainMenu.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/MainMenu.swift",
       "line": 124,
       "symbol": "MainMenuScene.mouseDown(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/MainMenu.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/MainMenu.swift",
       "line": 145,
       "symbol": "MainMenuScene.rightMouseDown(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/MainMenu.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/MainMenu.swift",
       "line": 156,
       "symbol": "MainMenuScene.didFinishUpdate()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/MainMenu.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/MainMenu.swift",
       "line": 249,
       "symbol": "MainMenuScene.gameCenterViewControllerDidFinish(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/PauseScene.swift",
       "line": 16,
       "symbol": "PauseScene",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/PauseScene.swift",
       "line": 18,
       "symbol": "PauseScene.mainMenuButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/PauseScene.swift",
       "line": 19,
       "symbol": "PauseScene.optionsButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/PauseScene.swift",
       "line": 20,
       "symbol": "PauseScene.resumeButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/PauseScene.swift",
       "line": 21,
       "symbol": "PauseScene.restartButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/PauseScene.swift",
       "line": 23,
       "symbol": "PauseScene.sceneDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/PauseScene.swift",
       "line": 41,
       "symbol": "PauseScene.mouseDown(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/PauseScene.swift",
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/PauseScene.swift",
       "line": 58,
       "symbol": "PauseScene.keyDown(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
