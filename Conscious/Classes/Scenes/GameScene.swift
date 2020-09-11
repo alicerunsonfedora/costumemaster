@@ -290,7 +290,10 @@ class GameScene: SKScene {
         }
     }
 
-    override func willMove(from view: SKView) { GameStore.shared.lastSavedScene = self.scene?.name ?? "" }
+    override func willMove(from view: SKView) {
+        guard let name = self.scene?.name else { return }
+        GameStore.shared.lastSavedScene = name.starts(with: "b_") ? GameStore.shared.lastSavedScene : name
+    }
 
     // MARK: EVENT TRIGGERS
     /// Check the wall states and update their physics bodies.
