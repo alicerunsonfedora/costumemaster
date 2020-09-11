@@ -13,10 +13,22 @@ import Foundation
 
 /// An enumeration that represent the different kinds of inputs.
 public enum GameSignalKind {
+
+    /// A computer with the "T1" security lock.
     case computerT1
+
+    /// A computer with the "T2" security lock.
     case computerT2
+
+    /// A lever.
     case lever
+
+    /// A trigger.
     case trigger
+
+    /// An alarm clock.
     case alarmClock
+
+    /// A pressure plate.
     case pressurePlate
 }

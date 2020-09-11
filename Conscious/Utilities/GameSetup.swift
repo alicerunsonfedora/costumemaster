@@ -72,6 +72,9 @@ public func getWallPhysicsBody(with textureName: String) -> SKPhysicsBody {
     return getWallPhysicsBody(with: SKTexture(imageNamed: textureName))
 }
 
+/// Create a physics body for a heavy object with a given texture.
+/// - Parameter texture: The texture to assign the object's physics body to.
+/// - Returns: A physics body that matches the texture.
 public func getHeavyObjectPhysicsBody(with texture: SKTexture) -> SKPhysicsBody {
     let physicsBody = SKPhysicsBody(texture: texture, size: texture.size())
     physicsBody.mass = 100
@@ -84,6 +87,9 @@ public func getHeavyObjectPhysicsBody(with texture: SKTexture) -> SKPhysicsBody 
     return physicsBody
 }
 
+/// Create a physics body for a heavy object with a given texture.
+/// - Parameter texture: The name of the texture to assign the object's physics body to.
+/// - Returns: A physics body that matches the texture.
 public func getHeavyObjectPhysicsBody(with textureName: String) -> SKPhysicsBody {
     return getHeavyObjectPhysicsBody(with: SKTexture(imageNamed: textureName))
 }

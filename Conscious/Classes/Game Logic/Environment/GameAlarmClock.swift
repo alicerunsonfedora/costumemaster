@@ -25,6 +25,7 @@ class GameAlarmClock: GameSignalSender {
         self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
     }
 
+    /// Trigger the alarm sound and continously play the tick sound.
     override func onActivate(with event: NSEvent?, player: Player?) {
         if AppDelegate.preferences.playAlarmSound {
             self.run(SKAction.playSoundFileNamed("alarmEnable", waitForCompletion: true))

@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="index.html">The Costumemaster</a>
-          <span class="no-mobile"> (60% documented)</span>
+          <span class="no-mobile"> (89% documented)</span>
         </p>
     
         <p class="header-right">
@@ -237,7 +237,7 @@ This a convenience utility to create an NSAlert with some properties.</p>
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Get a list of frames from an atlas.</p>
 
                         </div>
                         <div class="declaration">
@@ -247,6 +247,41 @@ This a convenience utility to create an NSAlert with some properties.</p>
                             <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animated</span><span class="p">(</span><span class="n">fromAtlas</span> <span class="nv">atlas</span><span class="p">:</span> <span class="kt">SKTextureAtlas</span><span class="p">,</span> <span class="nv">reversable</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">SKTexture</span><span class="p">]</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>atlas</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The atlas to read animation frames from.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>reversable</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>Whether the animation should play in reverse afterwards. Defaults to false.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>A list of textures that make up the animation.</p>
                         </div>
                       </section>
                     </div>
@@ -414,7 +449,7 @@ This a convenience utility to create an NSAlert with some properties.</p>
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Create a physics body for a heavy object with a given texture.</p>
 
                         </div>
                         <div class="declaration">
@@ -424,6 +459,29 @@ This a convenience utility to create an NSAlert with some properties.</p>
                             <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getHeavyObjectPhysicsBody</span><span class="p">(</span><span class="n">with</span> <span class="nv">texture</span><span class="p">:</span> <span class="kt">SKTexture</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">SKPhysicsBody</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>texture</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The texture to assign the object&rsquo;s physics body to.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>A physics body that matches the texture.</p>
                         </div>
                       </section>
                     </div>
@@ -441,7 +499,7 @@ This a convenience utility to create an NSAlert with some properties.</p>
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Create a physics body for a heavy object with a given texture.</p>
 
                         </div>
                         <div class="declaration">
@@ -451,6 +509,29 @@ This a convenience utility to create an NSAlert with some properties.</p>
                             <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getHeavyObjectPhysicsBody</span><span class="p">(</span><span class="n">with</span> <span class="nv">textureName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">SKPhysicsBody</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>texture</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The name of the texture to assign the object&rsquo;s physics body to.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>A physics body that matches the texture.</p>
                         </div>
                       </section>
                     </div>
@@ -615,6 +696,9 @@ This a convenience utility to create an NSAlert with some properties.</p>
                   <a href="Extensions/KeyboardShortcuts/Name.html">– Name</a>
                 </li>
                 <li class="nav-group-task">
+                  <a href="Extensions/SKTextureAtlas.html">SKTextureAtlas</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="Extensions/SKTileMapNode.html">SKTileMapNode</a>
                 </li>
                 <li class="nav-group-task">
@@ -690,7 +774,7 @@ This a convenience utility to create an NSAlert with some properties.</p>
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-09-10)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-09-11)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

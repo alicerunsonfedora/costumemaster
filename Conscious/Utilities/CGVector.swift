@@ -12,9 +12,12 @@
 import Foundation
 
 extension CGVector {
+    /// Determine if a vector is greater than another.
     static func > (left: inout CGVector, right: CGVector) -> Bool {
         return left.dx > right.dx && left.dy > right.dy
     }
+
+    /// Determine if a vector is less than another.
     static func < (left: inout CGVector, right: CGVector) -> Bool {
         return left.dx < right.dx && left.dy < right.dy
     }

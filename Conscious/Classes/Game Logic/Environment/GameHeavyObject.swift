@@ -12,14 +12,22 @@
 import Foundation
 import SpriteKit
 
+/// A class representation of a heavy object in the game.
+///
+/// Heavy objects can be manipulated by the player when wearing the sorceress costume.
 class GameHeavyObject: SKSpriteNode {
 
+    /// The location of this heavy object.
     public let location: CGPoint
 
+    /// Whether the object is being carried by the player.
     public var carrying: Bool {
         return self.parent is Player
     }
 
+    /// Initialize a heavy object.
+    /// - Parameter texture: The texture name of the heavy object.
+    /// - Parameter location: The matrix location of the heavy object.
     public init(with texture: String, at location: CGPoint) {
         self.location = location
         super.init(texture: SKTexture(imageNamed: texture), color: .clear, size: SKTexture(imageNamed: texture).size())
@@ -31,6 +39,8 @@ class GameHeavyObject: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
 
+    /// Attach the heavy object to the player.
+    /// - Parameter player: The player object to attach to.
     public func attach(to player: Player?) {
         if self.parent == player { return }
         guard let costume = player?.costume else { return }
@@ -41,6 +51,8 @@ class GameHeavyObject: SKSpriteNode {
 
     }
 
+    /// Resign the attachment status from the player.
+    /// - Parameter player: The player object to detach or resign from.
     public func resign(from player: Player?) {
         if self.parent != player { return }
         if let pos = player?.position {

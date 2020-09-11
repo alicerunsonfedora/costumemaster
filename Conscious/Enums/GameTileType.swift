@@ -11,17 +11,42 @@
 
 import Foundation
 
+/// An enumeration for the different types of game tiles that the level can consist of.
 public enum GameTileType {
+
+    /// A player tile.
     case player
+
+    /// A wall tile.
     case wall
+
+    /// A door tile.
     case door
+
+    /// A floor tile.
     case floor
+
+    /// A lever tile.
     case lever
+
+    /// A computer tile with the lock level "T1".
     case computerT1
+
+    /// A computer tile with the lock level "T2".
     case computerT2
+
+    /// An alarm clock tile.
     case alarmClock
+
+    /// A pressure plate tile.
     case pressurePlate
+
+    /// A heavy object tile.
     case heavyObject
+
+    /// A Game Center trigger tile.
     case triggerGameCenter
+
+    /// An unknown tile.
     case unknown
 }

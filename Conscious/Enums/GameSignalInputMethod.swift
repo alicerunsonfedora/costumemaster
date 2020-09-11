@@ -13,7 +13,13 @@ import Foundation
 
 /// An enumeration that defines the different types of inputs that are used in the game.
 public enum GameSignalInputMethod {
+
+    /// The input is active once and remains active permanently.
     case activeOncePermanently
+
+    /// The input is active when a player interacts with it, either by distance or collision.
     case activeByPlayerIntervention
+
+    /// The input is active on a timer and then deactivates.
     case activeOnTimer
 }

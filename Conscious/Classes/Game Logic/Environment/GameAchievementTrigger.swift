@@ -23,6 +23,7 @@ class GameAchievementTrigger: GameSignalSender {
     /// Whether the trigger had been activated.
     var didActivate: Bool = false
 
+    /// The active texture for the trigger.
     override var activeTexture: SKTexture {
         return SKTexture(imageNamed: "floor")
     }
@@ -48,6 +49,7 @@ class GameAchievementTrigger: GameSignalSender {
         return player?.position.distance(between: self.position) ?? 0 < 64 && !self.didActivate
     }
 
+    /// Activate an achievement when entering the field.
     public override func onActivate(with event: NSEvent?, player: Player?) {
         self.didActivate = true
         if let achievementID = self.gameAchievement {

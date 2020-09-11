@@ -13,11 +13,19 @@ import Foundation
 import SpriteKit
 import KeyboardShortcuts
 
+/// The SpriteKit scene class for the pause menu.
 class PauseScene: SKScene {
 
+    /// The label node that corresponds to the main menu button.
     var mainMenuButton: SKLabelNode?
+
+    /// The label node that corresponds to the options button.
     var optionsButton: SKLabelNode?
+
+    /// The label node that corresponds to the resume button.
     var resumeButton: SKLabelNode?
+
+    /// The lavel node that corresponds to the restart button.
     var restartButton: SKLabelNode?
 
     override func sceneDidLoad() {
@@ -61,6 +69,7 @@ class PauseScene: SKScene {
         }
     }
 
+    /// Execute the action that corresponds to the main menu button.
     private func mainMenuAction() {
         confirm("You'll lose any unsaved progress.", withTitle: "Go back to menu?", level: .warning) { resp in
             if resp.rawValue != 1000 { return }
@@ -70,12 +79,14 @@ class PauseScene: SKScene {
         }
     }
 
+    /// Execute the action that corresponds to the options button.
     private func optionsAction() {
         if let delegate = NSApplication.shared.delegate as? AppDelegate {
             delegate.instantiatePreferencesWindow(self)
         }
     }
 
+    /// Execute the action that corresponds to the resume button.
     private func resumeAction() {
         if let controller = self.view?.window?.contentViewController as? ViewController {
             if controller.rootScene == nil { return }
@@ -84,6 +95,7 @@ class PauseScene: SKScene {
         }
     }
 
+    /// Excecute the action that corresponds to the restart button.
     private func restartAction() {
         confirm("You'll lose any unsaved progress.", withTitle: "Restart the level?", level: .warning) { resp in
             if resp.rawValue != 1000 { return }

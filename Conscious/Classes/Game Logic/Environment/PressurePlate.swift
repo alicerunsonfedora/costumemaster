@@ -44,6 +44,7 @@ class GamePressurePlate: GameSignalSender {
         return false
     }
 
+    /// Determine if the player is in range and play the pressure plate activation sound.
     public override func onActivate(with event: NSEvent?, player: Player?) {
         self.leftRange = false
         if !self.inRange {
@@ -54,6 +55,7 @@ class GamePressurePlate: GameSignalSender {
         }
     }
 
+    /// Determine if the player is out of range and play the pressure plate deactivation sound.
     public override func onDeactivate(with event: NSEvent?, player: Player?) {
         if let playerPos = player?.position {
             if playerPos.distance(between: self.position) >= 16 && !self.leftRange {

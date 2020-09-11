@@ -9,13 +9,20 @@ import Foundation
 import SpriteKit
 import KeyboardShortcuts
 
+/// The SpriteKit scene class for the about screen.
 class AboutScene: SKScene {
 
+    /// The label node that corresponds to the back button.
     var backButton: SKLabelNode?
+
+    /// The label node that corresponds to the title of the game.
     var title: SKLabelNode?
+
+    /// The label node that corresponds to the version string.
     var versionString: SKLabelNode?
 
-    private func goHome() {
+    /// Go back to the previous scene.
+    private func goBack() {
         if let controller = self.view?.window?.contentViewController as? ViewController {
             guard let home = SKScene(fileNamed: "MainMenu") else { return }
             self.view?.presentScene(controller.rootScene != nil ? controller.rootScene : home)
@@ -60,14 +67,14 @@ class AboutScene: SKScene {
         let tapped = event.location(in: self)
 
         if self.atPoint(tapped) == backButton {
-            goHome()
+            goBack()
         }
     }
 
     override func keyDown(with event: NSEvent) {
         let keycode = Int(event.keyCode)
         if keycode == KeyboardShortcuts.Shortcut(.escape).carbonKeyCode {
-            goHome()
+            goBack()
         }
     }
 

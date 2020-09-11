@@ -290,9 +290,7 @@ class GameScene: SKScene {
         }
     }
 
-    override func willMove(from view: SKView) {
-        GameStore.shared.lastSavedScene = self.scene?.name ?? ""
-    }
+    override func willMove(from view: SKView) { GameStore.shared.lastSavedScene = self.scene?.name ?? "" }
 
     // MARK: EVENT TRIGGERS
     /// Check the wall states and update their physics bodies.
@@ -308,8 +306,7 @@ class GameScene: SKScene {
 
     func checkDoorStates() {
         for node in self.receivers where node is DoorReceiver && node != self.exitNode {
-            guard let door = node as? DoorReceiver else { return }
-            door.togglePhysicsBody()
+            guard let door = node as? DoorReceiver else { return }; door.togglePhysicsBody()
         }
     }
 

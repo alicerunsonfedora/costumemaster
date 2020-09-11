@@ -12,6 +12,10 @@
 import Foundation
 import SpriteKit
 
+/// Get a list of frames from an atlas.
+/// - Parameter atlas: The atlas to read animation frames from.
+/// - Parameter reversable: Whether the animation should play in reverse afterwards. Defaults to false.
+/// - Returns: A list of textures that make up the animation.
 public func animated(fromAtlas atlas: SKTextureAtlas, reversable: Bool = false) -> [SKTexture] {
     var frames: [SKTexture] = []
     let useDoubles: Bool = atlas.textureNames.count > 9
@@ -31,4 +35,13 @@ public func animated(fromAtlas atlas: SKTextureAtlas, reversable: Bool = false) 
     }
 
     return frames
+}
+
+extension SKTextureAtlas {
+    /// Convert this atlas to a list of animated frames.
+    /// - Parameter reversable: Whether the animation should play in reverse afterwards. Defaults to false.
+    /// - Returns: A list of textures that make up the animation.
+    public func toFrames(reversable: Bool = false) -> [SKTexture] {
+        return animated(fromAtlas: self, reversable: reversable)
+    }
 }

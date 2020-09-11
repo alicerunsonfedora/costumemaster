@@ -13,18 +13,34 @@ import Foundation
 import KeyboardShortcuts
 import SpriteKit
 
+/// The SpriteKit scene associated with the intro scene.
 class IntroScene: SKScene {
 
+    /// The sprite associated with the level.
     var character: SKSpriteNode?
 
+    /// The label that corresponds to the move up key.
     var moveUpKey: SKLabelNode?
+
+    /// The label that corresponds to the move left key.
     var moveLeftKey: SKLabelNode?
+
+    /// The label that corresponds to the move right key.
     var moveRightKey: SKLabelNode?
+
+    /// The label that corresponds to the move down key.
     var moveDownKey: SKLabelNode?
+
+    /// The label that corresponds to the change costume (previous) key.
     var prevCostumeKey: SKLabelNode?
+
+    /// The label that corresponds to the change costume (next) key.
     var nextCostumeKey: SKLabelNode?
+
+    /// The label that corresponds to the use key.
     var useKey: SKLabelNode?
 
+    /// The label that corresponds to the start button.
     var startButton: SKLabelNode?
 
     // swiftlint:disable:next cyclomatic_complexity

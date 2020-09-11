@@ -13,8 +13,16 @@ import Foundation
 
 /// An enumerated representation of costume types.
 public enum PlayerCostumeType: String {
+
+    /// The "default" costume (no costume).
     case `default` = "Default"
+
+    /// The bird costume.
     case bird = "Bird"
+
+    /// The flash drive costume.
     case flashDrive = "USB"
+
+    /// The sorceress costume.
     case sorceress = "Sorceress"
 }

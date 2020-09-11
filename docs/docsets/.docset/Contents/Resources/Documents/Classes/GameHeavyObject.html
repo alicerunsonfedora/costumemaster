@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="../index.html">The Costumemaster</a>
-          <span class="no-mobile"> (60% documented)</span>
+          <span class="no-mobile"> (89% documented)</span>
         </p>
     
         <p class="header-right">
@@ -53,7 +53,9 @@
 
                   </div>
                 </div>
-              <p>Undocumented</p>
+              <p>A class representation of a heavy object in the game.</p>
+
+<p>Heavy objects can be manipulated by the player when wearing the sorceress costume.</p>
 
             </section>
             <section class="section task-group-section">
@@ -72,7 +74,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>The location of this heavy object.</p>
 
                         </div>
                         <div class="declaration">
@@ -99,7 +101,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Whether the object is being carried by the player.</p>
 
                         </div>
                         <div class="declaration">
@@ -126,7 +128,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Initialize a heavy object.</p>
 
                         </div>
                         <div class="declaration">
@@ -136,6 +138,37 @@
                             <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">with</span> <span class="nv">texture</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">at</span> <span class="nv">location</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">)</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>texture</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The texture name of the heavy object.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>location</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The matrix location of the heavy object.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </section>
                     </div>
@@ -180,7 +213,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Attach the heavy object to the player.</p>
 
                         </div>
                         <div class="declaration">
@@ -190,6 +223,25 @@
                             <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">attach</span><span class="p">(</span><span class="n">to</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/Player.html">Player</a></span><span class="p">?)</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>player</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The player object to attach to.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </section>
                     </div>
@@ -207,7 +259,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Resign the attachment status from the player.</p>
 
                         </div>
                         <div class="declaration">
@@ -217,6 +269,25 @@
                             <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">resign</span><span class="p">(</span><span class="n">from</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/Player.html">Player</a></span><span class="p">?)</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>player</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The player object to detach or resign from.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </section>
                     </div>
@@ -331,6 +402,9 @@
                   <a href="../Extensions/KeyboardShortcuts/Name.html">– Name</a>
                 </li>
                 <li class="nav-group-task">
+                  <a href="../Extensions/SKTextureAtlas.html">SKTextureAtlas</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="../Extensions/SKTileMapNode.html">SKTileMapNode</a>
                 </li>
                 <li class="nav-group-task">
@@ -406,7 +480,7 @@
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-09-10)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-09-11)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>
