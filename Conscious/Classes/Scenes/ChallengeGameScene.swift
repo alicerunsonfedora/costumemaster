@@ -27,6 +27,26 @@ class ChallengeGameScene: GameScene {
     /// This is used to check when the currentTime should be updated.
     private var previousInterval: Int = 0
 
+    /// The current costume known to this scene.
+    private var cachedCostume: PlayerCostumeType = .flashDrive
+
+    /// A tuple of integers containing the number of times a player has switched costumes.
+    ///
+    /// The tuple is in the order: USB, Bird, Sorceress. The "default" costume is excluded.
+    private var costumeIncrements: (Int, Int, Int) = (0, 0, 0)
+    // swiftlint:disable:previous large_tuple
+
+    /// The total number of times a player has switched costumes.
+    private var totalCostumeIncrement: Int = 0
+
+    /// Set up the scene and set the cached costume.
+    override func sceneDidLoad() {
+        super.sceneDidLoad()
+        if let costume = self.playerNode?.costume {
+            self.cachedCostume = costume
+        }
+    }
+
     /// Run the standard level game loop and update the challenge states as necessary.
     /// - Parameter currentTime: The current time when running the update.
     override func update(_ currentTime: TimeInterval) {
@@ -36,6 +56,23 @@ class ChallengeGameScene: GameScene {
             || (interval == 0 && self.previousInterval != interval) {
             self.currentTime += 1
             self.previousInterval = interval
+        }
+
+        if self.playerNode?.costume != self.cachedCostume {
+            var (usb, bird, sorceress) = self.costumeIncrements
+            switch self.playerNode?.costume {
+            case .bird:
+                bird += 1
+            case .flashDrive:
+                usb += 1
+            case .sorceress:
+                sorceress += 1
+            default:
+                break
+            }
+            self.costumeIncrements = (usb, bird, sorceress)
+            self.cachedCostume = self.playerNode?.costume ?? .default
+            self.totalCostumeIncrement += 1
         }
     }
 
@@ -53,11 +90,18 @@ class ChallengeGameScene: GameScene {
     /// Run any challenge calculations after a given event.
     ///
     /// For levels with a time-based challenge, this method should be overridden to fit the appropriate
-    /// calculations and grant any leaderboard status or achievement, respectively. This method will
-    /// automatically trigger when the scene moves (`SKScene.willMove`) and should not be called
-    /// directly.
+    /// calculations and grant any leaderboard status or achievement, respectively.
+    ///
+    /// For levels with a costume-dependent challenge (i.e., least amount of switches), this method
+    /// should be overridden to account for these calculations.
+    ///
+    /// - Important: This method will automatically trigger when the scene moves (`SKScene.willMove`)
+    /// and should not be called directly.
     func willCalcuateChallengeResults() {
+        let (usb, bird, sorceress) = self.costumeIncrements
         print("Time to complete: \(self.currentTime) seconds")
+        print("Total costume changes: \(self.totalCostumeIncrement)")
+        print("Costume changes: USB - \(usb), Bird - \(bird), Sorceress - \(sorceress)")
     }
 
 }

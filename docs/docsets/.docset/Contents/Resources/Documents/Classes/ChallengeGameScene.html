@@ -93,6 +93,33 @@ for things such as achievements, leaderboards, and &ldquo;advanced levels&rdquo;
                   <li class="item">
                     <div>
                       <code>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)ChallengeGameScene(im)sceneDidLoad"></a>
+                      <a name="//apple_ref/swift/Method/sceneDidLoad()" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)ChallengeGameScene(im)sceneDidLoad">sceneDidLoad()</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Set up the scene and set the cached costume.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">sceneDidLoad</span><span class="p">()</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
                       <a name="/c:@M@The_Costumemaster@objc(cs)ChallengeGameScene(im)update:"></a>
                       <a name="//apple_ref/swift/Method/update(_:)" class="dashAnchor"></a>
                       <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)ChallengeGameScene(im)update:">update(_:<wbr>)</a>
@@ -181,9 +208,16 @@ for things such as achievements, leaderboards, and &ldquo;advanced levels&rdquo;
                           <p>Run any challenge calculations after a given event.</p>
 
 <p>For levels with a time-based challenge, this method should be overridden to fit the appropriate
-calculations and grant any leaderboard status or achievement, respectively. This method will
-automatically trigger when the scene moves (<code>SKScene.willMove</code>) and should not be called
-directly.</p>
+calculations and grant any leaderboard status or achievement, respectively.</p>
+
+<p>For levels with a costume-dependent challenge (i.e., least amount of switches), this method
+should be overridden to account for these calculations.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    This method will automatically trigger when the scene moves (<code>SKScene.willMove</code>)
+and should not be called directly.
+
+</div>
 
                         </div>
                         <div class="declaration">
