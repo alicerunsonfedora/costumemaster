@@ -183,14 +183,6 @@ class GameScene: SKScene {
             for req in requisites {
                 let correspondingOutputs = self.receivers.filter({rec in rec.levelPosition == req.outputLocation})
                 if correspondingOutputs.isEmpty { continue }
-                if correspondingOutputs.count > 1 {
-                    sendAlert(
-                        "The level configuration has duplicate mappings for the output at \(req.outputLocation)."
-                        + " Ensure that the user data file contains the correct mappings.",
-                        withTitle: "The map \"\(self.name ?? "GameScene")\" contains duplicate entries.",
-                        level: .critical
-                    ) { _ in self.callScene(name: "MainMenu") }
-                }
                 let output = correspondingOutputs.first
                 let inputs = self.switches
                 if inputs.isEmpty { continue }
@@ -353,8 +345,7 @@ class GameScene: SKScene {
 
     private func getPauseScene() {
         guard let controller = self.view?.window?.contentViewController as? ViewController else { return }
-        controller.rootScene = self
-        self.callScene(name: "PauseMenu")
+        controller.rootScene = self; self.callScene(name: "PauseMenu")
     }
 
     private func callScene(name: String?) {
