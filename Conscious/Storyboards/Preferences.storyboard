@@ -40,6 +40,7 @@
                         <tabViewItem label="General" id="r3Y-PC-mfZ">
                             <imageReference key="image" image="gearshape" symbolScale="large"/>
                         </tabViewItem>
+                        <tabViewItem label="Sound" image="speaker.wave.2" id="t0e-wc-j1k"/>
                         <tabViewItem label="Controls" id="2qA-lM-RW5">
                             <imageReference key="image" image="keyboard" symbolScale="large" renderingMode="template"/>
                         </tabViewItem>
@@ -58,6 +59,7 @@
                     <connections>
                         <outlet property="tabView" destination="j9k-4W-pne" id="Tu0-4H-XSw"/>
                         <segue destination="HcG-VG-dar" kind="relationship" relationship="tabItems" id="hva-8W-55S"/>
+                        <segue destination="MWr-gS-Mcg" kind="relationship" relationship="tabItems" id="pj5-kf-4G8"/>
                         <segue destination="r0b-5m-PTW" kind="relationship" relationship="tabItems" id="Pjn-Qe-ehy"/>
                         <segue destination="GoQ-6j-Ej1" kind="relationship" relationship="tabItems" id="3Nl-wv-l2f"/>
                     </connections>
@@ -151,26 +153,18 @@
             <objects>
                 <viewController title="General" id="HcG-VG-dar" customClass="GeneralPrefsViewController" customModule="The_Costumemaster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="qBv-nQ-jfu">
-                        <rect key="frame" x="0.0" y="0.0" width="604" height="186"/>
+                        <rect key="frame" x="0.0" y="0.0" width="604" height="84"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k3j-Px-Lm4">
-                                <rect key="frame" x="75" y="86" width="93" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Sound effects:" id="SQn-P5-iJV">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-nA-TRO">
-                                <rect key="frame" x="163" y="140" width="335" height="28"/>
+                                <rect key="frame" x="163" y="38" width="335" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="319" id="tOp-jj-iRc"/>
                                 </constraints>
                                 <sliderCell key="cell" state="on" alignment="left" minValue="25" maxValue="100" doubleValue="100" tickMarkPosition="above" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="hMk-xA-NKX"/>
                             </slider>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e3U-XL-XYF">
-                                <rect key="frame" x="75" y="150" width="90" height="16"/>
+                                <rect key="frame" x="75" y="48" width="90" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Camera scale:" id="kld-19-kQj">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -178,7 +172,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rdb-fA-Kwl">
-                                <rect key="frame" x="169" y="122" width="38" height="16"/>
+                                <rect key="frame" x="169" y="20" width="38" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="0.25x" id="N3n-O9-5Ki">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -186,87 +180,32 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nB4-GB-fjf">
-                                <rect key="frame" x="464" y="122" width="28" height="16"/>
+                                <rect key="frame" x="464" y="20" width="28" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="1.0x" id="hAl-nU-SFQ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FhT-xs-UkG">
-                                <rect key="frame" x="169" y="85" width="197" height="18"/>
-                                <buttonCell key="cell" type="check" title="Play costume change sound" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0qX-xU-mwW">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="C8P-zX-aFG">
-                                <rect key="frame" x="169" y="63" width="214" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="212" id="XwS-4H-S7Z"/>
-                                </constraints>
-                                <buttonCell key="cell" type="check" title="Play computer power on sound" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="svW-EE-zgP">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CIN-io-1Ol">
-                                <rect key="frame" x="169" y="41" width="168" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="166" id="OTI-SC-Nko"/>
-                                </constraints>
-                                <buttonCell key="cell" type="check" title="Play lever toggle sound" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nWs-Gx-ay8">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="egt-DK-myv">
-                                <rect key="frame" x="169" y="19" width="172" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="dvQ-Ha-OVk"/>
-                                </constraints>
-                                <buttonCell key="cell" type="check" title="Play alarm clock sounds" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="FhJ-V5-JjH">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="nB4-GB-fjf" firstAttribute="trailing" secondItem="Hft-nA-TRO" secondAttribute="trailing" id="08R-RR-vz0"/>
                             <constraint firstItem="rdb-fA-Kwl" firstAttribute="leading" secondItem="Hft-nA-TRO" secondAttribute="leading" id="4fk-f3-hDR"/>
                             <constraint firstItem="nB4-GB-fjf" firstAttribute="top" secondItem="Hft-nA-TRO" secondAttribute="bottom" constant="8" symbolic="YES" id="AzX-I9-NfU"/>
-                            <constraint firstItem="egt-DK-myv" firstAttribute="top" secondItem="CIN-io-1Ol" secondAttribute="bottom" constant="6" symbolic="YES" id="BU9-Dc-GV9"/>
                             <constraint firstItem="e3U-XL-XYF" firstAttribute="leading" secondItem="qBv-nQ-jfu" secondAttribute="leading" constant="77" id="GFc-Zm-B8R"/>
                             <constraint firstItem="e3U-XL-XYF" firstAttribute="top" secondItem="qBv-nQ-jfu" secondAttribute="top" constant="20" symbolic="YES" id="JLH-Zu-qeY"/>
-                            <constraint firstItem="CIN-io-1Ol" firstAttribute="leading" secondItem="FhT-xs-UkG" secondAttribute="leading" id="JLj-fu-Krf"/>
-                            <constraint firstItem="egt-DK-myv" firstAttribute="top" secondItem="CIN-io-1Ol" secondAttribute="bottom" constant="6" symbolic="YES" id="SaK-dH-28l"/>
-                            <constraint firstItem="CIN-io-1Ol" firstAttribute="top" secondItem="C8P-zX-aFG" secondAttribute="bottom" constant="6" symbolic="YES" id="Tzo-ZN-UHe"/>
-                            <constraint firstItem="FhT-xs-UkG" firstAttribute="leading" secondItem="k3j-Px-Lm4" secondAttribute="trailing" constant="5" id="WA7-qe-Kdy"/>
-                            <constraint firstAttribute="bottom" secondItem="egt-DK-myv" secondAttribute="bottom" constant="20" symbolic="YES" id="WTS-AO-pop"/>
                             <constraint firstItem="Hft-nA-TRO" firstAttribute="top" secondItem="e3U-XL-XYF" secondAttribute="top" id="aXY-4X-L4N"/>
-                            <constraint firstItem="egt-DK-myv" firstAttribute="top" secondItem="CIN-io-1Ol" secondAttribute="bottom" constant="6" symbolic="YES" id="bek-ME-WjS"/>
-                            <constraint firstItem="CIN-io-1Ol" firstAttribute="leading" secondItem="egt-DK-myv" secondAttribute="leading" id="f7y-KS-jNv"/>
-                            <constraint firstItem="k3j-Px-Lm4" firstAttribute="top" secondItem="e3U-XL-XYF" secondAttribute="bottom" constant="48" id="lin-nN-Pth"/>
                             <constraint firstItem="Hft-nA-TRO" firstAttribute="leading" secondItem="e3U-XL-XYF" secondAttribute="trailing" constant="8" symbolic="YES" id="m0M-vS-prc"/>
-                            <constraint firstItem="CIN-io-1Ol" firstAttribute="top" secondItem="C8P-zX-aFG" secondAttribute="bottom" constant="6" symbolic="YES" id="mw4-Wf-VpC"/>
                             <constraint firstItem="rdb-fA-Kwl" firstAttribute="baseline" secondItem="nB4-GB-fjf" secondAttribute="baseline" id="nuY-Gm-fAT"/>
-                            <constraint firstItem="k3j-Px-Lm4" firstAttribute="leading" secondItem="qBv-nQ-jfu" secondAttribute="leading" constant="77" id="u3a-HG-gUo"/>
-                            <constraint firstItem="CIN-io-1Ol" firstAttribute="leading" secondItem="C8P-zX-aFG" secondAttribute="leading" id="ubq-HR-zz3"/>
-                            <constraint firstItem="C8P-zX-aFG" firstAttribute="top" secondItem="FhT-xs-UkG" secondAttribute="bottom" constant="6" symbolic="YES" id="une-No-7a5"/>
-                            <constraint firstItem="FhT-xs-UkG" firstAttribute="top" secondItem="rdb-fA-Kwl" secondAttribute="bottom" constant="20" id="wy1-XF-BpR"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="alarmToggleSoundCheckbox" destination="egt-DK-myv" id="wmI-RA-p0K"/>
                         <outlet property="cameraScaleSlider" destination="Hft-nA-TRO" id="0Yv-JO-qUh"/>
-                        <outlet property="changeSoundCheckbox" destination="FhT-xs-UkG" id="2Ws-0P-LoZ"/>
-                        <outlet property="computerSoundCheckbox" destination="C8P-zX-aFG" id="wZr-dz-5tG"/>
-                        <outlet property="leverToggleSoundCheckbox" destination="CIN-io-1Ol" id="66a-BH-Eb9"/>
                     </connections>
                 </viewController>
                 <customObject id="kfI-Vu-fFt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072" y="77"/>
+            <point key="canvasLocation" x="1072" y="26"/>
         </scene>
         <!--Controls-->
         <scene sceneID="1Qp-P0-IIJ">
@@ -436,10 +375,124 @@
             </objects>
             <point key="canvasLocation" x="994" y="524"/>
         </scene>
+        <!--Sound-->
+        <scene sceneID="sPx-wK-85E">
+            <objects>
+                <viewController title="Sound" id="MWr-gS-Mcg" customClass="SoundPrefsViewController" customModule="The_Costumemaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="7oK-ya-swz">
+                        <rect key="frame" x="0.0" y="0.0" width="738" height="171"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gsn-Yd-ciY">
+                                <rect key="frame" x="78" y="86" width="93" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Sound effects:" id="E1K-uG-CvF">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YYW-1d-OIk">
+                                <rect key="frame" x="225" y="110" width="398" height="28"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" numberOfTickMarks="11" sliderType="linear" id="HmS-cv-zRG"/>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yR5-Tv-JqY">
+                                <rect key="frame" x="80" y="118" width="91" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Music volume:" id="2Jn-WB-w5p">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QeC-h7-6oV">
+                                <rect key="frame" x="177" y="103" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="DMF-ig-1Lh"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="d5D-xI-2Ou">
+                                    <imageReference key="image" image="speaker.fill" symbolScale="large"/>
+                                </imageCell>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kx4-ZU-NnT">
+                                <rect key="frame" x="623" y="103" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="0um-kq-wQn"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="bhc-1s-mv0">
+                                    <imageReference key="image" image="speaker.wave.3.fill" symbolScale="large"/>
+                                </imageCell>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sd4-JV-5BI">
+                                <rect key="frame" x="193" y="85" width="197" height="18"/>
+                                <buttonCell key="cell" type="check" title="Play costume change sound" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="aM9-2f-LDO">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zIl-L3-kf8">
+                                <rect key="frame" x="193" y="63" width="214" height="18"/>
+                                <buttonCell key="cell" type="check" title="Play computer power on sound" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="cak-DK-aWi">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FhI-d5-UoM">
+                                <rect key="frame" x="193" y="41" width="168" height="18"/>
+                                <buttonCell key="cell" type="check" title="Play lever toggle sound" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="seH-b0-ziq">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ejt-3Y-JYJ">
+                                <rect key="frame" x="193" y="19" width="172" height="18"/>
+                                <buttonCell key="cell" type="check" title="Play alarm clock sounds" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="MIh-vX-MFi">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Ejt-3Y-JYJ" firstAttribute="top" secondItem="FhI-d5-UoM" secondAttribute="bottom" constant="6" symbolic="YES" id="2rd-Rz-xI5"/>
+                            <constraint firstItem="QeC-h7-6oV" firstAttribute="leading" secondItem="yR5-Tv-JqY" secondAttribute="trailing" constant="8" symbolic="YES" id="AzR-Ib-Zdi"/>
+                            <constraint firstItem="Gsn-Yd-ciY" firstAttribute="leading" secondItem="7oK-ya-swz" secondAttribute="leading" constant="80" id="IqE-fT-MEB"/>
+                            <constraint firstItem="FhI-d5-UoM" firstAttribute="leading" secondItem="Ejt-3Y-JYJ" secondAttribute="leading" id="JA1-cd-HXZ"/>
+                            <constraint firstItem="yR5-Tv-JqY" firstAttribute="centerY" secondItem="YYW-1d-OIk" secondAttribute="centerY" id="JHa-E0-jdk"/>
+                            <constraint firstAttribute="bottom" secondItem="Ejt-3Y-JYJ" secondAttribute="bottom" constant="20" symbolic="YES" id="Jir-eR-6d9"/>
+                            <constraint firstItem="Gsn-Yd-ciY" firstAttribute="baseline" secondItem="Sd4-JV-5BI" secondAttribute="baseline" id="KAC-5N-B8R"/>
+                            <constraint firstItem="QeC-h7-6oV" firstAttribute="top" secondItem="7oK-ya-swz" secondAttribute="top" constant="20" symbolic="YES" id="NkY-dJ-bNP"/>
+                            <constraint firstItem="yR5-Tv-JqY" firstAttribute="trailing" secondItem="Gsn-Yd-ciY" secondAttribute="trailing" id="Qec-CU-wZ8"/>
+                            <constraint firstItem="zIl-L3-kf8" firstAttribute="top" secondItem="Sd4-JV-5BI" secondAttribute="bottom" constant="6" symbolic="YES" id="RqK-s5-VmV"/>
+                            <constraint firstItem="Sd4-JV-5BI" firstAttribute="leading" secondItem="zIl-L3-kf8" secondAttribute="leading" id="UAh-N5-Of6"/>
+                            <constraint firstItem="QeC-h7-6oV" firstAttribute="top" secondItem="Kx4-ZU-NnT" secondAttribute="top" id="UpC-hv-E9h"/>
+                            <constraint firstItem="YYW-1d-OIk" firstAttribute="leading" secondItem="QeC-h7-6oV" secondAttribute="trailing" constant="8" symbolic="YES" id="Vqf-DO-epF"/>
+                            <constraint firstItem="Sd4-JV-5BI" firstAttribute="top" secondItem="QeC-h7-6oV" secondAttribute="bottom" constant="1" id="cgW-Pe-x3i"/>
+                            <constraint firstItem="FhI-d5-UoM" firstAttribute="top" secondItem="zIl-L3-kf8" secondAttribute="bottom" constant="6" symbolic="YES" id="dQX-vE-ron"/>
+                            <constraint firstItem="QeC-h7-6oV" firstAttribute="baseline" secondItem="Kx4-ZU-NnT" secondAttribute="baseline" id="iX2-xa-MOi"/>
+                            <constraint firstItem="Kx4-ZU-NnT" firstAttribute="leading" secondItem="YYW-1d-OIk" secondAttribute="trailing" constant="8" symbolic="YES" id="lLv-sy-dLy"/>
+                            <constraint firstAttribute="trailing" secondItem="Kx4-ZU-NnT" secondAttribute="trailing" constant="67" id="mXQ-jU-xm3"/>
+                            <constraint firstItem="zIl-L3-kf8" firstAttribute="leading" secondItem="FhI-d5-UoM" secondAttribute="leading" id="p6Q-hp-aB0"/>
+                            <constraint firstItem="Sd4-JV-5BI" firstAttribute="leading" secondItem="Gsn-Yd-ciY" secondAttribute="trailing" constant="26" id="pYU-A4-YI1"/>
+                            <constraint firstItem="Sd4-JV-5BI" firstAttribute="top" secondItem="YYW-1d-OIk" secondAttribute="bottom" constant="14" id="rea-CY-HLN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alarmToggleSoundCheckbox" destination="Ejt-3Y-JYJ" id="fUS-e4-zPi"/>
+                        <outlet property="changeSoundCheckbox" destination="Sd4-JV-5BI" id="fyf-N0-66v"/>
+                        <outlet property="computerSoundCheckbox" destination="zIl-L3-kf8" id="FtP-gQ-cwA"/>
+                        <outlet property="leverToggleSoundCheckbox" destination="FhI-d5-UoM" id="fGU-ie-glA"/>
+                        <outlet property="musicVolumeSlider" destination="YYW-1d-OIk" id="wYL-fc-lk1"/>
+                    </connections>
+                </viewController>
+                <customObject id="UlS-uq-h6e" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1711" y="389.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="gearshape" width="14" height="14"/>
         <image name="gearshape.2" width="18" height="14"/>
         <image name="keyboard" width="16" height="10"/>
+        <image name="speaker.fill" width="8" height="12"/>
+        <image name="speaker.wave.2" width="15" height="12"/>
+        <image name="speaker.wave.3.fill" width="18" height="13"/>
     </resources>
 </document>

@@ -124,7 +124,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         music.autoplayLooped = true
         music.isPositional = false
         music.run(SKAction.sequence([
-            SKAction.changeVolume(to: 0.25, duration: 0.01),
+            SKAction.changeVolume(to: AppDelegate.preferences.musicVolume, duration: 0.01),
             SKAction.play()
         ]))
         self.addChild(music)
@@ -175,6 +175,10 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
 
         if GameStore.shared.lastSavedScene == "" {
             self.resumeButton?.alpha = 0.1
+        }
+
+        if let music = self.childNode(withName: "music") as? SKAudioNode {
+            music.run(SKAction.changeVolume(to: AppDelegate.preferences.musicVolume, duration: 0.01))
         }
     }
 

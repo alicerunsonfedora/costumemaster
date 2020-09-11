@@ -16,8 +16,6 @@ import KeyboardShortcuts
 
 /// The base class for a given level.
 ///
-/// Typically, a level consists of a camera and tilemap which gets parsed into separate nodes. The scene also contains
-/// important data that provides additional context for the level's configuration.
 /// - Requires: A tile map node called "Tile Map Node". Automapping _should_ be disabled, and the tileset should be
 /// "Costumemaster Default".
 /// - Requires: A camera node called "Camera".
@@ -165,9 +163,7 @@ class GameScene: SKScene {
         for node in self.interactables { self.addChild(node) }
 
         for node in self.receivers where node.levelPosition == self.configuration?.exitLocation {
-            if let door = node as? DoorReceiver {
-                self.exitNode = door
-            }
+            if let door = node as? DoorReceiver { self.exitNode = door }
         }
 
         // Delete the tilemap from memory.
@@ -212,9 +208,7 @@ class GameScene: SKScene {
         // Set the correct scaling mode.
         self.scaleMode = .aspectFill
 
-        if let skybox = NSColor(named: "Skybox") {
-            self.backgroundColor = skybox
-        }
+        if let skybox = NSColor(named: "Skybox") { self.backgroundColor = skybox }
 
         // Instantiate the level configuration.
         guard let userData = self.userData else {
@@ -258,10 +252,9 @@ class GameScene: SKScene {
 
         let music = SKAudioNode(fileNamed: ["September", "November"].randomElement() ?? "September")
         music.name = "music"
-        music.autoplayLooped = true
-        music.isPositional = false
+        music.autoplayLooped = true; music.isPositional = false
         music.run(SKAction.sequence([
-            SKAction.changeVolume(to: 0.25, duration: 0.01),
+            SKAction.changeVolume(to: AppDelegate.preferences.musicVolume, duration: 0.01),
             SKAction.play()
         ]))
         self.addChild(music)
@@ -275,6 +268,9 @@ class GameScene: SKScene {
         self.camera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
         self.receivers.forEach { output in output.update() }
         self.playerNode?.update()
+        if let music = self.childNode(withName: "music") as? SKAudioNode {
+            music.run(SKAction.changeVolume(to: AppDelegate.preferences.musicVolume, duration: 0.01))
+        }
     }
 
     override func didFinishUpdate() {

@@ -14,10 +14,6 @@ import Cocoa
 
 class GeneralPrefsViewController: PreferencesViewController {
 
-    @IBOutlet weak var changeSoundCheckbox: NSButton!
-    @IBOutlet weak var computerSoundCheckbox: NSButton!
-    @IBOutlet weak var leverToggleSoundCheckbox: NSButton!
-    @IBOutlet weak var alarmToggleSoundCheckbox: NSButton!
     @IBOutlet weak var cameraScaleSlider: NSSlider!
 
     override func viewDidLoad() {
@@ -25,18 +21,10 @@ class GeneralPrefsViewController: PreferencesViewController {
     }
 
     override func viewWillAppear() {
-        self.changeSoundCheckbox.state = self.preferences.playChangeSound ? .on : .off
-        self.computerSoundCheckbox.state = self.preferences.playComputerSound ? .on : .off
-        self.leverToggleSoundCheckbox.state = self.preferences.playLeverSound ? .on : .off
-        self.alarmToggleSoundCheckbox.state = self.preferences.playAlarmSound ? .on : .off
         self.cameraScaleSlider.doubleValue = Double(self.preferences.cameraScale * 100)
     }
 
     override func viewWillDisappear() {
-        self.preferences.playChangeSound = self.changeSoundCheckbox.state == .on
-        self.preferences.playComputerSound = self.computerSoundCheckbox.state == .on
-        self.preferences.playLeverSound = self.leverToggleSoundCheckbox.state == .on
-        self.preferences.playAlarmSound = self.alarmToggleSoundCheckbox.state == .on
         self.preferences.cameraScale = Float(self.cameraScaleSlider.doubleValue / 100)
     }
 
