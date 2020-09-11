@@ -95,6 +95,8 @@
 		BFDF94E62507FE42004F5BE7 /* GameAchievementTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF94E52507FE42004F5BE7 /* GameAchievementTrigger.swift */; };
 		BFDF94E825080C3D004F5BE7 /* Boundary.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFDF94E725080C3D004F5BE7 /* Boundary.sks */; };
 		BFDF94EA25084600004F5BE7 /* Rushed.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFDF94E925084600004F5BE7 /* Rushed.sks */; };
+		BFE0AE9D250C2A33003C6780 /* GameLeaderboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0AE9C250C2A33003C6780 /* GameLeaderboards.swift */; };
+		BFE0AE9F250C2B30003C6780 /* Leaderboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE0AE9E250C2B30003C6780 /* Leaderboards.swift */; };
 		BFE6475424F8853800230F93 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = BFE6475324F8853800230F93 /* OFL.txt */; };
 		BFE6475624F88B1300230F93 /* SwitchRequisite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE6475524F88B1300230F93 /* SwitchRequisite.swift */; };
 		BFE6475824F8B03500230F93 /* MenuTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFE6475724F8B03500230F93 /* MenuTileset.sks */; };
@@ -223,6 +225,8 @@
 		BFDF94E52507FE42004F5BE7 /* GameAchievementTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAchievementTrigger.swift; sourceTree = "<group>"; };
 		BFDF94E725080C3D004F5BE7 /* Boundary.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Boundary.sks; sourceTree = "<group>"; };
 		BFDF94E925084600004F5BE7 /* Rushed.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rushed.sks; sourceTree = "<group>"; };
+		BFE0AE9C250C2A33003C6780 /* GameLeaderboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLeaderboards.swift; sourceTree = "<group>"; };
+		BFE0AE9E250C2B30003C6780 /* Leaderboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboards.swift; sourceTree = "<group>"; };
 		BFE6475324F8853800230F93 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		BFE6475524F88B1300230F93 /* SwitchRequisite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchRequisite.swift; sourceTree = "<group>"; };
 		BFE6475724F8B03500230F93 /* MenuTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuTileset.sks; sourceTree = "<group>"; };
@@ -399,6 +403,7 @@
 				BF109CDC24FB31F400F06E47 /* Achievements.swift */,
 				BF1A593F250014BD000929CF /* Tilemaps.swift */,
 				BF2B5E4825016D2D001EC2E7 /* Arguments.swift */,
+				BFE0AE9E250C2B30003C6780 /* Leaderboards.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 				BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */,
 				BF109CD824FB20B400F06E47 /* GameSignalKind.swift */,
 				BFEE78C224FBF1FC006FBFF0 /* GameAchievments.swift */,
+				BFE0AE9C250C2A33003C6780 /* GameLeaderboards.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -845,6 +851,7 @@
 				BFDF94E62507FE42004F5BE7 /* GameAchievementTrigger.swift in Sources */,
 				BF0D2C2024FAE86B00AEF86F /* ControlsPrefsViewController.swift in Sources */,
 				BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */,
+				BFE0AE9F250C2B30003C6780 /* Leaderboards.swift in Sources */,
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
 				BF7C5EFB250ACE530062B1CC /* AboutScene.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
@@ -864,6 +871,7 @@
 				BF0D2C1E24FADD1F00AEF86F /* Keyboard.swift in Sources */,
 				BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */,
 				BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */,
+				BFE0AE9D250C2A33003C6780 /* GameLeaderboards.swift in Sources */,
 				BFD8797924F5FDA800552EDD /* CGVector.swift in Sources */,
 				BFAD134A25028C0F0074DCBA /* GameAlarmClock.swift in Sources */,
 				BF3A0B7F24F6EB4900575F72 /* GameSignalInputMethod.swift in Sources */,

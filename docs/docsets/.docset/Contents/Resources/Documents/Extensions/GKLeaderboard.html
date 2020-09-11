@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>GameStore Structure Reference</title>
+    <title>GKLeaderboard Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,8 +11,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/GameStore" class="dashAnchor"></a>
-    <a title="GameStore Structure Reference"></a>
+    <a name="//apple_ref/swift/Extension/GKLeaderboard" class="dashAnchor"></a>
+    <a title="GKLeaderboard Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -36,7 +36,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          GameStore Structure Reference
+          GKLeaderboard Extension Reference
         </p>
       </div>
     </div>
@@ -45,16 +45,15 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>GameStore</h1>
+              <h1>GKLeaderboard</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">GameStore</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">GKLeaderboard</span></code></pre>
 
                   </div>
                 </div>
-              <p>A structure that represents the game&rsquo;s store data.</p>
-
+              
             </section>
             <section class="section task-group-section">
               <div class="task-group">
@@ -62,9 +61,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster9GameStoreV6sharedACvpZ"></a>
-                      <a name="//apple_ref/swift/Variable/shared" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster9GameStoreV6sharedACvpZ">shared</a>
+                      <a name="/s:So13GKLeaderboardC17The_CostumemasterE6submit2to4withySS_SitFZ"></a>
+                      <a name="//apple_ref/swift/Method/submit(to:with:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:So13GKLeaderboardC17The_CostumemasterE6submit2to4withySS_SitFZ">submit(to:<wbr>with:<wbr>)</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -72,16 +71,55 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>A shared copy of the game store.</p>
+                          <p>Submit a score to the following leaderboard.</p>
+
+<p>This function applies to classic and recurring leaderboards.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    This function is only available on Macs running macOS 11.0.
+
+</div>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">shared</span><span class="p">:</span> <span class="kt">GameStore</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">11.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">static</span> <span class="kd">func</span> <span class="nf">submit</span><span class="p">(</span><span class="n">to</span> <span class="nv">leaderboard</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">with</span> <span class="nv">score</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>leaderboard</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The ID of the leaderboard.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>score</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The score to submit to the leaderboard.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </section>
                     </div>
@@ -89,9 +127,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster9GameStoreV14lastSavedSceneSSvp"></a>
-                      <a name="//apple_ref/swift/Property/lastSavedScene" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster9GameStoreV14lastSavedSceneSSvp">lastSavedScene</a>
+                      <a name="/s:So13GKLeaderboardC17The_CostumemasterE6submit2to4withyAC15GameLeaderboardO_SitFZ"></a>
+                      <a name="//apple_ref/swift/Method/submit(to:with:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:So13GKLeaderboardC17The_CostumemasterE6submit2to4withyAC15GameLeaderboardO_SitFZ">submit(to:<wbr>with:<wbr>)</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -99,153 +137,55 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The last scene that was loaded before the game ended.</p>
+                          <p>Submit a score to the following leaderboard.</p>
+
+<p>This function applies to classic and recurring leaderboards.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    This function is only available on Macs running macOS 11.0.
+
+</div>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">lastSavedScene</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">11.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">static</span> <span class="kd">func</span> <span class="nf">submit</span><span class="p">(</span><span class="n">to</span> <span class="nv">leaderboardID</span><span class="p">:</span> <span class="kt"><a href="../Enums/GameLeaderboard.html">GameLeaderboard</a></span><span class="p">,</span> <span class="n">with</span> <span class="nv">score</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                           </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster9GameStoreV19costumeIncrementUSBSivp"></a>
-                      <a name="//apple_ref/swift/Property/costumeIncrementUSB" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster9GameStoreV19costumeIncrementUSBSivp">costumeIncrementUSB</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The number of times the player switched into the flash drive costume.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">costumeIncrementUSB</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster9GameStoreV20costumeIncrementBirdSivp"></a>
-                      <a name="//apple_ref/swift/Property/costumeIncrementBird" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster9GameStoreV20costumeIncrementBirdSivp">costumeIncrementBird</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The number of times the player switched into the bird costume.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">costumeIncrementBird</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster9GameStoreV25costumeIncrementSorceressSivp"></a>
-                      <a name="//apple_ref/swift/Property/costumeIncrementSorceress" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster9GameStoreV25costumeIncrementSorceressSivp">costumeIncrementSorceress</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The number of times the player switched into the sorceress costume.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">costumeIncrementSorceress</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster9GameStoreV5clearyyF"></a>
-                      <a name="//apple_ref/swift/Method/clear()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster9GameStoreV5clearyyF">clear()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Reset the game store to their default values.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">clear</span><span class="p">()</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster9GameStoreVACycfc"></a>
-                      <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster9GameStoreVACycfc">init()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Initialize the game store data.</p>
-
-<p>Values that don&rsquo;t exist in the game store will be initialized with default values.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="nf">init</span><span class="p">()</span></code></pre>
-
-                          </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>leaderboard</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The game leaderboard ID to submit a score to.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>score</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The score to submit to the leaderboard.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </section>
                     </div>
