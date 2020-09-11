@@ -22,6 +22,7 @@
 		BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B424F45DB8000300B7 /* Tileset.sks */; };
 		BF2B5E4725016CFB001EC2E7 /* CommandLineArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2B5E4625016CFB001EC2E7 /* CommandLineArguments.swift */; };
 		BF2B5E4925016D2D001EC2E7 /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2B5E4825016D2D001EC2E7 /* Arguments.swift */; };
+		BF33A189250BFC060064A219 /* Cycle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF33A188250BFC060064A219 /* Cycle.sks */; };
 		BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */; };
 		BF3A0B7524F6C42500575F72 /* changeCostume.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B7424F6C42500575F72 /* changeCostume.wav */; };
 		BF3A0B7824F6CB0C00575F72 /* GameSignalReceivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7724F6CB0C00575F72 /* GameSignalReceivable.swift */; };
@@ -138,6 +139,7 @@
 		BF2514B424F45DB8000300B7 /* Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tileset.sks; sourceTree = "<group>"; };
 		BF2B5E4625016CFB001EC2E7 /* CommandLineArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineArguments.swift; sourceTree = "<group>"; };
 		BF2B5E4825016D2D001EC2E7 /* Arguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
+		BF33A188250BFC060064A219 /* Cycle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cycle.sks; sourceTree = "<group>"; };
 		BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDataConfiguration.swift; sourceTree = "<group>"; };
 		BF3A0B7424F6C42500575F72 /* changeCostume.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = changeCostume.wav; sourceTree = "<group>"; };
 		BF3A0B7724F6CB0C00575F72 /* GameSignalReceivable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalReceivable.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				BFDF94E725080C3D004F5BE7 /* Boundary.sks */,
 				BFDF94E925084600004F5BE7 /* Rushed.sks */,
 				BF7C5EEF250AB2CA0062B1CC /* Divergent.sks */,
+				BF33A188250BFC060064A219 /* Cycle.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				BF3A0B8A24F733C400575F72 /* Cabin-Regular.ttf in Resources */,
 				BF153F9124FC3DF3007B20B4 /* leverToggle.wav in Resources */,
 				BF3A0B8C24F733F300575F72 /* DancingScript-VariableFont_wght.ttf in Resources */,
+				BF33A189250BFC060064A219 /* Cycle.sks in Resources */,
 				BF7C5EF0250AB2CA0062B1CC /* Divergent.sks in Resources */,
 				BFBCA1C82506B0E5001FFA91 /* Swiftly.sks in Resources */,
 				BF3A0B7524F6C42500575F72 /* changeCostume.wav in Resources */,
