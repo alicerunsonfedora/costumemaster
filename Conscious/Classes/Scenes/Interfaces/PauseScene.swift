@@ -28,6 +28,7 @@ class PauseScene: SKScene {
     /// The lavel node that corresponds to the restart button.
     var restartButton: SKLabelNode?
 
+    /// Set up the scene and hook up the buttons to make the pause menu functional.
     override func sceneDidLoad() {
         guard let mainMenu = self.childNode(withName: "mainMenuButton") as? SKLabelNode else { return }
         self.mainMenuButton = mainMenu
@@ -46,6 +47,7 @@ class PauseScene: SKScene {
         self.restartButton?.fontName = "Cabin Regular"
     }
 
+    /// Listen for mouse events and trigger the corresponding menu action.
     override func mouseDown(with event: NSEvent) {
         let tapped = event.location(in: self)
 
@@ -63,6 +65,7 @@ class PauseScene: SKScene {
         }
     }
 
+    /// Listen for keyboard events and return when the user presses the pause key.
     override func keyDown(with event: NSEvent) {
         if Int(event.keyCode) == KeyboardShortcuts.getShortcut(for: .pause)?.carbonKeyCode {
             self.resumeAction()

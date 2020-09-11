@@ -43,8 +43,9 @@ class IntroScene: SKScene {
     /// The label that corresponds to the start button.
     var startButton: SKLabelNode?
 
-    // swiftlint:disable:next cyclomatic_complexity
+    /// Set up the scene and load in the corresponding keyboard shortcuts.
     override func sceneDidLoad() {
+        // swiftlint:disable:previous cyclomatic_complexity
         for child in self.children where child is SKLabelNode {
             if let transformedChild = child as? SKLabelNode {
                 transformedChild.fontName = "Cabin Regular"
@@ -112,6 +113,7 @@ class IntroScene: SKScene {
         }
     }
 
+    /// Listen for mouse events and start the game when the user presses the start button.
     override func mouseDown(with event: NSEvent) {
         let location = event.location(in: self)
 

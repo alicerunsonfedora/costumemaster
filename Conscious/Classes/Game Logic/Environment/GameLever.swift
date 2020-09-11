@@ -23,6 +23,7 @@ class GameLever: GameSignalSender {
         self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
     }
 
+    /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

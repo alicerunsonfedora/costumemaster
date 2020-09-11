@@ -204,6 +204,7 @@ class GameScene: SKScene {
     }
 
     // MARK: SCENE LOADING
+    /// Set up the game scene, parse the tilemapm and start playing music.
     override func sceneDidLoad() {
         // Set the correct scaling mode.
         self.scaleMode = .aspectFill
@@ -261,6 +262,7 @@ class GameScene: SKScene {
     }
 
     // MARK: LIFE CYCLE UPDATES
+    /// Run scene-related lifecycle updates.
     override func update(_ currentTime: TimeInterval) {
         if self.camera?.position != self.playerNode?.position {
             self.camera?.run(SKAction.move(to: self.playerNode?.position ?? CGPoint(x: 0, y: 0), duration: 1))
@@ -273,6 +275,7 @@ class GameScene: SKScene {
         }
     }
 
+    /// Run any post-update logic and check input states.
     override func didFinishUpdate() {
         for input in self.switches where input.activationMethod == .activeByPlayerIntervention {
             switch input.kind {
@@ -290,6 +293,7 @@ class GameScene: SKScene {
         }
     }
 
+    /// Prepare the scene for destruction and save the scene name.
     override func willMove(from view: SKView) {
         guard let name = self.scene?.name else { return }
         GameStore.shared.lastSavedScene = name.starts(with: "b_") ? GameStore.shared.lastSavedScene : name
@@ -307,6 +311,7 @@ class GameScene: SKScene {
         }
     }
 
+    /// Check the state of the doors in the level.
     func checkDoorStates() {
         for node in self.receivers where node is DoorReceiver && node != self.exitNode {
             guard let door = node as? DoorReceiver else { return }; door.togglePhysicsBody()
@@ -360,6 +365,7 @@ class GameScene: SKScene {
         self.view?.presentScene(scene, transition: SKTransition.fade(with: .black, duration: 1.5))
     }
 
+    /// Listen to keyboard events and run the game logic for key events.
     public override func keyDown(with event: NSEvent) {
         guard let changing = self.playerNode?.isChangingCostumes else { return }
         switch Int(event.keyCode) {
@@ -388,6 +394,7 @@ class GameScene: SKScene {
         }
     }
 
+    /// Listen for keyboard events and halt the player if the movement keys were released.
     public override func keyUp(with event: NSEvent) {
         let movementKeys = KeyboardShortcuts.movementKeys.map { key in key?.carbonKeyCode }
         if movementKeys.contains(Int(event.keyCode)) { self.playerNode?.halt() }

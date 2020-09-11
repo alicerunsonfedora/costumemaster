@@ -29,6 +29,7 @@ class AboutScene: SKScene {
         }
     }
 
+    /// Set up the about scene and fill in the appropriate data.
     override func sceneDidLoad() {
         // Reset the scale mode to fit accordingly.
         self.scaleMode = .aspectFill
@@ -63,6 +64,7 @@ class AboutScene: SKScene {
         }
     }
 
+    /// Listen for any clicks and respond when the user presses the back button.
     override func mouseDown(with event: NSEvent) {
         let tapped = event.location(in: self)
 
@@ -71,6 +73,7 @@ class AboutScene: SKScene {
         }
     }
 
+    /// Listen for keyboard events and go back when the user presses the escape key.
     override func keyDown(with event: NSEvent) {
         let keycode = Int(event.keyCode)
         if keycode == KeyboardShortcuts.Shortcut(.escape).carbonKeyCode {

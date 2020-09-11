@@ -64,6 +64,9 @@ struct GameStore {
         lastSavedScene = ""
     }
 
+    /// Initialize the game store data.
+    ///
+    /// Values that don't exist in the game store will be initialized with default values.
     init() {
         self.inInit = true
         if UserDefaults.store.value(forKey: "lastSavedScene") == nil {

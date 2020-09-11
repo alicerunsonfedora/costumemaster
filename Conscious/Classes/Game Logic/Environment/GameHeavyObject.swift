@@ -35,6 +35,7 @@ class GameHeavyObject: SKSpriteNode {
         self.physicsBody = getHeavyObjectPhysicsBody(with: texture)
     }
 
+    /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

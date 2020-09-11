@@ -60,6 +60,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         }
     }
 
+    /// Set up the Game Center button for the main menu.
     override func didMove(to view: SKView) {
         if let gCenter = self.childNode(withName: "gameCenter") as? SKSpriteNode {
             self.gameCenterButton = gCenter
@@ -69,6 +70,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         self.setUpGameCenterProperties()
     }
 
+    /// Set up the scene and play the main menu music.
     override func sceneDidLoad() {
 
         // Reset the scale mode to fit accordingly.
@@ -130,6 +132,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         self.addChild(music)
     }
 
+    /// Listen for mouse events and trigger the appropriate menu action.
     override func mouseDown(with event: NSEvent) {
         // Grab where the player clicked.
         let tappedLocation = event.location(in: self)
@@ -151,6 +154,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         }
     }
 
+    /// Listen for mouse events and update the character attributes.
     override func rightMouseDown(with event: NSEvent) {
         // Grab where the player clicked.
         let tappedLocation = event.location(in: self)
@@ -162,6 +166,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         }
     }
 
+    /// Run post-update logic to refresh scene properties.
     override func didFinishUpdate() {
         // Update character preferences based on UserDefaults.
         if AppDelegate.preferences.canShowUnmodeledOnMenu {
@@ -259,6 +264,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         }
     }
 
+    /// Dismiss the Game Center view controller when done.
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         if let sceneViewController = self.view?.window?.contentViewController {
             sceneViewController.dismiss(gameCenterViewController)
