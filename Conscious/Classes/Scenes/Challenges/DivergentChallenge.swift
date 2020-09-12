@@ -31,6 +31,9 @@ class DivergentChallenge: ChallengeGameScene {
         if self.currentTime <= 100 && self.eligible {
             GKAchievement.earn(with: .overclocker)
         }
+        if #available(OSX 11.0, *) {
+            GKLeaderboard.submit(to: .divergentDaily, with: Int(self.currentTime))
+        }
     }
 
 }
