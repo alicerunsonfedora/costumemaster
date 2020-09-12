@@ -123,6 +123,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         }
 
         let music = SKAudioNode(fileNamed: "Smoldering")
+        music.name = "music"
         music.autoplayLooped = true
         music.isPositional = false
         music.run(SKAction.sequence([
