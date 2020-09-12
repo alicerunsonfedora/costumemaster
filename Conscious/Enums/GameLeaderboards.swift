@@ -16,4 +16,8 @@ enum GameLeaderboard: String {
     /// Daily Divergent Challenge: Complete the level **Divergent** as fast as you can.
     /// - **ID**: costumemaster.ld.divergent_daily
     case divergentDaily = "costumemaster.ld.divergent_daily"
+
+    /// Daily Rushed Challenge: Complete the level **Rushed** as fast as you can.
+    /// - **ID**: costumemaster.ld.rushed_daily
+    case rushedDaily = "costumemaster.ld.rushed_daily"
 }
