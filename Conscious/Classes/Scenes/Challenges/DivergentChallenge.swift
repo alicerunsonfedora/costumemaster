@@ -27,7 +27,7 @@ class DivergentChallenge: ChallengeGameScene {
     }
 
     /// Determine if the time to complete the level is less than 100 seconds and grant an achievement.
-    override func willCalcuateChallengeResults() {
+    override func willCalculateChallengeResults() {
         if self.currentTime <= 100 && self.eligible {
             GKAchievement.earn(with: .overclocker)
         }

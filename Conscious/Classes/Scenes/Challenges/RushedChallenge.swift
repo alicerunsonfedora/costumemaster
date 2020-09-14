@@ -17,8 +17,8 @@ import GameKit
 class RushedChallenge: ChallengeGameScene {
 
     /// Submit the leaderboard scores for the daily fastest.
-    override func willCalcuateChallengeResults() {
-        super.willCalcuateChallengeResults()
+    override func willCalculateChallengeResults() {
+        super.willCalculateChallengeResults()
         if #available(OSX 11.0, *) {
             GKLeaderboard.submit(to: .rushedDaily, with: Int(self.currentTime))
         }

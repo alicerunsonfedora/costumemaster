@@ -83,7 +83,7 @@ class ChallengeGameScene: GameScene {
         super.willMove(from: view)
         guard let playerPos = self.playerNode?.position else { return }
         if self.exitNode?.position.distance(between: playerPos) ?? 128 < 64 && self.exitNode?.active == true {
-            self.willCalcuateChallengeResults()
+            self.willCalculateChallengeResults()
         }
     }
 
@@ -97,7 +97,7 @@ class ChallengeGameScene: GameScene {
     ///
     /// - Important: This method will automatically trigger when the scene moves (`SKScene.willMove`)
     /// and should not be called directly.
-    func willCalcuateChallengeResults() {
+    func willCalculateChallengeResults() {
         let (usb, bird, sorceress) = self.costumeIncrements
         print("Time to complete: \(self.currentTime) seconds")
         print("Total costume changes: \(self.totalCostumeIncrement)")

@@ -17,7 +17,7 @@ import GameKit
 class ExposureChallenge: ChallengeGameScene {
 
     /// Submit the score to the daily leaderboards.
-    override func willCalcuateChallengeResults() {
+    override func willCalculateChallengeResults() {
         if #available(OSX 11.0, *) {
             GKLeaderboard.submit(to: .exposureDaily, with: Int(self.currentTime))
         }
