@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>PRIVACY  Reference</title>
+    <title>Creating a Level  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,7 +11,7 @@
     
   </head>
   <body>
-    <a title="PRIVACY  Reference"></a>
+    <a title="Creating a Level  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -35,7 +35,7 @@
             <a href="index.html"> Reference</a>
             <img id="carat" src="img/carat.png" />
           </span>
-          PRIVACY  Reference
+          Creating a Level  Reference
         </p>
       </div>
     </div>
@@ -45,36 +45,122 @@
           <section>
             <section class="section">
               
-              <h1 id='privacy-policy' class='heading'>Privacy Policy</h1>
+              <h1 id='creating-a-level' class='heading'>Creating a Level</h1>
 
-<p>The Costumemaster aims to be a simple game that uses as little data as possible. Below is the privacy policy that outlines what is
-collected, how it&rsquo;s used, and how it can be deleted/reset at the user&rsquo;s request.</p>
-<h2 id='what-is-collected' class='heading'>What is collected</h2>
+<p>Levels in The Costumemaster can be easily made with the SpriteKit scene editor built in with Xcode. This guide will go through the
+process on how to create a simple level for The Costumemaster using Xcode. This guide assumes that you have cloned The 
+Costumemaster from GitHub and have opened it at least once in Xcode.</p>
+<h2 id='creating-a-new-scene' class='heading'>Creating a new scene</h2>
 
-<p>The Costumemaster is heavily integrated with Game Center and will submit data to Game Center to unlock achievements and
-submit scores to leaderboards. This includes the following:</p>
+<p>In the <strong>Scenes &rsaquo; Levels</strong> group in the Xcode project, create a new file and select &ldquo;SpriteKit Scene&rdquo; as the file type. Name the file
+the name of the level you are creating. The SpriteKit scene editor will open after creating the file.</p>
+
+<p>You&rsquo;ll need to make a few adjustments to make the scene suitable for The Costumemaster:</p>
+
+<ol>
+<li>Open the Attributes inspector and change the Size property to &ldquo;Apple TV&rdquo;. Additionally, set the Name property to the name of the level.</li>
+<li>Open the Custom Class inspector and change the Custom Class property to <code><a href="Classes/GameScene.html">GameScene</a></code>. This will allow the game to apply the right
+settings to the scene on runtime.</li>
+<li>Add a Camera node (<code>SKCameraNode</code>) and Tile Map Node (<code>SKTilemapNode</code>) in the scene. Ensure that the name for the camera node
+is &ldquo;Camera&rdquo; and the name of the tile map node is &ldquo;Tile Map Node&rdquo; by editing the name in the Attributes inspector.</li>
+<li>On the Tile Map Node, turn off &ldquo;Enable automapping&rdquo; in the Attributes inspector.</li>
+<li>Double click on the Tile Map Node and draw out your level design. Ensure the map includes a player (Main) and an exit door.
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The locations of the exit door and inputs should be noted when designing your level. Start from the bottom left hand corner and
+count to the right for the column, then count then count up for the row.
+
+</div></li>
+</ol>
+<h2 id='adding-user-data' class='heading'>Adding user data</h2>
+
+<p>In the <strong>User Data</strong> section under the scene properties in the Attributes inspector, you&rsquo;ll need to add the following fields and set the types
+of these fields:</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Value requirements</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>availableCostumes</td>
+<td>Int</td>
+<td>0 for USB-only, 1 to add the bird costume, 2 to add the sorceress costume, 3 for all costumes (including &ldquo;none&rdquo;)</td>
+</tr>
+<tr>
+<td>startingCostume</td>
+<td>String</td>
+<td>The costume to start with: Main, USB, Bird, or Sorceress</td>
+</tr>
+<tr>
+<td>levelLink</td>
+<td>String</td>
+<td>The name of the scene to load when the player exits. Recommended: MainMenu</td>
+</tr>
+<tr>
+<td>exitAt</td>
+<td>String</td>
+<td>The location of the exit door as a coordinate with column, then row. Example: 5,8</td>
+</tr>
+</tbody></table>
+
+<p>Additional fields can be defined as per the documentation in <code><a href="Structs/LevelDataConfiguration.html">LevelDataConfiguration</a></code>.</p>
+<h3 id='linking-up-inputs-with-outputs' class='heading'>Linking up inputs with outputs</h3>
+
+<p>To link an output to a set of inputs, you&rsquo;ll need to add additional fields to the user data that include these configurations (&ldquo;requisites&rdquo;). The 
+type of a requisite is String. The typical requisite format is as follows:</p>
+
+<p><code>requisite_OUTCOL_OUTROW = TYPE;IN&lt;X&gt;COL,IN&lt;X&gt;ROW;</code></p>
+
+<p>Where the following are defined:</p>
 
 <ul>
-<li>Time of completion in challenge levels (typically, from &ldquo;Rushed&rdquo; onwards)</li>
-<li>Number of times costumes are switched</li>
-<li>Clicks on the main menu</li>
+<li><code>OUTCOL</code> is the column where the output is located.</li>
+<li><code>OUTROW</code> is the row where the output is located.</li>
+<li><code>TYPE</code> is either the word <code>AND</code> (all inputs are required) or <code>OR</code> (only one input is required). The type <strong>must</strong> end in a semicolon.</li>
+<li><code>IN&lt;X&gt;COL,IN&lt;X&gt;ROW</code> is a coordinate for the column and row of an input. To add multiple inputs, use a semicolon after each coordinate
+and insert the next coordinate.</li>
 </ul>
 
-<p>Additionally, the game records the following information into a local store:</p>
+<p>Example:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>requisite_5_9</td>
+<td>String</td>
+<td>AND;7,9;8,10;</td>
+</tr>
+<tr>
+<td>requisite_6_8</td>
+<td>String</td>
+<td>OR;7,9;</td>
+</tr>
+</tbody></table>
+<h2 id='creating-challenge-levels' class='heading'>Creating challenge levels</h2>
+
+<p>Levels that incorporate challenges may need to make some additional modifications to the scene file.</p>
 
 <ul>
-<li>Last scene you completed</li>
+<li>Levels should come with their own custom class that inherits from <code><a href="Classes/ChallengeGameScene.html">ChallengeGameScene</a></code>. This new subclass should override
+the <code><a href="Classes/ChallengeGameScene.html#/s:17The_Costumemaster18ChallengeGameSceneC013willCalculateC7ResultsyyF">ChallengeGameScene.willCalculateChallengeResults(...)</a></code> method to check for times, costume switches, etc. This
+method can be used to grant achievements or submit scores to leaderboards in Game Center based on criteria.</li>
+<li>The Custom Class field in the Custom Class inspector will need to be changed to another class name that subclasses from 
+<code><a href="Classes/ChallengeGameScene.html">ChallengeGameScene</a></code>. This field <em>can</em> contain ChallengeGameScene as its custom class, but no challenge functions will
+be performed other than the standard information being printed to the console.</li>
 </ul>
-<h2 id='clearing-game-store-data' class='heading'>Clearing game store data</h2>
+<h2 id='testing-and-debugging-levels' class='heading'>Testing and debugging levels</h2>
 
-<p>The Costumemaster does not make use of any personal information and keeps its data stored locally. To clear this data at any time,
-open The Costumemater then select <em><strong>The Costumemaster</strong> &rsaquo; Clear Game Store&hellip;</em> to clear local data. Note that this will not
-remove any achievements earned as a result of this data.</p>
-<h2 id='questions-or-concerns' class='heading'>Questions or concerns?</h2>
-
-<p>Contact <a href="mailto:support@marquiskurt.net">support at marquiskurt.net</a> for any questions you may have about this privacy policy.</p>
-
-<!-- Links -->
+<p>To test a level, you can run the game from the command line with the <code>--start-level</code> argument:</p>
+<pre class="highlight plaintext"><code>/path/to/Debug/The\ Costumemaster.app/Contents/MacOS/The\ Costumemaster --start-level NameOfLevel.sks
+</code></pre>
 
             </section>
           </section>
@@ -87,7 +173,13 @@ remove any achievements earned as a result of this data.</p>
               <a href="Guides.html">Guides</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
-                  <a href="privacy.html">PRIVACY</a>
+                  <a href="creating-a-level.html">Creating a Level</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="privacy-policy.html">Privacy Policy</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="project-proposal.html">Project Proposal</a>
                 </li>
               </ul>
             </li>

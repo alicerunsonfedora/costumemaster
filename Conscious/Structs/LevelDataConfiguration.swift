@@ -23,6 +23,7 @@ import Foundation
 /// These fields are not required but can be added to extend the configuration:
 /// - `achievementTrigger` field: (String) determines the achievement to trigger when passing
 /// through an achievement trigger.
+/// - `timer` field: (Int) determines how long a timer in the level will last. Defaults to 3 seconds.
 public struct LevelDataConfiguration {
     /// The ID that determines what costumes are avaiable, with 0 indicating no costumes annd 3 indicating all costumes.
     public let costumeID: Int

@@ -1,6 +1,6 @@
 # Applied AI Principles with GameplayKit
 
-![Intent](.github/intent.png)
+![Intent](https://github.com/alicerunsonfedora/CS400/raw/root/.github/intent.png)
 
 ## Objective
 

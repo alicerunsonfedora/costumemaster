@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Structures  Reference</title>
+    <title>Project Proposal  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,8 +11,7 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Section/Structures" class="dashAnchor"></a>
-    <a title="Structures  Reference"></a>
+    <a title="Project Proposal  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -36,7 +35,7 @@
             <a href="index.html"> Reference</a>
             <img id="carat" src="img/carat.png" />
           </span>
-          Structures  Reference
+          Project Proposal  Reference
         </p>
       </div>
     </div>
@@ -45,204 +44,72 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>Structures</h1>
-              <p>The following structures are available globally.</p>
+              
+              <h1 id='applied-ai-principles-with-gameplaykit' class='heading'>Applied AI Principles with GameplayKit</h1>
 
-            </section>
-            <section class="section task-group-section">
-              <div class="task-group">
-                <ul>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster20CommandLineArgumentsV"></a>
-                      <a name="//apple_ref/swift/Struct/CommandLineArguments" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster20CommandLineArgumentsV">CommandLineArguments</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>A data structure that contains the command line arguments for the execution context.</p>
+<p><img src="https://github.com/alicerunsonfedora/CS400/raw/root/.github/intent.png" alt="Intent"></p>
+<h2 id='objective' class='heading'>Objective</h2>
 
-                          <a href="Structs/CommandLineArguments.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">CommandLineArguments</span></code></pre>
+<p>The primary objective of this project is to take the concepts from <em>CS440: Principles of Artificial Intelligence</em> and build a better understanding of agents and apply these concepts by implementing and comparing agents in a video game.</p>
+<h2 id='goals' class='heading'>Goals</h2>
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster22LevelDataConfigurationV"></a>
-                      <a name="//apple_ref/swift/Struct/LevelDataConfiguration" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster22LevelDataConfigurationV">LevelDataConfiguration</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>A data structure used to determine the properties of a level based on a user data dictionary.</p>
-
-<p>The user data dictionary requires the following fields:</p>
+<p>The main goals for this project consist of the following:</p>
 
 <ul>
-<li><code>exitAt</code> field: (String) determines column and row coordinates to the exit node.</li>
-<li><code>availableCostumes</code> field: (Int) determines which costumes are available.</li>
-<li><code>levelLink</code> field: (String) determines the next scene to display after this scene ends.</li>
-<li><code>startingCostume</code> field: (String) determines which costume the player starts with.</li>
-<li><code>requisite_COL_ROW</code> field(s): (String) determines what outputs require certain inputs.</li>
+<li>Creating (or modifying) a game suitable for agent experimentation using SpriteKit and Swift</li>
+<li>Implementing Apple&rsquo;s agents from GameplayKit to complete game levels</li>
+<li>Writing and comparing different methods of agent implementations</li>
 </ul>
+<h2 id='milestones' class='heading'>Milestones</h2>
 
-<p>These fields are not required but can be added to extend the configuration:</p>
+<p>Milestones in this project assume a standard fourteen-week course in a given semester.</p>
+<h3 id='milestone-1-complete-game' class='heading'>Milestone 1: Complete Game</h3>
+
+<p>By the end of the fourth/fifth week, a proper, playable game should be created using Swift and SpriteKit for macOS. The game should contain a few playable levels and a couple of reliable mechanics; overall, the game should have less items that are done well rather than more items that have sloppy implementations.</p>
+
+<p>The game should do the following:</p>
 
 <ul>
-<li><code>achievementTrigger</code> field: (String) determines the achievement to trigger when passing
-through an achievement trigger.</li>
-<li><code>timer</code> field: (Int) determines how long a timer in the level will last. Defaults to 3 seconds.</li>
+<li>Properly work with a regular player&rsquo;s input and as a standard Mac app (with notarization).</li>
+<li>Include a method of scoring or competition so that agents can use these metrics to complete levels.</li>
+<li>Have all of the proper assets and materials ready.</li>
+<li>Include well-documented code and, if time permits, an API.</li>
 </ul>
 
-                          <a href="Structs/LevelDataConfiguration.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">LevelDataConfiguration</span></code></pre>
+<p>Additionally, there should be a small write-up of the game that describes the objectives and mechanics of the game.</p>
+<h3 id='milestone-2-agent-implementation' class='heading'>Milestone 2: Agent Implementation</h3>
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster11PreferencesV"></a>
-                      <a name="//apple_ref/swift/Struct/Preferences" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster11PreferencesV">Preferences</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>A data structure that represents the preferences in the game using the standard user defaults.</p>
+<p>By the end of the eighth week, at least two of the agents provided in Apple&rsquo;s GameplayKit should be properly implemented in the game.</p>
 
-                          <a href="Structs/Preferences.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Preferences</span></code></pre>
+<p>The following should be readily available or completed:</p>
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster9GameStoreV"></a>
-                      <a name="//apple_ref/swift/Struct/GameStore" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster9GameStoreV">GameStore</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>A structure that represents the game&rsquo;s store data.</p>
+<ul>
+<li>The agents should successfully complete at least <em>three</em> levels in the game.</li>
+<li>The game should include an option to switch or load agents into the game, either as a command line argument or in a GUI.</li>
+</ul>
+<h3 id='milestone-3-custom-agent-implementation-and-comparisons' class='heading'>Milestone 3: Custom Agent Implementation and Comparisons</h3>
 
-                          <a href="Structs/GameStore.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">GameStore</span></code></pre>
+<p>By the end of the twelfth/thirteenth week, there should be at least two custom agents that have been implemented into the game.</p>
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster15SwitchRequisiteV"></a>
-                      <a name="//apple_ref/swift/Struct/SwitchRequisite" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster15SwitchRequisiteV">SwitchRequisite</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>A data structure that represents a configuration for a switch requisite.</p>
+<p>Additionally, the following tasks should be complete:</p>
 
-<p>This structure is used to describe what inputs will trigger an output, and how many inputs are needed to
-activate the switch.</p>
+<ul>
+<li>Tests and metrics of each agent in a given level should be recorded.</li>
+<li>Observations about different agents should be recorded, as well as their implementations.</li>
+<li>An analysis of the aforementioned data should be completed</li>
+</ul>
+<h3 id='milestone-4-completed-project-and-presentation' class='heading'>Milestone 4: Completed Project and Presentation</h3>
 
-                          <a href="Structs/SwitchRequisite.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SwitchRequisite</span></code></pre>
+<p>By the end of the fourteenth week/final experience, the project should be in a releasable state for inspection, further inquiry, etc. The presentation regarding the process and findings of this project should also be ready, either as a presentation file or a Markdown document.</p>
+<h2 id='additional-resources' class='heading'>Additional Resources</h2>
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster16TilemapParseDataV"></a>
-                      <a name="//apple_ref/swift/Struct/TilemapParseData" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster16TilemapParseDataV">TilemapParseData</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>A data structure that contains the data for a parsed tilemap.</p>
+<ul>
+<li><a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/GameplayKit_Guide/Agent.html">GameplayKit Beginner&rsquo;s Guide on Apple Developer</a></li>
+<li><a href="https://developer.apple.com/documentation/spritekit">SpriteKit Documentation on Apple Developer</a></li>
+<li><a href="https://developer.apple.com/documentation/gameplaykit">GameplayKit Documentation on Apple Developer</a></li>
+<li><a href="https://github.com/alicerunsonfedora/portal-jam">Portals in Cupertino source code on GitHub</a></li>
+</ul>
 
-                          <a href="Structs/TilemapParseData.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">TilemapParseData</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                </ul>
-              </div>
             </section>
           </section>
         </article>

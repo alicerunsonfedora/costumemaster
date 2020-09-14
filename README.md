@@ -77,9 +77,11 @@ The following practices are also being implemented with SwiftLint:
 
 ### Documentation
 
-Documentation is handled by [Jazzy][jazzy], a documentation generator provided by Realm. Follow the instructions to build the documentation:
+Documentation is handled by [Jazzy][jazzy], a documentation generator provided by Realm. Follow the instructions to build the
+documentation:
 
-1. Run `bundle install` to install the dependencies needed. In some cases, you may need to set parameters for installing sqlite3 or for installing the Xcode Command Line Tools.
+1. Run `bundle install` to install the dependencies needed. In some cases, you may need to set parameters for installing sqlite3 or for
+    installing the Xcode Command Line Tools.
 2. Run `docs_build.sh` to build the docs.
 
 ---
@@ -93,4 +95,4 @@ Apple Inc. Music written by Kai Engel.
 [keys]: https://github.com/sindresorhus/KeyboardShortcuts
 [gcachieve]: ./Conscious/Enums/GameAchievments.swift
 [jazzy]: https://github.com/realm/jazzy
-[proposal]: PROPOSAL.md
+[proposal]: ./Guides/Project%20Proposal.md

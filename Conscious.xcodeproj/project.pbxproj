@@ -66,7 +66,6 @@
 		BFAD13502502AFDE0074DCBA /* PressurePlate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD134F2502AFDE0074DCBA /* PressurePlate.swift */; };
 		BFAD7FF3250FEB0700768609 /* Exposure.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFAD7FF2250FEB0700768609 /* Exposure.sks */; };
 		BFAD7FF5250FF4CD00768609 /* ExposureChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD7FF4250FF4CD00768609 /* ExposureChallenge.swift */; };
-		BFAD7FF7250FF6C300768609 /* PRIVACY.md in Resources */ = {isa = PBXBuildFile; fileRef = BFAD7FF6250FF6C300768609 /* PRIVACY.md */; };
 		BFAD7FF9250FFD8D00768609 /* CostumemasteryInheritable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD7FF8250FFD8D00768609 /* CostumemasteryInheritable.swift */; };
 		BFAD7FFB251006BC00768609 /* Unmonitored.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFAD7FFA251006BC00768609 /* Unmonitored.sks */; };
 		BFBCA1C62506A883001FFA91 /* Simultaneous.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFBCA1C52506A883001FFA91 /* Simultaneous.sks */; };
@@ -158,7 +157,6 @@
 		BF6FBAE524A8BDDB00996890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF6FBAE624A8BDDB00996890 /* Conscious.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Conscious.entitlements; sourceTree = "<group>"; };
 		BF6FBB0824A8BE2600996890 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BF6FBB0924A8BE2600996890 /* PROPOSAL.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PROPOSAL.md; sourceTree = "<group>"; };
 		BF6FBB0A24A8BF1400996890 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BF6FBB0B24A8BF2000996890 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
 		BF735B4B250D5BFA0007844C /* RushedChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RushedChallenge.swift; sourceTree = "<group>"; };
@@ -180,9 +178,9 @@
 		BFAD134F2502AFDE0074DCBA /* PressurePlate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressurePlate.swift; sourceTree = "<group>"; };
 		BFAD7FF2250FEB0700768609 /* Exposure.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exposure.sks; sourceTree = "<group>"; };
 		BFAD7FF4250FF4CD00768609 /* ExposureChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureChallenge.swift; sourceTree = "<group>"; };
-		BFAD7FF6250FF6C300768609 /* PRIVACY.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY.md; sourceTree = "<group>"; };
 		BFAD7FF8250FFD8D00768609 /* CostumemasteryInheritable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumemasteryInheritable.swift; sourceTree = "<group>"; };
 		BFAD7FFA251006BC00768609 /* Unmonitored.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Unmonitored.sks; sourceTree = "<group>"; };
+		BFAD7FFC25100FF200768609 /* Guides */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Guides; sourceTree = "<group>"; };
 		BFBCA1C52506A883001FFA91 /* Simultaneous.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Simultaneous.sks; sourceTree = "<group>"; };
 		BFBCA1C72506B0E5001FFA91 /* Swiftly.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Swiftly.sks; sourceTree = "<group>"; };
 		BFBEB33024F80ACE00162B06 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
@@ -550,11 +548,10 @@
 		BFD8796124F5BA8A00552EDD /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				BFAD7FFC25100FF200768609 /* Guides */,
 				BF6FBB0B24A8BF2000996890 /* .github */,
 				BF6FBB0A24A8BF1400996890 /* .gitignore */,
 				BF6FBB0824A8BE2600996890 /* README.md */,
-				BFAD7FF6250FF6C300768609 /* PRIVACY.md */,
-				BF6FBB0924A8BE2600996890 /* PROPOSAL.md */,
 				BFEE78C824FC1E61006FBFF0 /* LICENSE.txt */,
 			);
 			name = Metadata;
@@ -656,7 +653,6 @@
 				BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */,
 				BFDF94EA25084600004F5BE7 /* Rushed.sks in Resources */,
 				BF3A0B8A24F733C400575F72 /* Cabin-Regular.ttf in Resources */,
-				BFAD7FF7250FF6C300768609 /* PRIVACY.md in Resources */,
 				BF153F9124FC3DF3007B20B4 /* leverToggle.wav in Resources */,
 				BF3A0B8C24F733F300575F72 /* DancingScript-VariableFont_wght.ttf in Resources */,
 				BF33A189250BFC060064A219 /* Cycle.sks in Resources */,
