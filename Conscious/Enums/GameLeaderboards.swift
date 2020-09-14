@@ -24,4 +24,8 @@ enum GameLeaderboard: String {
     /// Daily Cycle Challenge: Complete the level **Cycle** as fast as you can.
     /// - **ID**: costumemaster.ld.cycle_daily
     case cycleDaily = "costumemaster.ld.cycle_daily"
+
+    /// Daily Exposure Challenge: Complete the level **Exposure** as fast as you can.
+    /// - **ID**: costumemaster.ld.exposure_daily
+    case exposureDaily = "costumemaster.ld.exposure_daily"
 }
