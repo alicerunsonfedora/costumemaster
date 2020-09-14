@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>GKAchievement Extension Reference</title>
+    <title>CostumemasteryInheritable Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,8 +11,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/GKAchievement" class="dashAnchor"></a>
-    <a title="GKAchievement Extension Reference"></a>
+    <a name="//apple_ref/swift/Class/CostumemasteryInheritable" class="dashAnchor"></a>
+    <a title="CostumemasteryInheritable Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -36,7 +36,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          GKAchievement Extension Reference
+          CostumemasteryInheritable Class Reference
         </p>
       </div>
     </div>
@@ -45,15 +45,16 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>GKAchievement</h1>
+              <h1>CostumemasteryInheritable</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">GKAchievement</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CostumemasteryInheritable</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ChallengeGameScene.html">ChallengeGameScene</a></span></code></pre>
 
                   </div>
                 </div>
-              
+              <p>A challenge game scene that listens for whether the player has earned the Costumemastery achievement.</p>
+
             </section>
             <section class="section task-group-section">
               <div class="task-group">
@@ -61,9 +62,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:So13GKAchievementC17The_CostumemasterE4earn4withySS_tFZ"></a>
-                      <a name="//apple_ref/swift/Method/earn(with:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:So13GKAchievementC17The_CostumemasterE4earn4withySS_tFZ">earn(with:<wbr>)</a>
+                      <a name="/s:17The_Costumemaster25CostumemasteryInheritableC28willCalcuateChallengeResultsyyF"></a>
+                      <a name="//apple_ref/swift/Method/willCalcuateChallengeResults()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster25CostumemasteryInheritableC28willCalcuateChallengeResultsyyF">willCalcuateChallengeResults()</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -71,166 +72,22 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Earn an achievment with a given identifier.</p>
+                          <p>Determine if the player is eligible to receive the Costumemastery achievement and grant it.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    For subclasses that will override this method, make sure to call the parent to make this
+achievement accessible in the challenge.
+
+</div>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">earn</span><span class="p">(</span><span class="n">with</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">willCalcuateChallengeResults</span><span class="p">()</span></code></pre>
 
                           </div>
-                        </div>
-                        <div>
-                          <h4>Parameters</h4>
-                          <table class="graybox">
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>identifier</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The identifier that links to the achievement to earn.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:So13GKAchievementC17The_CostumemasterE4earn4withyAC15GameAchievementO_tFZ"></a>
-                      <a name="//apple_ref/swift/Method/earn(with:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:So13GKAchievementC17The_CostumemasterE4earn4withyAC15GameAchievementO_tFZ">earn(with:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Earn an achievement with a given achievement.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">earn</span><span class="p">(</span><span class="n">with</span> <span class="nv">achievementName</span><span class="p">:</span> <span class="kt"><a href="../Enums/GameAchievement.html">GameAchievement</a></span><span class="p">)</span></code></pre>
-
-                          </div>
-                        </div>
-                        <div>
-                          <h4>Parameters</h4>
-                          <table class="graybox">
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>achievementName</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The game achievement that the player will earn.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:So13GKAchievementC17The_CostumemasterE14updateProgress2on2toySS_SdtFZ"></a>
-                      <a name="//apple_ref/swift/Method/updateProgress(on:to:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:So13GKAchievementC17The_CostumemasterE14updateProgress2on2toySS_SdtFZ">updateProgress(on:<wbr>to:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Update the progress on an achievement.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateProgress</span><span class="p">(</span><span class="n">on</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">to</span> <span class="nv">percent</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:So13GKAchievementC17The_CostumemasterE14updateProgress2on2toyAC15GameAchievementO_SdtFZ"></a>
-                      <a name="//apple_ref/swift/Method/updateProgress(on:to:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:So13GKAchievementC17The_CostumemasterE14updateProgress2on2toyAC15GameAchievementO_SdtFZ">updateProgress(on:<wbr>to:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Update the progress on earning an achievmeent.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateProgress</span><span class="p">(</span><span class="n">on</span> <span class="nv">achievementName</span><span class="p">:</span> <span class="kt"><a href="../Enums/GameAchievement.html">GameAchievement</a></span><span class="p">,</span> <span class="n">to</span> <span class="nv">percent</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span></code></pre>
-
-                          </div>
-                        </div>
-                        <div>
-                          <h4>Parameters</h4>
-                          <table class="graybox">
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>achievementName</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The achievement that the player has progressed on.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>percent</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The percent complete.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
                         </div>
                       </section>
                     </div>

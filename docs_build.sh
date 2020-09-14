@@ -8,6 +8,7 @@ bundle exec jazzy \
 --min-acl internal \
 --title "The Costumemaster" \
 --exclude=/*/Classes/App/* \
+--documentation=PRIVACY.md \
 --build-tool-arguments -workspace,Conscious.xcodeproj/project.xcworkspace,-scheme,"Conscious"
 rm -r build
 echo costumemaster.marquiskurt.net >> docs/CNAME

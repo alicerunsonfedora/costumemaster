@@ -33,11 +33,11 @@ class ChallengeGameScene: GameScene {
     /// A tuple of integers containing the number of times a player has switched costumes.
     ///
     /// The tuple is in the order: USB, Bird, Sorceress. The "default" costume is excluded.
-    private var costumeIncrements: (Int, Int, Int) = (0, 0, 0)
+    public var costumeIncrements: (Int, Int, Int) = (0, 0, 0)
     // swiftlint:disable:previous large_tuple
 
     /// The total number of times a player has switched costumes.
-    private var totalCostumeIncrement: Int = 0
+    public var totalCostumeIncrement: Int = 0
 
     /// Set up the scene and set the cached costume.
     override func sceneDidLoad() {

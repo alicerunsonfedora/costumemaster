@@ -69,6 +69,7 @@
 		BFAD7FF3250FEB0700768609 /* Exposure.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFAD7FF2250FEB0700768609 /* Exposure.sks */; };
 		BFAD7FF5250FF4CD00768609 /* ExposureChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD7FF4250FF4CD00768609 /* ExposureChallenge.swift */; };
 		BFAD7FF7250FF6C300768609 /* PRIVACY.md in Resources */ = {isa = PBXBuildFile; fileRef = BFAD7FF6250FF6C300768609 /* PRIVACY.md */; };
+		BFAD7FF9250FFD8D00768609 /* CostumemasteryInheritable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD7FF8250FFD8D00768609 /* CostumemasteryInheritable.swift */; };
 		BFBCA1C62506A883001FFA91 /* Simultaneous.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFBCA1C52506A883001FFA91 /* Simultaneous.sks */; };
 		BFBCA1C82506B0E5001FFA91 /* Swiftly.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFBCA1C72506B0E5001FFA91 /* Swiftly.sks */; };
 		BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBEB33024F80ACE00162B06 /* Preferences.storyboard */; };
@@ -204,6 +205,7 @@
 		BFAD7FF2250FEB0700768609 /* Exposure.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Exposure.sks; sourceTree = "<group>"; };
 		BFAD7FF4250FF4CD00768609 /* ExposureChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureChallenge.swift; sourceTree = "<group>"; };
 		BFAD7FF6250FF6C300768609 /* PRIVACY.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY.md; sourceTree = "<group>"; };
+		BFAD7FF8250FFD8D00768609 /* CostumemasteryInheritable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumemasteryInheritable.swift; sourceTree = "<group>"; };
 		BFBCA1C52506A883001FFA91 /* Simultaneous.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Simultaneous.sks; sourceTree = "<group>"; };
 		BFBCA1C72506B0E5001FFA91 /* Swiftly.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Swiftly.sks; sourceTree = "<group>"; };
 		BFBEB33024F80ACE00162B06 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 			children = (
 				BF7C5EF4250AB3700062B1CC /* Interfaces */,
 				BF7C5EF1250AB2E20062B1CC /* Challenges */,
+				BFAD7FF8250FFD8D00768609 /* CostumemasteryInheritable.swift */,
 				BF7C5EED250AA30B0062B1CC /* ChallengeGameScene.swift */,
 				BF6FBADC24A8BDD400996890 /* GameScene.swift */,
 			);
@@ -887,6 +890,7 @@
 				BF6B98E524FDD36A00A206FF /* Intro.swift in Sources */,
 				BF3A0B7A24F6CB4D00575F72 /* GameSignalSender.swift in Sources */,
 				BF7C5EF3250AB2F30062B1CC /* DivergentChallenge.swift in Sources */,
+				BFAD7FF9250FFD8D00768609 /* CostumemasteryInheritable.swift in Sources */,
 				BF0D2C1E24FADD1F00AEF86F /* Keyboard.swift in Sources */,
 				BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */,
 				BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */,

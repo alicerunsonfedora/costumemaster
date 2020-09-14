@@ -40,4 +40,8 @@ public enum GameAchievement: String {
     /// Overclocker: Complete the level "Divergent" in 100 seconds or less.
     /// - **ID**: costumemaster.overclocker"
     case overclocker = "costumemaster.overclocker"
+
+    /// Costumemastery: Complete an advanced level with 10 costume switches or less.
+    /// - **ID**: costumemaster.costumemaster"
+    case costumemastery = "costumemaster.costumemaster"
 }
