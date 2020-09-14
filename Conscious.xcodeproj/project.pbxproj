@@ -47,8 +47,6 @@
 		BF6FBADF24A8BDD400996890 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBADE24A8BDD400996890 /* ViewController.swift */; };
 		BF6FBAE124A8BDDB00996890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBAE024A8BDDB00996890 /* Assets.xcassets */; };
 		BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBAE224A8BDDB00996890 /* Main.storyboard */; };
-		BF6FBAF024A8BDDB00996890 /* ConsciousTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAEF24A8BDDB00996890 /* ConsciousTests.swift */; };
-		BF6FBAFB24A8BDDB00996890 /* ConsciousUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAFA24A8BDDB00996890 /* ConsciousUITests.swift */; };
 		BF735B4C250D5BFA0007844C /* RushedChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF735B4B250D5BFA0007844C /* RushedChallenge.swift */; };
 		BF7C5EEE250AA30B0062B1CC /* ChallengeGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C5EED250AA30B0062B1CC /* ChallengeGameScene.swift */; };
 		BF7C5EF0250AB2CA0062B1CC /* Divergent.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF7C5EEF250AB2CA0062B1CC /* Divergent.sks */; };
@@ -116,23 +114,6 @@
 		BFFF892D24F943E400D405CC /* MenuContent.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFF892A24F93F6A00D405CC /* MenuContent.plist */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		BF6FBAEC24A8BDDB00996890 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF6FBACB24A8BDD400996890 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF6FBAD224A8BDD400996890;
-			remoteInfo = Conscious;
-		};
-		BF6FBAF724A8BDDB00996890 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF6FBACB24A8BDD400996890 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF6FBAD224A8BDD400996890;
-			remoteInfo = Conscious;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		BF0D2C1F24FAE86B00AEF86F /* ControlsPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsPrefsViewController.swift; sourceTree = "<group>"; };
@@ -176,12 +157,6 @@
 		BF6FBAE324A8BDDB00996890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF6FBAE524A8BDDB00996890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF6FBAE624A8BDDB00996890 /* Conscious.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Conscious.entitlements; sourceTree = "<group>"; };
-		BF6FBAEB24A8BDDB00996890 /* ConsciousTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConsciousTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF6FBAEF24A8BDDB00996890 /* ConsciousTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsciousTests.swift; sourceTree = "<group>"; };
-		BF6FBAF124A8BDDB00996890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF6FBAF624A8BDDB00996890 /* ConsciousUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConsciousUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF6FBAFA24A8BDDB00996890 /* ConsciousUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsciousUITests.swift; sourceTree = "<group>"; };
-		BF6FBAFC24A8BDDB00996890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF6FBB0824A8BE2600996890 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BF6FBB0924A8BE2600996890 /* PROPOSAL.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PROPOSAL.md; sourceTree = "<group>"; };
 		BF6FBB0A24A8BF1400996890 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -261,20 +236,6 @@
 			files = (
 				BFDBE7AE24F955EE00FD75BF /* GameKit.framework in Frameworks */,
 				BF0D2C1C24FADC4E00AEF86F /* KeyboardShortcuts in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF6FBAE824A8BDDB00996890 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF6FBAF324A8BDDB00996890 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,8 +390,6 @@
 			isa = PBXGroup;
 			children = (
 				BF6FBAD524A8BDD400996890 /* Conscious */,
-				BF6FBAEE24A8BDDB00996890 /* ConsciousTests */,
-				BF6FBAF924A8BDDB00996890 /* ConsciousUITests */,
 				BFD8796124F5BA8A00552EDD /* Metadata */,
 				BF6FBAD424A8BDD400996890 /* Products */,
 				BFDBE7AC24F955EE00FD75BF /* Frameworks */,
@@ -441,8 +400,6 @@
 			isa = PBXGroup;
 			children = (
 				BF6FBAD324A8BDD400996890 /* The Costumemaster.app */,
-				BF6FBAEB24A8BDDB00996890 /* ConsciousTests.xctest */,
-				BF6FBAF624A8BDDB00996890 /* ConsciousUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -461,24 +418,6 @@
 				BF69F2C124F4B10100BBF518 /* Utilities */,
 			);
 			path = Conscious;
-			sourceTree = "<group>";
-		};
-		BF6FBAEE24A8BDDB00996890 /* ConsciousTests */ = {
-			isa = PBXGroup;
-			children = (
-				BF6FBAEF24A8BDDB00996890 /* ConsciousTests.swift */,
-				BF6FBAF124A8BDDB00996890 /* Info.plist */,
-			);
-			path = ConsciousTests;
-			sourceTree = "<group>";
-		};
-		BF6FBAF924A8BDDB00996890 /* ConsciousUITests */ = {
-			isa = PBXGroup;
-			children = (
-				BF6FBAFA24A8BDDB00996890 /* ConsciousUITests.swift */,
-				BF6FBAFC24A8BDDB00996890 /* Info.plist */,
-			);
-			path = ConsciousUITests;
 			sourceTree = "<group>";
 		};
 		BF7C5EF1250AB2E20062B1CC /* Challenges */ = {
@@ -654,42 +593,6 @@
 			productReference = BF6FBAD324A8BDD400996890 /* The Costumemaster.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BF6FBAEA24A8BDDB00996890 /* ConsciousTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF6FBB0224A8BDDB00996890 /* Build configuration list for PBXNativeTarget "ConsciousTests" */;
-			buildPhases = (
-				BF6FBAE724A8BDDB00996890 /* Sources */,
-				BF6FBAE824A8BDDB00996890 /* Frameworks */,
-				BF6FBAE924A8BDDB00996890 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BF6FBAED24A8BDDB00996890 /* PBXTargetDependency */,
-			);
-			name = ConsciousTests;
-			productName = ConsciousTests;
-			productReference = BF6FBAEB24A8BDDB00996890 /* ConsciousTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		BF6FBAF524A8BDDB00996890 /* ConsciousUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF6FBB0524A8BDDB00996890 /* Build configuration list for PBXNativeTarget "ConsciousUITests" */;
-			buildPhases = (
-				BF6FBAF224A8BDDB00996890 /* Sources */,
-				BF6FBAF324A8BDDB00996890 /* Frameworks */,
-				BF6FBAF424A8BDDB00996890 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BF6FBAF824A8BDDB00996890 /* PBXTargetDependency */,
-			);
-			name = ConsciousUITests;
-			productName = ConsciousUITests;
-			productReference = BF6FBAF624A8BDDB00996890 /* ConsciousUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -701,14 +604,6 @@
 				TargetAttributes = {
 					BF6FBAD224A8BDD400996890 = {
 						CreatedOnToolsVersion = 12.0;
-					};
-					BF6FBAEA24A8BDDB00996890 = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = BF6FBAD224A8BDD400996890;
-					};
-					BF6FBAF524A8BDDB00996890 = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = BF6FBAD224A8BDD400996890;
 					};
 				};
 			};
@@ -729,8 +624,6 @@
 			projectRoot = "";
 			targets = (
 				BF6FBAD224A8BDD400996890 /* Costumemaster */,
-				BF6FBAEA24A8BDDB00996890 /* ConsciousTests */,
-				BF6FBAF524A8BDDB00996890 /* ConsciousUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -789,20 +682,6 @@
 				BFD8795824F5A2FF00552EDD /* Player_Forward_Sorceress.atlas in Resources */,
 				BFD8795624F5A2FF00552EDD /* Player_Forward_USB.atlas in Resources */,
 				BFAD134D250298970074DCBA /* alarmEnable.wav in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF6FBAE924A8BDDB00996890 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF6FBAF424A8BDDB00996890 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,36 +788,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF6FBAE724A8BDDB00996890 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF6FBAF024A8BDDB00996890 /* ConsciousTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF6FBAF224A8BDDB00996890 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF6FBAFB24A8BDDB00996890 /* ConsciousUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BF6FBAED24A8BDDB00996890 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF6FBAD224A8BDD400996890 /* Costumemaster */;
-			targetProxy = BF6FBAEC24A8BDDB00996890 /* PBXContainerItemProxy */;
-		};
-		BF6FBAF824A8BDDB00996890 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF6FBAD224A8BDD400996890 /* Costumemaster */;
-			targetProxy = BF6FBAF724A8BDDB00996890 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BF6FBAE224A8BDDB00996890 /* Main.storyboard */ = {
@@ -1111,90 +961,6 @@
 			};
 			name = Release;
 		};
-		BF6FBB0324A8BDDB00996890 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FQQXSP79X3;
-				INFOPLIST_FILE = ConsciousTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
-				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.ConsciousTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conscious.app/Contents/MacOS/Conscious";
-			};
-			name = Debug;
-		};
-		BF6FBB0424A8BDDB00996890 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FQQXSP79X3;
-				INFOPLIST_FILE = ConsciousTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
-				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.ConsciousTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conscious.app/Contents/MacOS/Conscious";
-			};
-			name = Release;
-		};
-		BF6FBB0624A8BDDB00996890 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FQQXSP79X3;
-				INFOPLIST_FILE = ConsciousUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.ConsciousUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Conscious;
-			};
-			name = Debug;
-		};
-		BF6FBB0724A8BDDB00996890 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FQQXSP79X3;
-				INFOPLIST_FILE = ConsciousUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.ConsciousUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Conscious;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1212,24 +978,6 @@
 			buildConfigurations = (
 				BF6FBB0024A8BDDB00996890 /* Debug */,
 				BF6FBB0124A8BDDB00996890 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BF6FBB0224A8BDDB00996890 /* Build configuration list for PBXNativeTarget "ConsciousTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF6FBB0324A8BDDB00996890 /* Debug */,
-				BF6FBB0424A8BDDB00996890 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BF6FBB0524A8BDDB00996890 /* Build configuration list for PBXNativeTarget "ConsciousUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF6FBB0624A8BDDB00996890 /* Debug */,
-				BF6FBB0724A8BDDB00996890 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
