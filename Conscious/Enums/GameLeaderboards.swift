@@ -20,4 +20,8 @@ enum GameLeaderboard: String {
     /// Daily Rushed Challenge: Complete the level **Rushed** as fast as you can.
     /// - **ID**: costumemaster.ld.rushed_daily
     case rushedDaily = "costumemaster.ld.rushed_daily"
+
+    /// Daily Cycle Challenge: Complete the level **Cycle** as fast as you can.
+    /// - **ID**: costumemaster.ld.cycle_daily
+    case cycleDaily = "costumemaster.ld.cycle_daily"
 }
