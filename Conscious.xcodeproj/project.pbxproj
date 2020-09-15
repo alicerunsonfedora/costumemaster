@@ -290,14 +290,6 @@
 		BF3A0B8224F7044500575F72 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
-				BF3A0B7924F6CB4D00575F72 /* GameSignalSender.swift */,
-				BF3A0B8324F7046900575F72 /* DoorReceiver.swift */,
-				BFAD1345250285F60074DCBA /* GameLever.swift */,
-				BFAD1347250286E20074DCBA /* GameComputer.swift */,
-				BFAD134925028C0F0074DCBA /* GameAlarmClock.swift */,
-				BFAD134F2502AFDE0074DCBA /* PressurePlate.swift */,
-				BF8C30EF2502E0BD00A29425 /* GameHeavyObject.swift */,
-				BFDF94E52507FE42004F5BE7 /* GameAchievementTrigger.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -336,6 +328,19 @@
 				BF6FBADC24A8BDD400996890 /* GameScene.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		BF41E5DD251170AA006527CA /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				BF3A0B7924F6CB4D00575F72 /* GameSignalSender.swift */,
+				BFAD1345250285F60074DCBA /* GameLever.swift */,
+				BFAD1347250286E20074DCBA /* GameComputer.swift */,
+				BFAD134925028C0F0074DCBA /* GameAlarmClock.swift */,
+				BFAD134F2502AFDE0074DCBA /* PressurePlate.swift */,
+				BFDF94E52507FE42004F5BE7 /* GameAchievementTrigger.swift */,
+			);
+			path = Inputs;
 			sourceTree = "<group>";
 		};
 		BF4A451C2501B563008BDD5A /* Interfaces */ = {
@@ -519,8 +524,11 @@
 		BFC78F3B24F48726004E85A9 /* Game Logic */ = {
 			isa = PBXGroup;
 			children = (
+				BF41E5DD251170AA006527CA /* Inputs */,
 				BF3A0B8224F7044500575F72 /* Environment */,
 				BFC78F3C24F48731004E85A9 /* Player.swift */,
+				BF3A0B8324F7046900575F72 /* DoorReceiver.swift */,
+				BF8C30EF2502E0BD00A29425 /* GameHeavyObject.swift */,
 			);
 			path = "Game Logic";
 			sourceTree = "<group>";
