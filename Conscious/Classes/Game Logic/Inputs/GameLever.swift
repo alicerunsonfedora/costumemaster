@@ -20,7 +20,7 @@ class GameLever: GameSignalSender {
     init(at position: CGPoint) {
         super.init(textureName: "lever_wallup", by: .activeOncePermanently, at: position)
         self.kind = .lever
-        self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
+        self.instantiateBody(with: getWallPhysicsBody(with: "wall_edge_physics_mask"))
     }
 
     /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.

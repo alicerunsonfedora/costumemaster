@@ -13,7 +13,7 @@ import Foundation
 import SpriteKit
 
 /// A class that represents a door. This is commonly used for exit doors, but can be adapted to use any door.
-public class DoorReceiver: SKSpriteNode, GameSignalReceivable {
+public class DoorReceiver: GameStructureObject, GameSignalReceivable {
 
     // MARK: STORED PROPERTIES
     /// Whether the door is on by default.
@@ -77,14 +77,13 @@ public class DoorReceiver: SKSpriteNode, GameSignalReceivable {
         if reverseSignal { self.defaultOn.toggle() }
 
         super.init(
-            texture: SKTexture(imageNamed: baseTexture + "_off"),
-            color: .clear,
+            with: SKTexture(imageNamed: baseTexture + "_off"),
             size: SKTexture(imageNamed: baseTexture + "_off").size()
         )
 
         self.inputs.forEach { input in input.receivers.append(self) }
         self.texture = self.activeTexture
-        self.physicsBody = instantiatePhysicsBody()
+        self.instantiateBody(with: instantiatePhysicsBody())
     }
 
     /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.
@@ -123,9 +122,9 @@ public class DoorReceiver: SKSpriteNode, GameSignalReceivable {
     /// Toggle the physics body for the door.
     /// - Note: This method should apply for all doors that are not exits.
     func togglePhysicsBody() {
-        if self.active && self.physicsBody != nil { self.physicsBody = nil }
-        if !self.active && self.physicsBody == nil {
-            self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
+        if self.active && self.getBody() != nil { self.releaseBody() }
+        if !self.active && self.getBody() == nil {
+            self.instantiateBody(with: getWallPhysicsBody(with: "wall_edge_physics_mask"))
         }
     }
 

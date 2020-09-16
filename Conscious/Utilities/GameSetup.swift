@@ -62,6 +62,7 @@ public func getWallPhysicsBody(with texture: SKTexture) -> SKPhysicsBody {
     physicsBody.isDynamic = false
     physicsBody.isResting = true
     physicsBody.allowsRotation = false
+    physicsBody.pinned = true
     return physicsBody
 }
 

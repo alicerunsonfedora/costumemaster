@@ -77,9 +77,11 @@ class GameScene: SKScene {
             case .wall:
                 guard let wallName = data.definition.name else { return }
                 let wallTexture = wallName.starts(with: "wall_edge") ? "wall_edge_physics_mask" : wallName
-                data.sprite.physicsBody = getWallPhysicsBody(with: wallTexture)
-                data.sprite.name = "wall_\(data.column)_\(data.row)\(wallName.starts(with: "wall_edge") ? "_edge": ""))"
-                self.structure.addChild(data.sprite)
+                let wall = GameStructureObject(with: data.sprite.texture, size: data.sprite.size)
+                wall.position = data.sprite.position
+                wall.instantiateBody(with: getWallPhysicsBody(with: wallTexture))
+                wall.name = "wall_\(data.column)_\(data.row)\(wallName.starts(with: "wall_edge") ? "_edge": ""))"
+                self.structure.addChild(wall)
             case .player:
                 self.playerNode = Player(
                     texture: data.texture,
@@ -296,10 +298,10 @@ class GameScene: SKScene {
     /// - Parameter costume: The costume to run the checks against.
     func checkWallStates(with costume: PlayerCostumeType?) {
         for node in self.structure.children where node.name != nil && node.name!.starts(with: "wall_") {
-            guard let wall = node as? SKSpriteNode else { return }
+            guard let wall = node as? GameStructureObject else { return }
             guard let name = wall.name else { return }
             let body = name.contains("_edge") ? "wall_edge_physics_mask" : "wall_top"
-            wall.physicsBody = costume == .bird ? nil : getWallPhysicsBody(with: body)
+            wall.instantiateBody(with: costume == .bird ? nil : getWallPhysicsBody(with: body))
         }
     }
 

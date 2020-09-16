@@ -22,7 +22,7 @@ class GameAlarmClock: GameSignalSender {
         super.init(textureName: "alarm_clock_wallup", by: .activeOnTimer, at: position)
         self.cooldown = delay
         self.kind = .alarmClock
-        self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
+        self.instantiateBody(with: getWallPhysicsBody(with: "wall_edge_physics_mask"))
     }
 
     /// Trigger the alarm sound and continously play the tick sound.

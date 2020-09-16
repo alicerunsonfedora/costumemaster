@@ -21,7 +21,7 @@ class GameComputer: GameSignalSender {
     init(at position: CGPoint, with softwareLock: Bool) {
         super.init(textureName: "computer_wallup\(softwareLock ? "_alt": "")", by: .activeOncePermanently, at: position)
         self.kind = softwareLock ? .computerT1 : .computerT2
-        self.physicsBody = getWallPhysicsBody(with: "wall_edge_physics_mask")
+        self.instantiateBody(with: getWallPhysicsBody(with: "wall_edge_physics_mask"))
     }
 
     /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.

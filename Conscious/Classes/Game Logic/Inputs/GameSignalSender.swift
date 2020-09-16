@@ -13,7 +13,7 @@ import Foundation
 import SpriteKit
 
 /// A base class that determines an input.
-public class GameSignalSender: SKSpriteNode {
+public class GameSignalSender: GameStructureObject {
 
     // MARK: STORED PROPERTIES
 
@@ -56,8 +56,7 @@ public class GameSignalSender: SKSpriteNode {
         self.levelPosition = position
         self.receivers = []
         super.init(
-            texture: SKTexture(imageNamed: textureName + "_off"),
-            color: .clear,
+            with: SKTexture(imageNamed: textureName + "_off"),
             size: SKTexture(imageNamed: textureName + "_off").size()
         )
         self.texture = self.activeTexture
@@ -80,8 +79,7 @@ public class GameSignalSender: SKSpriteNode {
         self.levelPosition = position
         self.receivers = []
         super.init(
-            texture: SKTexture(imageNamed: textureName + "_off"),
-            color: .clear,
+            with: SKTexture(imageNamed: textureName + "_off"),
             size: SKTexture(imageNamed: textureName + "_off").size()
         )
         self.texture = self.activeTexture
