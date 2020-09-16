@@ -408,7 +408,7 @@ public class Player: SKSpriteNode {
             parent.interactables.removeAll { child in child.name == "playerCopy" }
         } else {
             if self.costume != .flashDrive { return }
-            let copy = GameHeavyObject(with: "Player (Idle, USB)", at: CGPoint(x: 0, y: 0))
+            let copy = GameHeavyObject(with: "USB Clone", at: CGPoint(x: 0, y: 0))
             copy.name = "playerCopy"
             copy.position = CGPoint(x: self.position.x - 16, y: self.position.y)
             copy.canBeCarried = false
