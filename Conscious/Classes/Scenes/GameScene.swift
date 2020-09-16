@@ -358,6 +358,7 @@ class GameScene: SKScene {
 
     /// Listen to keyboard events and run the game logic for key events.
     public override func keyDown(with event: NSEvent) {
+        // swiftlint:disable:previous cyclomatic_complexity
         guard let changing = self.playerNode?.isChangingCostumes else { return }
         switch Int(event.keyCode) {
         case KeyboardShortcuts.getShortcut(for: .moveUp)?.carbonKeyCode where !changing:
@@ -379,6 +380,8 @@ class GameScene: SKScene {
             self.grabItems()
         case KeyboardShortcuts.getShortcut(for: .pause)?.carbonKeyCode:
             self.getPauseScene()
+        case KeyboardShortcuts.getShortcut(for: .copy)?.carbonKeyCode:
+            self.playerNode?.copyAsObject()
         default:
             break
 

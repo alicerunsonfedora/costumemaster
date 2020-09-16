@@ -46,7 +46,7 @@ class GameHeavyObject: SKSpriteNode {
     /// Attach the heavy object to the player.
     /// - Parameter player: The player object to attach to.
     public func attach(to player: Player?) {
-        if self.parent == player { return }
+        if self.parent == player || !self.canBeCarried { return }
         guard let costume = player?.costume else { return }
         if costume == .sorceress && player?.position.distance(between: self.position) ?? 99 <= 64 {
             self.removeFromParent()
@@ -58,7 +58,7 @@ class GameHeavyObject: SKSpriteNode {
     /// Resign the attachment status from the player.
     /// - Parameter player: The player object to detach or resign from.
     public func resign(from player: Player?) {
-        if self.parent != player { return }
+        if self.parent != player || !self.canBeCarried { return }
         if let pos = player?.position {
             self.position = CGPoint(x: pos.x - 16, y: pos.y)
             self.removeFromParent()

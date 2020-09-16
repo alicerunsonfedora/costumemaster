@@ -34,6 +34,9 @@ extension KeyboardShortcuts.Name {
     /// The shortcut that corresponds to using an item. Defaults to E.
     static let use = Self("use", default: Shortcut(.e))
 
+    /// The shortcut that corresponds to making a copy of the player. Defaults to C.
+    static let copy = Self("copy", default: Shortcut(.c))
+
     /// The shortcut that corresponds to opening the pause menu. Defaults to Escape.
     /// - Note: In its current implementation, this key cannot be changed.
     static let pause = Self("pause", default: Shortcut(.escape))
@@ -42,7 +45,9 @@ extension KeyboardShortcuts.Name {
 extension KeyboardShortcuts {
     /// Reset all keyboard shortcuts.
     static func resetAll() {
-        KeyboardShortcuts.reset([.moveUp, .moveRight, .moveDown, .moveLeft, .nextCostume, .previousCostume, .use])
+        KeyboardShortcuts.reset(
+            [.moveUp, .moveRight, .moveDown, .moveLeft, .nextCostume, .previousCostume, .use, .copy]
+        )
     }
 
     /// The shortcut properties for the movement keys.
@@ -61,7 +66,8 @@ extension KeyboardShortcuts {
             KeyboardShortcuts.getShortcut(for: .nextCostume),
             KeyboardShortcuts.getShortcut(for: .previousCostume),
             KeyboardShortcuts.getShortcut(for: .use),
-            KeyboardShortcuts.getShortcut(for: .pause)
+            KeyboardShortcuts.getShortcut(for: .pause),
+            KeyboardShortcuts.getShortcut(for: .copy)
         ]
     }
 }

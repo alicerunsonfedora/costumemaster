@@ -36,6 +36,7 @@
 		BF3A0B8A24F733C400575F72 /* Cabin-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8924F733C400575F72 /* Cabin-Regular.ttf */; };
 		BF3A0B8C24F733F300575F72 /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8B24F733EE00575F72 /* DancingScript-VariableFont_wght.ttf */; };
 		BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8F24F7355200575F72 /* MainMenu.swift */; };
+		BF41E5DF2511714C006527CA /* Seeded.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF41E5DE2511714C006527CA /* Seeded.sks */; };
 		BF4A451F2501B683008BDD5A /* Entry.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF4A451E2501B683008BDD5A /* Entry.sks */; };
 		BF63E65924F84B2000429247 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63E65824F84B2000429247 /* PreferencesViewController.swift */; };
 		BF63E65B24F84BAC00429247 /* GeneralPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63E65A24F84BAC00429247 /* GeneralPrefsViewController.swift */; };
@@ -142,6 +143,7 @@
 		BF3A0B8924F733C400575F72 /* Cabin-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Regular.ttf"; sourceTree = "<group>"; };
 		BF3A0B8B24F733EE00575F72 /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		BF3A0B8F24F7355200575F72 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		BF41E5DE2511714C006527CA /* Seeded.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Seeded.sks; sourceTree = "<group>"; };
 		BF4A451E2501B683008BDD5A /* Entry.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Entry.sks; sourceTree = "<group>"; };
 		BF63E65824F84B2000429247 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		BF63E65A24F84BAC00429247 /* GeneralPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPrefsViewController.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				BF33A188250BFC060064A219 /* Cycle.sks */,
 				BFAD7FF2250FEB0700768609 /* Exposure.sks */,
 				BFAD7FFA251006BC00768609 /* Unmonitored.sks */,
+				BF41E5DE2511714C006527CA /* Seeded.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6B98E324FDD03900A206FF /* Intro.sks in Resources */,
+				BF41E5DF2511714C006527CA /* Seeded.sks in Resources */,
 				BFFF892D24F943E400D405CC /* MenuContent.plist in Resources */,
 				BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */,
 				BFD8797124F5D8BB00552EDD /* Player_Side_Default.atlas in Resources */,

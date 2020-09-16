@@ -399,21 +399,22 @@ public class Player: SKSpriteNode {
     }
 
     /// Make a copy of the player's sprite body in the map.
-    public func copy() {
-        if self.costume != .flashDrive { return }
-        guard let parent = self.parent else { return }
+    public func copyAsObject() {
+        guard let parent = self.parent as? GameScene else { return }
         if self.deployedCopy {
-            for child in parent.children where child.name == "playerCopy" {
+            for child in parent.children where child.name == "playerCopy" && child is GameHeavyObject {
                 child.removeFromParent()
             }
-            self.deployedCopy = false
+            parent.interactables.removeAll { child in child.name == "playerCopy" }
         } else {
+            if self.costume != .flashDrive { return }
             let copy = GameHeavyObject(with: "Player (Idle, USB)", at: CGPoint(x: 0, y: 0))
-            copy.position = self.position
+            copy.name = "playerCopy"
+            copy.position = CGPoint(x: self.position.x - 16, y: self.position.y)
             copy.canBeCarried = false
-            copy.physicsBody = self.physicsBody
             parent.addChild(copy)
-            self.deployedCopy = true
+            parent.interactables.append(copy)
         }
+        self.deployedCopy.toggle()
     }
 }
