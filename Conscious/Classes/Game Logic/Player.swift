@@ -24,6 +24,9 @@ public class Player: SKSpriteNode {
     /// Whether the player is being initialized.
     private var inInit: Bool = false
 
+    /// Whether the player has made a static copy of itself.
+    private var deployedCopy: Bool = false
+
     /// Thre current costume the player is wearing.
     public var costume: PlayerCostumeType = .flashDrive {
         didSet {
@@ -210,6 +213,8 @@ public class Player: SKSpriteNode {
         self.physicsBody?.mass = self.mass
     }
 
+    // MARK: COSTUME CHANGE METHODS
+
     /// Switch to the previous costume.
     /// - Returns: The previous costume the player is now wearing.
     public func previousCostume() -> PlayerCostumeType {
@@ -391,5 +396,24 @@ public class Player: SKSpriteNode {
             self.animating = true
         }
 
+    }
+
+    /// Make a copy of the player's sprite body in the map.
+    public func copy() {
+        if self.costume != .flashDrive { return }
+        guard let parent = self.parent else { return }
+        if self.deployedCopy {
+            for child in parent.children where child.name == "playerCopy" {
+                child.removeFromParent()
+            }
+            self.deployedCopy = false
+        } else {
+            let copy = GameHeavyObject(with: "Player (Idle, USB)", at: CGPoint(x: 0, y: 0))
+            copy.position = self.position
+            copy.canBeCarried = false
+            copy.physicsBody = self.physicsBody
+            parent.addChild(copy)
+            self.deployedCopy = true
+        }
     }
 }

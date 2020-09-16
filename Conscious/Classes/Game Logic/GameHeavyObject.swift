@@ -25,6 +25,9 @@ class GameHeavyObject: SKSpriteNode {
         return self.parent is Player
     }
 
+    /// Whether the object can be carried by the player. Defaults to true.
+    public var canBeCarried: Bool = true
+
     /// Initialize a heavy object.
     /// - Parameter texture: The texture name of the heavy object.
     /// - Parameter location: The matrix location of the heavy object.
