@@ -70,6 +70,7 @@
 		BFAD7FF9250FFD8D00768609 /* CostumemasteryInheritable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD7FF8250FFD8D00768609 /* CostumemasteryInheritable.swift */; };
 		BFAD7FFB251006BC00768609 /* Unmonitored.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFAD7FFA251006BC00768609 /* Unmonitored.sks */; };
 		BFB621CA2512CFD4003940CF /* GameStructureBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB621C92512CFD4003940CF /* GameStructureBlock.swift */; };
+		BFB621CC2512DB1B003940CF /* SeededChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB621CB2512DB1B003940CF /* SeededChallenge.swift */; };
 		BFBCA1C62506A883001FFA91 /* Simultaneous.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFBCA1C52506A883001FFA91 /* Simultaneous.sks */; };
 		BFBCA1C82506B0E5001FFA91 /* Swiftly.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFBCA1C72506B0E5001FFA91 /* Swiftly.sks */; };
 		BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBEB33024F80ACE00162B06 /* Preferences.storyboard */; };
@@ -185,6 +186,7 @@
 		BFAD7FFA251006BC00768609 /* Unmonitored.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Unmonitored.sks; sourceTree = "<group>"; };
 		BFAD7FFC25100FF200768609 /* Guides */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Guides; sourceTree = "<group>"; };
 		BFB621C92512CFD4003940CF /* GameStructureBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStructureBlock.swift; sourceTree = "<group>"; };
+		BFB621CB2512DB1B003940CF /* SeededChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeededChallenge.swift; sourceTree = "<group>"; };
 		BFBCA1C52506A883001FFA91 /* Simultaneous.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Simultaneous.sks; sourceTree = "<group>"; };
 		BFBCA1C72506B0E5001FFA91 /* Swiftly.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Swiftly.sks; sourceTree = "<group>"; };
 		BFBEB33024F80ACE00162B06 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				BF735B4B250D5BFA0007844C /* RushedChallenge.swift */,
 				BF1FF2F3250FD4ED0053D1A4 /* CycleChallenge.swift */,
 				BFAD7FF4250FF4CD00768609 /* ExposureChallenge.swift */,
+				BFB621CB2512DB1B003940CF /* SeededChallenge.swift */,
 			);
 			path = Challenges;
 			sourceTree = "<group>";
@@ -787,6 +790,7 @@
 				BFAD134A25028C0F0074DCBA /* GameAlarmClock.swift in Sources */,
 				BF3A0B7F24F6EB4900575F72 /* GameSignalInputMethod.swift in Sources */,
 				BF63E65B24F84BAC00429247 /* GeneralPrefsViewController.swift in Sources */,
+				BFB621CC2512DB1B003940CF /* SeededChallenge.swift in Sources */,
 				BF63E65924F84B2000429247 /* PreferencesViewController.swift in Sources */,
 				BFFF892C24F93FF800D405CC /* PropertyLists.swift in Sources */,
 			);
