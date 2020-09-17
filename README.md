@@ -41,13 +41,19 @@ Details on these milestones can be found on the [Milestones page in this reposit
 
 ### Requirements
 
-- Xcode 11 or higher
-- macOS 10.15 (Catalina) or higher
+- Xcode 12.x* or higher
+- macOS 10.15.6 (Catalina) or higher
 - [KeyboardShortcuts][keys] (added when cloning)
 - (Optional, but recommended) [SwiftLint][linter]
 
 Clone the Xcode project, ensure that dependencies are install with the Swift Package Manager, and then run the `Conscious` scheme to 
 build the project in Xcode.
+
+To make a release version, click on the destination ("My Mac") and select "Any Mac (Apple Silicon, Intel)", then go to **Product &rsaquo;
+Archive**.
+
+<small>*The release version of Xcode 12.0 and the GM seed are not compatible with this project due to the macOS 11 SDK not being
+present.</small>
 
 ### Game Center
 
@@ -58,6 +64,8 @@ sure that you update the build identifier in the project to the app's identifier
 with the IDs listed in [GameAchievements.swift][gcachieve] in the Achievements list of the Game Center section.
 
 ![Game Center](https://github.com/alicerunsonfedora/CS400/raw/root/.readme/gamecenter.png)
+
+To access features like the new access point and leaderboard submission, ensure that Xcode includes at least the macOS 11.0 SDK.
 
 ### About SwiftLint
 
