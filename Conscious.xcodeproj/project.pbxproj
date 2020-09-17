@@ -38,6 +38,7 @@
 		BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8F24F7355200575F72 /* MainMenu.swift */; };
 		BF41E5DF2511714C006527CA /* Seeded.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF41E5DE2511714C006527CA /* Seeded.sks */; };
 		BF4A451F2501B683008BDD5A /* Entry.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF4A451E2501B683008BDD5A /* Entry.sks */; };
+		BF4CD5A92513F96E00C021BC /* Chained.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF4CD5A82513F96E00C021BC /* Chained.sks */; };
 		BF63E65924F84B2000429247 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63E65824F84B2000429247 /* PreferencesViewController.swift */; };
 		BF63E65B24F84BAC00429247 /* GeneralPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63E65A24F84BAC00429247 /* GeneralPrefsViewController.swift */; };
 		BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69F2C224F4B11200BBF518 /* Alerts.swift */; };
@@ -147,6 +148,7 @@
 		BF3A0B8F24F7355200575F72 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		BF41E5DE2511714C006527CA /* Seeded.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Seeded.sks; sourceTree = "<group>"; };
 		BF4A451E2501B683008BDD5A /* Entry.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Entry.sks; sourceTree = "<group>"; };
+		BF4CD5A82513F96E00C021BC /* Chained.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Chained.sks; sourceTree = "<group>"; };
 		BF63E65824F84B2000429247 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		BF63E65A24F84BAC00429247 /* GeneralPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPrefsViewController.swift; sourceTree = "<group>"; };
 		BF69F2C224F4B11200BBF518 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				BFAD7FF2250FEB0700768609 /* Exposure.sks */,
 				BFAD7FFA251006BC00768609 /* Unmonitored.sks */,
 				BF41E5DE2511714C006527CA /* Seeded.sks */,
+				BF4CD5A82513F96E00C021BC /* Chained.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -606,7 +609,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					BF6FBAD224A8BDD400996890 = {
 						CreatedOnToolsVersion = 12.0;
@@ -659,6 +662,7 @@
 				BFD10ED72502CF0400BCDAA9 /* plateOn.wav in Resources */,
 				BF153F9224FC3DF3007B20B4 /* cantUse.wav in Resources */,
 				BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */,
+				BF4CD5A92513F96E00C021BC /* Chained.sks in Resources */,
 				BFDF94E825080C3D004F5BE7 /* Boundary.sks in Resources */,
 				BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */,
 				BFDF94EA25084600004F5BE7 /* Rushed.sks in Resources */,
@@ -931,6 +935,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Conscious/Metadata/Conscious.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
@@ -953,6 +958,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Conscious/Metadata/Conscious.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;

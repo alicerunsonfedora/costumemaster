@@ -15,13 +15,14 @@ import GameKit
 import KeyboardShortcuts
 
 /// The challenge scene for the level "Seeded".
-class SeededChallenge: ChallengeGameScene {
+class SeededChallenge: CostumemasteryInheritable {
 
     /// Whether the player has earned the achievement for this room.
     private var eligible: Bool = false
 
     /// Submit the latest time to the leaderboards.
     override func willCalculateChallengeResults() {
+        super.willCalculateChallengeResults()
         if #available(OSX 11.0, *) {
             GKLeaderboard.submit(to: .seededDaily, with: Int(self.currentTime))
         }
