@@ -369,7 +369,7 @@ public class Player: SKSpriteNode {
     /// - Returns: A cloat value for the alpha of this node.
     private func getAlphaOfCostumeHUD(for value: PlayerCostumeType) -> CGFloat {
         if !self.costumes.contains(value) { return 0.0 }
-        if !(self.costume == value) { return 0.25 }
+        if !(self.costume == value) { return 0.65 }
         return 1.0
     }
 
@@ -482,7 +482,7 @@ public class Player: SKSpriteNode {
             if self.costume != .flashDrive { return }
             let copy = GameHeavyObject(with: "USB Clone", at: CGPoint(x: 0, y: 0))
             copy.name = "playerCopy"
-            copy.position = CGPoint(x: self.position.x - 16, y: self.position.y)
+            copy.position = CGPoint(x: self.position.x - 32, y: self.position.y)
             copy.canBeCarried = false
             parent.addChild(copy)
             parent.interactables.append(copy)
