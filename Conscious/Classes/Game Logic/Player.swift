@@ -18,6 +18,7 @@ import GameKit
 /// The player class is a subclass of SKSpriteNode that contains additional logic for handling player changes such as
 /// costume switching.
 public class Player: SKSpriteNode {
+    // swiftlint:disable:previous type_body_length
 
     // MARK: STORED PROPERTIES
 
@@ -54,6 +55,9 @@ public class Player: SKSpriteNode {
     /// Whether the player is changing costumes.
     var isChangingCostumes: Bool = false
 
+    /// The heads-up display for the player.
+    var hud: SKNode = SKNode()
+
     // MARK: COMPUTED PROPERTIES
 
     /// The SKTexture frames that play when a player is changing costumes.
@@ -88,6 +92,16 @@ public class Player: SKSpriteNode {
         }
     }
 
+    /// Whether the player is carrying an object.
+    public var isCarryingObject: Bool {
+        return !self.children.filter { child in child is GameHeavyObject }.isEmpty
+    }
+
+    /// The list of all available costumes for the player.
+    public var costumes: [PlayerCostumeType] {
+        return [self.costume] + self.costumeQueue
+    }
+
     // MARK: CONSTRUCTOR
 
     /// Initialize the player.
@@ -101,6 +115,7 @@ public class Player: SKSpriteNode {
         self.costume = costumes.remove(at: 0)
         self.costumeQueue = costumes
         self.texture?.filteringMode = .nearest
+        self.createHUD()
     }
 
     /// Initialize the player.
@@ -117,6 +132,7 @@ public class Player: SKSpriteNode {
         self.costumeQueue = costumes
         self.texture = SKTexture(imageNamed: "Player (Idle, \(costume.rawValue))")
         self.texture?.filteringMode = .nearest
+        self.createHUD()
     }
 
     /// Initialize the player.
@@ -129,6 +145,7 @@ public class Player: SKSpriteNode {
         self.texture?.filteringMode = .nearest
         self.zPosition = 10
         self.isHidden = false
+        self.createHUD()
     }
 
     /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.
@@ -300,6 +317,60 @@ public class Player: SKSpriteNode {
                 child.removeFromParent()
             }
         }
+        self.updateHUD()
+    }
+
+    // MARK: HUD
+
+    /// Create the heads-up display.
+    private func createHUD() {
+        let scale = self.size.width / 4
+        let hud = SKNode(); hud.zPosition = 100; hud.name = "HUD"
+
+        let carrying = SKSpriteNode(imageNamed: "hud_object_carry")
+        carrying.position = CGPoint(x: self.position.x - scale, y: self.position.y + scale)
+        carrying.texture?.filteringMode = .nearest
+        carrying.name = "object"
+
+        let usbIndicator = SKSpriteNode(imageNamed: "hud_cost_usb")
+        usbIndicator.position = CGPoint(x: self.position.x + scale, y: self.position.y + scale)
+        usbIndicator.texture?.filteringMode = .nearest
+        usbIndicator.name = "costume_usb"
+        usbIndicator.setScale(0.75)
+
+        let birdIndicator = SKSpriteNode(imageNamed: "hud_cost_bird")
+        birdIndicator.position = CGPoint(x: self.position.x + scale, y: usbIndicator.position.y - 20)
+        birdIndicator.texture?.filteringMode = .nearest
+        birdIndicator.name = "costume_bird"
+        birdIndicator.setScale(0.75)
+
+        let sorceressIndicator = SKSpriteNode(imageNamed: "hud_cost_sorceress")
+        sorceressIndicator.position = CGPoint(x: self.position.x + scale, y: birdIndicator.position.y - 20)
+        sorceressIndicator.texture?.filteringMode = .nearest
+        sorceressIndicator.name = "costume_sorceress"
+        sorceressIndicator.setScale(0.75)
+
+        [carrying, usbIndicator, birdIndicator, sorceressIndicator].forEach { child in hud.addChild(child) }
+
+        self.hud = hud
+        self.addChild(self.hud)
+    }
+
+    /// Update the heads-up display.
+    private func updateHUD() {
+        self.hud.childNode(withName: "object")?.alpha = self.isCarryingObject ? 1.0 : 0.0
+        self.hud.childNode(withName: "costume_usb")?.alpha = self.getAlphaOfCostumeHUD(for: .flashDrive)
+        self.hud.childNode(withName: "costume_bird")?.alpha = self.getAlphaOfCostumeHUD(for: .bird)
+        self.hud.childNode(withName: "costume_sorceress")?.alpha = self.getAlphaOfCostumeHUD(for: .sorceress)
+    }
+
+    /// Get the alpha value for the cosume HUD element.
+    /// - Parameter value: The costume to get the alpha value for.
+    /// - Returns: A cloat value for the alpha of this node.
+    private func getAlphaOfCostumeHUD(for value: PlayerCostumeType) -> CGFloat {
+        if !self.costumes.contains(value) { return 0.0 }
+        if !(self.costume == value) { return 0.25 }
+        return 1.0
     }
 
     // MARK: MOVEMENT METHODS
@@ -329,6 +400,7 @@ public class Player: SKSpriteNode {
         self.removeAllActions()
         self.animating = false
         if self.xScale < 0 { self.xScale *= -1 }
+        if self.hud.xScale < 0 { self.hud.xScale *= -1 }
         self.run(SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(self.costume.rawValue))")))
     }
 
@@ -392,10 +464,10 @@ public class Player: SKSpriteNode {
             self.run(SKAction.repeatForever(action!))
             if direction == .west {
                 self.xScale *= -1
+                self.hud.xScale *= -1
             }
             self.animating = true
         }
-
     }
 
     /// Make a copy of the player's sprite body in the map.
