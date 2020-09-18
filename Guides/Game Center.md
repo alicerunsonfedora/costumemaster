@@ -25,8 +25,8 @@ There is a single hidden achievement that is accessible via an easter egg. These
 On applicable levels, there are daily recurring leaderboards available. When a player completes an advanced level with leaderboard
 support, their scores will be submitted to Game Center automatically.
 
-> Important: Submitting leaderboard scores to Game Center is only supported on macOS Big Sur (11.0) or higher. This is not supported on
-> macOS Mojave (10.14) or macOS Catalina (10.15).
+- Important: Submitting leaderboard scores to Game Center is only supported on macOS Big Sur (11.0) or higher. This is not supported on
+macOS Mojave (10.14) or macOS Catalina (10.15).
 
 ## Accessing Game Center
 
