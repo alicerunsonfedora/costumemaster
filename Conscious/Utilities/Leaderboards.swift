@@ -22,19 +22,20 @@ extension GKLeaderboard {
     /// - Important: This function is only available on Macs running macOS 11.0.
     @available(OSX 11.0, *) static func submit(to leaderboard: String, with score: Int) {
         if !GKLocalPlayer.local.isAuthenticated { return }
-        GKLeaderboard.submitScore(
-            score,
-            context: 0,
-            player: GKLocalPlayer.local,
-            leaderboardIDs: [leaderboard]) { (error) in
-            guard error == nil else {
-                sendAlert(
-                    error.debugDescription,
-                    withTitle: "The score could not be sent to the leaderboard.",
-                    level: .critical) { _ in }
-                return
-            }
-        }
+        // TODO: Re-enable this when macOS 11 SDK is finalized.
+//        GKLeaderboard.submitScore(
+//            score,
+//            context: 0,
+//            player: GKLocalPlayer.local,
+//            leaderboardIDs: [leaderboard]) { (error) in
+//            guard error == nil else {
+//                sendAlert(
+//                    error.debugDescription,
+//                    withTitle: "The score could not be sent to the leaderboard.",
+//                    level: .critical) { _ in }
+//                return
+//            }
+//        }
     }
 
     /// Submit a score to the following leaderboard.

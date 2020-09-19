@@ -51,13 +51,14 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
     /// In macOS 11.0, this will use the native access point and put it in the bottom left. For older versions, a sprite
     /// node will be used to present a game center view.
     func setUpGameCenterProperties() {
-        if #available(OSX 11.0, *) {
-            self.gameCenterButton?.isHidden = true
-            GKAccessPoint.shared.location = .bottomLeading
-            GKAccessPoint.shared.showHighlights = true
-            GKAccessPoint.shared.isActive = true
-            GKAccessPoint.shared.parentWindow = self.view?.window
-        }
+        // TODO: Re-enable this when macOS 11 SDK is finalized.
+//        if #available(OSX 11.0, *) {
+//            self.gameCenterButton?.isHidden = true
+//            GKAccessPoint.shared.location = .bottomLeading
+//            GKAccessPoint.shared.showHighlights = true
+//            GKAccessPoint.shared.isActive = true
+//            GKAccessPoint.shared.parentWindow = self.view?.window
+//        }
     }
 
     /// Set up the Game Center button for the main menu.
@@ -192,7 +193,8 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
     private func startAction() {
         self.startButton?.fontColor = NSColor.init(named: "AccentColor")
         if #available(OSX 11.0, *) {
-             GKAccessPoint.shared.isActive = false
+            // TODO: Re-enable this when macOS 11 SDK is finalized.
+//             GKAccessPoint.shared.isActive = false
         }
         if let firstScene = SKScene(fileNamed: "Intro") {
             self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
@@ -203,7 +205,8 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
     private func resumeAction() {
         self.resumeButton?.fontColor = NSColor.init(named: "AccentColor")
         if #available(OSX 11.0, *) {
-             GKAccessPoint.shared.isActive = false
+            // TODO: Re-enable this when macOS 11 SDK is finalized.
+//             GKAccessPoint.shared.isActive = false
         }
         if let firstScene = SKScene(fileNamed: GameStore.shared.lastSavedScene) {
             self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
