@@ -30,8 +30,8 @@ More information on the objective of this repository can be found in the [design
 
 | Status | Due Date | Milestone |
 | ------ | ----------- | ----------- |
-| 🟡 | September 21, 2020 | Working Game |
-| 🔴 | October 19, 2020 | Adding Apple's agents with GameplayKit |
+| 🟢 | September 21, 2020 | Working Game |
+| 🟡 | October 19, 2020 | Adding Apple's agents with GameplayKit |
 | 🔴 | November 9, 2020 | Adding custom agents and beating Apple |
 | 🔴 | November 16, 2020 | Final presentation and cleanup |
 
