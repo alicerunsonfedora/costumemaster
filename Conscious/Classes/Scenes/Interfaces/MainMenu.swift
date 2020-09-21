@@ -58,6 +58,8 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
 //            GKAccessPoint.shared.showHighlights = true
 //            GKAccessPoint.shared.isActive = true
 //            GKAccessPoint.shared.parentWindow = self.view?.window
+//        } else {
+        self.gameCenterButton?.isHidden = !GKLocalPlayer.local.isAuthenticated
 //        }
     }
 
@@ -187,6 +189,12 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         if let music = self.childNode(withName: "music") as? SKAudioNode {
             music.run(SKAction.changeVolume(to: AppDelegate.preferences.musicVolume, duration: 0.01))
         }
+
+//        if #available(OSX 11.0, *) {
+//            self.gameCenterButton?.isHidden = true
+//        } else {
+            self.gameCenterButton?.isHidden = !GKLocalPlayer.local.isAuthenticated
+//        }
     }
 
     /// Start the game by presenting the first level scene.
