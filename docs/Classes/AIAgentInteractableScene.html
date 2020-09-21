@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CycleChallenge Class Reference</title>
+    <title>AIAgentInteractableScene Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,8 +11,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/CycleChallenge" class="dashAnchor"></a>
-    <a title="CycleChallenge Class Reference"></a>
+    <a name="//apple_ref/swift/Class/AIAgentInteractableScene" class="dashAnchor"></a>
+    <a title="AIAgentInteractableScene Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -36,7 +36,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          CycleChallenge Class Reference
+          AIAgentInteractableScene Class Reference
         </p>
       </div>
     </div>
@@ -45,26 +45,38 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>CycleChallenge</h1>
+              <h1>AIAgentInteractableScene</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CycleChallenge</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ChallengeGameScene.html">ChallengeGameScene</a></span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIAgentInteractableScene</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ChallengeGameScene.html">ChallengeGameScene</a></span></code></pre>
 
                   </div>
                 </div>
-              <p>The game scene specific to the level &ldquo;Cycle&rdquo;.</p>
+              <p>The agent&rsquo;s version of the game world.</p>
+
+<p>This class is designed to make AI interactions easier, as well as make the scene assessable
+so that an AI agent can play it.</p>
 
             </section>
             <section class="section task-group-section">
               <div class="task-group">
+                <div class="task-name-container">
+                  <a name="/METHODS"></a>
+                  <a name="//apple_ref/swift/Section/METHODS" class="dashAnchor"></a>
+                  <div class="section-name-container">
+                    <a class="section-name-link" href="#/METHODS"></a>
+                    <h3 class="section-name"><p>METHODS</p>
+</h3>
+                  </div>
+                </div>
                 <ul>
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster14CycleChallengeC013willCalculateD7ResultsyyF"></a>
-                      <a name="//apple_ref/swift/Method/willCalculateChallengeResults()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster14CycleChallengeC013willCalculateD7ResultsyyF">willCalculateChallengeResults()</a>
+                      <a name="/s:17The_Costumemaster24AIAgentInteractableSceneC11assessStateSiyF"></a>
+                      <a name="//apple_ref/swift/Method/assessState()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster24AIAgentInteractableSceneC11assessStateSiyF">assessState()</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -72,16 +84,26 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Submit the current time to the dailly leaderboards if running on macOS Big Sur.</p>
+                          <p>Assess the current game scene state and translate it to a score.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    This method must be implemented on subclasses. By default, this method
+will return a default state assessement of zero.
+
+</div>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">willCalculateChallengeResults</span><span class="p">()</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">assessState</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>A score based on the game scene&rsquo;s state.</p>
                         </div>
                       </section>
                     </div>

@@ -73,6 +73,7 @@
 		BFAD7FF5250FF4CD00768609 /* ExposureChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD7FF4250FF4CD00768609 /* ExposureChallenge.swift */; };
 		BFAD7FF9250FFD8D00768609 /* CostumemasteryInheritable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD7FF8250FFD8D00768609 /* CostumemasteryInheritable.swift */; };
 		BFAD7FFB251006BC00768609 /* Unmonitored.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFAD7FFA251006BC00768609 /* Unmonitored.sks */; };
+		BFB0CE142518FBEC0015FE6C /* AIAgentInteractableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB0CE132518FBEB0015FE6C /* AIAgentInteractableScene.swift */; };
 		BFB621CA2512CFD4003940CF /* GameStructureBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB621C92512CFD4003940CF /* GameStructureBlock.swift */; };
 		BFB621CC2512DB1B003940CF /* SeededChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB621CB2512DB1B003940CF /* SeededChallenge.swift */; };
 		BFBCA1C62506A883001FFA91 /* Simultaneous.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFBCA1C52506A883001FFA91 /* Simultaneous.sks */; };
@@ -193,6 +194,7 @@
 		BFAD7FF8250FFD8D00768609 /* CostumemasteryInheritable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumemasteryInheritable.swift; sourceTree = "<group>"; };
 		BFAD7FFA251006BC00768609 /* Unmonitored.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Unmonitored.sks; sourceTree = "<group>"; };
 		BFAD7FFC25100FF200768609 /* Guides */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Guides; sourceTree = "<group>"; };
+		BFB0CE132518FBEB0015FE6C /* AIAgentInteractableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAgentInteractableScene.swift; sourceTree = "<group>"; };
 		BFB621C92512CFD4003940CF /* GameStructureBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStructureBlock.swift; sourceTree = "<group>"; };
 		BFB621CB2512DB1B003940CF /* SeededChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeededChallenge.swift; sourceTree = "<group>"; };
 		BFBCA1C52506A883001FFA91 /* Simultaneous.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Simultaneous.sks; sourceTree = "<group>"; };
@@ -479,11 +481,20 @@
 		BF7DFDCD24F41E48008D09AA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BFB0CE122518FBCF0015FE6C /* Agents */,
 				BFC78F3A24F48715004E85A9 /* App */,
 				BFC78F3B24F48726004E85A9 /* Game Logic */,
 				BF3A0B9124F743CD00575F72 /* Scenes */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		BFB0CE122518FBCF0015FE6C /* Agents */ = {
+			isa = PBXGroup;
+			children = (
+				BFB0CE132518FBEB0015FE6C /* AIAgentInteractableScene.swift */,
+			);
+			path = Agents;
 			sourceTree = "<group>";
 		};
 		BFBEB32F24F80AB200162B06 /* Storyboards */ = {
@@ -802,6 +813,7 @@
 				BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */,
 				BF735B4C250D5BFA0007844C /* RushedChallenge.swift in Sources */,
 				BFE0AE9D250C2A33003C6780 /* GameLeaderboards.swift in Sources */,
+				BFB0CE142518FBEC0015FE6C /* AIAgentInteractableScene.swift in Sources */,
 				BFD8797924F5FDA800552EDD /* CGVector.swift in Sources */,
 				BFAD134A25028C0F0074DCBA /* GameAlarmClock.swift in Sources */,
 				BF3A0B7F24F6EB4900575F72 /* GameSignalInputMethod.swift in Sources */,
