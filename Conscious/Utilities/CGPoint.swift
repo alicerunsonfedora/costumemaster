@@ -10,6 +10,7 @@
 //
 
 import Foundation
+import Cocoa
 
 extension CGPoint {
     /// Find the distance between two points.

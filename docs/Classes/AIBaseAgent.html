@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AIAgentInteractableScene Class Reference</title>
+    <title>AIBaseAgent Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,8 +11,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/AIAgentInteractableScene" class="dashAnchor"></a>
-    <a title="AIAgentInteractableScene Class Reference"></a>
+    <a name="//apple_ref/swift/Class/AIBaseAgent" class="dashAnchor"></a>
+    <a title="AIBaseAgent Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -36,7 +36,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          AIAgentInteractableScene Class Reference
+          AIBaseAgent Class Reference
         </p>
       </div>
     </div>
@@ -45,18 +45,15 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>AIAgentInteractableScene</h1>
+              <h1>AIBaseAgent</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIAgentInteractableScene</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ChallengeGameScene.html">ChallengeGameScene</a></span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIBaseAgent</span></code></pre>
 
                   </div>
                 </div>
-              <p>The agent&rsquo;s version of the game world.</p>
-
-<p>This class is designed to make AI interactions easier, as well as make the scene assessable
-so that an AI agent can play it.</p>
+              <p>The base class for an agent.</p>
 
             </section>
             <section class="section task-group-section">
@@ -65,9 +62,9 @@ so that an AI agent can play it.</p>
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster24AIAgentInteractableSceneC5agentAA11AIBaseAgentCSgvp"></a>
-                      <a name="//apple_ref/swift/Property/agent" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster24AIAgentInteractableSceneC5agentAA11AIBaseAgentCSgvp">agent</a>
+                      <a name="/s:17The_Costumemaster11AIBaseAgentC6playerAA6PlayerCvp"></a>
+                      <a name="//apple_ref/swift/Property/player" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIBaseAgentC6playerAA6PlayerCvp">player</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -75,54 +72,14 @@ so that an AI agent can play it.</p>
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>The player node that the agent controls.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">agent</span><span class="p">:</span> <span class="kt"><a href="../Classes/AIBaseAgent.html">AIBaseAgent</a></span><span class="p">?</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="task-group">
-                <div class="task-name-container">
-                  <a name="/METHODS"></a>
-                  <a name="//apple_ref/swift/Section/METHODS" class="dashAnchor"></a>
-                  <div class="section-name-container">
-                    <a class="section-name-link" href="#/METHODS"></a>
-                    <h3 class="section-name"><p>METHODS</p>
-</h3>
-                  </div>
-                </div>
-                <ul>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)AIAgentInteractableScene(im)sceneDidLoad"></a>
-                      <a name="//apple_ref/swift/Method/sceneDidLoad()" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIAgentInteractableScene(im)sceneDidLoad">sceneDidLoad()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Initialize the scene and agent.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">sceneDidLoad</span><span class="p">()</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/Player.html">Player</a></span></code></pre>
 
                           </div>
                         </div>
@@ -132,9 +89,9 @@ so that an AI agent can play it.</p>
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)AIAgentInteractableScene(im)update:"></a>
-                      <a name="//apple_ref/swift/Method/update(_:)" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIAgentInteractableScene(im)update:">update(_:<wbr>)</a>
+                      <a name="/s:17The_Costumemaster11AIBaseAgentC8watchingAcA6PlayerC_tcfc"></a>
+                      <a name="//apple_ref/swift/Method/init(watching:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIBaseAgentC8watchingAcA6PlayerC_tcfc">init(watching:<wbr>)</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -142,53 +99,143 @@ so that an AI agent can play it.</p>
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Update the state and perform an action.</p>
+                          <p>Initialize an agent.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="n">_</span> <span class="nv">currentTime</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster24AIAgentInteractableSceneC11assessStateSiyF"></a>
-                      <a name="//apple_ref/swift/Method/assessState()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster24AIAgentInteractableSceneC11assessStateSiyF">assessState()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Assess the current game scene state and translate it to a score.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    This method must be implemented on subclasses. By default, this method
-will return a default state assessement of zero.
-
-</div>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">assessState</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+                            <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">watching</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/Player.html">Player</a></span><span class="p">)</span></code></pre>
 
                           </div>
                         </div>
                         <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>player</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The player to let the agent control.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster11AIBaseAgentC4move_13withRespectToyAA19PlayerMoveDirectionO_So6CGSizeVtF"></a>
+                      <a name="//apple_ref/swift/Method/move(_:withRespectTo:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIBaseAgentC4move_13withRespectToyAA19PlayerMoveDirectionO_So6CGSizeVtF">move(_:<wbr>withRespectTo:<wbr>)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Move in a direction with respect to a unit size.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">move</span><span class="p">(</span><span class="n">_</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt"><a href="../Enums/PlayerMoveDirection.html">PlayerMoveDirection</a></span><span class="p">,</span> <span class="n">withRespectTo</span> <span class="nv">unit</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>direction</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The direction for the player node to move in.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>unit</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The unit size to move according to.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster11AIBaseAgentC13makeActionSet3forSaySo8SKActionCGyyc_tF"></a>
+                      <a name="//apple_ref/swift/Method/makeActionSet(for:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIBaseAgentC13makeActionSet3forSaySo8SKActionCGyyc_tF">makeActionSet(for:<wbr>)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Create an action set.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">makeActionSet</span><span class="p">(</span><span class="k">for</span> <span class="nv">action</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">SKAction</span><span class="p">]</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>action</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The action that the agent will perform.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
                           <h4>Return Value</h4>
-                          <p>A score based on the game scene&rsquo;s state.</p>
+                          <p>The action set that the agent will perform.</p>
                         </div>
                       </section>
                     </div>
@@ -196,9 +243,9 @@ will return a default state assessement of zero.
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)AIAgentInteractableScene(im)keyDown:"></a>
-                      <a name="//apple_ref/swift/Method/keyDown(with:)" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIAgentInteractableScene(im)keyDown:">keyDown(with:<wbr>)</a>
+                      <a name="/s:17The_Costumemaster11AIBaseAgentC3run6actionySaySo8SKActionCGSg_tF"></a>
+                      <a name="//apple_ref/swift/Method/run(action:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIBaseAgentC3run6actionySaySo8SKActionCGSg_tF">run(action:<wbr>)</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -206,45 +253,35 @@ will return a default state assessement of zero.
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Disable the keyboard input to this scene, preventing a human player from interacting
-with the scene.</p>
+                          <p>Run an action.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">keyDown</span><span class="p">(</span><span class="n">with</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">NSEvent</span><span class="p">)</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">run</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">[</span><span class="kt">SKAction</span><span class="p">]?)</span></code></pre>
 
                           </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)AIAgentInteractableScene(im)keyUp:"></a>
-                      <a name="//apple_ref/swift/Method/keyUp(with:)" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIAgentInteractableScene(im)keyUp:">keyUp(with:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Disable the keyboard input to this scene, preventing a human player from interacting
-with the scene.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">keyUp</span><span class="p">(</span><span class="n">with</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">NSEvent</span><span class="p">)</span></code></pre>
-
-                          </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>action</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The action to perform.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </section>
                     </div>

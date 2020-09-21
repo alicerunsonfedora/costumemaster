@@ -83,12 +83,9 @@ public class Player: SKSpriteNode {
     /// The player's mass, accounting for the costume.
     private var mass: CGFloat {
         switch self.costume {
-        case .default, .sorceress:
-            return 9.05
-        case .bird:
-            return 8.95
-        case .flashDrive:
-            return 18.1
+        case .default, .sorceress: return 9.05
+        case .bird: return 8.95
+        case .flashDrive: return 18.1
         }
     }
 
@@ -141,7 +138,7 @@ public class Player: SKSpriteNode {
     /// - Parameter size: The size of the sprite.
     override init(texture: SKTexture?, color: NSColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
-        self.instantiatePhysicsBody(fromTexture: texture!)
+        self.instantiatePhysicsBody(fromTexture: texture ?? SKTexture(imageNamed: "Player (Idle, Default)"))
         self.texture?.filteringMode = .nearest
         self.zPosition = 10
         self.isHidden = false
@@ -287,8 +284,6 @@ public class Player: SKSpriteNode {
     /// Check the current  ostume increments and determine whether to grant an achievement.
     private func checkAchievementStatus() {
         switch self.costume {
-        case .flashDrive:
-            break
         case .bird:
             switch GameStore.shared.costumeIncrementBird {
             case 1:
@@ -301,12 +296,10 @@ public class Player: SKSpriteNode {
             default:
                 break
             }
-        case .sorceress:
-            if GameStore.shared.costumeIncrementSorceress == 1 {
-                GKAchievement.earn(with: .newSorceress)
-            }
-        case .default:
-            GKAchievement.earn(with: .endReveal)
+        case .sorceress where GameStore.shared.costumeIncrementSorceress == 1:
+            GKAchievement.earn(with: .newSorceress)
+        default:
+            break
         }
     }
 

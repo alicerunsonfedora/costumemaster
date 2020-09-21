@@ -18,6 +18,8 @@ import SpriteKit
 /// so that an AI agent can play it.
 class AIAgentInteractableScene: ChallengeGameScene {
 
+    var agent: AIBaseAgent?
+
     // MARK: COMPUTED PROPERTIES
 
     /// Whether the exit door is active.
@@ -40,6 +42,17 @@ class AIAgentInteractableScene: ChallengeGameScene {
     }
 
     // MARK: METHODS
+
+    /// Initialize the scene and agent.
+    override func sceneDidLoad() {
+        super.sceneDidLoad()
+        self.agent = AIBaseAgent(watching: self.playerNode!)
+    }
+
+    /// Update the state and perform an action.
+    override func update(_ currentTime: TimeInterval) {
+        super.update(currentTime)
+    }
 
     /// Assess the current game scene state and translate it to a score.
     /// - Important: This method must be implemented on subclasses. By default, this method

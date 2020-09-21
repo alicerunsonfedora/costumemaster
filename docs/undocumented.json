@@ -1,6 +1,12 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIAgentInteractableScene.swift",
+      "line": 21,
+      "symbol": "AIAgentInteractableScene.agent",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/marquiskurt/Developer/CS400"
 }

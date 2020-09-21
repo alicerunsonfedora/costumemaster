@@ -32,7 +32,7 @@
 		BF3A0B7F24F6EB4900575F72 /* GameSignalInputMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */; };
 		BF3A0B8124F703F400575F72 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8024F703F400575F72 /* MainMenu.sks */; };
 		BF3A0B8424F7046900575F72 /* DoorReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8324F7046900575F72 /* DoorReceiver.swift */; };
-		BF3A0B8624F70B8900575F72 /* GameSceneUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8524F70B8900575F72 /* GameSceneUtils.swift */; };
+		BF3A0B8624F70B8900575F72 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8524F70B8900575F72 /* CGPoint.swift */; };
 		BF3A0B8A24F733C400575F72 /* Cabin-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8924F733C400575F72 /* Cabin-Regular.ttf */; };
 		BF3A0B8C24F733F300575F72 /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8B24F733EE00575F72 /* DancingScript-VariableFont_wght.ttf */; };
 		BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8F24F7355200575F72 /* MainMenu.swift */; };
@@ -74,6 +74,7 @@
 		BFAD7FF9250FFD8D00768609 /* CostumemasteryInheritable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD7FF8250FFD8D00768609 /* CostumemasteryInheritable.swift */; };
 		BFAD7FFB251006BC00768609 /* Unmonitored.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFAD7FFA251006BC00768609 /* Unmonitored.sks */; };
 		BFB0CE142518FBEC0015FE6C /* AIAgentInteractableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB0CE132518FBEB0015FE6C /* AIAgentInteractableScene.swift */; };
+		BFB0CE18251914BB0015FE6C /* EntryAI.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFB0CE17251914BB0015FE6C /* EntryAI.sks */; };
 		BFB621CA2512CFD4003940CF /* GameStructureBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB621C92512CFD4003940CF /* GameStructureBlock.swift */; };
 		BFB621CC2512DB1B003940CF /* SeededChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB621CB2512DB1B003940CF /* SeededChallenge.swift */; };
 		BFBCA1C62506A883001FFA91 /* Simultaneous.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFBCA1C52506A883001FFA91 /* Simultaneous.sks */; };
@@ -81,6 +82,7 @@
 		BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBEB33024F80ACE00162B06 /* Preferences.storyboard */; };
 		BFBEB33324F8439900162B06 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33224F8439900162B06 /* Preferences.swift */; };
 		BFBEB33524F847F600162B06 /* AdvancedPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */; };
+		BFC6F052251922EE00C39D25 /* AIBaseAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6F051251922EE00C39D25 /* AIBaseAgent.swift */; };
 		BFC78F3924F486EF004E85A9 /* PlayerCostumeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */; };
 		BFC78F3D24F48731004E85A9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC78F3C24F48731004E85A9 /* Player.swift */; };
 		BFC9239F250BC88C0002009B /* SoundPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9239E250BC88C0002009B /* SoundPrefsViewController.swift */; };
@@ -146,7 +148,7 @@
 		BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalInputMethod.swift; sourceTree = "<group>"; };
 		BF3A0B8024F703F400575F72 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
 		BF3A0B8324F7046900575F72 /* DoorReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorReceiver.swift; sourceTree = "<group>"; };
-		BF3A0B8524F70B8900575F72 /* GameSceneUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneUtils.swift; sourceTree = "<group>"; };
+		BF3A0B8524F70B8900575F72 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		BF3A0B8924F733C400575F72 /* Cabin-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Regular.ttf"; sourceTree = "<group>"; };
 		BF3A0B8B24F733EE00575F72 /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		BF3A0B8F24F7355200575F72 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		BFAD7FFA251006BC00768609 /* Unmonitored.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Unmonitored.sks; sourceTree = "<group>"; };
 		BFAD7FFC25100FF200768609 /* Guides */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Guides; sourceTree = "<group>"; };
 		BFB0CE132518FBEB0015FE6C /* AIAgentInteractableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAgentInteractableScene.swift; sourceTree = "<group>"; };
+		BFB0CE17251914BB0015FE6C /* EntryAI.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EntryAI.sks; sourceTree = "<group>"; };
 		BFB621C92512CFD4003940CF /* GameStructureBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStructureBlock.swift; sourceTree = "<group>"; };
 		BFB621CB2512DB1B003940CF /* SeededChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeededChallenge.swift; sourceTree = "<group>"; };
 		BFBCA1C52506A883001FFA91 /* Simultaneous.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Simultaneous.sks; sourceTree = "<group>"; };
@@ -202,6 +205,7 @@
 		BFBEB33024F80ACE00162B06 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		BFBEB33224F8439900162B06 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		BFBEB33424F847F600162B06 /* AdvancedPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPrefsViewController.swift; sourceTree = "<group>"; };
+		BFC6F051251922EE00C39D25 /* AIBaseAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIBaseAgent.swift; sourceTree = "<group>"; };
 		BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCostumeType.swift; sourceTree = "<group>"; };
 		BFC78F3C24F48731004E85A9 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		BFC9239E250BC88C0002009B /* SoundPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPrefsViewController.swift; sourceTree = "<group>"; };
@@ -367,6 +371,7 @@
 		BF4A451D2501B575008BDD5A /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				BFB0CE17251914BB0015FE6C /* EntryAI.sks */,
 				BF4A451E2501B683008BDD5A /* Entry.sks */,
 				BF8C30F1250304B700A29425 /* Hacker.sks */,
 				BFBCA1C52506A883001FFA91 /* Simultaneous.sks */,
@@ -390,7 +395,7 @@
 				BFD8795D24F5B60900552EDD /* GameSetup.swift */,
 				BFD8796424F5C68700552EDD /* Animations.swift */,
 				BFD8797824F5FDA800552EDD /* CGVector.swift */,
-				BF3A0B8524F70B8900575F72 /* GameSceneUtils.swift */,
+				BF3A0B8524F70B8900575F72 /* CGPoint.swift */,
 				BFFF892B24F93FF800D405CC /* PropertyLists.swift */,
 				BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */,
 				BF109CDC24FB31F400F06E47 /* Achievements.swift */,
@@ -493,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				BFB0CE132518FBEB0015FE6C /* AIAgentInteractableScene.swift */,
+				BFC6F051251922EE00C39D25 /* AIBaseAgent.swift */,
 			);
 			path = Agents;
 			sourceTree = "<group>";
@@ -682,6 +688,7 @@
 				BF4CD5B12514110800C021BC /* End.sks in Resources */,
 				BFD10ED72502CF0400BCDAA9 /* plateOn.wav in Resources */,
 				BF153F9224FC3DF3007B20B4 /* cantUse.wav in Resources */,
+				BFB0CE18251914BB0015FE6C /* EntryAI.sks in Resources */,
 				BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */,
 				BF4CD5A92513F96E00C021BC /* Chained.sks in Resources */,
 				BFDF94E825080C3D004F5BE7 /* Boundary.sks in Resources */,
@@ -777,6 +784,7 @@
 				BF6FBADD24A8BDD400996890 /* GameScene.swift in Sources */,
 				BFE6475624F88B1300230F93 /* SwitchRequisite.swift in Sources */,
 				BFBEB33524F847F600162B06 /* AdvancedPrefsViewController.swift in Sources */,
+				BFC6F052251922EE00C39D25 /* AIBaseAgent.swift in Sources */,
 				BF7C5EEE250AA30B0062B1CC /* ChallengeGameScene.swift in Sources */,
 				BFC78F3D24F48731004E85A9 /* Player.swift in Sources */,
 				BF1A59422500155A000929CF /* TilemapParseData.swift in Sources */,
@@ -798,7 +806,7 @@
 				BF109CDB24FB26FB00F06E47 /* Store.swift in Sources */,
 				BF2B5E4725016CFB001EC2E7 /* CommandLineArguments.swift in Sources */,
 				BF3A0B7C24F6CB9900575F72 /* GameSignalMethod.swift in Sources */,
-				BF3A0B8624F70B8900575F72 /* GameSceneUtils.swift in Sources */,
+				BF3A0B8624F70B8900575F72 /* CGPoint.swift in Sources */,
 				BF109CDD24FB31F400F06E47 /* Achievements.swift in Sources */,
 				BF3A0B8424F7046900575F72 /* DoorReceiver.swift in Sources */,
 				BFD8795E24F5B60900552EDD /* GameSetup.swift in Sources */,
