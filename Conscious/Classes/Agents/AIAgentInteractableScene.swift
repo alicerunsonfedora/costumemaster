@@ -49,4 +49,15 @@ class AIAgentInteractableScene: ChallengeGameScene {
         return 0
     }
 
+    /// Disable the keyboard input to this scene, preventing a human player from interacting
+    /// with the scene.
+    override func keyDown(with event: NSEvent) {
+        print("AIAgentInteractableScene does not support keyboard events.")
+    }
+
+    /// Disable the keyboard input to this scene, preventing a human player from interacting
+    /// with the scene.
+    override func keyUp(with event: NSEvent) {
+        print("AIAgentInteractableScene does not support keyboard events.")
+    }
 }
