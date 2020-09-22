@@ -10,6 +10,13 @@ An acclaimed costume designer and software engineer wakes up from a blackout to 
 quite... right.... Traverse through a dream-like, constantly changing bedroom and office and get out as quickly as you can. Can you
 make it out and figure out what's going on?
 
+<div>
+<a href="https://apps.apple.com/us/app/the-costumemaster/id1529632296">
+<img height="64" src="https://github.com/alicerunsonfedora/CS400/raw/root/.readme/macappstore.svg" alt="Get it on the Mac App Store"/>
+</a>
+</div>
+
+
 ## Features
 
 - 🕹 **Works with Game Center**: Challenge your friends and earn achievements!
