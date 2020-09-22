@@ -1,0 +1,85 @@
+title: "The Costumemaster"
+author: "Marquis Kurt"
+author_url: "https://marquiskurt.net"
+github_url: "https://github.com/alicerunsonfedora/CS400"
+theme: jony
+
+min_acl: internal
+build_tool_arguments: ["-workspace", "Conscious.xcodeproj/project.xcworkspace", "-scheme" ,"Conscious"]
+documentation: "Guides/*.md"
+
+exclude:
+  - "/*/Classes/App/*"
+
+custom_categories:
+  - name: Information Center
+    children:
+    - Project Proposal
+    - Privacy Policy
+    
+  - name: Game Data
+    children:
+    - CommandLineArguments
+    - GameStore
+    - Preferences
+
+  - name: Game Levels
+    children:
+    - Creating a Level
+    - GameScene
+    - LevelDataConfiguration
+    
+  - name: Interface Scenes
+    children:
+    - AboutScene
+    - EndGameScene
+    - IntroScene
+    - MainMenuScene
+    - PauseScene
+    
+  - name: Inputs
+    children:
+    - GameSignalSender
+    - GameSignalKind
+    - GameSignalInputMethod
+    - GameSignalMethod
+    - GameAchievementTrigger
+    - GameAlarmClock
+    - GameComputer
+    - GameLever
+    - GamePressurePlate
+    
+  - name: Outputs
+    children:
+    - GameSignalReceivable
+    - SwitchRequisite
+    - DoorReceiver
+    
+  - name: Interactables
+    children:
+    - GameHeavyObject
+    - Player
+    
+  - name: AI Agents
+    children:
+    - AIAgentInteractableScene
+    - AIBaseAgent
+    - AIGameState
+    
+  - name: Challenges
+    children:
+    - ChallengeGameScene
+    - CostumemasteryInheritable
+    - CycleChallenge
+    - DivergentChallenge
+    - ExposureChallenge
+    - RushedChallenge
+    - SeededChallenge
+
+  - name: Game Center
+    children:
+    - Game Center
+    - GameAchievement
+    - GameLeaderboard
+    - GKAchievement
+    - GKLeaderboard

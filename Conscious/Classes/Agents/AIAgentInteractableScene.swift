@@ -18,6 +18,7 @@ import SpriteKit
 /// so that an AI agent can play it.
 class AIAgentInteractableScene: ChallengeGameScene {
 
+    /// The agent that will control the player node.
     var agent: AIBaseAgent?
 
     // MARK: COMPUTED PROPERTIES
@@ -27,18 +28,14 @@ class AIAgentInteractableScene: ChallengeGameScene {
         return self.exitNode?.active ?? false
     }
 
-    /// The number of inputs that are active and link up to the exit.
-    private var activeExitInputs: Int {
-        return self.switches.filter { (inp: GameSignalSender) in
-            inp.receivers.contains(where: { rec in rec == self }) && inp.active
-        }.count
+    /// The active inputs that link to the exit.
+    private var activeExitInputs: [GameSignalSender] {
+        return self.exitNode?.inputs.filter { input in input.active } ?? []
     }
 
-    /// The number of inputs that are inactive and link up to the exit.
-    private var inactiveExitInputs: Int {
-        return self.switches.filter { (inp: GameSignalSender) in
-            inp.receivers.contains(where: { rec in rec == self }) && !inp.active
-        }.count
+    /// The inactive inputs that link to the exit.
+    private var inactiveExitInputs: [GameSignalSender] {
+        return self.exitNode?.inputs.filter { input in !input.active } ?? []
     }
 
     // MARK: METHODS
@@ -46,7 +43,8 @@ class AIAgentInteractableScene: ChallengeGameScene {
     /// Initialize the scene and agent.
     override func sceneDidLoad() {
         super.sceneDidLoad()
-        self.agent = AIBaseAgent(watching: self.playerNode!)
+        guard let player = self.playerNode else { return }
+        self.agent = AIBaseAgent(watching: player)
     }
 
     /// Update the state and perform an action.
@@ -54,12 +52,14 @@ class AIAgentInteractableScene: ChallengeGameScene {
         super.update(currentTime)
     }
 
-    /// Assess the current game scene state and translate it to a score.
-    /// - Important: This method must be implemented on subclasses. By default, this method
-    /// will return a default state assessement of zero.
-    /// - Returns: A score based on the game scene's state.
-    func assessState() -> Int {
-        return 0
+    /// Capture the current game scene as a state that an agent can interpret.
+    /// - Returns: An agent game state.
+    func capturedState() -> AIGameState {
+        return AIGameState(
+            at: self.currentTime,
+            on: self.exitActive,
+            with: (self.activeExitInputs, self.inactiveExitInputs)
+        )
     }
 
     /// Disable the keyboard input to this scene, preventing a human player from interacting

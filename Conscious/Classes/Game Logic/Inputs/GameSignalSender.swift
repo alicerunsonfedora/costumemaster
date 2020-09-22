@@ -45,6 +45,11 @@ public class GameSignalSender: GameStructureObject {
         return SKTexture(imageNamed: self.baseTexture + (self.active ? "_on" : "_off"))
     }
 
+    /// The description for this class.
+    public override var description: String {
+        return "\(self.className)(active: \(self.active), outputs: \(self.receivers), position: \(self.levelPosition))"
+    }
+
     // MARK: CONSTRUCTOR
     /// Initialize the input.
     /// - Parameter textureName: The name of the texture for this input.

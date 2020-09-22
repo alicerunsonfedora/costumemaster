@@ -106,6 +106,7 @@
 		BFD8797924F5FDA800552EDD /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8797824F5FDA800552EDD /* CGVector.swift */; };
 		BFDBE7AE24F955EE00FD75BF /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDBE7AD24F955EE00FD75BF /* GameKit.framework */; };
 		BFDC7B3B25096B1E00ED4DB9 /* alarmTick.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFDC7B3A25096B1E00ED4DB9 /* alarmTick.wav */; };
+		BFDEC1C2251977F3000EBE2C /* AIGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDEC1C1251977F3000EBE2C /* AIGameState.swift */; };
 		BFDF94E62507FE42004F5BE7 /* GameAchievementTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF94E52507FE42004F5BE7 /* GameAchievementTrigger.swift */; };
 		BFDF94E825080C3D004F5BE7 /* Boundary.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFDF94E725080C3D004F5BE7 /* Boundary.sks */; };
 		BFDF94EA25084600004F5BE7 /* Rushed.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFDF94E925084600004F5BE7 /* Rushed.sks */; };
@@ -229,6 +230,7 @@
 		BFD8797824F5FDA800552EDD /* CGVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGVector.swift; sourceTree = "<group>"; };
 		BFDBE7AD24F955EE00FD75BF /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		BFDC7B3A25096B1E00ED4DB9 /* alarmTick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmTick.wav; sourceTree = "<group>"; };
+		BFDEC1C1251977F3000EBE2C /* AIGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIGameState.swift; sourceTree = "<group>"; };
 		BFDF94E52507FE42004F5BE7 /* GameAchievementTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAchievementTrigger.swift; sourceTree = "<group>"; };
 		BFDF94E725080C3D004F5BE7 /* Boundary.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Boundary.sks; sourceTree = "<group>"; };
 		BFDF94E925084600004F5BE7 /* Rushed.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rushed.sks; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				BF109CDA24FB26FB00F06E47 /* Store.swift */,
 				BF1A59412500155A000929CF /* TilemapParseData.swift */,
 				BF2B5E4625016CFB001EC2E7 /* CommandLineArguments.swift */,
+				BFDEC1C1251977F3000EBE2C /* AIGameState.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -799,6 +802,7 @@
 				BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */,
 				BFE0AE9F250C2B30003C6780 /* Leaderboards.swift in Sources */,
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
+				BFDEC1C2251977F3000EBE2C /* AIGameState.swift in Sources */,
 				BF7C5EFB250ACE530062B1CC /* AboutScene.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
 				BF8C30F02502E0BD00A29425 /* GameHeavyObject.swift in Sources */,
