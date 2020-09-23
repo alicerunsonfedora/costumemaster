@@ -88,6 +88,7 @@
 		BFC9239F250BC88C0002009B /* SoundPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9239E250BC88C0002009B /* SoundPrefsViewController.swift */; };
 		BFD10ED72502CF0400BCDAA9 /* plateOn.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFD10ED52502CF0400BCDAA9 /* plateOn.wav */; };
 		BFD10ED82502CF0400BCDAA9 /* plateOff.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFD10ED62502CF0400BCDAA9 /* plateOff.wav */; };
+		BFD717CA251BDD88003425D9 /* AIGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD717C9251BDD88003425D9 /* AIGameState.swift */; };
 		BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */; };
 		BFD8795624F5A2FF00552EDD /* Player_Forward_USB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */; };
 		BFD8795724F5A2FF00552EDD /* Player_Forward_Default.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */; };
@@ -106,7 +107,6 @@
 		BFD8797924F5FDA800552EDD /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8797824F5FDA800552EDD /* CGVector.swift */; };
 		BFDBE7AE24F955EE00FD75BF /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDBE7AD24F955EE00FD75BF /* GameKit.framework */; };
 		BFDC7B3B25096B1E00ED4DB9 /* alarmTick.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFDC7B3A25096B1E00ED4DB9 /* alarmTick.wav */; };
-		BFDEC1C2251977F3000EBE2C /* AIGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDEC1C1251977F3000EBE2C /* AIGameState.swift */; };
 		BFDF94E62507FE42004F5BE7 /* GameAchievementTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF94E52507FE42004F5BE7 /* GameAchievementTrigger.swift */; };
 		BFDF94E825080C3D004F5BE7 /* Boundary.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFDF94E725080C3D004F5BE7 /* Boundary.sks */; };
 		BFDF94EA25084600004F5BE7 /* Rushed.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFDF94E925084600004F5BE7 /* Rushed.sks */; };
@@ -212,6 +212,7 @@
 		BFC9239E250BC88C0002009B /* SoundPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPrefsViewController.swift; sourceTree = "<group>"; };
 		BFD10ED52502CF0400BCDAA9 /* plateOn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plateOn.wav; sourceTree = "<group>"; };
 		BFD10ED62502CF0400BCDAA9 /* plateOff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plateOff.wav; sourceTree = "<group>"; };
+		BFD717C9251BDD88003425D9 /* AIGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIGameState.swift; sourceTree = "<group>"; };
 		BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Bird.atlas; sourceTree = "<group>"; };
 		BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_USB.atlas; sourceTree = "<group>"; };
 		BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Default.atlas; sourceTree = "<group>"; };
@@ -230,7 +231,6 @@
 		BFD8797824F5FDA800552EDD /* CGVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGVector.swift; sourceTree = "<group>"; };
 		BFDBE7AD24F955EE00FD75BF /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		BFDC7B3A25096B1E00ED4DB9 /* alarmTick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmTick.wav; sourceTree = "<group>"; };
-		BFDEC1C1251977F3000EBE2C /* AIGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIGameState.swift; sourceTree = "<group>"; };
 		BFDF94E52507FE42004F5BE7 /* GameAchievementTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAchievementTrigger.swift; sourceTree = "<group>"; };
 		BFDF94E725080C3D004F5BE7 /* Boundary.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Boundary.sks; sourceTree = "<group>"; };
 		BFDF94E925084600004F5BE7 /* Rushed.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rushed.sks; sourceTree = "<group>"; };
@@ -271,7 +271,6 @@
 				BF109CDA24FB26FB00F06E47 /* Store.swift */,
 				BF1A59412500155A000929CF /* TilemapParseData.swift */,
 				BF2B5E4625016CFB001EC2E7 /* CommandLineArguments.swift */,
-				BFDEC1C1251977F3000EBE2C /* AIGameState.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -502,6 +501,7 @@
 			children = (
 				BFB0CE132518FBEB0015FE6C /* AIAgentInteractableScene.swift */,
 				BFC6F051251922EE00C39D25 /* AIBaseAgent.swift */,
+				BFD717C9251BDD88003425D9 /* AIGameState.swift */,
 			);
 			path = Agents;
 			sourceTree = "<group>";
@@ -802,7 +802,7 @@
 				BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */,
 				BFE0AE9F250C2B30003C6780 /* Leaderboards.swift in Sources */,
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
-				BFDEC1C2251977F3000EBE2C /* AIGameState.swift in Sources */,
+				BFD717CA251BDD88003425D9 /* AIGameState.swift in Sources */,
 				BF7C5EFB250ACE530062B1CC /* AboutScene.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
 				BF8C30F02502E0BD00A29425 /* GameHeavyObject.swift in Sources */,

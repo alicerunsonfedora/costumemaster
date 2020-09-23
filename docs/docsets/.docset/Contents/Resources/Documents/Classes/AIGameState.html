@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AIGameState Structure Reference</title>
+    <title>AIGameState Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,13 +11,13 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/AIGameState" class="dashAnchor"></a>
-    <a title="AIGameState Structure Reference"></a>
+    <a name="//apple_ref/swift/Class/AIGameState" class="dashAnchor"></a>
+    <a title="AIGameState Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
           <a href="../index.html">The Costumemaster</a>
-          <span class="no-mobile"> (100% documented)</span>
+          <span class="no-mobile"> (99% documented)</span>
         </p>
     
         <p class="header-right">
@@ -36,7 +36,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          AIGameState Structure Reference
+          AIGameState Class Reference
         </p>
       </div>
     </div>
@@ -49,11 +49,14 @@
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AIGameState</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIGameState</span> <span class="p">:</span> <span class="kt">GKState</span></code></pre>
 
                   </div>
                 </div>
-              <p>A data structure that represents a game state.</p>
+              <p>A class representation of a game state.</p>
+
+<p>This class subclasses <code>GKState</code> to maintain integration with GameplayKit and to prevent re-inventing AI
+assessement mechanics.</p>
 
             </section>
             <section class="section task-group-section">
@@ -62,9 +65,36 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster11AIGameStateV8exitOpenSbvp"></a>
+                      <a name="/s:17The_Costumemaster11AIGameStateC11currentTimeSdvp"></a>
+                      <a name="//apple_ref/swift/Property/currentTime" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIGameStateC11currentTimeSdvp">currentTime</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>The timestamp of the captured state.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">currentTime</span><span class="p">:</span> <span class="kt">TimeInterval</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster11AIGameStateC8exitOpenSbvp"></a>
                       <a name="//apple_ref/swift/Property/exitOpen" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster11AIGameStateV8exitOpenSbvp">exitOpen</a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIGameStateC8exitOpenSbvp">exitOpen</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -72,14 +102,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Whether the exit door is open.</p>
+                          <p>Whether the exit is open in the captured state.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">exitOpen</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">exitOpen</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                           </div>
                         </div>
@@ -89,9 +119,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster11AIGameStateV16activeExitInputsSayAA16GameSignalSenderCGvp"></a>
+                      <a name="/s:17The_Costumemaster11AIGameStateC16activeExitInputsSayAA16GameSignalSenderCGvp"></a>
                       <a name="//apple_ref/swift/Property/activeExitInputs" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster11AIGameStateV16activeExitInputsSayAA16GameSignalSenderCGvp">activeExitInputs</a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIGameStateC16activeExitInputsSayAA16GameSignalSenderCGvp">activeExitInputs</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -99,14 +129,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The list of all active inputs that link up to the exit.</p>
+                          <p>The list of active input signals in the captured state that link to the exit.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">activeExitInputs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span><span class="p">]</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">activeExitInputs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span><span class="p">]</span></code></pre>
 
                           </div>
                         </div>
@@ -116,9 +146,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster11AIGameStateV18inactiveExitInputsSayAA16GameSignalSenderCGvp"></a>
+                      <a name="/s:17The_Costumemaster11AIGameStateC18inactiveExitInputsSayAA16GameSignalSenderCGvp"></a>
                       <a name="//apple_ref/swift/Property/inactiveExitInputs" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster11AIGameStateV18inactiveExitInputsSayAA16GameSignalSenderCGvp">inactiveExitInputs</a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIGameStateC18inactiveExitInputsSayAA16GameSignalSenderCGvp">inactiveExitInputs</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -126,14 +156,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The list of all inactive inputs that link up to the exit.</p>
+                          <p>The list of inactive input signals in the capture state that link to the exit.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">inactiveExitInputs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span><span class="p">]</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">inactiveExitInputs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span><span class="p">]</span></code></pre>
 
                           </div>
                         </div>
@@ -143,36 +173,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster11AIGameStateV9timestampSdvp"></a>
-                      <a name="//apple_ref/swift/Property/timestamp" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster11AIGameStateV9timestampSdvp">timestamp</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The timestamp of the state when it was captured.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">timestamp</span><span class="p">:</span> <span class="kt">TimeInterval</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster11AIGameStateV2at2on4withACSd_SbSayAA16GameSignalSenderCG_AIttcfc"></a>
+                      <a name="/s:17The_Costumemaster11AIGameStateC2at2on4withACSd_SbSayAA16GameSignalSenderCG_AIttcfc"></a>
                       <a name="//apple_ref/swift/Method/init(at:on:with:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster11AIGameStateV2at2on4withACSd_SbSayAA16GameSignalSenderCG_AIttcfc">init(at:<wbr>on:<wbr>with:<wbr>)</a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIGameStateC2at2on4withACSd_SbSayAA16GameSignalSenderCG_AIttcfc">init(at:<wbr>on:<wbr>with:<wbr>)</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -180,14 +183,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Create a game state.</p>
+                          <p>Initialize a game state object.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">at</span> <span class="nv">time</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">,</span> <span class="n">on</span> <span class="nv">exit</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">with</span> <span class="nv">inputs</span><span class="p">:</span> <span class="p">([</span><span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span><span class="p">],</span> <span class="p">[</span><span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span><span class="p">]))</span></code></pre>
+                            <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">at</span> <span class="nv">time</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">,</span> <span class="n">on</span> <span class="nv">exitStatus</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">with</span> <span class="nv">inputs</span><span class="p">:</span> <span class="p">([</span><span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span><span class="p">],</span> <span class="p">[</span><span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span><span class="p">]))</span></code></pre>
 
                           </div>
                         </div>
@@ -203,19 +206,19 @@
                                 </td>
                                 <td>
                                   <div>
-                                    <p>The time the state was captured.</p>
+                                    <p>The timestamp of this state.</p>
                                   </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td>
                                   <code>
-                                  <em>exit</em>
+                                  <em>exitStatus</em>
                                   </code>
                                 </td>
                                 <td>
                                   <div>
-                                    <p>Whether the exit door is open.</p>
+                                    <p>Whether the exit is currently open.</p>
                                   </div>
                                 </td>
                               </tr>
@@ -227,7 +230,7 @@
                                 </td>
                                 <td>
                                   <div>
-                                    <p>A tuple of the active and inactive inputs.</p>
+                                    <p>A tuple of inputs that correspond to the active and inactive inputs that link to the exit.</p>
                                   </div>
                                 </td>
                               </tr>
@@ -372,7 +375,7 @@
                   <a href="../Classes/AIBaseAgent.html">AIBaseAgent</a>
                 </li>
                 <li class="nav-group-task">
-                  <a href="../Structs/AIGameState.html">AIGameState</a>
+                  <a href="../Classes/AIGameState.html">AIGameState</a>
                 </li>
               </ul>
             </li>
@@ -518,7 +521,7 @@
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-09-22)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-09-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

@@ -11,11 +11,12 @@
 
 import Foundation
 import SpriteKit
+import GameplayKit
 
 /// The base class for an agent.
 ///
 /// The agent is responsible for assessing a state and performing an action on it.
-class AIBaseAgent {
+class AIBaseAgent: GKEntity {
 
     /// The player node that the agent controls.
     var player: Player
@@ -24,6 +25,11 @@ class AIBaseAgent {
     /// - Parameter player: The player to let the agent control.
     init(watching player: Player) {
         self.player = player
+        super.init()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     /// Move in a direction with respect to a unit size.
