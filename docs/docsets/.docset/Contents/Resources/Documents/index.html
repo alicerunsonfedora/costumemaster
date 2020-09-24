@@ -16,7 +16,7 @@
       <div class="content-wrapper">
         <p>
           <a href="index.html">The Costumemaster</a>
-          <span class="no-mobile"> (100% documented)</span>
+          <span class="no-mobile"> (99% documented)</span>
         </p>
     
         <p class="header-right">
@@ -114,20 +114,20 @@ understanding of agents and apply these concepts by implementing and comparing a
 <h3 id='requirements' class='heading'>Requirements</h3>
 
 <ul>
-<li>Xcode 12.x* or higher</li>
+<li>Xcode 12.2* or higher</li>
 <li>macOS 10.15.6 (Catalina) or higher</li>
 <li><a href="https://github.com/sindresorhus/KeyboardShortcuts">KeyboardShortcuts</a> (added when cloning)</li>
 <li>(Optional, but recommended) <a href="https://realm.github.io/SwiftLint/">SwiftLint</a></li>
 </ul>
 
-<p>Clone the Xcode project, ensure that dependencies are install with the Swift Package Manager, and then run the <code>Conscious</code> scheme to 
+<p>Clone the Xcode project, ensure that dependencies are install with the Swift Package Manager, and then run the <strong>Game</strong> scheme to 
 build the project in Xcode.</p>
 
 <p>To make a release version, click on the destination (&ldquo;My Mac&rdquo;) and select &ldquo;Any Mac (Apple Silicon, Intel)&rdquo;, then go to <strong>Product &rsaquo;
 Archive</strong>.</p>
 
 <p><small>*The release version of Xcode 12.0 and the GM seed are not compatible with this project due to the macOS 11 SDK not being
-present.</small></p>
+present. To build with Xcode 12.0, you will need to comment out code for GKAccessPoint and GKLeaderboards.</small></p>
 <h3 id='game-center' class='heading'>Game Center</h3>
 
 <p>The Costumemaster integrates with Game Center to allow players to earn achievements, challenge others, and rank in the leaderboards
@@ -363,6 +363,9 @@ Apple Inc. Music written by Kai Engel.</p>
               <a href="Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
+                  <a href="Classes/AIBaseAgentMove.html">AIBaseAgentMove</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="Classes/GameStructureObject.html">GameStructureObject</a>
                 </li>
               </ul>
@@ -370,6 +373,9 @@ Apple Inc. Music written by Kai Engel.</p>
             <li class="nav-group-name">
               <a href="Other%20Enums.html">Other Enumerations</a>
               <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Enums/AIBaseAgentMoveAction.html">AIBaseAgentMoveAction</a>
+                </li>
                 <li class="nav-group-task">
                   <a href="Enums/GameTileType.html">GameTileType</a>
                 </li>

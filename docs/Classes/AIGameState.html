@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="../index.html">The Costumemaster</a>
-          <span class="no-mobile"> (100% documented)</span>
+          <span class="no-mobile"> (99% documented)</span>
         </p>
     
         <p class="header-right">
@@ -267,6 +267,33 @@ assessement mechanics.</p>
                           <div class="language">
                             <p class="aside-title">Swift</p>
                             <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">inactiveExitInputs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span><span class="p">]</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster11AIGameStateC12exitPositionSo7CGPointVvp"></a>
+                      <a name="//apple_ref/swift/Property/exitPosition" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIGameStateC12exitPositionSo7CGPointVvp">exitPosition</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">exitPosition</span><span class="p">:</span> <span class="kt">CGPoint</span></code></pre>
 
                           </div>
                         </div>
@@ -556,6 +583,12 @@ assessement mechanics.</p>
                         <div class="pointer"></div>
                         <div class="abstract">
                           <p>Determine the score of the state for the player.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    Depending on the game model in question, this should be modified to specify the scoring system.
+By default, this will return the default scoring system.
+
+</div>
 
                         </div>
                         <div class="declaration">
@@ -565,6 +598,75 @@ assessement mechanics.</p>
                             <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">score</span><span class="p">(</span><span class="k">for</span> <span class="nv">player</span><span class="p">:</span> <span class="kt">GKGameModelPlayer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>player</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The current player in this state.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster11AIGameStateC20defaultScoringSystem3forSiSo17GKGameModelPlayer_p_tF"></a>
+                      <a name="//apple_ref/swift/Method/defaultScoringSystem(for:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIGameStateC20defaultScoringSystem3forSiSo17GKGameModelPlayer_p_tF">defaultScoringSystem(for:<wbr>)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Use the default scoring system for the state.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">defaultScoringSystem</span><span class="p">(</span><span class="k">for</span> <span class="nv">player</span><span class="p">:</span> <span class="kt">GKGameModelPlayer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>player</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The current player in this state.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>A random value between 1 and 10.</p>
                         </div>
                       </section>
                     </div>
@@ -758,6 +860,9 @@ assessement mechanics.</p>
               <a href="../Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
+                  <a href="../Classes/AIBaseAgentMove.html">AIBaseAgentMove</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="../Classes/GameStructureObject.html">GameStructureObject</a>
                 </li>
               </ul>
@@ -765,6 +870,9 @@ assessement mechanics.</p>
             <li class="nav-group-name">
               <a href="../Other%20Enums.html">Other Enumerations</a>
               <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Enums/AIBaseAgentMoveAction.html">AIBaseAgentMoveAction</a>
+                </li>
                 <li class="nav-group-task">
                   <a href="../Enums/GameTileType.html">GameTileType</a>
                 </li>

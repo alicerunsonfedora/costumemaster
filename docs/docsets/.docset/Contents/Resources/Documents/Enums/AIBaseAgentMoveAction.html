@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DoorReceiver Class Reference</title>
+    <title>AIBaseAgentMoveAction Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,8 +11,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/DoorReceiver" class="dashAnchor"></a>
-    <a title="DoorReceiver Class Reference"></a>
+    <a name="//apple_ref/swift/Enum/AIBaseAgentMoveAction" class="dashAnchor"></a>
+    <a title="AIBaseAgentMoveAction Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -36,7 +36,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          DoorReceiver Class Reference
+          AIBaseAgentMoveAction Enumeration Reference
         </p>
       </div>
     </div>
@@ -45,25 +45,25 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>DoorReceiver</h1>
+              <h1>AIBaseAgentMoveAction</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">DoorReceiver</span> <span class="p">:</span> <span class="kt"><a href="../Classes/GameStructureObject.html">GameStructureObject</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/GameSignalReceivable.html">GameSignalReceivable</a></span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">AIBaseAgentMoveAction</span> <span class="p">:</span> <span class="kt">CaseIterable</span></code></pre>
 
                   </div>
                 </div>
-              <p>A class that represents a door. This is commonly used for exit doors, but can be adapted to use any door.</p>
+              <p>An enumeration that represents the moves an agent can make.</p>
 
             </section>
             <section class="section task-group-section">
               <div class="task-group">
                 <div class="task-name-container">
-                  <a name="/STORED%20PROPERTIES"></a>
-                  <a name="//apple_ref/swift/Section/STORED PROPERTIES" class="dashAnchor"></a>
+                  <a name="/MOVEMENT"></a>
+                  <a name="//apple_ref/swift/Section/MOVEMENT" class="dashAnchor"></a>
                   <div class="section-name-container">
-                    <a class="section-name-link" href="#/STORED%20PROPERTIES"></a>
-                    <h3 class="section-name"><p>STORED PROPERTIES</p>
+                    <a class="section-name-link" href="#/MOVEMENT"></a>
+                    <h3 class="section-name"><p>MOVEMENT</p>
 </h3>
                   </div>
                 </div>
@@ -71,9 +71,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster12DoorReceiverC9defaultOnSbvp"></a>
-                      <a name="//apple_ref/swift/Property/defaultOn" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12DoorReceiverC9defaultOnSbvp">defaultOn</a>
+                      <a name="/s:17The_Costumemaster21AIBaseAgentMoveActionO8moveLeftyA2CmF"></a>
+                      <a name="//apple_ref/swift/Element/moveLeft" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster21AIBaseAgentMoveActionO8moveLeftyA2CmF">moveLeft</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -81,14 +81,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Whether the door is on by default.</p>
+                          <p>Move the agent left.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">defaultOn</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">moveLeft</span></code></pre>
 
                           </div>
                         </div>
@@ -98,9 +98,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster12DoorReceiverC16activationMethodAA010GameSignalF0Ovp"></a>
-                      <a name="//apple_ref/swift/Property/activationMethod" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12DoorReceiverC16activationMethodAA010GameSignalF0Ovp">activationMethod</a>
+                      <a name="/s:17The_Costumemaster21AIBaseAgentMoveActionO9moveRightyA2CmF"></a>
+                      <a name="//apple_ref/swift/Element/moveRight" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster21AIBaseAgentMoveActionO9moveRightyA2CmF">moveRight</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -108,14 +108,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The method of how this door will be activated.</p>
+                          <p>Move the agent right.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">activationMethod</span><span class="p">:</span> <span class="kt"><a href="../Enums/GameSignalMethod.html">GameSignalMethod</a></span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">moveRight</span></code></pre>
 
                           </div>
                         </div>
@@ -125,9 +125,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster12DoorReceiverC6inputsSayAA16GameSignalSenderCGvp"></a>
-                      <a name="//apple_ref/swift/Property/inputs" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12DoorReceiverC6inputsSayAA16GameSignalSenderCGvp">inputs</a>
+                      <a name="/s:17The_Costumemaster21AIBaseAgentMoveActionO6moveUpyA2CmF"></a>
+                      <a name="//apple_ref/swift/Element/moveUp" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster21AIBaseAgentMoveActionO6moveUpyA2CmF">moveUp</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -135,14 +135,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The list of inputs that activate the door.</p>
+                          <p>Move the agent up.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">inputs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">moveUp</span></code></pre>
 
                           </div>
                         </div>
@@ -152,9 +152,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster12DoorReceiverC15baseTextureNameSSvp"></a>
-                      <a name="//apple_ref/swift/Property/baseTextureName" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12DoorReceiverC15baseTextureNameSSvp">baseTextureName</a>
+                      <a name="/s:17The_Costumemaster21AIBaseAgentMoveActionO8moveDownyA2CmF"></a>
+                      <a name="//apple_ref/swift/Element/moveDown" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster21AIBaseAgentMoveActionO8moveDownyA2CmF">moveDown</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -162,14 +162,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The base texture name for the door.</p>
+                          <p>Move the agent down.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">baseTextureName</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">moveDown</span></code></pre>
 
                           </div>
                         </div>
@@ -179,9 +179,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster12DoorReceiverC14playerListenerAA6PlayerCSgvp"></a>
-                      <a name="//apple_ref/swift/Property/playerListener" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12DoorReceiverC14playerListenerAA6PlayerCSgvp">playerListener</a>
+                      <a name="/s:17The_Costumemaster21AIBaseAgentMoveActionO4stopyA2CmF"></a>
+                      <a name="//apple_ref/swift/Element/stop" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster21AIBaseAgentMoveActionO4stopyA2CmF">stop</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -189,41 +189,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The player listener for this door.</p>
+                          <p>Stop all movement and/or action.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">playerListener</span><span class="p">:</span> <span class="kt"><a href="../Classes/Player.html">Player</a></span><span class="p">?</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster12DoorReceiverC13levelPositionSo7CGPointVvp"></a>
-                      <a name="//apple_ref/swift/Property/levelPosition" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12DoorReceiverC13levelPositionSo7CGPointVvp">levelPosition</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The position of this door in the world matrix.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">levelPosition</span><span class="p">:</span> <span class="kt">CGPoint</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">stop</span></code></pre>
 
                           </div>
                         </div>
@@ -234,11 +207,11 @@
               </div>
               <div class="task-group">
                 <div class="task-name-container">
-                  <a name="/COMPUTED%20PROPERTIES"></a>
-                  <a name="//apple_ref/swift/Section/COMPUTED PROPERTIES" class="dashAnchor"></a>
+                  <a name="/COSTUMES"></a>
+                  <a name="//apple_ref/swift/Section/COSTUMES" class="dashAnchor"></a>
                   <div class="section-name-container">
-                    <a class="section-name-link" href="#/COMPUTED%20PROPERTIES"></a>
-                    <h3 class="section-name"><p>COMPUTED PROPERTIES</p>
+                    <a class="section-name-link" href="#/COSTUMES"></a>
+                    <h3 class="section-name"><p>COSTUMES</p>
 </h3>
                   </div>
                 </div>
@@ -246,9 +219,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster12DoorReceiverC13activeTextureSo9SKTextureCvp"></a>
-                      <a name="//apple_ref/swift/Property/activeTexture" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12DoorReceiverC13activeTextureSo9SKTextureCvp">activeTexture</a>
+                      <a name="/s:17The_Costumemaster21AIBaseAgentMoveActionO19switchToNextCostumeyA2CmF"></a>
+                      <a name="//apple_ref/swift/Element/switchToNextCostume" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster21AIBaseAgentMoveActionO19switchToNextCostumeyA2CmF">switchToNextCostume</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -256,14 +229,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The activation-based texture for this door.</p>
+                          <p>Switch to the next costume the agent has.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">activeTexture</span><span class="p">:</span> <span class="kt">SKTexture</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">switchToNextCostume</span></code></pre>
 
                           </div>
                         </div>
@@ -273,9 +246,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster12DoorReceiverC6activeSbvp"></a>
-                      <a name="//apple_ref/swift/Property/active" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12DoorReceiverC6activeSbvp">active</a>
+                      <a name="/s:17The_Costumemaster21AIBaseAgentMoveActionO23switchToPreviousCostumeyA2CmF"></a>
+                      <a name="//apple_ref/swift/Element/switchToPreviousCostume" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster21AIBaseAgentMoveActionO23switchToPreviousCostumeyA2CmF">switchToPreviousCostume</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -283,41 +256,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Whether the door is activated.</p>
+                          <p>Switch to the previous costume the agent has.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">active</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)DoorReceiver(py)description"></a>
-                      <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)DoorReceiver(py)description">description</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The description for this class.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">switchToPreviousCostume</span></code></pre>
 
                           </div>
                         </div>
@@ -328,11 +274,11 @@
               </div>
               <div class="task-group">
                 <div class="task-name-container">
-                  <a name="/CONSTRUCTORS"></a>
-                  <a name="//apple_ref/swift/Section/CONSTRUCTORS" class="dashAnchor"></a>
+                  <a name="/ITEMS"></a>
+                  <a name="//apple_ref/swift/Section/ITEMS" class="dashAnchor"></a>
                   <div class="section-name-container">
-                    <a class="section-name-link" href="#/CONSTRUCTORS"></a>
-                    <h3 class="section-name"><p>CONSTRUCTORS</p>
+                    <a class="section-name-link" href="#/ITEMS"></a>
+                    <h3 class="section-name"><p>ITEMS</p>
 </h3>
                   </div>
                 </div>
@@ -340,9 +286,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster20GameSignalReceivableP9fromInput07reverseD011baseTexture2atxSayAA0cD6SenderCG_SbSSSo7CGPointVtcfc"></a>
-                      <a name="//apple_ref/swift/Method/init(fromInput:reverseSignal:baseTexture:at:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster20GameSignalReceivableP9fromInput07reverseD011baseTexture2atxSayAA0cD6SenderCG_SbSSSo7CGPointVtcfc">init(fromInput:<wbr>reverseSignal:<wbr>baseTexture:<wbr>at:<wbr>)</a>
+                      <a name="/s:17The_Costumemaster21AIBaseAgentMoveActionO6pickupyA2CmF"></a>
+                      <a name="//apple_ref/swift/Element/pickup" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster21AIBaseAgentMoveActionO6pickupyA2CmF">pickup</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -350,18 +296,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          
+                          <p>Pick up a heavy object.</p>
+
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">required</span> <span class="nf">init</span><span class="p">(</span>
-    <span class="n">fromInput</span> <span class="nv">inputs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span><span class="p">],</span>
-    <span class="nv">reverseSignal</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span>
-    <span class="nv">baseTexture</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-    <span class="n">at</span> <span class="nv">location</span><span class="p">:</span> <span class="kt">CGPoint</span>
-<span class="p">)</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">pickup</span></code></pre>
 
                           </div>
                         </div>
@@ -371,9 +313,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)DoorReceiver(im)initWithCoder:"></a>
-                      <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)DoorReceiver(im)initWithCoder:">init(coder:<wbr>)</a>
+                      <a name="/s:17The_Costumemaster21AIBaseAgentMoveActionO4dropyA2CmF"></a>
+                      <a name="//apple_ref/swift/Element/drop" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster21AIBaseAgentMoveActionO4dropyA2CmF">drop</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -381,14 +323,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Required initializer for this class. Will result in a fatal error if you initialize the object this way.</p>
+                          <p>Drop a heavy object.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">drop</span></code></pre>
 
                           </div>
                         </div>
@@ -399,11 +341,11 @@
               </div>
               <div class="task-group">
                 <div class="task-name-container">
-                  <a name="/METHODS"></a>
-                  <a name="//apple_ref/swift/Section/METHODS" class="dashAnchor"></a>
+                  <a name="/OTHER"></a>
+                  <a name="//apple_ref/swift/Section/OTHER" class="dashAnchor"></a>
                   <div class="section-name-container">
-                    <a class="section-name-link" href="#/METHODS"></a>
-                    <h3 class="section-name"><p>METHODS</p>
+                    <a class="section-name-link" href="#/OTHER"></a>
+                    <h3 class="section-name"><p>OTHER</p>
 </h3>
                   </div>
                 </div>
@@ -411,9 +353,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster12DoorReceiverC7receive4with5event7handleryAA6PlayerCSg_So7NSEventCSgyypSgXEtF"></a>
-                      <a name="//apple_ref/swift/Method/receive(with:event:handler:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12DoorReceiverC7receive4with5event7handleryAA6PlayerCSg_So7NSEventCSgyypSgXEtF">receive(with:<wbr>event:<wbr>handler:<wbr>)</a>
+                      <a name="/s:17The_Costumemaster21AIBaseAgentMoveActionO11deployCloneyA2CmF"></a>
+                      <a name="//apple_ref/swift/Element/deployClone" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster21AIBaseAgentMoveActionO11deployCloneyA2CmF">deployClone</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -421,14 +363,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Receive input from a player or event.</p>
+                          <p>Deploy a USB costume clone.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">receive</span><span class="p">(</span><span class="n">with</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/Player.html">Player</a></span><span class="p">?,</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">NSEvent</span><span class="p">?,</span> <span class="nv">handler</span><span class="p">:</span> <span class="p">((</span><span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">deployClone</span></code></pre>
 
                           </div>
                         </div>
@@ -438,9 +380,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster12DoorReceiverC6updateyyF"></a>
-                      <a name="//apple_ref/swift/Method/update()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12DoorReceiverC6updateyyF">update()</a>
+                      <a name="/s:17The_Costumemaster21AIBaseAgentMoveActionO12retractCloneyA2CmF"></a>
+                      <a name="//apple_ref/swift/Element/retractClone" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster21AIBaseAgentMoveActionO12retractCloneyA2CmF">retractClone</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -448,14 +390,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Update the texture for this door.</p>
+                          <p>Retract a USB costume clone.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">update</span><span class="p">()</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">retractClone</span></code></pre>
 
                           </div>
                         </div>
@@ -465,9 +407,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster12DoorReceiverC12updateInputsyyF"></a>
-                      <a name="//apple_ref/swift/Method/updateInputs()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12DoorReceiverC12updateInputsyyF">updateInputs()</a>
+                      <a name="/s:17The_Costumemaster21AIBaseAgentMoveActionO8activateyA2CmF"></a>
+                      <a name="//apple_ref/swift/Element/activate" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster21AIBaseAgentMoveActionO8activateyA2CmF">activate</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -475,46 +417,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Update the list of inputs and their receivers.</p>
+                          <p>Activate an input.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">updateInputs</span><span class="p">()</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster12DoorReceiverC17togglePhysicsBodyyyF"></a>
-                      <a name="//apple_ref/swift/Method/togglePhysicsBody()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12DoorReceiverC17togglePhysicsBodyyyF">togglePhysicsBody()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Toggle the physics body for the door.</p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    This method should apply for all doors that are not exits.
-
-</div>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">togglePhysicsBody</span><span class="p">()</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">activate</span></code></pre>
 
                           </div>
                         </div>

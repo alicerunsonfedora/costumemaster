@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>GamePressurePlate Class Reference</title>
+    <title>AIBaseAgentMove Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,8 +11,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/GamePressurePlate" class="dashAnchor"></a>
-    <a title="GamePressurePlate Class Reference"></a>
+    <a name="//apple_ref/swift/Class/AIBaseAgentMove" class="dashAnchor"></a>
+    <a title="AIBaseAgentMove Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -36,7 +36,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          GamePressurePlate Class Reference
+          AIBaseAgentMove Class Reference
         </p>
       </div>
     </div>
@@ -45,15 +45,15 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>GamePressurePlate</h1>
+              <h1>AIBaseAgentMove</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">GamePressurePlate</span> <span class="p">:</span> <span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIBaseAgentMove</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKGameModelUpdate</span></code></pre>
 
                   </div>
                 </div>
-              <p>An input that uses pressure sensitivity to activate.</p>
+              <p>A class representation of a move the agent can make.</p>
 
             </section>
             <section class="section task-group-section">
@@ -62,9 +62,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster17GamePressurePlateC2atACSo7CGPointV_tcfc"></a>
-                      <a name="//apple_ref/swift/Method/init(at:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster17GamePressurePlateC2atACSo7CGPointV_tcfc">init(at:<wbr>)</a>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIBaseAgentMove(py)value"></a>
+                      <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIBaseAgentMove(py)value">value</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -72,14 +72,68 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Initialize a pressure plate.</p>
+                          <p>The value of this move (i.e., how valuable of a move this is to an agent).</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">at</span> <span class="nv">position</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">)</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster15AIBaseAgentMoveC6actionAA0cdE6ActionOvp"></a>
+                      <a name="//apple_ref/swift/Property/action" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15AIBaseAgentMoveC6actionAA0cdE6ActionOvp">action</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>The action the agent will perform in this move.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">action</span><span class="p">:</span> <span class="kt"><a href="../Enums/AIBaseAgentMoveAction.html">AIBaseAgentMoveAction</a></span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster15AIBaseAgentMoveC4withAcA0cdE6ActionO_tcfc"></a>
+                      <a name="//apple_ref/swift/Method/init(with:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15AIBaseAgentMoveC4withAcA0cdE6ActionO_tcfc">init(with:<wbr>)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Initialize a game move for an agent to make.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">with</span> <span class="nv">action</span><span class="p">:</span> <span class="kt"><a href="../Enums/AIBaseAgentMoveAction.html">AIBaseAgentMoveAction</a></span><span class="p">)</span></code></pre>
 
                           </div>
                         </div>
@@ -90,160 +144,17 @@
                               <tr>
                                 <td>
                                   <code>
-                                  <em>position</em>
+                                  <em>action</em>
                                   </code>
                                 </td>
                                 <td>
                                   <div>
-                                    <p>The position of the plate in the matrix.</p>
+                                    <p>The action the agent will perform.</p>
                                   </div>
                                 </td>
                               </tr>
                             </tbody>
                           </table>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)GamePressurePlate(im)initWithCoder:"></a>
-                      <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)GamePressurePlate(im)initWithCoder:">init(coder:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Required initializer for this class. Will result in a fatal error if you initialize the object this way.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster17GamePressurePlateC28shouldActivateOnIntervention4with7objectsSbAA6PlayerCSg_SaySo12SKSpriteNodeCSgGtF"></a>
-                      <a name="//apple_ref/swift/Method/shouldActivateOnIntervention(with:objects:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster17GamePressurePlateC28shouldActivateOnIntervention4with7objectsSbAA6PlayerCSg_SaySo12SKSpriteNodeCSgGtF">shouldActivateOnIntervention(with:<wbr>objects:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Whether the input should turn on/off based on player or object intervention.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">shouldActivateOnIntervention</span><span class="p">(</span><span class="n">with</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/Player.html">Player</a></span><span class="p">?,</span> <span class="nv">objects</span><span class="p">:</span> <span class="p">[</span><span class="kt">SKSpriteNode</span><span class="p">?])</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                          </div>
-                        </div>
-                        <div>
-                          <h4>Parameters</h4>
-                          <table class="graybox">
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>player</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The player to listen to for intervention.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>objects</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The objects to listen to for intervention.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <div>
-                          <h4>Return Value</h4>
-                          <p>Whether the input should activate given the intervention criteria.</p>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster17GamePressurePlateC10onActivate4with6playerySo7NSEventCSg_AA6PlayerCSgtF"></a>
-                      <a name="//apple_ref/swift/Method/onActivate(with:player:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster17GamePressurePlateC10onActivate4with6playerySo7NSEventCSg_AA6PlayerCSgtF">onActivate(with:<wbr>player:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Determine if the player is in range and play the pressure plate activation sound.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">onActivate</span><span class="p">(</span><span class="n">with</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">NSEvent</span><span class="p">?,</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/Player.html">Player</a></span><span class="p">?)</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster17GamePressurePlateC12onDeactivate4with6playerySo7NSEventCSg_AA6PlayerCSgtF"></a>
-                      <a name="//apple_ref/swift/Method/onDeactivate(with:player:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster17GamePressurePlateC12onDeactivate4with6playerySo7NSEventCSg_AA6PlayerCSgtF">onDeactivate(with:<wbr>player:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Determine if the player is out of range and play the pressure plate deactivation sound.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">onDeactivate</span><span class="p">(</span><span class="n">with</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">NSEvent</span><span class="p">?,</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/Player.html">Player</a></span><span class="p">?)</span></code></pre>
-
-                          </div>
                         </div>
                       </section>
                     </div>
