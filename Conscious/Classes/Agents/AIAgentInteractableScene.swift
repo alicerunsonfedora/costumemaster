@@ -58,7 +58,8 @@ class AIAgentInteractableScene: ChallengeGameScene {
         return AIGameState(
             at: self.currentTime,
             on: self.exitActive,
-            with: (self.activeExitInputs, self.inactiveExitInputs)
+            with: (self.activeExitInputs, self.inactiveExitInputs),
+            for: self.agent!
         )
     }
 

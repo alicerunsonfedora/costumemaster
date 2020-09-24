@@ -16,7 +16,9 @@ import GameplayKit
 /// The base class for an agent.
 ///
 /// The agent is responsible for assessing a state and performing an action on it.
-class AIBaseAgent: GKEntity {
+class AIBaseAgent: NSObject, GKGameModelPlayer {
+
+    var playerId: Int = 0
 
     /// The player node that the agent controls.
     var player: Player
@@ -25,7 +27,6 @@ class AIBaseAgent: GKEntity {
     /// - Parameter player: The player to let the agent control.
     init(watching player: Player) {
         self.player = player
-        super.init()
     }
 
     required init?(coder: NSCoder) {
@@ -59,22 +60,6 @@ class AIBaseAgent: GKEntity {
     /// - Parameter action: The action to perform.
     func run(action: [SKAction]?) {
         self.player.run(SKAction.sequence(action ?? []))
-    }
-
-    /// Assess a game state and translate it to a score.
-    /// - Important: This method must be overriden when implementing subclassed agents. By default, the score
-    /// will always be zero.
-    /// - Parameter state: The game state to read and assess.
-    /// - Returns: An integer that represents the score.
-    func assessState(with state: AIGameState) -> Int {
-        return 0
-    }
-
-    /// Act on a given game state.
-    /// - Parameter state: The game state to assess, score, and act on.
-    func act(on state: AIGameState) {
-        let score = assessState(with: state)
-        print(score)
     }
 
 }
