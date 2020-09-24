@@ -18,6 +18,7 @@ import GameplayKit
 /// The agent is responsible for assessing a state and performing an action on it.
 class AIBaseAgent: NSObject, GKGameModelPlayer {
 
+    /// The game model player ID.
     var playerId: Int = 0
 
     /// The player node that the agent controls.
@@ -29,6 +30,7 @@ class AIBaseAgent: NSObject, GKGameModelPlayer {
         self.player = player
     }
 
+    /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="../index.html">The Costumemaster</a>
-          <span class="no-mobile"> (99% documented)</span>
+          <span class="no-mobile"> (100% documented)</span>
         </p>
     
         <p class="header-right">
@@ -49,7 +49,7 @@
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIBaseAgent</span> <span class="p">:</span> <span class="kt">GKEntity</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIBaseAgent</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKGameModelPlayer</span></code></pre>
 
                   </div>
                 </div>
@@ -61,6 +61,33 @@
             <section class="section task-group-section">
               <div class="task-group">
                 <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIBaseAgent(py)playerId"></a>
+                      <a name="//apple_ref/swift/Property/playerId" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIBaseAgent(py)playerId">playerId</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>The game model player ID.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">playerId</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
                   <li class="item">
                     <div>
                       <code>
@@ -137,9 +164,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)AIBaseAgent(im)initWithCoder:"></a>
+                      <a name="/s:17The_Costumemaster11AIBaseAgentC5coderACSgSo7NSCoderC_tcfc"></a>
                       <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIBaseAgent(im)initWithCoder:">init(coder:<wbr>)</a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIBaseAgentC5coderACSgSo7NSCoderC_tcfc">init(coder:<wbr>)</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -147,7 +174,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Required initializer for this class. Will result in a fatal error if you initialize the object this way.</p>
 
                         </div>
                         <div class="declaration">
@@ -306,108 +333,6 @@
                                 <td>
                                   <div>
                                     <p>The action to perform.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster11AIBaseAgentC11assessState4withSiAA06AIGameF0C_tF"></a>
-                      <a name="//apple_ref/swift/Method/assessState(with:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster11AIBaseAgentC11assessState4withSiAA06AIGameF0C_tF">assessState(with:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Assess a game state and translate it to a score.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    This method must be overriden when implementing subclassed agents. By default, the score
-will always be zero.
-
-</div>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">assessState</span><span class="p">(</span><span class="n">with</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/AIGameState.html">AIGameState</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
-
-                          </div>
-                        </div>
-                        <div>
-                          <h4>Parameters</h4>
-                          <table class="graybox">
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>state</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The game state to read and assess.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <div>
-                          <h4>Return Value</h4>
-                          <p>An integer that represents the score.</p>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster11AIBaseAgentC3act2onyAA11AIGameStateC_tF"></a>
-                      <a name="//apple_ref/swift/Method/act(on:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster11AIBaseAgentC3act2onyAA11AIGameStateC_tF">act(on:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Act on a given game state.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">act</span><span class="p">(</span><span class="n">on</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/AIGameState.html">AIGameState</a></span><span class="p">)</span></code></pre>
-
-                          </div>
-                        </div>
-                        <div>
-                          <h4>Parameters</h4>
-                          <table class="graybox">
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>state</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The game state to assess, score, and act on.</p>
                                   </div>
                                 </td>
                               </tr>
@@ -698,7 +623,7 @@ will always be zero.
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-09-23)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-09-24)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>
