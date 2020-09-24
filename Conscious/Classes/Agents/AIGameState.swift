@@ -109,20 +109,26 @@ class AIGameState: NSObject, GKGameModel {
 
     /// Determine whether the state is a winning state for the player.
     func isWin(for player: GKGameModelPlayer) -> Bool {
-        // TODO: Allow this to be overridden with an agent's scoring method.
-        return false
+        return self.exitOpen
     }
 
     /// Determine whether the state is a losing state for the player.
     func isLoss(for player: GKGameModelPlayer) -> Bool {
-        // TODO: Allow this to be overridden with an agent's scoring method.
         return false
     }
 
     /// Determine the score of the state for the player.
+    /// - Important: Depending on the game model in question, this should be modified to specify the scoring system.
+    /// By default, this will return the default scoring system.
+    /// - Parameter player: The current player in this state.
     func score(for player: GKGameModelPlayer) -> Int {
-        // TODO: Allow this to be overrideen with an agent's scoring method.
-        return 0
+        return defaultScoringSystem(for: player)
     }
 
+    /// Use the default scoring system for the state.
+    /// - Parameter player: The current player in this state.
+    /// - Returns: A random value between 1 and 10.
+    func defaultScoringSystem(for player: GKGameModelPlayer) -> Int {
+        return Int.random(in: 1...10)
+    }
 }

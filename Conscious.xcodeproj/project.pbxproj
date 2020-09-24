@@ -20,6 +20,8 @@
 		BF1A5940250014BD000929CF /* Tilemaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A593F250014BD000929CF /* Tilemaps.swift */; };
 		BF1A59422500155A000929CF /* TilemapParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A59412500155A000929CF /* TilemapParseData.swift */; };
 		BF1FF2F4250FD4ED0053D1A4 /* CycleChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2F3250FD4ED0053D1A4 /* CycleChallenge.swift */; };
+		BF233389251D0CA80018C854 /* AIBaseAgentMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF233388251D0CA80018C854 /* AIBaseAgentMove.swift */; };
+		BF233390251D0D2E0018C854 /* AIBaseAgentMoveAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF23338F251D0D2E0018C854 /* AIBaseAgentMoveAction.swift */; };
 		BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B424F45DB8000300B7 /* Tileset.sks */; };
 		BF2B5E4725016CFB001EC2E7 /* CommandLineArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2B5E4625016CFB001EC2E7 /* CommandLineArguments.swift */; };
 		BF2B5E4925016D2D001EC2E7 /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2B5E4825016D2D001EC2E7 /* Arguments.swift */; };
@@ -137,6 +139,8 @@
 		BF1A593F250014BD000929CF /* Tilemaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tilemaps.swift; sourceTree = "<group>"; };
 		BF1A59412500155A000929CF /* TilemapParseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilemapParseData.swift; sourceTree = "<group>"; };
 		BF1FF2F3250FD4ED0053D1A4 /* CycleChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleChallenge.swift; sourceTree = "<group>"; };
+		BF233388251D0CA80018C854 /* AIBaseAgentMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIBaseAgentMove.swift; sourceTree = "<group>"; };
+		BF23338F251D0D2E0018C854 /* AIBaseAgentMoveAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIBaseAgentMoveAction.swift; sourceTree = "<group>"; };
 		BF2514B424F45DB8000300B7 /* Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tileset.sks; sourceTree = "<group>"; };
 		BF2B5E4625016CFB001EC2E7 /* CommandLineArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineArguments.swift; sourceTree = "<group>"; };
 		BF2B5E4825016D2D001EC2E7 /* Arguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
@@ -262,6 +266,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF23338B251D0CFE0018C854 /* Signals */ = {
+			isa = PBXGroup;
+			children = (
+				BF3A0B7B24F6CB9900575F72 /* GameSignalMethod.swift */,
+				BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */,
+				BF109CD824FB20B400F06E47 /* GameSignalKind.swift */,
+			);
+			path = Signals;
+			sourceTree = "<group>";
+		};
+		BF23338C251D0D070018C854 /* Game Center */ = {
+			isa = PBXGroup;
+			children = (
+				BFEE78C224FBF1FC006FBFF0 /* GameAchievments.swift */,
+				BFE0AE9C250C2A33003C6780 /* GameLeaderboards.swift */,
+			);
+			path = "Game Center";
+			sourceTree = "<group>";
+		};
+		BF23338D251D0D130018C854 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */,
+				BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		BF23338E251D0D1C0018C854 /* Agents */ = {
+			isa = PBXGroup;
+			children = (
+				BF23338F251D0D2E0018C854 /* AIBaseAgentMoveAction.swift */,
+			);
+			path = Agents;
+			sourceTree = "<group>";
+		};
 		BF3A0B7024F6B71200575F72 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +542,7 @@
 				BFB0CE132518FBEB0015FE6C /* AIAgentInteractableScene.swift */,
 				BFC6F051251922EE00C39D25 /* AIBaseAgent.swift */,
 				BFD717C9251BDD88003425D9 /* AIGameState.swift */,
+				BF233388251D0CA80018C854 /* AIBaseAgentMove.swift */,
 			);
 			path = Agents;
 			sourceTree = "<group>";
@@ -531,14 +572,11 @@
 		BFC78F3724F486DC004E85A9 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */,
-				BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */,
+				BF23338E251D0D1C0018C854 /* Agents */,
+				BF23338D251D0D130018C854 /* Player */,
+				BF23338C251D0D070018C854 /* Game Center */,
+				BF23338B251D0CFE0018C854 /* Signals */,
 				BFD8795F24F5B61D00552EDD /* GameTileType.swift */,
-				BF3A0B7B24F6CB9900575F72 /* GameSignalMethod.swift */,
-				BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */,
-				BF109CD824FB20B400F06E47 /* GameSignalKind.swift */,
-				BFEE78C224FBF1FC006FBFF0 /* GameAchievments.swift */,
-				BFE0AE9C250C2A33003C6780 /* GameLeaderboards.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -790,6 +828,7 @@
 				BFC6F052251922EE00C39D25 /* AIBaseAgent.swift in Sources */,
 				BF7C5EEE250AA30B0062B1CC /* ChallengeGameScene.swift in Sources */,
 				BFC78F3D24F48731004E85A9 /* Player.swift in Sources */,
+				BF233389251D0CA80018C854 /* AIBaseAgentMove.swift in Sources */,
 				BF1A59422500155A000929CF /* TilemapParseData.swift in Sources */,
 				BFD8796024F5B61D00552EDD /* GameTileType.swift in Sources */,
 				BF4CD5B4251411F400C021BC /* EndAnimationScene.swift in Sources */,
@@ -805,6 +844,7 @@
 				BFD717CA251BDD88003425D9 /* AIGameState.swift in Sources */,
 				BF7C5EFB250ACE530062B1CC /* AboutScene.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
+				BF233390251D0D2E0018C854 /* AIBaseAgentMoveAction.swift in Sources */,
 				BF8C30F02502E0BD00A29425 /* GameHeavyObject.swift in Sources */,
 				BF1A5940250014BD000929CF /* Tilemaps.swift in Sources */,
 				BF109CDB24FB26FB00F06E47 /* Store.swift in Sources */,
