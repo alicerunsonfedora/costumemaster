@@ -14,17 +14,17 @@ import GameplayKit
 
 /// A class representation of a move the agent can make.
 class AIBaseAgentMove: NSObject, GKGameModelUpdate {
-    
+
     /// The value of this move (i.e., how valuable of a move this is to an agent).
     var value: Int = 0
-    
+
     /// The action the agent will perform in this move.
     var action: AIBaseAgentMoveAction
-    
+
     /// Initialize a game move for an agent to make.
     /// - Parameter action: The action the agent will perform.
     init(with action: AIBaseAgentMoveAction) {
         self.action = action
     }
-    
+
 }

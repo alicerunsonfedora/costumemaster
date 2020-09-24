@@ -47,6 +47,8 @@ class AIGameState: NSObject, GKGameModel {
     /// The list of inactive input signals in the capture state that link to the exit.
     var inactiveExitInputs: [GameSignalSender]
 
+    var exitPosition: CGPoint = CGPoint.zero
+
     // MARK: METHODS
 
     /// Initialize a game state object.
@@ -69,23 +71,36 @@ class AIGameState: NSObject, GKGameModel {
     /// - Parameter gameModel: The game model to reference from the internal state.
     func setGameModel(_ gameModel: GKGameModel) {
         if let state = gameModel as? AIGameState {
-            currentTime = state.currentTime
-            exitOpen = state.exitOpen
-            activeExitInputs = state.activeExitInputs
-            inactiveExitInputs = state.inactiveExitInputs
+            self.currentTime = state.currentTime
+            self.exitOpen = state.exitOpen
+            self.activeExitInputs = state.activeExitInputs
+            self.inactiveExitInputs = state.inactiveExitInputs
             self.currentPlayer = state.currentPlayer
+            self.exitPosition = state.exitPosition
         }
     }
 
     /// Returns the set of moves available to the specified player.
     func gameModelUpdates(for player: GKGameModelPlayer) -> [GKGameModelUpdate]? {
-        // TODO: Implement this method.
-        return nil
+        var moves = [AIBaseAgentMove]()
+        for move in AIBaseAgentMoveAction.allCases {
+            moves.append(AIBaseAgentMove(with: move))
+        }
+        return moves
     }
 
     /// Updates the internal state of the game model to reflect the specified changes.
     func apply(_ gameModelUpdate: GKGameModelUpdate) {
-        // TODO: Implement this method.
+        if let update = gameModelUpdate as? AIBaseAgentMove {
+            switch update.action {
+            case .moveUp:
+                self.currentPlayer.run(action: self.currentPlayer.makeActionSet {
+                    self.currentPlayer.move(.north, withRespectTo: CGSize(width: 128, height: 128))
+                })
+            default:
+                self.currentPlayer.player.halt()
+            }
+        }
     }
 
     /// Make a copy of this object.
@@ -96,6 +111,7 @@ class AIGameState: NSObject, GKGameModel {
             with: ([], []),
             for: self.currentPlayer
         )
+        newState.exitPosition = self.exitPosition
         for input in self.activeExitInputs {
             newState.activeExitInputs.append(input)
         }
@@ -109,6 +125,9 @@ class AIGameState: NSObject, GKGameModel {
 
     /// Determine whether the state is a winning state for the player.
     func isWin(for player: GKGameModelPlayer) -> Bool {
+        if let realPlayer = player as? AIBaseAgent {
+            return self.exitOpen && realPlayer.player.position.distance(between: exitPosition) < 5
+        }
         return self.exitOpen
     }
 
