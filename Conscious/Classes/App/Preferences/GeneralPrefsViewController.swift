@@ -15,6 +15,7 @@ import Cocoa
 class GeneralPrefsViewController: PreferencesViewController {
 
     @IBOutlet weak var cameraScaleSlider: NSSlider!
+    @IBOutlet weak var cameraIntelligentMove: NSButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +23,12 @@ class GeneralPrefsViewController: PreferencesViewController {
 
     override func viewWillAppear() {
         self.cameraScaleSlider.doubleValue = Double(self.preferences.cameraScale * 100)
+        self.cameraIntelligentMove.state = preferences.intelligentCameraMovement ? .on : .off
     }
 
     override func viewWillDisappear() {
         self.preferences.cameraScale = Float(self.cameraScaleSlider.doubleValue / 100)
+        self.preferences.intelligentCameraMovement = cameraIntelligentMove.state == .on
     }
 
 }

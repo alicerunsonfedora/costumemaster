@@ -52,17 +52,8 @@ class GameScene: SKScene {
 
     // MARK: CONSTRUCTION METHODS
     /// Create children nodes from a tile map node and add them to the scene's view heirarchy.
-    private func setupTilemap() {
+    private func setupTilemap(tilemap: SKTileMapNode) {
         // swiftlint:disable:previous cyclomatic_complexity
-
-        // Get the tilemap for this scene.
-        guard let tilemap = childNode(withName: "Tile Map Node") as? SKTileMapNode else {
-            sendAlert(
-                "Check the appropriate level file and ensure an SKTilemapNode called \"Tile Map Node\" exists.",
-                withTitle: "The tilemap for the map \"\(self.name ?? "GameScene")\" is missing.",
-                level: .critical) { _ in self.callScene(name: "MainMenu") }
-            return
-        }
 
         // Instantiate the unit first.
         let mapUnit = tilemap.tileSize
@@ -227,8 +218,19 @@ class GameScene: SKScene {
         self.playerCamera = pCam
         self.playerCamera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
 
+        // Get the tilemap for this scene.
+        guard let tilemap = childNode(withName: "Tile Map Node") as? SKTileMapNode else {
+            sendAlert(
+                "Check the appropriate level file and ensure an SKTilemapNode called \"Tile Map Node\" exists.",
+                withTitle: "The tilemap for the map \"\(self.name ?? "GameScene")\" is missing.",
+                level: .critical) { _ in self.callScene(name: "MainMenu") }
+            return
+        }
+
+        let tilemapBounds = tilemap.frame
+
         // Create switch requisites, parse the tilemap, then hook tp the signals/receivers according to the requisites.
-        self.setupTilemap()
+        self.setupTilemap(tilemap: tilemap)
         self.linkSignalsAndReceivers()
 
         // Check that a player was generated.
@@ -244,6 +246,12 @@ class GameScene: SKScene {
         // Update the camera and its position.
         self.camera = playerCamera
         self.playerCamera!.position = self.playerNode!.position
+        let bounds = SKRange(
+            lowerLimit: 0, upperLimit: AppDelegate.preferences.intelligentCameraMovement
+                ? 256 * CGFloat(AppDelegate.preferences.cameraScale) : 0
+        )
+        let stayWithPlayer = SKConstraint.distance(bounds, to: self.playerNode!)
+        self.camera?.constraints = [stayWithPlayer]
 
         let music = SKAudioNode(fileNamed: ["September", "November"].randomElement() ?? "September")
         music.name = "music"
@@ -258,15 +266,19 @@ class GameScene: SKScene {
     // MARK: LIFE CYCLE UPDATES
     /// Run scene-related lifecycle updates.
     override func update(_ currentTime: TimeInterval) {
-        if self.camera?.position != self.playerNode?.position {
-            self.camera?.run(SKAction.move(to: self.playerNode?.position ?? CGPoint(x: 0, y: 0), duration: 1))
-        }
         self.camera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
         self.receivers.forEach { output in output.update() }
         self.playerNode?.update()
         if let music = self.childNode(withName: "music") as? SKAudioNode {
             music.run(SKAction.changeVolume(to: AppDelegate.preferences.musicVolume, duration: 0.01))
         }
+
+        let bounds = SKRange(
+            lowerLimit: 0, upperLimit: AppDelegate.preferences.intelligentCameraMovement
+                ? 256 * CGFloat(AppDelegate.preferences.cameraScale) : 0
+        )
+        let stayWithPlayer = SKConstraint.distance(bounds, to: self.playerNode!)
+        self.camera?.constraints = [stayWithPlayer]
     }
 
     /// Run any post-update logic and check input states.

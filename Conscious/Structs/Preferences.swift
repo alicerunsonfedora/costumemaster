@@ -29,6 +29,15 @@ struct Preferences {
         }
     }
 
+    /// Whether to move the camera intelligently based on constraints or to always follow the player.
+    public var intelligentCameraMovement: Bool {
+        didSet {
+            if !initCall {
+                UserDefaults.standard.setValue(intelligentCameraMovement, forKey: "intelligentCameraMovement")
+            }
+        }
+    }
+
     // MARK: SOUND
     /// The volume at which the music should play.
     public var musicVolume: Float {
@@ -135,10 +144,14 @@ struct Preferences {
         if prefs.value(forKey: "cameraScale") == nil {
             prefs.setValue(0.75, forKey: "cameraScale")
         }
+        if prefs.value(forKey: "intelligentCameraMovement") == nil {
+            prefs.setValue(true, forKey: "intelligentCameraMovement")
+        }
         if prefs.value(forKey: "soundMusicVolume") == nil {
             prefs.setValue(0.5, forKey: "soundMusicVolume")
         }
         self.cameraScale = prefs.float(forKey: "cameraScale")
+        self.intelligentCameraMovement = prefs.bool(forKey: "intelligentCameraMovement")
         self.musicVolume = prefs.float(forKey: "soundMusicVolume")
 
         for pref in ["soundPlayChangeNoise", "soundPlayLeverNoise", "soundPlayComputerNoise", "soundPlayAlarmNoise"] {
