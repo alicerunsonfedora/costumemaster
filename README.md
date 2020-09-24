@@ -48,19 +48,19 @@ Details on these milestones can be found on the [Milestones page in this reposit
 
 ### Requirements
 
-- Xcode 12.x* or higher
+- Xcode 12.2* or higher
 - macOS 10.15.6 (Catalina) or higher
 - [KeyboardShortcuts][keys] (added when cloning)
 - (Optional, but recommended) [SwiftLint][linter]
 
-Clone the Xcode project, ensure that dependencies are install with the Swift Package Manager, and then run the `Conscious` scheme to 
+Clone the Xcode project, ensure that dependencies are install with the Swift Package Manager, and then run the **Game** scheme to 
 build the project in Xcode.
 
 To make a release version, click on the destination ("My Mac") and select "Any Mac (Apple Silicon, Intel)", then go to **Product &rsaquo;
 Archive**.
 
 <small>*The release version of Xcode 12.0 and the GM seed are not compatible with this project due to the macOS 11 SDK not being
-present.</small>
+present. To build with Xcode 12.0, you will need to comment out code for GKAccessPoint and GKLeaderboards.</small>
 
 ### Game Center
 
