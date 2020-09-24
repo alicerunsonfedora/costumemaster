@@ -4,6 +4,8 @@
 </h1>
 </div>
 
+[![License][img-license]][license] ![Version][img-version] ![Swift 5][img-swift] [![Documentation][img-docs]][docs]
+
 **Applied AI with GameplayKit**
 
 An acclaimed costume designer and software engineer wakes up from a blackout to an eerily familiar scene. But, something isn't
@@ -111,3 +113,11 @@ Apple Inc. Music written by Kai Engel.
 [gcachieve]: ./Conscious/Enums/GameAchievments.swift
 [jazzy]: https://github.com/realm/jazzy
 [proposal]: ./Guides/Project%20Proposal.md
+[license]: LICENSE.txt
+[docs]: https://costumemaster.marquiskurt.net
+
+<!-- Image links -->
+[img-license]: https://img.shields.io/github/license/alicerunsonfedora/CS400
+[img-version]: https://img.shields.io/github/v/release/alicerunsonfedora/CS400
+[img-docs]: https://costumemaster.marquiskurt.net/badge.svg
+[img-swift]: https://img.shields.io/badge/swift-5.3-orange.svg
