@@ -14,7 +14,7 @@ import GameplayKit
 
 /// A class representation of a game state.
 ///
-/// This class subclasses `GKState` to maintain integration with GameplayKit and to prevent re-inventing AI
+/// This class subclasses `GKGameModel` to maintain integration with GameplayKit and to prevent re-inventing AI
 /// assessement mechanics.
 class AIGameState: NSObject, GKGameModel {
 
@@ -46,6 +46,8 @@ class AIGameState: NSObject, GKGameModel {
 
     /// The list of inactive input signals in the capture state that link to the exit.
     var inactiveExitInputs: [GameSignalSender]
+
+    // MARK: METHODS
 
     /// Initialize a game state object.
     /// - Parameter time: The timestamp of this state.
@@ -103,6 +105,24 @@ class AIGameState: NSObject, GKGameModel {
         }
         newState.setGameModel(self)
         return newState
+    }
+
+    /// Determine whether the state is a winning state for the player.
+    func isWin(for player: GKGameModelPlayer) -> Bool {
+        // TODO: Allow this to be overridden with an agent's scoring method.
+        return false
+    }
+
+    /// Determine whether the state is a losing state for the player.
+    func isLoss(for player: GKGameModelPlayer) -> Bool {
+        // TODO: Allow this to be overridden with an agent's scoring method.
+        return false
+    }
+
+    /// Determine the score of the state for the player.
+    func score(for player: GKGameModelPlayer) -> Int {
+        // TODO: Allow this to be overrideen with an agent's scoring method.
+        return 0
     }
 
 }
