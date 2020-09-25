@@ -65,6 +65,8 @@ custom_categories:
     - AIAgentInteractableScene
     - AIBaseAgent
     - AIGameState
+    - AIBaseAgentMove
+    - AIBaseAgentMoveAction
     
   - name: Challenges
     children:

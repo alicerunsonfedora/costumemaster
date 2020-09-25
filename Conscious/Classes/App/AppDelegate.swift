@@ -11,6 +11,7 @@
 
 import Cocoa
 import SpriteKit
+import GameKit
 import KeyboardShortcuts
 
 @NSApplicationMain
@@ -20,16 +21,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// Ony preference panes will really update this field.
     static var preferences = Preferences()
 
+    /// The window controller that corresponds to the preferences pane.
+    private lazy var preferencesWindowController: NSWindowController? = {
+        let storyboard: NSStoryboard = NSStoryboard(name: NSStoryboard.Name("Preferences"), bundle: nil)
+            return storyboard.instantiateInitialController() as? NSWindowController
+    }()
+
     /// Open the preferences window.
     @IBAction func instantiatePreferencesWindow(_ sender: Any) {
-        let prefs = NSStoryboard.init(name: NSStoryboard.Name("Preferences"), bundle: nil)
-        guard let controller: NSWindowController = prefs.instantiateController(
-                withIdentifier: "mainWindowController"
-        ) as? NSWindowController else {
-            return
-        }
-        controller.window?.parent = NSApplication.shared.mainWindow
-        controller.showWindow(self)
+        self.preferencesWindowController?.showWindow(self)
     }
 
     @IBAction func clearStore(_ sender: Any) {
@@ -62,8 +62,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(URL(string: "https://costumemaster.marquiskurt.net")!)
     }
 
+    func authenticateWithGameCenter() {
+        let localPlayer = GKLocalPlayer.local
+        localPlayer.authenticateHandler = { (viewC: NSViewController?, error) in
+            guard error == nil else { return }
+
+            if let controller = viewC {
+                NSApplication.shared.mainWindow?.contentViewController?.presentAsSheet(controller)
+            }
+        }
+    }
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        self.authenticateWithGameCenter()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

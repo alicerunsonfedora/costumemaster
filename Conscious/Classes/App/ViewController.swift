@@ -30,6 +30,7 @@ class ViewController: NSViewController, NSWindowDelegate {
     var rootScene: SKScene?
 
     /// Sign in to Game Center and present the resulting controller.
+    @available(*, deprecated, message: "This has been moved to AppDelegate.")
     func authenticateWithGameCenter() {
         let localPlayer = GKLocalPlayer.local
         localPlayer.authenticateHandler = { (viewC: NSViewController?, error) in
@@ -94,7 +95,9 @@ class ViewController: NSViewController, NSWindowDelegate {
         view.showsPhysics = settings.showPhysicsBodies
         view.shouldCullNonVisibleNodes = true
 
-        // Sign in to Game Center.
-        self.authenticateWithGameCenter()
+    }
+
+    override func viewWillAppear() {
+//        self.authenticateWithGameCenter()
     }
 }
