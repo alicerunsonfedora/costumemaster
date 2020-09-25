@@ -58,8 +58,6 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
 //            GKAccessPoint.shared.showHighlights = true
 //            GKAccessPoint.shared.isActive = true
 //            GKAccessPoint.shared.parentWindow = self.view?.window
-//        } else {
-        self.gameCenterButton?.isHidden = !GKLocalPlayer.local.isAuthenticated
 //        }
     }
 
@@ -192,8 +190,6 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
 
 //        if #available(OSX 11.0, *) {
 //            self.gameCenterButton?.isHidden = true
-//        } else {
-            self.gameCenterButton?.isHidden = !GKLocalPlayer.local.isAuthenticated
 //        }
     }
 

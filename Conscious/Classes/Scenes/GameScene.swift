@@ -202,23 +202,6 @@ class GameScene: SKScene {
         }
         self.configuration = LevelDataConfiguration(from: userData)
 
-        // Get the camera for this scene.
-        guard let pCam = childNode(withName: "Camera") as? SKCameraNode else {
-            sendAlert(
-                "Check the appropriate level file and ensure an SKCameraNode called \"Camera\" exists.",
-                withTitle: "The camera for the map \"\(self.name ?? "GameScene")\" is missing.",
-                level: .critical) { _ in self.callScene(name: "MainMenu") }
-            return
-        }
-        self.camera = pCam
-        self.camera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
-        self.camera?.position = self.playerNode!.position
-        let bounds = SKRange(
-            lowerLimit: 0, upperLimit: AppDelegate.preferences.intelligentCameraMovement
-                ? 256 * CGFloat(AppDelegate.preferences.cameraScale) : 0
-        )
-        self.camera?.constraints = [SKConstraint.distance(bounds, to: self.playerNode!)]
-
         // Get the tilemap for this scene.
         guard let tilemap = childNode(withName: "Tile Map Node") as? SKTileMapNode else {
             sendAlert(
@@ -241,6 +224,23 @@ class GameScene: SKScene {
                 level: .critical) { _ in self.callScene(name: "MainMenu") }
             return
         }
+
+        // Get the camera for this scene.
+        guard let pCam = childNode(withName: "Camera") as? SKCameraNode else {
+            sendAlert(
+                "Check the appropriate level file and ensure an SKCameraNode called \"Camera\" exists.",
+                withTitle: "The camera for the map \"\(self.name ?? "GameScene")\" is missing.",
+                level: .critical) { _ in self.callScene(name: "MainMenu") }
+            return
+        }
+        self.camera = pCam
+        self.camera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
+        self.camera?.position = self.playerNode!.position
+        let bounds = SKRange(
+            lowerLimit: 0, upperLimit: AppDelegate.preferences.intelligentCameraMovement
+                ? 256 * CGFloat(AppDelegate.preferences.cameraScale) : 0
+        )
+        self.camera?.constraints = [SKConstraint.distance(bounds, to: self.playerNode!)]
 
         let music = SKAudioNode(fileNamed: ["September", "November"].randomElement() ?? "September")
         music.name = "music"
