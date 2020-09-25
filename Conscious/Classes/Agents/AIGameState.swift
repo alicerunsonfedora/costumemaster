@@ -30,6 +30,13 @@ class AIGameState: NSObject, GKGameModel {
         return self.currentPlayer
     }
 
+    /// Describes the contents of this class to its receiver.
+    override var description: String {
+        return "AIGameState(Timestamp: \(currentTime), "
+            + "Current Player: \(String(describing: self.activePlayer)), Exit Open: \(self.exitOpen), "
+            + "Exit Position: \(self.exitPosition), Active Inputs: \(self.activeExitInputs))"
+    }
+
     // MARK: STORED PROPERTIES
 
     /// The currently active player.
@@ -141,6 +148,9 @@ class AIGameState: NSObject, GKGameModel {
     }
 
     /// Determine whether the state is a winning state for the player.
+    ///
+    /// A winning state for the base AI game state is determined by whether the player is close to the exit (node
+    /// distance of 5.0 or less) and the exit is activated.
     func isWin(for player: GKGameModelPlayer) -> Bool {
         if let realPlayer = player as? AIBaseAgent {
             return self.exitOpen && realPlayer.player.position.distance(between: exitPosition) < 5
