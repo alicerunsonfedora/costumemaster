@@ -125,6 +125,33 @@ assessement mechanics.</p>
                       </section>
                     </div>
                   </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIGameState(py)description"></a>
+                      <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIGameState(py)description">description</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Describes the contents of this class to its receiver.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">override</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
                 </ul>
               </div>
               <div class="task-group">
@@ -529,6 +556,9 @@ assessement mechanics.</p>
                         <div class="pointer"></div>
                         <div class="abstract">
                           <p>Determine whether the state is a winning state for the player.</p>
+
+<p>A winning state for the base AI game state is determined by whether the player is close to the exit (node
+distance of 5.0 or less) and the exit is activated.</p>
 
                         </div>
                         <div class="declaration">

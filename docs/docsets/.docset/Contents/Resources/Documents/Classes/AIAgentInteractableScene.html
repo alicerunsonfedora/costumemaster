@@ -117,6 +117,8 @@ so that an AI agent can play it.</p>
                         <div class="abstract">
                           <p>Initialize the scene and agent.</p>
 
+<p>The scene will also add a watermark on the top of the scene to indicate this is an AI run.</p>
+
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
@@ -159,6 +161,37 @@ so that an AI agent can play it.</p>
                   <li class="item">
                     <div>
                       <code>
+                      <a name="/s:17The_Costumemaster24AIAgentInteractableSceneC19captureInitialStateAA06AIGameH0CyF"></a>
+                      <a name="//apple_ref/swift/Method/captureInitialState()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster24AIAgentInteractableSceneC19captureInitialStateAA06AIGameH0CyF">captureInitialState()</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Make an initial snapshot of the game state for a game model to use.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">captureInitialState</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/AIGameState.html">AIGameState</a></span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>An agent game state that represents the initial state of the game.</p>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
                       <a name="/s:17The_Costumemaster24AIAgentInteractableSceneC13capturedStateAA06AIGameG0CyF"></a>
                       <a name="//apple_ref/swift/Method/capturedState()" class="dashAnchor"></a>
                       <a class="token" href="#/s:17The_Costumemaster24AIAgentInteractableSceneC13capturedStateAA06AIGameG0CyF">capturedState()</a>
@@ -176,7 +209,8 @@ so that an AI agent can play it.</p>
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">capturedState</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/AIGameState.html">AIGameState</a></span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">,</span> <span class="nv">renamed</span><span class="p">:</span> <span class="s">"captureInitialState"</span><span class="p">)</span>
+<span class="kd">func</span> <span class="nf">capturedState</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/AIGameState.html">AIGameState</a></span></code></pre>
 
                           </div>
                         </div>
