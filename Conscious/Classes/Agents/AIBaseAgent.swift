@@ -51,6 +51,21 @@ class AIBaseAgent: NSObject, GKGameModelPlayer {
         self.player.run(SKAction.sequence(events))
     }
 
+    /// Switch costumes in the queue.
+    func switchCostume(direction: AIBaseAgentMoveAction) {
+        var events = [SKAction]()
+        switch direction {
+        case .switchToNextCostume:
+            events.append(SKAction.run { _ = self.player.nextCostume() })
+        case .switchToPreviousCostume:
+            events.append(SKAction.run { _ = self.player.previousCostume() })
+        default:
+            break
+        }
+        events.append(SKAction.wait(forDuration: 3.0))
+        self.player.run(SKAction.sequence(events))
+    }
+
     /// Create an action set.
     /// - Parameter action: The action that the agent will perform.
     /// - Returns: The action set that the agent will perform.

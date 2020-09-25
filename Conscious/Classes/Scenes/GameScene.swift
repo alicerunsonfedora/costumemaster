@@ -26,9 +26,6 @@ class GameScene: SKScene {
     /// The player node in the level.
     var playerNode: Player?
 
-    /// The camera attached to the player.
-    var playerCamera: SKCameraNode?
-
     /// The base unit size for a given tile in a level.
     var unit: CGSize?
 
@@ -56,8 +53,7 @@ class GameScene: SKScene {
         // swiftlint:disable:previous cyclomatic_complexity
 
         // Instantiate the unit first.
-        let mapUnit = tilemap.tileSize
-        self.unit = mapUnit
+        let mapUnit = tilemap.tileSize; self.unit = mapUnit
 
         // Parse the tilemap and set up the nodes accordingly.
         tilemap.parse { (data: TilemapParseData) in
@@ -87,8 +83,7 @@ class GameScene: SKScene {
                 self.addChild(data.sprite)
             case .triggerGameCenter:
                 let trigger = GameAchievementTrigger(
-                    with: self.configuration?.achievementTrigger,
-                    at: CGPoint(x: data.column, y: data.row)
+                    with: self.configuration?.achievementTrigger, at: CGPoint(x: data.column, y: data.row)
                 )
                 trigger.position = data.sprite.position
                 trigger.size = data.sprite.size
@@ -215,8 +210,14 @@ class GameScene: SKScene {
                 level: .critical) { _ in self.callScene(name: "MainMenu") }
             return
         }
-        self.playerCamera = pCam
-        self.playerCamera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
+        self.camera = pCam
+        self.camera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
+        self.camera?.position = self.playerNode!.position
+        let bounds = SKRange(
+            lowerLimit: 0, upperLimit: AppDelegate.preferences.intelligentCameraMovement
+                ? 256 * CGFloat(AppDelegate.preferences.cameraScale) : 0
+        )
+        self.camera?.constraints = [SKConstraint.distance(bounds, to: self.playerNode!)]
 
         // Get the tilemap for this scene.
         guard let tilemap = childNode(withName: "Tile Map Node") as? SKTileMapNode else {
@@ -226,8 +227,6 @@ class GameScene: SKScene {
                 level: .critical) { _ in self.callScene(name: "MainMenu") }
             return
         }
-
-        let tilemapBounds = tilemap.frame
 
         // Create switch requisites, parse the tilemap, then hook tp the signals/receivers according to the requisites.
         self.setupTilemap(tilemap: tilemap)
@@ -242,16 +241,6 @@ class GameScene: SKScene {
                 level: .critical) { _ in self.callScene(name: "MainMenu") }
             return
         }
-
-        // Update the camera and its position.
-        self.camera = playerCamera
-        self.playerCamera!.position = self.playerNode!.position
-        let bounds = SKRange(
-            lowerLimit: 0, upperLimit: AppDelegate.preferences.intelligentCameraMovement
-                ? 256 * CGFloat(AppDelegate.preferences.cameraScale) : 0
-        )
-        let stayWithPlayer = SKConstraint.distance(bounds, to: self.playerNode!)
-        self.camera?.constraints = [stayWithPlayer]
 
         let music = SKAudioNode(fileNamed: ["September", "November"].randomElement() ?? "September")
         music.name = "music"
@@ -277,18 +266,14 @@ class GameScene: SKScene {
             lowerLimit: 0, upperLimit: AppDelegate.preferences.intelligentCameraMovement
                 ? 256 * CGFloat(AppDelegate.preferences.cameraScale) : 0
         )
-        let stayWithPlayer = SKConstraint.distance(bounds, to: self.playerNode!)
-        self.camera?.constraints = [stayWithPlayer]
+        self.camera?.constraints = [SKConstraint.distance(bounds, to: self.playerNode!)]
     }
 
     /// Run any post-update logic and check input states.
     override func didFinishUpdate() {
         for input in self.switches where input.activationMethod == .activeByPlayerIntervention {
-            switch input.kind {
-            case .pressurePlate, .trigger:
+            if [GameSignalKind.pressurePlate, GameSignalKind.trigger].contains(input.kind) {
                 input.activate(with: nil, player: self.playerNode, objects: self.interactables)
-            default:
-                break
             }
         }
         self.checkDoorStates()

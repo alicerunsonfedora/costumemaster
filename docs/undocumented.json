@@ -1,12 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIGameState.swift",
-      "line": 50,
-      "symbol": "AIGameState.exitPosition",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/marquiskurt/Developer/CS400"
 }

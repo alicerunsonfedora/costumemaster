@@ -47,6 +47,7 @@ class AIGameState: NSObject, GKGameModel {
     /// The list of inactive input signals in the capture state that link to the exit.
     var inactiveExitInputs: [GameSignalSender]
 
+    /// The position at which the exit lies on. Defaults to an empty position (0, 0).
     var exitPosition: CGPoint = CGPoint.zero
 
     // MARK: METHODS
@@ -96,6 +97,22 @@ class AIGameState: NSObject, GKGameModel {
             case .moveUp:
                 self.currentPlayer.run(action: self.currentPlayer.makeActionSet {
                     self.currentPlayer.move(.north, withRespectTo: CGSize(width: 128, height: 128))
+                })
+            case .moveDown:
+                self.currentPlayer.run(action: self.currentPlayer.makeActionSet {
+                    self.currentPlayer.move(.south, withRespectTo: CGSize(width: 128, height: 128))
+                })
+            case .moveRight:
+                self.currentPlayer.run(action: self.currentPlayer.makeActionSet {
+                    self.currentPlayer.move(.east, withRespectTo: CGSize(width: 128, height: 128))
+                })
+            case .moveLeft:
+                self.currentPlayer.run(action: self.currentPlayer.makeActionSet {
+                    self.currentPlayer.move(.west, withRespectTo: CGSize(width: 128, height: 128))
+                })
+            case .switchToPreviousCostume, .switchToNextCostume:
+                self.currentPlayer.run(action: self.currentPlayer.makeActionSet {
+                    self.currentPlayer.switchCostume(direction: update.action)
                 })
             default:
                 self.currentPlayer.player.halt()
