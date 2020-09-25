@@ -54,6 +54,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    @IBAction func showGithub(_ sender: Any) {
+        NSWorkspace.shared.open(URL(string: "https://github.com/alicerunsonfedora/CS400/issues/new")!)
+    }
+
+    @IBAction func showDocumentation(_ sender: Any) {
+        NSWorkspace.shared.open(URL(string: "https://costumemaster.marquiskurt.net")!)
+    }
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
