@@ -101,28 +101,25 @@ class AIGameState: NSObject, GKGameModel {
     func apply(_ gameModelUpdate: GKGameModelUpdate) {
         if let update = gameModelUpdate as? AIBaseAgentMove {
             switch update.action {
-            case .moveUp:
-                self.currentPlayer.run(action: self.currentPlayer.makeActionSet {
-                    self.currentPlayer.move(.north, withRespectTo: CGSize(width: 128, height: 128))
-                })
-            case .moveDown:
-                self.currentPlayer.run(action: self.currentPlayer.makeActionSet {
-                    self.currentPlayer.move(.south, withRespectTo: CGSize(width: 128, height: 128))
-                })
-            case .moveRight:
-                self.currentPlayer.run(action: self.currentPlayer.makeActionSet {
-                    self.currentPlayer.move(.east, withRespectTo: CGSize(width: 128, height: 128))
-                })
-            case .moveLeft:
-                self.currentPlayer.run(action: self.currentPlayer.makeActionSet {
-                    self.currentPlayer.move(.west, withRespectTo: CGSize(width: 128, height: 128))
-                })
+            case .moveUp, .moveDown, .moveLeft, .moveRight:
+                self.currentPlayer.run {
+                    self.currentPlayer.move(
+                        PlayerMoveDirection.mappedFromAction(update.action),
+                        withRespectTo: CGSize(width: 128, height: 128)
+                    )
+                }
             case .switchToPreviousCostume, .switchToNextCostume:
-                self.currentPlayer.run(action: self.currentPlayer.makeActionSet {
+                self.currentPlayer.run {
                     self.currentPlayer.switchCostume(direction: update.action)
-                })
+                }
+            case .deployClone, .retractClone:
+                self.currentPlayer.run {
+                    self.currentPlayer.toggleDeployedClones()
+                }
             default:
-                self.currentPlayer.player.halt()
+                self.currentPlayer.run {
+                    self.currentPlayer.player.halt()
+                }
             }
         }
     }

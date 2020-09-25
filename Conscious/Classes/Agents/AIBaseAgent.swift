@@ -66,6 +66,15 @@ class AIBaseAgent: NSObject, GKGameModelPlayer {
         self.player.run(SKAction.sequence(events))
     }
 
+    /// Toggle the state of the USB's deployed clones.
+    func toggleDeployedClones() {
+        let events = [
+            SKAction.run { self.player.copyAsObject() },
+            SKAction.wait(forDuration: 2.0)
+        ]
+        self.player.run(SKAction.sequence(events))
+    }
+
     /// Create an action set.
     /// - Parameter action: The action that the agent will perform.
     /// - Returns: The action set that the agent will perform.
@@ -77,6 +86,12 @@ class AIBaseAgent: NSObject, GKGameModelPlayer {
     /// - Parameter action: The action to perform.
     func run(action: [SKAction]?) {
         self.player.run(SKAction.sequence(action ?? []))
+    }
+
+    /// Run an action.
+    /// - Parameter action: The action to perform.
+    func run(action: @escaping () -> Void) {
+        self.run(action: self.makeActionSet(for: action))
     }
 
 }

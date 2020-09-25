@@ -25,4 +25,22 @@ public enum PlayerMoveDirection {
 
     /// The direction "west".
     case west
+
+    /// The direction associated with an agent's move action.
+    /// - Parameter action: The action to get the direction of.
+    /// - Returns: The corresponding direction for the action provided, or north if the action is invalid.
+    static func mappedFromAction(_ action: AIBaseAgentMoveAction) -> PlayerMoveDirection {
+        switch action {
+        case .moveUp:
+            return .north
+        case .moveDown:
+            return .south
+        case .moveLeft:
+            return .west
+        case .moveRight:
+            return .east
+        default:
+            return .north
+        }
+    }
 }
