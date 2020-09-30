@@ -38,7 +38,6 @@ class AIGameStrategist {
         }
     }
 
-    
     init(with strategy: GKStrategist, reading state: AIAbstractGameState) {
         self.strategy = strategy
         self.strategy.gameModel = state

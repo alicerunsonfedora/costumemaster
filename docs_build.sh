@@ -12,6 +12,8 @@ bundle exec jazzy \
 --documentation=Guides/*.md \
 --config .jazzy.yml \
 --build-tool-arguments -workspace,Conscious.xcodeproj/project.xcworkspace,-scheme,"Game"
-rm -r build
+if [ -d "build" ]; then
+  rm -rf build
+fi
 echo costumemaster.marquiskurt.net >> docs/CNAME
 echo "Done."

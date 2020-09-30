@@ -62,11 +62,14 @@ custom_categories:
     
   - name: AI Agents
     children:
-    - AIAgentInteractableScene
-    - AIBaseAgent
-    - AIGameState
-    - AIBaseAgentMove
-    - AIBaseAgentMoveAction
+    - AIGameScene
+    - AIAbstractGamePlayer
+    - AIAbstractGameState
+    - AIGameStrategist
+    - AIAbstractGameSignalSender
+    - AIAbstractGameSignalReceivable
+    - AIGameDecision
+    - AIGamePlayerAction
     
   - name: Challenges
     children:
