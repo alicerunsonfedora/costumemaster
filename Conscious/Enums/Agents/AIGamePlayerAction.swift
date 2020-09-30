@@ -1,5 +1,5 @@
 //
-//  AIBaseAgentMoveAction.swift
+//  AIGamePlayerAction.swift
 //  Costumemaster
 //
 //  Created by Marquis Kurt on 9/24/20.
@@ -12,7 +12,7 @@
 import Foundation
 
 /// An enumeration that represents the moves an agent can make.
-enum AIBaseAgentMoveAction: CaseIterable {
+public enum AIGamePlayerAction: CaseIterable {
 
     // MARK: MOVEMENT
     /// Move the agent left.
