@@ -69,7 +69,7 @@ class ViewController: NSViewController, NSWindowDelegate {
         self.settings = Preferences()
         self.arguments = CommandLine.parse()
 
-        let levelName = self.arguments.startLevel ?? "MainMenu"
+        let levelName = self.arguments.startLevel ?? "Splash"
         guard let scene = GKScene(fileNamed: levelName) else {
             sendAlert(
                 "Please reinstall the game.",
