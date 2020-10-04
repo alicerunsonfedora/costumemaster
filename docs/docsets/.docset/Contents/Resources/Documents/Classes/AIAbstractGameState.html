@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="../index.html">The Costumemaster</a>
-          <span class="no-mobile"> (87% documented)</span>
+          <span class="no-mobile"> (96% documented)</span>
         </p>
     
         <p class="header-right">
@@ -53,7 +53,7 @@
 
                   </div>
                 </div>
-              <p>Undocumented</p>
+              <p>An abstract class that represents a game state/model.</p>
 
             </section>
             <section class="section task-group-section">
@@ -72,7 +72,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>The list of players in this model.</p>
 
                         </div>
                         <div class="declaration">
@@ -99,7 +99,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>The currently active player in this model.</p>
 
                         </div>
                         <div class="declaration">
@@ -126,7 +126,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>A string that describes the state to a receiver.</p>
 
                         </div>
                         <div class="declaration">
@@ -153,7 +153,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>The player in the game state.</p>
 
                         </div>
                         <div class="declaration">
@@ -180,7 +180,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>The position of the exit door.</p>
 
                         </div>
                         <div class="declaration">
@@ -207,7 +207,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Whether the player can leave the world successfully.</p>
 
                         </div>
                         <div class="declaration">
@@ -234,7 +234,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>The list of all available inputs in the world.</p>
 
                         </div>
                         <div class="declaration">
@@ -261,7 +261,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>The list of all available outputs in the world.</p>
 
                         </div>
                         <div class="declaration">
@@ -269,6 +269,33 @@
                           <div class="language">
                             <p class="aside-title">Swift</p>
                             <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">outputs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/AIAbstractGameSignalReceivable.html">AIAbstractGameSignalReceivable</a></span><span class="p">]</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster19AIAbstractGameStateC19interactableObjectsSaySo7CGPointVGvp"></a>
+                      <a name="//apple_ref/swift/Property/interactableObjects" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster19AIAbstractGameStateC19interactableObjectsSaySo7CGPointVGvp">interactableObjects</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>A list of objects that the player can pick up.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">interactableObjects</span><span class="p">:</span> <span class="p">[</span><span class="kt">CGPoint</span><span class="p">]</span></code></pre>
 
                           </div>
                         </div>
@@ -288,7 +315,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Instantiate a game state.</p>
 
                         </div>
                         <div class="declaration">
@@ -298,6 +325,25 @@
                             <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">with</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/AIAbstractGamePlayer.html">AIAbstractGamePlayer</a></span><span class="p">)</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>player</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The player that is in the world.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </section>
                     </div>
@@ -315,7 +361,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Sets the game model’s internal state to that of the specified game model.</p>
 
                         </div>
                         <div class="declaration">
@@ -325,6 +371,25 @@
                             <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setGameModel</span><span class="p">(</span><span class="n">_</span> <span class="nv">gameModel</span><span class="p">:</span> <span class="kt">GKGameModel</span><span class="p">)</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>gameModel</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The game model to set the internal model to.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </section>
                     </div>
@@ -342,7 +407,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Returns the set of moves available to the specified player.</p>
 
                         </div>
                         <div class="declaration">
@@ -352,6 +417,26 @@
                             <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">gameModelUpdates</span><span class="p">(</span><span class="k">for</span> <span class="nv">player</span><span class="p">:</span> <span class="kt">GKGameModelPlayer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">GKGameModelUpdate</span><span class="p">]?</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>player</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>An instance of your game’s player class representing the player
+whose moves are to be evaluated.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </section>
                     </div>
@@ -369,7 +454,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Updates the internal state of the game model to reflect the specified changes.</p>
 
                         </div>
                         <div class="declaration">
@@ -379,6 +464,26 @@
                             <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">apply</span><span class="p">(</span><span class="n">_</span> <span class="nv">gameModelUpdate</span><span class="p">:</span> <span class="kt">GKGameModelUpdate</span><span class="p">)</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>gameModelUpdate</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>An instance of your custom class that implements the
+GKGameModelUpdate protocol, describing a move to be made in your game.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </section>
                     </div>
@@ -396,7 +501,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Create a copy of this object.</p>
 
                         </div>
                         <div class="declaration">
@@ -423,7 +528,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Returns whether the current state is a winning state.</p>
 
                         </div>
                         <div class="declaration">
@@ -450,7 +555,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Returns an integer that scores the current state.</p>
 
                         </div>
                         <div class="declaration">
@@ -696,6 +801,9 @@
                   <a href="../Extensions/CGPoint.html">CGPoint</a>
                 </li>
                 <li class="nav-group-task">
+                  <a href="../Extensions/CGSize.html">CGSize</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="../Extensions/CGVector.html">CGVector</a>
                 </li>
                 <li class="nav-group-task">
@@ -763,7 +871,7 @@
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-09-30)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-04)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

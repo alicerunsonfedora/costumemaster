@@ -14,10 +14,10 @@ import GameplayKit
 
 /// An abstract class that represents a decision an agent can make.
 class AIGameDecision: NSObject, GKGameModelUpdate {
-    
+
     /// The value of this action.
     var value: Int
-    
+
     /// The action that will be performed.
     var action: AIGamePlayerAction
 

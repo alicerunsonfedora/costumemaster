@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="../index.html">The Costumemaster</a>
-          <span class="no-mobile"> (87% documented)</span>
+          <span class="no-mobile"> (96% documented)</span>
         </p>
     
         <p class="header-right">
@@ -53,12 +53,39 @@
 
                   </div>
                 </div>
-              <p>Undocumented</p>
+              <p>A game scene that an AI agent can control.</p>
 
             </section>
             <section class="section task-group-section">
               <div class="task-group">
                 <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster11AIGameSceneC10strategistAA0C10StrategistCSgvp"></a>
+                      <a name="//apple_ref/swift/Property/strategist" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIGameSceneC10strategistAA0C10StrategistCSgvp">strategist</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>The strategist that will be playing this scene.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">strategist</span><span class="p">:</span> <span class="kt"><a href="../Classes/AIGameStrategist.html">AIGameStrategist</a></span><span class="p">?</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
                   <li class="item">
                     <div>
                       <code>
@@ -72,7 +99,8 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          
+                          <p>Load the scene and set an initial state.</p>
+
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
@@ -98,7 +126,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Prevent the player from doing anything that could infl</p>
 
                         </div>
                         <div class="declaration">
@@ -125,7 +153,8 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          
+                          <p>Prevent keyboard input.</p>
+
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
@@ -151,7 +180,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Capture the current scene as a game state.</p>
 
                         </div>
                         <div class="declaration">
@@ -162,15 +191,19 @@
 
                           </div>
                         </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>An abstract version of the world as a game state that the agent can use.</p>
+                        </div>
                       </section>
                     </div>
                   </li>
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster11AIGameSceneC8setStateyyAA0C8DecisionCF"></a>
-                      <a name="//apple_ref/swift/Method/setState(_:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster11AIGameSceneC8setStateyyAA0C8DecisionCF">setState(_:<wbr>)</a>
+                      <a name="/s:17The_Costumemaster11AIGameSceneC9setUpdateyyAA0C8DecisionCF"></a>
+                      <a name="//apple_ref/swift/Method/setUpdate(_:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIGameSceneC9setUpdateyyAA0C8DecisionCF">setUpdate(_:<wbr>)</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -178,16 +211,81 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Apply a game state update to the scene.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setState</span><span class="p">(</span><span class="n">_</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/AIGameDecision.html">AIGameDecision</a></span><span class="p">)</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setUpdate</span><span class="p">(</span><span class="n">_</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/AIGameDecision.html">AIGameDecision</a></span><span class="p">)</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>state</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The action that will be performed to change the state.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster11AIGameSceneC13repeatAfterMeyySayAA0C8DecisionCGF"></a>
+                      <a name="//apple_ref/swift/Method/repeatAfterMe(_:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIGameSceneC13repeatAfterMeyySayAA0C8DecisionCGF">repeatAfterMe(_:<wbr>)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Perform a set of actions and update the state of the scene.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">repeatAfterMe</span><span class="p">(</span><span class="n">_</span> <span class="nv">moves</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/AIGameDecision.html">AIGameDecision</a></span><span class="p">])</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>moves</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The list of actions to perform.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </section>
                     </div>
@@ -424,6 +522,9 @@
                   <a href="../Extensions/CGPoint.html">CGPoint</a>
                 </li>
                 <li class="nav-group-task">
+                  <a href="../Extensions/CGSize.html">CGSize</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="../Extensions/CGVector.html">CGVector</a>
                 </li>
                 <li class="nav-group-task">
@@ -491,7 +592,7 @@
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-09-30)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-04)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>
