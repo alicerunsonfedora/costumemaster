@@ -13,7 +13,7 @@ import Foundation
 import SpriteKit
 
 /// A base protocol that defines an object that receives signals from inputs.
-protocol GameSignalReceivable: SKNode {
+protocol GameSignalReceivable: GameTileSpriteNode {
 
     // MARK: STORED PROPERTIES
 
@@ -39,7 +39,8 @@ protocol GameSignalReceivable: SKNode {
 
     /// The position of the output in context with the level world.
     /// - Note: Use `self.position` to determine the position of the _actual_ note.
-    var levelPosition: CGPoint { get set }
+    @available(*, deprecated, renamed: "worldPosition")
+    var levelPosition: CGPoint { get }
 
     // MARK: METHODS
     /// Initialize a game receiver.

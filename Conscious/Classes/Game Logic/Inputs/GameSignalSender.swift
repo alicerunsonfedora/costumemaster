@@ -37,7 +37,10 @@ public class GameSignalSender: GameStructureObject {
 
     /// The position of this input in context with the level.
     /// - Note: Use `self.position` for position of the _actual_ node.
-    let levelPosition: CGPoint
+    @available(*, deprecated, renamed: "worldPosition")
+    var levelPosition: CGPoint {
+        return self.worldPosition
+    }
 
     // MARK: COMPUTED PROPERTIES
     /// The texture for this input, accounting for active states.
@@ -58,12 +61,12 @@ public class GameSignalSender: GameStructureObject {
         self.baseTexture = textureName
         self.activationMethod = inputMethod
         self.cooldown = 0
-        self.levelPosition = position
         self.receivers = []
         super.init(
             with: SKTexture(imageNamed: textureName + "_off"),
             size: SKTexture(imageNamed: textureName + "_off").size()
         )
+        self.worldPosition = position
         self.texture = self.activeTexture
     }
 
@@ -81,12 +84,12 @@ public class GameSignalSender: GameStructureObject {
         self.baseTexture = textureName
         self.cooldown = timer
         self.activationMethod = inputMethod
-        self.levelPosition = position
         self.receivers = []
         super.init(
             with: SKTexture(imageNamed: textureName + "_off"),
             size: SKTexture(imageNamed: textureName + "_off").size()
         )
+        self.worldPosition = position
         self.texture = self.activeTexture
     }
 

@@ -15,10 +15,13 @@ import SpriteKit
 /// A class representation of a heavy object in the game.
 ///
 /// Heavy objects can be manipulated by the player when wearing the sorceress costume.
-class GameHeavyObject: SKSpriteNode {
+class GameHeavyObject: GameTileSpriteNode {
 
     /// The location of this heavy object.
-    public let location: CGPoint
+    @available(*, deprecated, renamed: "worldPosition")
+    public var location: CGPoint {
+        return self.worldPosition
+    }
 
     /// Whether the object is being carried by the player.
     public var carrying: Bool {
@@ -32,8 +35,8 @@ class GameHeavyObject: SKSpriteNode {
     /// - Parameter texture: The texture name of the heavy object.
     /// - Parameter location: The matrix location of the heavy object.
     public init(with texture: String, at location: CGPoint) {
-        self.location = location
         super.init(texture: SKTexture(imageNamed: texture), color: .clear, size: SKTexture(imageNamed: texture).size())
+        self.worldPosition = location
         self.texture?.filteringMode = .nearest
         self.physicsBody = getHeavyObjectPhysicsBody(with: texture)
     }

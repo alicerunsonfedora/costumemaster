@@ -17,7 +17,7 @@ import SpriteKit
 /// This class is used to create objects with physics bodies that need to be pinned so that they don't move.
 /// - Note: Currently, static sprites suffer from a drifting issue. Details on this issue can be found on the
 /// [Apple Developer Forums](https://developer.apple.com/forums/thread/27057).
-public class GameStructureObject: SKSpriteNode {
+public class GameStructureObject: GameTileSpriteNode {
 
     /// The child node that hosts the physics body.
     private var child: SKNode

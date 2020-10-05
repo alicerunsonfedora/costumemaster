@@ -38,7 +38,10 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
     var playerListener: Player?
 
     /// The position of this door in the world matrix.
-    var levelPosition: CGPoint
+    @available(*, deprecated, renamed: "worldPosition")
+    var levelPosition: CGPoint {
+        return self.worldPosition
+    }
 
     private var reverseSignal: Bool = false
 
@@ -76,7 +79,6 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
         self.inputs = inputs
         self.baseTextureName = baseTexture
         self.activationMethod = .allInputs
-        self.levelPosition = location
 
         self.reverseSignal = reverseSignal
         if reverseSignal { self.defaultOn.toggle() }
@@ -86,6 +88,7 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
             size: SKTexture(imageNamed: baseTexture + "_off").size()
         )
 
+        self.worldPosition = location
         self.inputs.forEach { input in input.receivers.append(self) }
         self.texture = self.activeTexture
         self.instantiateBody(with: instantiatePhysicsBody())

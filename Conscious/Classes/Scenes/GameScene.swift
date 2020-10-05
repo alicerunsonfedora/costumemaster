@@ -150,7 +150,7 @@ class GameScene: SKScene {
         for node in self.receivers { node.zPosition -= 5; self.addChild(node) }
         for node in self.interactables { self.addChild(node) }
 
-        for node in self.receivers where node.levelPosition == self.configuration?.exitLocation {
+        for node in self.receivers where node.worldPosition == self.configuration?.exitLocation {
             if let door = node as? DoorReceiver { self.exitNode = door }
         }
 
@@ -169,12 +169,12 @@ class GameScene: SKScene {
     private func linkSignalsAndReceivers() {
         if let requisites = self.configuration?.requisites {
             for req in requisites {
-                let correspondingOutputs = self.receivers.filter({rec in rec.levelPosition == req.outputLocation})
+                let correspondingOutputs = self.receivers.filter({rec in rec.worldPosition == req.outputLocation})
                 if correspondingOutputs.isEmpty { continue }
                 let output = correspondingOutputs.first
                 let inputs = self.switches
                 if inputs.isEmpty { continue }
-                for input in inputs where req.requiredInputs.contains(input.levelPosition) {
+                for input in inputs where req.requiredInputs.contains(input.worldPosition) {
                     output?.inputs.append(input)
                     output?.activationMethod = req.requisite ?? .noInput
                 }
