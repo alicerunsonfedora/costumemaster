@@ -26,6 +26,7 @@ class SeededChallenge: CostumemasteryInheritable {
         if #available(OSX 11.0, *) {
             GKLeaderboard.submit(to: .seededDaily, with: Int(self.currentTime))
         }
+        self.announceTimeResults()
     }
 
     /// Perform the key down events and earn the "Cut and Paste" achievement if not earned already.

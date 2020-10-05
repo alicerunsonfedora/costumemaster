@@ -22,6 +22,7 @@ class ExposureChallenge: CostumemasteryInheritable {
         if #available(OSX 11.0, *) {
             GKLeaderboard.submit(to: .exposureDaily, with: Int(self.currentTime))
         }
+        self.announceTimeResults()
     }
 
 }

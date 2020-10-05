@@ -21,6 +21,7 @@ class CycleChallenge: ChallengeGameScene {
         if #available(OSX 11.0, *) {
             GKLeaderboard.submit(to: .cycleDaily, with: Int(self.currentTime))
         }
+        self.announceTimeResults()
     }
 
 }

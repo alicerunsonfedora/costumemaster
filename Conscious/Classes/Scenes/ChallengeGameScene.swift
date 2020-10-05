@@ -104,4 +104,17 @@ class ChallengeGameScene: GameScene {
         print("Costume changes: USB - \(usb), Bird - \(bird), Sorceress - \(sorceress)")
     }
 
+    /// Send a Game Center notification to the player to show them their time scores.
+    ///
+    /// This method should most likely be called in `ChallengeGameScene.willCalculateChallengeResults` for maps
+    /// with a timed leaderboard.
+    func announceTimeResults() {
+        if !GKLocalPlayer.local.isAuthenticated { return }
+        GKNotificationBanner
+            .show(
+                withTitle: "Great work!",
+                message: "You finished \(self.name ?? "Level") in \(self.currentTime) seconds."
+            ) { }
+    }
+
 }

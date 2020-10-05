@@ -34,6 +34,7 @@ class DivergentChallenge: ChallengeGameScene {
         if #available(OSX 11.0, *) {
             GKLeaderboard.submit(to: .divergentDaily, with: Int(self.currentTime))
         }
+        self.announceTimeResults()
     }
 
 }

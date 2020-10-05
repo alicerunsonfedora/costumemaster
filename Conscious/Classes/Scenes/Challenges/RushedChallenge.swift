@@ -22,6 +22,7 @@ class RushedChallenge: ChallengeGameScene {
         if #available(OSX 11.0, *) {
             GKLeaderboard.submit(to: .rushedDaily, with: Int(self.currentTime))
         }
+        self.announceTimeResults()
     }
 
 }
