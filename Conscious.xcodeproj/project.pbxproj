@@ -17,6 +17,7 @@
 		BF153F9124FC3DF3007B20B4 /* leverToggle.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF153F8E24FC3DF3007B20B4 /* leverToggle.wav */; };
 		BF153F9224FC3DF3007B20B4 /* cantUse.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF153F8F24FC3DF3007B20B4 /* cantUse.wav */; };
 		BF153F9324FC3DF3007B20B4 /* computerPowerOn.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF153F9024FC3DF3007B20B4 /* computerPowerOn.wav */; };
+		BF18AAC0252B9EC200577BF6 /* GameScene_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF18AABF252B9EC200577BF6 /* GameScene_Extension.swift */; };
 		BF1A5940250014BD000929CF /* Tilemaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A593F250014BD000929CF /* Tilemaps.swift */; };
 		BF1A59422500155A000929CF /* TilemapParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A59412500155A000929CF /* TilemapParseData.swift */; };
 		BF1FF2F4250FD4ED0053D1A4 /* CycleChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2F3250FD4ED0053D1A4 /* CycleChallenge.swift */; };
@@ -143,6 +144,7 @@
 		BF153F8E24FC3DF3007B20B4 /* leverToggle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = leverToggle.wav; sourceTree = "<group>"; };
 		BF153F8F24FC3DF3007B20B4 /* cantUse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cantUse.wav; sourceTree = "<group>"; };
 		BF153F9024FC3DF3007B20B4 /* computerPowerOn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = computerPowerOn.wav; sourceTree = "<group>"; };
+		BF18AABF252B9EC200577BF6 /* GameScene_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene_Extension.swift; sourceTree = "<group>"; };
 		BF1A593F250014BD000929CF /* Tilemaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tilemaps.swift; sourceTree = "<group>"; };
 		BF1A59412500155A000929CF /* TilemapParseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilemapParseData.swift; sourceTree = "<group>"; };
 		BF1FF2F3250FD4ED0053D1A4 /* CycleChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleChallenge.swift; sourceTree = "<group>"; };
@@ -558,6 +560,7 @@
 				BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */,
 				BFE0AE9E250C2B30003C6780 /* Leaderboards.swift */,
 				BF1A593F250014BD000929CF /* Tilemaps.swift */,
+				BF18AABF252B9EC200577BF6 /* GameScene_Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -920,6 +923,7 @@
 				BFD8797924F5FDA800552EDD /* CGVector.swift in Sources */,
 				BFAD134A25028C0F0074DCBA /* GameAlarmClock.swift in Sources */,
 				BF3A0B7F24F6EB4900575F72 /* GameSignalInputMethod.swift in Sources */,
+				BF18AAC0252B9EC200577BF6 /* GameScene_Extension.swift in Sources */,
 				BF63E65B24F84BAC00429247 /* GeneralPrefsViewController.swift in Sources */,
 				BFB621CC2512DB1B003940CF /* SeededChallenge.swift in Sources */,
 				BF63E65924F84B2000429247 /* PreferencesViewController.swift in Sources */,
