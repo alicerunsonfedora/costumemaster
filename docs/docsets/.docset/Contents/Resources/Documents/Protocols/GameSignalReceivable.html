@@ -49,7 +49,7 @@
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">GameSignalReceivable</span> <span class="p">:</span> <span class="kt">SKNode</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">GameSignalReceivable</span> <span class="p">:</span> <span class="kt"><a href="../Classes/GameTileSpriteNode.html">GameTileSpriteNode</a></span></code></pre>
 
                   </div>
                 </div>
@@ -268,7 +268,8 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">levelPosition</span><span class="p">:</span> <span class="kt">CGPoint</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">,</span> <span class="nv">renamed</span><span class="p">:</span> <span class="s">"worldPosition"</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">levelPosition</span><span class="p">:</span> <span class="kt">CGPoint</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                           </div>
                         </div>
@@ -635,6 +636,9 @@ is used specifically to make visual changes on every frame.
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
                   <a href="../Classes/GameStructureObject.html">GameStructureObject</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/GameTileSpriteNode.html">GameTileSpriteNode</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="../Classes/SplashScene.html">SplashScene</a>

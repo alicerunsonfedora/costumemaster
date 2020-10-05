@@ -18,6 +18,7 @@ import SpriteKit
 class GameHeavyObject: GameTileSpriteNode {
 
     /// The location of this heavy object.
+    /// - Important: This property has been renamed to worldPosition.
     @available(*, deprecated, renamed: "worldPosition")
     public var location: CGPoint {
         return self.worldPosition

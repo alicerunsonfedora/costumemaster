@@ -37,6 +37,7 @@ public class GameSignalSender: GameStructureObject {
 
     /// The position of this input in context with the level.
     /// - Note: Use `self.position` for position of the _actual_ node.
+    /// - Important: This property has been renamed to worldPosition.
     @available(*, deprecated, renamed: "worldPosition")
     var levelPosition: CGPoint {
         return self.worldPosition

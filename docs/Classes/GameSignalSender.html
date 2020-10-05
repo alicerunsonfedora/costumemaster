@@ -248,6 +248,10 @@
     <p class="aside-title">Note</p>
     Use <code>self.position</code> for position of the <em>actual</em> node.
 
+</div><div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    This property has been renamed to worldPosition.
+
 </div>
 
                         </div>
@@ -255,7 +259,8 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">levelPosition</span><span class="p">:</span> <span class="kt">CGPoint</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">,</span> <span class="nv">renamed</span><span class="p">:</span> <span class="s">"worldPosition"</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">levelPosition</span><span class="p">:</span> <span class="kt">CGPoint</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                           </div>
                         </div>
@@ -962,6 +967,9 @@ This will default to false otherwise.
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
                   <a href="../Classes/GameStructureObject.html">GameStructureObject</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/GameTileSpriteNode.html">GameTileSpriteNode</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="../Classes/SplashScene.html">SplashScene</a>

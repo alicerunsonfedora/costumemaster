@@ -38,6 +38,7 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
     var playerListener: Player?
 
     /// The position of this door in the world matrix.
+    /// - Important: This property has been renamed to worldPosition.
     @available(*, deprecated, renamed: "worldPosition")
     var levelPosition: CGPoint {
         return self.worldPosition
