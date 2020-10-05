@@ -16,4 +16,7 @@ struct CommandLineArguments {
 
     /// The name of the file to open on startup. Defaults to nil (no file).
     public let startLevel: String?
+
+    /// Whether to enable AI mode. Defaults to false.
+    public let useAgentTesting: Bool
 }

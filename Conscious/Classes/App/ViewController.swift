@@ -68,11 +68,23 @@ class ViewController: NSViewController, NSWindowDelegate {
 
         self.settings = Preferences()
         self.arguments = CommandLine.parse()
+        let interfaceScenes = ["MainMenu", "Splash", "Intro", "About", "PauseMenu", "End"]
 
-        let levelName = self.arguments.startLevel ?? "Splash"
+        var levelName = self.arguments.startLevel ?? "Splash"
+        if levelName.hasSuffix("AI") && !self.arguments.useAgentTesting {
+            sendAlert(
+                "Run The Costumemaster with agent testing enabled via --agent-test-mode to run this level.",
+                withTitle: "You don't have permission to run \(levelName).",
+                level: .critical
+            ) { _ in NSApplication.shared.terminate(nil) }
+        }
+
+        if self.arguments.useAgentTesting && !interfaceScenes.contains(levelName) && !levelName.hasSuffix("AI") {
+            levelName += "AI"
+        }
         guard let scene = GKScene(fileNamed: levelName) else {
             sendAlert(
-                "Please reinstall the game.",
+                "Check that \(levelName) is installed properly. If the problem persists, please reinstall the game.",
                 withTitle: "The scene \(levelName) is missing.",
                 level: .critical
             ) { _ in NSApplication.shared.terminate(nil) }

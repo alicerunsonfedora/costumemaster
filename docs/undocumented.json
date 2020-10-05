@@ -1,6 +1,20 @@
 {
   "warnings": [
     {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
+      "line": 312,
+      "symbol": "GameScene.grabItems()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
+      "line": 318,
+      "symbol": "GameScene.getPauseScene()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/Splash.swift",
       "line": 15,
       "symbol": "SplashScene",

@@ -15,7 +15,10 @@ extension CommandLine {
     /// Parse the command line arguments to get the settings for this execution context.
     /// - Returns: A structure that contains the argument data.
     static func parse() -> CommandLineArguments {
-        return CommandLineArguments(startLevel: CommandLine.getArgument(of: "--start-level"))
+        return CommandLineArguments(
+            startLevel: CommandLine.getArgument(of: "--start-level"),
+            useAgentTesting: CommandLine.getArgument(of: "--agent-test-mode") == "true"
+        )
     }
 
     /// Get the resulting value of a passed argument.
