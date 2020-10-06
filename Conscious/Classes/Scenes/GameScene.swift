@@ -65,6 +65,7 @@ class GameScene: SKScene {
                 guard let wallName = data.definition.name else { return }
                 let wallTexture = wallName.starts(with: "wall_edge") ? "wall_edge_physics_mask" : wallName
                 let wall = GameStructureObject(with: data.sprite.texture, size: data.sprite.size)
+                wall.locked = !wallName.contains("passable")
                 wall.position = data.sprite.position
                 wall.instantiateBody(with: getWallPhysicsBody(with: wallTexture))
                 wall.name = "wall_\(data.column)_\(data.row)\(wallName.starts(with: "wall_edge") ? "_edge": ""))"
@@ -299,7 +300,11 @@ class GameScene: SKScene {
             guard let wall = node as? GameStructureObject else { return }
             guard let name = wall.name else { return }
             let body = name.contains("_edge") ? "wall_edge_physics_mask" : "wall_top"
-            wall.instantiateBody(with: costume == .bird ? nil : getWallPhysicsBody(with: body))
+            if costume == .bird {
+                wall.instantiateBody(with: getWallPhysicsBody(with: body))
+            } else {
+                wall.releaseBody()
+            }
         }
     }
 

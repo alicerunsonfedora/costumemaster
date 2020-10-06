@@ -196,12 +196,25 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
     /// Start the game by presenting the first level scene.
     private func startAction() {
         self.startButton?.fontColor = NSColor.init(named: "AccentColor")
+        guard let intro = SKScene(fileNamed: "Intro") else { return }
         if #available(OSX 11.0, *) {
             // TODO: Re-enable this when macOS 11 SDK is finalized.
 //             GKAccessPoint.shared.isActive = false
         }
-        if let firstScene = SKScene(fileNamed: "Intro") {
-            self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
+
+        if GameStore.shared.lastSavedScene != "" {
+            confirm("You'll lose your level progress.",
+                    withTitle: "Are you sure you want to start a new game?",
+                    level: .warning
+            ) { response in
+                if response.rawValue != 1000 {
+                    self.startButton?.fontColor = .black
+                    return
+                }
+                self.view?.presentScene(intro, transition: SKTransition.fade(with: .black, duration: 2.0))
+            }
+        } else {
+            self.view?.presentScene(intro, transition: SKTransition.fade(with: .black, duration: 2.0))
         }
     }
 
