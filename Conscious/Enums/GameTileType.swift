@@ -47,6 +47,12 @@ public enum GameTileType {
     /// A Game Center trigger tile.
     case triggerGameCenter
 
+    /// A kill trigger.
+    case triggerKill
+
+    /// A death pit.
+    case deathPit
+
     /// An unknown tile.
     case unknown
 }

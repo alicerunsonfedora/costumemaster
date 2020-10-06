@@ -46,6 +46,7 @@ extension GameScene {
     /// Listen to keyboard events and run the game logic for key events.
     public override func keyDown(with event: NSEvent) {
         // swiftlint:disable:previous cyclomatic_complexity
+        if self.playerDied { return }
         guard let changing = self.playerNode?.isChangingCostumes else { return }
         switch Int(event.keyCode) {
         case KeyboardShortcuts.getShortcut(for: .moveUp)?.carbonKeyCode where !changing:

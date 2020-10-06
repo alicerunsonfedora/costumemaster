@@ -47,6 +47,9 @@ class GameScene: SKScene {
     /// A child node that stores the structure of the level.
     var structure: SKNode = SKNode()
 
+    /// Whether the player has died on this level.
+    var playerDied: Bool = false
+
     // MARK: CONSTRUCTION METHODS
     /// Create children nodes from a tile map node and add them to the scene's view heirarchy.
     private func setupTilemap(tilemap: SKTileMapNode) {
@@ -59,8 +62,9 @@ class GameScene: SKScene {
         tilemap.parse { (data: TilemapParseData) in
             // Offset by one to prevent texture collisions.
             data.sprite.size = CGSize(width: data.unit.width + 1, height: data.unit.height + 1)
+            let type = getTileType(fromDefinition: data.definition)
 
-            switch getTileType(fromDefinition: data.definition) {
+            switch type {
             case .wall:
                 guard let wallName = data.definition.name else { return }
                 let wallTexture = wallName.starts(with: "wall_edge") ? "wall_edge_physics_mask" : wallName
@@ -90,6 +94,15 @@ class GameScene: SKScene {
                 trigger.position = data.sprite.position
                 trigger.size = data.sprite.size
                 self.switches.append(trigger)
+            case .deathPit, .triggerKill:
+                let killer = GameDeathPit(color: .clear, size: data.sprite.size)
+                killer.trigger = type == .triggerKill
+                if type == .deathPit {
+                    killer.texture = data.sprite.texture
+                }
+                killer.zPosition = -999
+                killer.position = data.sprite.position
+                self.structure.addChild(killer)
             case .floor:
                 data.sprite.zPosition = -999
                 self.structure.addChild(data.sprite)
@@ -284,6 +297,12 @@ class GameScene: SKScene {
                 self.callScene(name: self.configuration?.linksToNextScene)
             }
         }
+        for child in self.structure.children where child is GameDeathPit {
+            guard let pit = child as? GameDeathPit else { continue }
+            if pit.shouldKill(self.playerNode) && !self.playerDied {
+                self.kill()
+            }
+        }
     }
 
     /// Prepare the scene for destruction and save the scene name.
@@ -334,5 +353,24 @@ class GameScene: SKScene {
             music.run(SKAction.changeVolume(to: 0.0, duration: 0.25))
         }
         self.view?.presentScene(scene, transition: SKTransition.fade(with: .black, duration: 1.5))
+    }
+
+    private func kill() {
+        self.playerDied = true
+        let deathOverlay = SKSpriteNode(color: .red, size: self.size)
+        deathOverlay.zPosition = 999999999999; deathOverlay.position = self.playerNode?.position ?? .zero
+        deathOverlay.alpha = 0
+        self.addChild(deathOverlay)
+        self.playerNode?.halt()
+        self.run(SKAction.sequence(
+                    [
+                        SKAction.run { self.playerNode?.run(SKAction.fadeAlpha(to: 0.0, duration: 0.5)) },
+                        SKAction.run { deathOverlay.run(SKAction.fadeAlpha(to: 0.5, duration: 2.0)) },
+                        SKAction.playSoundFileNamed("death", waitForCompletion: true),
+                        SKAction.wait(forDuration: 5.0),
+                        SKAction.run { self.callScene(name: self.name) }
+                    ]
+        ))
+
     }
 }
