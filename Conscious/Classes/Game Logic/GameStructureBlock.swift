@@ -21,7 +21,7 @@ public class GameStructureObject: GameTileSpriteNode {
 
     /// The child node that hosts the physics body.
     private var child: SKNode
-    
+
     /// Whether the structure object is locked.
     var locked: Bool = false
 
