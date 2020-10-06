@@ -21,6 +21,9 @@ public class GameStructureObject: GameTileSpriteNode {
 
     /// The child node that hosts the physics body.
     private var child: SKNode
+    
+    /// Whether the structure object is locked.
+    var locked: Bool = false
 
     /// Initialize the game structure object.
     /// - Parameter texture: The texture for this sprite.
@@ -43,8 +46,9 @@ public class GameStructureObject: GameTileSpriteNode {
         self.child.physicsBody = physicsBody
     }
 
-    /// Release the physics body from the sprite.
+    /// Release the physics body from the sprite if the sprite is not locked.
     public func releaseBody() {
+        if !self.locked { return }
         self.child.physicsBody = nil
     }
 
