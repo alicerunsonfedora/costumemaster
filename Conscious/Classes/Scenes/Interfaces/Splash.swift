@@ -17,7 +17,7 @@ class SplashScene: SKScene {
 
     /// The label node that contains the by text.
     var byText: SKLabelNode?
-    
+
     /// The sprite node that corresponds to the logomark.
     var logomark: SKSpriteNode?
 

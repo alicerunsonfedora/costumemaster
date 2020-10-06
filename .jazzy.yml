@@ -36,6 +36,7 @@ custom_categories:
     - IntroScene
     - MainMenuScene
     - PauseScene
+    - SplashScene
     
   - name: Inputs
     children:
