@@ -68,6 +68,7 @@ class GameScene: SKScene {
                 wall.position = data.sprite.position
                 wall.instantiateBody(with: getWallPhysicsBody(with: wallTexture))
                 wall.name = "wall_\(data.column)_\(data.row)\(wallName.starts(with: "wall_edge") ? "_edge": ""))"
+                wall.worldPosition = CGPoint(x: data.column, y: data.row)
                 self.structure.addChild(wall)
             case .player:
                 self.playerNode = Player(
