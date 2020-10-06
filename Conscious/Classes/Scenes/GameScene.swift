@@ -310,12 +310,14 @@ class GameScene: SKScene {
         }
     }
 
+    /// Drop or pickup items near the player.
     func grabItems() {
         for item in interactables {
             if item.carrying { item.resign(from: self.playerNode )} else { item.attach(to: self.playerNode) }
         }
     }
 
+    /// Get the pause menu screen and load it.
     func getPauseScene() {
         guard let controller = self.view?.window?.contentViewController as? ViewController else { return }
         controller.rootScene = self; self.callScene(name: "PauseMenu")

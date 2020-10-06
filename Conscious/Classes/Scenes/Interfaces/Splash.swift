@@ -12,11 +12,16 @@
 import Foundation
 import SpriteKit
 
+/// The scene that corresponds to the splash screen.
 class SplashScene: SKScene {
 
+    /// The label node that contains the by text.
     var byText: SKLabelNode?
+    
+    /// The sprite node that corresponds to the logomark.
     var logomark: SKSpriteNode?
 
+    /// Load the splashscreen then fade into the main menu.
     override func sceneDidLoad() {
         self.scaleMode = .aspectFill
 
@@ -49,6 +54,7 @@ class SplashScene: SKScene {
         self.run(SKAction.sequence(actions))
     }
 
+    /// Launch the main menu.
     func launchMain() {
         guard let mainMenu = SKScene(fileNamed: "MainMenu") as? MainMenuScene else {
             NSApplication.shared.terminate(nil)

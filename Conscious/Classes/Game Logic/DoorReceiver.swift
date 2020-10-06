@@ -66,7 +66,7 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
 
     /// The description for this class.
     public override var description: String {
-        return "\(self.className)(active: \(self.active), position: \(self.levelPosition))"
+        return "\(self.className)(active: \(self.active), position: \(self.worldPosition))"
     }
 
     // MARK: CONSTRUCTORS

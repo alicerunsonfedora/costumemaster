@@ -11,7 +11,12 @@
 
 import Foundation
 
+/// An abstract data structure that represents a signal receiver.
 struct AIAbstractGameSignalReceivable {
+    
+    /// Whether the signal receiver is active.
     var active: Bool
+    
+    /// The position of the signal receiver.
     var location: CGPoint
 }
