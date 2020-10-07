@@ -281,8 +281,9 @@ class GameScene: SKScene {
         self.camera?.constraints = [SKConstraint.distance(bounds, to: self.playerNode!)]
 
         if let dustEmitter = SKEmitterNode(fileNamed: "Dust") {
+            dustEmitter.name = "dust"
             dustEmitter.zPosition = 100
-            dustEmitter.alpha = 0.25
+            dustEmitter.alpha = 0.15
             dustEmitter.particlePositionRange = CGVector(
                 dx: self.size.width, dy: self.size.height
             )
@@ -316,6 +317,7 @@ class GameScene: SKScene {
                 ? 256 * CGFloat(AppDelegate.preferences.cameraScale) : 0
         )
         self.camera?.constraints = [SKConstraint.distance(bounds, to: self.playerNode!)]
+        self.camera?.childNode(withName: "dust")?.alpha = AppDelegate.preferences.showDustParticles ? 0.15 : 0
     }
 
     /// Run any post-update logic and check input states.

@@ -153,18 +153,18 @@
             <objects>
                 <viewController title="General" id="HcG-VG-dar" customClass="GeneralPrefsViewController" customModule="The_Costumemaster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="qBv-nQ-jfu">
-                        <rect key="frame" x="0.0" y="0.0" width="641" height="124"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="168"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-nA-TRO">
-                                <rect key="frame" x="219" y="78" width="335" height="28"/>
+                                <rect key="frame" x="219" y="122" width="335" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="319" id="R7L-s5-EPH"/>
                                 </constraints>
                                 <sliderCell key="cell" state="on" alignment="left" minValue="25" maxValue="100" doubleValue="100" tickMarkPosition="above" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="hMk-xA-NKX"/>
                             </slider>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e3U-XL-XYF">
-                                <rect key="frame" x="100" y="87" width="90" height="16"/>
+                                <rect key="frame" x="100" y="131" width="90" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Camera scale:" id="kld-19-kQj">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -172,7 +172,7 @@
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wpx-yE-DW6">
-                                <rect key="frame" x="203" y="70" width="16" height="48"/>
+                                <rect key="frame" x="203" y="114" width="16" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="agc-G7-AfQ"/>
                                     <constraint firstAttribute="width" constant="16" id="hif-bK-XUE"/>
@@ -182,7 +182,7 @@
                                 </imageCell>
                             </imageView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QAy-3a-aBU">
-                                <rect key="frame" x="556" y="70" width="28" height="48"/>
+                                <rect key="frame" x="556" y="114" width="28" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="28" id="Cdm-Nj-2Fe"/>
                                     <constraint firstAttribute="height" constant="48" id="Tbu-mn-j75"/>
@@ -192,7 +192,7 @@
                                 </imageCell>
                             </imageView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zGp-hO-bRh">
-                                <rect key="frame" x="201" y="59" width="221" height="18"/>
+                                <rect key="frame" x="201" y="103" width="221" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="219" id="kmQ-ek-9mF"/>
                                 </constraints>
@@ -202,7 +202,7 @@
                                 </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aiU-6m-H1Q">
-                                <rect key="frame" x="201" y="20" width="417" height="32"/>
+                                <rect key="frame" x="201" y="64" width="417" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="413" id="nE4-qw-bXp"/>
                                 </constraints>
@@ -212,12 +212,24 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-fX-dLS">
+                                <rect key="frame" x="100" y="19" width="146" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="GyF-H0-RNL"/>
+                                </constraints>
+                                <buttonCell key="cell" type="check" title="Show dust particles" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Du3-sE-ieQ">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="NJg-fX-dLS" secondAttribute="bottom" constant="20" symbolic="YES" id="2mQ-LC-DSh"/>
                             <constraint firstItem="aiU-6m-H1Q" firstAttribute="trailing" secondItem="QAy-3a-aBU" secondAttribute="trailing" constant="32" id="3qD-nh-5cX"/>
                             <constraint firstItem="e3U-XL-XYF" firstAttribute="leading" secondItem="qBv-nQ-jfu" secondAttribute="leading" constant="102" id="Bog-3f-nxg"/>
                             <constraint firstItem="wpx-yE-DW6" firstAttribute="leading" secondItem="e3U-XL-XYF" secondAttribute="trailing" constant="15" id="DTn-Dk-xQJ"/>
                             <constraint firstItem="Hft-nA-TRO" firstAttribute="top" secondItem="qBv-nQ-jfu" secondAttribute="top" constant="20" symbolic="YES" id="Hhs-aE-KKe"/>
+                            <constraint firstItem="NJg-fX-dLS" firstAttribute="leading" secondItem="qBv-nQ-jfu" secondAttribute="leading" constant="102" id="IlX-gU-5za"/>
                             <constraint firstItem="wpx-yE-DW6" firstAttribute="top" secondItem="qBv-nQ-jfu" secondAttribute="top" constant="6" id="Ss1-AN-1pp"/>
                             <constraint firstItem="aiU-6m-H1Q" firstAttribute="top" secondItem="zGp-hO-bRh" secondAttribute="bottom" constant="8" symbolic="YES" id="UnV-VQ-7c7"/>
                             <constraint firstItem="e3U-XL-XYF" firstAttribute="top" secondItem="qBv-nQ-jfu" secondAttribute="top" constant="21" id="Zqa-gj-Zyl"/>
@@ -233,11 +245,12 @@
                     <connections>
                         <outlet property="cameraIntelligentMove" destination="zGp-hO-bRh" id="71j-8F-6I6"/>
                         <outlet property="cameraScaleSlider" destination="Hft-nA-TRO" id="0Yv-JO-qUh"/>
+                        <outlet property="showDustParticles" destination="NJg-fX-dLS" id="LDa-lc-FuU"/>
                     </connections>
                 </viewController>
                 <customObject id="kfI-Vu-fFt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090.5" y="46"/>
+            <point key="canvasLocation" x="1103.5" y="68"/>
         </scene>
         <!--Controls-->
         <scene sceneID="1Qp-P0-IIJ">

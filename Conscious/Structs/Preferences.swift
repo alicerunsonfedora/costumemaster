@@ -38,6 +38,15 @@ struct Preferences {
         }
     }
 
+    /// Whether to show dust particles.
+    public var showDustParticles: Bool {
+        didSet {
+            if !initCall {
+                UserDefaults.standard.setValue(showDustParticles, forKey: "showDustParticles")
+            }
+        }
+    }
+
     // MARK: SOUND
     /// The volume at which the music should play.
     public var musicVolume: Float {
@@ -147,11 +156,15 @@ struct Preferences {
         if prefs.value(forKey: "intelligentCameraMovement") == nil {
             prefs.setValue(true, forKey: "intelligentCameraMovement")
         }
+        if prefs.value(forKey: "showDustParticles") == nil {
+            prefs.setValue(true, forKey: "showDustParticles")
+        }
         if prefs.value(forKey: "soundMusicVolume") == nil {
             prefs.setValue(0.5, forKey: "soundMusicVolume")
         }
         self.cameraScale = prefs.float(forKey: "cameraScale")
         self.intelligentCameraMovement = prefs.bool(forKey: "intelligentCameraMovement")
+        self.showDustParticles = prefs.bool(forKey: "showDustParticles")
         self.musicVolume = prefs.float(forKey: "soundMusicVolume")
 
         for pref in ["soundPlayChangeNoise", "soundPlayLeverNoise", "soundPlayComputerNoise", "soundPlayAlarmNoise"] {
