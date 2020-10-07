@@ -357,7 +357,7 @@ class GameScene: SKScene {
 
     private func kill() {
         self.playerDied = true
-        let deathOverlay = SKSpriteNode(color: .red, size: self.size)
+        let deathOverlay = SKSpriteNode(color: NSColor(named: "Skybox") ?? .red, size: self.size)
         deathOverlay.zPosition = 999999999999; deathOverlay.position = self.playerNode?.position ?? .zero
         deathOverlay.alpha = 0
         self.addChild(deathOverlay)
@@ -367,7 +367,13 @@ class GameScene: SKScene {
                         SKAction.run { self.playerNode?.run(SKAction.fadeAlpha(to: 0.0, duration: 0.5)) },
                         SKAction.run { deathOverlay.run(SKAction.fadeAlpha(to: 0.5, duration: 2.0)) },
                         SKAction.playSoundFileNamed("death", waitForCompletion: true),
-                        SKAction.wait(forDuration: 5.0),
+                        SKAction.run {
+                            GKNotificationBanner.show(
+                                withTitle: "You fell down the abyss!",
+                                message: "The level will restart shortly."
+                            ) { }
+                        },
+                        SKAction.wait(forDuration: 3.0),
                         SKAction.run { self.callScene(name: self.name) }
                     ]
         ))

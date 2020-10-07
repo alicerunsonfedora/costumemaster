@@ -69,6 +69,7 @@
 		BF7C5F04250AD4D00062B1CC /* September.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF7C5F01250AD4D00062B1CC /* September.mp3 */; };
 		BF8C30F02502E0BD00A29425 /* GameHeavyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8C30EF2502E0BD00A29425 /* GameHeavyObject.swift */; };
 		BF8C30F2250304B700A29425 /* Hacker.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF8C30F1250304B700A29425 /* Hacker.sks */; };
+		BF9279EC252D3F3A004B548E /* Consequences.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF9279EB252D3F3A004B548E /* Consequences.sks */; };
 		BFAD1346250285F60074DCBA /* GameLever.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD1345250285F60074DCBA /* GameLever.swift */; };
 		BFAD1348250286E20074DCBA /* GameComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD1347250286E20074DCBA /* GameComputer.swift */; };
 		BFAD134A25028C0F0074DCBA /* GameAlarmClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD134925028C0F0074DCBA /* GameAlarmClock.swift */; };
@@ -205,6 +206,7 @@
 		BF7C5F01250AD4D00062B1CC /* September.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = September.mp3; sourceTree = "<group>"; };
 		BF8C30EF2502E0BD00A29425 /* GameHeavyObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHeavyObject.swift; sourceTree = "<group>"; };
 		BF8C30F1250304B700A29425 /* Hacker.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hacker.sks; sourceTree = "<group>"; };
+		BF9279EB252D3F3A004B548E /* Consequences.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Consequences.sks; sourceTree = "<group>"; };
 		BFAD1345250285F60074DCBA /* GameLever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLever.swift; sourceTree = "<group>"; };
 		BFAD1347250286E20074DCBA /* GameComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameComputer.swift; sourceTree = "<group>"; };
 		BFAD134925028C0F0074DCBA /* GameAlarmClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAlarmClock.swift; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 				BFAD7FFA251006BC00768609 /* Unmonitored.sks */,
 				BF41E5DE2511714C006527CA /* Seeded.sks */,
 				BF4CD5A82513F96E00C021BC /* Chained.sks */,
+				BF9279EB252D3F3A004B548E /* Consequences.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -817,6 +820,7 @@
 				BF3A0B8124F703F400575F72 /* MainMenu.sks in Resources */,
 				BFDC7B3B25096B1E00ED4DB9 /* alarmTick.wav in Resources */,
 				BF6FBAE124A8BDDB00996890 /* Assets.xcassets in Resources */,
+				BF9279EC252D3F3A004B548E /* Consequences.sks in Resources */,
 				BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */,
 				BFD8796324F5C63C00552EDD /* Player_Backward_USB.atlas in Resources */,
 				BFD8795824F5A2FF00552EDD /* Player_Forward_Sorceress.atlas in Resources */,
