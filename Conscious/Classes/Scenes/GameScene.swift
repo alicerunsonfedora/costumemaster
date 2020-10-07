@@ -69,12 +69,15 @@ class GameScene: SKScene {
                 guard let wallName = data.definition.name else { return }
                 let wallTexture = wallName.starts(with: "wall_edge") ? "wall_edge_physics_mask" : wallName
                 let wall = GameStructureObject(with: data.sprite.texture, size: data.sprite.size)
-                wall.locked = !wallName.contains("passable")
+                if wallName.contains("passable") {
+                    wall.locked = false
+                }
                 wall.position = data.sprite.position
                 wall.instantiateBody(with: getWallPhysicsBody(with: wallTexture))
                 wall.name = "wall_\(data.column)_\(data.row)\(wallName.starts(with: "wall_edge") ? "_edge": ""))"
                 wall.worldPosition = CGPoint(x: data.column, y: data.row)
                 self.structure.addChild(wall)
+
             case .player:
                 self.playerNode = Player(
                     texture: data.texture,
@@ -83,10 +86,14 @@ class GameScene: SKScene {
                 )
                 self.playerNode?.position = data.sprite.position
                 self.playerNode?.size = data.sprite.size
+                if let disallow = self.configuration?.disallowCostume {
+                    self.playerNode?.remove(costume: disallow)
+                }
                 self.addChild(self.playerNode!)
                 data.sprite.texture = SKTexture(imageNamed: "floor")
                 data.sprite.zPosition = -999
                 self.addChild(data.sprite)
+
             case .triggerGameCenter:
                 let trigger = GameAchievementTrigger(
                     with: self.configuration?.achievementTrigger, at: CGPoint(x: data.column, y: data.row)
@@ -94,6 +101,7 @@ class GameScene: SKScene {
                 trigger.position = data.sprite.position
                 trigger.size = data.sprite.size
                 self.switches.append(trigger)
+
             case .deathPit, .triggerKill:
                 let killer = GameDeathPit(color: .clear, size: data.sprite.size)
                 killer.trigger = type == .triggerKill
@@ -103,9 +111,11 @@ class GameScene: SKScene {
                 killer.zPosition = -999
                 killer.position = data.sprite.position
                 self.structure.addChild(killer)
+
             case .floor:
                 data.sprite.zPosition = -999
                 self.structure.addChild(data.sprite)
+
             case .door:
                 let receiver = DoorReceiver(
                     fromInput: [],
@@ -118,11 +128,13 @@ class GameScene: SKScene {
                 receiver.playerListener = self.playerNode
                 receiver.size = data.sprite.size
                 self.receivers.append(receiver)
+
             case .lever:
                 let lever = GameLever(at: CGPoint(x: data.column, y: data.row))
                 lever.position = data.sprite.position
                 lever.size = data.sprite.size
                 self.switches.append(lever)
+
             case .alarmClock:
                 let alarm = GameAlarmClock(
                     with: self.configuration?.defaultTimerDelay ?? 3.0,
@@ -131,6 +143,7 @@ class GameScene: SKScene {
                 alarm.position = data.sprite.position
                 alarm.size = data.sprite.size
                 self.switches.append(alarm)
+
             case .computerT1, .computerT2:
                 let computer = GameComputer(
                     at: CGPoint(x: data.column, y: data.row),
@@ -139,11 +152,13 @@ class GameScene: SKScene {
                 computer.position = data.sprite.position
                 computer.size = data.sprite.size
                 self.switches.append(computer)
+
             case .pressurePlate:
                 let plate = GamePressurePlate(at: CGPoint(x: data.column, y: data.row))
                 plate.position = data.sprite.position
                 plate.size = data.sprite.size
                 self.switches.append(plate)
+
             case .heavyObject:
                 let object = GameHeavyObject(
                     with: data.definition.name?.replacingOccurrences(of: "floor_ho_", with: "") ?? "cabinet",
@@ -156,6 +171,7 @@ class GameScene: SKScene {
                 data.sprite.texture = SKTexture(imageNamed: "floor")
                 data.sprite.zPosition = -999
                 self.addChild(data.sprite)
+
             default:
                 break
             }
@@ -319,10 +335,11 @@ class GameScene: SKScene {
             guard let wall = node as? GameStructureObject else { return }
             guard let name = wall.name else { return }
             let body = name.contains("_edge") ? "wall_edge_physics_mask" : "wall_top"
+            if wall.locked { continue }
             if costume == .bird {
-                wall.instantiateBody(with: getWallPhysicsBody(with: body))
-            } else {
                 wall.releaseBody()
+            } else {
+                wall.instantiateBody(with: getWallPhysicsBody(with: body))
             }
         }
     }

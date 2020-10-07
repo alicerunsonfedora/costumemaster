@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF02CB12252E343E00E16EC9 /* Stack.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB11252E343E00E16EC9 /* Stack.sks */; };
+		BF02CB16252E454700E16EC9 /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB15252E454700E16EC9 /* death.wav */; };
 		BF0D2C1C24FADC4E00AEF86F /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = BF0D2C1B24FADC4E00AEF86F /* KeyboardShortcuts */; };
 		BF0D2C1E24FADD1F00AEF86F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */; };
 		BF0D2C2024FAE86B00AEF86F /* ControlsPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D2C1F24FAE86B00AEF86F /* ControlsPrefsViewController.swift */; };
@@ -20,7 +22,6 @@
 		BF18AAC0252B9EC200577BF6 /* GameScene_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF18AABF252B9EC200577BF6 /* GameScene_Extension.swift */; };
 		BF18AAC4252BB73000577BF6 /* GameTileSpriteNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF18AAC3252BB73000577BF6 /* GameTileSpriteNote.swift */; };
 		BF18AAD1252D0BAE00577BF6 /* GameDeathPit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF18AAD0252D0BAE00577BF6 /* GameDeathPit.swift */; };
-		BF18AADB252D20CA00577BF6 /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF18AADA252D20CA00577BF6 /* death.wav */; };
 		BF1A5940250014BD000929CF /* Tilemaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A593F250014BD000929CF /* Tilemaps.swift */; };
 		BF1A59422500155A000929CF /* TilemapParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A59412500155A000929CF /* TilemapParseData.swift */; };
 		BF1FF2F4250FD4ED0053D1A4 /* CycleChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2F3250FD4ED0053D1A4 /* CycleChallenge.swift */; };
@@ -139,6 +140,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF02CB11252E343E00E16EC9 /* Stack.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Stack.sks; sourceTree = "<group>"; };
+		BF02CB15252E454700E16EC9 /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death.wav; sourceTree = "<group>"; };
 		BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		BF0D2C1F24FAE86B00AEF86F /* ControlsPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsPrefsViewController.swift; sourceTree = "<group>"; };
 		BF109CD624FAFD6F00F06E47 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -151,7 +154,6 @@
 		BF18AABF252B9EC200577BF6 /* GameScene_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene_Extension.swift; sourceTree = "<group>"; };
 		BF18AAC3252BB73000577BF6 /* GameTileSpriteNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTileSpriteNote.swift; sourceTree = "<group>"; };
 		BF18AAD0252D0BAE00577BF6 /* GameDeathPit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDeathPit.swift; sourceTree = "<group>"; };
-		BF18AADA252D20CA00577BF6 /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = death.wav; path = ../../../../../Downloads/death.wav; sourceTree = "<group>"; };
 		BF1A593F250014BD000929CF /* Tilemaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tilemaps.swift; sourceTree = "<group>"; };
 		BF1A59412500155A000929CF /* TilemapParseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilemapParseData.swift; sourceTree = "<group>"; };
 		BF1FF2F3250FD4ED0053D1A4 /* CycleChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleChallenge.swift; sourceTree = "<group>"; };
@@ -349,7 +351,7 @@
 				BF153F8F24FC3DF3007B20B4 /* cantUse.wav */,
 				BF3A0B7424F6C42500575F72 /* changeCostume.wav */,
 				BF153F9024FC3DF3007B20B4 /* computerPowerOn.wav */,
-				BF18AADA252D20CA00577BF6 /* death.wav */,
+				BF02CB15252E454700E16EC9 /* death.wav */,
 				BF153F8E24FC3DF3007B20B4 /* leverToggle.wav */,
 				BFD10ED62502CF0400BCDAA9 /* plateOff.wav */,
 				BFD10ED52502CF0400BCDAA9 /* plateOn.wav */,
@@ -454,6 +456,7 @@
 				BF41E5DE2511714C006527CA /* Seeded.sks */,
 				BF4CD5A82513F96E00C021BC /* Chained.sks */,
 				BF9279EB252D3F3A004B548E /* Consequences.sks */,
+				BF02CB11252E343E00E16EC9 /* Stack.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -775,7 +778,6 @@
 				BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */,
 				BFD8797124F5D8BB00552EDD /* Player_Side_Default.atlas in Resources */,
 				BFE6475824F8B03500230F93 /* MenuTileset.sks in Resources */,
-				BF18AADB252D20CA00577BF6 /* death.wav in Resources */,
 				BFD8795724F5A2FF00552EDD /* Player_Forward_Default.atlas in Resources */,
 				BFAD134E250298970074DCBA /* alarmDisable.wav in Resources */,
 				BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */,
@@ -809,6 +811,7 @@
 				BF7C5F03250AD4D00062B1CC /* Smoldering.mp3 in Resources */,
 				BF7C5EF9250ACA760062B1CC /* About.sks in Resources */,
 				BF7C5F04250AD4D00062B1CC /* September.mp3 in Resources */,
+				BF02CB12252E343E00E16EC9 /* Stack.sks in Resources */,
 				BFD8797524F5DE3E00552EDD /* Player_Side_Sorceress.atlas in Resources */,
 				BF4CD5AD251410A800C021BC /* Player_Change_Final.atlas in Resources */,
 				BFD10ED82502CF0400BCDAA9 /* plateOff.wav in Resources */,
@@ -824,6 +827,7 @@
 				BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */,
 				BFD8796324F5C63C00552EDD /* Player_Backward_USB.atlas in Resources */,
 				BFD8795824F5A2FF00552EDD /* Player_Forward_Sorceress.atlas in Resources */,
+				BF02CB16252E454700E16EC9 /* death.wav in Resources */,
 				BFD8795624F5A2FF00552EDD /* Player_Forward_USB.atlas in Resources */,
 				BFAD134D250298970074DCBA /* alarmEnable.wav in Resources */,
 			);

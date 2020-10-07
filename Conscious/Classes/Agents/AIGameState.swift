@@ -132,7 +132,7 @@ class AIAbstractGameState: NSObject, GKGameModel {
     /// Returns an integer that scores the current state.
     func score(for player: GKGameModelPlayer) -> Int {
         guard let agent = player as? AIAbstractGamePlayer else { return -999 }
-        return Int.random(in: 1...10)
+        return agent.playerId * Int.random(in: 1...10)
     }
 
 }

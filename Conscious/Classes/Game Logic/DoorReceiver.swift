@@ -66,7 +66,8 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
 
     /// The description for this class.
     public override var description: String {
-        return "\(self.className)(active: \(self.active), position: \(self.worldPosition))"
+        return "\(self.className)(active: \(self.active), gate: \(self.activationMethod), " +
+            "position: \(self.worldPosition))"
     }
 
     // MARK: CONSTRUCTORS
@@ -93,6 +94,7 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
         self.inputs.forEach { input in input.receivers.append(self) }
         self.texture = self.activeTexture
         self.instantiateBody(with: instantiatePhysicsBody())
+        self.locked = false
     }
 
     /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.

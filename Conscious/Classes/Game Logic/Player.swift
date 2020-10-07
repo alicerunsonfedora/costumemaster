@@ -281,6 +281,12 @@ public class Player: SKSpriteNode {
         return self.costume
     }
 
+    /// Remove a costume from the costume queue.
+    /// - Parameter costume: The costume to remove from the queue.
+    func remove(costume: PlayerCostumeType) {
+        self.costumeQueue.removeAll { cost in cost == costume }
+    }
+
     /// Check the current  ostume increments and determine whether to grant an achievement.
     private func checkAchievementStatus() {
         switch self.costume {

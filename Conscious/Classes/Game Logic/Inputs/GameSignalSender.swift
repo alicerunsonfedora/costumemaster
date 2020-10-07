@@ -51,7 +51,8 @@ public class GameSignalSender: GameStructureObject {
 
     /// The description for this class.
     public override var description: String {
-        return "\(self.className)(active: \(self.active), outputs: \(self.receivers), position: \(self.worldPosition))"
+        return "\(self.className)(active: \(self.active), gate: \(self.activationMethod), "
+        + "outputs: \(self.receivers), position: \(self.worldPosition))"
     }
 
     // MARK: CONSTRUCTOR

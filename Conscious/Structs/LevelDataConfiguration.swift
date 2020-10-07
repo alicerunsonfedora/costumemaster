@@ -24,6 +24,7 @@ import Foundation
 /// - `achievementTrigger` field: (String) determines the achievement to trigger when passing
 /// through an achievement trigger.
 /// - `timer` field: (Int) determines how long a timer in the level will last. Defaults to 3 seconds.
+/// - `disallowCostume` field: (String) determines which costume cannot be used in this level.
 public struct LevelDataConfiguration {
     /// The ID that determines what costumes are avaiable, with 0 indicating no costumes annd 3 indicating all costumes.
     public let costumeID: Int
@@ -46,12 +47,16 @@ public struct LevelDataConfiguration {
     /// The achievement to earn when passing through the achievement trigger, if one exists.
     let achievementTrigger: GameAchievement?
 
+    /// A costume to remove from the queue.
+    let disallowCostume: PlayerCostumeType?
+
     /// A default level configuration with no costumes loaded and the next scene set to the main menu.
     static var `default`: LevelDataConfiguration {
         return LevelDataConfiguration(
             costumeID: 0,
             nextScene: "MainMenu",
             startingWith: .default,
+            disallowing: nil,
             under: [],
             with: CGPoint(x: 0, y: 0),
             timed: 3.0,
@@ -71,6 +76,7 @@ public struct LevelDataConfiguration {
         costumeID: Int,
         nextScene: String,
         startingWith costume: PlayerCostumeType,
+        disallowing disallowedCostume: PlayerCostumeType?,
         under requisites: [SwitchRequisite],
         with exit: CGPoint,
         timed delay: Double,
@@ -83,6 +89,7 @@ public struct LevelDataConfiguration {
         self.exitLocation = exit
         self.defaultTimerDelay = delay
         self.achievementTrigger = achievement
+        self.disallowCostume = disallowedCostume
     }
 
     /// Initialize a level configuration.
@@ -104,6 +111,9 @@ public struct LevelDataConfiguration {
         }
         self.exitLocation = exit
         self.achievementTrigger = GameAchievement(rawValue: userData["achievementTrigger"] as? String ?? "null")
+        self.disallowCostume = PlayerCostumeType(
+            rawValue: userData["disallowCostume"] as? String ?? "Default"
+        ) ?? .default
     }
 
     /// Parse a given dictionary into a list of requisites.

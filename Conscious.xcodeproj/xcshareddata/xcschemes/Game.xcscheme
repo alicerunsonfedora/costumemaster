@@ -53,11 +53,11 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "--start-level"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "Consequences"
-            isEnabled = "NO">
+            argument = "Stack"
+            isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
    </LaunchAction>

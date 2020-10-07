@@ -252,8 +252,6 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         var title = ""
         var message = ""
 
-        print(self.interactiveLevel)
-
         if let menuData = plist(from: "MenuContent") {
             if let data = menuData["Click_\(self.interactiveLevel)"] as? NSDictionary {
                 title = data["Title"] as? String ?? ""
