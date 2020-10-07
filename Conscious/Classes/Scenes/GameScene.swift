@@ -193,8 +193,7 @@ class GameScene: SKScene {
         }
 
         // Delete the tilemap from memory.
-        tilemap.tileSet = SKTileSet(tileGroups: [])
-        tilemap.removeFromParent()
+        tilemap.tileSet = SKTileSet(tileGroups: []); tilemap.removeFromParent()
 
         // Finally, clump all of the non-player sprites under the structure node to prevent scene
         // overbearing.
@@ -282,11 +281,8 @@ class GameScene: SKScene {
 
         if let dustEmitter = SKEmitterNode(fileNamed: "Dust") {
             dustEmitter.name = "dust"
-            dustEmitter.zPosition = 100
-            dustEmitter.alpha = 0.15
-            dustEmitter.particlePositionRange = CGVector(
-                dx: self.size.width, dy: self.size.height
-            )
+            dustEmitter.zPosition = 100; dustEmitter.alpha = 0.15
+            dustEmitter.particlePositionRange = CGVector(dx: self.size.width, dy: self.size.height)
             let drift = SKConstraint.distance(SKRange(upperLimit: 512), to: self.camera!)
             dustEmitter.constraints = [drift]
             self.camera?.addChild(dustEmitter)
