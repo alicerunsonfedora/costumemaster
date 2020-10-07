@@ -76,6 +76,13 @@ class GameScene: SKScene {
                 wall.instantiateBody(with: getWallPhysicsBody(with: wallTexture))
                 wall.name = "wall_\(data.column)_\(data.row)\(wallName.starts(with: "wall_edge") ? "_edge": ""))"
                 wall.worldPosition = CGPoint(x: data.column, y: data.row)
+
+                if wallName.contains("dbroken"), let sparks = SKEmitterNode(fileNamed: "ElectricalSpark") {
+                    sparks.zPosition = 100
+                    sparks.position = CGPoint(x: wall.position.x + 40, y: wall.position.y - 16)
+                    self.addChild(sparks)
+                }
+
                 self.structure.addChild(wall)
 
             case .player:
@@ -272,6 +279,17 @@ class GameScene: SKScene {
                 ? 256 * CGFloat(AppDelegate.preferences.cameraScale) : 0
         )
         self.camera?.constraints = [SKConstraint.distance(bounds, to: self.playerNode!)]
+
+        if let dustEmitter = SKEmitterNode(fileNamed: "Dust") {
+            dustEmitter.zPosition = 100
+            dustEmitter.alpha = 0.25
+            dustEmitter.particlePositionRange = CGVector(
+                dx: self.size.width, dy: self.size.height
+            )
+            let drift = SKConstraint.distance(SKRange(upperLimit: 512), to: self.camera!)
+            dustEmitter.constraints = [drift]
+            self.camera?.addChild(dustEmitter)
+        }
 
         let music = SKAudioNode(fileNamed: ["September", "November"].randomElement() ?? "September")
         music.name = "music"

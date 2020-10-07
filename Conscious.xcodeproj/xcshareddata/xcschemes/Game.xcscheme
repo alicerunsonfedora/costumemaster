@@ -56,7 +56,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "Stack"
+            argument = "Swiftly"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

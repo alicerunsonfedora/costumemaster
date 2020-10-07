@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		BF02CB12252E343E00E16EC9 /* Stack.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB11252E343E00E16EC9 /* Stack.sks */; };
 		BF02CB16252E454700E16EC9 /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB15252E454700E16EC9 /* death.wav */; };
+		BF02CB19252E50F600E16EC9 /* Dust.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB18252E50F600E16EC9 /* Dust.sks */; };
+		BF02CB20252E553D00E16EC9 /* ElectricalSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB1E252E553D00E16EC9 /* ElectricalSpark.sks */; };
+		BF02CB21252E553D00E16EC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB1F252E553D00E16EC9 /* Assets.xcassets */; };
 		BF0D2C1C24FADC4E00AEF86F /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = BF0D2C1B24FADC4E00AEF86F /* KeyboardShortcuts */; };
 		BF0D2C1E24FADD1F00AEF86F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */; };
 		BF0D2C2024FAE86B00AEF86F /* ControlsPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D2C1F24FAE86B00AEF86F /* ControlsPrefsViewController.swift */; };
@@ -142,6 +145,9 @@
 /* Begin PBXFileReference section */
 		BF02CB11252E343E00E16EC9 /* Stack.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Stack.sks; sourceTree = "<group>"; };
 		BF02CB15252E454700E16EC9 /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death.wav; sourceTree = "<group>"; };
+		BF02CB18252E50F600E16EC9 /* Dust.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Dust.sks; sourceTree = "<group>"; };
+		BF02CB1E252E553D00E16EC9 /* ElectricalSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ElectricalSpark.sks; sourceTree = "<group>"; };
+		BF02CB1F252E553D00E16EC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		BF0D2C1F24FAE86B00AEF86F /* ControlsPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsPrefsViewController.swift; sourceTree = "<group>"; };
 		BF109CD624FAFD6F00F06E47 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -292,6 +298,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF02CB1B252E51AC00E16EC9 /* Tilesets */ = {
+			isa = PBXGroup;
+			children = (
+				BF2514B424F45DB8000300B7 /* Tileset.sks */,
+				BFE6475724F8B03500230F93 /* MenuTileset.sks */,
+			);
+			path = Tilesets;
+			sourceTree = "<group>";
+		};
+		BF02CB1C252E51C700E16EC9 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				BF02CB18252E50F600E16EC9 /* Dust.sks */,
+				BF02CB1E252E553D00E16EC9 /* ElectricalSpark.sks */,
+				BF02CB1F252E553D00E16EC9 /* Assets.xcassets */,
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
 		BF23338B251D0CFE0018C854 /* Signals */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,11 +407,11 @@
 			children = (
 				BF6FBAE024A8BDDB00996890 /* Assets.xcassets */,
 				BF3A0B8824F733AE00575F72 /* Fonts */,
-				BF3A0B7324F6C41E00575F72 /* SFX */,
 				BF7C5EF7250AC8100062B1CC /* Music */,
+				BF02CB1C252E51C700E16EC9 /* Particles */,
+				BF3A0B7324F6C41E00575F72 /* SFX */,
+				BF02CB1B252E51AC00E16EC9 /* Tilesets */,
 				BFD8795024F5A2E600552EDD /* Texture Atlases */,
-				BF2514B424F45DB8000300B7 /* Tileset.sks */,
-				BFE6475724F8B03500230F93 /* MenuTileset.sks */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -783,8 +808,10 @@
 				BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */,
 				BF7C5F02250AD4D00062B1CC /* November.mp3 in Resources */,
 				BFD8796F24F5CA4000552EDD /* Player_Backward_Sorceress.atlas in Resources */,
+				BF02CB20252E553D00E16EC9 /* ElectricalSpark.sks in Resources */,
 				BFC140E325252B96007D65DC /* .jazzy.yml in Resources */,
 				BFD8797624F5DE3E00552EDD /* Player_Side_USB.atlas in Resources */,
+				BF02CB19252E50F600E16EC9 /* Dust.sks in Resources */,
 				BFAD7FF3250FEB0700768609 /* Exposure.sks in Resources */,
 				BFE6475424F8853800230F93 /* OFL.txt in Resources */,
 				BF8C30F2250304B700A29425 /* Hacker.sks in Resources */,
@@ -796,6 +823,7 @@
 				BFB0CE18251914BB0015FE6C /* EntryAI.sks in Resources */,
 				BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */,
 				BF4CD5A92513F96E00C021BC /* Chained.sks in Resources */,
+				BF02CB21252E553D00E16EC9 /* Assets.xcassets in Resources */,
 				BFDF94E825080C3D004F5BE7 /* Boundary.sks in Resources */,
 				BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */,
 				BFDF94EA25084600004F5BE7 /* Rushed.sks in Resources */,
