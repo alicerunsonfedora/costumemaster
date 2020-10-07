@@ -11,7 +11,6 @@
 		BF02CB16252E454700E16EC9 /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB15252E454700E16EC9 /* death.wav */; };
 		BF02CB19252E50F600E16EC9 /* Dust.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB18252E50F600E16EC9 /* Dust.sks */; };
 		BF02CB20252E553D00E16EC9 /* ElectricalSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB1E252E553D00E16EC9 /* ElectricalSpark.sks */; };
-		BF02CB21252E553D00E16EC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB1F252E553D00E16EC9 /* Assets.xcassets */; };
 		BF0D2C1C24FADC4E00AEF86F /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = BF0D2C1B24FADC4E00AEF86F /* KeyboardShortcuts */; };
 		BF0D2C1E24FADD1F00AEF86F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */; };
 		BF0D2C2024FAE86B00AEF86F /* ControlsPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D2C1F24FAE86B00AEF86F /* ControlsPrefsViewController.swift */; };
@@ -147,7 +146,6 @@
 		BF02CB15252E454700E16EC9 /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death.wav; sourceTree = "<group>"; };
 		BF02CB18252E50F600E16EC9 /* Dust.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Dust.sks; sourceTree = "<group>"; };
 		BF02CB1E252E553D00E16EC9 /* ElectricalSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ElectricalSpark.sks; sourceTree = "<group>"; };
-		BF02CB1F252E553D00E16EC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		BF0D2C1F24FAE86B00AEF86F /* ControlsPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsPrefsViewController.swift; sourceTree = "<group>"; };
 		BF109CD624FAFD6F00F06E47 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -312,7 +310,6 @@
 			children = (
 				BF02CB18252E50F600E16EC9 /* Dust.sks */,
 				BF02CB1E252E553D00E16EC9 /* ElectricalSpark.sks */,
-				BF02CB1F252E553D00E16EC9 /* Assets.xcassets */,
 			);
 			path = Particles;
 			sourceTree = "<group>";
@@ -823,7 +820,6 @@
 				BFB0CE18251914BB0015FE6C /* EntryAI.sks in Resources */,
 				BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */,
 				BF4CD5A92513F96E00C021BC /* Chained.sks in Resources */,
-				BF02CB21252E553D00E16EC9 /* Assets.xcassets in Resources */,
 				BFDF94E825080C3D004F5BE7 /* Boundary.sks in Resources */,
 				BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */,
 				BFDF94EA25084600004F5BE7 /* Rushed.sks in Resources */,
