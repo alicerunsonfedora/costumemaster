@@ -21,7 +21,7 @@ public class GameSignalSender: GameStructureObject {
     public var active: Bool = false
 
     /// The method that this input will activate. Default is by player intervention.
-    public var activationMethod: GameSignalInputMethod = .activeByPlayerIntervention
+    public var activationMethod: [GameSignalInputMethod] = [.activeByPlayerIntervention]
 
     /// The kind of sender. Defaults to a trigger.
     public var kind: GameSignalKind = .trigger
@@ -58,10 +58,51 @@ public class GameSignalSender: GameStructureObject {
     // MARK: CONSTRUCTOR
     /// Initialize the input.
     /// - Parameter textureName: The name of the texture for this input.
+    /// - Parameter inputMethods: The means of which this input will be activated by.
+    public init(textureName: String, by inputMethods: [GameSignalInputMethod], at position: CGPoint) {
+        self.baseTexture = textureName
+        self.activationMethod = inputMethods
+        self.cooldown = 0
+        self.receivers = []
+        super.init(
+            with: SKTexture(imageNamed: textureName + "_off"),
+            size: SKTexture(imageNamed: textureName + "_off").size()
+        )
+        self.worldPosition = position
+        self.texture = self.activeTexture
+    }
+
+    // MARK: CONSTRUCTOR
+    /// Initialize the input.
+    /// - Parameter textureName: The name of the texture for this input.
+    /// - Parameter inputMethods: The means of which this input will be activated by.
+    /// - Parameter timer: The number of seconds it takes for this input to toggle states.
+    public init(
+        textureName: String,
+        by inputMethods: [GameSignalInputMethod],
+        at position: CGPoint,
+        with timer: Double
+    ) {
+        self.baseTexture = textureName
+        self.cooldown = timer
+        self.activationMethod = inputMethods
+        self.receivers = []
+        super.init(
+            with: SKTexture(imageNamed: textureName + "_off"),
+            size: SKTexture(imageNamed: textureName + "_off").size()
+        )
+        self.worldPosition = position
+        self.texture = self.activeTexture
+    }
+
+    // MARK: CONSTRUCTOR
+    /// Initialize the input.
+    /// - Parameter textureName: The name of the texture for this input.
     /// - Parameter inputMethod: The means of which this input will be activated by.
+    @available(*, deprecated, message: "Please use an initializer with a list of input methods.")
     public init(textureName: String, by inputMethod: GameSignalInputMethod, at position: CGPoint) {
         self.baseTexture = textureName
-        self.activationMethod = inputMethod
+        self.activationMethod = [inputMethod]
         self.cooldown = 0
         self.receivers = []
         super.init(
@@ -77,6 +118,7 @@ public class GameSignalSender: GameStructureObject {
     /// - Parameter textureName: The name of the texture for this input.
     /// - Parameter inputMethod: The means of which this input will be activated by.
     /// - Parameter timer: The number of seconds it takes for this input to toggle states.
+    @available(*, deprecated, message: "Please use an initializer with a list of input methods.")
     public init(
         textureName: String,
         by inputMethod: GameSignalInputMethod,
@@ -85,7 +127,7 @@ public class GameSignalSender: GameStructureObject {
     ) {
         self.baseTexture = textureName
         self.cooldown = timer
-        self.activationMethod = inputMethod
+        self.activationMethod = [inputMethod]
         self.receivers = []
         super.init(
             with: SKTexture(imageNamed: textureName + "_off"),
@@ -126,30 +168,40 @@ public class GameSignalSender: GameStructureObject {
     /// - Parameter event: The event handler to listen to and track.
     /// - Parameter player: The player to watch and track.
     public func activate(with event: NSEvent?, player: Player?, objects: [SKSpriteNode?] = []) {
-        switch activationMethod {
-        case .activeByPlayerIntervention:
-            if shouldActivateOnIntervention(with: player, objects: objects) {
+        var activationEvents = [SKAction]()
+
+        if activationMethod.contains(.activeByPlayerIntervention) {
+            let action = SKAction.run {
+                if self.shouldActivateOnIntervention(with: player, objects: objects) {
+                    self.setActiveState()
+                    self.onActivate(with: event, player: player)
+                } else {
+                    self.setInactiveState()
+                    self.onDeactivate(with: event, player: player)
+                }
+            }
+            activationEvents.append(action)
+        } else {
+            let action = SKAction.run {
                 self.setActiveState()
                 self.onActivate(with: event, player: player)
-            } else {
-                self.setInactiveState()
-                self.onDeactivate(with: event, player: player)
             }
-        case .activeOnTimer:
-            self.run(
-                SKAction.sequence(
-                    [
-                        SKAction.run { self.setActiveState() },
-                        SKAction.run { self.onActivate(with: event, player: player) },
-                        SKAction.wait(forDuration: self.cooldown),
-                        SKAction.run { self.setInactiveState() },
-                        SKAction.run { self.onDeactivate(with: event, player: player) }
-                    ]
-                )
-            )
-        case .activeOncePermanently:
-            self.setActiveState()
+            activationEvents.append(action)
         }
+
+        if activationMethod.contains(.activeOnTimer) {
+            activationEvents += [
+                SKAction.wait(forDuration: self.cooldown),
+                SKAction.run {
+                    self.setInactiveState()
+                    self.onDeactivate(with: event, player: player)
+                }
+            ]
+        }
+
+        print(activationEvents)
+        self.run(SKAction.sequence(activationEvents))
+
     }
 
     /// Whether the input should turn on/off based on player or object intervention.

@@ -319,7 +319,7 @@ class GameScene: SKScene {
 
     /// Run any post-update logic and check input states.
     override func didFinishUpdate() {
-        for input in self.switches where input.activationMethod == .activeByPlayerIntervention {
+        for input in self.switches where input.activationMethod.contains(.activeByPlayerIntervention) {
             if [GameSignalKind.pressurePlate, GameSignalKind.trigger].contains(input.kind) {
                 input.activate(with: nil, player: self.playerNode, objects: self.interactables)
             }

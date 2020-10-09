@@ -25,7 +25,7 @@ extension GameScene {
         guard let location = self.playerNode?.position else { return }
         let inputs = self.switches
         for input in inputs where input.position.distance(between: location) < (self.unit?.width ?? 128) / 2
-            && input.activationMethod != .activeByPlayerIntervention {
+            && !input.activationMethod.contains(.activeByPlayerIntervention) {
             didTrigger = true
             switch input.kind {
             case .lever:
