@@ -41,7 +41,7 @@ class GameIrisScanner: GameSignalSender {
     /// - Returns: Whether the input should activate given the intervention criteria.
     override func shouldActivateOnIntervention(with player: Player?, objects: [SKSpriteNode?]) -> Bool {
         guard let play = player else { return false }
-        return play.position.distance(between: self.position) < 256 && !self.active
+        return play.costume == .default && play.position.distance(between: self.position) < 256 && !self.active
     }
 
 }

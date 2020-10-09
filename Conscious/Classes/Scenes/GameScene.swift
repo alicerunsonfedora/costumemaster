@@ -166,6 +166,12 @@ class GameScene: SKScene {
                 plate.size = data.sprite.size
                 self.switches.append(plate)
 
+            case .biometricScanner:
+                let iris = GameIrisScanner(at: CGPoint(x: data.column, y: data.row))
+                iris.position = data.sprite.position
+                iris.size = data.sprite.size
+                self.switches.append(iris)
+
             case .heavyObject:
                 let object = GameHeavyObject(
                     with: data.definition.name?.replacingOccurrences(of: "floor_ho_", with: "") ?? "cabinet",

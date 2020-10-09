@@ -18,7 +18,7 @@ class GameLever: GameSignalSender {
     /// Initialize a lever.
     /// - Parameter position: The world matrix position of the lever.
     init(at position: CGPoint) {
-        super.init(textureName: "lever_wallup", by: .activeOncePermanently, at: position)
+        super.init(textureName: "lever_wallup", by: [.activeOncePermanently], at: position)
         self.kind = .lever
         self.instantiateBody(with: getWallPhysicsBody(with: "wall_edge_physics_mask"))
     }

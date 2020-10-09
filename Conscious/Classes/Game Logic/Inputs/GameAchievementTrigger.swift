@@ -33,7 +33,7 @@ class GameAchievementTrigger: GameSignalSender {
     /// - Parameter location: The level position of the trigger.
     init(with achievement: GameAchievement?, at location: CGPoint) {
         self.gameAchievement = achievement
-        super.init(textureName: "floor", by: .activeByPlayerIntervention, at: location)
+        super.init(textureName: "floor", by: [.activeByPlayerIntervention], at: location)
         self.kind = .trigger
     }
 

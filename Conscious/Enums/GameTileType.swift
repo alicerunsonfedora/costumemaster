@@ -53,6 +53,9 @@ public enum GameTileType {
     /// A death pit.
     case deathPit
 
+    /// An iris (biometric) scanner.
+    case biometricScanner
+
     /// An unknown tile.
     case unknown
 }

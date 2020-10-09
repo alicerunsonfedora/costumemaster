@@ -45,6 +45,8 @@ public func getTileType(fromDefinition tile: SKTileDefinition) -> GameTileType {
         return .alarmClock
     case name where name.starts(with: "plate"):
         return .pressurePlate
+    case name where name.starts(with: "iris_scanner"):
+        return .biometricScanner
     case "Main":
         return .player
     default:

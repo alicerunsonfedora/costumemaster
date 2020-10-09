@@ -19,7 +19,11 @@ class GameComputer: GameSignalSender {
     /// - Parameter position: The world matrix position of the computer.
     /// - Parameter softwareLock: Whether the computer is software locked (T1) or hardware locked (T2).
     init(at position: CGPoint, with softwareLock: Bool) {
-        super.init(textureName: "computer_wallup\(softwareLock ? "_alt": "")", by: .activeOncePermanently, at: position)
+        super.init(
+            textureName: "computer_wallup\(softwareLock ? "_alt": "")",
+            by: [.activeOncePermanently],
+            at: position
+        )
         self.kind = softwareLock ? .computerT1 : .computerT2
         self.instantiateBody(with: getWallPhysicsBody(with: "wall_edge_physics_mask"))
     }

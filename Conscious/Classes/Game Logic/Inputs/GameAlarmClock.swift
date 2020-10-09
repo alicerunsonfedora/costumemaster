@@ -19,7 +19,7 @@ class GameAlarmClock: GameSignalSender {
     /// - Parameter delay: The number of seconds it takes for the alarm clock to turn off.
     /// - Parameter position: The world matrix position of the alarm clock.
     init(with delay: Double = 3.0, at position: CGPoint) {
-        super.init(textureName: "alarm_clock_wallup", by: .activeOnTimer, at: position)
+        super.init(textureName: "alarm_clock_wallup", by: [.activeOnTimer], at: position)
         self.cooldown = delay
         self.kind = .alarmClock
         self.instantiateBody(with: getWallPhysicsBody(with: "wall_edge_physics_mask"))

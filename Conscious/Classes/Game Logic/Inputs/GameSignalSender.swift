@@ -201,7 +201,6 @@ public class GameSignalSender: GameStructureObject {
             ]
         }
 
-        print(activationEvents)
         self.run(SKAction.sequence(activationEvents))
 
     }

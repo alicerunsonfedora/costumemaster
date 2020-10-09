@@ -24,7 +24,7 @@ class GamePressurePlate: GameSignalSender {
     /// Initialize a pressure plate.
     /// - Parameter position: The position of the plate in the matrix.
     public init(at position: CGPoint) {
-        super.init(textureName: "plate", by: .activeByPlayerIntervention, at: position)
+        super.init(textureName: "plate", by: [.activeByPlayerIntervention], at: position)
         self.kind = .pressurePlate
     }
 
