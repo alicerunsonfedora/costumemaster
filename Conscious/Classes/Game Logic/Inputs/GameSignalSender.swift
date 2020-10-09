@@ -20,7 +20,7 @@ public class GameSignalSender: GameStructureObject {
     /// Whether the input is currently active. Defaults to false.
     public var active: Bool = false
 
-    /// The method that this input will activate. Default is by player intervention.
+    /// The method(s) that this input will activate. Default is only by player intervention.
     public var activationMethod: [GameSignalInputMethod] = [.activeByPlayerIntervention]
 
     /// The kind of sender. Defaults to a trigger.
@@ -99,6 +99,7 @@ public class GameSignalSender: GameStructureObject {
     /// Initialize the input.
     /// - Parameter textureName: The name of the texture for this input.
     /// - Parameter inputMethod: The means of which this input will be activated by.
+    /// - Important: This method is deprecated. Use an initializer with a list of input methods.
     @available(*, deprecated, message: "Please use an initializer with a list of input methods.")
     public init(textureName: String, by inputMethod: GameSignalInputMethod, at position: CGPoint) {
         self.baseTexture = textureName
@@ -118,6 +119,7 @@ public class GameSignalSender: GameStructureObject {
     /// - Parameter textureName: The name of the texture for this input.
     /// - Parameter inputMethod: The means of which this input will be activated by.
     /// - Parameter timer: The number of seconds it takes for this input to toggle states.
+    /// - Important: This method is deprecated. Use an initializer with a list of input methods.
     @available(*, deprecated, message: "Please use an initializer with a list of input methods.")
     public init(
         textureName: String,
