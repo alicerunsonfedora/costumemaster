@@ -1,6 +1,19 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
+      "line": 347,
+      "symbol": "GameScene.callScene(name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Extensions/GameScene_Extension.swift",
+      "line": 85,
+      "symbol": "GameScene.kill()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/marquiskurt/Developer/CS400"
 }
