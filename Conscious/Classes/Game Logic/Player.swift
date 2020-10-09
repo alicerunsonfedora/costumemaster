@@ -84,7 +84,7 @@ public class Player: SKSpriteNode {
     private var mass: CGFloat {
         switch self.costume {
         case .default, .sorceress: return 9.05
-        case .bird: return 8.95
+        case .bird: return 8.75
         case .flashDrive: return 18.1
         }
     }
