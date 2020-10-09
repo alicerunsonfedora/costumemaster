@@ -35,6 +35,7 @@
 		BF33A189250BFC060064A219 /* Cycle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF33A188250BFC060064A219 /* Cycle.sks */; };
 		BF3977B92530B2D900BBD591 /* Traverse.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF3977B82530B2D900BBD591 /* Traverse.sks */; };
 		BF3977BD2530C44600BBD591 /* Player_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3977BC2530C44600BBD591 /* Player_Extension.swift */; };
+		BF3977C02530D58E00BBD591 /* AIRandomNetworkStrategist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */; };
 		BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */; };
 		BF3A0B7524F6C42500575F72 /* changeCostume.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B7424F6C42500575F72 /* changeCostume.wav */; };
 		BF3A0B7824F6CB0C00575F72 /* GameSignalReceivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7724F6CB0C00575F72 /* GameSignalReceivable.swift */; };
@@ -171,6 +172,7 @@
 		BF33A188250BFC060064A219 /* Cycle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cycle.sks; sourceTree = "<group>"; };
 		BF3977B82530B2D900BBD591 /* Traverse.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Traverse.sks; sourceTree = "<group>"; };
 		BF3977BC2530C44600BBD591 /* Player_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player_Extension.swift; sourceTree = "<group>"; };
+		BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRandomNetworkStrategist.swift; sourceTree = "<group>"; };
 		BF3A0B7124F6B72300575F72 /* LevelDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDataConfiguration.swift; sourceTree = "<group>"; };
 		BF3A0B7424F6C42500575F72 /* changeCostume.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = changeCostume.wav; sourceTree = "<group>"; };
 		BF3A0B7724F6CB0C00575F72 /* GameSignalReceivable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalReceivable.swift; sourceTree = "<group>"; };
@@ -614,6 +616,7 @@
 				BFC140CF2525187C007D65DC /* AIGameState.swift */,
 				BFC140D925251C1B007D65DC /* AIGameDecision.swift */,
 				BFC140DF252525EB007D65DC /* AIGameStrategist.swift */,
+				BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */,
 			);
 			path = Agents;
 			sourceTree = "<group>";
@@ -911,6 +914,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF3A0B7824F6CB0C00575F72 /* GameSignalReceivable.swift in Sources */,
+				BF3977C02530D58E00BBD591 /* AIRandomNetworkStrategist.swift in Sources */,
 				BFC9239F250BC88C0002009B /* SoundPrefsViewController.swift in Sources */,
 				BFEE78C324FBF1FC006FBFF0 /* GameAchievments.swift in Sources */,
 				BFAD7FF5250FF4CD00768609 /* ExposureChallenge.swift in Sources */,
