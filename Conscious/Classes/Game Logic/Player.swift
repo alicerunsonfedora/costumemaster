@@ -18,7 +18,6 @@ import GameKit
 /// The player class is a subclass of SKSpriteNode that contains additional logic for handling player changes such as
 /// costume switching.
 public class Player: SKSpriteNode {
-    // swiftlint:disable:previous type_body_length
 
     // MARK: STORED PROPERTIES
 
@@ -50,7 +49,7 @@ public class Player: SKSpriteNode {
     private var costumeQueue: [PlayerCostumeType] = [.bird, .sorceress, .default]
 
     /// Whether the player is currently playing an animation.
-    private var animating: Bool = false
+    var animating: Bool = false
 
     /// Whether the player is changing costumes.
     var isChangingCostumes: Bool = false
@@ -61,22 +60,22 @@ public class Player: SKSpriteNode {
     // MARK: COMPUTED PROPERTIES
 
     /// The SKTexture frames that play when a player is changing costumes.
-    private var changingFrames: [SKTexture] {
+    var changingFrames: [SKTexture] {
         return animated(fromAtlas: SKTextureAtlas(named: "Player_Change"), reversable: true)
     }
 
     /// The walk cycle animation when moving south.
-    private var forwardWalkCycle: [SKTexture] {
+    var forwardWalkCycle: [SKTexture] {
         return animated(fromAtlas: SKTextureAtlas(named: "Player_Forward_\(self.costume.rawValue)"))
     }
 
     /// The walk cycle animation when moving north.
-    private var backwardWalkCycle: [SKTexture] {
+    var backwardWalkCycle: [SKTexture] {
         return animated(fromAtlas: SKTextureAtlas(named: "Player_Backward_\(self.costume.rawValue)"))
     }
 
     /// The walk cycle animation when moving north.
-    private var sidewardWalkCycle: [SKTexture] {
+    var sidewardWalkCycle: [SKTexture] {
         return animated(fromAtlas: SKTextureAtlas(named: "Player_Side_\(self.costume.rawValue)"))
     }
 
@@ -401,72 +400,6 @@ public class Player: SKSpriteNode {
         if self.xScale < 0 { self.xScale *= -1 }
         if self.hud.xScale < 0 { self.hud.xScale *= -1 }
         self.run(SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(self.costume.rawValue))")))
-    }
-
-    /// Move the player in a given direction, relative to the size of the world.
-    ///
-    /// This method is typically preferred since AI agents can call this method instead of calculating the delta
-    /// beforehand. This method also handles any animations that need to be added to make sure the player
-    /// has an appropriate animation while walking.
-    ///
-    /// - Parameter direction: The direction the player will move in.
-    /// - Parameter unit: The base unit to calculate the movement delta, relatively.
-    public func move(_ direction: PlayerMoveDirection, unit: CGSize) {
-        // Stop if we're changing costumes.
-        if self.isChangingCostumes { return }
-
-        // Create the delta vector and animation
-        var delta = CGVector(dx: 0, dy: 0)
-        var action: SKAction?
-
-        // Calculate the correct delta based on the direction and generate the proper animation.
-        switch direction {
-        case .north:
-            delta.dy += unit.height / 2
-            action = SKAction.animate(
-                with: self.backwardWalkCycle,
-                timePerFrame: 0.5,
-                resize: false,
-                restore: true
-            )
-        case .south:
-            delta.dy -= unit.height / 2
-            action = SKAction.animate(
-                with: self.forwardWalkCycle,
-                timePerFrame: 0.5,
-                resize: false,
-                restore: true
-            )
-        case .east:
-            delta.dx += unit.width / 2
-            action = SKAction.animate(
-                with: self.sidewardWalkCycle,
-                timePerFrame: 0.25,
-                resize: false,
-                restore: true
-            )
-        case .west:
-            delta.dx -= unit.width / 2
-            action = SKAction.animate(
-                with: self.sidewardWalkCycle,
-                timePerFrame: 0.25,
-                resize: false,
-                restore: true
-            )
-        }
-
-        // Call the move method with the new delta.
-        self.move(delta)
-
-        // If we found an animation, play it and set animating to true.
-        if action != nil && !self.animating {
-            self.run(SKAction.repeatForever(action!))
-            if direction == .west {
-                self.xScale *= -1
-                self.hud.xScale *= -1
-            }
-            self.animating = true
-        }
     }
 
     /// Make a copy of the player's sprite body in the map.
