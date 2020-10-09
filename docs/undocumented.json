@@ -1,6 +1,125 @@
 {
   "warnings": [
     {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 17,
+      "symbol": "AIRandomNetworkStrategist",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 18,
+      "symbol": "AIRandomNetworkStrategist.gameModel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 20,
+      "symbol": "AIRandomNetworkStrategist.randomSource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 22,
+      "symbol": "AIRandomNetworkStrategist.bestMoveForActivePlayer()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 26,
+      "symbol": "AIRandomNetworkStrategist.isEqual(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 30,
+      "symbol": "AIRandomNetworkStrategist.hash",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 32,
+      "symbol": "AIRandomNetworkStrategist.superclass",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 34,
+      "symbol": "AIRandomNetworkStrategist.self()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 38,
+      "symbol": "AIRandomNetworkStrategist.perform(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 42,
+      "symbol": "AIRandomNetworkStrategist.perform(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 46,
+      "symbol": "AIRandomNetworkStrategist.perform(_:with:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 50,
+      "symbol": "AIRandomNetworkStrategist.isProxy()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 54,
+      "symbol": "AIRandomNetworkStrategist.isKind(of:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 58,
+      "symbol": "AIRandomNetworkStrategist.isMember(of:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 62,
+      "symbol": "AIRandomNetworkStrategist.conforms(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 66,
+      "symbol": "AIRandomNetworkStrategist.responds(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIRandomNetworkStrategist.swift",
+      "line": 70,
+      "symbol": "AIRandomNetworkStrategist.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
       "line": 347,
       "symbol": "GameScene.callScene(name:)",

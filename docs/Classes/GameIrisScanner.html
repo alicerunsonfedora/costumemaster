@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>GameComputer Class Reference</title>
+    <title>GameIrisScanner Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,8 +11,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/GameComputer" class="dashAnchor"></a>
-    <a title="GameComputer Class Reference"></a>
+    <a name="//apple_ref/swift/Class/GameIrisScanner" class="dashAnchor"></a>
+    <a title="GameIrisScanner Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -36,7 +36,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          GameComputer Class Reference
+          GameIrisScanner Class Reference
         </p>
       </div>
     </div>
@@ -45,15 +45,18 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>GameComputer</h1>
+              <h1>GameIrisScanner</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">GameComputer</span> <span class="p">:</span> <span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">GameIrisScanner</span> <span class="p">:</span> <span class="kt"><a href="../Classes/GameSignalSender.html">GameSignalSender</a></span></code></pre>
 
                   </div>
                 </div>
-              <p>A class representation of a computer.</p>
+              <p>A class that represents an iris scanner in the game.</p>
+
+<p>Iris scanners are different from most inputs in that it works both by intervention and on a timer. When a player
+enters its radius, the input will activate for a specified period of time (default is 5 seconds).</p>
 
             </section>
             <section class="section task-group-section">
@@ -62,9 +65,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster12GameComputerC2at4withACSo7CGPointV_Sbtcfc"></a>
-                      <a name="//apple_ref/swift/Method/init(at:with:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12GameComputerC2at4withACSo7CGPointV_Sbtcfc">init(at:<wbr>with:<wbr>)</a>
+                      <a name="/s:17The_Costumemaster15GameIrisScannerC2atACSo7CGPointV_tcfc"></a>
+                      <a name="//apple_ref/swift/Method/init(at:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GameIrisScannerC2atACSo7CGPointV_tcfc">init(at:<wbr>)</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -72,14 +75,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Initialize a computer.</p>
+                          <p>Initialize an iris scanner.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">at</span> <span class="nv">position</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">,</span> <span class="n">with</span> <span class="nv">softwareLock</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+                            <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">at</span> <span class="nv">position</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">)</span></code></pre>
 
                           </div>
                         </div>
@@ -95,19 +98,7 @@
                                 </td>
                                 <td>
                                   <div>
-                                    <p>The world matrix position of the computer.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>softwareLock</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>Whether the computer is software locked (T1) or hardware locked (T2).</p>
+                                    <p>The world matrix position of the iris scanner.</p>
                                   </div>
                                 </td>
                               </tr>
@@ -120,9 +111,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)GameComputer(im)initWithCoder:"></a>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)GameIrisScanner(im)initWithCoder:"></a>
                       <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)GameComputer(im)initWithCoder:">init(coder:<wbr>)</a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)GameIrisScanner(im)initWithCoder:">init(coder:<wbr>)</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -147,9 +138,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster12GameComputerC8activate4with6player7objectsySo7NSEventCSg_AA6PlayerCSgSaySo12SKSpriteNodeCSgGtF"></a>
-                      <a name="//apple_ref/swift/Method/activate(with:player:objects:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster12GameComputerC8activate4with6player7objectsySo7NSEventCSg_AA6PlayerCSgSaySo12SKSpriteNodeCSgGtF">activate(with:<wbr>player:<wbr>objects:<wbr>)</a>
+                      <a name="/s:17The_Costumemaster15GameIrisScannerC28shouldActivateOnIntervention4with7objectsSbAA6PlayerCSg_SaySo12SKSpriteNodeCSgGtF"></a>
+                      <a name="//apple_ref/swift/Method/shouldActivateOnIntervention(with:objects:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GameIrisScannerC28shouldActivateOnIntervention4with7objectsSbAA6PlayerCSg_SaySo12SKSpriteNodeCSgGtF">shouldActivateOnIntervention(with:<wbr>objects:<wbr>)</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -157,14 +148,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Activate the computer.</p>
+                          <p>Whether the input should turn on/off based on player or object intervention.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">activate</span><span class="p">(</span><span class="n">with</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">NSEvent</span><span class="p">?,</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/Player.html">Player</a></span><span class="p">?,</span> <span class="nv">objects</span><span class="p">:</span> <span class="p">[</span><span class="kt">SKSpriteNode</span><span class="p">?])</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">shouldActivateOnIntervention</span><span class="p">(</span><span class="n">with</span> <span class="nv">player</span><span class="p">:</span> <span class="kt"><a href="../Classes/Player.html">Player</a></span><span class="p">?,</span> <span class="nv">objects</span><span class="p">:</span> <span class="p">[</span><span class="kt">SKSpriteNode</span><span class="p">?])</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                           </div>
                         </div>
@@ -175,29 +166,33 @@
                               <tr>
                                 <td>
                                   <code>
-                                  <em>event</em>
+                                  <em>player</em>
                                   </code>
                                 </td>
                                 <td>
                                   <div>
-                                    <p>The event handler to listen to and track.</p>
+                                    <p>The player to listen to for intervention.</p>
                                   </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td>
                                   <code>
-                                  <em>player</em>
+                                  <em>objects</em>
                                   </code>
                                 </td>
                                 <td>
                                   <div>
-                                    <p>The player to watch and track.</p>
+                                    <p>The objects to listen to for intervention.</p>
                                   </div>
                                 </td>
                               </tr>
                             </tbody>
                           </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>Whether the input should activate given the intervention criteria.</p>
                         </div>
                       </section>
                     </div>
