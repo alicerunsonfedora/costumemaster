@@ -10,6 +10,8 @@ on:
       - ".github/workflows/build.yml"
   pull_request:
     branches: [root]
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_12.app/Contents/Developer
 
 jobs:
   build:
