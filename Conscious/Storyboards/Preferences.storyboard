@@ -213,11 +213,11 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-fX-dLS">
-                                <rect key="frame" x="100" y="19" width="146" height="18"/>
+                                <rect key="frame" x="100" y="19" width="239" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="144" id="GyF-H0-RNL"/>
+                                    <constraint firstAttribute="width" constant="237" id="GyF-H0-RNL"/>
                                 </constraints>
-                                <buttonCell key="cell" type="check" title="Show dust particles" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Du3-sE-ieQ">
+                                <buttonCell key="cell" type="check" title="Display dust particles while playing" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Du3-sE-ieQ">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
