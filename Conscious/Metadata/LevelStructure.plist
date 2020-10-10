@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Core</key>
+	<array>
+		<string>Entry</string>
+		<string>Hacker</string>
+		<string>Simultaneous</string>
+		<string>Swiftly</string>
+		<string>Boundary</string>
+		<string>Rushed</string>
+		<string>Divergent</string>
+		<string>Cycle</string>
+		<string>Exposure</string>
+		<string>Unmonitored</string>
+		<string>Seeded</string>
+		<string>Chained</string>
+	</array>
+	<key>WatchYourStep</key>
+	<array>
+		<string>Consequences</string>
+		<string>Stack</string>
+		<string>Traverse</string>
+		<string>Visibility</string>
+	</array>
+</dict>
+</plist>
