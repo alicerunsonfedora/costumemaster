@@ -1,0 +1,19 @@
+name: CI Builds
+
+on:
+  push:
+    branches: [root]
+  pull_request:
+    branches: [root]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Xcodebuild Action
+        uses: sersoft-gmbh/xcodebuild-action@v1.2
+        with:
+            workspace: Conscious.xcodeproj/project.xcworkspace
+            scheme: Game
