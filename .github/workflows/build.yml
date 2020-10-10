@@ -29,3 +29,4 @@ jobs:
             workspace: Conscious.xcodeproj/project.xcworkspace
             scheme: Game
             action: build
+            build-settings: -verbose
