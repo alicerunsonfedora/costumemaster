@@ -79,6 +79,9 @@
 		BF9279EC252D3F3A004B548E /* Consequences.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF9279EB252D3F3A004B548E /* Consequences.sks */; };
 		BF9333792531196600C78B44 /* Visibility.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF9333782531196600C78B44 /* Visibility.sks */; };
 		BF93337C25320DC900C78B44 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF93337B25320DC900C78B44 /* StoreKit.framework */; };
+		BF93337F2532157700C78B44 /* IAPObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93337E2532157700C78B44 /* IAPObserver.swift */; };
+		BF93338A2532224300C78B44 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9333892532224300C78B44 /* IAPManager.swift */; };
+		BF93338E2532237100C78B44 /* IAPManager_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93338D2532237100C78B44 /* IAPManager_Extension.swift */; };
 		BFAD1346250285F60074DCBA /* GameLever.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD1345250285F60074DCBA /* GameLever.swift */; };
 		BFAD1348250286E20074DCBA /* GameComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD1347250286E20074DCBA /* GameComputer.swift */; };
 		BFAD134A25028C0F0074DCBA /* GameAlarmClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD134925028C0F0074DCBA /* GameAlarmClock.swift */; };
@@ -225,6 +228,9 @@
 		BF9279EB252D3F3A004B548E /* Consequences.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Consequences.sks; sourceTree = "<group>"; };
 		BF9333782531196600C78B44 /* Visibility.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Visibility.sks; sourceTree = "<group>"; };
 		BF93337B25320DC900C78B44 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BF93337E2532157700C78B44 /* IAPObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPObserver.swift; sourceTree = "<group>"; };
+		BF9333892532224300C78B44 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		BF93338D2532237100C78B44 /* IAPManager_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager_Extension.swift; sourceTree = "<group>"; };
 		BFAD1345250285F60074DCBA /* GameLever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLever.swift; sourceTree = "<group>"; };
 		BFAD1347250286E20074DCBA /* GameComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameComputer.swift; sourceTree = "<group>"; };
 		BFAD134925028C0F0074DCBA /* GameAlarmClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAlarmClock.swift; sourceTree = "<group>"; };
@@ -600,9 +606,27 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		BF9333882532223500C78B44 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				BF93337E2532157700C78B44 /* IAPObserver.swift */,
+				BF9333892532224300C78B44 /* IAPManager.swift */,
+			);
+			path = Purchases;
+			sourceTree = "<group>";
+		};
+		BF93338C2532236200C78B44 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				BF93338D2532237100C78B44 /* IAPManager_Extension.swift */,
+			);
+			path = Purchases;
+			sourceTree = "<group>";
+		};
 		BFA77631252A39280093D4D7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BF93338C2532236200C78B44 /* Purchases */,
 				BF109CDC24FB31F400F06E47 /* Achievements.swift */,
 				BF2B5E4825016D2D001EC2E7 /* Arguments.swift */,
 				BF3A0B8524F70B8900575F72 /* CGPoint.swift */,
@@ -684,6 +708,7 @@
 		BFC78F3A24F48715004E85A9 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				BF9333882532223500C78B44 /* Purchases */,
 				BFBEB33624F8481C00162B06 /* Preferences */,
 				BF6FBAD624A8BDD400996890 /* AppDelegate.swift */,
 				BF6FBADE24A8BDD400996890 /* ViewController.swift */,
@@ -944,6 +969,7 @@
 				BFE6475624F88B1300230F93 /* SwitchRequisite.swift in Sources */,
 				BFC140CD252517DB007D65DC /* AIGamePlayer.swift in Sources */,
 				BF3977BD2530C44600BBD591 /* Player_Extension.swift in Sources */,
+				BF93337F2532157700C78B44 /* IAPObserver.swift in Sources */,
 				BFBEB33524F847F600162B06 /* AdvancedPrefsViewController.swift in Sources */,
 				BF7C5EEE250AA30B0062B1CC /* ChallengeGameScene.swift in Sources */,
 				BFC78F3D24F48731004E85A9 /* Player.swift in Sources */,
@@ -964,6 +990,7 @@
 				BFE0AE9F250C2B30003C6780 /* Leaderboards.swift in Sources */,
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
 				BF7C5EFB250ACE530062B1CC /* AboutScene.swift in Sources */,
+				BF93338E2532237100C78B44 /* IAPManager_Extension.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
 				BF233390251D0D2E0018C854 /* AIGamePlayerAction.swift in Sources */,
 				BF8C30F02502E0BD00A29425 /* GameHeavyObject.swift in Sources */,
@@ -987,6 +1014,7 @@
 				BF735B4C250D5BFA0007844C /* RushedChallenge.swift in Sources */,
 				BF18AAD1252D0BAE00577BF6 /* GameDeathPit.swift in Sources */,
 				BFC140D725251955007D65DC /* AIAbstractGameSignalReceivable.swift in Sources */,
+				BF93338A2532224300C78B44 /* IAPManager.swift in Sources */,
 				BFE0AE9D250C2A33003C6780 /* GameLeaderboards.swift in Sources */,
 				BFD8797924F5FDA800552EDD /* CGVector.swift in Sources */,
 				BFAD134A25028C0F0074DCBA /* GameAlarmClock.swift in Sources */,

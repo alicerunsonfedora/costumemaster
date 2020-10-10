@@ -91,4 +91,9 @@ extension UserDefaults {
     static var store: UserDefaults {
         return UserDefaults(suiteName: "net.marquiskurt.costumemaster_store")!
     }
+
+    /// The IAP module containing IAP content flags.
+    static var iapModule: UserDefaults {
+        return UserDefaults(suiteName: "net.marquiskurt.costumemaster_iap")!
+    }
 }

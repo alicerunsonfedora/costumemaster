@@ -13,6 +13,7 @@ import Cocoa
 import SpriteKit
 import GameKit
 import KeyboardShortcuts
+import StoreKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -62,6 +63,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(URL(string: "https://costumemaster.marquiskurt.net")!)
     }
 
+    @IBAction func restorePurchases(_ sender: Any) {
+        IAPObserver.shared.restore()
+    }
+
     func authenticateWithGameCenter() {
         let localPlayer = GKLocalPlayer.local
         localPlayer.authenticateHandler = { (viewC: NSViewController?, error) in
@@ -75,11 +80,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        SKPaymentQueue.default().add(IAPObserver.shared)
         self.authenticateWithGameCenter()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+        SKPaymentQueue.default().remove(IAPObserver.shared)
     }
 
 }

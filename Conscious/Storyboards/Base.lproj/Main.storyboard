@@ -28,6 +28,10 @@
                                                 <action selector="instantiatePreferencesWindow" target="Voe-Tx-rLC" id="csR-1a-Jdf"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Restore Purchases..." id="Ejy-Wy-t7e">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="oZN-IC-VYJ"/>
                                         <menuItem title="Clear Game Store..." id="oIi-P3-8Y9">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
