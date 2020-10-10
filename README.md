@@ -4,7 +4,7 @@
 </h1>
 </div>
 
-[![License][img-license]][license] ![Version][img-version] ![Swift 5][img-swift] [![Documentation][img-docs]][docs]
+[![License][img-license]][license] ![Version][img-version] ![Swift 5][img-swift] [![Documentation][img-docs]][docs] [![CI Builds][img-ci]][link-ci]
 
 **Applied AI with GameplayKit**
 
@@ -115,9 +115,11 @@ Apple Inc. Music written by Kai Engel.
 [proposal]: ./Guides/Project%20Proposal.md
 [license]: LICENSE.txt
 [docs]: https://costumemaster.marquiskurt.net
+[link-ci]: https://github.com/alicerunsonfedora/CS400/actions
 
 <!-- Image links -->
 [img-license]: https://img.shields.io/github/license/alicerunsonfedora/CS400
 [img-version]: https://img.shields.io/github/v/release/alicerunsonfedora/CS400
 [img-docs]: https://costumemaster.marquiskurt.net/badge.svg
 [img-swift]: https://img.shields.io/badge/swift-5.3-orange.svg
+[img-ci]: https://github.com/alicerunsonfedora/CS400/workflows/CI%20Builds/badge.svg?event=push

@@ -2,7 +2,12 @@ name: CI Builds
 
 on:
   push:
-    branches: [root]
+  branches: [root]
+    paths:
+      - "**/**.swift"
+      - "**/**.storyboard"
+      - "**/**.sks"
+      - ".github/workflows/build.yml"
   pull_request:
     branches: [root]
 
