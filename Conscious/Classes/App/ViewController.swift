@@ -70,6 +70,12 @@ class ViewController: NSViewController, NSWindowDelegate {
         self.arguments = CommandLine.parse()
         let interfaceScenes = ["MainMenu", "Splash", "Intro", "About", "PauseMenu", "End"]
 
+        guard let dlcWatchYourStepLevels = plist(
+                from: "LevelStructure")?.value(forKey: "WatchYourStep"
+        ) as? [String?] else {
+            return
+        }
+
         var levelName = self.arguments.startLevel ?? "Splash"
         if levelName.hasSuffix("AI") && !self.arguments.useAgentTesting {
             sendAlert(
@@ -82,6 +88,17 @@ class ViewController: NSViewController, NSWindowDelegate {
         if self.arguments.useAgentTesting && !interfaceScenes.contains(levelName) && !levelName.hasSuffix("AI") {
             levelName += "AI"
         }
+
+        if dlcWatchYourStepLevels.contains(levelName) && !UserDefaults.iapModule.bool(forKey: "dlcWatchYourStep") {
+            sendAlert(
+                "Please purchase the Watch Your Step DLC from within the game to run this level via the command line.",
+                withTitle: "You don't have permission to play the level \(levelName).",
+                level: .critical
+            ) { _ in
+                levelName = "Splash"
+            }
+        }
+
         guard let scene = GKScene(fileNamed: levelName) else {
             sendAlert(
                 "Check that \(levelName) is installed properly. If the problem persists, please reinstall the game.",
