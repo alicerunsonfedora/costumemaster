@@ -2,7 +2,7 @@ name: CI Builds
 
 on:
   push:
-  branches: [root]
+    branches: [root]
     paths:
       - "**/**.swift"
       - "**/**.storyboard"
