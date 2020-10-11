@@ -122,10 +122,17 @@ public class Player: SKSpriteNode {
         super.init(texture: texture, color: NSColor.clear, size: texture!.size())
         self.instantiatePhysicsBody(fromTexture: texture!)
 
-        var costumes = allowCostumes
-        costumes.removeAll(where: { cost in cost == costume })
+        var costumes = [PlayerCostumeType]()
+        let currentIndex = (allowCostumes.firstIndex(of: costume) ?? 0).clamp(lower: 0, upper: allowCostumes.count)
+
+        costumes += allowCostumes[
+            (currentIndex + 1).clamp(lower: currentIndex, upper: allowCostumes.count)..<allowCostumes.count
+        ]
+        costumes += allowCostumes[0..<currentIndex]
+
         self.costume = costume
         self.costumeQueue = costumes
+
         self.texture = SKTexture(imageNamed: "Player (Idle, \(costume.rawValue))")
         self.texture?.filteringMode = .nearest
         self.createHUD()
@@ -159,11 +166,13 @@ public class Player: SKSpriteNode {
     public static func getCostumeSet(id: Int) -> [PlayerCostumeType] {
         // swiftlint:disable:previous identifier_name
         let defaultSet: [PlayerCostumeType] = [.flashDrive, .bird, .sorceress, .default]
-        if id == 0 {
+        switch id {
+        case 0:
             return [PlayerCostumeType.flashDrive]
-        } else {
-            let upperBound = id + 1
-            return defaultSet[..<upperBound].map { costume in costume }
+        case id where id < 3:
+            return defaultSet[..<(id + 1)].map { costume in costume }
+        default:
+            return defaultSet
         }
     }
 

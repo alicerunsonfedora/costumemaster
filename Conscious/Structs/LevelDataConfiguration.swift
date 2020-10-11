@@ -111,9 +111,11 @@ public struct LevelDataConfiguration {
         }
         self.exitLocation = exit
         self.achievementTrigger = GameAchievement(rawValue: userData["achievementTrigger"] as? String ?? "null")
-        self.disallowCostume = PlayerCostumeType(
-            rawValue: userData["disallowCostume"] as? String ?? "Default"
-        ) ?? .default
+        guard let disallowed = userData["disallowCostume"] as? String else {
+            self.disallowCostume = nil
+            return
+        }
+        self.disallowCostume = PlayerCostumeType(rawValue: disallowed)
     }
 
     /// Parse a given dictionary into a list of requisites.
