@@ -54,6 +54,18 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
         }
     }
 
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+        DispatchQueue.main.async {
+            sendAlert(
+                "An unknown error occured when trying to restore purchases.",
+                withTitle: "Couldn't restore purchases.",
+                level: .informational,
+                attachToMainWindow: false
+            ) { _ in }
+        }
+
+    }
+
     /// Restore IAPs.
     func restore() {
         if !self.restored.isEmpty { self.restored.removeAll() }

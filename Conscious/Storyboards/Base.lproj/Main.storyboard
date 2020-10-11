@@ -25,11 +25,14 @@
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
-                                                <action selector="instantiatePreferencesWindow" target="Voe-Tx-rLC" id="csR-1a-Jdf"/>
+                                                <action selector="instantiatePreferencesWindow:" target="Voe-Tx-rLC" id="WNI-ea-JZf"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Restore Purchases..." id="Ejy-Wy-t7e">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="restorePurchases:" target="Voe-Tx-rLC" id="i8w-Wc-mgV"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="oZN-IC-VYJ"/>
                                         <menuItem title="Clear Game Store..." id="oIi-P3-8Y9">

@@ -14,6 +14,7 @@ import StoreKit
 
 extension IAPManager: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        print(response.products.map { product in product.productIdentifier })
         if !response.products.isEmpty {
             self.available = response.products
         }
