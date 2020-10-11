@@ -9,14 +9,21 @@
 import SwiftUI
 #endif
 
+/// A view that handles the "Watch Your Step" DLC content, including IAP.
 @available(OSX 10.15, *) struct WatchYourStepView: View {
 
+    /// A closure that executes when the DLC content starts.
     var onStartDLCContent: () -> Void = {}
+    
+    /// A closure that executes when the dialog is dismissed.
     var onDismiss: () -> Void = {}
+    
+    /// Whether the DLC is available, or if it needs to be purchased.
     @State var dlcIsAvailable: Bool = UserDefaults.iapModule.bool(
         forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue
     )
 
+    /// The main structure of the view.
     var body: some View {
         VStack {
             Image("WatchYourStep")
@@ -49,6 +56,7 @@ import SwiftUI
                 } label: {
                     Text("Purchase")
                 }
+                .disabled(self.dlcIsAvailable)
                 Button {
                     self.onStartDLCContent()
                 } label: {
@@ -72,6 +80,7 @@ import SwiftUI
         .frame(minWidth: 500, minHeight: 225)
     }
 
+    /// Purchase the DLC.
     func purchase() {
         IAPManager.shared.purchase(with: .watchYourStep)
         DispatchQueue.main.async {
@@ -82,7 +91,10 @@ import SwiftUI
     }
 }
 
+/// The preview for the WatchYourStepView view.
 @available(OSX 10.15, *) struct WatchYourStepView_Previews: PreviewProvider {
+    
+    /// The preview content.
     static var previews: some View {
         WatchYourStepView()
 
