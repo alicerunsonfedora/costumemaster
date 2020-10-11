@@ -121,9 +121,16 @@
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/GameScene.swift",
-      "line": 353,
+      "line": 357,
       "symbol": "GameScene.callScene(name:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Scenes/Interfaces/MainMenu.swift",
+      "line": 50,
+      "symbol": "MainMenuScene.setCharacterAttributes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
@@ -131,6 +138,62 @@
       "line": 85,
       "symbol": "GameScene.kill()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Extensions/Purchases/IAPManager_Extension.swift",
+      "line": 16,
+      "symbol": "IAPManager.productsRequest(_:didReceive:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Extensions/Purchases/IAPManager_Extension.swift",
+      "line": 29,
+      "symbol": "IAPManager.request(_:didFailWithError:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Views/WatchYourStepView.swift",
+      "line": 12,
+      "symbol": "WatchYourStepView",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Views/WatchYourStepView.swift",
+      "line": 14,
+      "symbol": "WatchYourStepView.onStartDLCContent",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Views/WatchYourStepView.swift",
+      "line": 15,
+      "symbol": "WatchYourStepView.onDismiss",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Views/WatchYourStepView.swift",
+      "line": 16,
+      "symbol": "WatchYourStepView.dlcIsAvailable",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Views/WatchYourStepView.swift",
+      "line": 75,
+      "symbol": "WatchYourStepView.purchase()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Views/WatchYourStepView.swift",
+      "line": 85,
+      "symbol": "WatchYourStepView_Previews",
+      "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     }
   ],

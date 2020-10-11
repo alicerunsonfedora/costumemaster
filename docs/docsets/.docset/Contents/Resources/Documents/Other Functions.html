@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="index.html">The Costumemaster</a>
-          <span class="no-mobile"> (95% documented)</span>
+          <span class="no-mobile"> (94% documented)</span>
         </p>
     
         <p class="header-right">
@@ -117,6 +117,105 @@ This a convenience utility to create an NSAlert with some properties.</p>
                                 <td>
                                   <div>
                                     <p>The level of importance for the alert.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>handler</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>An escaping closure that handles the alert&rsquo;s response when given.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster9sendAlert_9withTitle5level18attachToMainWindow7handlerySS_SSSgSo12NSAlertStyleVSbySo15NSModalResponseactF"></a>
+                      <a name="//apple_ref/swift/Function/sendAlert(_:withTitle:level:attachToMainWindow:handler:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster9sendAlert_9withTitle5level18attachToMainWindow7handlerySS_SSSgSo12NSAlertStyleVSbySo15NSModalResponseactF">sendAlert(_:<wbr>withTitle:<wbr>level:<wbr>attachToMainWindow:<wbr>handler:<wbr>)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Send an alert.
+This a convenience utility to create an NSAlert with some properties.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">sendAlert</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+               <span class="nv">withTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+               <span class="nv">level</span><span class="p">:</span> <span class="kt">NSAlert</span><span class="o">.</span><span class="kt">Style</span><span class="p">,</span>
+               <span class="nv">attachToMainWindow</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span>
+               <span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">NSApplication</span><span class="o">.</span><span class="kt">ModalResponse</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>message</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The message of the alert.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>withTitle</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The title of the alert.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>level</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The level of importance for the alert.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>attachToMainWindow</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>Whether to attach the alert to the main window.</p>
                                   </div>
                                 </td>
                               </tr>
@@ -839,6 +938,12 @@ This a convenience utility to create an NSAlert with some properties.</p>
                   <a href="Extensions/CommandLine.html">CommandLine</a>
                 </li>
                 <li class="nav-group-task">
+                  <a href="Extensions/Float.html">Float</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Extensions/Int.html">Int</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="Extensions/KeyboardShortcuts.html">KeyboardShortcuts</a>
                 </li>
                 <li class="nav-group-task">
@@ -883,6 +988,9 @@ This a convenience utility to create an NSAlert with some properties.</p>
                   <a href="Other%20Functions.html#/s:17The_Costumemaster5plist4fromSo12NSDictionaryCSgSS_tF">plist(from:)</a>
                 </li>
                 <li class="nav-group-task">
+                  <a href="Other%20Functions.html#/s:17The_Costumemaster9sendAlert_9withTitle5level18attachToMainWindow7handlerySS_SSSgSo12NSAlertStyleVSbySo15NSModalResponseactF">sendAlert(_:withTitle:level:attachToMainWindow:handler:)</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="Other%20Functions.html#/s:17The_Costumemaster9sendAlert_9withTitle5level7handlerySS_SSSgSo12NSAlertStyleVySo15NSModalResponseactF">sendAlert(_:withTitle:level:handler:)</a>
                 </li>
               </ul>
@@ -893,6 +1001,12 @@ This a convenience utility to create an NSAlert with some properties.</p>
                 <li class="nav-group-task">
                   <a href="Structs/TilemapParseData.html">TilemapParseData</a>
                 </li>
+                <li class="nav-group-task">
+                  <a href="Structs/WatchYourStepView.html">WatchYourStepView</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Structs/WatchYourStepView_Previews.html">WatchYourStepView_Previews</a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -900,7 +1014,7 @@ This a convenience utility to create an NSAlert with some properties.</p>
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-09)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-11)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

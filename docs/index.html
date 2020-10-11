@@ -16,7 +16,7 @@
       <div class="content-wrapper">
         <p>
           <a href="index.html">The Costumemaster</a>
-          <span class="no-mobile"> (95% documented)</span>
+          <span class="no-mobile"> (94% documented)</span>
         </p>
     
         <p class="header-right">
@@ -122,8 +122,11 @@ understanding of agents and apply these concepts by implementing and comparing a
 <li>(Optional, but recommended) <a href="https://realm.github.io/SwiftLint/">SwiftLint</a></li>
 </ul>
 
-<p>Clone the Xcode project, ensure that dependencies are install with the Swift Package Manager, and then run the <strong>Game</strong> scheme to 
-build the project in Xcode.</p>
+<ol>
+<li>Clone the Xcode project and ensure that dependencies are install with the Swift Package Manager.</li>
+<li>In the project settings, change the bundle identifier to your own bundle identifier (See Game Center, In-App Purchases).</li>
+<li>Run the <strong>Game</strong> scheme to build the project in Xcode.</li>
+</ol>
 
 <p>To make a release version, click on the destination (&ldquo;My Mac&rdquo;) and select &ldquo;Any Mac (Apple Silicon, Intel)&rdquo;, then go to <strong>Product &rsaquo;
 Archive</strong>.</p>
@@ -134,13 +137,19 @@ present. To build with Xcode 12.0, you will need to comment out code for GKAcces
 
 <p>The Costumemaster integrates with Game Center to allow players to earn achievements, challenge others, and rank in the leaderboards
 for the best scores on levels (scoring system similar to what AI agents use). Game Center is a service that requires an Apple Developer
-account and an app registered in App Store connect with the bundle identifier of the game. To test Game Center achievements, make
+account and an app registered in App Store Connect with the bundle identifier of the game. To test Game Center achievements, make
 sure that you update the build identifier in the project to the app&rsquo;s identifier in App Store Connect and make sure that the achievements
 with the IDs listed in <a href="./Conscious/Enums/GameAchievments.swift">GameAchievements.swift</a> in the Achievements list of the Game Center section.</p>
 
 <p><img src="https://github.com/alicerunsonfedora/CS400/raw/root/.readme/gamecenter.png" alt="Game Center"></p>
 
 <p>To access features like the new access point and leaderboard submission, ensure that Xcode includes at least the macOS 11.0 SDK.</p>
+<h3 id='in-app-purchases' class='heading'>In-App Purchases</h3>
+
+<p>The Costumemaster also integrates with StoreKit to provide in-app purchase support for DLC content such as &ldquo;Watch Your Step!&rdquo;.
+In-app purchases require an Apple Developer account with an app registered in App Store Connect with the bundle identifier of the
+game. In-app purchases will need to be configured with the IDs listed in <a href="./Conscious/Classes/App/Purchases/IAPManager.swift">IAPManager.PurchaseableContent</a> in App Store
+Connect.</p>
 <h3 id='about-swiftlint' class='heading'>About SwiftLint</h3>
 
 <p>This project includes support for SwiftLint, a utility that enforces recommended Swift styling practices. While it is not required to install
@@ -431,6 +440,12 @@ Apple Inc. Music written by Kai Engel.</p>
                   <a href="Extensions/CommandLine.html">CommandLine</a>
                 </li>
                 <li class="nav-group-task">
+                  <a href="Extensions/Float.html">Float</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Extensions/Int.html">Int</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="Extensions/KeyboardShortcuts.html">KeyboardShortcuts</a>
                 </li>
                 <li class="nav-group-task">
@@ -475,6 +490,9 @@ Apple Inc. Music written by Kai Engel.</p>
                   <a href="Other%20Functions.html#/s:17The_Costumemaster5plist4fromSo12NSDictionaryCSgSS_tF">plist(from:)</a>
                 </li>
                 <li class="nav-group-task">
+                  <a href="Other%20Functions.html#/s:17The_Costumemaster9sendAlert_9withTitle5level18attachToMainWindow7handlerySS_SSSgSo12NSAlertStyleVSbySo15NSModalResponseactF">sendAlert(_:withTitle:level:attachToMainWindow:handler:)</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="Other%20Functions.html#/s:17The_Costumemaster9sendAlert_9withTitle5level7handlerySS_SSSgSo12NSAlertStyleVySo15NSModalResponseactF">sendAlert(_:withTitle:level:handler:)</a>
                 </li>
               </ul>
@@ -485,6 +503,12 @@ Apple Inc. Music written by Kai Engel.</p>
                 <li class="nav-group-task">
                   <a href="Structs/TilemapParseData.html">TilemapParseData</a>
                 </li>
+                <li class="nav-group-task">
+                  <a href="Structs/WatchYourStepView.html">WatchYourStepView</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Structs/WatchYourStepView_Previews.html">WatchYourStepView_Previews</a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -492,7 +516,7 @@ Apple Inc. Music written by Kai Engel.</p>
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-09)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-11)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>
