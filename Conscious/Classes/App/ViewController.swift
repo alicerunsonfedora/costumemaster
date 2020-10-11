@@ -89,7 +89,8 @@ class ViewController: NSViewController, NSWindowDelegate {
             levelName += "AI"
         }
 
-        if dlcWatchYourStepLevels.contains(levelName) && !UserDefaults.iapModule.bool(forKey: "dlcWatchYourStep") {
+        if dlcWatchYourStepLevels.contains(levelName)
+            && !UserDefaults.iapModule.bool(forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue) {
             sendAlert(
                 "Please purchase the Watch Your Step DLC from within the game to run this level via the command line.",
                 withTitle: "You don't have permission to play the level \(levelName).",

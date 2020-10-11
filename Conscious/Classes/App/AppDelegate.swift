@@ -81,7 +81,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         SKPaymentQueue.default().add(IAPObserver.shared)
         IAPManager.shared.makeAllProductRequests()
-
         self.authenticateWithGameCenter()
     }
 

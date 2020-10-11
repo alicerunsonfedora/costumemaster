@@ -75,17 +75,24 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
     /// Handle a transaction with a successful payment.
     func onSuccessfulPayment(with transaction: SKPaymentTransaction) {
         self.purchasedContent.append(transaction)
+        UserDefaults.iapModule.setValue(true, forKey: transaction.payment.productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
     }
 
     /// Handle a transaction with a failed payment.
     func onFailedPayment(with transaction: SKPaymentTransaction) {
+        sendAlert(
+            "The content requested couldn't be purchased at this time.",
+            withTitle: "Couldn't process the transaction.",
+            level: .warning
+        ) { _ in }
         SKPaymentQueue.default().finishTransaction(transaction)
     }
 
     /// Handle a transactiom with a restored payment.
     func onRestorePayment(with transaction: SKPaymentTransaction) {
         self.restored.append(transaction)
+        UserDefaults.iapModule.setValue(true, forKey: transaction.payment.productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
     }
 }

@@ -13,7 +13,9 @@ import SwiftUI
 
     var onStartDLCContent: () -> Void = {}
     var onDismiss: () -> Void = {}
-    @State var dlcIsAvailable: Bool = UserDefaults.iapModule.bool(forKey: "")
+    @State var dlcIsAvailable: Bool = UserDefaults.iapModule.bool(
+        forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue
+    )
 
     var body: some View {
         VStack {
@@ -72,6 +74,11 @@ import SwiftUI
 
     func purchase() {
         IAPManager.shared.purchase(with: .watchYourStep)
+        DispatchQueue.main.async {
+            self.dlcIsAvailable = UserDefaults.iapModule.bool(
+                forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue
+            )
+        }
     }
 }
 

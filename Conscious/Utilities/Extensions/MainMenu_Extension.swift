@@ -79,11 +79,6 @@ extension MainMenuScene {
 //            self.gameCenterButton?.isHidden = true
 //            self.watchYourStepButton?.position.x = 0
 //        }
-
-        guard #available(OSX 10.15, *) else {
-            self.watchYourStepButton?.alpha = 0.25
-            return
-        }
     }
 
     /// Start the game by presenting the first level scene.
@@ -176,18 +171,31 @@ extension MainMenuScene {
 
     private func watchYourStepAction() {
         guard let sceneController = self.view?.window?.contentViewController else { return }
+        guard let first = SKScene(fileNamed: "Consequences") else {
+            return
+        }
         if #available(OSX 10.15, *) {
             let viewController = NSViewController()
             let dlcDialog = WatchYourStepView {
                 sceneController.dismiss(viewController)
-                if let first = SKScene(fileNamed: "Consequences") {
-                    self.view?.presentScene(first, transition: SKTransition.fade(withDuration: 3.0))
-                }
+                self.view?.presentScene(first, transition: SKTransition.fade(withDuration: 3.0))
             } onDismiss: {
                 sceneController.dismiss(viewController)
             }
             viewController.view = NSHostingView(rootView: dlcDialog)
             sceneController.presentAsSheet(viewController)
+        } else {
+            if UserDefaults.iapModule.bool(forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue) {
+                self.view?.presentScene(first, transition: SKTransition.fade(withDuration: 3.0))
+            } else {
+                sendAlert(
+                    "In order to purchase the Watch Your Step DLC, you need a Mac running macOS Catalina (10.15) or "
+                    + "higher. If you've already purchased the DLC, you can restore your purchase by clicking 'The "
+                    + "Costumemaster > Restore Purchases' in the menu bar.",
+                    withTitle: "You cannot purchase Watch Your Step on this Mac.",
+                    level: .warning
+                    ) { _ in }
+            }
         }
     }
 }
