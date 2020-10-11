@@ -55,8 +55,9 @@ Details on these milestones can be found on the [Milestones page in this reposit
 - [KeyboardShortcuts][keys] (added when cloning)
 - (Optional, but recommended) [SwiftLint][linter]
 
-Clone the Xcode project, ensure that dependencies are install with the Swift Package Manager, and then run the **Game** scheme to 
-build the project in Xcode.
+1. Clone the Xcode project and ensure that dependencies are install with the Swift Package Manager.
+2. In the project settings, change the bundle identifier to your own bundle identifier (See Game Center, In-App Purchases).
+3. Run the **Game** scheme to build the project in Xcode.
 
 To make a release version, click on the destination ("My Mac") and select "Any Mac (Apple Silicon, Intel)", then go to **Product &rsaquo;
 Archive**.
@@ -68,13 +69,20 @@ present. To build with Xcode 12.0, you will need to comment out code for GKAcces
 
 The Costumemaster integrates with Game Center to allow players to earn achievements, challenge others, and rank in the leaderboards
 for the best scores on levels (scoring system similar to what AI agents use). Game Center is a service that requires an Apple Developer
-account and an app registered in App Store connect with the bundle identifier of the game. To test Game Center achievements, make
+account and an app registered in App Store Connect with the bundle identifier of the game. To test Game Center achievements, make
 sure that you update the build identifier in the project to the app's identifier in App Store Connect and make sure that the achievements
 with the IDs listed in [GameAchievements.swift][gcachieve] in the Achievements list of the Game Center section.
 
 ![Game Center](https://github.com/alicerunsonfedora/CS400/raw/root/.readme/gamecenter.png)
 
 To access features like the new access point and leaderboard submission, ensure that Xcode includes at least the macOS 11.0 SDK.
+
+### In-App Purchases
+
+The Costumemaster also integrates with StoreKit to provide in-app purchase support for DLC content such as "Watch Your Step!".
+In-app purchases require an Apple Developer account with an app registered in App Store Connect with the bundle identifier of the
+game. In-app purchases will need to be configured with the IDs listed in [IAPManager.PurchaseableContent][iapcontent] in App Store
+Connect.
 
 ### About SwiftLint
 
@@ -111,6 +119,7 @@ Apple Inc. Music written by Kai Engel.
 [linter]: https://realm.github.io/SwiftLint/
 [keys]: https://github.com/sindresorhus/KeyboardShortcuts
 [gcachieve]: ./Conscious/Enums/GameAchievments.swift
+[iapcontent]: ./Conscious/Classes/App/Purchases/IAPManager.swift
 [jazzy]: https://github.com/realm/jazzy
 [proposal]: ./Guides/Project%20Proposal.md
 [license]: LICENSE.txt
