@@ -326,7 +326,11 @@ class GameScene: SKScene {
     /// Run any post-update logic and check input states.
     override func didFinishUpdate() {
         for input in self.switches where input.activationMethod.contains(.activeByPlayerIntervention) {
-            if [GameSignalKind.pressurePlate, GameSignalKind.trigger].contains(input.kind) {
+            if [GameSignalKind.pressurePlate, GameSignalKind.trigger].contains(input.kind)
+                && !(input is GameIrisScanner) {
+                input.activate(with: nil, player: self.playerNode, objects: self.interactables)
+            } else if input is GameIrisScanner &&
+                        input.shouldActivateOnIntervention(with: self.playerNode, objects: self.interactables) {
                 input.activate(with: nil, player: self.playerNode, objects: self.interactables)
             }
         }

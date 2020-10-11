@@ -41,7 +41,17 @@ class GameIrisScanner: GameSignalSender {
     /// - Returns: Whether the input should activate given the intervention criteria.
     override func shouldActivateOnIntervention(with player: Player?, objects: [SKSpriteNode?]) -> Bool {
         guard let play = player else { return false }
-        return play.costume == .default && play.position.distance(between: self.position) < 256 && !self.active
+        return play.costume == .default && play.position.distance(between: self.position) < 192
     }
+
+    /// Run any post-activation methods.
+    /// - Parameter event: The event handler that triggered the activation.
+    /// - Parameter player: The player that triggered the activation.
+    override func onActivate(with event: NSEvent?, player: Player?) {}
+
+    /// Run any post-deactivation methods.
+    /// - Parameter event: The event handler that triggered the activation.
+    /// - Parameter player: The player that triggered the activation.
+    override func onDeactivate(with event: NSEvent?, player: Player?) {}
 
 }
