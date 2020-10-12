@@ -13,60 +13,35 @@ import Foundation
 import GameplayKit
 
 // TODO: Implement the random network distillation strategist.
+/// A explorative strategist that uses Random Network Distillation to determine the most optimal move.
+///
+/// Random Network Distillation (RND) is a reinforcement learning-based strategy that places emphasis on unexplored
+/// states, encouraging the strategist to explore the game with rewards for encountering new states. RND scores states
+/// by measuring how difficult it is to predict the output based on previous experience.
+///
+/// For more information, consult the OpenAI article titled
+/// [Reinforcement Learning with Prediction-Based Rewards](https://1n.pm/df0Ui).
+class AIRandomNetworkStrategist: NSObject, GKStrategist {
 
-class AIRandomNetworkStrategist: GKStrategist {
+    /// A lookup table containing states the strategist has seen before, along with their score.
+    var lookupTable = [AIAbstractGameState: Int]()
+
+    /// The game model that the strategist will assess.
     var gameModel: GKGameModel?
 
+    /// The random source for the strategist.
     var randomSource: GKRandom?
 
+    /// Determine the best move for the currently active player.
     func bestMoveForActivePlayer() -> GKGameModelUpdate? {
+        guard let model = gameModel as? AIAbstractGameState else { return nil }
+        print(model)
         return nil
     }
 
-    func isEqual(_ object: Any?) -> Bool {
-        return false
+    /// Train the strategist.
+    func train() {
+
     }
-
-    var hash: Int = 0
-
-    var superclass: AnyClass?
-
-    func `self`() -> Self {
-        return self
-    }
-
-    func perform(_ aSelector: Selector!) -> Unmanaged<AnyObject>! {
-        return nil
-    }
-
-    func perform(_ aSelector: Selector!, with object: Any!) -> Unmanaged<AnyObject>! {
-        return nil
-    }
-
-    func perform(_ aSelector: Selector!, with object1: Any!, with object2: Any!) -> Unmanaged<AnyObject>! {
-        return nil
-    }
-
-    func isProxy() -> Bool {
-        return false
-    }
-
-    func isKind(of aClass: AnyClass) -> Bool {
-        return false
-    }
-
-    func isMember(of aClass: AnyClass) -> Bool {
-        return false
-    }
-
-    func conforms(to aProtocol: Protocol) -> Bool {
-        return false
-    }
-
-    func responds(to aSelector: Selector!) -> Bool {
-        return false
-    }
-
-    var description: String = ""
 
 }

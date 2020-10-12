@@ -14,10 +14,10 @@ import SwiftUI
 
     /// A closure that executes when the DLC content starts.
     var onStartDLCContent: () -> Void = {}
-    
+
     /// A closure that executes when the dialog is dismissed.
     var onDismiss: () -> Void = {}
-    
+
     /// Whether the DLC is available, or if it needs to be purchased.
     @State var dlcIsAvailable: Bool = UserDefaults.iapModule.bool(
         forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue
@@ -93,7 +93,7 @@ import SwiftUI
 
 /// The preview for the WatchYourStepView view.
 @available(OSX 10.15, *) struct WatchYourStepView_Previews: PreviewProvider {
-    
+
     /// The preview content.
     static var previews: some View {
         WatchYourStepView()
