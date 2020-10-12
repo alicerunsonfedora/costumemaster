@@ -49,6 +49,7 @@ custom_categories:
     - GameComputer
     - GameLever
     - GamePressurePlate
+    - GameIrisScanner
     
   - name: Outputs
     children:
@@ -67,6 +68,7 @@ custom_categories:
     - AIAbstractGamePlayer
     - AIAbstractGameState
     - AIGameStrategist
+    - AIRandomNetworkStrategist
     - AIAbstractGameSignalSender
     - AIAbstractGameSignalReceivable
     - AIGameDecision
@@ -89,3 +91,8 @@ custom_categories:
     - GameLeaderboard
     - GKAchievement
     - GKLeaderboard
+    
+  - name: Views
+    children:
+    - WatchYourStepView
+    - WatchYourStepView_Previews

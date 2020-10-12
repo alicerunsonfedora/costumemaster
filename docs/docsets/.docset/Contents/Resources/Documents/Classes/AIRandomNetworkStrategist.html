@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="../index.html">The Costumemaster</a>
-          <span class="no-mobile"> (94% documented)</span>
+          <span class="no-mobile"> (98% documented)</span>
         </p>
     
         <p class="header-right">
@@ -49,11 +49,18 @@
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIRandomNetworkStrategist</span> <span class="p">:</span> <span class="kt">GKStrategist</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIRandomNetworkStrategist</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKStrategist</span></code></pre>
 
                   </div>
                 </div>
-              <p>Undocumented</p>
+              <p>A explorative strategist that uses Random Network Distillation to determine the most optimal move.</p>
+
+<p>Random Network Distillation (RND) is a reinforcement learning-based strategy that places emphasis on unexplored
+states, encouraging the strategist to explore the game with rewards for encountering new states. RND scores states
+by measuring how difficult it is to predict the output based on previous experience.</p>
+
+<p>For more information, consult the OpenAI article titled
+<a href="https://1n.pm/df0Ui">Reinforcement Learning with Prediction-Based Rewards</a>.</p>
 
             </section>
             <section class="section task-group-section">
@@ -62,9 +69,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC9gameModelSo06GKGameG0_pSgvp"></a>
-                      <a name="//apple_ref/swift/Property/gameModel" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC9gameModelSo06GKGameG0_pSgvp">gameModel</a>
+                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC11lookupTableSDyAA19AIAbstractGameStateCSiGvp"></a>
+                      <a name="//apple_ref/swift/Property/lookupTable" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC11lookupTableSDyAA19AIAbstractGameStateCSiGvp">lookupTable</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -72,7 +79,34 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>A lookup table containing states the strategist has seen before, along with their score.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">lookupTable</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/AIAbstractGameState.html">AIAbstractGameState</a></span> <span class="p">:</span> <span class="kt">Int</span><span class="p">]</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist(py)gameModel"></a>
+                      <a name="//apple_ref/swift/Property/gameModel" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist(py)gameModel">gameModel</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>The game model that the strategist will assess.</p>
 
                         </div>
                         <div class="declaration">
@@ -89,9 +123,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC12randomSourceSo8GKRandom_pSgvp"></a>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist(py)randomSource"></a>
                       <a name="//apple_ref/swift/Property/randomSource" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC12randomSourceSo8GKRandom_pSgvp">randomSource</a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist(py)randomSource">randomSource</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -99,7 +133,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>The random source for the strategist.</p>
 
                         </div>
                         <div class="declaration">
@@ -116,9 +150,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC23bestMoveForActivePlayerSo17GKGameModelUpdate_pSgyF"></a>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist(im)bestMoveForActivePlayer"></a>
                       <a name="//apple_ref/swift/Method/bestMoveForActivePlayer()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC23bestMoveForActivePlayerSo17GKGameModelUpdate_pSgyF">bestMoveForActivePlayer()</a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist(im)bestMoveForActivePlayer">bestMoveForActivePlayer()</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -126,7 +160,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Determine the best move for the currently active player.</p>
 
                         </div>
                         <div class="declaration">
@@ -143,9 +177,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC7isEqualySbypSgF"></a>
-                      <a name="//apple_ref/swift/Method/isEqual(_:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC7isEqualySbypSgF">isEqual(_:<wbr>)</a>
+                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC5trainyyF"></a>
+                      <a name="//apple_ref/swift/Method/train()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC5trainyyF">train()</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -153,338 +187,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Train the strategist.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isEqual</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC4hashSivp"></a>
-                      <a name="//apple_ref/swift/Property/hash" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC4hashSivp">hash</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC10superclassyXlXpSgvp"></a>
-                      <a name="//apple_ref/swift/Property/superclass" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC10superclassyXlXpSgvp">superclass</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">superclass</span><span class="p">:</span> <span class="kt">AnyClass</span><span class="p">?</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC4selfACXDyF"></a>
-                      <a name="//apple_ref/swift/Method/self()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC4selfACXDyF">self()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="p">`</span><span class="nv">self</span><span class="p">`()</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC7performys9UnmanagedVyyXlGSg10ObjectiveC8SelectorVSgF"></a>
-                      <a name="//apple_ref/swift/Method/perform(_:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC7performys9UnmanagedVyyXlGSg10ObjectiveC8SelectorVSgF">perform(_:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">perform</span><span class="p">(</span><span class="n">_</span> <span class="nv">aSelector</span><span class="p">:</span> <span class="kt">Selector</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Unmanaged</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC7perform_4withs9UnmanagedVyyXlGSg10ObjectiveC8SelectorVSg_ypSgtF"></a>
-                      <a name="//apple_ref/swift/Method/perform(_:with:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC7perform_4withs9UnmanagedVyyXlGSg10ObjectiveC8SelectorVSg_ypSgtF">perform(_:<wbr>with:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">perform</span><span class="p">(</span><span class="n">_</span> <span class="nv">aSelector</span><span class="p">:</span> <span class="kt">Selector</span><span class="o">!</span><span class="p">,</span> <span class="n">with</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Any</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Unmanaged</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC7perform_4withAEs9UnmanagedVyyXlGSg10ObjectiveC8SelectorVSg_ypSgANtF"></a>
-                      <a name="//apple_ref/swift/Method/perform(_:with:with:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC7perform_4withAEs9UnmanagedVyyXlGSg10ObjectiveC8SelectorVSg_ypSgANtF">perform(_:<wbr>with:<wbr>with:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">perform</span><span class="p">(</span><span class="n">_</span> <span class="nv">aSelector</span><span class="p">:</span> <span class="kt">Selector</span><span class="o">!</span><span class="p">,</span> <span class="n">with</span> <span class="nv">object1</span><span class="p">:</span> <span class="kt">Any</span><span class="o">!</span><span class="p">,</span> <span class="n">with</span> <span class="nv">object2</span><span class="p">:</span> <span class="kt">Any</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Unmanaged</span><span class="o">&lt;</span><span class="kt">AnyObject</span><span class="o">&gt;!</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC7isProxySbyF"></a>
-                      <a name="//apple_ref/swift/Method/isProxy()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC7isProxySbyF">isProxy()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isProxy</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC6isKind2ofSbyXlXp_tF"></a>
-                      <a name="//apple_ref/swift/Method/isKind(of:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC6isKind2ofSbyXlXp_tF">isKind(of:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isKind</span><span class="p">(</span><span class="n">of</span> <span class="nv">aClass</span><span class="p">:</span> <span class="kt">AnyClass</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC8isMember2ofSbyXlXp_tF"></a>
-                      <a name="//apple_ref/swift/Method/isMember(of:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC8isMember2ofSbyXlXp_tF">isMember(of:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isMember</span><span class="p">(</span><span class="n">of</span> <span class="nv">aClass</span><span class="p">:</span> <span class="kt">AnyClass</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC8conforms2toSbSo8ProtocolC_tF"></a>
-                      <a name="//apple_ref/swift/Method/conforms(to:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC8conforms2toSbSo8ProtocolC_tF">conforms(to:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">conforms</span><span class="p">(</span><span class="n">to</span> <span class="nv">aProtocol</span><span class="p">:</span> <span class="kt">Protocol</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC8responds2toSb10ObjectiveC8SelectorVSg_tF"></a>
-                      <a name="//apple_ref/swift/Method/responds(to:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC8responds2toSb10ObjectiveC8SelectorVSg_tF">responds(to:<wbr>)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">responds</span><span class="p">(</span><span class="n">to</span> <span class="nv">aSelector</span><span class="p">:</span> <span class="kt">Selector</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC11descriptionSSvp"></a>
-                      <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC11descriptionSSvp">description</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">train</span><span class="p">()</span></code></pre>
 
                           </div>
                         </div>
@@ -592,6 +302,9 @@
                 <li class="nav-group-task">
                   <a href="../Classes/GamePressurePlate.html">GamePressurePlate</a>
                 </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/GameIrisScanner.html">GameIrisScanner</a>
+                </li>
               </ul>
             </li>
             <li class="nav-group-name">
@@ -633,6 +346,9 @@
                 </li>
                 <li class="nav-group-task">
                   <a href="../Classes/AIGameStrategist.html">AIGameStrategist</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/AIRandomNetworkStrategist.html">AIRandomNetworkStrategist</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="../Structs/AIAbstractGameSignalSender.html">AIAbstractGameSignalSender</a>
@@ -695,16 +411,21 @@
               </ul>
             </li>
             <li class="nav-group-name">
+              <a href="../Views.html">Views</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Structs/WatchYourStepView.html">WatchYourStepView</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Structs/WatchYourStepView_Previews.html">WatchYourStepView_Previews</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
               <a href="../Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
-                  <a href="../Classes/AIRandomNetworkStrategist.html">AIRandomNetworkStrategist</a>
-                </li>
-                <li class="nav-group-task">
                   <a href="../Classes/GameDeathPit.html">GameDeathPit</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/GameIrisScanner.html">GameIrisScanner</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="../Classes/GameStructureObject.html">GameStructureObject</a>
@@ -807,12 +528,6 @@
                 <li class="nav-group-task">
                   <a href="../Structs/TilemapParseData.html">TilemapParseData</a>
                 </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/WatchYourStepView.html">WatchYourStepView</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/WatchYourStepView_Previews.html">WatchYourStepView_Previews</a>
-                </li>
               </ul>
             </li>
           </ul>
@@ -820,7 +535,7 @@
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-11)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-12)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

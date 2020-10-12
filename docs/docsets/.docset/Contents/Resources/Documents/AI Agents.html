@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="index.html">The Costumemaster</a>
-          <span class="no-mobile"> (94% documented)</span>
+          <span class="no-mobile"> (98% documented)</span>
         </p>
     
         <p class="header-right">
@@ -157,6 +157,41 @@
                           <div class="language">
                             <p class="aside-title">Swift</p>
                             <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIGameStrategist</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist"></a>
+                      <a name="//apple_ref/swift/Class/AIRandomNetworkStrategist" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist">AIRandomNetworkStrategist</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>A explorative strategist that uses Random Network Distillation to determine the most optimal move.</p>
+
+<p>Random Network Distillation (RND) is a reinforcement learning-based strategy that places emphasis on unexplored
+states, encouraging the strategist to explore the game with rewards for encountering new states. RND scores states
+by measuring how difficult it is to predict the output based on previous experience.</p>
+
+<p>For more information, consult the OpenAI article titled
+<a href="https://1n.pm/df0Ui">Reinforcement Learning with Prediction-Based Rewards</a>.</p>
+
+                          <a href="Classes/AIRandomNetworkStrategist.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIRandomNetworkStrategist</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKStrategist</span></code></pre>
 
                           </div>
                         </div>
@@ -376,6 +411,9 @@
                 <li class="nav-group-task">
                   <a href="Classes/GamePressurePlate.html">GamePressurePlate</a>
                 </li>
+                <li class="nav-group-task">
+                  <a href="Classes/GameIrisScanner.html">GameIrisScanner</a>
+                </li>
               </ul>
             </li>
             <li class="nav-group-name">
@@ -417,6 +455,9 @@
                 </li>
                 <li class="nav-group-task">
                   <a href="Classes/AIGameStrategist.html">AIGameStrategist</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/AIRandomNetworkStrategist.html">AIRandomNetworkStrategist</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="Structs/AIAbstractGameSignalSender.html">AIAbstractGameSignalSender</a>
@@ -479,16 +520,21 @@
               </ul>
             </li>
             <li class="nav-group-name">
+              <a href="Views.html">Views</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Structs/WatchYourStepView.html">WatchYourStepView</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Structs/WatchYourStepView_Previews.html">WatchYourStepView_Previews</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
               <a href="Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
-                  <a href="Classes/AIRandomNetworkStrategist.html">AIRandomNetworkStrategist</a>
-                </li>
-                <li class="nav-group-task">
                   <a href="Classes/GameDeathPit.html">GameDeathPit</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/GameIrisScanner.html">GameIrisScanner</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="Classes/GameStructureObject.html">GameStructureObject</a>
@@ -591,12 +637,6 @@
                 <li class="nav-group-task">
                   <a href="Structs/TilemapParseData.html">TilemapParseData</a>
                 </li>
-                <li class="nav-group-task">
-                  <a href="Structs/WatchYourStepView.html">WatchYourStepView</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Structs/WatchYourStepView_Previews.html">WatchYourStepView_Previews</a>
-                </li>
               </ul>
             </li>
           </ul>
@@ -604,7 +644,7 @@
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-11)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-12)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

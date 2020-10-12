@@ -40,11 +40,14 @@ More information on the objective of this repository can be found in the [design
 | Status | Due Date | Milestone |
 | ------ | ----------- | ----------- |
 | 🟢 | September 21, 2020 | Working Game |
-| 🟡 | October 19, 2020 | Adding Apple's agents with GameplayKit |
+| ❎ | October 19, 2020 | Adding Apple's agents with GameplayKit* |
 | 🔴 | November 9, 2020 | Adding custom agents and beating Apple |
 | 🔴 | November 16, 2020 | Final presentation and cleanup |
 
 Details on these milestones can be found on the [Milestones page in this repository's issues][milestones].
+
+<small>*Due to the nature of the strategists with GameplayKit's AIs, it is impossible to complete this milestone. Currently, the goal
+is to use Random Network Distillation to get the AI agent to make a move.</small>
 
 ## Build instructions
 
