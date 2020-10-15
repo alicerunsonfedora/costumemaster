@@ -34,6 +34,7 @@
 		BF2B5E4725016CFB001EC2E7 /* CommandLineArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2B5E4625016CFB001EC2E7 /* CommandLineArguments.swift */; };
 		BF2B5E4925016D2D001EC2E7 /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2B5E4825016D2D001EC2E7 /* Arguments.swift */; };
 		BF33A189250BFC060064A219 /* Cycle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF33A188250BFC060064A219 /* Cycle.sks */; };
+		BF37C7ED2538E5B500CC156E /* Management.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF37C7EC2538E5B500CC156E /* Management.sks */; };
 		BF3977B92530B2D900BBD591 /* Traverse.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF3977B82530B2D900BBD591 /* Traverse.sks */; };
 		BF3977BD2530C44600BBD591 /* Player_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3977BC2530C44600BBD591 /* Player_Extension.swift */; };
 		BF3977C02530D58E00BBD591 /* AIRandomNetworkStrategist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */; };
@@ -182,6 +183,7 @@
 		BF2B5E4625016CFB001EC2E7 /* CommandLineArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineArguments.swift; sourceTree = "<group>"; };
 		BF2B5E4825016D2D001EC2E7 /* Arguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
 		BF33A188250BFC060064A219 /* Cycle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cycle.sks; sourceTree = "<group>"; };
+		BF37C7EC2538E5B500CC156E /* Management.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Management.sks; sourceTree = "<group>"; };
 		BF3977B82530B2D900BBD591 /* Traverse.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Traverse.sks; sourceTree = "<group>"; };
 		BF3977BC2530C44600BBD591 /* Player_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player_Extension.swift; sourceTree = "<group>"; };
 		BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRandomNetworkStrategist.swift; sourceTree = "<group>"; };
@@ -816,6 +818,7 @@
 				BF02CB11252E343E00E16EC9 /* Stack.sks */,
 				BF3977B82530B2D900BBD591 /* Traverse.sks */,
 				BF9333782531196600C78B44 /* Visibility.sks */,
+				BF37C7EC2538E5B500CC156E /* Management.sks */,
 			);
 			path = "Watch Your Step";
 			sourceTree = "<group>";
@@ -895,6 +898,7 @@
 				BFAD134E250298970074DCBA /* alarmDisable.wav in Resources */,
 				BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */,
 				BF7C5F02250AD4D00062B1CC /* November.mp3 in Resources */,
+				BF37C7ED2538E5B500CC156E /* Management.sks in Resources */,
 				BFD8796F24F5CA4000552EDD /* Player_Backward_Sorceress.atlas in Resources */,
 				BF9333792531196600C78B44 /* Visibility.sks in Resources */,
 				BF02CB20252E553D00E16EC9 /* ElectricalSpark.sks in Resources */,
