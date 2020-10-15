@@ -16,6 +16,7 @@ make it out and figure out what's going on?
 <a href="https://apps.apple.com/us/app/the-costumemaster/id1529632296">
 <img height="64" src="https://github.com/alicerunsonfedora/CS400/raw/root/.readme/macappstore.svg" alt="Get it on the Mac App Store"/>
 </a>
+<a href="https://www.producthunt.com/posts/the-costumemaster?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-the-costumemaster" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=270923&theme=light" alt="The Costumemaster - A puzzle game where you switch costumes and escape | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 </div>
 
 
