@@ -79,14 +79,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        SKPaymentQueue.default().add(IAPObserver.shared)
-        IAPManager.shared.makeAllProductRequests()
-        self.authenticateWithGameCenter()
+        DispatchQueue.main.async {
+            SKPaymentQueue.default().add(IAPObserver.shared)
+            IAPManager.shared.makeAllProductRequests()
+            self.authenticateWithGameCenter()
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-        SKPaymentQueue.default().remove(IAPObserver.shared)
+        DispatchQueue.main.async {
+            SKPaymentQueue.default().remove(IAPObserver.shared)
+        }
     }
 
 }

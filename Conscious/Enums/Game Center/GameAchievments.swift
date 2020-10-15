@@ -13,10 +13,10 @@ import Foundation
 
 /// A enumeration that represents the different achievements players can earn in the game.
 public enum GameAchievement: String {
-    
+
     /// The typealias for this enumeration.
     public typealias RawValue = String
-    
+
     /// Face Reveal: Skipped the game and convinced her to do a face reveal.
     /// - **ID**: costumemaster.face_reveal
     case faceReveal = "costumemaster.face_reveal"
@@ -52,7 +52,7 @@ public enum GameAchievement: String {
     /// Cut and Paste: Clone yourself for the first time.
     /// - **ID**: costumemaster.cloned
     case cloned = "costumemaster.cloned"
-    
+
     /// Now You See Me: Complete the level "Visibility".
     /// - **ID**: costumemaster.visibility
     case visibility = "costumemaster.visibility"
