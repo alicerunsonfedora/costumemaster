@@ -59,7 +59,9 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
             return !inputs.map { (input: GameSignalSender) in input.active }.contains(false) || self.defaultOn
         case .anyInput:
             return !inputs.filter { (input: GameSignalSender) in input.active == true }.isEmpty || self.defaultOn
-        case .noInput:
+        case .inverseAllInputs:
+            return !inputs.map { (input: GameSignalSender) in input.active }.contains(true) || !self.defaultOn
+        default:
             return true
         }
     }

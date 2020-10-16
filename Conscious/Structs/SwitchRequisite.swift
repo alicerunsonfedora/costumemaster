@@ -35,6 +35,8 @@ struct SwitchRequisite {
             return .allInputs
         case "OR":
             return .anyInput
+        case "NAND":
+            return .inverseAllInputs
         default:
             return nil
         }

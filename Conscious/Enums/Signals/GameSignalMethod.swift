@@ -22,4 +22,10 @@ public enum GameSignalMethod {
 
     /// No input is required.
     case noInput
+    
+    /// The inverse of any input is accepted.
+    case inverseAnyInput
+    
+    /// The inverse of all inputs is accepted.
+    case inverseAllInputs
 }
