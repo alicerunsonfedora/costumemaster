@@ -21,7 +21,7 @@ public class GameSignalSender: GameStructureObject {
     public var active: Bool = false
 
     /// The method(s) that this input will activate. Default is only by player intervention.
-    public var activationMethod: [GameSignalInputMethod] = [.activeByPlayerIntervention]
+    public var activationMethod: [InputMethod] = [.activeByPlayerIntervention]
 
     /// The kind of sender. Defaults to a trigger.
     public var kind: GameSignalKind = .trigger
@@ -55,11 +55,24 @@ public class GameSignalSender: GameStructureObject {
         + "outputs: \(self.receivers), position: \(self.worldPosition))"
     }
 
+    /// An enumeration that defines the different types of inputs that are used in the game.
+    public enum InputMethod {
+
+        /// The input is active once and remains active permanently.
+        case activeOncePermanently
+
+        /// The input is active when a player interacts with it, either by distance or collision.
+        case activeByPlayerIntervention
+
+        /// The input is active on a timer and then deactivates.
+        case activeOnTimer
+    }
+
     // MARK: CONSTRUCTOR
     /// Initialize the input.
     /// - Parameter textureName: The name of the texture for this input.
     /// - Parameter inputMethods: The means of which this input will be activated by.
-    public init(textureName: String, by inputMethods: [GameSignalInputMethod], at position: CGPoint) {
+    public init(textureName: String, by inputMethods: [InputMethod], at position: CGPoint) {
         self.baseTexture = textureName
         self.activationMethod = inputMethods
         self.cooldown = 0
@@ -79,7 +92,7 @@ public class GameSignalSender: GameStructureObject {
     /// - Parameter timer: The number of seconds it takes for this input to toggle states.
     public init(
         textureName: String,
-        by inputMethods: [GameSignalInputMethod],
+        by inputMethods: [InputMethod],
         at position: CGPoint,
         with timer: Double
     ) {
@@ -101,7 +114,7 @@ public class GameSignalSender: GameStructureObject {
     /// - Parameter inputMethod: The means of which this input will be activated by.
     /// - Important: This method is deprecated. Use an initializer with a list of input methods.
     @available(*, deprecated, message: "Please use an initializer with a list of input methods.")
-    public init(textureName: String, by inputMethod: GameSignalInputMethod, at position: CGPoint) {
+    public init(textureName: String, by inputMethod: InputMethod, at position: CGPoint) {
         self.baseTexture = textureName
         self.activationMethod = [inputMethod]
         self.cooldown = 0
@@ -123,7 +136,7 @@ public class GameSignalSender: GameStructureObject {
     @available(*, deprecated, message: "Please use an initializer with a list of input methods.")
     public init(
         textureName: String,
-        by inputMethod: GameSignalInputMethod,
+        by inputMethod: InputMethod,
         at position: CGPoint,
         with timer: Double
     ) {

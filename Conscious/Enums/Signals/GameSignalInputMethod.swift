@@ -12,6 +12,8 @@
 import Foundation
 
 /// An enumeration that defines the different types of inputs that are used in the game.
+/// - Important: This has been moved to `GameSignalSender.InputMethod`.
+@available(*, deprecated, renamed: "GameSignalSender.InputMethod")
 public enum GameSignalInputMethod {
 
     /// The input is active once and remains active permanently.
