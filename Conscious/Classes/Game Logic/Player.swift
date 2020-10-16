@@ -12,6 +12,7 @@
 import Foundation
 import SpriteKit
 import GameKit
+import GBMKUtils
 
 /// A class representation of the game player.
 ///
@@ -382,7 +383,7 @@ public class Player: SKSpriteNode {
 
     // MARK: MOVEMENT METHODS
 
-    /// Move the player by a specific amount.
+    /// Move the player by a specific amount and adjust the velocity repsectively.
     ///
     /// Use this when needing to apply an impulse directly on the player to cause a movement to occur. In other
     /// instances, using `move(_ direction: PlayerMoveDirection, unit: CGSize)` is preferred.
@@ -390,15 +391,12 @@ public class Player: SKSpriteNode {
     ///
     /// - Parameter delta: A vector that represents the delta to move by.
     public func move(_ delta: CGVector) {
-        var newDelta = delta
-        let maximumNegativeVelocity = CGVector(dx: -1.4, dy: -1.4)
-        let maximumPositiveVelocity = CGVector(dx: 1.4, dy: 1.4)
-        if newDelta < maximumNegativeVelocity {
-            newDelta = CGVector(dx: newDelta.dx + 1.4, dy: newDelta.dy + 1.4)
-        } else if newDelta > maximumPositiveVelocity {
-            newDelta = CGVector(dx: newDelta.dy - (newDelta.dx - 1.4), dy: newDelta.dy - (newDelta.dx - 1.4))
-        }
-        self.physicsBody?.applyImpulse(newDelta)
+        self.physicsBody?.applyImpulse(delta)
+
+        guard var velocity = self.physicsBody?.velocity else { return }
+        let maxSpeed: Float = 1.4
+        velocity.dx = CGFloat(Float(velocity.dx).clamp(in: (-1*maxSpeed)..<maxSpeed))
+        velocity.dy = CGFloat(Float(velocity.dy).clamp(in: (-1*maxSpeed)..<maxSpeed))
     }
 
     /// Stop the player from moving and remove all current animations.

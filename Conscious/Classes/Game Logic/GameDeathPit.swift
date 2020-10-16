@@ -11,6 +11,7 @@
 
 import Foundation
 import SpriteKit
+import GBMKUtils
 
 /// A class that represents a death pit.
 class GameDeathPit: GameTileSpriteNode {

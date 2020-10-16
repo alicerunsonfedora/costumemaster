@@ -13,6 +13,7 @@ import GameKit
 import SpriteKit
 import GameplayKit
 import KeyboardShortcuts
+import GBMKUtils
 
 /// The base class for a given level.
 ///
@@ -59,7 +60,7 @@ class GameScene: SKScene {
         let mapUnit = tilemap.tileSize; self.unit = mapUnit
 
         // Parse the tilemap and set up the nodes accordingly.
-        tilemap.parse { (data: TilemapParseData) in
+        tilemap.parse { (data: GBMKTilemapParseData) in
             // Offset by one to prevent texture collisions.
             data.sprite.size = CGSize(width: data.unit.width + 1, height: data.unit.height + 1)
             let type = getTileType(fromDefinition: data.definition)

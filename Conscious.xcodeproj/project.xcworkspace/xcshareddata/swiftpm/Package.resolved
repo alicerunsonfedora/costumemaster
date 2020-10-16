@@ -2,12 +2,21 @@
   "object": {
     "pins": [
       {
+        "package": "GBMKUtils",
+        "repositoryURL": "https://github.com/alicerunsonfedora/GBMKUtils.git",
+        "state": {
+          "branch": null,
+          "revision": "418fcaf0cde36bcba965cd4aa8f7d72871c5e836",
+          "version": "0.1.2"
+        }
+      },
+      {
         "package": "KeyboardShortcuts",
         "repositoryURL": "https://github.com/sindresorhus/KeyboardShortcuts",
         "state": {
           "branch": null,
-          "revision": "d97e5e9c62086ffd5fa5fffeadf70b478aa612e2",
-          "version": "0.5.0"
+          "revision": "81e72f4787f2d642d788594834f42431f079e505",
+          "version": "0.6.0"
         }
       }
     ]
