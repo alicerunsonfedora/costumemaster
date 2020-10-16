@@ -53,15 +53,13 @@
 
 <p><a href="LICENSE.txt"><img src="https://img.shields.io/github/license/alicerunsonfedora/CS400" alt="License"></a> <img src="https://img.shields.io/github/v/release/alicerunsonfedora/CS400" alt="Version"> <img src="https://img.shields.io/badge/swift-5.3-orange.svg" alt="Swift 5"> <a href="https://costumemaster.marquiskurt.net"><img src="https://costumemaster.marquiskurt.net/badge.svg" alt="Documentation"></a></p>
 
-<p><strong>Applied AI with GameplayKit</strong></p>
-
 <p>An acclaimed costume designer and software engineer wakes up from a blackout to an eerily familiar scene. But, something isn&rsquo;t
 quite&hellip; right&hellip;. Traverse through a dream-like, constantly changing bedroom and office and get out as quickly as you can. Can you
 make it out and figure out what&rsquo;s going on?</p>
 
 <div>
 <a href="https://apps.apple.com/us/app/the-costumemaster/id1529632296">
-<img height="64" src="https://github.com/alicerunsonfedora/CS400/raw/root/.readme/macappstore.svg" alt="Get it on the Mac App Store"/>
+<img height="54" src="https://github.com/alicerunsonfedora/CS400/raw/root/.readme/macappstore.svg" alt="Get it on the Mac App Store"/>
 </a>
 <a href="https://www.producthunt.com/posts/the-costumemaster?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-the-costumemaster" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=270923&theme=light" alt="The Costumemaster - A puzzle game where you switch costumes and escape | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 </div>
@@ -81,7 +79,7 @@ make it out and figure out what&rsquo;s going on?</p>
 understanding of agents and apply these concepts by implementing and comparing agents in a video game.</p>
 
 <p>More information on the objective of this repository can be found in the <a href="./Guides/Project%20Proposal.md">design proposal</a>.</p>
-<h2 id='roadmap' class='heading'>Roadmap</h2>
+<h3 id='project-roadmap' class='heading'>Project Roadmap</h3>
 
 <table><thead>
 <tr>
@@ -112,7 +110,7 @@ understanding of agents and apply these concepts by implementing and comparing a
 </tr>
 </tbody></table>
 
-<p>Details on these milestones can be found on the <a href="https://github.com/alicerunsonfedora/CS400/milestones?direction=asc&sort=due_date&state=open">Milestones page in this repository&rsquo;s issues</a>.</p>
+<p>Details on these milestones can be found on the <a href="https://github.com/alicerunsonfedora/CS400/milestones?direction=asc&sort=due_date&state=open">Milestones page on GitHub</a>.</p>
 
 <p><small>*Due to the nature of the strategists with GameplayKit&rsquo;s AIs, it is impossible to complete this milestone. Currently, the goal
 is to use Random Network Distillation to get the AI agent to make a move.</small></p>
@@ -123,6 +121,7 @@ is to use Random Network Distillation to get the AI agent to make a move.</small
 <li>Xcode 12.2* or higher</li>
 <li>macOS 10.15.6 (Catalina) or higher</li>
 <li><a href="https://github.com/sindresorhus/KeyboardShortcuts">KeyboardShortcuts</a> (added when cloning)</li>
+<li><a href="https://github.com/alicerunsonfedora/GBMKUtils">GBMKUtils</a> (added when cloning)</li>
 <li>(Optional, but recommended) <a href="https://realm.github.io/SwiftLint/">SwiftLint</a></li>
 </ul>
 
@@ -267,6 +266,9 @@ Apple Inc. Music written by Kai Engel.</p>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
                   <a href="Classes/GameSignalSender.html">GameSignalSender</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/GameSignalSender/InputMethod.html">– InputMethod</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="Enums/GameSignalKind.html">GameSignalKind</a>
@@ -446,22 +448,7 @@ Apple Inc. Music written by Kai Engel.</p>
               <a href="Other%20Extensions.html">Other Extensions</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
-                  <a href="Extensions/CGPoint.html">CGPoint</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Extensions/CGSize.html">CGSize</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Extensions/CGVector.html">CGVector</a>
-                </li>
-                <li class="nav-group-task">
                   <a href="Extensions/CommandLine.html">CommandLine</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Extensions/Float.html">Float</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Extensions/Int.html">Int</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="Extensions/KeyboardShortcuts.html">KeyboardShortcuts</a>
@@ -471,9 +458,6 @@ Apple Inc. Music written by Kai Engel.</p>
                 </li>
                 <li class="nav-group-task">
                   <a href="Extensions/SKTextureAtlas.html">SKTextureAtlas</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Extensions/SKTileMapNode.html">SKTileMapNode</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="Extensions/UserDefaults.html">UserDefaults</a>
@@ -515,20 +499,12 @@ Apple Inc. Music written by Kai Engel.</p>
                 </li>
               </ul>
             </li>
-            <li class="nav-group-name">
-              <a href="Other%20Structs.html">Other Structures</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Structs/TilemapParseData.html">TilemapParseData</a>
-                </li>
-              </ul>
-            </li>
           </ul>
         </nav>
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-15)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-16)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

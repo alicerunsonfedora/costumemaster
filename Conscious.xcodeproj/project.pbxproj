@@ -33,6 +33,7 @@
 		BF33A189250BFC060064A219 /* Cycle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF33A188250BFC060064A219 /* Cycle.sks */; };
 		BF37C7ED2538E5B500CC156E /* Management.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF37C7EC2538E5B500CC156E /* Management.sks */; };
 		BF37C7F62539F31900CC156E /* GBMKUtils in Frameworks */ = {isa = PBXBuildFile; productRef = BF37C7F52539F31900CC156E /* GBMKUtils */; };
+		BF37C7FD253A07A000CC156E /* AIRandomMoveStrategist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37C7FC253A07A000CC156E /* AIRandomMoveStrategist.swift */; };
 		BF3977B92530B2D900BBD591 /* Traverse.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF3977B82530B2D900BBD591 /* Traverse.sks */; };
 		BF3977BD2530C44600BBD591 /* Player_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3977BC2530C44600BBD591 /* Player_Extension.swift */; };
 		BF3977C02530D58E00BBD591 /* AIRandomNetworkStrategist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */; };
@@ -176,6 +177,7 @@
 		BF2B5E4825016D2D001EC2E7 /* Arguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
 		BF33A188250BFC060064A219 /* Cycle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cycle.sks; sourceTree = "<group>"; };
 		BF37C7EC2538E5B500CC156E /* Management.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Management.sks; sourceTree = "<group>"; };
+		BF37C7FC253A07A000CC156E /* AIRandomMoveStrategist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRandomMoveStrategist.swift; sourceTree = "<group>"; };
 		BF3977B82530B2D900BBD591 /* Traverse.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Traverse.sks; sourceTree = "<group>"; };
 		BF3977BC2530C44600BBD591 /* Player_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player_Extension.swift; sourceTree = "<group>"; };
 		BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRandomNetworkStrategist.swift; sourceTree = "<group>"; };
@@ -645,6 +647,7 @@
 				BFC140D925251C1B007D65DC /* AIGameDecision.swift */,
 				BFC140DF252525EB007D65DC /* AIGameStrategist.swift */,
 				BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */,
+				BF37C7FC253A07A000CC156E /* AIRandomMoveStrategist.swift */,
 			);
 			path = Agents;
 			sourceTree = "<group>";
@@ -1029,6 +1032,7 @@
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
 				BF7C5EFB250ACE530062B1CC /* AboutScene.swift in Sources */,
 				BF93338E2532237100C78B44 /* IAPManager_Extension.swift in Sources */,
+				BF37C7FD253A07A000CC156E /* AIRandomMoveStrategist.swift in Sources */,
 				BFF9C06E25326B340066F345 /* MainMenu_Extension.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
 				BF233390251D0D2E0018C854 /* AIGamePlayerAction.swift in Sources */,

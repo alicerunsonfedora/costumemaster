@@ -6,15 +6,13 @@
 
 [![License][img-license]][license] ![Version][img-version] ![Swift 5][img-swift] [![Documentation][img-docs]][docs]
 
-**Applied AI with GameplayKit**
-
 An acclaimed costume designer and software engineer wakes up from a blackout to an eerily familiar scene. But, something isn't
 quite... right.... Traverse through a dream-like, constantly changing bedroom and office and get out as quickly as you can. Can you
 make it out and figure out what's going on?
 
 <div>
 <a href="https://apps.apple.com/us/app/the-costumemaster/id1529632296">
-<img height="64" src="https://github.com/alicerunsonfedora/CS400/raw/root/.readme/macappstore.svg" alt="Get it on the Mac App Store"/>
+<img height="54" src="https://github.com/alicerunsonfedora/CS400/raw/root/.readme/macappstore.svg" alt="Get it on the Mac App Store"/>
 </a>
 <a href="https://www.producthunt.com/posts/the-costumemaster?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-the-costumemaster" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=270923&theme=light" alt="The Costumemaster - A puzzle game where you switch costumes and escape | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 </div>
@@ -36,7 +34,7 @@ understanding of agents and apply these concepts by implementing and comparing a
 
 More information on the objective of this repository can be found in the [design proposal][proposal].
 
-## Roadmap
+### Project Roadmap
 
 | Status | Due Date | Milestone |
 | ------ | ----------- | ----------- |
@@ -45,7 +43,7 @@ More information on the objective of this repository can be found in the [design
 | 🔴 | November 9, 2020 | Adding custom agents and beating Apple |
 | 🔴 | November 16, 2020 | Final presentation and cleanup |
 
-Details on these milestones can be found on the [Milestones page in this repository's issues][milestones].
+Details on these milestones can be found on the [Milestones page on GitHub][milestones].
 
 <small>*Due to the nature of the strategists with GameplayKit's AIs, it is impossible to complete this milestone. Currently, the goal
 is to use Random Network Distillation to get the AI agent to make a move.</small>
@@ -57,6 +55,7 @@ is to use Random Network Distillation to get the AI agent to make a move.</small
 - Xcode 12.2* or higher
 - macOS 10.15.6 (Catalina) or higher
 - [KeyboardShortcuts][keys] (added when cloning)
+- [GBMKUtils][utils] (added when cloning)
 - (Optional, but recommended) [SwiftLint][linter]
 
 1. Clone the Xcode project and ensure that dependencies are install with the Swift Package Manager.
@@ -121,6 +120,7 @@ Apple Inc. Music written by Kai Engel.
 <!-- Links in page -->
 [milestones]: https://github.com/alicerunsonfedora/CS400/milestones?direction=asc&sort=due_date&state=open
 [linter]: https://realm.github.io/SwiftLint/
+[utils]: https://github.com/alicerunsonfedora/GBMKUtils
 [keys]: https://github.com/sindresorhus/KeyboardShortcuts
 [gcachieve]: ./Conscious/Enums/GameAchievments.swift
 [iapcontent]: ./Conscious/Classes/App/Purchases/IAPManager.swift
