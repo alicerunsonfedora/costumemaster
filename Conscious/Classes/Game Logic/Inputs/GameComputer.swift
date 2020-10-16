@@ -21,7 +21,7 @@ class GameComputer: GameSignalSender {
     init(at position: CGPoint, with softwareLock: Bool) {
         super.init(
             textureName: "computer_wallup\(softwareLock ? "_alt": "")",
-            by: [.activeOncePermanently],
+            by: [.activeOnToggle],
             at: position
         )
         self.kind = softwareLock ? .computerT1 : .computerT2

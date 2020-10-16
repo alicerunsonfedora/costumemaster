@@ -66,6 +66,9 @@ public class GameSignalSender: GameStructureObject {
 
         /// The input is active on a timer and then deactivates.
         case activeOnTimer
+        
+        /// The input is active and can be toggled accordingly.
+        case activeOnToggle
     }
 
     // MARK: CONSTRUCTOR
@@ -184,8 +187,9 @@ public class GameSignalSender: GameStructureObject {
     /// - Parameter player: The player to watch and track.
     public func activate(with event: NSEvent?, player: Player?, objects: [SKSpriteNode?] = []) {
         var activationEvents = [SKAction]()
-
-        if activationMethod.contains(.activeByPlayerIntervention) {
+        
+        switch activationMethod {
+        case activationMethod where activationMethod.contains(.activeByPlayerIntervention):
             let action = SKAction.run {
                 if self.shouldActivateOnIntervention(with: player, objects: objects) {
                     self.setActiveState()
@@ -196,14 +200,22 @@ public class GameSignalSender: GameStructureObject {
                 }
             }
             activationEvents.append(action)
-        } else {
+        case activationMethod where activationMethod.contains(.activeOnToggle):
+            let action = SKAction.run {
+                self.toggle()
+                self.active
+                    ? self.onActivate(with: event, player: player)
+                    : self.onDeactivate(with: event, player: player)
+            }
+            activationEvents.append(action)
+        default:
             let action = SKAction.run {
                 self.setActiveState()
                 self.onActivate(with: event, player: player)
             }
             activationEvents.append(action)
         }
-
+        
         if activationMethod.contains(.activeOnTimer) {
             activationEvents += [
                 SKAction.wait(forDuration: self.cooldown),
