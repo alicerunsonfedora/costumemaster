@@ -47,7 +47,9 @@ public class Player: SKSpriteNode {
     }
 
     /// A queue of all available costumes the player can switch to.
-    private var costumeQueue: [PlayerCostumeType] = [.bird, .sorceress, .default]
+    private var costumeQueue: Queue<PlayerCostumeType> = Queue()
+
+    private var availableCostumes: [PlayerCostumeType] = []
 
     /// Whether the player is currently playing an animation.
     var animating: Bool = false
@@ -96,7 +98,7 @@ public class Player: SKSpriteNode {
 
     /// The list of all available costumes for the player.
     public var costumes: [PlayerCostumeType] {
-        return [self.costume] + self.costumeQueue
+        return self.availableCostumes
     }
 
     // MARK: CONSTRUCTOR
@@ -109,8 +111,14 @@ public class Player: SKSpriteNode {
         self.instantiatePhysicsBody(fromTexture: texture!)
 
         var costumes = allowCostumes
+        self.availableCostumes = allowCostumes
+
         self.costume = costumes.remove(at: 0)
-        self.costumeQueue = costumes
+        self.costumeQueue = Queue()
+        for costume in costumes {
+            self.costumeQueue.enqueue(costume)
+        }
+
         self.texture?.filteringMode = .nearest
         self.createHUD()
     }
@@ -131,8 +139,12 @@ public class Player: SKSpriteNode {
         ]
         costumes += allowCostumes[0..<currentIndex]
 
+        self.availableCostumes = allowCostumes
         self.costume = costume
-        self.costumeQueue = costumes
+        self.costumeQueue = Queue()
+        for costume in costumes {
+            self.costumeQueue.enqueue(costume)
+        }
 
         self.texture = SKTexture(imageNamed: "Player (Idle, \(costume.rawValue))")
         self.texture?.filteringMode = .nearest
@@ -251,8 +263,14 @@ public class Player: SKSpriteNode {
 
         // Re-order the queue.
         let currentCostume = self.costume
-        self.costume = self.costumeQueue.popLast() ?? .default
-        self.costumeQueue.insert(currentCostume, at: 0)
+        let newCostume = self.costumeQueue.back
+
+        self.costumeQueue.enqueue(currentCostume)
+        while self.costumeQueue.front != newCostume {
+            self.costumeQueue.enqueue(self.costumeQueue.dequeue() ?? .default)
+        }
+
+        self.costume = self.costumeQueue.dequeue() ?? .default
 
         // Start animating costume changes.
         self.animateCostumeChange(startingWith: currentCostume)
@@ -277,8 +295,8 @@ public class Player: SKSpriteNode {
 
         // Re-order the queue.
         let currentCostume = self.costume
-        self.costume = self.costumeQueue.remove(at: 0)
-        self.costumeQueue.append(currentCostume)
+        self.costume = self.costumeQueue.dequeue() ?? .default
+        self.costumeQueue.enqueue(currentCostume)
 
         // Start animating costume changes.
         self.animateCostumeChange(startingWith: currentCostume)
@@ -293,7 +311,10 @@ public class Player: SKSpriteNode {
     /// Remove a costume from the costume queue.
     /// - Parameter costume: The costume to remove from the queue.
     func remove(costume: PlayerCostumeType) {
-        self.costumeQueue.removeAll { cost in cost == costume }
+        while self.costumeQueue.front != costume {
+            self.costumeQueue.enqueue(self.costumeQueue.dequeue() ?? .default)
+        }
+        _ = self.costumeQueue.dequeue()
     }
 
     /// Check the current  ostume increments and determine whether to grant an achievement.
@@ -376,7 +397,7 @@ public class Player: SKSpriteNode {
     /// - Parameter value: The costume to get the alpha value for.
     /// - Returns: A cloat value for the alpha of this node.
     private func getAlphaOfCostumeHUD(for value: PlayerCostumeType) -> CGFloat {
-        if !self.costumes.contains(value) { return 0.0 }
+        if !self.availableCostumes.contains(value) { return 0.0 }
         if !(self.costume == value) { return 0.65 }
         return 1.0
     }

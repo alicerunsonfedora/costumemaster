@@ -41,7 +41,10 @@ class AIAbstractGamePlayer: NSObject, GKGameModelPlayer {
     /// - Parameter costumes: The list of costumes that the player can wear.
     init(at position: CGPoint, with costumes: [PlayerCostumeType]) {
         var cos = costumes
-        let first = cos.removeFirst()
+        var first: PlayerCostumeType = .default
+        if !costumes.isEmpty {
+            first = cos.removeFirst()
+        }
         self.position = position
         self.currentCostume = first
         self.costumeQueue = cos
