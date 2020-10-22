@@ -30,7 +30,7 @@
     },
     {
       "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Extensions/Purchases/IAPManager_Extension.swift",
-      "line": 29,
+      "line": 28,
       "symbol": "IAPManager.request(_:didFailWithError:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

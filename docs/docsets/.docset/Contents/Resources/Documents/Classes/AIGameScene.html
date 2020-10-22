@@ -49,11 +49,20 @@
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIGameScene</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ChallengeGameScene.html">ChallengeGameScene</a></span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">class</span> <span class="kt">AIGameScene</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ChallengeGameScene.html">ChallengeGameScene</a></span></code></pre>
 
                   </div>
                 </div>
               <p>A game scene that an AI agent can control.</p>
+
+<p>In the game scene, the player can provide a move budget and strategy to solve the puzzle. A default random move
+strategist with a budget of ten moves is provided when these options aren&rsquo;t available.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    Scenes that subclass the AI game scene must be running macOS 10.15 Catalina or higher.
+
+</div>
 
             </section>
             <section class="section task-group-section">
@@ -99,7 +108,10 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Load the scene and set an initial state.</p>
+                          <p>Load the scene, set an initial state, and attempt to solve the puzzle.</p>
+
+<p>Agent testing mode will need to be enabled, and options for the agent type and move budget should be available.
+In cases where this isn&rsquo;t available, the random move agent will be used and will have a budget of ten moves.</p>
 
                         </div>
                         <div class="declaration">
@@ -109,6 +121,56 @@
                             <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">sceneDidLoad</span><span class="p">()</span></code></pre>
 
                           </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster11AIGameSceneC24getPredeterminedStrategy3maxSayAA0C8DecisionCGSi_tF"></a>
+                      <a name="//apple_ref/swift/Method/getPredeterminedStrategy(max:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIGameSceneC24getPredeterminedStrategy3maxSayAA0C8DecisionCGSi_tF">getPredeterminedStrategy(max:<wbr>)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Get a predetermined set of actions with a maximum budget.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getPredeterminedStrategy</span><span class="p">(</span><span class="n">max</span> <span class="nv">budget</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/AIGameDecision.html">AIGameDecision</a></span><span class="p">]</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>budget</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The maximum number of moves to get a strategy for.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>A list of actions for the agent to take.</p>
                         </div>
                       </section>
                     </div>
@@ -290,6 +352,63 @@
                       </section>
                     </div>
                   </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster11AIGameSceneC11getStrategy4withQrAA19AIAbstractGameStateC_tF"></a>
+                      <a name="//apple_ref/swift/Method/getStrategy(with:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster11AIGameSceneC11getStrategy4withQrAA19AIAbstractGameStateC_tF">getStrategy(with:<wbr>)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Get the appropriate strategy based on the type of input passed.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    This function requires macOS 10.15 Catalina or later as it uses the new opaque type system.
+
+</div>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">func</span> <span class="nf">getStrategy</span><span class="p">(</span><span class="n">with</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/AIAbstractGameState.html">AIAbstractGameState</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt"><a href="../Classes/AIGameStrategist.html">AIGameStrategist</a></span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>state</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The state to create a strategist from.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>An AI game strategist that will be used for the game scene. If none was provided, the random move
+strategist will be used instead.</p>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </section>
@@ -315,6 +434,9 @@
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
                   <a href="../Structs/CommandLineArguments.html">CommandLineArguments</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Structs/CommandLineArguments/AgentTestingType.html">– AgentTestingType</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="../Structs/GameStore.html">GameStore</a>
@@ -517,6 +639,9 @@
               <a href="../Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
+                  <a href="../Classes/AIRandomMoveStrategist.html">AIRandomMoveStrategist</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="../Classes/GameDeathPit.html">GameDeathPit</a>
                 </li>
                 <li class="nav-group-task">
@@ -604,7 +729,7 @@
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-16)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-22)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>
