@@ -22,6 +22,7 @@ class AIGameStrategist {
     var state: AIAbstractGameState {
         didSet {
             self.strategy.gameModel = state
+            print("New state set: \(state)")
         }
     }
 

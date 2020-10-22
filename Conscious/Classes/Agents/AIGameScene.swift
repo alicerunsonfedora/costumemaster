@@ -14,18 +14,53 @@ import SpriteKit
 import GameplayKit
 
 /// A game scene that an AI agent can control.
-class AIGameScene: ChallengeGameScene {
+///
+/// In the game scene, the player can provide a move budget and strategy to solve the puzzle. A default random move
+/// strategist with a budget of ten moves is provided when these options aren't available.
+///
+/// - Important: Scenes that subclass the AI game scene must be running macOS 10.15 Catalina or higher.
+@available(OSX 10.15, *) class AIGameScene: ChallengeGameScene {
 
     /// The strategist that will be playing this scene.
     var strategist: AIGameStrategist?
 
-    /// Load the scene and set an initial state.
+    /// Load the scene, set an initial state, and attempt to solve the puzzle.
+    ///
+    /// Agent testing mode will need to be enabled, and options for the agent type and move budget should be available.
+    /// In cases where this isn't available, the random move agent will be used and will have a budget of ten moves.
     override func sceneDidLoad() {
         super.sceneDidLoad()
         guard let initialState = self.getState() else { return }
-        self.strategist = AIGameStrategist(with: initialState, budget: 3)
-        // Write the state management code here.
+        self.strategist = self.getStrategy(with: initialState)
 
+        if let strat = self.strategist {
+            print("Initialized strategist: \(strat.description)")
+        }
+
+        self.run(SKAction.wait(forDuration: 5.0))
+
+        print("Generating a strategy with \(AppDelegate.arguments.agentMoveRate ?? 10) moves...")
+        self.repeatAfterMe(self.getPredeterminedStrategy(max: AppDelegate.arguments.agentMoveRate ?? 10))
+    }
+
+    /// Get a predetermined set of actions with a maximum budget.
+    /// - Parameter budget: The maximum number of moves to get a strategy for.
+    /// - Returns: A list of actions for the agent to take.
+    func getPredeterminedStrategy(max budget: Int) -> [AIGameDecision] {
+        var states = [AIGameDecision]()
+        if let strat = self.strategist {
+            for index in 1 ... budget {
+                if strat.state.isWin(for: strat.state.player) {
+                    print("Reached winning state after \(index) iterations.")
+                    break
+                }
+                states.append(strat.nextAction())
+                if let newState = self.getState() {
+                    strat.state = newState
+                }
+            }
+        }
+        return states
     }
 
     /// Prevent the player from doing anything that could infl
@@ -75,6 +110,8 @@ class AIGameScene: ChallengeGameScene {
     /// - Parameter state: The action that will be performed to change the state.
     func setUpdate(_ state: AIGameDecision) {
         var actions = [SKAction]()
+        print("Applying state from action: \(state.action) (value \(state.value))")
+
         switch state.action {
         case .moveUp, .moveDown, .moveLeft, .moveRight:
             actions = [
@@ -112,6 +149,7 @@ class AIGameScene: ChallengeGameScene {
                 }
             ]
         default:
+            print("No actions to perform for \(state.action)")
             break
         }
         self.run(SKAction.sequence(actions))
@@ -125,6 +163,22 @@ class AIGameScene: ChallengeGameScene {
             steps += [SKAction.run { self.setUpdate(action) }, SKAction.wait(forDuration: 2.5)]
         }
         self.run(SKAction.sequence(steps))
+    }
+
+    /// Get the appropriate strategy based on the type of input passed.
+    /// - Parameter state: The state to create a strategist from.
+    /// - Returns: An AI game strategist that will be used for the game scene. If none was provided, the random move
+    /// strategist will be used instead.
+    /// - Important: This function requires macOS 10.15 Catalina or later as it uses the new opaque type system.
+    @available(OSX 10.15, *) func getStrategy(with state: AIAbstractGameState) -> some AIGameStrategist {
+        switch AppDelegate.arguments.agentTestingType {
+        case .randomMove:
+            return AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
+        default:
+            print("WARN: Using random move agent because no fallback has been assigned and the argument supplied "
+                  + "was invalid.")
+            return AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
+        }
     }
 
 }

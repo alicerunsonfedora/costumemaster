@@ -19,4 +19,20 @@ struct CommandLineArguments {
 
     /// Whether to enable AI mode. Defaults to false.
     public let useAgentTesting: Bool
+
+    /// The type of agent to use in AI mode.
+    public let agentTestingType: AgentTestingType
+
+    /// The maximum number of moves the agent can make at a time.
+    public let agentMoveRate: Int?
+
+    /// An enumeration that represents the AI mode types.
+    enum AgentTestingType: String {
+
+        /// A randomly-moving agent.
+        case randomMove = "random"
+
+        /// A reflex agent.
+        case reflex = "reflex"
+    }
 }

@@ -20,9 +20,6 @@ class ViewController: NSViewController, NSWindowDelegate {
     /// A private tunnled copy of AppDelegate's preferences.
     private var settings: Preferences = AppDelegate.preferences
 
-    /// The arguments passed with the application.
-    private var arguments: CommandLineArguments = CommandLine.parse()
-
     /// The root scene for this controller.
     ///
     /// This is typically used when switching between scenes, but wanting to preserve the scene's state.
@@ -67,7 +64,7 @@ class ViewController: NSViewController, NSWindowDelegate {
         super.viewDidLoad()
 
         self.settings = Preferences()
-        self.arguments = CommandLine.parse()
+        AppDelegate.arguments = CommandLine.parse()
         let interfaceScenes = ["MainMenu", "Splash", "Intro", "About", "PauseMenu", "End"]
 
         guard let dlcWatchYourStepLevels = plist(
@@ -76,17 +73,27 @@ class ViewController: NSViewController, NSWindowDelegate {
             return
         }
 
-        var levelName = self.arguments.startLevel ?? "Splash"
-        if levelName.hasSuffix("AI") && !self.arguments.useAgentTesting {
+        var levelName = AppDelegate.arguments.startLevel ?? "Splash"
+
+        if #available(OSX 10.15, *) {
+            if levelName.hasSuffix("AI") && !AppDelegate.arguments.useAgentTesting {
+                sendAlert(
+                    "Run The Costumemaster with agent testing enabled via --agent-test-mode to run this level.",
+                    withTitle: "You don't have permission to run \(levelName).",
+                    level: .critical
+                ) { _ in NSApplication.shared.terminate(nil) }
+            }
+
+            if AppDelegate.arguments.useAgentTesting && !interfaceScenes.contains(levelName)
+                && !levelName.hasSuffix("AI") {
+                levelName += "AI"
+            }
+        } else {
             sendAlert(
-                "Run The Costumemaster with agent testing enabled via --agent-test-mode to run this level.",
-                withTitle: "You don't have permission to run \(levelName).",
+                "Ensure you are running the latest macOS version before running a map under Agent Testing Mode.",
+                withTitle: "Your Mac is not compatible with Agent Testing Mode.",
                 level: .critical
             ) { _ in NSApplication.shared.terminate(nil) }
-        }
-
-        if self.arguments.useAgentTesting && !interfaceScenes.contains(levelName) && !levelName.hasSuffix("AI") {
-            levelName += "AI"
         }
 
         if dlcWatchYourStepLevels.contains(levelName)

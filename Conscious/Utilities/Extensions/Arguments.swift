@@ -17,7 +17,11 @@ extension CommandLine {
     static func parse() -> CommandLineArguments {
         return CommandLineArguments(
             startLevel: CommandLine.getArgument(of: "--start-level"),
-            useAgentTesting: CommandLine.getArgument(of: "--agent-test-mode") == "true"
+            useAgentTesting: CommandLine.getArgument(of: "--agent-test-mode") == "true",
+            agentTestingType: CommandLineArguments.AgentTestingType(
+                rawValue: CommandLine.getArgument(of: "--agent-type") ?? "random"
+            ) ?? CommandLineArguments.AgentTestingType.randomMove,
+            agentMoveRate: Int(CommandLine.getArgument(of: "--agent-move-rate") ?? "")?.clamp(in: 1..<Int.max)
         )
     }
 
