@@ -41,6 +41,7 @@ import GameplayKit
 
         print("Generating a strategy with \(AppDelegate.arguments.agentMoveRate ?? 10) moves...")
         self.repeatAfterMe(self.getPredeterminedStrategy(max: AppDelegate.arguments.agentMoveRate ?? 10))
+        print("Finished all actions to be done in the list.")
     }
 
     /// Get a predetermined set of actions with a maximum budget.
@@ -148,9 +149,16 @@ import GameplayKit
                     }
                 }
             ]
+        case .activate:
+            actions = [
+                SKAction.run {
+                    self.checkInputStates(NSEvent())
+                }
+            ]
+        case .stop:
+            self.playerNode?.halt()
         default:
             print("No actions to perform for \(state.action)")
-            break
         }
         self.run(SKAction.sequence(actions))
     }
