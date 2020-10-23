@@ -13,6 +13,7 @@ import Foundation
 import StoreKit
 
 extension IAPManager: SKProductsRequestDelegate {
+    /// Make a product request.
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         if !response.products.isEmpty {
             self.available = response.products
@@ -25,6 +26,7 @@ extension IAPManager: SKProductsRequestDelegate {
 }
 
 extension IAPManager: SKRequestDelegate {
+    /// Make a products request that handles an error.
     func request(_ request: SKRequest, didFailWithError error: Error) {
 //        print(error.localizedDescription)
     }

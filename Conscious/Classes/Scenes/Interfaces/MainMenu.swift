@@ -47,6 +47,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
     /// The level of interactivity from this scene.
     var interactiveLevel: Int = 0
 
+    /// Whether to set character attributes for this scene.
     var setCharacterAttributes: Bool = false
 
     /// Instantiate the Game Center access point.

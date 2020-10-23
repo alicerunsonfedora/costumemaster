@@ -82,6 +82,7 @@ extension GameScene {
         controller.rootScene = self; self.callScene(name: "PauseMenu")
     }
 
+    /// Make state updates that inform the player that they have "died".
     func kill() {
         self.playerDied = true
         let deathOverlay = SKSpriteNode(color: NSColor(named: "Skybox") ?? .red, size: self.size)

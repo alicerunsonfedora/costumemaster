@@ -102,7 +102,7 @@ import GameplayKit
         return states
     }
 
-    /// Prevent the player from doing anything that could infl
+    /// Prevent the player from doing anything that could influence state updates.
     func blockInput() {
         print("Keyboard input is blocked in an AI game scene.")
         NSSound.beep()

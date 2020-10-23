@@ -68,6 +68,7 @@ custom_categories:
     - AIAbstractGamePlayer
     - AIAbstractGameState
     - AIGameStrategist
+    - AIRandomMoveStrategist
     - AIRandomNetworkStrategist
     - AIAbstractGameSignalSender
     - AIAbstractGameSignalReceivable

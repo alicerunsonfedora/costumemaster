@@ -355,6 +355,8 @@ class GameScene: SKScene {
         GameStore.shared.lastSavedScene = name.starts(with: "b_") ? GameStore.shared.lastSavedScene : name
     }
 
+    /// Call the scene with a given file name.
+    /// - Parameter name: The file name of the scene to call.
     func callScene(name: String?) {
         guard let scene = SKScene(fileNamed: name ?? "MainMenu") else { return }
         if let music = self.childNode(withName: "music") as? SKAudioNode {
