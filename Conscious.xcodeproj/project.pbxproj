@@ -505,6 +505,15 @@
 			path = Levels;
 			sourceTree = "<group>";
 		};
+		BF5FAB40254335440008E8B3 /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				BF37C7FC253A07A000CC156E /* AIRandomMoveStrategist.swift */,
+				BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */,
+			);
+			path = Strategies;
+			sourceTree = "<group>";
+		};
 		BF69F2C124F4B10100BBF518 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -643,13 +652,12 @@
 		BFB0CE122518FBCF0015FE6C /* Agents */ = {
 			isa = PBXGroup;
 			children = (
+				BF5FAB40254335440008E8B3 /* Strategies */,
 				BFC140C9252517A5007D65DC /* AIGameScene.swift */,
 				BFC140CC252517DB007D65DC /* AIGamePlayer.swift */,
 				BFC140CF2525187C007D65DC /* AIGameState.swift */,
 				BFC140D925251C1B007D65DC /* AIGameDecision.swift */,
 				BFC140DF252525EB007D65DC /* AIGameStrategist.swift */,
-				BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */,
-				BF37C7FC253A07A000CC156E /* AIRandomMoveStrategist.swift */,
 			);
 			path = Agents;
 			sourceTree = "<group>";
