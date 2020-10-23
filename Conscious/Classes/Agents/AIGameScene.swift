@@ -59,6 +59,7 @@ import GameplayKit
         // Generate a set of moves and run those moves accordingly.
         let generateAction = SKAction.run {
             moves = self.getPredeterminedStrategy(max: rate ?? 10)
+            print("Generated new move set with \(moves.count) updates.")
         }
         let actOnMoves = SKAction.run { self.repeatAfterMe(moves) }
 
@@ -157,7 +158,7 @@ import GameplayKit
     /// - Parameter action: The action that will be performed to change the state.
     func apply(_ action: AIGameDecision) {
         var actions = [SKAction]()
-        print("[VALUE \(action.value)] Applying action '\(action.action)' to current state.")
+        print("[VALUE \(action.value)]\tApplying action '\(action.action)' to current state.")
 
         switch action.action {
         case .moveUp, .moveDown, .moveLeft, .moveRight:

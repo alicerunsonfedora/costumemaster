@@ -61,7 +61,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "--agent-type random"
+            argument = "--agent-type randomWeighted"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

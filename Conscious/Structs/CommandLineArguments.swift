@@ -31,7 +31,7 @@ struct CommandLineArguments {
 
         /// A randomly-moving agent.
         case randomMove = "random"
-        
+
         /// A randomly-moving agent, picking a random action with the highest value.
         case randomWeightMove = "randomWeighted"
 

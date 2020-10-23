@@ -14,13 +14,13 @@ import GameplayKit
 
 /// A strategist that will pick a random move from a random list of actions with the highest weight.
 class AIRandomWeightedStrategist: NSObject, GKStrategist {
-    
+
     /// The game model that the agent will assess.
     var gameModel: GKGameModel?
-    
+
     /// The random source for this agent.
     var randomSource: GKRandom? = GKARC4RandomSource()
-    
+
     /// Returns the best move for the player.
     /// - Returns: A random move with the highest weight.
     func bestMoveForActivePlayer() -> GKGameModelUpdate? {
@@ -30,6 +30,5 @@ class AIRandomWeightedStrategist: NSObject, GKStrategist {
         }
         return actions.max { first, second in first.value > second.value }
     }
-    
-    
+
 }
