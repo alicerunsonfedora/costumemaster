@@ -57,6 +57,7 @@
 		BF4CD5AD251410A800C021BC /* Player_Change_Final.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BF4CD5AC251410A800C021BC /* Player_Change_Final.atlas */; };
 		BF4CD5B12514110800C021BC /* End.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF4CD5B02514110800C021BC /* End.sks */; };
 		BF4CD5B4251411F400C021BC /* EndAnimationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4CD5B3251411F400C021BC /* EndAnimationScene.swift */; };
+		BF5FAB42254335DD0008E8B3 /* AIRandomWeightedStrategist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5FAB41254335DD0008E8B3 /* AIRandomWeightedStrategist.swift */; };
 		BF63E65924F84B2000429247 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63E65824F84B2000429247 /* PreferencesViewController.swift */; };
 		BF63E65B24F84BAC00429247 /* GeneralPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63E65A24F84BAC00429247 /* GeneralPrefsViewController.swift */; };
 		BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69F2C224F4B11200BBF518 /* Alerts.swift */; };
@@ -201,6 +202,7 @@
 		BF4CD5AC251410A800C021BC /* Player_Change_Final.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Change_Final.atlas; sourceTree = "<group>"; };
 		BF4CD5B02514110800C021BC /* End.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = End.sks; sourceTree = "<group>"; };
 		BF4CD5B3251411F400C021BC /* EndAnimationScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndAnimationScene.swift; sourceTree = "<group>"; };
+		BF5FAB41254335DD0008E8B3 /* AIRandomWeightedStrategist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRandomWeightedStrategist.swift; sourceTree = "<group>"; };
 		BF63E65824F84B2000429247 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		BF63E65A24F84BAC00429247 /* GeneralPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPrefsViewController.swift; sourceTree = "<group>"; };
 		BF69F2C224F4B11200BBF518 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 			children = (
 				BF37C7FC253A07A000CC156E /* AIRandomMoveStrategist.swift */,
 				BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */,
+				BF5FAB41254335DD0008E8B3 /* AIRandomWeightedStrategist.swift */,
 			);
 			path = Strategies;
 			sourceTree = "<group>";
@@ -1036,6 +1039,7 @@
 				BFEE78C524FBFDB4006FBFF0 /* PauseScene.swift in Sources */,
 				BFC140D3252518F6007D65DC /* AIAbstractGameSignalSender.swift in Sources */,
 				BF3A0B7224F6B72300575F72 /* LevelDataConfiguration.swift in Sources */,
+				BF5FAB42254335DD0008E8B3 /* AIRandomWeightedStrategist.swift in Sources */,
 				BFAD13502502AFDE0074DCBA /* PressurePlate.swift in Sources */,
 				BFDF94E62507FE42004F5BE7 /* GameAchievementTrigger.swift in Sources */,
 				BF0D2C2024FAE86B00AEF86F /* ControlsPrefsViewController.swift in Sources */,

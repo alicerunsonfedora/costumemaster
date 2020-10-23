@@ -234,6 +234,8 @@ import GameplayKit
         switch AppDelegate.arguments.agentTestingType {
         case .randomMove:
             return AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
+        case .randomWeightMove:
+            return AIGameStrategist(with: AIRandomWeightedStrategist(), reading: state)
         default:
             print("WARN: Using random move agent because no fallback has been assigned and the argument supplied "
                   + "was invalid.")
