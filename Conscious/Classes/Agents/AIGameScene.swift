@@ -32,21 +32,59 @@ import GameplayKit
         super.sceneDidLoad()
         guard let initialState = self.getState() else { return }
         self.strategist = self.getStrategy(with: initialState)
+        if let strat = self.strategist { print("Initialized strategist: \(strat.description)") }
 
-        if let strat = self.strategist {
-            print("Initialized strategist: \(strat.description)")
-        }
-
+        // Wait until the window has opened (generally ~5 sec) before starting to solve.
         self.run(SKAction.wait(forDuration: 5.0))
 
-        print("Generating a strategy with \(AppDelegate.arguments.agentMoveRate ?? 10) moves...")
-        self.repeatAfterMe(self.getPredeterminedStrategy(max: AppDelegate.arguments.agentMoveRate ?? 10))
-        print("Finished all actions to be done in the list.")
+        // Start attempting to solve the puzzle, creating a set of moves in batches based on user preferences.
+        // This should help prevent infinite recursion in such a way that prevents the window from ever showing.
+        print("Will begin solving in batches of \(AppDelegate.arguments.agentMoveRate ?? 10) moves/updates.")
+        self.solve(with: AppDelegate.arguments.agentMoveRate)
+    }
+
+    /// Attempt to solve the level by generating batches of actions to run infinitely or until the puzzle is solved.
+    ///
+    /// To prevent the game from locking up due to infinite recursion, this function is designed to make a bunch of
+    /// pre-determined moves in batches of the maximum agent budget, act on them, and repeat this process.
+    ///
+    /// - Parameter rate: The maximum rate that the agent can make moves. If none is provided, it will use a default
+    /// of 10.
+    func solve(with rate: Int?) {
+        // Set up the initial values.
+        guard let agent = self.strategist else { return }
+        var solvedState = agent.state.isWin(for: agent.state.player)
+        var moves = [AIGameDecision]()
+
+        // Generate a set of moves and run those moves accordingly.
+        let generateAction = SKAction.run {
+            moves = self.getPredeterminedStrategy(max: rate ?? 10)
+        }
+        let actOnMoves = SKAction.run { self.repeatAfterMe(moves) }
+
+        // Pause for at least two seconds and the budget rate so that all actions can be played properly.
+        let pause = SKAction.wait(forDuration: 2.0 + (Double(rate ?? 10) * 2.5))
+
+        // When the state is reassessed, removing the action with the "AI Thread" key will stop execution.
+        let reassessState = SKAction.run {
+            solvedState = agent.state.isWin(for: agent.state.player)
+            if solvedState { self.removeAction(forKey: "AI Thread") }
+        }
+
+        // Create the action for repeating these moves and run them with the "AI Thread" key.
+        let repeatable = SKAction.repeatForever(SKAction.sequence([generateAction, actOnMoves, pause, reassessState]))
+        self.run(repeatable, withKey: "AI Thread")
     }
 
     /// Get a predetermined set of actions with a maximum budget.
+    ///
+    /// After every move, the state is reassesed. If the state resulting from an action causes the solution, no further
+    /// actions will be generated.
+    ///
     /// - Parameter budget: The maximum number of moves to get a strategy for.
     /// - Returns: A list of actions for the agent to take.
+    /// - Complexity: This method takes O(n) time since, at the very worst case, a list of actions with the max
+    /// budget can be created.
     func getPredeterminedStrategy(max budget: Int) -> [AIGameDecision] {
         var states = [AIGameDecision]()
         if let strat = self.strategist {
@@ -109,23 +147,39 @@ import GameplayKit
 
     /// Apply a game state update to the scene.
     /// - Parameter state: The action that will be performed to change the state.
+    /// - Important: This function has been renamed to `AIGameScene.apply(_ action:)`.
+    @available(*, deprecated, renamed: "AIGameScene.apply")
     func setUpdate(_ state: AIGameDecision) {
-        var actions = [SKAction]()
-        print("Applying state from action: \(state.action) (value \(state.value))")
+        self.apply(state)
+    }
 
-        switch state.action {
+    /// Apply a game state update to the scene.
+    /// - Parameter action: The action that will be performed to change the state.
+    func apply(_ action: AIGameDecision) {
+        var actions = [SKAction]()
+        print("[VALUE \(action.value)] Applying action '\(action.action)' to current state.")
+
+        switch action.action {
         case .moveUp, .moveDown, .moveLeft, .moveRight:
             actions = [
                 SKAction.run {
                     for _ in 1 ... 14 {
                         self.playerNode?.move(
-                            PlayerMoveDirection.mappedFromAction(state.action),
+                            PlayerMoveDirection.mappedFromAction(action.action),
                             unit: self.unit ?? CGSize(squareOf: 128)
                         )
                     }
                 },
                 SKAction.wait(forDuration: 2.5),
                 SKAction.run { self.playerNode?.halt() }
+            ]
+        case .switchToNextCostume, .switchToPreviousCostume:
+            actions = [
+                SKAction.run {
+                    _ = action.action == .switchToNextCostume
+                        ? self.playerNode?.nextCostume()
+                        : self.playerNode?.previousCostume()
+                }
             ]
         case .deployClone, .retractClone:
             actions = [
@@ -155,10 +209,8 @@ import GameplayKit
                     self.checkInputStates(NSEvent())
                 }
             ]
-        case .stop:
-            self.playerNode?.halt()
         default:
-            print("No actions to perform for \(state.action)")
+            self.playerNode?.halt()
         }
         self.run(SKAction.sequence(actions))
     }
@@ -168,7 +220,7 @@ import GameplayKit
     func repeatAfterMe(_ moves: [AIGameDecision]) {
         var steps = [SKAction]()
         for action in moves {
-            steps += [SKAction.run { self.setUpdate(action) }, SKAction.wait(forDuration: 2.5)]
+            steps += [SKAction.run { self.apply(action) }, SKAction.wait(forDuration: 2.5)]
         }
         self.run(SKAction.sequence(steps))
     }
