@@ -116,6 +116,7 @@
 		BFC78F3924F486EF004E85A9 /* PlayerCostumeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */; };
 		BFC78F3D24F48731004E85A9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC78F3C24F48731004E85A9 /* Player.swift */; };
 		BFC9239F250BC88C0002009B /* SoundPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9239E250BC88C0002009B /* SoundPrefsViewController.swift */; };
+		BFCE7C3625474623005FBFA2 /* AIPredeterminedTreeStrategist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCE7C3525474623005FBFA2 /* AIPredeterminedTreeStrategist.swift */; };
 		BFD10ED72502CF0400BCDAA9 /* plateOn.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFD10ED52502CF0400BCDAA9 /* plateOn.wav */; };
 		BFD10ED82502CF0400BCDAA9 /* plateOff.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFD10ED62502CF0400BCDAA9 /* plateOff.wav */; };
 		BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */; };
@@ -268,6 +269,7 @@
 		BFC78F3824F486EF004E85A9 /* PlayerCostumeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCostumeType.swift; sourceTree = "<group>"; };
 		BFC78F3C24F48731004E85A9 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		BFC9239E250BC88C0002009B /* SoundPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPrefsViewController.swift; sourceTree = "<group>"; };
+		BFCE7C3525474623005FBFA2 /* AIPredeterminedTreeStrategist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPredeterminedTreeStrategist.swift; sourceTree = "<group>"; };
 		BFD10ED52502CF0400BCDAA9 /* plateOn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plateOn.wav; sourceTree = "<group>"; };
 		BFD10ED62502CF0400BCDAA9 /* plateOff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plateOff.wav; sourceTree = "<group>"; };
 		BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Bird.atlas; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 				BF37C7FC253A07A000CC156E /* AIRandomMoveStrategist.swift */,
 				BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */,
 				BF5FAB41254335DD0008E8B3 /* AIRandomWeightedStrategist.swift */,
+				BFCE7C3525474623005FBFA2 /* AIPredeterminedTreeStrategist.swift */,
 			);
 			path = Strategies;
 			sourceTree = "<group>";
@@ -1026,6 +1029,7 @@
 				BFE6475624F88B1300230F93 /* SwitchRequisite.swift in Sources */,
 				BFC140CD252517DB007D65DC /* AIGamePlayer.swift in Sources */,
 				BF3977BD2530C44600BBD591 /* Player_Extension.swift in Sources */,
+				BFCE7C3625474623005FBFA2 /* AIPredeterminedTreeStrategist.swift in Sources */,
 				BF93337F2532157700C78B44 /* IAPObserver.swift in Sources */,
 				BFBEB33524F847F600162B06 /* AdvancedPrefsViewController.swift in Sources */,
 				BF7C5EEE250AA30B0062B1CC /* ChallengeGameScene.swift in Sources */,

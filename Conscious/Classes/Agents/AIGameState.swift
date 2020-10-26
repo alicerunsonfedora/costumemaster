@@ -34,19 +34,19 @@ class AIAbstractGameState: NSObject, GKGameModel {
     var player: AIAbstractGamePlayer
 
     /// The position of the exit door.
-    var exit: CGPoint = CGPoint.zero
+    public var exit: CGPoint = CGPoint.zero
 
     /// Whether the player can leave the world successfully.
-    var escapable: Bool = false
+    public var escapable: Bool = false
 
     /// The list of all available inputs in the world.
-    var inputs: [AIAbstractGameSignalSender] = []
+    public var inputs: [AIAbstractGameSignalSender] = []
 
     /// The list of all available outputs in the world.
-    var outputs: [AIAbstractGameSignalReceivable] = []
+    public var outputs: [AIAbstractGameSignalReceivable] = []
 
     /// A list of objects that the player can pick up.
-    var interactableObjects: [CGPoint] = []
+    public var interactableObjects: [CGPoint] = []
 
     /// Instantiate a game state.
     /// - Parameter player: The player that is in the world.
