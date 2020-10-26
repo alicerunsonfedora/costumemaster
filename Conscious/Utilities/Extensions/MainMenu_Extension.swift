@@ -183,7 +183,8 @@ extension MainMenuScene {
                 sceneController.dismiss(viewController)
             }
             viewController.view = NSHostingView(rootView: dlcDialog)
-            sceneController.presentAsSheet(viewController)
+            viewController.title = "Watch Your Step!"
+            sceneController.presentAsModalWindow(viewController)
         } else {
             if UserDefaults.iapModule.bool(forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue) {
                 self.view?.presentScene(first, transition: SKTransition.fade(withDuration: 3.0))
