@@ -12,48 +12,48 @@
 import Foundation
 
 /// An enumeration that represents the moves an agent can make.
-public enum AIGamePlayerAction: CaseIterable {
+public enum AIGamePlayerAction: String, CaseIterable {
 
-    // MARK: MOVEMENT
+    // MARK: - MOVEMENT
     /// Move the agent left.
-    case moveLeft
+    case moveLeft = "MOVE_LEFT"
 
     /// Move the agent right.
-    case moveRight
+    case moveRight = "MOVE_RIGHT"
 
     /// Move the agent up.
-    case moveUp
+    case moveUp = "MOVE_UP"
 
     /// Move the agent down.
-    case moveDown
+    case moveDown = "MOVE_DOWN"
 
     /// Stop all movement and/or action.
-    case stop
+    case stop = "STOP"
 
-    // MARK: COSTUMES
+    // MARK: - COSTUMES
 
     /// Switch to the next costume the agent has.
-    case switchToNextCostume
+    case switchToNextCostume = "NEXT_COSTUME"
 
     /// Switch to the previous costume the agent has.
-    case switchToPreviousCostume
+    case switchToPreviousCostume = "PREV_COSTUME"
 
     // MARK: ITEMS
 
     /// Pick up a heavy object.
-    case pickup
+    case pickup = "PICK_UP"
 
     /// Drop a heavy object.
-    case drop
+    case drop = "DROP"
 
-    // MARK: OTHER
+    // MARK: - OTHER
 
     /// Deploy a USB costume clone.
-    case deployClone
+    case deployClone = "DEPLOY"
 
     /// Retract a USB costume clone.
-    case retractClone
+    case retractClone = "RETRACT"
 
     /// Activate an input.
-    case activate
+    case activate = "ACTIVATE"
 }

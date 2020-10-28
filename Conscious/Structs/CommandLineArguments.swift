@@ -37,5 +37,8 @@ struct CommandLineArguments {
 
         /// A reflex agent.
         case reflex = "reflex"
+
+        /// An agent with a pre-determined decision tree.
+        case predeterminedTree = "predTree"
     }
 }

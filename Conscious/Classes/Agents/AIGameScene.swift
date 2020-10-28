@@ -237,9 +237,11 @@ import GameplayKit
             return AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
         case .randomWeightMove:
             return AIGameStrategist(with: AIRandomWeightedStrategist(), reading: state)
+        case .predeterminedTree:
+            return AIGameStrategist(with: AIPredeterminedTreeStrategist(), reading: state)
         default:
             print("WARN: Using random move agent because no fallback has been assigned and the argument supplied "
-                  + "was invalid.")
+                    + "was invalid (\(AppDelegate.arguments.agentTestingType.rawValue)).")
             return AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
         }
     }

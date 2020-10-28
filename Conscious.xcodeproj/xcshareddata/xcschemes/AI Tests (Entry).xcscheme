@@ -61,7 +61,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "--agent-type randomWeighted"
+            argument = "--agent-type predTree"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
