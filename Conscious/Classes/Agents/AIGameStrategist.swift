@@ -30,6 +30,11 @@ class AIGameStrategist {
         return "AIGameStrategist(type: \(self.strategy.description), state: \(self.state))"
     }
 
+    /// A string that provides a simple description of the strategist to a receiver.
+    var simpleDescription: String {
+        "AIGameStrategist(with strategy: \(self.strategy.description))"
+    }
+
     /// Initialize a strategist.
     /// - Parameter initialState: The initial state of the game world.
     init(with initialState: AIAbstractGameState) {

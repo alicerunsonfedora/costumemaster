@@ -16,7 +16,7 @@ import GameplayKit
 /// A game scene that an AI agent can control.
 ///
 /// In the game scene, the player can provide a move budget and strategy to solve the puzzle. A default random move
-/// strategist with a budget of ten moves is provided when these options aren't available.
+/// strategist with a budget of one move is provided when these options aren't available.
 ///
 /// - Important: Scenes that subclass the AI game scene must be running macOS 10.15 Catalina or higher.
 @available(OSX 10.15, *) class AIGameScene: ChallengeGameScene {
@@ -27,19 +27,19 @@ import GameplayKit
     /// Load the scene, set an initial state, and attempt to solve the puzzle.
     ///
     /// Agent testing mode will need to be enabled, and options for the agent type and move budget should be available.
-    /// In cases where this isn't available, the random move agent will be used and will have a budget of ten moves.
+    /// In cases where this isn't available, the random move agent will be used and will have a budget of one move.
     override func sceneDidLoad() {
         super.sceneDidLoad()
         guard let initialState = self.getState() else { return }
         self.strategist = self.getStrategy(with: initialState)
-        if let strat = self.strategist { print("Initialized strategist: \(strat.description)") }
+        if let strat = self.strategist { print("Initialized strategist: \(strat.simpleDescription)") }
 
         // Wait until the window has opened (generally ~5 sec) before starting to solve.
         self.run(SKAction.wait(forDuration: 5.0))
 
         // Start attempting to solve the puzzle, creating a set of moves in batches based on user preferences.
         // This should help prevent infinite recursion in such a way that prevents the window from ever showing.
-        print("Will begin solving in batches of \(AppDelegate.arguments.agentMoveRate ?? 10) moves/updates.")
+        print("Will begin solving in batches of \(AppDelegate.arguments.agentMoveRate ?? 1) moves/updates.")
         self.solve(with: AppDelegate.arguments.agentMoveRate)
     }
 
@@ -58,7 +58,7 @@ import GameplayKit
 
         // Generate a set of moves and run those moves accordingly.
         let generateAction = SKAction.run {
-            moves = self.getPredeterminedStrategy(max: rate ?? 10)
+            moves = self.strategize(with: rate ?? 1)
             print("Generated new move set with \(moves.count) updates.")
         }
         let actOnMoves = SKAction.run { self.repeatAfterMe(moves) }
@@ -86,7 +86,7 @@ import GameplayKit
     /// - Returns: A list of actions for the agent to take.
     /// - Complexity: This method takes O(n) time since, at the very worst case, a list of actions with the max
     /// budget can be created.
-    func getPredeterminedStrategy(max budget: Int) -> [AIGameDecision] {
+    func strategize(with budget: Int) -> [AIGameDecision] {
         var states = [AIGameDecision]()
         if let strat = self.strategist {
             for index in 1 ... budget {
@@ -101,6 +101,21 @@ import GameplayKit
             }
         }
         return states
+    }
+
+    /// Get a predetermined set of actions with a maximum budget.
+    ///
+    /// After every move, the state is reassesed. If the state resulting from an action causes the solution, no further
+    /// actions will be generated.
+    ///
+    /// - Parameter budget: The maximum number of moves to get a strategy for.
+    /// - Returns: A list of actions for the agent to take.
+    /// - Complexity: This method takes O(n) time since, at the very worst case, a list of actions with the max
+    /// budget can be created.
+    /// - Important: This method has been renamed to `AIGameScene.strategize(with budget:)`.
+    @available(*, deprecated, renamed: "strategize")
+    func getPredeterminedStrategy(max budget: Int) -> [AIGameDecision] {
+        return self.strategize(with: budget)
     }
 
     /// Prevent the player from doing anything that could influence state updates.
