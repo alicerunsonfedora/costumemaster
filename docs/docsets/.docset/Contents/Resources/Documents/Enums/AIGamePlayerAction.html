@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="../index.html">The Costumemaster</a>
-          <span class="no-mobile"> (100% documented)</span>
+          <span class="no-mobile"> (99% documented)</span>
         </p>
     
         <p class="header-right">
@@ -49,7 +49,7 @@
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AIGamePlayerAction</span> <span class="p">:</span> <span class="kt">CaseIterable</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AIGamePlayerAction</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
 
                   </div>
                 </div>
@@ -88,7 +88,7 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">moveLeft</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">moveLeft</span> <span class="o">=</span> <span class="s">"MOVE_LEFT"</span></code></pre>
 
                           </div>
                         </div>
@@ -115,7 +115,7 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">moveRight</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">moveRight</span> <span class="o">=</span> <span class="s">"MOVE_RIGHT"</span></code></pre>
 
                           </div>
                         </div>
@@ -142,7 +142,7 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">moveUp</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">moveUp</span> <span class="o">=</span> <span class="s">"MOVE_UP"</span></code></pre>
 
                           </div>
                         </div>
@@ -169,7 +169,7 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">moveDown</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">moveDown</span> <span class="o">=</span> <span class="s">"MOVE_DOWN"</span></code></pre>
 
                           </div>
                         </div>
@@ -196,7 +196,34 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">stop</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">stop</span> <span class="o">=</span> <span class="s">"STOP"</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster18AIGamePlayerActionO8movementSayACGyFZ"></a>
+                      <a name="//apple_ref/swift/Method/movement()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster18AIGamePlayerActionO8movementSayACGyFZ">movement()</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Returns the cases specific to player movement.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">movement</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">AIGamePlayerAction</span><span class="p">]</span></code></pre>
 
                           </div>
                         </div>
@@ -236,7 +263,7 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">switchToNextCostume</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">switchToNextCostume</span> <span class="o">=</span> <span class="s">"NEXT_COSTUME"</span></code></pre>
 
                           </div>
                         </div>
@@ -263,7 +290,7 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">switchToPreviousCostume</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">switchToPreviousCostume</span> <span class="o">=</span> <span class="s">"PREV_COSTUME"</span></code></pre>
 
                           </div>
                         </div>
@@ -303,7 +330,7 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">pickup</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">pickup</span> <span class="o">=</span> <span class="s">"PICK_UP"</span></code></pre>
 
                           </div>
                         </div>
@@ -330,7 +357,7 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">drop</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">drop</span> <span class="o">=</span> <span class="s">"DROP"</span></code></pre>
 
                           </div>
                         </div>
@@ -370,7 +397,7 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">deployClone</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">deployClone</span> <span class="o">=</span> <span class="s">"DEPLOY"</span></code></pre>
 
                           </div>
                         </div>
@@ -397,7 +424,7 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">retractClone</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">retractClone</span> <span class="o">=</span> <span class="s">"RETRACT"</span></code></pre>
 
                           </div>
                         </div>
@@ -424,7 +451,7 @@
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">activate</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">activate</span> <span class="o">=</span> <span class="s">"ACTIVATE"</span></code></pre>
 
                           </div>
                         </div>
@@ -664,6 +691,12 @@
               <a href="../Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
+                  <a href="../Classes/AIPredeterminedTreeStrategist.html">AIPredeterminedTreeStrategist</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/AIRandomWeightedStrategist.html">AIRandomWeightedStrategist</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="../Classes/GameDeathPit.html">GameDeathPit</a>
                 </li>
                 <li class="nav-group-task">
@@ -695,6 +728,9 @@
               <a href="../Other%20Extensions.html">Other Extensions</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
+                  <a href="../Extensions/CGPoint.html">CGPoint</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="../Extensions/CommandLine.html">CommandLine</a>
                 </li>
                 <li class="nav-group-task">
@@ -705,6 +741,9 @@
                 </li>
                 <li class="nav-group-task">
                   <a href="../Extensions/SKTextureAtlas.html">SKTextureAtlas</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Extensions/String.html">String</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="../Extensions/UserDefaults.html">UserDefaults</a>
@@ -751,7 +790,7 @@
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-23)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-29)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>
