@@ -30,6 +30,9 @@ public enum AIGamePlayerAction: String, CaseIterable {
     /// Stop all movement and/or action.
     case stop = "STOP"
 
+    /// Returns the cases specific to player movement.
+    static func movement() -> [AIGamePlayerAction] { [.moveUp, .moveDown, .moveLeft, .moveRight, .stop] }
+
     // MARK: - COSTUMES
 
     /// Switch to the next costume the agent has.

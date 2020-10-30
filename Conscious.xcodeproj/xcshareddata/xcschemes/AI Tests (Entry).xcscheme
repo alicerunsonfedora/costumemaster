@@ -65,7 +65,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "--agent-move-rate 100"
+            argument = "--agent-move-rate 1"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
