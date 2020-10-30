@@ -12,5 +12,7 @@
 import Foundation
 
 extension String {
+    
+    /// Returns a copy of itself that conforms to NSObjectProtocol.
     func toProtocol() -> NSObjectProtocol { self as NSObjectProtocol }
 }
