@@ -1,12 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Utilities/Extensions/String.swift",
-      "line": 15,
-      "symbol": "String.toProtocol()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/marquiskurt/Developer/CS400"
 }

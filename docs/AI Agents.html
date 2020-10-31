@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="index.html">The Costumemaster</a>
-          <span class="no-mobile"> (99% documented)</span>
+          <span class="no-mobile"> (100% documented)</span>
         </p>
     
         <p class="header-right">
@@ -51,6 +51,15 @@
             <section class="section task-group-section">
               <div class="task-group">
                 <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/documentation.Working With Agents"></a>
+                      <a name="//apple_ref/swift/Guide/Working With Agents" class="dashAnchor"></a>
+                      <a class="direct-link" href="working-with-agents.html">Working With Agents</a>
+                      </code>
+                    </div>
+                  </li>
                   <li class="item">
                     <div>
                       <code>
@@ -194,6 +203,62 @@ strategist with a budget of one move is provided when these options aren&rsquo;t
                           <div class="language">
                             <p class="aside-title">Swift</p>
                             <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">AIRandomMoveStrategist</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKStrategist</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIRandomWeightedStrategist"></a>
+                      <a name="//apple_ref/swift/Class/AIRandomWeightedStrategist" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIRandomWeightedStrategist">AIRandomWeightedStrategist</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>A strategist that will pick a random move from a random list of actions with the highest weight.</p>
+
+                          <a href="Classes/AIRandomWeightedStrategist.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIRandomWeightedStrategist</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKStrategist</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIPredeterminedTreeStrategist"></a>
+                      <a name="//apple_ref/swift/Class/AIPredeterminedTreeStrategist" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIPredeterminedTreeStrategist">AIPredeterminedTreeStrategist</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>A strategist that will pick the best move based on a predetermined GKDecisionTree.</p>
+
+                          <a href="Classes/AIPredeterminedTreeStrategist.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIPredeterminedTreeStrategist</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKStrategist</span></code></pre>
 
                           </div>
                         </div>
@@ -488,6 +553,9 @@ by measuring how difficult it is to predict the output based on previous experie
               <a href="AI%20Agents.html">AI Agents</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
+                  <a href="working-with-agents.html">Working With Agents</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="Classes/AIGameScene.html">AIGameScene</a>
                 </li>
                 <li class="nav-group-task">
@@ -501,6 +569,12 @@ by measuring how difficult it is to predict the output based on previous experie
                 </li>
                 <li class="nav-group-task">
                   <a href="Classes/AIRandomMoveStrategist.html">AIRandomMoveStrategist</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/AIRandomWeightedStrategist.html">AIRandomWeightedStrategist</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/AIPredeterminedTreeStrategist.html">AIPredeterminedTreeStrategist</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="Classes/AIRandomNetworkStrategist.html">AIRandomNetworkStrategist</a>
@@ -543,6 +617,9 @@ by measuring how difficult it is to predict the output based on previous experie
                 <li class="nav-group-task">
                   <a href="Classes/SeededChallenge.html">SeededChallenge</a>
                 </li>
+                <li class="nav-group-task">
+                  <a href="Classes/VisibilityChallenge.html">VisibilityChallenge</a>
+                </li>
               </ul>
             </li>
             <li class="nav-group-name">
@@ -580,12 +657,6 @@ by measuring how difficult it is to predict the output based on previous experie
               <a href="Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
-                  <a href="Classes/AIPredeterminedTreeStrategist.html">AIPredeterminedTreeStrategist</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/AIRandomWeightedStrategist.html">AIRandomWeightedStrategist</a>
-                </li>
-                <li class="nav-group-task">
                   <a href="Classes/GameDeathPit.html">GameDeathPit</a>
                 </li>
                 <li class="nav-group-task">
@@ -593,9 +664,6 @@ by measuring how difficult it is to predict the output based on previous experie
                 </li>
                 <li class="nav-group-task">
                   <a href="Classes/GameTileSpriteNode.html">GameTileSpriteNode</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/VisibilityChallenge.html">VisibilityChallenge</a>
                 </li>
               </ul>
             </li>
@@ -679,7 +747,7 @@ by measuring how difficult it is to predict the output based on previous experie
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-29)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-10-31)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

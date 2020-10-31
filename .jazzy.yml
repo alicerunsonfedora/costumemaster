@@ -64,11 +64,14 @@ custom_categories:
     
   - name: AI Agents
     children:
+    - Working With Agents
     - AIGameScene
     - AIAbstractGamePlayer
     - AIAbstractGameState
     - AIGameStrategist
     - AIRandomMoveStrategist
+    - AIRandomWeightedStrategist
+    - AIPredeterminedTreeStrategist
     - AIRandomNetworkStrategist
     - AIAbstractGameSignalSender
     - AIAbstractGameSignalReceivable
@@ -84,6 +87,7 @@ custom_categories:
     - ExposureChallenge
     - RushedChallenge
     - SeededChallenge
+    - VisibilityChallenge
 
   - name: Game Center
     children:

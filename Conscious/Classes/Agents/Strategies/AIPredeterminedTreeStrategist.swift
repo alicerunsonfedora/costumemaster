@@ -55,7 +55,7 @@ class AIPredeterminedTreeStrategist: NSObject, GKStrategist {
         let relevance = unescapable?.createBranch(value: true, attribute: "inputRelevant?".toProtocol())
         unescapable?.createBranch(value: false, attribute: "MOVE_EXIT_CLOSER".toProtocol())
 
-        let activeInput = relevance?.createBranch(value: true, attribute: "inputActive".toProtocol())
+        let activeInput = relevance?.createBranch(value: true, attribute: "inputActive?".toProtocol())
         relevance?.createBranch(value: false, attribute: "MOVE_EXIT_CLOSER".toProtocol())
 
         activeInput?.createBranch(value: true, attribute: "MOVE_EXIT_CLOSER".toProtocol())
