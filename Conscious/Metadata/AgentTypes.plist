@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>reflex</key>
+	<dict>
+		<key>Title</key>
+		<string>Reflex</string>
+		<key>Description</key>
+		<string>Determines the next set of moves by picking random actions unless they trigger a reflex.</string>
+	</dict>
+	<key>predTree</key>
+	<dict>
+		<key>Title</key>
+		<string>Decision Tree</string>
+		<key>Description</key>
+		<string>Determines the next set of moves by asking questions about the current state of the level and making a decision from a pre-determined decision tree.</string>
+	</dict>
+	<key>randomWeighted</key>
+	<dict>
+		<key>Title</key>
+		<string>Random Weighted</string>
+		<key>Description</key>
+		<string>Determines the next set of moves by picking the highest value action in a list of random actions.</string>
+	</dict>
+	<key>random</key>
+	<dict>
+		<key>Title</key>
+		<string>Random Move</string>
+		<key>Description</key>
+		<string>Determines the next set of moves by picking random actions without any assessement.</string>
+	</dict>
+</dict>
+</plist>

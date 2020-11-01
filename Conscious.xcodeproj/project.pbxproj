@@ -121,6 +121,8 @@
 		BFCE7C3625474623005FBFA2 /* AIPredeterminedTreeStrategist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCE7C3525474623005FBFA2 /* AIPredeterminedTreeStrategist.swift */; };
 		BFD10ED72502CF0400BCDAA9 /* plateOn.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFD10ED52502CF0400BCDAA9 /* plateOn.wav */; };
 		BFD10ED82502CF0400BCDAA9 /* plateOff.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFD10ED62502CF0400BCDAA9 /* plateOff.wav */; };
+		BFD25F55254F1B4600FDA1C3 /* AISimulatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD25F54254F1B4600FDA1C3 /* AISimulatorView.swift */; };
+		BFD25F58254F279700FDA1C3 /* AgentTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFD25F57254F279700FDA1C3 /* AgentTypes.plist */; };
 		BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */; };
 		BFD8795624F5A2FF00552EDD /* Player_Forward_USB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */; };
 		BFD8795724F5A2FF00552EDD /* Player_Forward_Default.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */; };
@@ -276,6 +278,8 @@
 		BFCE7C3525474623005FBFA2 /* AIPredeterminedTreeStrategist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPredeterminedTreeStrategist.swift; sourceTree = "<group>"; };
 		BFD10ED52502CF0400BCDAA9 /* plateOn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plateOn.wav; sourceTree = "<group>"; };
 		BFD10ED62502CF0400BCDAA9 /* plateOff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plateOff.wav; sourceTree = "<group>"; };
+		BFD25F54254F1B4600FDA1C3 /* AISimulatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISimulatorView.swift; sourceTree = "<group>"; };
+		BFD25F57254F279700FDA1C3 /* AgentTypes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AgentTypes.plist; sourceTree = "<group>"; };
 		BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Bird.atlas; sourceTree = "<group>"; };
 		BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_USB.atlas; sourceTree = "<group>"; };
 		BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Default.atlas; sourceTree = "<group>"; };
@@ -420,6 +424,7 @@
 				BF6FBAE524A8BDDB00996890 /* Info.plist */,
 				BFFF892A24F93F6A00D405CC /* MenuContent.plist */,
 				BFF9C063253261B90066F345 /* LevelStructure.plist */,
+				BFD25F57254F279700FDA1C3 /* AgentTypes.plist */,
 			);
 			path = Metadata;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				BF41A4B82533757B00AC6001 /* WatchYourStepView.swift */,
+				BFD25F54254F1B4600FDA1C3 /* AISimulatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -926,6 +932,7 @@
 				BFD8795724F5A2FF00552EDD /* Player_Forward_Default.atlas in Resources */,
 				BFAD134E250298970074DCBA /* alarmDisable.wav in Resources */,
 				BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */,
+				BFD25F58254F279700FDA1C3 /* AgentTypes.plist in Resources */,
 				BF7C5F02250AD4D00062B1CC /* November.mp3 in Resources */,
 				BF37C7ED2538E5B500CC156E /* Management.sks in Resources */,
 				BFD8796F24F5CA4000552EDD /* Player_Backward_Sorceress.atlas in Resources */,
@@ -1051,6 +1058,7 @@
 				BFE6475624F88B1300230F93 /* SwitchRequisite.swift in Sources */,
 				BFC140CD252517DB007D65DC /* AIGamePlayer.swift in Sources */,
 				BF3977BD2530C44600BBD591 /* Player_Extension.swift in Sources */,
+				BFD25F55254F1B4600FDA1C3 /* AISimulatorView.swift in Sources */,
 				BFCE7C3625474623005FBFA2 /* AIPredeterminedTreeStrategist.swift in Sources */,
 				BF93337F2532157700C78B44 /* IAPObserver.swift in Sources */,
 				BFBEB33524F847F600162B06 /* AdvancedPrefsViewController.swift in Sources */,

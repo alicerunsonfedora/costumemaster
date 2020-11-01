@@ -27,7 +27,7 @@ struct CommandLineArguments {
     public let agentMoveRate: Int?
 
     /// An enumeration that represents the AI mode types.
-    enum AgentTestingType: String {
+    enum AgentTestingType: String, CaseIterable {
 
         /// A randomly-moving agent.
         case randomMove = "random"
