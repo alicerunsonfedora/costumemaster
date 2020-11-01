@@ -32,9 +32,11 @@ class AIPredeterminedTreeStrategist: NSObject, GKStrategist {
 
         // These special cases will help determine moves necessary to get closer to something using minimum
         // Manhattan distance.
-        if response == "MOVE_EXIT_CLOSER" { response = self.closestPathToExit(in: state) }
-        if response == "MOVE_INPUT_CLOSER" {
-            response = self.closestPath(to: self.closestInput(in: state), in: state)
+        switch response {
+        case "MOVE_EXIT_CLOSER": response = self.closestPathToExit(in: state)
+        case "MOVE_INPUT_CLOSER": response = self.closestPath(to: self.closestInput(in: state), in: state)
+        case "MOVE_RANDOM": response = self.moveRandom()
+        default: break
         }
 
         return AIGameDecision(by: AIGamePlayerAction(rawValue: response) ?? .stop, with: 1)
@@ -53,7 +55,7 @@ class AIPredeterminedTreeStrategist: NSObject, GKStrategist {
         escapable?.createBranch(value: false, attribute: "MOVE_EXIT_CLOSER".toProtocol())
 
         let relevance = unescapable?.createBranch(value: true, attribute: "inputRelevant?".toProtocol())
-        unescapable?.createBranch(value: false, attribute: "MOVE_EXIT_CLOSER".toProtocol())
+        unescapable?.createBranch(value: false, attribute: "MOVE_RANDOM".toProtocol())
 
         let activeInput = relevance?.createBranch(value: true, attribute: "inputActive?".toProtocol())
         relevance?.createBranch(value: false, attribute: "MOVE_EXIT_CLOSER".toProtocol())
@@ -82,6 +84,12 @@ class AIPredeterminedTreeStrategist: NSObject, GKStrategist {
     /// Returns a default "stop" action.
     func defaultAction() -> AIGameDecision {
         return AIGameDecision(by: .stop, with: 0)
+    }
+
+    /// Make a random move.
+    /// - Returns: A random move from the movement set of actions.
+    func moveRandom() -> String {
+        return (AIGamePlayerAction.movement().randomElement() ?? .stop).rawValue
     }
 
     /// Returns the closest input device relative to the player.
