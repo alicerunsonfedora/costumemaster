@@ -73,6 +73,25 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="AI" id="iJ1-wI-Cqs">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="AI" id="gWB-Dg-E0z">
+                                    <items>
+                                        <menuItem title="Run Simulation..." keyEquivalent="r" id="tCR-K0-86F">
+                                            <connections>
+                                                <action selector="openSimulator:" target="Voe-Tx-rLC" id="Gn8-a7-id6"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="bai-RT-S0n"/>
+                                        <menuItem title="Open Simulator Console" id="QIP-Yu-QAe">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openSimulatorConsole:" target="Voe-Tx-rLC" id="r2P-7G-esT"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="View" id="H8h-7b-M4v">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="View" id="HyV-fh-RgO">

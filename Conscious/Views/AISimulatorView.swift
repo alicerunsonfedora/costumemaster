@@ -4,23 +4,40 @@
 //
 //  Created by Marquis Kurt on 11/1/20.
 //
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+//
 
 #if canImport(SwiftUI)
 import SwiftUI
 #endif
 
 @available(OSX 10.15, *)
+
+/// A view that allows player to customize AI simulation features
 struct AISimulatorView: View {
 
+    /// The type of agent to run in the simulation.
     @State var agentType: CommandLineArguments.AgentTestingType = .randomMove
+
+    /// The level to run the simulation on.
     @State var simulationLevel: AgentLevels = .entry
-    @State var agentBudget: Int = 500
+
+    /// The agent's budget.
+    @State var agentBudget: Int = 1
+
+    /// A closure that executes when the player clicks "Start Simulation".
     @State var onStartSimulation: (CommandLineArguments.AgentTestingType, AgentLevels, Int) -> Void
 
+    /// An enumeration that represents the levels agents can play.
     enum AgentLevels: String, CaseIterable {
+
+        /// Entry.
         case entry = "Entry"
     }
 
+    /// Returns the title for the agent type.
     func getName(of agent: CommandLineArguments.AgentTestingType) -> String {
         if let dict = plist(from: "AgentTypes") {
             if let zone = dict[agent.rawValue] as? NSMutableDictionary {
@@ -30,6 +47,7 @@ struct AISimulatorView: View {
         return "MISSINGNO"
     }
 
+    /// Returns the description for the agent type.
     func getAgentDescription() -> String {
         if let dict = plist(from: "AgentTypes") {
             if let zone = dict[agentType.rawValue] as? NSMutableDictionary {
@@ -39,6 +57,7 @@ struct AISimulatorView: View {
         return "Select an agent to get its description."
     }
 
+    /// The main body of the view.
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
@@ -115,6 +134,7 @@ struct AISimulatorView: View {
         .frame(minWidth: 400, minHeight: 450)
     }
 
+    /// The bottom button bar of the view.
     var buttonBar: some View {
         HStack {
             Button {
@@ -148,9 +168,10 @@ struct AISimulatorView: View {
 }
 
 @available(OSX 10.15, *)
+/// A preview container for the simulator view.
 struct AISimulatorView_Previews: PreviewProvider {
     static var previews: some View {
-        AISimulatorView() { (_, _, _) in }
+        AISimulatorView { (_, _, _) in }
             .frame(width: 400, height: 450)
     }
 }

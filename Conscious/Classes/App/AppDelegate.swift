@@ -15,6 +15,10 @@ import GameKit
 import KeyboardShortcuts
 import StoreKit
 
+#if canImport(SwiftUI)
+import SwiftUI
+#endif
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -70,6 +74,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         IAPObserver.shared.restore()
     }
 
+    @IBAction func openSimulator(_ sender: Any) {
+        if #available(OSX 10.15, *) {
+            let hostingController = NSApplication.shared.mainWindow?.contentViewController
+            let viewController = NSViewController()
+            let hostingView = NSHostingView(rootView: AISimulatorView { agentType, level, budget in
+                hostingController?.dismiss(viewController)
+                self.runAgentSimulation(agentType, level.rawValue, budget)
+            })
+            viewController.view = hostingView
+            viewController.title = "AI Simulator"
+            hostingController?.presentAsModalWindow(viewController)
+        }
+    }
+
+    @IBAction func openSimulatorConsole(_ sender: Any) {
+        if #available(OSX 10.15, *) {
+            if let controller = NSApplication.shared.mainWindow?.contentViewController as? ViewController {
+                if let view = controller.view as? SKView {
+                    if let scene = view.scene as? AIGameScene {
+                        scene.initConsole()
+                    }
+                }
+            }
+        }
+    }
+
     func authenticateWithGameCenter() {
         let localPlayer = GKLocalPlayer.local
         localPlayer.authenticateHandler = { (viewC: NSViewController?, error) in
@@ -77,6 +107,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
             if let controller = viewC {
                 NSApplication.shared.mainWindow?.contentViewController?.presentAsSheet(controller)
+            }
+        }
+    }
+
+    func runAgentSimulation(_ agentType: CommandLineArguments.AgentTestingType, _ level: String, _ budget: Int) {
+        AppDelegate.arguments = CommandLine.parse(
+            [
+                "--agent-test-mode", "true",
+                "--agent-type", agentType.rawValue,
+                "--agent-move-rate", "\(budget)"
+            ]
+        )
+
+        if let controller = NSApplication.shared.mainWindow?.contentViewController as? ViewController {
+            if let view = controller.view as? SKView {
+                guard let aboutScreen = SKScene(fileNamed: level + "AI") else { return }
+                if view.scene != nil { controller.rootScene = view.scene }
+                view.presentScene(aboutScreen, transition: SKTransition.fade(withDuration: 3.0))
             }
         }
     }
