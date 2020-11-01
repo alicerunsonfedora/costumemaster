@@ -40,13 +40,15 @@ More information on the objective of this repository can be found in the [design
 | ------ | ----------- | ----------- |
 | 🟢 | September 21, 2020 | Working Game |
 | ❎ | October 19, 2020 | Adding Apple's agents with GameplayKit* |
-| 🔴 | November 9, 2020 | Adding custom agents and beating Apple |
-| 🔴 | November 16, 2020 | Final presentation and cleanup |
+| 🟡 | November 9, 2020 | Adding custom agents and beating Apple |
+| 🟡 | November 16, 2020 | Final presentation and cleanup |
 
 Details on these milestones can be found on the [Milestones page on GitHub][milestones].
 
+Documentation on how to work with agents [can be found on the documentation pages][ai].
+
 <small>*Due to the nature of the strategists with GameplayKit's AIs, it is impossible to complete this milestone. Currently, the goal
-is to use Random Network Distillation to get the AI agent to make a move.</small>
+is to supply custom agents that attempt to solve the world.</small>
 
 ## Build instructions
 
@@ -128,6 +130,7 @@ Apple Inc. Music written by Kai Engel.
 [proposal]: ./Guides/Project%20Proposal.md
 [license]: LICENSE.txt
 [docs]: https://costumemaster.marquiskurt.net
+[ai]: https://costumemaster.marquiskurt.net/working-with-agents.html
 
 <!-- Image links -->
 [img-license]: https://img.shields.io/github/license/alicerunsonfedora/CS400
