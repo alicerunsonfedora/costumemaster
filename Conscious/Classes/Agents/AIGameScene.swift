@@ -285,6 +285,8 @@ import SwiftUI
             return AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
         case .randomWeightMove:
             return AIGameStrategist(with: AIRandomWeightedStrategist(), reading: state)
+        case .reflex:
+            return AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
         case .predeterminedTree:
             return AIGameStrategist(with: AIPredeterminedTreeStrategist(), reading: state)
         default:

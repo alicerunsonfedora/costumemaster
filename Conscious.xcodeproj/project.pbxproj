@@ -55,6 +55,8 @@
 		BF4630EC255068DB00EB606D /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4630EB255068DB00EB606D /* Binding.swift */; };
 		BF4630EF255077A000EB606D /* Tooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4630EE255077A000EB606D /* Tooltip.swift */; };
 		BF4630F225508E2200EB606D /* GameManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4630F125508E2200EB606D /* GameManagerDelegate.swift */; };
+		BF4630F62550A34400EB606D /* AIReflexStrategist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4630F52550A34400EB606D /* AIReflexStrategist.swift */; };
+		BF4630F92550A45D00EB606D /* AIGameStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4630F82550A45D00EB606D /* AIGameStrategy.swift */; };
 		BF4A451F2501B683008BDD5A /* Entry.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF4A451E2501B683008BDD5A /* Entry.sks */; };
 		BF4CD5A92513F96E00C021BC /* Chained.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF4CD5A82513F96E00C021BC /* Chained.sks */; };
 		BF4CD5AD251410A800C021BC /* Player_Change_Final.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BF4CD5AC251410A800C021BC /* Player_Change_Final.atlas */; };
@@ -212,6 +214,8 @@
 		BF4630EB255068DB00EB606D /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		BF4630EE255077A000EB606D /* Tooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tooltip.swift; sourceTree = "<group>"; };
 		BF4630F125508E2200EB606D /* GameManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerDelegate.swift; sourceTree = "<group>"; };
+		BF4630F52550A34400EB606D /* AIReflexStrategist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIReflexStrategist.swift; sourceTree = "<group>"; };
+		BF4630F82550A45D00EB606D /* AIGameStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIGameStrategy.swift; sourceTree = "<group>"; };
 		BF4A451E2501B683008BDD5A /* Entry.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Entry.sks; sourceTree = "<group>"; };
 		BF4CD5A82513F96E00C021BC /* Chained.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Chained.sks; sourceTree = "<group>"; };
 		BF4CD5AC251410A800C021BC /* Player_Change_Final.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Change_Final.atlas; sourceTree = "<group>"; };
@@ -543,6 +547,8 @@
 				BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */,
 				BF5FAB41254335DD0008E8B3 /* AIRandomWeightedStrategist.swift */,
 				BFCE7C3525474623005FBFA2 /* AIPredeterminedTreeStrategist.swift */,
+				BF4630F52550A34400EB606D /* AIReflexStrategist.swift */,
+				BF4630F82550A45D00EB606D /* AIGameStrategy.swift */,
 			);
 			path = Strategies;
 			sourceTree = "<group>";
@@ -1063,6 +1069,7 @@
 				BF3977C02530D58E00BBD591 /* AIRandomNetworkStrategist.swift in Sources */,
 				BFC9239F250BC88C0002009B /* SoundPrefsViewController.swift in Sources */,
 				BFEE78C324FBF1FC006FBFF0 /* GameAchievments.swift in Sources */,
+				BF4630F62550A34400EB606D /* AIReflexStrategist.swift in Sources */,
 				BFAD7FF5250FF4CD00768609 /* ExposureChallenge.swift in Sources */,
 				BF109CD924FB20B400F06E47 /* GameSignalKind.swift in Sources */,
 				BF4630F225508E2200EB606D /* GameManagerDelegate.swift in Sources */,
@@ -1108,6 +1115,7 @@
 				BF7C5EFB250ACE530062B1CC /* AboutScene.swift in Sources */,
 				BF93338E2532237100C78B44 /* IAPManager_Extension.swift in Sources */,
 				BF37C7FD253A07A000CC156E /* AIRandomMoveStrategist.swift in Sources */,
+				BF4630F92550A45D00EB606D /* AIGameStrategy.swift in Sources */,
 				BFF9C06E25326B340066F345 /* MainMenu_Extension.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
 				BF233390251D0D2E0018C854 /* AIGamePlayerAction.swift in Sources */,

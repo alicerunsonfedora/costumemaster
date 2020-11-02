@@ -21,6 +21,7 @@ import GameplayKit
 ///
 /// For more information, consult the OpenAI article titled
 /// [Reinforcement Learning with Prediction-Based Rewards](https://1n.pm/df0Ui).
+@available(*, deprecated, message: "This strategist will be removed in a future release.")
 class AIRandomNetworkStrategist: NSObject, GKStrategist {
 
     /// A lookup table containing states the strategist has seen before, along with their score.

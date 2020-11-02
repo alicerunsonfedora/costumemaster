@@ -13,17 +13,12 @@ import Foundation
 import GameplayKit
 
 /// A strategist that will pick random moves.
-public class AIRandomMoveStrategist: NSObject, GKStrategist {
-
-    /// The game model that the strategist will use.
-    public var gameModel: GKGameModel?
-
-    /// The random source for the strategist.
-    public var randomSource: GKRandom?
+@available(OSX 10.15, *)
+class AIRandomMoveStrategist: AIGameStrategy {
 
     /// Returns the best move for the player.
     /// - Returns: A random move.
-    public func bestMoveForActivePlayer() -> GKGameModelUpdate? {
+    override func bestMoveForActivePlayer() -> GKGameModelUpdate? {
         let choice = AIGamePlayerAction.allCases.randomElement() ?? .stop
         return AIGameDecision(by: choice, with: 0)
     }

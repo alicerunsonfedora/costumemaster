@@ -13,16 +13,11 @@ import Foundation
 import GameplayKit
 
 /// A strategist that will pick the best move based on a predetermined GKDecisionTree.
-class AIPredeterminedTreeStrategist: NSObject, GKStrategist {
-
-    /// The game model the agent will assess.
-    var gameModel: GKGameModel?
-
-    /// The random source for this agent.
-    var randomSource: GKRandom?
+@available(OSX 10.15, *)
+class AIPredeterminedTreeStrategist: AIGameStrategy {
 
     /// Returns the best move for the current player.
-    func bestMoveForActivePlayer() -> GKGameModelUpdate? {
+    override func bestMoveForActivePlayer() -> GKGameModelUpdate? {
         guard let state = gameModel as? AIAbstractGameState else { return defaultAction() }
         let answers = self.assess(state)
 
