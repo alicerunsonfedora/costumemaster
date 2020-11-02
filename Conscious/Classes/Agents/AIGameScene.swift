@@ -31,6 +31,9 @@ import SwiftUI
     /// The strategist that will be playing this scene.
     var strategist: AIGameStrategist?
 
+    /// The console window associated with this scene.
+    var consoleWindowController: NSWindowController?
+
     /// Load the scene, set an initial state, and attempt to solve the puzzle.
     ///
     /// Agent testing mode will need to be enabled, and options for the agent type and move budget should be available.
@@ -61,6 +64,11 @@ import SwiftUI
         // This should help prevent infinite recursion in such a way that prevents the window from ever showing.
         console.debug("Move generation rate set to: \(AppDelegate.arguments.agentMoveRate ?? 1) moves per update.")
         self.solve(with: AppDelegate.arguments.agentMoveRate)
+    }
+
+    /// Close the simulator console and prevent scene-saving.
+    override func willMove(from view: SKView) {
+        self.consoleWindowController?.close()
     }
 
     /// Attempt to solve the level by generating batches of actions to run infinitely or until the puzzle is solved.

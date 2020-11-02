@@ -4,8 +4,8 @@ Players and developers interested in working with artificial intelligence can ru
 agents in the game that attempt to solve the puzzles for each provided level. This document will guide you through the theory
 behind the AI agent work in the game, how to run examples with existing agents, and how to implement your own into the game.
 
-- Important: Working with anything related to artificial intelligence requires at least v1.1.0 of the game and a Mac running macOS
-10.15 Catalina or greater.
+- Important: Artificial intelligence features require a Mac running macOS 10.15 Catalina or greater, and The Costumemaster v1.1.0
+or greater.
 
 ## How The Costumemaster Handles AI Gameplay
 
@@ -95,6 +95,19 @@ through any tools. This agent class may be deprecated in a future release.
 
 ## Testing the Included Agents
 
+### Via the Simulator Tool
+
+- Important: The simulator tool is included in v1.2.0 of The Costumemaster or greater.
+
+To test the agents in a sample level for AI, open The Costumemaster and go to **Game &rsaquo; AI &rsaquo; Run Simulation...**
+or press ⌘R on your keyboard to open the AI Simulator tool. The AI simulator tool allows you to select an agent type, move
+generation rate, and level for the simulator.
+
+![AI Simulator Tool](https://github.com/alicerunsonfedora/CS400/raw/root/.readme/aisimtool.png)
+
+Apply the settings you wish to use and then click "Start Simulation" to run the simulation.
+
+### Via the Terminal
 To test the agents in a sample level for AI, you will need to run The Costumemaster through the Terminal. In a terminal application,
 point to the Costumemaster app and run the following:
 
@@ -115,6 +128,21 @@ There are extra commands you can supply to the game to control the overall outpu
 If `--agent-type` and `--agent-move-rate` are not provided, the game will automatically chose the random move strategist and
 a move rate of one (1) move per batch.
 
+### Message Logging
+
+The Costumemaster comes with an AI simulator console that will log any messages throughout the duration of the AI simulation.
+
+![AI Simulator Console](https://github.com/alicerunsonfedora/CS400/raw/root/.readme/aisimconsole.png)
+
+Messages sent to the console are also reflected in the command line if launched from the Terminal, with the exception of debug
+messages. If the console is closed, the console can be re-opened by going to **View &rsaquo; AI Simulator Console** in the 
+menu bar.
+
+#### Now Mode
+
+Now Mode allows you to view the console messages as a stack, with the most recent message at the top. Click the Now Mode
+button in the console toolbar to toggle Now Mode on/off.
+
 ## Creating a Custom Agent
 
 To add a custom agent to the game, you will need to make sure you have cloned the game's source code from GitHub and ensured
@@ -124,7 +152,10 @@ that you have the required software to build the project.
 `bestMoveForActivePlayer` method and return an action of type `AIGameDecision`.
 2. Add an entry in the `CommandLineArguments.AgentTestingType` enumeration that will represent your custom agent.
 3. Modify the method `AIGameScene.getStrategy(with:)` and include a case that instantiates your strategy.
-4. Build and run The Costumemaster.
+4. Add a pictogram to the game's Assets.xcassets that represents your agent with the same name as what you supplied in the
+previous step.
+5. Add a dictionary entry in AgentTypes.plist with a title and description for your agent.
+6. Build and run The Costumemaster.
 
 ### Important Notes:
 
@@ -133,7 +164,8 @@ simulation will properly run and allow the game window to appear correctly.
 - When reading the game state, ensure that you are checking the game state by casting it to the `AIAbstractGameState`
 struct. Without this cast, you may be unable to determine key components such as positions and whether certain inputs are active.
 - If your agent requires training, ensure that you have some means of communicating to the user that your agent is in training. This
-can be easily achieved by printing a message like `"[INFO] Training the agent..."`.
+can be easily achieved by printing a message like `"[INFO] Training the agent..."` or by using the 
+`AIGameScene.console.debug` method to use the AI Simulator Console.
 - Try to restrict what extra information you need from the user to do any decision-making. The `AIGameScene.getStrategy(with:)`
 method [opaquely returns a type][#opaque] of `AIGameStrategist` and will not provide details on what kind of strategy was used.
 

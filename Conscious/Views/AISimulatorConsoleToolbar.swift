@@ -13,19 +13,29 @@
 import SwiftUI
 #endif
 
-@available(OSX 10.15, *)
 /// A view that represents the console window's toolbar.
+@available(OSX 10.15, *)
 struct AISimulatorConsoleToolbar: View {
 
     /// The console model.
     @ObservedObject var console: ConsoleViewModel
+
+    /// The filter to apply to all console messages
     @State var filter: FilterType = .allMessages
 
     /// An enumeration that represents the different filters for the console.
     enum FilterType: String, CaseIterable {
+
+        /// All types of messages are allowed.
         case allMessages = "All Messages"
+
+        /// Only info messages are allowed.
         case infoOnly = "Info Messages"
+
+        /// Only debugging messages are allowed.
         case debugOnly = "Debug Messages"
+
+        /// Only errors and warnings are allowed.
         case errorsAndWarningsOnly = "Errors and Warnings"
     }
 
@@ -77,8 +87,8 @@ struct AISimulatorConsoleToolbar: View {
     }
 }
 
-@available(OSX 10.15, *)
 /// A preview container for the console toolbar.
+@available(OSX 10.15, *)
 struct AISimulatorConsoleToolbar_Previews: PreviewProvider {
     static var previews: some View {
         AISimulatorConsoleToolbar(console: ConsoleViewModel())

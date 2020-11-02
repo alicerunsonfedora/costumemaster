@@ -53,13 +53,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func showAbout(_ sender: Any) {
-        if let controller = NSApplication.shared.mainWindow?.contentViewController as? ViewController {
-            if let view = controller.view as? SKView {
-                guard let aboutScreen = SKScene(fileNamed: "About") else { return }
-                if view.scene != nil { controller.rootScene = view.scene }
-                view.presentScene(aboutScreen)
-            }
-        }
+        GameManagerDelegate.loadScene(with: "About", keepHistory: true)
+    }
+
+    @IBAction func startGame(_ sender: Any) {
+        GameManagerDelegate.startGame()
+    }
+
+    @IBAction func resumeGame(_ sender: Any) {
+        GameManagerDelegate.resumeGame()
+    }
+
+    @IBAction func callMainMenu(_ sender: Any) {
+        GameManagerDelegate.callMainMenu()
     }
 
     @IBAction func showGithub(_ sender: Any) {
@@ -95,6 +101,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     if let scene = view.scene as? AIGameScene {
                         scene.initConsole()
                         scene.console.info("Restored console window.")
+                    } else {
+                        sendAlert(
+                            "The simulator console is only available when running an AI simulation.",
+                            withTitle: "Please run a simulation.",
+                            level: .informational) { _ in }
                     }
                 }
             }
@@ -120,14 +131,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 "--agent-move-rate", "\(budget)"
             ]
         )
-
-        if let controller = NSApplication.shared.mainWindow?.contentViewController as? ViewController {
-            if let view = controller.view as? SKView {
-                guard let aboutScreen = SKScene(fileNamed: level + "AI") else { return }
-                if view.scene != nil { controller.rootScene = view.scene }
-                view.presentScene(aboutScreen, transition: SKTransition.fade(withDuration: 3.0))
-            }
-        }
+        GameManagerDelegate.loadScene(with: level + "AI", keepHistory: true, fadeDuration: 3.0)
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {

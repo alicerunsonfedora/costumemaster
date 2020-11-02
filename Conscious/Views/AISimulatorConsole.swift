@@ -13,8 +13,8 @@
 import SwiftUI
 #endif
 
-@available(OSX 10.15, *)
 /// A view that allows player to read console messages about a game scene.
+@available(OSX 10.15, *)
 struct AISimulatorConsole: View {
 
     /// The console model.
@@ -76,8 +76,8 @@ struct AISimulatorConsole: View {
     }
 }
 
-@available(OSX 10.15, *)
 /// A preview container for the console window.
+@available(OSX 10.15, *)
 struct AISimulatorConsole_Previews: PreviewProvider {
     static var previews: some View {
         AISimulatorConsole(console: {

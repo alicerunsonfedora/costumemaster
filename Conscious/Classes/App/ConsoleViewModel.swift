@@ -18,47 +18,47 @@ import Combine
 @available(OSX 10.15, *)
 /// A class for handling console output.
 public class ConsoleViewModel: ObservableObject {
-    
+
     /// The list of console messages that have been logged.
     @Published public var messages: [Message] = []
-    
+
     /// The filter for the types of console messages that can be displayed.
     @Published public var filter: [MessageType] = [.info, .debug, .error, .warning, .unknown]
-    
+
     /// Whether to enable "now mode".
     @Published public var nowMode: Bool = false
 
     /// An enumeration that represents the type of messages that can be logged.
     public enum MessageType: String {
-        
+
         /// An informational message.
         case info = "INFO"
-        
+
         /// A warning.
         case warning = "WARN"
-        
+
         /// An error message.
         case error = "ERR"
-        
+
         /// An unknown type or standard log.
         case unknown = "LOG"
-        
+
         /// A debugging message.
         case debug = "DEBUG"
     }
 
     /// A data structure that represents a console message.
     public struct Message: Identifiable {
-        
+
         /// The contents of the message.
         public let contents: String
-        
+
         /// The type of message.
         public let type: MessageType
-        
+
         /// The time the message was created or logged.
         public let timestamp: String
-        
+
         /// A(n) unique identifier for this message.
         public let id = UUID()
         //swiftlint:disable:previous identifier_name
@@ -81,7 +81,7 @@ public class ConsoleViewModel: ObservableObject {
         if !silent { print("[\(type.rawValue)]\t\(timestamp)\t" + data) }
         messages.append(Message(contents: data, type: type, timestamp: timestamp))
     }
-    
+
     /// Log a message to the console.
     /// - Parameter message: The contents of the message entry.
     /// - Parameter silent: Whether to skip printing the message to the terminal.

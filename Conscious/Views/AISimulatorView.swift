@@ -13,9 +13,8 @@
 import SwiftUI
 #endif
 
-@available(OSX 10.15, *)
-
 /// A view that allows player to customize AI simulation features
+@available(OSX 10.15, *)
 struct AISimulatorView: View {
 
     /// The type of agent to run in the simulation.
@@ -167,8 +166,8 @@ struct AISimulatorView: View {
     }
 }
 
-@available(OSX 10.15, *)
 /// A preview container for the simulator view.
+@available(OSX 10.15, *)
 struct AISimulatorView_Previews: PreviewProvider {
     static var previews: some View {
         AISimulatorView { (_, _, _) in }

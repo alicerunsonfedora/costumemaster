@@ -54,8 +54,8 @@ agents in the game that attempt to solve the puzzles for each provided level. Th
 behind the AI agent work in the game, how to run examples with existing agents, and how to implement your own into the game.</p>
 <div class="aside aside-important">
     <p class="aside-title">Important</p>
-    Working with anything related to artificial intelligence requires at least v1.1.0 of the game and a Mac running macOS
-10.15 Catalina or greater.
+    Artificial intelligence features require a Mac running macOS 10.15 Catalina or greater, and The Costumemaster v1.1.0
+or greater.
 
 </div>
 <h2 id='how-the-costumemaster-handles-ai-gameplay' class='heading'>How The Costumemaster Handles AI Gameplay</h2>
@@ -146,6 +146,21 @@ through any tools. This agent class may be deprecated in a future release.
 
 </div>
 <h2 id='testing-the-included-agents' class='heading'>Testing the Included Agents</h2>
+<h3 id='via-the-simulator-tool' class='heading'>Via the Simulator Tool</h3>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    The simulator tool is included in v1.2.0 of The Costumemaster or greater.
+
+</div>
+
+<p>To test the agents in a sample level for AI, open The Costumemaster and go to <strong>Game &rsaquo; AI &rsaquo; Run Simulation&hellip;</strong>
+or press ⌘R on your keyboard to open the AI Simulator tool. The AI simulator tool allows you to select an agent type, move
+generation rate, and level for the simulator.</p>
+
+<p><img src="https://github.com/alicerunsonfedora/CS400/raw/root/.readme/aisimtool.png" alt="AI Simulator Tool"></p>
+
+<p>Apply the settings you wish to use and then click &ldquo;Start Simulation&rdquo; to run the simulation.</p>
+<h3 id='via-the-terminal' class='heading'>Via the Terminal</h3>
 
 <p>To test the agents in a sample level for AI, you will need to run The Costumemaster through the Terminal. In a terminal application,
 point to the Costumemaster app and run the following:</p>
@@ -185,6 +200,19 @@ point to the Costumemaster app and run the following:</p>
 
 <p>If <code>--agent-type</code> and <code>--agent-move-rate</code> are not provided, the game will automatically chose the random move strategist and
 a move rate of one (1) move per batch.</p>
+<h3 id='message-logging' class='heading'>Message Logging</h3>
+
+<p>The Costumemaster comes with an AI simulator console that will log any messages throughout the duration of the AI simulation.</p>
+
+<p><img src="https://github.com/alicerunsonfedora/CS400/raw/root/.readme/aisimconsole.png" alt="AI Simulator Console"></p>
+
+<p>Messages sent to the console are also reflected in the command line if launched from the Terminal, with the exception of debug
+messages. If the console is closed, the console can be re-opened by going to <strong>View &rsaquo; AI Simulator Console</strong> in the 
+menu bar.</p>
+<h4 id='now-mode' class='heading'>Now Mode</h4>
+
+<p>Now Mode allows you to view the console messages as a stack, with the most recent message at the top. Click the Now Mode
+button in the console toolbar to toggle Now Mode on/off.</p>
 <h2 id='creating-a-custom-agent' class='heading'>Creating a Custom Agent</h2>
 
 <p>To add a custom agent to the game, you will need to make sure you have cloned the game&rsquo;s source code from GitHub and ensured
@@ -195,6 +223,9 @@ that you have the required software to build the project.</p>
 <code>bestMoveForActivePlayer</code> method and return an action of type <code><a href="Classes/AIGameDecision.html">AIGameDecision</a></code>.</li>
 <li>Add an entry in the <code><a href="Structs/CommandLineArguments/AgentTestingType.html">CommandLineArguments.AgentTestingType</a></code> enumeration that will represent your custom agent.</li>
 <li>Modify the method <code><a href="Classes/AIGameScene.html#/s:17The_Costumemaster11AIGameSceneC11getStrategy4withQrAA19AIAbstractGameStateC_tF">AIGameScene.getStrategy(with:)</a></code> and include a case that instantiates your strategy.</li>
+<li>Add a pictogram to the game&rsquo;s Assets.xcassets that represents your agent with the same name as what you supplied in the
+previous step.</li>
+<li>Add a dictionary entry in AgentTypes.plist with a title and description for your agent.</li>
 <li>Build and run The Costumemaster.</li>
 </ol>
 <h3 id='important-notes' class='heading'>Important Notes:</h3>
@@ -205,7 +236,8 @@ simulation will properly run and allow the game window to appear correctly.</li>
 <li>When reading the game state, ensure that you are checking the game state by casting it to the <code><a href="Classes/AIAbstractGameState.html">AIAbstractGameState</a></code>
 struct. Without this cast, you may be unable to determine key components such as positions and whether certain inputs are active.</li>
 <li>If your agent requires training, ensure that you have some means of communicating to the user that your agent is in training. This
-can be easily achieved by printing a message like <code>&quot;[INFO] Training the agent...&quot;</code>.</li>
+can be easily achieved by printing a message like <code>&quot;[INFO] Training the agent...&quot;</code> or by using the 
+<code>AIGameScene.console.debug</code> method to use the AI Simulator Console.</li>
 <li>Try to restrict what extra information you need from the user to do any decision-making. The <code><a href="Classes/AIGameScene.html#/s:17The_Costumemaster11AIGameSceneC11getStrategy4withQrAA19AIAbstractGameStateC_tF">AIGameScene.getStrategy(with:)</a></code>
 method <a href="https://docs.swift.org/swift-book/LanguageGuide/OpaqueTypes.html">opaquely returns a type</a> of <code><a href="Classes/AIGameStrategist.html">AIGameStrategist</a></code> and will not provide details on what kind of strategy was used.</li>
 </ul>
@@ -445,7 +477,31 @@ method <a href="https://docs.swift.org/swift-book/LanguageGuide/OpaqueTypes.html
                   <a href="Structs/WatchYourStepView.html">WatchYourStepView</a>
                 </li>
                 <li class="nav-group-task">
+                  <a href="Structs/AISimulatorView.html">AISimulatorView</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Structs/AISimulatorView/AgentLevels.html">– AgentLevels</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Structs/AISimulatorConsole.html">AISimulatorConsole</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Structs/AISimulatorConsoleToolbar.html">AISimulatorConsoleToolbar</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Structs/AISimulatorConsoleToolbar/FilterType.html">– FilterType</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="Structs/WatchYourStepView_Previews.html">WatchYourStepView_Previews</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Structs/AISimulatorView_Previews.html">AISimulatorView_Previews</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Structs/AISimulatorConsole_Previews.html">AISimulatorConsole_Previews</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Structs/AISimulatorConsoleToolbar_Previews.html">AISimulatorConsoleToolbar_Previews</a>
                 </li>
               </ul>
             </li>
@@ -480,6 +536,9 @@ method <a href="https://docs.swift.org/swift-book/LanguageGuide/OpaqueTypes.html
             <li class="nav-group-name">
               <a href="Other%20Extensions.html">Other Extensions</a>
               <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Extensions/Binding.html">Binding</a>
+                </li>
                 <li class="nav-group-task">
                   <a href="Extensions/CGPoint.html">CGPoint</a>
                 </li>
@@ -538,12 +597,20 @@ method <a href="https://docs.swift.org/swift-book/LanguageGuide/OpaqueTypes.html
                 </li>
               </ul>
             </li>
+            <li class="nav-group-name">
+              <a href="Other%20Structs.html">Other Structures</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Structs/Tooltip.html">Tooltip</a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-11-01)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-11-02)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>
