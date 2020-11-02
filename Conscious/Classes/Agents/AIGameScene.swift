@@ -171,6 +171,7 @@ import SwiftUI
         var signals = [AIAbstractGameSignalSender]()
         for input in self.switches {
             var signal = AIAbstractGameSignalSender(
+                kind: input.kind,
                 position: input.position,
                 prettyPosition: input.worldPosition,
                 active: input.active,
