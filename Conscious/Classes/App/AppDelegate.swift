@@ -94,6 +94,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 if let view = controller.view as? SKView {
                     if let scene = view.scene as? AIGameScene {
                         scene.initConsole()
+                        scene.console.info("Restored console window.")
                     }
                 }
             }

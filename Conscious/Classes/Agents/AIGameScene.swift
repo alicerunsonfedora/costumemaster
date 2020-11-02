@@ -37,16 +37,18 @@ import SwiftUI
     /// In cases where this isn't available, the random move agent will be used and will have a budget of one move.
     override func sceneDidLoad() {
         console.info("Initialized simulation console.", silent: true)
-        console.info("Ready to create AI scene.", silent: true)
+        console.debug("Setting up level for AI interaction.", silent: true)
+
+        // Initialize the console.
+        initConsole()
 
         super.sceneDidLoad()
         console.info("Loaded level successfully: \(self.name ?? "AI Level")", silent: true)
 
         guard let initialState = self.getState() else { return }
-        self.strategist = self.getStrategy(with: initialState)
+        console.info("Captured initial state: \(initialState)")
 
-        // Initialize the console.
-        initConsole()
+        self.strategist = self.getStrategy(with: initialState)
 
         if let strat = self.strategist {
             console.debug("Initialized strategist: \(strat.strategy.description)")
@@ -57,7 +59,7 @@ import SwiftUI
 
         // Start attempting to solve the puzzle, creating a set of moves in batches based on user preferences.
         // This should help prevent infinite recursion in such a way that prevents the window from ever showing.
-        console.info("Will begin solving in batches of \(AppDelegate.arguments.agentMoveRate ?? 1) moves/updates.")
+        console.debug("Move generation rate set to: \(AppDelegate.arguments.agentMoveRate ?? 1) moves per update.")
         self.solve(with: AppDelegate.arguments.agentMoveRate)
     }
 
@@ -77,7 +79,7 @@ import SwiftUI
         // Generate a set of moves and run those moves accordingly.
         let generateAction = SKAction.run {
             moves = self.strategize(with: rate ?? 1)
-            self.console.info("Generated new move set with \(moves.count) updates.")
+            self.console.info("Move queue populated with \(moves.count) moves.")
         }
         let actOnMoves = SKAction.run { self.repeatAfterMe(moves) }
 
@@ -87,7 +89,10 @@ import SwiftUI
         // When the state is reassessed, removing the action with the "AI Thread" key will stop execution.
         let reassessState = SKAction.run {
             solvedState = agent.state.isWin(for: agent.state.player)
-            if solvedState { self.removeAction(forKey: "AI Thread") }
+            if solvedState {
+                self.console.debug("State is a winning state. AI Thread will be killed.")
+                self.removeAction(forKey: "AI Thread")
+            }
         }
 
         // Create the action for repeating these moves and run them with the "AI Thread" key.
@@ -109,7 +114,7 @@ import SwiftUI
         if let strat = self.strategist {
             for index in 1 ... budget {
                 if strat.state.isWin(for: strat.state.player) {
-                    console.info("Reached winning state after \(index) iterations.")
+                    console.debug("Reached winning state after \(index) iterations. Stopping batch generation...")
                     break
                 }
                 states.append(strat.nextAction())
@@ -133,12 +138,13 @@ import SwiftUI
     /// - Important: This method has been renamed to `AIGameScene.strategize(with budget:)`.
     @available(*, deprecated, renamed: "strategize")
     func getPredeterminedStrategy(max budget: Int) -> [AIGameDecision] {
+        console.warn("AIGameScene.getPredeterminedStrategy has been renamed to AIGameScene.strategize.")
         return self.strategize(with: budget)
     }
 
     /// Prevent the player from doing anything that could influence state updates.
     func blockInput() {
-        console.log("Keyboard input is blocked in an AI game scene.")
+        console.error("Keyboard input is blocked in an AI game scene.")
         NSSound.beep()
     }
 
@@ -184,6 +190,7 @@ import SwiftUI
     /// - Important: This function has been renamed to `AIGameScene.apply(_ action:)`.
     @available(*, deprecated, renamed: "AIGameScene.apply")
     func setUpdate(_ state: AIGameDecision) {
+        console.warn("AIGameScene.setUpdate is deprecated and will be removed in a future release.")
         self.apply(state)
     }
 
@@ -191,7 +198,7 @@ import SwiftUI
     /// - Parameter action: The action that will be performed to change the state.
     func apply(_ action: AIGameDecision) {
         var actions = [SKAction]()
-        console.info("[VALUE \(action.value)]\tApplying action '\(action.action)' to current state.")
+        console.debug("(Value: \(action.value))\tApplying action '\(action.action)' to current state.")
 
         switch action.action {
         case .moveUp, .moveDown, .moveLeft, .moveRight:

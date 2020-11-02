@@ -37,7 +37,7 @@ struct AISimulatorConsole: View {
             .listRowInsets(.init(top: 0, leading: 8, bottom: 0, trailing: 8))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(minWidth: 500, minHeight: 200)
+        .frame(minWidth: 650, minHeight: 200)
     }
 
     /// A list of the console's messages.
