@@ -13,10 +13,11 @@ import Foundation
 import GameplayKit
 
 /// An class that represents an agent in the game.
+@available(OSX 10.15, *)
 class AIGameStrategist {
 
     /// The internal game strategist that will be used to determine actions.
-    var strategy: GKStrategist = GKMonteCarloStrategist()
+    var strategy: AIGameStrategy = AIRandomMoveStrategist()
 
     /// The state that the agent is assessing for best actions.
     var state: AIAbstractGameState {
@@ -41,10 +42,6 @@ class AIGameStrategist {
         self.state = initialState
         self.strategy.gameModel = initialState
         self.strategy.randomSource = GKARC4RandomSource()
-
-        if let strat = self.strategy as? GKMonteCarloStrategist {
-            strat.budget = 3
-        }
     }
 
     /// Initialize a strategist.
@@ -54,16 +51,12 @@ class AIGameStrategist {
         self.state = initialState
         self.strategy.gameModel = initialState
         self.strategy.randomSource = GKARC4RandomSource()
-
-        if let strat = self.strategy as? GKMonteCarloStrategist {
-            strat.budget = budget
-        }
     }
 
     /// Initialize a strategist.
     /// - Parameter strategy: The GKStrategist that will be used to determine best actions.
     /// - Parameter state: The initial state of the game world.
-    init(with strategy: GKStrategist, reading state: AIAbstractGameState) {
+    init(with strategy: AIGameStrategy, reading state: AIAbstractGameState) {
         self.strategy = strategy
         self.strategy.gameModel = state
         self.state = state

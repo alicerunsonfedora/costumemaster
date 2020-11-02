@@ -64,9 +64,9 @@ public class ConsoleViewModel: ObservableObject {
         //swiftlint:disable:previous identifier_name
     }
 
-    // swiftlint:disable:next large_tuple
     /// Returns a tuple containing the hour, minute, and second logged.
     private func time() -> (Int, Int, Int) {
+        // swiftlint:disable:previous large_tuple
         let date = Date()
         let calendar = NSCalendar.current
         let hour = calendar.component(.hour, from: date)

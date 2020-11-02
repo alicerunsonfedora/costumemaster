@@ -280,20 +280,25 @@ import SwiftUI
     /// strategist will be used instead.
     /// - Important: This function requires macOS 10.15 Catalina or later as it uses the new opaque type system.
     @available(OSX 10.15, *) func getStrategy(with state: AIAbstractGameState) -> some AIGameStrategist {
+        var strategist = AIGameStrategist(with: state)
+
         switch AppDelegate.arguments.agentTestingType {
         case .randomMove:
-            return AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
+            strategist = AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
         case .randomWeightMove:
-            return AIGameStrategist(with: AIRandomWeightedStrategist(), reading: state)
+            strategist = AIGameStrategist(with: AIRandomWeightedStrategist(), reading: state)
         case .reflex:
-            return AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
+            strategist = AIGameStrategist(with: AIReflexStrategist(), reading: state)
         case .predeterminedTree:
-            return AIGameStrategist(with: AIPredeterminedTreeStrategist(), reading: state)
+            strategist = AIGameStrategist(with: AIPredeterminedTreeStrategist(), reading: state)
         default:
             console.error("Agent type \(AppDelegate.arguments.agentTestingType.rawValue) cannot be found.")
             console.warn("Using fallback agent \"randomMove\".")
-            return AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
+            strategist = AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
         }
+
+        strategist.strategy.console = self.console
+        return strategist
     }
 
 }

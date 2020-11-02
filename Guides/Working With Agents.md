@@ -148,8 +148,8 @@ button in the console toolbar to toggle Now Mode on/off.
 To add a custom agent to the game, you will need to make sure you have cloned the game's source code from GitHub and ensured
 that you have the required software to build the project.
 
-1. Create a class that conforms to the `NSObject` and `GKStrategist` protocols. Be sure to implement the 
-`bestMoveForActivePlayer` method and return an action of type `AIGameDecision`.
+1. Create a class that subclasses from `AIGameStrategy`. Be sure to override and implement the  `bestMoveForActivePlayer` 
+method and return an action of type `AIGameDecision`.
 2. Add an entry in the `CommandLineArguments.AgentTestingType` enumeration that will represent your custom agent.
 3. Modify the method `AIGameScene.getStrategy(with:)` and include a case that instantiates your strategy.
 4. Add a pictogram to the game's Assets.xcassets that represents your agent with the same name as what you supplied in the
