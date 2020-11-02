@@ -60,13 +60,9 @@ struct AISimulatorConsole: View {
         }
 
         return Image(imageName)
-            .foregroundColor(.white)
-            .font(.caption)
+            .foregroundColor(color)
+            .font(.body)
             .padding(6)
-            .background(
-                Circle()
-                    .foregroundColor(color)
-            )
     }
 }
 

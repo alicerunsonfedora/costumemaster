@@ -36,11 +36,11 @@ import SwiftUI
     /// Agent testing mode will need to be enabled, and options for the agent type and move budget should be available.
     /// In cases where this isn't available, the random move agent will be used and will have a budget of one move.
     override func sceneDidLoad() {
-        console.log("Initialized simulation console.", silent: true)
-        console.log("Ready to create AI scene.", silent: true)
+        console.info("Initialized simulation console.", silent: true)
+        console.info("Ready to create AI scene.", silent: true)
 
         super.sceneDidLoad()
-        console.log("Loaded level successfully: \(self.name ?? "AI Level")", silent: true)
+        console.info("Loaded level successfully: \(self.name ?? "AI Level")", silent: true)
 
         guard let initialState = self.getState() else { return }
         self.strategist = self.getStrategy(with: initialState)
@@ -49,7 +49,7 @@ import SwiftUI
         initConsole()
 
         if let strat = self.strategist {
-            console.log("Initialized strategist: \(strat.strategy.description)")
+            console.info("Initialized strategist: \(strat.strategy.description)")
         }
 
         // Wait until the window has opened (generally ~5 sec) before starting to solve.
@@ -57,7 +57,7 @@ import SwiftUI
 
         // Start attempting to solve the puzzle, creating a set of moves in batches based on user preferences.
         // This should help prevent infinite recursion in such a way that prevents the window from ever showing.
-        console.log("Will begin solving in batches of \(AppDelegate.arguments.agentMoveRate ?? 1) moves/updates.")
+        console.info("Will begin solving in batches of \(AppDelegate.arguments.agentMoveRate ?? 1) moves/updates.")
         self.solve(with: AppDelegate.arguments.agentMoveRate)
     }
 
@@ -77,7 +77,7 @@ import SwiftUI
         // Generate a set of moves and run those moves accordingly.
         let generateAction = SKAction.run {
             moves = self.strategize(with: rate ?? 1)
-            self.console.log("Generated new move set with \(moves.count) updates.")
+            self.console.info("Generated new move set with \(moves.count) updates.")
         }
         let actOnMoves = SKAction.run { self.repeatAfterMe(moves) }
 
@@ -109,7 +109,7 @@ import SwiftUI
         if let strat = self.strategist {
             for index in 1 ... budget {
                 if strat.state.isWin(for: strat.state.player) {
-                    console.log("Reached winning state after \(index) iterations.")
+                    console.info("Reached winning state after \(index) iterations.")
                     break
                 }
                 states.append(strat.nextAction())
@@ -191,7 +191,7 @@ import SwiftUI
     /// - Parameter action: The action that will be performed to change the state.
     func apply(_ action: AIGameDecision) {
         var actions = [SKAction]()
-        console.log("[VALUE \(action.value)]\tApplying action '\(action.action)' to current state.")
+        console.info("[VALUE \(action.value)]\tApplying action '\(action.action)' to current state.")
 
         switch action.action {
         case .moveUp, .moveDown, .moveLeft, .moveRight:
@@ -273,8 +273,8 @@ import SwiftUI
         case .predeterminedTree:
             return AIGameStrategist(with: AIPredeterminedTreeStrategist(), reading: state)
         default:
-            console.log(
-                "WARN: Using random move agent because no fallback has been assigned and the argument supplied "
+            console.warn(
+                "Using random move agent because no fallback has been assigned and the argument supplied "
                     + "was invalid (\(AppDelegate.arguments.agentTestingType.rawValue)).")
             return AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
         }
