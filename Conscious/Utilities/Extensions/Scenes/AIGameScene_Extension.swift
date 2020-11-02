@@ -64,6 +64,7 @@ extension AIGameScene {
 
         // Create a toolbar on the window and add the accessories.
         window.toolbar = NSToolbar()
+        window.toolbar?.sizeMode = .regular
         window.addTitlebarAccessoryViewController(titleAccessory)
         window.addTitlebarAccessoryViewController(accessory)
         window.titleVisibility = .hidden

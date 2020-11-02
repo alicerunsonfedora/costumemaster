@@ -53,6 +53,7 @@
 		BF41A4B92533757B00AC6001 /* WatchYourStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF41A4B82533757B00AC6001 /* WatchYourStepView.swift */; };
 		BF41E5DF2511714C006527CA /* Seeded.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF41E5DE2511714C006527CA /* Seeded.sks */; };
 		BF4630EC255068DB00EB606D /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4630EB255068DB00EB606D /* Binding.swift */; };
+		BF4630EF255077A000EB606D /* Tooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4630EE255077A000EB606D /* Tooltip.swift */; };
 		BF4A451F2501B683008BDD5A /* Entry.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF4A451E2501B683008BDD5A /* Entry.sks */; };
 		BF4CD5A92513F96E00C021BC /* Chained.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF4CD5A82513F96E00C021BC /* Chained.sks */; };
 		BF4CD5AD251410A800C021BC /* Player_Change_Final.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BF4CD5AC251410A800C021BC /* Player_Change_Final.atlas */; };
@@ -208,6 +209,7 @@
 		BF41A4B82533757B00AC6001 /* WatchYourStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchYourStepView.swift; sourceTree = "<group>"; };
 		BF41E5DE2511714C006527CA /* Seeded.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Seeded.sks; sourceTree = "<group>"; };
 		BF4630EB255068DB00EB606D /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		BF4630EE255077A000EB606D /* Tooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tooltip.swift; sourceTree = "<group>"; };
 		BF4A451E2501B683008BDD5A /* Entry.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Entry.sks; sourceTree = "<group>"; };
 		BF4CD5A82513F96E00C021BC /* Chained.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Chained.sks; sourceTree = "<group>"; };
 		BF4CD5AC251410A800C021BC /* Player_Change_Final.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Change_Final.atlas; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 				BFE6475524F88B1300230F93 /* SwitchRequisite.swift */,
 				BF109CDA24FB26FB00F06E47 /* Store.swift */,
 				BF2B5E4625016CFB001EC2E7 /* CommandLineArguments.swift */,
+				BF4630EE255077A000EB606D /* Tooltip.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -1137,6 +1140,7 @@
 				BF63E65924F84B2000429247 /* PreferencesViewController.swift in Sources */,
 				BFC140DA25251C1B007D65DC /* AIGameDecision.swift in Sources */,
 				BFFF892C24F93FF800D405CC /* PropertyLists.swift in Sources */,
+				BF4630EF255077A000EB606D /* Tooltip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

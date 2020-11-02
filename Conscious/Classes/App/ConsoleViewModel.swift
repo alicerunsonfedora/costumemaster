@@ -19,6 +19,7 @@ import Combine
 public class ConsoleViewModel: ObservableObject {
     @Published public var messages: [Message] = []
     @Published public var filter: [MessageType] = [.info, .debug, .error, .warning, .unknown]
+    @Published public var nowMode: Bool = false
 
     public enum MessageType: String {
         case info = "INFO"
@@ -51,6 +52,10 @@ public class ConsoleViewModel: ObservableObject {
         let timestamp = String(format: "%02d:%02d:%02d", hour, min, sec)
         if !silent { print("[\(type.rawValue)]\t\(timestamp)\t" + data) }
         messages.append(Message(contents: data, type: type, timestamp: timestamp))
+    }
+
+    public func lastMessage() -> Message? {
+        messages.filter { message in filter.contains(message.type) }.last
     }
 
     public func log(_ message: String, silent: Bool = false) {

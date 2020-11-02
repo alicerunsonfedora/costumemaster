@@ -21,6 +21,7 @@ struct AISimulatorConsoleToolbar: View {
     @ObservedObject var console: ConsoleViewModel
     @State var filter: FilterType = .allMessages
 
+    /// An enumeration that represents the different filters for the console.
     enum FilterType: String, CaseIterable {
         case allMessages = "All Messages"
         case infoOnly = "Info Messages"
@@ -36,22 +37,32 @@ struct AISimulatorConsoleToolbar: View {
                     Text(type.rawValue)
                 }
             }
-            Button {
-                self.console.clear()
-            } label: {
-                VStack {
-                    Image("clear")
-                        .font(.headline)
-                    Text("Clear")
-                        .font(.subheadline)
+            VStack(spacing: 0) {
+                Button { self.console.nowMode.toggle() }
+                    label: {
+                        Image("arrow.up.backward.circle\(self.console.nowMode ? ".fill" : "")")
+                        .font(.body)
+                        .foregroundColor(self.console.nowMode ? .accentColor : .primary)
                 }
+                    .overlay(
+                        Tooltip(tooltip: "View the console as a stack of messages with the most recent on the top.")
+                    )
             }
-            .buttonStyle(PlainButtonStyle())
+            VStack(spacing: 0) {
+                Button { self.console.clear() }
+                    label: {
+                    Image("clear")
+                        .font(.body)
+                        .foregroundColor(.primary)
+                }
+                    .overlay(Tooltip(tooltip: "Clear the console."))
+            }
         }
         .padding(.trailing)
         .frame(maxWidth: .infinity)
     }
 
+    /// Change the console filter.
     func changeFilter(_ type: FilterType) {
         switch type {
         case .infoOnly:

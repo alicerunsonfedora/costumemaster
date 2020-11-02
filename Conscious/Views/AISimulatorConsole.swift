@@ -23,7 +23,7 @@ struct AISimulatorConsole: View {
     /// The body of the view.
     var body: some View {
         VStack(alignment: .leading) {
-            List(console.messages.filter { mes in console.filter.contains(mes.type) }) { message in
+            List(self.messageList) { message in
                 HStack(spacing: 8) {
                     self.colorCoordinator(for: message.type)
                         .frame(width: 28)
@@ -33,13 +33,20 @@ struct AISimulatorConsole: View {
                         .font(.system(.body, design: .monospaced))
                 }
             }
-            .listRowInsets(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
             .listStyle(PlainListStyle())
+            .listRowInsets(.init(top: 0, leading: 8, bottom: 0, trailing: 8))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .frame(minWidth: 500, minHeight: 200)
     }
 
+    /// A list of the console's messages.
+    var messageList: [ConsoleViewModel.Message] {
+        let history = console.messages.filter { mes in console.filter.contains(mes.type) }
+        return self.console.nowMode ? history.reversed() : history
+    }
+
+    /// The color-coded icon for the console message.
     func colorCoordinator(for type: ConsoleViewModel.MessageType) -> some View {
         var color = Color.clear
         var imageName = ""
