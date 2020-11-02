@@ -18,20 +18,32 @@ class AIPredeterminedTreeStrategist: AIGameStrategy {
 
     /// Returns the best move for the current player.
     override func bestMoveForActivePlayer() -> GKGameModelUpdate? {
-        guard let state = gameModel as? AIAbstractGameState else { return defaultAction() }
+        guard let state = gameModel as? AIAbstractGameState else {
+            console?.error("Supplied game state is not an AI game state. Returning default action.")
+            return defaultAction()
+        }
         let answers = self.assess(state)
 
         guard var response = makeDecisionTree().findAction(forAnswers: answers) as? String else {
+            console?.error("Response from tree was not valid. Returning default action.")
             return defaultAction()
         }
+        console?.debug("Received response from decision tree: \(response)")
 
         // These special cases will help determine moves necessary to get closer to something using minimum
         // Manhattan distance.
         switch response {
-        case "MOVE_EXIT_CLOSER": response = self.closestPathToExit(in: state)
-        case "MOVE_INPUT_CLOSER": response = self.closestPath(to: self.closestInput(in: state), in: state)
-        case "MOVE_RANDOM": response = self.moveRandom()
-        default: break
+        case "MOVE_EXIT_CLOSER":
+            console?.debug("MOVE_EXIT_CLOSER detected. Getting action that moves closest to exit.")
+            response = self.closestPathToExit(in: state)
+        case "MOVE_INPUT_CLOSER":
+            console?.debug("MOVE_INPUT_CLOSER detected. Getting action that moves closest to closet input.")
+            response = self.closestPath(to: self.closestInput(in: state), in: state)
+        case "MOVE_RANDOM":
+            console?.warn("MOVE_RANDOM detected. Getting random movement action.")
+            response = self.moveRandom()
+        default:
+            console?.debug("No special processing needed on response.")
         }
 
         return AIGameDecision(by: AIGamePlayerAction(rawValue: response) ?? .stop, with: 1)
@@ -101,6 +113,11 @@ class AIPredeterminedTreeStrategist: AIGameStrategy {
             }
         }
 
+        if input != nil {
+            console?.debug(
+                "Closest input found at \(input?.prettyPosition ?? .zero) (scene distance: \(minimum))"
+            )
+        } else { console?.warn("Agent is not close to any input.") }
         return input
     }
 
@@ -124,6 +141,7 @@ class AIPredeterminedTreeStrategist: AIGameStrategy {
             }
         }
 
+        console?.debug("Action \(action) makes shortest distance (\(minimumDistance)) to \(input?.position ?? .zero).")
         return action.rawValue
     }
 
@@ -144,6 +162,7 @@ class AIPredeterminedTreeStrategist: AIGameStrategy {
             }
         }
 
+        console?.debug("Action \(action) makes shortest distance (\(minimumDistance)) to exit.")
         return action.rawValue
     }
 

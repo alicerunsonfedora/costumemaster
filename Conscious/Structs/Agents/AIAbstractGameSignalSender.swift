@@ -13,6 +13,9 @@ struct AIAbstractGameSignalSender {
     /// The position of the signal sender.
     var position: CGPoint
 
+    /// The "pretty" or world position of the signal sender.
+    var prettyPosition: CGPoint
+
     /// Whether the signal sender is active.
     var active: Bool
 

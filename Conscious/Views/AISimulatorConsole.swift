@@ -23,10 +23,24 @@ struct AISimulatorConsole: View {
     /// The body of the view.
     var body: some View {
         VStack(alignment: .leading) {
+            if self.messageList.count > 150 {
+                HStack {
+                    Text("The console stack's current size may cause performance issues.")
+                    Spacer()
+                    Button { self.console.clear() }
+                        label: {
+                            Text("Clear")
+                                .foregroundColor(.primary)
+                        }
+                }
+                .padding(8)
+                .background(Color(.controlBackgroundColor))
+            }
             List(self.messageList) { message in
                 HStack(spacing: 8) {
                     self.colorCoordinator(for: message.type)
                         .frame(width: 28)
+                        .padding(.leading, 4)
                     Text(message.timestamp)
                         .font(.system(.body, design: .monospaced))
                     Text(message.contents)
@@ -34,10 +48,11 @@ struct AISimulatorConsole: View {
                 }
             }
             .listStyle(PlainListStyle())
-            .listRowInsets(.init(top: 0, leading: 8, bottom: 0, trailing: 8))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(minWidth: 650, minHeight: 200)
+        .frame(
+            minWidth: 450, idealWidth: 650, maxWidth: .infinity, minHeight: 150, idealHeight: 200, maxHeight: .infinity
+        )
     }
 
     /// A list of the console's messages.
@@ -53,17 +68,17 @@ struct AISimulatorConsole: View {
 
         switch type {
         case .info:
-            color = .blue
-            imageName = "info.circle.fill"
+            color = Color(.systemBlue)
+            imageName = "info.circle"
         case .warning:
-            color = .yellow
+            color = Color(.systemYellow)
             imageName = "exclamationmark.triangle"
         case .error:
-            color = .red
-            imageName = "xmark.octagon.fill"
+            color = Color(.systemRed)
+            imageName = "xmark.circle"
         case .debug:
-            color = .green
-            imageName = "ant.circle.fill"
+            color = Color(.systemGreen)
+            imageName = "ant"
         default:
             color = .gray
             imageName = "questionmark"
@@ -72,7 +87,11 @@ struct AISimulatorConsole: View {
         return Image(imageName)
             .foregroundColor(color)
             .font(.body)
-            .padding(6)
+            .padding(7)
+            .background(
+                Circle()
+                    .foregroundColor(Color(.controlBackgroundColor))
+            )
     }
 }
 
