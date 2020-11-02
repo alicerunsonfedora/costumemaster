@@ -19,11 +19,11 @@ import Combine
 public class ConsoleViewModel: ObservableObject {
     @Published public var messages: [Message] = []
 
-    public enum MessageType {
-        case info
-        case warning
-        case error
-        case unknown
+    public enum MessageType: String {
+        case info = "INFO"
+        case warning = "WARN"
+        case error = "ERR"
+        case unknown = "LOG"
     }
 
     public struct Message: Identifiable {
@@ -43,34 +43,31 @@ public class ConsoleViewModel: ObservableObject {
         return (hour, min, sec)
     }
 
-    private func sendMessage(with data: String, type: MessageType) {
+    private func sendMessage(with data: String, type: MessageType, silent: Bool) {
         let (hour, min, sec) = self.time()
         let timestamp = "\(hour):\(min):\(sec > 10 ? "" : "0")\(sec)"
+        if !silent { print("[\(type.rawValue)]\t\(timestamp)\t" + data) }
         messages.append(Message(contents: data, type: type, timestamp: timestamp))
     }
 
     public func log(_ message: String, silent: Bool = false) {
-        if !silent { print(message) }
-        self.sendMessage(with: message, type: .unknown)
+        self.sendMessage(with: message, type: .unknown, silent: silent)
     }
 
     public func info(_ message: String, silent: Bool = false) {
-        if !silent { print(message) }
-        self.sendMessage(with: message, type: .info)
+        self.sendMessage(with: message, type: .info, silent: silent)
     }
 
     public func warn(_ message: String, silent: Bool = false) {
-        if !silent { print(message) }
-        self.sendMessage(with: message, type: .warning)
+        self.sendMessage(with: message, type: .warning, silent: silent)
     }
 
     public func error(_ message: String, silent: Bool = false) {
-        if !silent { print(message) }
-        self.sendMessage(with: message, type: .error)
+        self.sendMessage(with: message, type: .error, silent: silent)
     }
 
     public func clear() {
         self.messages = []
-        self.log("Console cleared.", silent: true)
+        self.info("Console cleared.", silent: true)
     }
 }
