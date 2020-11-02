@@ -17,7 +17,21 @@ import Combine
 
 @available(OSX 10.15, *)
 public class ConsoleViewModel: ObservableObject {
-    @Published public var messages: [String] = []
+    @Published public var messages: [Message] = []
+
+    public enum MessageType {
+        case info
+        case warning
+        case error
+        case unknown
+    }
+
+    public struct Message: Identifiable {
+        public let contents: String
+        public let type: MessageType
+        public let timestamp: String
+        public let id = UUID() //swiftlint:disable identifier_name
+    }
 
     // swiftlint:disable:next large_tuple
     private func time() -> (Int, Int, Int) {
@@ -29,11 +43,30 @@ public class ConsoleViewModel: ObservableObject {
         return (hour, min, sec)
     }
 
+    private func sendMessage(with data: String, type: MessageType) {
+        let (hour, min, sec) = self.time()
+        let timestamp = "\(hour):\(min):\(sec > 10 ? "" : "0")\(sec)"
+        messages.append(Message(contents: data, type: type, timestamp: timestamp))
+    }
+
     public func log(_ message: String, silent: Bool = false) {
         if !silent { print(message) }
-        let (hour, min, sec) = self.time()
+        self.sendMessage(with: message, type: .unknown)
+    }
 
-        messages.append("\(hour):\(min):\(sec > 10 ? "" : "0")\(sec) - " + message)
+    public func info(_ message: String, silent: Bool = false) {
+        if !silent { print(message) }
+        self.sendMessage(with: message, type: .info)
+    }
+
+    public func warn(_ message: String, silent: Bool = false) {
+        if !silent { print(message) }
+        self.sendMessage(with: message, type: .warning)
+    }
+
+    public func error(_ message: String, silent: Bool = false) {
+        if !silent { print(message) }
+        self.sendMessage(with: message, type: .error)
     }
 
     public func clear() {

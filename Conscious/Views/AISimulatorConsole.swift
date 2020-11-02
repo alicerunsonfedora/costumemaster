@@ -23,14 +23,50 @@ struct AISimulatorConsole: View {
     /// The body of the view.
     var body: some View {
         VStack(alignment: .leading) {
-            List(console.messages, id: \.self) { message in
-                Text(message)
-                    .font(.system(.body, design: .monospaced))
+            List(console.messages) { message in
+                HStack(spacing: 8) {
+                    self.colorCoordinator(for: message.type)
+                        .frame(width: 24)
+                    Text(message.timestamp)
+                        .font(.system(.body, design: .monospaced))
+                    Text(message.contents)
+                        .font(.system(.body, design: .monospaced))
+                }
             }
+            .listRowInsets(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
             .listStyle(PlainListStyle())
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .frame(minWidth: 500, minHeight: 200)
+    }
+
+    func colorCoordinator(for type: ConsoleViewModel.MessageType) -> some View {
+        var color = Color.clear
+        var imageName = ""
+
+        switch type {
+        case .info:
+            color = .blue
+            imageName = "info.circle.fill"
+        case .warning:
+            color = .yellow
+            imageName = "exclamationmark.triangle"
+        case .error:
+            color = .red
+            imageName = "xmark.octagon.fill"
+        default:
+            color = .gray
+            imageName = "questionmark"
+        }
+
+        return Image(imageName)
+            .foregroundColor(.white)
+            .font(.caption)
+            .padding(6)
+            .background(
+                Circle()
+                    .foregroundColor(color)
+            )
     }
 }
 
