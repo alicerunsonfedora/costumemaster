@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Information Center  Reference</title>
+    <title>Artificial Intelligence Setup  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <link rel="stylesheet" type="text/css" href="css/katex.min.css" />
     <meta charset='utf-8'>
 	<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0" />
     <script src="js/jquery.min.js" defer></script>
+    <script src="js/katex.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Section/Information Center" class="dashAnchor"></a>
-    <a title="Information Center  Reference"></a>
+    <a name="//apple_ref/swift/Section/Artificial Intelligence Setup" class="dashAnchor"></a>
+    <a title="Artificial Intelligence Setup  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -36,7 +38,7 @@
             <a href="index.html"> Reference</a>
             <img id="carat" src="img/carat.png" />
           </span>
-          Information Center  Reference
+          Artificial Intelligence Setup  Reference
         </p>
       </div>
     </div>
@@ -45,7 +47,7 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>Information Center</h1>
+              <h1>Artificial Intelligence Setup</h1>
               
             </section>
             <section class="section task-group-section">
@@ -54,19 +56,235 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/documentation.Project Proposal"></a>
-                      <a name="//apple_ref/swift/Guide/Project Proposal" class="dashAnchor"></a>
-                      <a class="direct-link" href="project-proposal.html">Project Proposal</a>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIGameScene"></a>
+                      <a name="//apple_ref/swift/Class/AIGameScene" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIGameScene">AIGameScene</a>
                       </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>A game scene that an AI agent can control.</p>
+
+<p>In the game scene, the player can provide a move budget and strategy to solve the puzzle. A default random move
+strategist with a budget of one move is provided when these options aren&rsquo;t available.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    Scenes that subclass the AI game scene must be running macOS 10.15 Catalina or higher.
+
+</div>
+
+                          <a href="Classes/AIGameScene.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">class</span> <span class="kt">AIGameScene</span> <span class="p">:</span> <span class="kt"><a href="Classes/ChallengeGameScene.html">ChallengeGameScene</a></span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
                     </div>
                   </li>
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/documentation.Privacy Policy"></a>
-                      <a name="//apple_ref/swift/Guide/Privacy Policy" class="dashAnchor"></a>
-                      <a class="direct-link" href="privacy-policy.html">Privacy Policy</a>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIAbstractGamePlayer"></a>
+                      <a name="//apple_ref/swift/Class/AIAbstractGamePlayer" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIAbstractGamePlayer">AIAbstractGamePlayer</a>
                       </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>An abstract class that represents a game player.</p>
+
+                          <a href="Classes/AIAbstractGamePlayer.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIAbstractGamePlayer</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKGameModelPlayer</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIAbstractGameState"></a>
+                      <a name="//apple_ref/swift/Class/AIAbstractGameState" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIAbstractGameState">AIAbstractGameState</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>An abstract class that represents a game state/model.</p>
+
+                          <a href="Classes/AIAbstractGameState.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIAbstractGameState</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKGameModel</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster16AIGameStrategistC"></a>
+                      <a name="//apple_ref/swift/Class/AIGameStrategist" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster16AIGameStrategistC">AIGameStrategist</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>An class that represents an agent in the game.</p>
+
+                          <a href="Classes/AIGameStrategist.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">class</span> <span class="kt">AIGameStrategist</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster26AIAbstractGameSignalSenderV"></a>
+                      <a name="//apple_ref/swift/Struct/AIAbstractGameSignalSender" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster26AIAbstractGameSignalSenderV">AIAbstractGameSignalSender</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>An abstract data structure that represents an input device.</p>
+
+                          <a href="Structs/AIAbstractGameSignalSender.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AIAbstractGameSignalSender</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster30AIAbstractGameSignalReceivableV"></a>
+                      <a name="//apple_ref/swift/Struct/AIAbstractGameSignalReceivable" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster30AIAbstractGameSignalReceivableV">AIAbstractGameSignalReceivable</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>An abstract data structure that represents a signal receiver.</p>
+
+                          <a href="Structs/AIAbstractGameSignalReceivable.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AIAbstractGameSignalReceivable</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIGameDecision"></a>
+                      <a name="//apple_ref/swift/Class/AIGameDecision" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIGameDecision">AIGameDecision</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>An abstract class that represents a decision an agent can make.</p>
+
+                          <a href="Classes/AIGameDecision.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIGameDecision</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKGameModelUpdate</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster18AIGamePlayerActionO"></a>
+                      <a name="//apple_ref/swift/Enum/AIGamePlayerAction" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster18AIGamePlayerActionO">AIGamePlayerAction</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>An enumeration that represents the moves an agent can make.</p>
+
+                          <a href="Enums/AIGamePlayerAction.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AIGamePlayerAction</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
                     </div>
                   </li>
                 </ul>

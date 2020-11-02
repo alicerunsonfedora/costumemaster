@@ -63,17 +63,22 @@ custom_categories:
     - GameHeavyObject
     - Player
     
-  - name: AI Agents
+  - name: Artificial Intelligence Agents
     children:
     - Working With Agents
-    - AIGameScene
-    - AIAbstractGamePlayer
-    - AIAbstractGameState
-    - AIGameStrategist
+    - AIGameStrategy
     - AIRandomMoveStrategist
     - AIRandomWeightedStrategist
     - AIPredeterminedTreeStrategist
     - AIRandomNetworkStrategist
+    - AIReflexStrategist
+    
+  - name: Artificial Intelligence Setup
+    children:
+    - AIGameScene
+    - AIAbstractGamePlayer
+    - AIAbstractGameState
+    - AIGameStrategist
     - AIAbstractGameSignalSender
     - AIAbstractGameSignalReceivable
     - AIGameDecision
