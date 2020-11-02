@@ -23,7 +23,7 @@ struct AISimulatorConsole: View {
     /// The body of the view.
     var body: some View {
         VStack(alignment: .leading) {
-            List(console.messages) { message in
+            List(console.messages.filter { mes in console.filter.contains(mes.type) }) { message in
                 HStack(spacing: 8) {
                     self.colorCoordinator(for: message.type)
                         .frame(width: 28)

@@ -19,10 +19,23 @@ struct AISimulatorConsoleToolbar: View {
 
     /// The console model.
     @ObservedObject var console: ConsoleViewModel
+    @State var filter: FilterType = .allMessages
+
+    enum FilterType: String, CaseIterable {
+        case allMessages = "All Messages"
+        case infoOnly = "Info Messages"
+        case debugOnly = "Debug Messages"
+        case errorsAndWarningsOnly = "Errors and Warnings"
+    }
 
     /// The body of the view.
     var body: some View {
         HStack {
+            Picker("", selection: $filter.onChange(self.changeFilter)) {
+                ForEach(FilterType.allCases, id: \.self) { type in
+                    Text(type.rawValue)
+                }
+            }
             Button {
                 self.console.clear()
             } label: {
@@ -37,6 +50,19 @@ struct AISimulatorConsoleToolbar: View {
         }
         .padding(.trailing)
         .frame(maxWidth: .infinity)
+    }
+
+    func changeFilter(_ type: FilterType) {
+        switch type {
+        case .infoOnly:
+            console.filter = [.info]
+        case .debugOnly:
+            console.filter = [.debug]
+        case .errorsAndWarningsOnly:
+            console.filter = [.warning, .error]
+        default:
+            console.filter = [.info, .warning, .debug, .error, .unknown]
+        }
     }
 }
 

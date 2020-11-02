@@ -18,6 +18,7 @@ import Combine
 @available(OSX 10.15, *)
 public class ConsoleViewModel: ObservableObject {
     @Published public var messages: [Message] = []
+    @Published public var filter: [MessageType] = [.info, .debug, .error, .warning, .unknown]
 
     public enum MessageType: String {
         case info = "INFO"

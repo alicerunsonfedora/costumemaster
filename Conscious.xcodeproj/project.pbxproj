@@ -52,6 +52,7 @@
 		BF3A0B9024F7355200575F72 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8F24F7355200575F72 /* MainMenu.swift */; };
 		BF41A4B92533757B00AC6001 /* WatchYourStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF41A4B82533757B00AC6001 /* WatchYourStepView.swift */; };
 		BF41E5DF2511714C006527CA /* Seeded.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF41E5DE2511714C006527CA /* Seeded.sks */; };
+		BF4630EC255068DB00EB606D /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4630EB255068DB00EB606D /* Binding.swift */; };
 		BF4A451F2501B683008BDD5A /* Entry.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF4A451E2501B683008BDD5A /* Entry.sks */; };
 		BF4CD5A92513F96E00C021BC /* Chained.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF4CD5A82513F96E00C021BC /* Chained.sks */; };
 		BF4CD5AD251410A800C021BC /* Player_Change_Final.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BF4CD5AC251410A800C021BC /* Player_Change_Final.atlas */; };
@@ -206,6 +207,7 @@
 		BF3A0B8F24F7355200575F72 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		BF41A4B82533757B00AC6001 /* WatchYourStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchYourStepView.swift; sourceTree = "<group>"; };
 		BF41E5DE2511714C006527CA /* Seeded.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Seeded.sks; sourceTree = "<group>"; };
+		BF4630EB255068DB00EB606D /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		BF4A451E2501B683008BDD5A /* Entry.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Entry.sks; sourceTree = "<group>"; };
 		BF4CD5A82513F96E00C021BC /* Chained.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Chained.sks; sourceTree = "<group>"; };
 		BF4CD5AC251410A800C021BC /* Player_Change_Final.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Change_Final.atlas; sourceTree = "<group>"; };
@@ -690,6 +692,7 @@
 				BF3977BC2530C44600BBD591 /* Player_Extension.swift */,
 				BF81B9EB254B2FB10001B350 /* String.swift */,
 				BF7C411F254B7FA400449C5B /* CGPoint.swift */,
+				BF4630EB255068DB00EB606D /* Binding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1128,6 +1131,7 @@
 				BFAD134A25028C0F0074DCBA /* GameAlarmClock.swift in Sources */,
 				BF3A0B7F24F6EB4900575F72 /* GameSignalInputMethod.swift in Sources */,
 				BF18AAC0252B9EC200577BF6 /* GameScene_Extension.swift in Sources */,
+				BF4630EC255068DB00EB606D /* Binding.swift in Sources */,
 				BF63E65B24F84BAC00429247 /* GeneralPrefsViewController.swift in Sources */,
 				BFB621CC2512DB1B003940CF /* SeededChallenge.swift in Sources */,
 				BF63E65924F84B2000429247 /* PreferencesViewController.swift in Sources */,
