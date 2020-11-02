@@ -24,13 +24,15 @@ public class ConsoleViewModel: ObservableObject {
         case warning = "WARN"
         case error = "ERR"
         case unknown = "LOG"
+        case debug = "DEBUG"
     }
 
     public struct Message: Identifiable {
         public let contents: String
         public let type: MessageType
         public let timestamp: String
-        public let id = UUID() //swiftlint:disable identifier_name
+        public let id = UUID()
+        //swiftlint:disable:previous identifier_name
     }
 
     // swiftlint:disable:next large_tuple
@@ -45,7 +47,7 @@ public class ConsoleViewModel: ObservableObject {
 
     private func sendMessage(with data: String, type: MessageType, silent: Bool) {
         let (hour, min, sec) = self.time()
-        let timestamp = "\(hour):\(min):\(sec > 10 ? "" : "0")\(sec)"
+        let timestamp = String(format: "%02d:%02d:%02d", hour, min, sec)
         if !silent { print("[\(type.rawValue)]\t\(timestamp)\t" + data) }
         messages.append(Message(contents: data, type: type, timestamp: timestamp))
     }
@@ -64,6 +66,10 @@ public class ConsoleViewModel: ObservableObject {
 
     public func error(_ message: String, silent: Bool = false) {
         self.sendMessage(with: message, type: .error, silent: silent)
+    }
+
+    public func debug(_ message: String, silent: Bool = true) {
+        self.sendMessage(with: message, type: .debug, silent: silent)
     }
 
     public func clear() {

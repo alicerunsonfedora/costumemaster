@@ -49,7 +49,7 @@ import SwiftUI
         initConsole()
 
         if let strat = self.strategist {
-            console.info("Initialized strategist: \(strat.strategy.description)")
+            console.debug("Initialized strategist: \(strat.strategy.description)")
         }
 
         // Wait until the window has opened (generally ~5 sec) before starting to solve.
@@ -273,9 +273,8 @@ import SwiftUI
         case .predeterminedTree:
             return AIGameStrategist(with: AIPredeterminedTreeStrategist(), reading: state)
         default:
-            console.warn(
-                "Using random move agent because no fallback has been assigned and the argument supplied "
-                    + "was invalid (\(AppDelegate.arguments.agentTestingType.rawValue)).")
+            console.error("Agent type \(AppDelegate.arguments.agentTestingType.rawValue) cannot be found.")
+            console.warn("Using fallback agent \"randomMove\".")
             return AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
         }
     }

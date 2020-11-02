@@ -26,7 +26,7 @@ struct AISimulatorConsole: View {
             List(console.messages) { message in
                 HStack(spacing: 8) {
                     self.colorCoordinator(for: message.type)
-                        .frame(width: 24)
+                        .frame(width: 28)
                     Text(message.timestamp)
                         .font(.system(.body, design: .monospaced))
                     Text(message.contents)
@@ -54,6 +54,9 @@ struct AISimulatorConsole: View {
         case .error:
             color = .red
             imageName = "xmark.octagon.fill"
+        case .debug:
+            color = .green
+            imageName = "ant.circle.fill"
         default:
             color = .gray
             imageName = "questionmark"
