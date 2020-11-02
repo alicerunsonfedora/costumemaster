@@ -174,7 +174,8 @@ strategist with a budget of one move is provided when these options aren&rsquo;t
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIGameStrategist</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">class</span> <span class="kt">AIGameStrategist</span></code></pre>
 
                           </div>
                         </div>
@@ -202,7 +203,8 @@ strategist with a budget of one move is provided when these options aren&rsquo;t
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">AIRandomMoveStrategist</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKStrategist</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">class</span> <span class="kt">AIRandomMoveStrategist</span> <span class="p">:</span> <span class="kt"><a href="Classes/AIGameStrategy.html">AIGameStrategy</a></span></code></pre>
 
                           </div>
                         </div>
@@ -230,7 +232,8 @@ strategist with a budget of one move is provided when these options aren&rsquo;t
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIRandomWeightedStrategist</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKStrategist</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">class</span> <span class="kt">AIRandomWeightedStrategist</span> <span class="p">:</span> <span class="kt"><a href="Classes/AIGameStrategy.html">AIGameStrategy</a></span></code></pre>
 
                           </div>
                         </div>
@@ -258,7 +261,8 @@ strategist with a budget of one move is provided when these options aren&rsquo;t
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIPredeterminedTreeStrategist</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKStrategist</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">class</span> <span class="kt">AIPredeterminedTreeStrategist</span> <span class="p">:</span> <span class="kt"><a href="Classes/AIGameStrategy.html">AIGameStrategy</a></span></code></pre>
 
                           </div>
                         </div>
@@ -293,7 +297,8 @@ by measuring how difficult it is to predict the output based on previous experie
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AIRandomNetworkStrategist</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKStrategist</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"This strategist will be removed in a future release."</span><span class="p">)</span>
+<span class="kd">class</span> <span class="kt">AIRandomNetworkStrategist</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKStrategist</span></code></pre>
 
                           </div>
                         </div>
@@ -680,6 +685,12 @@ by measuring how difficult it is to predict the output based on previous experie
             <li class="nav-group-name">
               <a href="Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Classes/AIGameStrategy.html">AIGameStrategy</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/AIReflexStrategist.html">AIReflexStrategist</a>
+                </li>
                 <li class="nav-group-task">
                   <a href="Classes/GameDeathPit.html">GameDeathPit</a>
                 </li>

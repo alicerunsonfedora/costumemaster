@@ -20,10 +20,7 @@ make it out and figure out what's going on?
 
 ## Features
 
-- 🕹 **Works with Game Center**: Challenge your friends and earn achievements!
-- 🍎 **Designed for macOS**: Written completely in Swift, SpriteKit, and GameplayKit!
-- ⚙️ **Configurable**: Customize keyboard shortcuts and other preferences with ease!
-- 📖 **Open source**:  Licensed under Mozilla Public License v2.0!
+![Feature Set](https://github.com/alicerunsonfedora/CS400/raw/root/.readme/featureset.png)
 
 ![In-game screenshot](https://github.com/alicerunsonfedora/CS400/raw/root/.readme/game.png)
 
