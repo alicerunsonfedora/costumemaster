@@ -123,7 +123,7 @@ public class ConsoleViewModel: ObservableObject {
     /// Log a success message to the console.
     /// - Parameter message: The contents of the message entry.
     /// - Parameter silent: Whether to skip printing the message to the terminal.
-    public func success(_ message: String, silent: Bool = true) {
+    public func success(_ message: String, silent: Bool = false) {
         self.sendMessage(with: message, type: .success, silent: silent)
     }
 

@@ -73,7 +73,6 @@ extension AIGameScene {
         // Show the window and try to make it the key window.
         let windowController = NSWindowController(window: window)
         windowController.showWindow(self)
-        windowController.window?.makeKey()
 
         self.consoleWindowController = windowController
     }

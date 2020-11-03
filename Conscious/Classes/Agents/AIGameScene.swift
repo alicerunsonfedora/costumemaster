@@ -39,16 +39,15 @@ import SwiftUI
     /// Agent testing mode will need to be enabled, and options for the agent type and move budget should be available.
     /// In cases where this isn't available, the random move agent will be used and will have a budget of one move.
     override func sceneDidLoad() {
-        console.info("Initialized simulation console.", silent: true)
         console.debug("Setting up level for AI interaction.", silent: true)
-
-        // Initialize the console.
-        initConsole()
-
         super.sceneDidLoad()
-        console.info("Loaded level successfully: \(self.name ?? "AI Level")", silent: true)
 
-        guard let initialState = self.getState() else { return }
+        console.success("Loaded level successfully: \(self.name ?? "AI Level")", silent: true)
+
+        guard let initialState = self.getState() else {
+            console.error("Could not capture the initial state. Aborting simulation.")
+            return
+        }
         console.info("Captured initial state: \(initialState)")
 
         self.strategist = self.getStrategy(with: initialState)
@@ -68,7 +67,13 @@ import SwiftUI
 
     /// Close the simulator console and prevent scene-saving.
     override func willMove(from view: SKView) {
-        self.consoleWindowController?.close()
+        consoleWindowController?.close()
+    }
+
+    override func didMove(to view: SKView) {
+        consoleWindowController?.close()
+        initConsole()
+        console.info("Initialized simulation console.", silent: true)
     }
 
     /// Attempt to solve the level by generating batches of actions to run infinitely or until the puzzle is solved.
@@ -84,28 +89,31 @@ import SwiftUI
         var solvedState = agent.state.isWin(for: agent.state.player)
         var moves = [AIGameDecision]()
 
+        // When the state is assessed, removing the action with the "AI Thread" key will stop execution.
+        let assessState = SKAction.run {
+            solvedState = agent.state.isWin(for: agent.state.player)
+            if solvedState {
+                self.console.debug("State is a winning state. AI Thread will be killed.")
+                self.console.success("Simulation finished with winning state in \(self.currentTime) seconds.")
+                self.removeAction(forKey: "AI Thread")
+            }
+        }
+
         // Generate a set of moves and run those moves accordingly.
         let generateAction = SKAction.run {
             moves = self.strategize(with: rate ?? 1)
             self.console.info("Move queue populated with \(moves.count) moves.")
         }
+
         let actOnMoves = SKAction.run { self.repeatAfterMe(moves) }
 
         // Pause for at least two seconds and the budget rate so that all actions can be played properly.
         let pause = SKAction.wait(forDuration: 2.0 + (Double(rate ?? 10) * 2.5))
 
-        // When the state is reassessed, removing the action with the "AI Thread" key will stop execution.
-        let reassessState = SKAction.run {
-            solvedState = agent.state.isWin(for: agent.state.player)
-            if solvedState {
-                self.console.debug("State is a winning state. AI Thread will be killed.")
-                self.removeAction(forKey: "AI Thread")
-                self.console.success("Found winning state. Simulation finished.")
-            }
-        }
+        let sequence = solvedState ? [] : [assessState, generateAction, actOnMoves, pause]
 
         // Create the action for repeating these moves and run them with the "AI Thread" key.
-        let repeatable = SKAction.repeatForever(SKAction.sequence([generateAction, actOnMoves, pause, reassessState]))
+        let repeatable = SKAction.repeatForever(SKAction.sequence(sequence))
         self.run(repeatable, withKey: "AI Thread")
     }
 
