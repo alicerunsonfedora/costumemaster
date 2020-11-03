@@ -125,9 +125,11 @@ import SwiftUI
                     console.debug("Reached winning state after \(index) iterations. Stopping batch generation...")
                     break
                 }
-                states.append(strat.nextAction())
+                let move = strat.nextAction()
+                states.append(move)
                 if let newState = self.getState() {
                     strat.state = newState
+                    strat.state.apply(move)
                 }
             }
         }

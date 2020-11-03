@@ -64,7 +64,9 @@ class AIPredeterminedTreeStrategist: AIGameStrategy {
 
         let cannotEscape = root?.createBranch(value: false, attribute: "nearInput?".toProtocol())
         let activeInput = cannotEscape?.createBranch(value: true, attribute: "inputActive?".toProtocol())
-        activeInput?.createBranch(value: true, attribute: "MOVE_RANDOM".toProtocol())
+        let allActive = activeInput?.createBranch(value: true, attribute: "allInputsActive?".toProtocol())
+        allActive?.createBranch(value: true, attribute: "MOVE_EXIT_CLOSER".toProtocol())
+        allActive?.createBranch(value: false, attribute: "MOVE_RANDOM".toProtocol())
 
         let needsObj = activeInput?.createBranch(value: false, attribute: "requiresObject?".toProtocol())
         let hasObj = needsObj?.createBranch(value: true, attribute: "hasObject?".toProtocol())
@@ -100,9 +102,12 @@ class AIPredeterminedTreeStrategist: AIGameStrategy {
             nearObject = object.distance(between: state.player.position) < 64
         }
 
+        let exitInputs = state.inputs.filter { (inp: AIAbstractGameSignalSender) in inp.outputs.contains(state.exit) }
+        let allActive = exitInputs.allSatisfy { input in input.active } || false
+
         return [
             "canEscape?": state.isWin(for: state.player) as NSObjectProtocol,
-            "nearExit?": (state.exit.distance(between: state.player.position) < 64) as NSObjectProtocol,
+            "nearExit?": (state.exit.distance(between: state.player.position) < 36) as NSObjectProtocol,
             "nearInput?": nearInput as NSObjectProtocol,
             "inputActive?": (closestInput?.active ?? false) as NSObjectProtocol,
             "inputRelevant?": (closestInput?.outputs.contains(state.exit) ?? false) as NSObjectProtocol,
@@ -111,7 +116,8 @@ class AIPredeterminedTreeStrategist: AIGameStrategy {
                 [GameSignalKind.computerT2, GameSignalKind.computerT1].contains(closestInput?.kind) == true
             ) as NSObjectProtocol,
             "hasObject?": state.player.carryingItems as NSObjectProtocol,
-            "nearObj?": nearObject as NSObjectProtocol
+            "nearObj?": nearObject as NSObjectProtocol,
+            "allInputsActive?": allActive as NSObjectProtocol
         ]
     }
 

@@ -114,7 +114,7 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
     /// Receive input from a player or event.
     func receive(with player: Player?, event: NSEvent?, handler: ((Any?) -> Void)) {
         if let position = player?.position {
-            if position.distance(between: self.position) < (self.texture?.size().width ?? 1) / 4 {
+            if position.distance(between: self.position) < 36 {
                 handler(nil)
             }
         }
