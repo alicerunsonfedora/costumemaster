@@ -34,6 +34,10 @@ struct AISimulatorView: View {
 
         /// Entry.
         case entry = "Entry"
+
+        /// Basic.
+        /// A level with a single lever and exit door.
+        case basic = "Basic"
     }
 
     /// Returns the title for the agent type.
