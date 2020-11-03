@@ -68,6 +68,7 @@ extension AIGameScene {
         window.addTitlebarAccessoryViewController(titleAccessory)
         window.addTitlebarAccessoryViewController(accessory)
         window.titleVisibility = .hidden
+        window.setContentSize(host.fittingSize)
 
         // Show the window and try to make it the key window.
         let windowController = NSWindowController(window: window)

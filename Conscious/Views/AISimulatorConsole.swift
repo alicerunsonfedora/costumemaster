@@ -33,7 +33,8 @@ struct AISimulatorConsole: View {
                                 .foregroundColor(.primary)
                         }
                 }
-                .padding(8)
+                .padding(.vertical, 8)
+                .padding(.horizontal, 12)
                 .background(Color(.controlBackgroundColor))
             }
             List(self.messageList) { message in
