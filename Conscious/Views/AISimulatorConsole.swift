@@ -78,8 +78,11 @@ struct AISimulatorConsole: View {
             color = Color(.systemRed)
             imageName = "xmark.circle"
         case .debug:
-            color = Color(.systemGreen)
+            color = Color(.systemIndigo)
             imageName = "ant"
+        case .success:
+            color = Color(.systemGreen)
+            imageName = "checkmark.circle.fill"
         default:
             color = .gray
             imageName = "questionmark"

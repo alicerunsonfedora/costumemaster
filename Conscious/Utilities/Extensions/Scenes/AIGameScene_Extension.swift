@@ -78,4 +78,27 @@ extension AIGameScene {
         self.consoleWindowController = windowController
     }
 
+    /// Run any post-update logic and check input states.
+    func aiFinish() {
+        for input in self.switches where input.activationMethod.contains(.activeByPlayerIntervention) {
+            if [GameSignalKind.pressurePlate, GameSignalKind.trigger].contains(input.kind)
+                && !(input is GameIrisScanner) {
+                input.activate(with: nil, player: self.playerNode, objects: self.interactables)
+            } else if input is GameIrisScanner &&
+                        input.shouldActivateOnIntervention(with: self.playerNode, objects: self.interactables) {
+                input.activate(with: nil, player: self.playerNode, objects: self.interactables)
+            }
+        }
+        self.checkDoorStates()
+        if self.exitNode?.active == true {
+            self.exitNode?.receive(with: self.playerNode, event: nil) { _ in }
+        }
+        for child in self.structure.children where child is GameDeathPit {
+            guard let pit = child as? GameDeathPit else { continue }
+            if pit.shouldKill(self.playerNode) && !self.playerDied {
+                self.kill()
+            }
+        }
+    }
+
 }

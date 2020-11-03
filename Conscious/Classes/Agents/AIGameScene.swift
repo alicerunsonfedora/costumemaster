@@ -100,6 +100,7 @@ import SwiftUI
             if solvedState {
                 self.console.debug("State is a winning state. AI Thread will be killed.")
                 self.removeAction(forKey: "AI Thread")
+                self.console.success("Found winning state. Simulation finished.")
             }
         }
 
@@ -161,6 +162,11 @@ import SwiftUI
     /// Prevent keyboard input.
     override func keyDown(with event: NSEvent) {
         blockInput()
+    }
+
+    /// Run the AI's version of didFinishUpdate.
+    override func didFinishUpdate() {
+        self.aiFinish()
     }
 
     /// Capture the current scene as a game state.

@@ -82,7 +82,7 @@ struct AISimulatorConsoleToolbar: View {
         case .errorsAndWarningsOnly:
             console.filter = [.warning, .error]
         default:
-            console.filter = [.info, .warning, .debug, .error, .unknown]
+            console.filter = [.info, .warning, .debug, .error, .unknown, .success]
         }
     }
 }

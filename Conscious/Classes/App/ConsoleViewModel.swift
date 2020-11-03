@@ -23,7 +23,7 @@ public class ConsoleViewModel: ObservableObject {
     @Published public var messages: [Message] = []
 
     /// The filter for the types of console messages that can be displayed.
-    @Published public var filter: [MessageType] = [.info, .debug, .error, .warning, .unknown]
+    @Published public var filter: [MessageType] = [.info, .debug, .error, .warning, .unknown, .success]
 
     /// Whether to enable "now mode".
     @Published public var nowMode: Bool = false
@@ -45,6 +45,9 @@ public class ConsoleViewModel: ObservableObject {
 
         /// A debugging message.
         case debug = "DEBUG"
+
+        /// A success message.
+        case success = "SUCCESS"
     }
 
     /// A data structure that represents a console message.
@@ -115,6 +118,13 @@ public class ConsoleViewModel: ObservableObject {
     /// - Parameter silent: Whether to skip printing the message to the terminal.
     public func debug(_ message: String, silent: Bool = true) {
         self.sendMessage(with: message, type: .debug, silent: silent)
+    }
+
+    /// Log a success message to the console.
+    /// - Parameter message: The contents of the message entry.
+    /// - Parameter silent: Whether to skip printing the message to the terminal.
+    public func success(_ message: String, silent: Bool = true) {
+        self.sendMessage(with: message, type: .success, silent: silent)
     }
 
     /// Clears the console.
