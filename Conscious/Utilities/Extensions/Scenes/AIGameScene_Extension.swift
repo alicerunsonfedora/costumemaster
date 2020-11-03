@@ -20,6 +20,14 @@ extension AIGameScene {
 
     /// Initialize the console window and begin streaming information to the console view model.
     func initConsole() {
+
+        // If we already initialized the console, just bring the window forward. There is no need to create a new
+        // console window.
+        if self.consoleWindowController != nil {
+            self.consoleWindowController?.window?.orderFront(self)
+            return
+        }
+
         // Get the name of the level and change it accordingly.
         var name = self.name ?? "AI Level"
         if name.hasSuffix("AI") {

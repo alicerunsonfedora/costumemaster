@@ -15,6 +15,19 @@ import Foundation
 
 class GameManagerDelegate {
 
+    /// Whether the game's AI simulator can be run.
+    static var canRunSimulator: Bool = true {
+        didSet {
+            if let main = NSApplication.shared.mainMenu {
+                if let game = main.item(withTitle: "Game")?.submenu {
+                    game.item(withTitle: "Run AI Simulation...")?.isEnabled = canRunSimulator
+                    game.item(withTitle: "Open Simulator Console")?.isEnabled = !canRunSimulator
+                }
+            }
+        }
+    }
+
+    /// The game scene associated with the current window.
     static var gameScene: GameScene? {
         if let controller = NSApplication.shared.mainWindow?.contentViewController as? ViewController {
             return controller.skView.scene as? GameScene
@@ -22,6 +35,7 @@ class GameManagerDelegate {
         return nil
     }
 
+    /// The SKView associated with the current window.
     static var gameView: SKView? {
         if let controller = NSApplication.shared.mainWindow?.contentViewController as? ViewController {
             return controller.skView
@@ -29,10 +43,12 @@ class GameManagerDelegate {
         return nil
     }
 
+    /// The ViewController associated with the current window.
     static var gameController: ViewController? {
         return NSApplication.shared.mainWindow?.contentViewController as? ViewController
     }
 
+    /// Open the main menu.
     static func callMainMenu() {
         if let view = GameManagerDelegate.gameView {
             if view.scene != nil && view.scene?.name != "MainMenu" {
@@ -44,6 +60,7 @@ class GameManagerDelegate {
         }
     }
 
+    /// Start the game.
     static func startGame() {
         if GameStore.shared.lastSavedScene != "" {
             confirm("You'll lose your level progress.",
@@ -56,10 +73,12 @@ class GameManagerDelegate {
         }
     }
 
+    /// Resume the game from the last saved scene.
     static func resumeGame() {
         GameManagerDelegate.loadScene(with: GameStore.shared.lastSavedScene, fadeDuration: 3.0)
     }
 
+    /// Load a scene with a given name.
     static func loadScene(with name: String, keepHistory: Bool = false) {
         if let view = GameManagerDelegate.gameView {
             if let scene = SKScene(fileNamed: name) {
@@ -69,6 +88,7 @@ class GameManagerDelegate {
         }
     }
 
+    /// Load a scene with a given name.
     static func loadScene(with name: String, keepHistory: Bool = false, fadeDuration: TimeInterval) {
         if let view = GameManagerDelegate.gameView {
             if let scene = SKScene(fileNamed: name) {

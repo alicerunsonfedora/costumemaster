@@ -132,9 +132,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             ]
         )
         GameManagerDelegate.loadScene(with: level + "AI", keepHistory: true, fadeDuration: 3.0)
+        GameManagerDelegate.canRunSimulator = false
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        GameManagerDelegate.canRunSimulator = true
         DispatchQueue.main.async {
             SKPaymentQueue.default().add(IAPObserver.shared)
             IAPManager.shared.makeAllProductRequests()

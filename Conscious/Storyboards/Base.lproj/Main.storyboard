@@ -75,7 +75,7 @@
                             </menuItem>
                             <menuItem title="Game" id="A07-iA-z37" userLabel="Game">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Game" id="Kb2-x0-BVM">
+                                <menu key="submenu" title="Game" autoenablesItems="NO" id="Kb2-x0-BVM">
                                     <items>
                                         <menuItem title="Start Game" keyEquivalent="n" id="Zre-wF-Fi2" userLabel="Start Game">
                                             <connections>
@@ -87,7 +87,7 @@
                                                 <action selector="resumeGame:" target="Voe-Tx-rLC" id="eUz-JX-Weh"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Open Level..." enabled="NO" keyEquivalent="O" id="AP9-Cv-Toc" userLabel="Open Level..."/>
+                                        <menuItem title="Open Level..." enabled="NO" alternate="YES" keyEquivalent="O" id="AP9-Cv-Toc" userLabel="Open Level..."/>
                                         <menuItem isSeparatorItem="YES" id="8ey-bK-csm"/>
                                         <menuItem title="Back to Main Menu..." keyEquivalent="M" id="XNn-GZ-Mfm">
                                             <connections>
@@ -95,9 +95,15 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="ftR-ku-jxo"/>
-                                        <menuItem title="Run AI Simulation..." keyEquivalent="r" id="tCR-K0-86F">
+                                        <menuItem title="Run AI Simulation..." enabled="NO" keyEquivalent="r" id="tCR-K0-86F">
                                             <connections>
-                                                <action selector="openSimulator:" target="Voe-Tx-rLC" id="Gn8-a7-id6"/>
+                                                <action selector="openSimulator:" target="Voe-Tx-rLC" id="NXw-N8-WXL"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Open Simulator Console" enabled="NO" keyEquivalent="c" id="QIP-Yu-QAe" userLabel="AI Simulator Console">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="openSimulatorConsole:" target="Voe-Tx-rLC" id="r2P-7G-esT"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -130,13 +136,6 @@
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                             <connections>
                                                 <action selector="toggleFullScreen:" target="Ady-hI-5gd" id="dU3-MA-1Rq"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="S5U-Gc-ECw"/>
-                                        <menuItem title="Open Simulator Console" keyEquivalent="c" id="QIP-Yu-QAe" userLabel="AI Simulator Console">
-                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
-                                            <connections>
-                                                <action selector="openSimulatorConsole:" target="Voe-Tx-rLC" id="r2P-7G-esT"/>
                                             </connections>
                                         </menuItem>
                                     </items>
