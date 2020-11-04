@@ -309,6 +309,8 @@ import SwiftUI
             strategist = AIGameStrategist(with: AIReflexStrategist(), reading: state)
         case .predeterminedTree:
             strategist = AIGameStrategist(with: AIPredeterminedTreeStrategist(), reading: state)
+        case .historyTree:
+            strategist = AIGameStrategist(with: AIHistoryTreeStrategist(), reading: state)
         default:
             console.error("Agent type \(AppDelegate.arguments.agentTestingType.rawValue) cannot be found.")
             console.warn("Using fallback agent \"randomMove\".")

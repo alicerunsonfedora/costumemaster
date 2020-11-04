@@ -40,5 +40,8 @@ struct CommandLineArguments {
 
         /// An agent with a pre-determined decision tree.
         case predeterminedTree = "predTree"
+
+        /// An agent with a dynamically generated decision tree based on its previous actions.
+        case historyTree = "historyTree"
     }
 }

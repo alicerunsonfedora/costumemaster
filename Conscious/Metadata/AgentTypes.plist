@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>historyTree</key>
+	<dict>
+		<key>Title</key>
+		<string>History-based Decision Tree</string>
+		<key>Description</key>
+		<string>Determines the next set of moves by asking questions about the current state of the level and making a decision from a decision tree built from a history of its previous actions.</string>
+	</dict>
 	<key>reflex</key>
 	<dict>
 		<key>Title</key>

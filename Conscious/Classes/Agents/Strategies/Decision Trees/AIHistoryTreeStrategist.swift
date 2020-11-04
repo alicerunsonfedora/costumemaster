@@ -25,7 +25,9 @@ class AIHistoryTreeStrategist: AITreeStrategy {
     /// Create the decision tree that the agent will use to assess the states.
     override func makeDecisionTree() -> GKDecisionTree {
         let history = self.history.map { item in item.assessement.toExample() }
-        return GKDecisionTree(examples: history, actions: actions, attributes: attrribs)
+        let tree = GKDecisionTree(examples: history, actions: actions, attributes: attrribs)
+        console?.debug("Most dominant question (root node): \(String(describing: tree.rootNode))")
+        return tree
     }
 
 }
