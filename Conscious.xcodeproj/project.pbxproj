@@ -375,6 +375,33 @@
 			path = Particles;
 			sourceTree = "<group>";
 		};
+		BF08BA3B255309A000BE3460 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BF4630F82550A45D00EB606D /* AIGameStrategy.swift */,
+				BF08BA382553007500BE3460 /* AITreeStrategy.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BF08BA3C255309B600BE3460 /* Random */ = {
+			isa = PBXGroup;
+			children = (
+				BF37C7FC253A07A000CC156E /* AIRandomMoveStrategist.swift */,
+				BF5FAB41254335DD0008E8B3 /* AIRandomWeightedStrategist.swift */,
+				BF4630F52550A34400EB606D /* AIReflexStrategist.swift */,
+			);
+			path = Random;
+			sourceTree = "<group>";
+		};
+		BF08BA3D255309C100BE3460 /* Decision Trees */ = {
+			isa = PBXGroup;
+			children = (
+				BFCE7C3525474623005FBFA2 /* AIPredeterminedTreeStrategist.swift */,
+			);
+			path = "Decision Trees";
+			sourceTree = "<group>";
+		};
 		BF23338B251D0CFE0018C854 /* Signals */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,13 +577,10 @@
 		BF5FAB40254335440008E8B3 /* Strategies */ = {
 			isa = PBXGroup;
 			children = (
-				BF37C7FC253A07A000CC156E /* AIRandomMoveStrategist.swift */,
+				BF08BA3D255309C100BE3460 /* Decision Trees */,
+				BF08BA3C255309B600BE3460 /* Random */,
+				BF08BA3B255309A000BE3460 /* Common */,
 				BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */,
-				BF5FAB41254335DD0008E8B3 /* AIRandomWeightedStrategist.swift */,
-				BFCE7C3525474623005FBFA2 /* AIPredeterminedTreeStrategist.swift */,
-				BF4630F52550A34400EB606D /* AIReflexStrategist.swift */,
-				BF4630F82550A45D00EB606D /* AIGameStrategy.swift */,
-				BF08BA382553007500BE3460 /* AITreeStrategy.swift */,
 			);
 			path = Strategies;
 			sourceTree = "<group>";
