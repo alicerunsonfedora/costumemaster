@@ -11,6 +11,7 @@
 		BF02CB16252E454700E16EC9 /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB15252E454700E16EC9 /* death.wav */; };
 		BF02CB19252E50F600E16EC9 /* Dust.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB18252E50F600E16EC9 /* Dust.sks */; };
 		BF02CB20252E553D00E16EC9 /* ElectricalSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB1E252E553D00E16EC9 /* ElectricalSpark.sks */; };
+		BF08BA392553007500BE3460 /* AITreeStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08BA382553007500BE3460 /* AITreeStrategy.swift */; };
 		BF0D2C1C24FADC4E00AEF86F /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = BF0D2C1B24FADC4E00AEF86F /* KeyboardShortcuts */; };
 		BF0D2C1E24FADD1F00AEF86F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */; };
 		BF0D2C2024FAE86B00AEF86F /* ControlsPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D2C1F24FAE86B00AEF86F /* ControlsPrefsViewController.swift */; };
@@ -175,6 +176,7 @@
 		BF02CB15252E454700E16EC9 /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death.wav; sourceTree = "<group>"; };
 		BF02CB18252E50F600E16EC9 /* Dust.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Dust.sks; sourceTree = "<group>"; };
 		BF02CB1E252E553D00E16EC9 /* ElectricalSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ElectricalSpark.sks; sourceTree = "<group>"; };
+		BF08BA382553007500BE3460 /* AITreeStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AITreeStrategy.swift; sourceTree = "<group>"; };
 		BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		BF0D2C1F24FAE86B00AEF86F /* ControlsPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsPrefsViewController.swift; sourceTree = "<group>"; };
 		BF109CD624FAFD6F00F06E47 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -554,6 +556,7 @@
 				BFCE7C3525474623005FBFA2 /* AIPredeterminedTreeStrategist.swift */,
 				BF4630F52550A34400EB606D /* AIReflexStrategist.swift */,
 				BF4630F82550A45D00EB606D /* AIGameStrategy.swift */,
+				BF08BA382553007500BE3460 /* AITreeStrategy.swift */,
 			);
 			path = Strategies;
 			sourceTree = "<group>";
@@ -1077,6 +1080,7 @@
 				BF41A4B92533757B00AC6001 /* WatchYourStepView.swift in Sources */,
 				BF3977C02530D58E00BBD591 /* AIRandomNetworkStrategist.swift in Sources */,
 				BFC9239F250BC88C0002009B /* SoundPrefsViewController.swift in Sources */,
+				BF08BA392553007500BE3460 /* AITreeStrategy.swift in Sources */,
 				BFEE78C324FBF1FC006FBFF0 /* GameAchievments.swift in Sources */,
 				BF4630F62550A34400EB606D /* AIReflexStrategist.swift in Sources */,
 				BFAD7FF5250FF4CD00768609 /* ExposureChallenge.swift in Sources */,
