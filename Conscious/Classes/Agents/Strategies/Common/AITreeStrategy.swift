@@ -18,87 +18,91 @@ import GameplayKit
 /// submitting that assessement to a decision tree, depending on the tree's implementation.
 @available(OSX 10.15, *)
 class AITreeStrategy: AIGameStrategy {
-        
+
     /// A history of all of the previous assessements this agent has made.
     var history: [ActionHistoryItem] = []
-    
+
+    /// Whether the agent should record all of its previous attempts. Defaults to false.
+    var recordsHistory: Bool = false
+
     /// A structure that represents an action history item.
     public struct ActionHistoryItem {
-        
+
         /// The assessement of the state.
         let assessement: StateAssessement
-        
+
         /// The action that was derived from the state.
         let action: AIGameDecision
-        
+
         /// The internal score for this item.
         var score: Int = 0
     }
-    
+
     // MARK: - State Assessements
-    
+
     /// A structure that defines a state assessement.
     public struct StateAssessement: Identifiable {
-        
+
         /// A unique identifier for this state assessement.
         let id = UUID()
         //swiftlint:disable:previous identifier_name
-        
+
         /// Can the agent escape?
         let canEscape: Bool
-        
+
         /// Is the agent near the exit?
         let nearExit: Bool
-        
+
         /// Is the agent near an input device?
         let nearInput: Bool
-        
+
         /// Is the closest input nearby active?
         let inputActive: Bool
-        
+
         /// Is the closest input device relevant to opening the exit?
         let inputRelevant: Bool
-        
+
         /// Does the closest input require a heavy object?
         let requiresObject: Bool
-        
+
         /// Does the closest input require a specific costume?
         let requiresCostume: Bool
-        
+
         /// Does the agent have an object in its inventory?
         let hasObject: Bool
-        
+
         /// Is the agent near an object?
         let nearObject: Bool
-        
+
         /// Are all of the inputs that send signals to the exit door active?
         let allInputsActive: Bool
-        
+
         /// Returns a copy of the assessement as a dictionary suitable for decision trees.
         func toDict() -> [AnyHashable: NSObjectProtocol] {
             return [
                 "canEscape?": self.canEscape as NSObjectProtocol,
-                "nearExit?":  self.nearExit as NSObjectProtocol,
-                "nearInput?":  self.nearInput as NSObjectProtocol,
-                "inputActive?":  self.inputActive as NSObjectProtocol,
-                "inputRelevant?":  self.inputRelevant as NSObjectProtocol,
-                "requiresObject?":  self.requiresObject as NSObjectProtocol,
-                "requiresCostume?":  self.requiresCostume as NSObjectProtocol,
-                "hasObject?":  self.hasObject as NSObjectProtocol,
-                "nearObj?":  self.nearObject as NSObjectProtocol,
-                "allInputsActive?":  self.allInputsActive as NSObjectProtocol
+                "nearExit?": self.nearExit as NSObjectProtocol,
+                "nearInput?": self.nearInput as NSObjectProtocol,
+                "inputActive?": self.inputActive as NSObjectProtocol,
+                "inputRelevant?": self.inputRelevant as NSObjectProtocol,
+                "requiresObject?": self.requiresObject as NSObjectProtocol,
+                "requiresCostume?": self.requiresCostume as NSObjectProtocol,
+                "hasObject?": self.hasObject as NSObjectProtocol,
+                "nearObj?": self.nearObject as NSObjectProtocol,
+                "allInputsActive?": self.allInputsActive as NSObjectProtocol
             ]
         }
     }
-    
+
     /// Returns a given decision tree that the agent will use to grab its next best move.
     /// - Returns: A decision tree (GKDecisionTree)
-    /// - Important: This method must be overridden in all subclasses.
+    /// - Important: This method must be overridden in all subclasses; otherwise, the decision tree may not be able
+    /// to generate an answer, and the agent will use a fallback action.
     func makeDecisionTree() -> GKDecisionTree {
         console?.warn("makeDecisionTree has not been implemented for this agent. Returning an empty decision tree.")
         return GKDecisionTree()
     }
-    
+
     /// Returns an active assessement of the given state.
     /// - Parameter state: The state to assess.
     func assess(state: AIAbstractGameState) -> StateAssessement {
@@ -116,7 +120,7 @@ class AITreeStrategy: AIGameStrategy {
 
         let exitInputs = state.inputs.filter { (inp: AIAbstractGameSignalSender) in inp.outputs.contains(state.exit) }
         let allActive = exitInputs.allSatisfy { input in input.active } || false
-        
+
         return StateAssessement(
             canEscape: state.isWin(for: state.player),
             nearExit: (state.exit.distance(between: state.player.position) < 36),
@@ -132,9 +136,9 @@ class AITreeStrategy: AIGameStrategy {
             allInputsActive: allActive
         )
     }
-    
+
     // MARK: - Best Move for Player
-    
+
     /// Returns the best move for the active player.
     ///
     /// The agent will attempt to create an assessement of the current state and receive a response from
@@ -149,12 +153,12 @@ class AITreeStrategy: AIGameStrategy {
             console?.error("Supplied game state is not an AI game state. Returning default action.")
             return defaultAction()
         }
-        
+
         // Assess the state and prepare it for submission to the decision tree.
-        let answers = self.assess(state: state).toDict()
+        let assessement = self.assess(state: state)
 
         // Get a response from the decision tree.
-        guard var response = makeDecisionTree().findAction(forAnswers: answers) as? String else {
+        guard var response = makeDecisionTree().findAction(forAnswers: assessement.toDict()) as? String else {
             console?.error("Response from tree was not valid. Returning default action.")
             return defaultAction()
         }
@@ -162,11 +166,18 @@ class AITreeStrategy: AIGameStrategy {
 
         // The process function will look for special responses and convert them in actual actions based on context.
         response = self.process(response, from: state)
-        return AIGameDecision(by: AIGamePlayerAction(rawValue: response) ?? .stop, with: 1)
+        let action = AIGameDecision(by: AIGamePlayerAction(rawValue: response) ?? .stop, with: 1)
+
+        // If we can record our actions, create a history item and add it to the list.
+        if recordsHistory {
+            history.append(ActionHistoryItem(assessement: assessement, action: action))
+        }
+
+        return action
     }
-    
+
     // MARK: - Action Processing
-    
+
     /// Returns a specified action if the action is a special keyword.
     /// - Parameter action: The action to process.
     /// - Parameter state: The current state the action derived from.
@@ -189,7 +200,7 @@ class AITreeStrategy: AIGameStrategy {
             return action
         }
     }
-    
+
     /// Returns a default "stop" action.
     func defaultAction() -> AIGameDecision {
         return AIGameDecision(by: .stop, with: 0)
@@ -200,9 +211,9 @@ class AITreeStrategy: AIGameStrategy {
     func moveRandom() -> String {
         return (AIGamePlayerAction.movement().randomElement() ?? .stop).rawValue
     }
-    
+
     // MARK: - Object Detection with Distance
-    
+
     /// Returns the closest input device relative to the player.
     /// - Parameter state: The state the agent will assess to determine which input to target.
     /// - Returns: The input device closest to the player, or nil.
@@ -315,5 +326,5 @@ class AITreeStrategy: AIGameStrategy {
         console?.debug("Action \(action) makes shortest distance (\(minimumDistance)) to exit.")
         return action.rawValue
     }
-    
+
 }
