@@ -31,23 +31,17 @@ class AITreeStrategy: AIGameStrategy {
             ["MOVE_RANDOM", "MOVE_EXIT_CLOSER", "MOVE_INPUT_CLOSER", "MOVE_OBJ_CLOSER"]
             .map { string in string.toProtocol() }
     }
-
-    /// A list of all the questions the decision tree contains.
-    var attrribs: [NSObjectProtocol] {
-        [
-            "canEscape?", "nearExit?", "nearInput?", "inputActive?", "inputRelevant?", "requiresObject?",
-            "requiresCostume?", "hasObject?", "nearObj?", "allInputsActive?"
-        ].map { string in string.toProtocol() }
-    }
-
     /// A structure that represents an action history item.
     public struct ActionHistoryItem {
 
         /// The assessement of the state.
         let assessement: StateAssessement
 
-        /// The action that was derived from the state.
+        /// The fully processed action that the agent took.
         let action: AIGameDecision
+
+        /// The action that was derived from the state.
+        let derivedAction: String
 
         /// The internal score for this item.
         var score: Int = 0
@@ -56,11 +50,7 @@ class AITreeStrategy: AIGameStrategy {
     // MARK: - State Assessements
 
     /// A structure that defines a state assessement.
-    public struct StateAssessement: Identifiable {
-
-        /// A unique identifier for this state assessement.
-        let id = UUID()
-        //swiftlint:disable:previous identifier_name
+    public struct StateAssessement {
 
         /// Can the agent escape?
         let canEscape: Bool
@@ -93,19 +83,19 @@ class AITreeStrategy: AIGameStrategy {
         let allInputsActive: Bool
 
         /// Returns a copy of the assessement as an example for decision trees.
-        func toExample() -> [NSObjectProtocol] {
+        func toList() -> [AnyHashable] {
             [
-                self.canEscape,
-                self.nearExit,
-                self.nearInput,
-                self.inputActive,
-                self.inputRelevant,
-                self.requiresObject,
-                self.requiresCostume,
-                self.hasObject,
-                self.nearObject,
-                self.allInputsActive
-            ].map { note in note as NSObjectProtocol }
+                canEscape,
+                nearExit,
+                nearInput,
+                inputActive,
+                inputRelevant,
+                requiresObject,
+                requiresCostume,
+                hasObject,
+                nearObject,
+                allInputsActive
+            ]
         }
 
         /// Returns a copy of the assessement as a dictionary suitable for decision trees.
@@ -191,17 +181,35 @@ class AITreeStrategy: AIGameStrategy {
         // Get a response from the decision tree.
         guard var response = makeDecisionTree().findAction(forAnswers: assessement.toDict()) as? String else {
             console?.error("Response from tree was not valid. Returning default action.")
-            return defaultAction()
+            let action = defaultAction()
+            if recordsHistory {
+                history.append(
+                    ActionHistoryItem(
+                        assessement: assessement,
+                        action: action,
+                        derivedAction: action.action.rawValue,
+                        score: -100
+                    )
+                )
+            }
+            return action
         }
         console?.debug("Received response from decision tree: \(response)")
 
         // The process function will look for special responses and convert them in actual actions based on context.
+        let originalResponse = response
         response = self.process(response, from: state)
         let action = AIGameDecision(by: AIGamePlayerAction(rawValue: response) ?? .stop, with: 1)
 
         // If we can record our actions, create a history item and add it to the list.
         if recordsHistory {
-            history.append(ActionHistoryItem(assessement: assessement, action: action))
+            history.append(
+                ActionHistoryItem(
+                    assessement: assessement,
+                    action: action,
+                    derivedAction: originalResponse
+                )
+            )
         }
 
         return action

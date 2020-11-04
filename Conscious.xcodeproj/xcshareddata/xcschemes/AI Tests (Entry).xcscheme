@@ -53,7 +53,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "--start-level EntryAI"
+            argument = "--start-level BasicAI"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -61,7 +61,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "--agent-type predTree"
+            argument = "--agent-type historyTree"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
