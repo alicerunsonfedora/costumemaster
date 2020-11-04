@@ -25,6 +25,21 @@ class AITreeStrategy: AIGameStrategy {
     /// Whether the agent should record all of its previous attempts. Defaults to false.
     var recordsHistory: Bool = false
 
+    /// A list of all of the available actions the agent can make.
+    var actions: [NSObjectProtocol] {
+        AIGamePlayerAction.allCases.map { act in act.rawValue.toProtocol() } +
+            ["MOVE_RANDOM", "MOVE_EXIT_CLOSER", "MOVE_INPUT_CLOSER", "MOVE_OBJ_CLOSER"]
+            .map { string in string.toProtocol() }
+    }
+
+    /// A list of all the questions the decision tree contains.
+    var attrribs: [NSObjectProtocol] {
+        [
+            "canEscape?", "nearExit?", "nearInput?", "inputActive?", "inputRelevant?", "requiresObject?",
+            "requiresCostume?", "hasObject?", "nearObj?", "allInputsActive?"
+        ].map { string in string.toProtocol() }
+    }
+
     /// A structure that represents an action history item.
     public struct ActionHistoryItem {
 
@@ -76,6 +91,22 @@ class AITreeStrategy: AIGameStrategy {
 
         /// Are all of the inputs that send signals to the exit door active?
         let allInputsActive: Bool
+
+        /// Returns a copy of the assessement as an example for decision trees.
+        func toExample() -> [NSObjectProtocol] {
+            [
+                self.canEscape,
+                self.nearExit,
+                self.nearInput,
+                self.inputActive,
+                self.inputRelevant,
+                self.requiresObject,
+                self.requiresCostume,
+                self.hasObject,
+                self.nearObject,
+                self.allInputsActive
+            ].map { note in note as NSObjectProtocol }
+        }
 
         /// Returns a copy of the assessement as a dictionary suitable for decision trees.
         func toDict() -> [AnyHashable: NSObjectProtocol] {

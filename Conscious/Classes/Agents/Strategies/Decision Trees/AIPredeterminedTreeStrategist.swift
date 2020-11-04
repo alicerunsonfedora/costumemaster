@@ -16,6 +16,12 @@ import GameplayKit
 @available(OSX 10.15, *)
 class AIPredeterminedTreeStrategist: AITreeStrategy {
 
+    /// Initialize a predetermined tree strategist.
+    override init() {
+        super.init()
+        self.recordsHistory = false
+    }
+
     /// Returns the decision tree that the agent will use to determine its next best move.
     /// - Returns: A decision tree with hard-coded suggestions.
     override func makeDecisionTree() -> GKDecisionTree {
