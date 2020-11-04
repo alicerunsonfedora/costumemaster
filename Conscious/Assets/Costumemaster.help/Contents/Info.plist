@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en_US</string>
+	<key>CFBundleIdentifier</key>
+	<string>net.marquiskurt.costumemaster.help</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Costumemaster Help</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1</string>
+	<key>CFBundleSignature</key>
+	<string>hbwr</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>HPDBookAccessPath</key>
+	<string>Index.html</string>
+	<key>HPDBookIconPath</key>
+	<string></string>
+	<key>HPDBookIndexPath</key>
+	<string>English.lproj.helpindex</string>
+	<key>HPDBookKBProduct</key>
+	<string>costumemasterHelp</string>
+	<key>HPDBookTitle</key>
+	<string>The Costumemaster User Guide</string>
+	<key>HPDBookType</key>
+	<string>3</string>
+	<key>HPDBookCSIndexPath</key>
+	<string>English.lproj.cshelpindex</string>
+</dict>
+</plist>

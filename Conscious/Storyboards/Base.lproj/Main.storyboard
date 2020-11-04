@@ -172,7 +172,7 @@
                                     <items>
                                         <menuItem title="The Costumemaster Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
-                                                <action selector="showDocumentation:" target="Voe-Tx-rLC" id="FGW-ty-EQO"/>
+                                                <action selector="showDocumentation:" target="Voe-Tx-rLC" id="hI4-VT-pbT"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="uBC-GN-YLZ"/>

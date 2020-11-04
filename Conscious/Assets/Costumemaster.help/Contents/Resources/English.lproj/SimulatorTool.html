@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Run AI simulations in The Costumemaster</title>
+    <meta name="keywords" content="simulator, AI, agent, console, simulation, messages" />
+    <meta name="description"
+        content="The Costumemaster comes with a tool dedicated to running simulations with artificial intelligence agents." />
+    <!-- <meta name="robots" content="keywords, anchors" /> -->
+    <link href="../shared/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <a name="AISimulation"></a>
+    <h2 class="header">Using the AI Simulator Tool</h2>
+    <p>The Costumemaster comes with a tool dedicated to running simulations with artificial intelligence, the <b>AI
+            Simulator Tool</b>.</p>
+    <img src="../shared/aisim.png" />
+    <a name="AISimulation_TOOL"></a>
+    <h3 class="header">Using the Simulator Tool</h3>
+    <p>To test the agents in a sample level for AI, open The Costumemaster and go to <strong>Game &rsaquo; Run AI
+            Simulation...</strong>
+        or press ⌘R on your keyboard to open the AI Simulator tool. The AI simulator tool allows you to select an agent
+        type, move
+        generation rate, and level for the simulator.</p>
+    <p>Apply the settings you wish to use and then click &quot;Start Simulation&quot; to run the simulation. The game
+        window will play the level selected in the Simulator and a console window will appear.</p>
+
+    <a name="AISimulation_PREF"></a>
+    <h3 class="header">Configuring the Simulator</h3>
+    <img src="../shared/aisimtool.png" class="smaller" />
+    <p>There are multiple settings that can be configured in the Simulator Tool before running a simulation.</p>
+    <ul>
+        <li><b>Run simulation with agent</b> - The type of agent to use in the simulation. When changed, the description
+            above will
+            change so that information about that agent is present. </li>
+        <li><b>Run simulation in level</b> - The level to run the simulation in. Some are special levels for agents to
+            use, while others are the regular levels from the game. </li>
+        <li><b>Limit move generation per batch to</b> - How many moves should be made at a given time during the
+            simulation. The agent will perform actions in a batch of moves; defining this number will determine how many
+            moves are made in a given batch before re-assessing the state and making the next batch.</li>
+    </ul>
+
+    <a name="AISimulation_CONSOLE"></a>
+    <h3 class="header">View messages with the Simulator Console</h3>
+    <p>The AI Simulator Console displays messages from the simulation as the simulation progresses. These messages can
+        be used to analyze the agent's actions and its next likely moves.</p>
+
+    <img src="../shared/aisimconsole.png" alt="AI Simulator Console" />
+
+    <p>Messages sent to the console are also reflected in the command line if launched from the Terminal, with the
+        exception of debug
+        messages. If the console is closed, the console can be re-opened by going to <strong>Game &rsaquo; AI Simulator
+            Console</strong> in the
+        menu bar or press ⌥⌘C on your keyboard.</p>
+
+    <h4>Filter console messages</h4>
+    <p>By default, the console will display all messages. The Console Filter changes the filter parameters to only
+        display specific types of messages.</p>
+
+    <h4>View latest activity with Now Mode</h4>
+    <p>Now Mode allows you to view the console messages as a stack, with the most recent message at the top. Click the
+        Now Mode
+        button in the console toolbar to toggle Now Mode on/off.</p>
+</body>
+
+</html>

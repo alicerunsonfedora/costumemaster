@@ -69,6 +69,7 @@
 		BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69F2C224F4B11200BBF518 /* Alerts.swift */; };
 		BF6B98E324FDD03900A206FF /* Intro.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF6B98E224FDD03900A206FF /* Intro.sks */; };
 		BF6B98E524FDD36A00A206FF /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6B98E424FDD36A00A206FF /* Intro.swift */; };
+		BF6D83372551EEF9009B6890 /* Costumemaster.help in Resources */ = {isa = PBXBuildFile; fileRef = BF6D83362551EEF9009B6890 /* Costumemaster.help */; };
 		BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBAD624A8BDD400996890 /* AppDelegate.swift */; };
 		BF6FBADD24A8BDD400996890 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBADC24A8BDD400996890 /* GameScene.swift */; };
 		BF6FBADF24A8BDD400996890 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6FBADE24A8BDD400996890 /* ViewController.swift */; };
@@ -229,6 +230,7 @@
 		BF69F2C224F4B11200BBF518 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		BF6B98E224FDD03900A206FF /* Intro.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Intro.sks; sourceTree = "<group>"; };
 		BF6B98E424FDD36A00A206FF /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
+		BF6D83362551EEF9009B6890 /* Costumemaster.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Costumemaster.help; sourceTree = "<group>"; };
 		BF6FBAD324A8BDD400996890 /* The Costumemaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Costumemaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6FBAD624A8BDD400996890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6FBADC24A8BDD400996890 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -462,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6FBAE024A8BDDB00996890 /* Assets.xcassets */,
+				BF6D83362551EEF9009B6890 /* Costumemaster.help */,
 				BF3A0B8824F733AE00575F72 /* Fonts */,
 				BF7C5EF7250AC8100062B1CC /* Music */,
 				BF02CB1C252E51C700E16EC9 /* Particles */,
@@ -932,6 +935,7 @@
 			knownRegions = (
 				en,
 				Base,
+				English,
 			);
 			mainGroup = BF6FBACA24A8BDD400996890;
 			packageReferences = (
@@ -1013,6 +1017,7 @@
 				BFDC7B3B25096B1E00ED4DB9 /* alarmTick.wav in Resources */,
 				BF6FBAE124A8BDDB00996890 /* Assets.xcassets in Resources */,
 				BF9279EC252D3F3A004B548E /* Consequences.sks in Resources */,
+				BF6D83372551EEF9009B6890 /* Costumemaster.help in Resources */,
 				BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */,
 				BFD8796324F5C63C00552EDD /* Player_Backward_USB.atlas in Resources */,
 				BFD8795824F5A2FF00552EDD /* Player_Forward_Sorceress.atlas in Resources */,

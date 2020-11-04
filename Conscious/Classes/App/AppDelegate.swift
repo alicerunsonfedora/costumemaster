@@ -73,7 +73,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func showDocumentation(_ sender: Any) {
-        NSWorkspace.shared.open(URL(string: "https://costumemaster.marquiskurt.net")!)
+        NSApplication.shared.showHelp(sender)
+//        NSWorkspace.shared.open(URL(string: "https://costumemaster.marquiskurt.net")!)
     }
 
     @IBAction func restorePurchases(_ sender: Any) {

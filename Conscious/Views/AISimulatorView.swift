@@ -141,11 +141,13 @@ struct AISimulatorView: View {
     var buttonBar: some View {
         HStack {
             Button {
-                NSWorkspace.shared.open(
-                    URL(
-                        string: "https://costumemaster.marquiskurt.net/working-with-agents.html"
-                    )!
-                )
+                if let book = Bundle.main.object(forInfoDictionaryKey: "CFBundleHelpBookName") as? String {
+                    NSHelpManager.shared.openHelpAnchor("AISimulation_PREF", inBook: book)
+                } else {
+                    NSWorkspace.shared.open(
+                        URL(string: "https://costumemaster.marquiskurt.net/working-with-agents.html")!
+                    )
+                }
             } label: {
                 Image("questionmark")
                     .resizable()

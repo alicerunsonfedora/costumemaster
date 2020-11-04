@@ -99,7 +99,7 @@ through any tools. This agent class may be deprecated in a future release.
 
 - Important: The simulator tool is included in v1.2.0 of The Costumemaster or greater.
 
-To test the agents in a sample level for AI, open The Costumemaster and go to **Game &rsaquo; AI &rsaquo; Run Simulation...**
+To test the agents in a sample level for AI, open The Costumemaster and go to **Game &rsaquo; Run AI Simulation...**
 or press ⌘R on your keyboard to open the AI Simulator tool. The AI simulator tool allows you to select an agent type, move
 generation rate, and level for the simulator.
 
@@ -135,8 +135,8 @@ The Costumemaster comes with an AI simulator console that will log any messages 
 ![AI Simulator Console](https://github.com/alicerunsonfedora/CS400/raw/root/.readme/aisimconsole.png)
 
 Messages sent to the console are also reflected in the command line if launched from the Terminal, with the exception of debug
-messages. If the console is closed, the console can be re-opened by going to **View &rsaquo; AI Simulator Console** in the 
-menu bar.
+messages. If the console is closed, the console can be re-opened by going to **Game &rsaquo; AI Simulator Console** in the 
+menu bar or press ⌥⌘C on your keyboard.
 
 #### Now Mode
 
