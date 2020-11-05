@@ -31,13 +31,16 @@ struct AISimulatorView: View {
 
     /// An enumeration that represents the levels agents can play.
     enum AgentLevels: String, CaseIterable {
-
-        /// Entry.
-        case entry = "Entry"
-
         /// Basic.
         /// A level with a single lever and exit door.
         case basic = "Basic"
+
+        /// Multi-input Basic.
+        /// A level with a two levers and exit door.
+        case multiBasic = "MultiInputBasic"
+
+        /// Entry.
+        case entry = "Entry"
     }
 
     /// Returns the title for the agent type.

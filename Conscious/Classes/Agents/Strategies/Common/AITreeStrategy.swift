@@ -35,7 +35,7 @@ class AITreeStrategy: AIGameStrategy {
     public struct ActionHistoryItem {
 
         /// The assessement of the state.
-        let assessement: StateAssessement
+        let assessement: AIAbstractGameState.Assessement
 
         /// The fully processed action that the agent took.
         let action: AIGameDecision
@@ -48,73 +48,6 @@ class AITreeStrategy: AIGameStrategy {
     }
 
     // MARK: - State Assessements
-
-    /// A structure that defines a state assessement.
-    public struct StateAssessement {
-
-        /// Can the agent escape?
-        let canEscape: Bool
-
-        /// Is the agent near the exit?
-        let nearExit: Bool
-
-        /// Is the agent near an input device?
-        let nearInput: Bool
-
-        /// Is the closest input nearby active?
-        let inputActive: Bool
-
-        /// Is the closest input device relevant to opening the exit?
-        let inputRelevant: Bool
-
-        /// Does the closest input require a heavy object?
-        let requiresObject: Bool
-
-        /// Does the closest input require a specific costume?
-        let requiresCostume: Bool
-
-        /// Does the agent have an object in its inventory?
-        let hasObject: Bool
-
-        /// Is the agent near an object?
-        let nearObject: Bool
-
-        /// Are all of the inputs that send signals to the exit door active?
-        let allInputsActive: Bool
-
-        /// Returns a copy of the assessement as an example for decision trees.
-        func toList() -> [AnyHashable] {
-            [
-                canEscape,
-                nearExit,
-                nearInput,
-                inputActive,
-                inputRelevant,
-                requiresObject,
-                requiresCostume,
-                hasObject,
-                nearObject,
-                allInputsActive
-            ]
-        }
-
-        /// Returns a copy of the assessement as a dictionary suitable for decision trees.
-        func toDict() -> [AnyHashable: NSObjectProtocol] {
-            return [
-                "canEscape?": self.canEscape as NSObjectProtocol,
-                "nearExit?": self.nearExit as NSObjectProtocol,
-                "nearInput?": self.nearInput as NSObjectProtocol,
-                "inputActive?": self.inputActive as NSObjectProtocol,
-                "inputRelevant?": self.inputRelevant as NSObjectProtocol,
-                "requiresObject?": self.requiresObject as NSObjectProtocol,
-                "requiresCostume?": self.requiresCostume as NSObjectProtocol,
-                "hasObject?": self.hasObject as NSObjectProtocol,
-                "nearObj?": self.nearObject as NSObjectProtocol,
-                "allInputsActive?": self.allInputsActive as NSObjectProtocol
-            ]
-        }
-    }
-
     /// Returns a given decision tree that the agent will use to grab its next best move.
     /// - Returns: A decision tree (GKDecisionTree)
     /// - Important: This method must be overridden in all subclasses; otherwise, the decision tree may not be able
@@ -126,7 +59,7 @@ class AITreeStrategy: AIGameStrategy {
 
     /// Returns an active assessement of the given state.
     /// - Parameter state: The state to assess.
-    func assess(state: AIAbstractGameState) -> StateAssessement {
+    func assess(state: AIAbstractGameState) -> AIAbstractGameState.Assessement {
         let closestInput = self.closestInput(in: state)
         let closetObj = self.closestObject(in: state)
         var nearInput = false, nearObject = false
@@ -142,7 +75,7 @@ class AITreeStrategy: AIGameStrategy {
         let exitInputs = state.inputs.filter { (inp: AIAbstractGameSignalSender) in inp.outputs.contains(state.exit) }
         let allActive = exitInputs.allSatisfy { input in input.active } || false
 
-        return StateAssessement(
+        return AIAbstractGameState.Assessement(
             canEscape: state.isWin(for: state.player),
             nearExit: (state.exit.distance(between: state.player.position) < 36),
             nearInput: nearInput,
@@ -152,10 +85,26 @@ class AITreeStrategy: AIGameStrategy {
             requiresCostume: (
                 [GameSignalKind.computerT2, GameSignalKind.computerT1].contains(closestInput?.kind) == true
             ),
+            wearingCostume: self.wearingCorrectCostume(for: closestInput, in: state),
             hasObject: state.player.carryingItems,
             nearObject: nearObject,
             allInputsActive: allActive
         )
+    }
+
+    /// Returns whether the agent is wearing the correct costume for the selected input.
+    /// - Parameter input: The input device to check for costume switching.
+    /// - Parameter state: The state to assess for.
+    func wearingCorrectCostume(for input: AIAbstractGameSignalSender?, in state: AIAbstractGameState) -> Bool {
+        guard let realInput = input else { return false }
+        switch realInput.kind {
+        case .computerT1:
+            return state.player.currentCostume == .flashDrive
+        case .computerT2:
+            return state.player.currentCostume == .bird
+        default:
+            return true
+        }
     }
 
     // MARK: - Best Move for Player

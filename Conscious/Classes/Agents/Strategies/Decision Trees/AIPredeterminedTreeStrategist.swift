@@ -44,7 +44,9 @@ class AIPredeterminedTreeStrategist: AITreeStrategy {
         hasObj?.createBranch(value: false, attribute: "MOVE_OBJECT_CLOSER".toProtocol())
 
         let requiresCostume = needsObj?.createBranch(value: false, attribute: "requiresCostume?".toProtocol())
-        requiresCostume?.createBranch(value: true, attribute: "NEXT_COSTUME".toProtocol())
+        let wearingCostume = requiresCostume?.createBranch(value: true, attribute: "wearingCostume?".toProtocol())
+        wearingCostume?.createBranch(value: true, attribute: "ACTIVATE".toProtocol())
+        wearingCostume?.createBranch(value: false, attribute: "NEXT_COSTUME".toProtocol())
 
         let inputImportant = requiresCostume?.createBranch(value: false, attribute: "inputRelevant?".toProtocol())
         inputImportant?.createBranch(value: true, attribute: "ACTIVATE".toProtocol())

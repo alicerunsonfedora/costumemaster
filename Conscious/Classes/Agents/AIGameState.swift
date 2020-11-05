@@ -15,6 +15,77 @@ import GameplayKit
 /// An abstract class that represents a game state/model.
 class AIAbstractGameState: NSObject, GKGameModel {
 
+    /// A structure that defines a state assessement.
+    public struct Assessement {
+
+        /// Can the agent escape?
+        let canEscape: Bool
+
+        /// Is the agent near the exit?
+        let nearExit: Bool
+
+        /// Is the agent near an input device?
+        let nearInput: Bool
+
+        /// Is the closest input nearby active?
+        let inputActive: Bool
+
+        /// Is the closest input device relevant to opening the exit?
+        let inputRelevant: Bool
+
+        /// Does the closest input require a heavy object?
+        let requiresObject: Bool
+
+        /// Does the closest input require a specific costume?
+        let requiresCostume: Bool
+
+        /// Is the agent wearing the right costume?
+        let wearingCostume: Bool
+
+        /// Does the agent have an object in its inventory?
+        let hasObject: Bool
+
+        /// Is the agent near an object?
+        let nearObject: Bool
+
+        /// Are all of the inputs that send signals to the exit door active?
+        let allInputsActive: Bool
+
+        /// Returns a copy of the assessement as an example for decision trees.
+        func toList() -> [AnyHashable] {
+            [
+                canEscape,
+                nearExit,
+                nearInput,
+                inputActive,
+                inputRelevant,
+                requiresObject,
+                requiresCostume,
+                wearingCostume,
+                hasObject,
+                nearObject,
+                allInputsActive
+            ]
+        }
+
+        /// Returns a copy of the assessement as a dictionary suitable for decision trees.
+        func toDict() -> [AnyHashable: NSObjectProtocol] {
+            return [
+                "canEscape?": self.canEscape as NSObjectProtocol,
+                "nearExit?": self.nearExit as NSObjectProtocol,
+                "nearInput?": self.nearInput as NSObjectProtocol,
+                "inputActive?": self.inputActive as NSObjectProtocol,
+                "inputRelevant?": self.inputRelevant as NSObjectProtocol,
+                "requiresObject?": self.requiresObject as NSObjectProtocol,
+                "wearingCostume?": self.wearingCostume as NSObjectProtocol,
+                "requiresCostume?": self.requiresCostume as NSObjectProtocol,
+                "hasObject?": self.hasObject as NSObjectProtocol,
+                "nearObj?": self.nearObject as NSObjectProtocol,
+                "allInputsActive?": self.allInputsActive as NSObjectProtocol
+            ]
+        }
+    }
+
     /// The list of players in this model.
     var players: [GKGameModelPlayer]? {
         return [player]

@@ -90,6 +90,7 @@
 		BF8C30F02502E0BD00A29425 /* GameHeavyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8C30EF2502E0BD00A29425 /* GameHeavyObject.swift */; };
 		BF8C30F2250304B700A29425 /* Hacker.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF8C30F1250304B700A29425 /* Hacker.sks */; };
 		BF9279EC252D3F3A004B548E /* Consequences.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF9279EB252D3F3A004B548E /* Consequences.sks */; };
+		BF93127D2553624500B17A8B /* MultiInputBasicAI.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF93127C2553624500B17A8B /* MultiInputBasicAI.sks */; };
 		BF9333792531196600C78B44 /* Visibility.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF9333782531196600C78B44 /* Visibility.sks */; };
 		BF93337C25320DC900C78B44 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF93337B25320DC900C78B44 /* StoreKit.framework */; };
 		BF93337F2532157700C78B44 /* IAPObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93337E2532157700C78B44 /* IAPObserver.swift */; };
@@ -259,6 +260,7 @@
 		BF8C30F1250304B700A29425 /* Hacker.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hacker.sks; sourceTree = "<group>"; };
 		BF9279EB252D3F3A004B548E /* Consequences.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Consequences.sks; sourceTree = "<group>"; };
 		BF93127825530BE900B17A8B /* AIHistoryTreeStrategist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIHistoryTreeStrategist.swift; sourceTree = "<group>"; };
+		BF93127C2553624500B17A8B /* MultiInputBasicAI.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MultiInputBasicAI.sks; sourceTree = "<group>"; };
 		BF9333782531196600C78B44 /* Visibility.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Visibility.sks; sourceTree = "<group>"; };
 		BF93337B25320DC900C78B44 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BF93337E2532157700C78B44 /* IAPObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPObserver.swift; sourceTree = "<group>"; };
@@ -791,6 +793,7 @@
 			children = (
 				BFB0CE17251914BB0015FE6C /* EntryAI.sks */,
 				BF4630FD2550D85800EB606D /* BasicAI.sks */,
+				BF93127C2553624500B17A8B /* MultiInputBasicAI.sks */,
 			);
 			path = Agents;
 			sourceTree = "<group>";
@@ -997,6 +1000,7 @@
 				BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */,
 				BFD25F58254F279700FDA1C3 /* AgentTypes.plist in Resources */,
 				BF7C5F02250AD4D00062B1CC /* November.mp3 in Resources */,
+				BF93127D2553624500B17A8B /* MultiInputBasicAI.sks in Resources */,
 				BF37C7ED2538E5B500CC156E /* Management.sks in Resources */,
 				BFD8796F24F5CA4000552EDD /* Player_Backward_Sorceress.atlas in Resources */,
 				BF9333792531196600C78B44 /* Visibility.sks in Resources */,
