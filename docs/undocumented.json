@@ -1,12 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/marquiskurt/Developer/CS400/Conscious/Classes/Agents/AIGameScene.swift",
-      "line": 73,
-      "symbol": "AIGameScene.didMove(to:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/marquiskurt/Developer/CS400"
 }

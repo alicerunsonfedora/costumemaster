@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Challenges  Reference</title>
+    <title>AI - Random Move Strategies  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <link rel="stylesheet" type="text/css" href="css/katex.min.css" />
@@ -13,8 +13,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Section/Challenges" class="dashAnchor"></a>
-    <a title="Challenges  Reference"></a>
+    <a name="//apple_ref/swift/Section/AI - Random Move Strategies" class="dashAnchor"></a>
+    <a title="AI - Random Move Strategies  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -38,7 +38,7 @@
             <a href="index.html"> Reference</a>
             <img id="carat" src="img/carat.png" />
           </span>
-          Challenges  Reference
+          AI - Random Move Strategies  Reference
         </p>
       </div>
     </div>
@@ -47,7 +47,7 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>Challenges</h1>
+              <h1>AI - Random Move Strategies</h1>
               
             </section>
             <section class="section task-group-section">
@@ -56,9 +56,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)ChallengeGameScene"></a>
-                      <a name="//apple_ref/swift/Class/ChallengeGameScene" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)ChallengeGameScene">ChallengeGameScene</a>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIRandomMoveStrategist"></a>
+                      <a name="//apple_ref/swift/Class/AIRandomMoveStrategist" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIRandomMoveStrategist">AIRandomMoveStrategist</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -66,19 +66,16 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>An extended class of the game level scene dedicated to challenges.</p>
+                          <p>A strategist that will pick random moves.</p>
 
-<p>Levels that use this subclass add extra components to track things such as steps taken, solution times,
-and costume changes. The purpose of this subclass is to provide extensions to the level for challenges
-for things such as achievements, leaderboards, and &ldquo;advanced levels&rdquo;.</p>
-
-                          <a href="Classes/ChallengeGameScene.html" class="slightly-smaller">See more</a>
+                          <a href="Classes/AIRandomMoveStrategist.html" class="slightly-smaller">See more</a>
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ChallengeGameScene</span> <span class="p">:</span> <span class="kt"><a href="Classes/GameScene.html">GameScene</a></span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">class</span> <span class="kt">AIRandomMoveStrategist</span> <span class="p">:</span> <span class="kt"><a href="Classes/AIGameStrategy.html">AIGameStrategy</a></span></code></pre>
 
                           </div>
                         </div>
@@ -88,9 +85,9 @@ for things such as achievements, leaderboards, and &ldquo;advanced levels&rdquo;
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)CostumemasteryInheritable"></a>
-                      <a name="//apple_ref/swift/Class/CostumemasteryInheritable" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)CostumemasteryInheritable">CostumemasteryInheritable</a>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIRandomWeightedStrategist"></a>
+                      <a name="//apple_ref/swift/Class/AIRandomWeightedStrategist" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIRandomWeightedStrategist">AIRandomWeightedStrategist</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -98,15 +95,16 @@ for things such as achievements, leaderboards, and &ldquo;advanced levels&rdquo;
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>A challenge game scene that listens for whether the player has earned the Costumemastery achievement.</p>
+                          <p>A strategist that will pick a random move from a random list of actions with the highest weight.</p>
 
-                          <a href="Classes/CostumemasteryInheritable.html" class="slightly-smaller">See more</a>
+                          <a href="Classes/AIRandomWeightedStrategist.html" class="slightly-smaller">See more</a>
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CostumemasteryInheritable</span> <span class="p">:</span> <span class="kt"><a href="Classes/ChallengeGameScene.html">ChallengeGameScene</a></span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">class</span> <span class="kt">AIRandomWeightedStrategist</span> <span class="p">:</span> <span class="kt"><a href="Classes/AIGameStrategy.html">AIGameStrategy</a></span></code></pre>
 
                           </div>
                         </div>
@@ -116,9 +114,9 @@ for things such as achievements, leaderboards, and &ldquo;advanced levels&rdquo;
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)CycleChallenge"></a>
-                      <a name="//apple_ref/swift/Class/CycleChallenge" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)CycleChallenge">CycleChallenge</a>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AIReflexStrategist"></a>
+                      <a name="//apple_ref/swift/Class/AIReflexStrategist" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIReflexStrategist">AIReflexStrategist</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -126,155 +124,16 @@ for things such as achievements, leaderboards, and &ldquo;advanced levels&rdquo;
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The game scene specific to the level &ldquo;Cycle&rdquo;.</p>
+                          <p>A subclassed random move agent that changes actions based on reflexes.</p>
 
-                          <a href="Classes/CycleChallenge.html" class="slightly-smaller">See more</a>
+                          <a href="Classes/AIReflexStrategist.html" class="slightly-smaller">See more</a>
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CycleChallenge</span> <span class="p">:</span> <span class="kt"><a href="Classes/ChallengeGameScene.html">ChallengeGameScene</a></span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)DivergentChallenge"></a>
-                      <a name="//apple_ref/swift/Class/DivergentChallenge" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)DivergentChallenge">DivergentChallenge</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The game scene specific to the level &ldquo;Divergent&rdquo;.</p>
-
-                          <a href="Classes/DivergentChallenge.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">DivergentChallenge</span> <span class="p">:</span> <span class="kt"><a href="Classes/ChallengeGameScene.html">ChallengeGameScene</a></span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)ExposureChallenge"></a>
-                      <a name="//apple_ref/swift/Class/ExposureChallenge" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)ExposureChallenge">ExposureChallenge</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The game scene corresponding to the level &ldquo;Exposure&rdquo;.</p>
-
-                          <a href="Classes/ExposureChallenge.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ExposureChallenge</span> <span class="p">:</span> <span class="kt"><a href="Classes/CostumemasteryInheritable.html">CostumemasteryInheritable</a></span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)RushedChallenge"></a>
-                      <a name="//apple_ref/swift/Class/RushedChallenge" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)RushedChallenge">RushedChallenge</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The game scene specific to the level &ldquo;Rushed.&rdquo;</p>
-
-                          <a href="Classes/RushedChallenge.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">RushedChallenge</span> <span class="p">:</span> <span class="kt"><a href="Classes/ChallengeGameScene.html">ChallengeGameScene</a></span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)SeededChallenge"></a>
-                      <a name="//apple_ref/swift/Class/SeededChallenge" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)SeededChallenge">SeededChallenge</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The challenge scene for the level &ldquo;Seeded&rdquo;.</p>
-
-                          <a href="Classes/SeededChallenge.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">SeededChallenge</span> <span class="p">:</span> <span class="kt"><a href="Classes/CostumemasteryInheritable.html">CostumemasteryInheritable</a></span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)VisibilityChallenge"></a>
-                      <a name="//apple_ref/swift/Class/VisibilityChallenge" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)VisibilityChallenge">VisibilityChallenge</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The challenge scene associated with &ldquo;Visibility&rdquo;.</p>
-
-                          <a href="Classes/VisibilityChallenge.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">VisibilityChallenge</span> <span class="p">:</span> <span class="kt"><a href="Classes/ChallengeGameScene.html">ChallengeGameScene</a></span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">class</span> <span class="kt">AIReflexStrategist</span> <span class="p">:</span> <span class="kt"><a href="Classes/AIRandomMoveStrategist.html">AIRandomMoveStrategist</a></span></code></pre>
 
                           </div>
                         </div>

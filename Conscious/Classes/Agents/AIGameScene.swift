@@ -70,6 +70,7 @@ import SwiftUI
         consoleWindowController?.close()
     }
 
+    /// Close out of the current console and re-initialize the console.
     override func didMove(to view: SKView) {
         consoleWindowController?.close()
         initConsole()

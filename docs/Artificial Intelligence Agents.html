@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="index.html">The Costumemaster</a>
-          <span class="no-mobile"> (99% documented)</span>
+          <span class="no-mobile"> (100% documented)</span>
         </p>
     
         <p class="header-right">
@@ -92,9 +92,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)AIRandomMoveStrategist"></a>
-                      <a name="//apple_ref/swift/Class/AIRandomMoveStrategist" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIRandomMoveStrategist">AIRandomMoveStrategist</a>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AITreeStrategy"></a>
+                      <a name="//apple_ref/swift/Class/AITreeStrategy" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AITreeStrategy">AITreeStrategy</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -102,139 +102,19 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>A strategist that will pick random moves.</p>
+                          <p>A subclass of the AI game strategy designed for use with decision trees.</p>
 
-                          <a href="Classes/AIRandomMoveStrategist.html" class="slightly-smaller">See more</a>
+<p>Agents that use the tree strategy will attempt to use a state assessement and determine the best action by
+submitting that assessement to a decision tree, depending on the tree&rsquo;s implementation.</p>
+
+                          <a href="Classes/AITreeStrategy.html" class="slightly-smaller">See more</a>
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
                             <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
-<span class="kd">class</span> <span class="kt">AIRandomMoveStrategist</span> <span class="p">:</span> <span class="kt"><a href="Classes/AIGameStrategy.html">AIGameStrategy</a></span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)AIRandomWeightedStrategist"></a>
-                      <a name="//apple_ref/swift/Class/AIRandomWeightedStrategist" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIRandomWeightedStrategist">AIRandomWeightedStrategist</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>A strategist that will pick a random move from a random list of actions with the highest weight.</p>
-
-                          <a href="Classes/AIRandomWeightedStrategist.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
-<span class="kd">class</span> <span class="kt">AIRandomWeightedStrategist</span> <span class="p">:</span> <span class="kt"><a href="Classes/AIGameStrategy.html">AIGameStrategy</a></span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)AIPredeterminedTreeStrategist"></a>
-                      <a name="//apple_ref/swift/Class/AIPredeterminedTreeStrategist" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIPredeterminedTreeStrategist">AIPredeterminedTreeStrategist</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>A strategist that will pick the best move based on a predetermined GKDecisionTree.</p>
-
-                          <a href="Classes/AIPredeterminedTreeStrategist.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
-<span class="kd">class</span> <span class="kt">AIPredeterminedTreeStrategist</span> <span class="p">:</span> <span class="kt"><a href="Classes/AITreeStrategy.html">AITreeStrategy</a></span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist"></a>
-                      <a name="//apple_ref/swift/Class/AIRandomNetworkStrategist" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist">AIRandomNetworkStrategist</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>A explorative strategist that uses Random Network Distillation to determine the most optimal move.</p>
-
-<p>Random Network Distillation (RND) is a reinforcement learning-based strategy that places emphasis on unexplored
-states, encouraging the strategist to explore the game with rewards for encountering new states. RND scores states
-by measuring how difficult it is to predict the output based on previous experience.</p>
-
-<p>For more information, consult the OpenAI article titled
-<a href="https://1n.pm/df0Ui">Reinforcement Learning with Prediction-Based Rewards</a>.</p>
-
-                          <a href="Classes/AIRandomNetworkStrategist.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"This strategist will be removed in a future release."</span><span class="p">)</span>
-<span class="kd">class</span> <span class="kt">AIRandomNetworkStrategist</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKStrategist</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)AIReflexStrategist"></a>
-                      <a name="//apple_ref/swift/Class/AIReflexStrategist" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIReflexStrategist">AIReflexStrategist</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>A subclassed random move agent that changes actions based on reflexes.</p>
-
-                          <a href="Classes/AIReflexStrategist.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
-<span class="kd">class</span> <span class="kt">AIReflexStrategist</span> <span class="p">:</span> <span class="kt"><a href="Classes/AIRandomMoveStrategist.html">AIRandomMoveStrategist</a></span></code></pre>
+<span class="kd">class</span> <span class="kt">AITreeStrategy</span> <span class="p">:</span> <span class="kt"><a href="Classes/AIGameStrategy.html">AIGameStrategy</a></span></code></pre>
 
                           </div>
                         </div>
@@ -388,16 +268,21 @@ by measuring how difficult it is to predict the output based on previous experie
                   <a href="Classes/AIGameStrategy.html">AIGameStrategy</a>
                 </li>
                 <li class="nav-group-task">
+                  <a href="Classes/AITreeStrategy.html">AITreeStrategy</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/AITreeStrategy/ActionHistoryItem.html">– ActionHistoryItem</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="AI%20-%20Random%20Move%20Strategies.html">AI - Random Move Strategies</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
                   <a href="Classes/AIRandomMoveStrategist.html">AIRandomMoveStrategist</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="Classes/AIRandomWeightedStrategist.html">AIRandomWeightedStrategist</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/AIPredeterminedTreeStrategist.html">AIPredeterminedTreeStrategist</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/AIRandomNetworkStrategist.html">AIRandomNetworkStrategist</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="Classes/AIReflexStrategist.html">AIReflexStrategist</a>
@@ -405,7 +290,15 @@ by measuring how difficult it is to predict the output based on previous experie
               </ul>
             </li>
             <li class="nav-group-name">
-              <a href="Artificial%20Intelligence%20Setup.html">Artificial Intelligence Setup</a>
+              <a href="AI%20-%20Decision%20Tree%20Strategies.html">AI - Decision Tree Strategies</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Classes/AIPredeterminedTreeStrategist.html">AIPredeterminedTreeStrategist</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="AI%20-%20Components.html">AI - Components</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
                   <a href="Classes/AIGameScene.html">AIGameScene</a>
@@ -524,10 +417,7 @@ by measuring how difficult it is to predict the output based on previous experie
               <a href="Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
-                  <a href="Classes/AITreeStrategy.html">AITreeStrategy</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/AITreeStrategy/ActionHistoryItem.html">– ActionHistoryItem</a>
+                  <a href="Classes/AIRandomNetworkStrategist.html">AIRandomNetworkStrategist</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="Classes/GameDeathPit.html">GameDeathPit</a>

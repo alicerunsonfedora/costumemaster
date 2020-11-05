@@ -67,13 +67,24 @@ custom_categories:
     children:
     - Working With Agents
     - AIGameStrategy
+    - AITreeStrategy
+    
+  - name: AI - Random Move Strategies
+    children:
     - AIRandomMoveStrategist
     - AIRandomWeightedStrategist
-    - AIPredeterminedTreeStrategist
-    - AIRandomNetworkStrategist
     - AIReflexStrategist
     
-  - name: Artificial Intelligence Setup
+  - name: AI - Decision Tree Strategies
+    children:
+    - AIPredeterminedTreeStrategist
+    - AIHistoryTreeStrategist
+  
+  - name: AI - Other Strategies
+    children:
+    - AIReflexStrategist
+    
+  - name: AI - Components
     children:
     - AIGameScene
     - AIAbstractGamePlayer
