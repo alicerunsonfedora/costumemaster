@@ -31,6 +31,7 @@ class AITreeStrategy: AIGameStrategy {
             ["MOVE_RANDOM", "MOVE_EXIT_CLOSER", "MOVE_INPUT_CLOSER", "MOVE_OBJ_CLOSER"]
             .map { string in string.toProtocol() }
     }
+
     /// A structure that represents an action history item.
     public struct ActionHistoryItem {
 
@@ -60,15 +61,13 @@ class AITreeStrategy: AIGameStrategy {
     /// Returns an active assessement of the given state.
     /// - Parameter state: The state to assess.
     func assess(state: AIAbstractGameState) -> AIAbstractGameState.Assessement {
-        let closestInput = self.closestInput(in: state)
-        let closetObj = self.closestObject(in: state)
         var nearInput = false, nearObject = false
 
-        if let input = closestInput {
+        if let input = self.closestInput {
             nearInput = input.position.distance(between: state.player.position) < 64
         }
 
-        if let object = closetObj {
+        if let object = self.closestObject {
             nearObject = object.distance(between: state.player.position) < 64
         }
 
@@ -79,13 +78,13 @@ class AITreeStrategy: AIGameStrategy {
             canEscape: state.isWin(for: state.player),
             nearExit: (state.exit.distance(between: state.player.position) < 36),
             nearInput: nearInput,
-            inputActive: (closestInput?.active ?? false),
-            inputRelevant: (closestInput?.outputs.contains(state.exit) ?? false),
-            requiresObject: (closestInput?.kind == GameSignalKind.pressurePlate),
+            inputActive: (self.closestInput?.active ?? false),
+            inputRelevant: (self.closestInput?.outputs.contains(state.exit) ?? false),
+            requiresObject: (self.closestInput?.kind == GameSignalKind.pressurePlate),
             requiresCostume: (
-                [GameSignalKind.computerT2, GameSignalKind.computerT1].contains(closestInput?.kind) == true
+                [GameSignalKind.computerT2, GameSignalKind.computerT1].contains(self.closestInput?.kind) == true
             ),
-            wearingCostume: self.wearingCorrectCostume(for: closestInput, in: state),
+            wearingCostume: self.wearingCorrectCostume(for: self.closestInput, in: state),
             hasObject: state.player.carryingItems,
             nearObject: nearObject,
             allInputsActive: allActive
@@ -124,7 +123,16 @@ class AITreeStrategy: AIGameStrategy {
             return defaultAction()
         }
 
+        if let prevCloseInput = self.closestInput {
+            for input in state.inputs where input.position == prevCloseInput.position && input.active {
+                activated.append(input.position)
+            }
+        }
+
         // Assess the state and prepare it for submission to the decision tree.
+        self.closestInput = self.closestInput(in: state)
+        self.closestObject = self.closestObject(in: state)
+
         let assessement = self.assess(state: state)
 
         // Get a response from the decision tree.
@@ -176,10 +184,10 @@ class AITreeStrategy: AIGameStrategy {
             return self.closestPath(in: state)
         case "MOVE_INPUT_CLOSER":
             console?.debug("MOVE_INPUT_CLOSER detected. Getting action that moves closest to closet input.")
-            return self.closestPath(to: self.closestInput(in: state), in: state)
+            return self.closestPath(to: self.closestInput, in: state)
         case "MOVE_OBJ_CLOSER":
             console?.debug("MOVE_OBJ_CLOSER detected. Getting action that moves closest to closet object.")
-            return self.closestPath(to: self.closestObject(in: state), in: state)
+            return self.closestPath(to: self.closestObject, in: state)
         case "MOVE_RANDOM":
             console?.warn("MOVE_RANDOM detected. Getting random movement action.")
             return self.moveRandom()
@@ -189,130 +197,14 @@ class AITreeStrategy: AIGameStrategy {
         }
     }
 
-    /// Returns a default "stop" action.
+    /// Returns the default action from the response tree.
     func defaultAction() -> AIGameDecision {
         return AIGameDecision(by: .stop, with: 0)
     }
 
-    /// Make a random move.
+    /// Returns a random move.
     /// - Returns: A random move from the movement set of actions.
     func moveRandom() -> String {
         return (AIGamePlayerAction.movement().randomElement() ?? .stop).rawValue
     }
-
-    // MARK: - Object Detection with Distance
-
-    /// Returns the closest input device relative to the player.
-    /// - Parameter state: The state the agent will assess to determine which input to target.
-    /// - Returns: The input device closest to the player, or nil.
-    public func closestInput(in state: AIAbstractGameState) -> AIAbstractGameSignalSender? {
-        var minimum = CGFloat.infinity
-        var input: AIAbstractGameSignalSender?
-        for inp in state.inputs {
-            let dist = inp.position.manhattanDistance(to: state.player.position)
-            if dist < minimum {
-                minimum = dist
-                input = inp
-            }
-        }
-
-        if input != nil {
-            console?.debug(
-                "Closest input found at \(input?.prettyPosition ?? .zero) (scene distance: \(minimum))"
-            )
-        } else { console?.warn("Agent is not close to any input.") }
-        return input
-    }
-
-    /// Returns the closest object relative to the player.
-    /// - Parameter state: The state the agent will assess to determine which object to target.
-    /// - Returns: The input device closest to the player, or nil.
-    func closestObject(in state: AIAbstractGameState) -> CGPoint? {
-        var minimum = CGFloat.infinity
-        var object: CGPoint?
-        for obj in state.interactableObjects {
-            let dist = obj.manhattanDistance(to: state.player.position)
-            if dist < minimum {
-                minimum = dist
-                object = obj
-            }
-        }
-
-        if object != nil {
-            console?.debug(
-                "Closest object found at \(object ?? .zero) (scene distance: \(minimum))"
-            )
-        } else { console?.warn("Agent is not close to any object.") }
-        return object
-    }
-
-    /// Returns the action responsible for providing the closest path to the specified input.
-    /// - Parameter input: The input for the agent to target.
-    /// - Parameter state: The state the agent will assess to determine the move.
-    func closestPath(to input: AIAbstractGameSignalSender?, in state: AIAbstractGameState) -> String {
-        var minimumDistance = CGFloat.infinity
-        var action: AIGamePlayerAction = .stop
-
-        guard input != nil else { return action.rawValue }
-
-        for possibleAction in AIGamePlayerAction.movement() {
-            if let newState = state.copy() as? AIAbstractGameState {
-                newState.apply(AIGameDecision(by: possibleAction, with: 0))
-                let newDist = newState.player.position.manhattanDistance(to: input?.position ?? .zero)
-                if newDist < minimumDistance {
-                    minimumDistance = newDist
-                    action = possibleAction
-                }
-            }
-        }
-
-        console?.debug("Action \(action) makes shortest distance (\(minimumDistance)) to \(input?.position ?? .zero).")
-        return action.rawValue
-    }
-
-    /// Returns the action responsible for providing the closest path to the specified object.
-    /// - Parameter object: The object for the agent to target.
-    /// - Parameter state: The state the agent will assess to determine the move.
-    func closestPath(to object: CGPoint?, in state: AIAbstractGameState) -> String {
-        var minimumDistance = CGFloat.infinity
-        var action: AIGamePlayerAction = .stop
-
-        guard object != nil else { return action.rawValue }
-
-        for possibleAction in AIGamePlayerAction.movement() {
-            if let newState = state.copy() as? AIAbstractGameState {
-                newState.apply(AIGameDecision(by: possibleAction, with: 0))
-                let newDist = newState.player.position.manhattanDistance(to: object ?? .zero)
-                if newDist < minimumDistance {
-                    minimumDistance = newDist
-                    action = possibleAction
-                }
-            }
-        }
-
-        console?.debug("Action \(action) makes shortest distance (\(minimumDistance)) to \(object ?? .zero).")
-        return action.rawValue
-    }
-
-    /// Returns the action responsible for providing the closest path to the exit.
-    /// - Parameter state: The state the agent will assess to determine the move.
-    func closestPath(in state: AIAbstractGameState) -> String {
-        var minimumDistance = CGFloat.infinity
-        var action: AIGamePlayerAction = .stop
-
-        for possibleAction in AIGamePlayerAction.movement() {
-            if let newState = state.copy() as? AIAbstractGameState {
-                newState.apply(AIGameDecision(by: possibleAction, with: 0))
-                let newDist = newState.player.position.manhattanDistance(to: newState.exit)
-                if newDist < minimumDistance {
-                    minimumDistance = newDist
-                    action = possibleAction
-                }
-            }
-        }
-
-        console?.debug("Action \(action) makes shortest distance (\(minimumDistance)) to exit.")
-        return action.rawValue
-    }
-
 }
