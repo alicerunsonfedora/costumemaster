@@ -35,7 +35,6 @@
 		BF37C7ED2538E5B500CC156E /* Management.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF37C7EC2538E5B500CC156E /* Management.sks */; };
 		BF37C7F62539F31900CC156E /* GBMKUtils in Frameworks */ = {isa = PBXBuildFile; productRef = BF37C7F52539F31900CC156E /* GBMKUtils */; };
 		BF37C7FD253A07A000CC156E /* AIRandomMoveStrategist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37C7FC253A07A000CC156E /* AIRandomMoveStrategist.swift */; };
-		BF37C801253A3A6600CC156E /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = BF37C800253A3A6600CC156E /* Logging */; };
 		BF3977B92530B2D900BBD591 /* Traverse.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF3977B82530B2D900BBD591 /* Traverse.sks */; };
 		BF3977BD2530C44600BBD591 /* Player_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3977BC2530C44600BBD591 /* Player_Extension.swift */; };
 		BF3977C02530D58E00BBD591 /* AIRandomNetworkStrategist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3977BF2530D58E00BBD591 /* AIRandomNetworkStrategist.swift */; };
@@ -359,7 +358,6 @@
 				BFDBE7AE24F955EE00FD75BF /* GameKit.framework in Frameworks */,
 				BF0D2C1C24FADC4E00AEF86F /* KeyboardShortcuts in Frameworks */,
 				BF37C7F62539F31900CC156E /* GBMKUtils in Frameworks */,
-				BF37C801253A3A6600CC156E /* Logging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,7 +947,6 @@
 			packageProductDependencies = (
 				BF0D2C1B24FADC4E00AEF86F /* KeyboardShortcuts */,
 				BF37C7F52539F31900CC156E /* GBMKUtils */,
-				BF37C800253A3A6600CC156E /* Logging */,
 			);
 			productName = Conscious;
 			productReference = BF6FBAD324A8BDD400996890 /* The Costumemaster.app */;
@@ -982,7 +979,6 @@
 			packageReferences = (
 				BF0D2C1A24FADC4E00AEF86F /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 				BF37C7F42539F31900CC156E /* XCRemoteSwiftPackageReference "GBMKUtils" */,
-				BF37C7FF253A3A6600CC156E /* XCRemoteSwiftPackageReference "swift-log" */,
 			);
 			productRefGroup = BF6FBAD424A8BDD400996890 /* Products */;
 			projectDirPath = "";
@@ -1357,8 +1353,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.costumemaster;
 				PRODUCT_NAME = "The $(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1382,8 +1378,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.costumemaster;
 				PRODUCT_NAME = "The $(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1430,14 +1426,6 @@
 				minimumVersion = 0.1.0;
 			};
 		};
-		BF37C7FF253A3A6600CC156E /* XCRemoteSwiftPackageReference "swift-log" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-log.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1450,11 +1438,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BF37C7F42539F31900CC156E /* XCRemoteSwiftPackageReference "GBMKUtils" */;
 			productName = GBMKUtils;
-		};
-		BF37C800253A3A6600CC156E /* Logging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BF37C7FF253A3A6600CC156E /* XCRemoteSwiftPackageReference "swift-log" */;
-			productName = Logging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

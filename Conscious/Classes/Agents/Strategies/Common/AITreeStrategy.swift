@@ -16,7 +16,6 @@ import GameplayKit
 ///
 /// Agents that use the tree strategy will attempt to use a state assessement and determine the best action by
 /// submitting that assessement to a decision tree, depending on the tree's implementation.
-@available(OSX 10.15, *)
 class AITreeStrategy: AIGameStrategy {
 
     /// A history of all of the previous assessements this agent has made.

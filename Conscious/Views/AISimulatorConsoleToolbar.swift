@@ -9,12 +9,9 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
-#if canImport(SwiftUI)
 import SwiftUI
-#endif
 
 /// A view that represents the console window's toolbar.
-@available(OSX 10.15, *)
 struct AISimulatorConsoleToolbar: View {
 
     /// The console model.
@@ -88,7 +85,6 @@ struct AISimulatorConsoleToolbar: View {
 }
 
 /// A preview container for the console toolbar.
-@available(OSX 10.15, *)
 struct AISimulatorConsoleToolbar_Previews: PreviewProvider {
     static var previews: some View {
         AISimulatorConsoleToolbar(console: ConsoleViewModel())

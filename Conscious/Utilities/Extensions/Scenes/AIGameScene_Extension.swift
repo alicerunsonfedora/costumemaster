@@ -10,12 +10,8 @@
 //
 
 import Foundation
-
-#if canImport(SwiftUI)
 import SwiftUI
-#endif
 
-@available(OSX 10.15, *)
 extension AIGameScene {
 
     /// Initialize the console window and begin streaming information to the console view model.

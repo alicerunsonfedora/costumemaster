@@ -13,7 +13,6 @@ import Foundation
 import GameplayKit
 
 /// A base strategy class.
-@available(OSX 10.15, *)
 class AIGameStrategy: NSObject, GKStrategist {
 
     // MARK: - Properties

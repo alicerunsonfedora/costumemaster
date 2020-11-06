@@ -13,7 +13,6 @@ import Foundation
 import GameplayKit
 
 /// A decision tree-based strategy that uses previous attempts to create the decision tree.
-@available(OSX 10.15, *)
 class AIHistoryTreeStrategist: AITreeStrategy {
 
     var tree: GKDecisionTree?

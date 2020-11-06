@@ -10,12 +10,8 @@
 //
 
 import Foundation
-
-#if canImport(Combine)
 import Combine
-#endif
 
-@available(OSX 10.15, *)
 /// A class for handling console output.
 public class ConsoleViewModel: ObservableObject {
 

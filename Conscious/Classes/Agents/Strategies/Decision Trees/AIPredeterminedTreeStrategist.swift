@@ -13,7 +13,6 @@ import Foundation
 import GameplayKit
 
 /// A strategist that will pick the best move based on a predetermined GKDecisionTree.
-@available(OSX 10.15, *)
 class AIPredeterminedTreeStrategist: AITreeStrategy {
 
     /// Initialize a predetermined tree strategist.

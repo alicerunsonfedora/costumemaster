@@ -13,7 +13,6 @@ import Foundation
 import GameplayKit
 
 /// An class that represents an agent in the game.
-@available(OSX 10.15, *)
 class AIGameStrategist {
 
     /// The internal game strategist that will be used to determine actions.

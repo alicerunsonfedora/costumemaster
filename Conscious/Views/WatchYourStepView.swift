@@ -5,12 +5,10 @@
 //  Created by Marquis Kurt on 10/11/20.
 //
 
-#if canImport(SwiftUI)
 import SwiftUI
-#endif
 
 /// A view that handles the "Watch Your Step" DLC content, including IAP.
-@available(OSX 10.15, *) struct WatchYourStepView: View {
+struct WatchYourStepView: View {
 
     /// A closure that executes when the DLC content starts.
     var onStartDLCContent: () -> Void = {}
@@ -92,7 +90,7 @@ import SwiftUI
 }
 
 /// The preview for the WatchYourStepView view.
-@available(OSX 10.15, *) struct WatchYourStepView_Previews: PreviewProvider {
+struct WatchYourStepView_Previews: PreviewProvider {
 
     /// The preview content.
     static var previews: some View {

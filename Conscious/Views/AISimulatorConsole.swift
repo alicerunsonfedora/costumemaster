@@ -9,12 +9,9 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
-#if canImport(SwiftUI)
 import SwiftUI
-#endif
 
 /// A view that allows player to read console messages about a game scene.
-@available(OSX 10.15, *)
 struct AISimulatorConsole: View {
 
     /// The console model.
@@ -100,7 +97,6 @@ struct AISimulatorConsole: View {
 }
 
 /// A preview container for the console window.
-@available(OSX 10.15, *)
 struct AISimulatorConsole_Previews: PreviewProvider {
     static var previews: some View {
         AISimulatorConsole(console: {

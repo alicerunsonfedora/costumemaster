@@ -10,12 +10,8 @@
 //
 
 import Foundation
-
-#if canImport(SwiftUI)
 import SwiftUI
-#endif
 
-@available(OSX 10.15, *)
 extension Binding {
     /// Perform an action when a value is changed.
     /// - Parameter handler: An escaping closure that executes when a value is set.

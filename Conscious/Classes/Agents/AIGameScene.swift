@@ -23,7 +23,7 @@ import SwiftUI
 /// strategist with a budget of one move is provided when these options aren't available.
 ///
 /// - Important: Scenes that subclass the AI game scene must be running macOS 10.15 Catalina or higher.
-@available(OSX 10.15, *) class AIGameScene: ChallengeGameScene {
+class AIGameScene: ChallengeGameScene {
 
     /// The console view model that hosts all of the console messages.
     var console = ConsoleViewModel()
@@ -298,7 +298,7 @@ import SwiftUI
     /// - Returns: An AI game strategist that will be used for the game scene. If none was provided, the random move
     /// strategist will be used instead.
     /// - Important: This function requires macOS 10.15 Catalina or later as it uses the new opaque type system.
-    @available(OSX 10.15, *) func getStrategy(with state: AIAbstractGameState) -> some AIGameStrategist {
+    func getStrategy(with state: AIAbstractGameState) -> some AIGameStrategist {
         var strategist = AIGameStrategist(with: state)
 
         switch AppDelegate.arguments.agentTestingType {

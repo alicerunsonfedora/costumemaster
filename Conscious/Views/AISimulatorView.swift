@@ -9,12 +9,9 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
-#if canImport(SwiftUI)
 import SwiftUI
-#endif
 
 /// A view that allows player to customize AI simulation features
-@available(OSX 10.15, *)
 struct AISimulatorView: View {
 
     /// The type of agent to run in the simulation.
@@ -176,7 +173,6 @@ struct AISimulatorView: View {
 }
 
 /// A preview container for the simulator view.
-@available(OSX 10.15, *)
 struct AISimulatorView_Previews: PreviewProvider {
     static var previews: some View {
         AISimulatorView { (_, _, _) in }

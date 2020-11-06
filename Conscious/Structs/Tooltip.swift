@@ -10,14 +10,10 @@
 //
 
 import Foundation
-
-#if canImport(SwiftUI)
 import SwiftUI
-#endif
 
 /// A view that displays a tooltip.
 /// Credit goes to onmyway133: https://onmyway133.github.io/blog/How-to-make-tooltip-in-SwiftUI-for-macOS/
-@available(OSX 10.15, *)
 struct Tooltip: NSViewRepresentable {
 
     /// The tooltip message to display.

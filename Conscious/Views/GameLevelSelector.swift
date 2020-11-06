@@ -10,7 +10,6 @@ import SwiftUI
 #endif
 
 /// A view that lets players select a level and play it.
-@available(OSX 10.15, *)
 struct GameLevelSelector: View {
 
     /// The list of levels to choose from.
@@ -106,7 +105,6 @@ struct GameLevelSelector: View {
 }
 
 /// A preview of the level selector.
-@available(OSX 10.15, *)
 struct GameLevelSelector_Previews: PreviewProvider {
     static var previews: some View {
         GameLevelSelector(levels: [

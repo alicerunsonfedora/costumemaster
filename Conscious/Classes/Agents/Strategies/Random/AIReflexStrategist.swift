@@ -13,7 +13,6 @@ import Foundation
 import GameplayKit
 
 /// A subclassed random move agent that changes actions based on reflexes.
-@available(OSX 10.15, *)
 class AIReflexStrategist: AIRandomMoveStrategist {
 
     /// Returns the best move for the active player.

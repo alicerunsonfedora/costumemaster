@@ -13,7 +13,6 @@ import Foundation
 import GameplayKit
 
 /// A strategist that will pick random moves.
-@available(OSX 10.15, *)
 class AIRandomMoveStrategist: AIGameStrategy {
 
     /// Returns the best move for the player.

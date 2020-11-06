@@ -13,7 +13,6 @@ import Foundation
 import GameplayKit
 
 /// A strategist that will pick a random move from a random list of actions with the highest weight.
-@available(OSX 10.15, *)
 class AIRandomWeightedStrategist: AIGameStrategy {
 
     /// Returns the best move for the player.
