@@ -86,8 +86,7 @@ extension MainMenuScene {
         self.startButton?.fontColor = NSColor.init(named: "AccentColor")
         guard let intro = SKScene(fileNamed: "Intro") else { return }
         if #available(OSX 11.0, *) {
-            // TODO: Re-enable this when macOS 11 SDK is finalized.
-//             GKAccessPoint.shared.isActive = false
+             GKAccessPoint.shared.isActive = false
         }
 
         if GameStore.shared.lastSavedScene != "" {
@@ -110,8 +109,7 @@ extension MainMenuScene {
     private func resumeAction() {
         self.resumeButton?.fontColor = NSColor.init(named: "AccentColor")
         if #available(OSX 11.0, *) {
-            // TODO: Re-enable this when macOS 11 SDK is finalized.
-//             GKAccessPoint.shared.isActive = false
+             GKAccessPoint.shared.isActive = false
         }
         if let firstScene = SKScene(fileNamed: GameStore.shared.lastSavedScene) {
             self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))

@@ -55,14 +55,16 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
     /// In macOS 11.0, this will use the native access point and put it in the bottom left. For older versions, a sprite
     /// node will be used to present a game center view.
     func setUpGameCenterProperties() {
-        // TODO: Re-enable this when macOS 11 SDK is finalized.
-//        if #available(OSX 11.0, *) {
-//            self.gameCenterButton?.isHidden = true
-//            GKAccessPoint.shared.location = .bottomLeading
-//            GKAccessPoint.shared.showHighlights = true
-//            GKAccessPoint.shared.isActive = true
-//            GKAccessPoint.shared.parentWindow = self.view?.window
-//        }
+        if #available(OSX 11.0, *) {
+            self.gameCenterButton?.isHidden = true
+
+            GKAccessPoint.shared.location = .bottomLeading
+            GKAccessPoint.shared.showHighlights = true
+            GKAccessPoint.shared.isActive = true
+            GKAccessPoint.shared.parentWindow = self.view?.window
+
+            self.watchYourStepButton?.position.x = 0
+        }
     }
 
     /// Set up the Game Center button for the main menu.
