@@ -75,6 +75,7 @@ struct GameLevelSelector: View {
     func entryItem(_ entry: GameLevelItem) -> some View {
         HStack {
             getImage(for: entry)
+                .frame(maxWidth: 32)
             VStack(alignment: .leading) {
                 Text(entry.name)
                     .font(.headline)
