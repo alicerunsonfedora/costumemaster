@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>String Extension Reference</title>
+    <title>GameLevelSelector Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <link rel="stylesheet" type="text/css" href="../css/katex.min.css" />
@@ -13,8 +13,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/String" class="dashAnchor"></a>
-    <a title="String Extension Reference"></a>
+    <a name="//apple_ref/swift/Struct/GameLevelSelector" class="dashAnchor"></a>
+    <a title="GameLevelSelector Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -38,7 +38,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          String Extension Reference
+          GameLevelSelector Structure Reference
         </p>
       </div>
     </div>
@@ -47,15 +47,17 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>String</h1>
+              <h1>GameLevelSelector</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">String</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">struct</span> <span class="kt">GameLevelSelector</span> <span class="p">:</span> <span class="kt">View</span></code></pre>
 
                   </div>
                 </div>
-              
+              <p>A view that lets players select a level and play it.</p>
+
             </section>
             <section class="section task-group-section">
               <div class="task-group">
@@ -63,9 +65,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:SS17The_CostumemasterE10toProtocolSo8NSObject_pyF"></a>
-                      <a name="//apple_ref/swift/Method/toProtocol()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:SS17The_CostumemasterE10toProtocolSo8NSObject_pyF">toProtocol()</a>
+                      <a name="/s:17The_Costumemaster17GameLevelSelectorV6levelsSayAA0cD4ItemVGSgvp"></a>
+                      <a name="//apple_ref/swift/Property/levels" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster17GameLevelSelectorV6levelsSayAA0cD4ItemVGSgvp">levels</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -73,14 +75,177 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Returns a copy of itself that conforms to NSObjectProtocol.</p>
+                          <p>The list of levels to choose from.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">toProtocol</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSObjectProtocol</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">@State</span>
+<span class="k">var</span> <span class="nv">levels</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/GameLevelItem.html">GameLevelItem</a></span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster17GameLevelSelectorV02onD6SelectyySScvp"></a>
+                      <a name="//apple_ref/swift/Property/onLevelSelect" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster17GameLevelSelectorV02onD6SelectyySScvp">onLevelSelect</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>A closure that runs when a level is selected.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">onLevelSelect</span><span class="p">:</span> <span class="p">(</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster17GameLevelSelectorV7dismissyycvp"></a>
+                      <a name="//apple_ref/swift/Property/dismiss" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster17GameLevelSelectorV7dismissyycvp">dismiss</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>A closure that runs when the controller is dismissed.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">dismiss</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster17GameLevelSelectorV07canPlayD04withSbAA0cD4ItemV_tF"></a>
+                      <a name="//apple_ref/swift/Method/canPlayLevel(with:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster17GameLevelSelectorV07canPlayD04withSbAA0cD4ItemV_tF">canPlayLevel(with:<wbr>)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Returns whether the player can play the given level.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">canPlayLevel</span><span class="p">(</span><span class="n">with</span> <span class="nv">entry</span><span class="p">:</span> <span class="kt"><a href="../Structs/GameLevelItem.html">GameLevelItem</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster17GameLevelSelectorV4bodyQrvp"></a>
+                      <a name="//apple_ref/swift/Property/body" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster17GameLevelSelectorV4bodyQrvp">body</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>The body of this view.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster17GameLevelSelectorV8getImage3forQrAA0cD4ItemV_tF"></a>
+                      <a name="//apple_ref/swift/Method/getImage(for:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster17GameLevelSelectorV8getImage3forQrAA0cD4ItemV_tF">getImage(for:<wbr>)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Returns a view of the image for the level entry.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getImage</span><span class="p">(</span><span class="k">for</span> <span class="nv">entry</span><span class="p">:</span> <span class="kt"><a href="../Structs/GameLevelItem.html">GameLevelItem</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster17GameLevelSelectorV9entryItemyQrAA0cdG0VF"></a>
+                      <a name="//apple_ref/swift/Method/entryItem(_:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster17GameLevelSelectorV9entryItemyQrAA0cdG0VF">entryItem(_:<wbr>)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Returns a list entry for the entry given.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">entryItem</span><span class="p">(</span><span class="n">_</span> <span class="nv">entry</span><span class="p">:</span> <span class="kt"><a href="../Structs/GameLevelItem.html">GameLevelItem</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
 
                           </div>
                         </div>

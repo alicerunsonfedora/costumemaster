@@ -18,7 +18,7 @@ struct GameLevelSelector: View {
 
     /// A closure that runs when a level is selected.
     var onLevelSelect: (String) -> Void
-    
+
     /// A closure that runs when the controller is dismissed.
     var dismiss: () -> Void
 

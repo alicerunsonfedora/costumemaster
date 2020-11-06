@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>String Extension Reference</title>
+    <title>GameLevelItem Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <link rel="stylesheet" type="text/css" href="../css/katex.min.css" />
@@ -13,8 +13,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/String" class="dashAnchor"></a>
-    <a title="String Extension Reference"></a>
+    <a name="//apple_ref/swift/Struct/GameLevelItem" class="dashAnchor"></a>
+    <a title="GameLevelItem Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -38,7 +38,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          String Extension Reference
+          GameLevelItem Structure Reference
         </p>
       </div>
     </div>
@@ -47,15 +47,16 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>String</h1>
+              <h1>GameLevelItem</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">String</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">GameLevelItem</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Identifiable</span></code></pre>
 
                   </div>
                 </div>
-              
+              <p>A data structure that represents a game level item.</p>
+
             </section>
             <section class="section task-group-section">
               <div class="task-group">
@@ -63,9 +64,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:SS17The_CostumemasterE10toProtocolSo8NSObject_pyF"></a>
-                      <a name="//apple_ref/swift/Method/toProtocol()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:SS17The_CostumemasterE10toProtocolSo8NSObject_pyF">toProtocol()</a>
+                      <a name="/s:17The_Costumemaster13GameLevelItemV2id10Foundation4UUIDVvp"></a>
+                      <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster13GameLevelItemV2id10Foundation4UUIDVvp">id</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -73,14 +74,95 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Returns a copy of itself that conforms to NSObjectProtocol.</p>
+                          <p>A unique ID for this item.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">toProtocol</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSObjectProtocol</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">UUID</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster13GameLevelItemV4nameSSvp"></a>
+                      <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster13GameLevelItemV4nameSSvp">name</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>The name of the level.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster13GameLevelItemV11descriptionSSvp"></a>
+                      <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster13GameLevelItemV11descriptionSSvp">description</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>A description of the level.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster13GameLevelItemV21isDownloadableContentSbvp"></a>
+                      <a name="//apple_ref/swift/Property/isDownloadableContent" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster13GameLevelItemV21isDownloadableContentSbvp">isDownloadableContent</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Whether the level is part of a DLC.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">isDownloadableContent</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                           </div>
                         </div>
