@@ -64,6 +64,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         GameManagerDelegate.resumeGame()
     }
 
+    @IBAction func openLevel(_ sender: Any) {
+        if #available(OSX 10.15, *) {
+            let viewController = NSViewController()
+            let levelSelector = GameLevelSelector(levels: getLevelProperties()) { name in
+                viewController.dismiss(self)
+                GameManagerDelegate.loadScene(with: name, fadeDuration: 3.0)
+            } dismiss: {
+                viewController.dismiss(self)
+            }
+            let view = NSHostingView(rootView: levelSelector)
+            viewController.view = view
+
+            if let main = NSApplication.shared.mainWindow?.contentViewController {
+                if main == self.preferencesWindowController?.contentViewController {
+                    NSSound.beep()
+                    print("Preferences must be closed before opening a new level.")
+                    return
+                }
+                main.presentAsSheet(viewController)
+            }
+
+        } else {
+            sendAlert(
+                "Ensure that you're running the latest macOS version before running the Level Selector.",
+                withTitle: "Your Mac does not support this function.",
+                level: .warning
+            ) { _ in }
+        }
+    }
+
     @IBAction func callMainMenu(_ sender: Any) {
         GameManagerDelegate.callMainMenu()
     }
@@ -74,7 +104,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBAction func showDocumentation(_ sender: Any) {
         NSApplication.shared.showHelp(sender)
-//        NSWorkspace.shared.open(URL(string: "https://costumemaster.marquiskurt.net")!)
     }
 
     @IBAction func restorePurchases(_ sender: Any) {

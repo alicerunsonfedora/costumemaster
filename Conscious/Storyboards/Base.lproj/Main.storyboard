@@ -87,7 +87,11 @@
                                                 <action selector="resumeGame:" target="Voe-Tx-rLC" id="eUz-JX-Weh"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Open Level..." enabled="NO" alternate="YES" keyEquivalent="O" id="AP9-Cv-Toc" userLabel="Open Level..."/>
+                                        <menuItem title="Open Level..." alternate="YES" keyEquivalent="O" id="oc2-ll-R5t">
+                                            <connections>
+                                                <action selector="openLevel:" target="Voe-Tx-rLC" id="w7A-uX-uF9"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="8ey-bK-csm"/>
                                         <menuItem title="Back to Main Menu..." keyEquivalent="M" id="XNn-GZ-Mfm">
                                             <connections>

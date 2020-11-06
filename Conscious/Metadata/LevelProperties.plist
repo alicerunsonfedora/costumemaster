@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Title</key>
+		<string>Entry</string>
+		<key>Description</key>
+		<string>Where it all begins.</string>
+		<key>Is DLC</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Hacker</string>
+		<key>Description</key>
+		<string>Even flash drives can be their own hackers.</string>
+		<key>Is DLC</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Simultaneous</string>
+		<key>Description</key>
+		<string>It takes two to tango.</string>
+		<key>Is DLC</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Swiftly</string>
+		<key>Description</key>
+		<string>One day, you&apos;ll fly just like the birds.</string>
+		<key>Is DLC</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Boundary</string>
+		<key>Description</key>
+		<string>Boundaries are meant to be broken. Most of the time.</string>
+		<key>Is DLC</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Rushed</string>
+		<key>Description</key>
+		<string>Some agility and quick-thinking required.</string>
+		<key>Is DLC</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Divergent</string>
+		<key>Description</key>
+		<string>Sometimes the choice doesn&apos;t matter if the outcome is the same.</string>
+		<key>Is DLC</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Cycle</string>
+		<key>Description</key>
+		<string>There are no trees here.</string>
+		<key>Is DLC</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Exposure</string>
+		<key>Description</key>
+		<string>There is a bright future with your sorcery skills.</string>
+		<key>Is DLC</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Unmonitored</string>
+		<key>Description</key>
+		<string>You&apos;ll be on your own for the remainder of this.</string>
+		<key>Is DLC</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Seeded</string>
+		<key>Description</key>
+		<string>The development cycle is nearing its conclusion.</string>
+		<key>Is DLC</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Chained</string>
+		<key>Description</key>
+		<string>Life is just a chain of events.</string>
+		<key>Is DLC</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Consequences</string>
+		<key>Description</key>
+		<string>Prepare for the unforseen.</string>
+		<key>Is DLC</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Stack</string>
+		<key>Description</key>
+		<string>Just push and pop your way through.</string>
+		<key>Is DLC</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Traverse</string>
+		<key>Description</key>
+		<string>Mind the gap.</string>
+		<key>Is DLC</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Visibility</string>
+		<key>Description</key>
+		<string>It&apos;s time to see who you really are.</string>
+		<key>Is DLC</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Management</string>
+		<key>Description</key>
+		<string>When life gives you lemons, make lemonade.</string>
+		<key>Is DLC</key>
+		<true/>
+	</dict>
+</array>
+</plist>

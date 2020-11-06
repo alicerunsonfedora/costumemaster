@@ -161,6 +161,9 @@
 		BFE6475824F8B03500230F93 /* MenuTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFE6475724F8B03500230F93 /* MenuTileset.sks */; };
 		BFE9232D254F65A00091396D /* AISimulatorConsoleToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE9232C254F65A00091396D /* AISimulatorConsoleToolbar.swift */; };
 		BFE92330254F6A350091396D /* AIGameScene_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE9232F254F6A350091396D /* AIGameScene_Extension.swift */; };
+		BFEB76E02554A1A8004587E2 /* GameLevelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB76DF2554A1A8004587E2 /* GameLevelItem.swift */; };
+		BFEB76E32554A442004587E2 /* LevelProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFEB76E22554A442004587E2 /* LevelProperties.plist */; };
+		BFEB76E62554BE58004587E2 /* GameLevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB76E52554BE58004587E2 /* GameLevelSelector.swift */; };
 		BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */; };
 		BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */; };
 		BFEE78C324FBF1FC006FBFF0 /* GameAchievments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEE78C224FBF1FC006FBFF0 /* GameAchievments.swift */; };
@@ -332,6 +335,9 @@
 		BFE6475724F8B03500230F93 /* MenuTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuTileset.sks; sourceTree = "<group>"; };
 		BFE9232C254F65A00091396D /* AISimulatorConsoleToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISimulatorConsoleToolbar.swift; sourceTree = "<group>"; };
 		BFE9232F254F6A350091396D /* AIGameScene_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIGameScene_Extension.swift; sourceTree = "<group>"; };
+		BFEB76DF2554A1A8004587E2 /* GameLevelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelItem.swift; sourceTree = "<group>"; };
+		BFEB76E22554A442004587E2 /* LevelProperties.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LevelProperties.plist; sourceTree = "<group>"; };
+		BFEB76E52554BE58004587E2 /* GameLevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelSelector.swift; sourceTree = "<group>"; };
 		BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMoveDirection.swift; sourceTree = "<group>"; };
 		BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Change.atlas; sourceTree = "<group>"; };
 		BFEE78C224FBF1FC006FBFF0 /* GameAchievments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAchievments.swift; sourceTree = "<group>"; };
@@ -452,6 +458,7 @@
 				BF109CDA24FB26FB00F06E47 /* Store.swift */,
 				BF2B5E4625016CFB001EC2E7 /* CommandLineArguments.swift */,
 				BF4630EE255077A000EB606D /* Tooltip.swift */,
+				BFEB76DF2554A1A8004587E2 /* GameLevelItem.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -481,6 +488,7 @@
 				BFFF892A24F93F6A00D405CC /* MenuContent.plist */,
 				BFF9C063253261B90066F345 /* LevelStructure.plist */,
 				BFD25F57254F279700FDA1C3 /* AgentTypes.plist */,
+				BFEB76E22554A442004587E2 /* LevelProperties.plist */,
 			);
 			path = Metadata;
 			sourceTree = "<group>";
@@ -538,6 +546,7 @@
 				BFD25F54254F1B4600FDA1C3 /* AISimulatorView.swift */,
 				BFBF844C254F4A2C00DF3243 /* AISimulatorConsole.swift */,
 				BFE9232C254F65A00091396D /* AISimulatorConsoleToolbar.swift */,
+				BFEB76E52554BE58004587E2 /* GameLevelSelector.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1017,6 +1026,7 @@
 				BFD10ED72502CF0400BCDAA9 /* plateOn.wav in Resources */,
 				BF153F9224FC3DF3007B20B4 /* cantUse.wav in Resources */,
 				BFB0CE18251914BB0015FE6C /* EntryAI.sks in Resources */,
+				BFEB76E32554A442004587E2 /* LevelProperties.plist in Resources */,
 				BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */,
 				BF4CD5A92513F96E00C021BC /* Chained.sks in Resources */,
 				BFDF94E825080C3D004F5BE7 /* Boundary.sks in Resources */,
@@ -1122,6 +1132,7 @@
 				BF1FF2F4250FD4ED0053D1A4 /* CycleChallenge.swift in Sources */,
 				BF2B5E4925016D2D001EC2E7 /* Arguments.swift in Sources */,
 				BFBEB33324F8439900162B06 /* Preferences.swift in Sources */,
+				BFEB76E02554A1A8004587E2 /* GameLevelItem.swift in Sources */,
 				BF18AAC4252BB73000577BF6 /* GameTileSpriteNote.swift in Sources */,
 				BFC140CA252517A5007D65DC /* AIGameScene.swift in Sources */,
 				BFC78F3924F486EF004E85A9 /* PlayerCostumeType.swift in Sources */,
@@ -1158,6 +1169,7 @@
 				BF7C5EFB250ACE530062B1CC /* AboutScene.swift in Sources */,
 				BF93338E2532237100C78B44 /* IAPManager_Extension.swift in Sources */,
 				BF37C7FD253A07A000CC156E /* AIRandomMoveStrategist.swift in Sources */,
+				BFEB76E62554BE58004587E2 /* GameLevelSelector.swift in Sources */,
 				BF4630F92550A45D00EB606D /* AIGameStrategy.swift in Sources */,
 				BFF9C06E25326B340066F345 /* MainMenu_Extension.swift in Sources */,
 				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
