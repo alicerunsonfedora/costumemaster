@@ -35,15 +35,18 @@ struct AISimulatorConsole: View {
                 .background(Color(.controlBackgroundColor))
             }
             List(self.messageList) { message in
-                HStack(spacing: 8) {
+                HStack(alignment: .top) {
                     self.colorCoordinator(for: message.type)
                         .frame(width: 28)
                         .padding(.leading, 4)
                     Text(message.timestamp)
                         .font(.system(.body, design: .monospaced))
+                        .padding(.vertical, 4)
                     Text(message.contents)
                         .font(.system(.body, design: .monospaced))
+                        .padding(.vertical, 4)
                 }
+                .listRowInsets(.init(top: 4, leading: 8, bottom: 4, trailing: 8))
             }
             .listStyle(PlainListStyle())
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -88,7 +91,7 @@ struct AISimulatorConsole: View {
         return Image(imageName)
             .foregroundColor(color)
             .font(.body)
-            .padding(7)
+            .padding(4)
             .background(
                 Circle()
                     .foregroundColor(Color(.controlBackgroundColor))

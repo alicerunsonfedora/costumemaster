@@ -14,6 +14,10 @@ import SwiftUI
 
 extension AIGameScene {
 
+    private func getConsoleWindow() -> some View {
+        AISimulatorConsole(console: self.console)
+    }
+
     /// Initialize the console window and begin streaming information to the console view model.
     func initConsole() {
 
@@ -30,8 +34,7 @@ extension AIGameScene {
             name = String(name.dropLast(name.suffix(2).count))
         }
 
-        // Create the hosting view for the console window from the SwiftUI view.
-        let host = NSHostingView(rootView: AISimulatorConsole(console: self.console))
+        let host = NSHostingView(rootView: self.getConsoleWindow())
         let viewController = NSViewController()
         viewController.view = host
         viewController.title = "AI Simulator Console"
@@ -41,37 +44,46 @@ extension AIGameScene {
         let window = NSWindow(contentViewController: viewController)
         window.styleMask.insert(.unifiedTitleAndToolbar)
         window.appearance = NSAppearance(named: .darkAqua)
+        window.toolbar = NSToolbar()
+
+        if #available(OSX 11.0, *) {
+            window.title = "AI Simulator Console"
+            window.subtitle = name
+        } else {
+            // Create the hosting view for the title and subtitle view of the window.
+            window.titleVisibility = .hidden
+
+            let toolbarTitle = NSHostingView(
+                rootView: VStack(alignment: .leading) {
+                    Text(window.title)
+                        .font(.headline)
+                    Text(name)
+                        .font(.subheadline)
+                }.padding(.leading)
+            )
+            toolbarTitle.frame.size = toolbarTitle.fittingSize
+
+            let titleAccessory = NSTitlebarAccessoryViewController()
+            titleAccessory.view = toolbarTitle
+            titleAccessory.layoutAttribute = .leading
+
+            window.addTitlebarAccessoryViewController(titleAccessory)
+        }
 
         // Create the hosting view for the toolbar buttons.
-        let toolbarButtons = NSHostingView(rootView: AISimulatorConsoleToolbar(console: self.console))
-        toolbarButtons.frame.size = toolbarButtons.fittingSize
-
-        // Create the hosting view for the title and subtitle view of the window.
-        let toolbarTitle = NSHostingView(
-            rootView: VStack(alignment: .leading) {
-                Text(window.title)
-                    .font(.headline)
-                Text(name)
-                    .font(.subheadline)
-            }.padding(.leading)
+        let toolbarButtons = NSHostingView(
+            rootView: AISimulatorConsoleToolbar(console: self.console)
         )
-        toolbarTitle.frame.size = toolbarTitle.fittingSize
+        toolbarButtons.frame.size = toolbarButtons.fittingSize
 
         // Create the appropriate toolbar accessories for the title and the toolbar buttons.
         let accessory = NSTitlebarAccessoryViewController()
         accessory.view = toolbarButtons
         accessory.layoutAttribute = .trailing
 
-        let titleAccessory = NSTitlebarAccessoryViewController()
-        titleAccessory.view = toolbarTitle
-        titleAccessory.layoutAttribute = .leading
-
         // Create a toolbar on the window and add the accessories.
-        window.toolbar = NSToolbar()
         window.toolbar?.sizeMode = .regular
-        window.addTitlebarAccessoryViewController(titleAccessory)
         window.addTitlebarAccessoryViewController(accessory)
-        window.titleVisibility = .hidden
         window.setContentSize(host.fittingSize)
 
         // Show the window and try to make it the key window.
