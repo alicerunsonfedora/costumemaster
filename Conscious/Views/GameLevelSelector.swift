@@ -4,10 +4,12 @@
 //
 //  Created by Marquis Kurt on 11/5/20.
 //
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+//
 
-#if canImport(SwiftUI)
 import SwiftUI
-#endif
 
 /// A view that lets players select a level and play it.
 struct GameLevelSelector: View {
