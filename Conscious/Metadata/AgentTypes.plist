@@ -37,5 +37,12 @@
 		<key>Description</key>
 		<string>Determines the next set of moves by picking random actions without any assessement.</string>
 	</dict>
+	<key>yellowConverse</key>
+	<dict>
+		<key>Title</key>
+		<string>Machine Learning Tree</string>
+		<key>Description</key>
+		<string>Determines the next set of moves by asking questions about the current state of the level and making a decision from a decision tree built with a machine learning model trained with many examples from many puzzles.</string>
+	</dict>
 </dict>
 </plist>

@@ -41,7 +41,7 @@ struct CommandLineArguments {
         /// An agent with a pre-determined decision tree.
         case predeterminedTree = "predTree"
 
-//        /// An agent with a dynamically generated decision tree based on its previous actions.
-//        case historyTree = "historyTree"
+        /// An agent that uses a trained machine learning model to make decisions.
+        case yellowConverse = "yellowConverse"
     }
 }
