@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>GameSignalInputMethod Enumeration Reference</title>
+    <title>AITealConverseStrategist Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <link rel="stylesheet" type="text/css" href="../css/katex.min.css" />
     <meta charset='utf-8'>
 	<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0" />
     <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/katex.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/GameSignalInputMethod" class="dashAnchor"></a>
-    <a title="GameSignalInputMethod Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Class/AITealConverseStrategist" class="dashAnchor"></a>
+    <a title="AITealConverseStrategist Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -36,7 +38,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          GameSignalInputMethod Enumeration Reference
+          AITealConverseStrategist Class Reference
         </p>
       </div>
     </div>
@@ -45,21 +47,15 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>GameSignalInputMethod</h1>
+              <h1>AITealConverseStrategist</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">,</span> <span class="nv">renamed</span><span class="p">:</span> <span class="s">"GameSignalSender.InputMethod"</span><span class="p">)</span>
-<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">GameSignalInputMethod</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AITealConverseStrategist</span> <span class="p">:</span> <span class="kt"><a href="../Classes/AITreeStrategy.html">AITreeStrategy</a></span></code></pre>
 
                   </div>
                 </div>
-              <p>An enumeration that defines the different types of inputs that are used in the game.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    This has been moved to <code><a href="../Classes/GameSignalSender/InputMethod.html">GameSignalSender.InputMethod</a></code>.
-
-</div>
+              <p>A decision tree-based agent that uses a model trained with CoreML to produce results.</p>
 
             </section>
             <section class="section task-group-section">
@@ -68,9 +64,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster21GameSignalInputMethodO21activeOncePermanentlyyA2CmF"></a>
-                      <a name="//apple_ref/swift/Element/activeOncePermanently" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster21GameSignalInputMethodO21activeOncePermanentlyyA2CmF">activeOncePermanently</a>
+                      <a name="/s:17The_Costumemaster24AITealConverseStrategistC5modelAA04TealD0CSgvp"></a>
+                      <a name="//apple_ref/swift/Property/model" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster24AITealConverseStrategistC5modelAA04TealD0CSgvp">model</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -78,14 +74,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The input is active once and remains active permanently.</p>
+                          <p>The ML model the agent will use to make decisions.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">activeOncePermanently</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">model</span><span class="p">:</span> <span class="kt"><a href="../Classes/TealConverse.html">TealConverse</a></span><span class="p">?</span></code></pre>
 
                           </div>
                         </div>
@@ -95,9 +91,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster21GameSignalInputMethodO26activeByPlayerInterventionyA2CmF"></a>
-                      <a name="//apple_ref/swift/Element/activeByPlayerIntervention" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster21GameSignalInputMethodO26activeByPlayerInterventionyA2CmF">activeByPlayerIntervention</a>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AITealConverseStrategist(im)init"></a>
+                      <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AITealConverseStrategist(im)init">init()</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -105,14 +101,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The input is active when a player interacts with it, either by distance or collision.</p>
+                          <p>Initialize the strategist.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">activeByPlayerIntervention</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">override</span> <span class="nf">init</span><span class="p">()</span></code></pre>
 
                           </div>
                         </div>
@@ -122,9 +118,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster21GameSignalInputMethodO13activeOnTimeryA2CmF"></a>
-                      <a name="//apple_ref/swift/Element/activeOnTimer" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster21GameSignalInputMethodO13activeOnTimeryA2CmF">activeOnTimer</a>
+                      <a name="/c:@M@The_Costumemaster@objc(cs)AITealConverseStrategist(im)bestMoveForActivePlayer"></a>
+                      <a name="//apple_ref/swift/Method/bestMoveForActivePlayer()" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AITealConverseStrategist(im)bestMoveForActivePlayer">bestMoveForActivePlayer()</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -132,14 +128,41 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The input is active on a timer and then deactivates.</p>
+                          <p>Returns the best move for the active player.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">activeOnTimer</span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">bestMoveForActivePlayer</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">GKGameModelUpdate</span><span class="p">?</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster24AITealConverseStrategistC13assessToInput5stateAA04TealdH0CAA19AIAbstractGameStateC_tF"></a>
+                      <a name="//apple_ref/swift/Method/assessToInput(state:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster24AITealConverseStrategistC13assessToInput5stateAA04TealdH0CAA19AIAbstractGameStateC_tF">assessToInput(state:<wbr>)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Returns an input that satisfies the ML model with a state assessement.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">assessToInput</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/AIAbstractGameState.html">AIAbstractGameState</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/TealConverseInput.html">TealConverseInput</a></span></code></pre>
 
                           </div>
                         </div>
@@ -233,9 +256,6 @@
                   <a href="../Enums/GameSignalKind.html">GameSignalKind</a>
                 </li>
                 <li class="nav-group-task">
-                  <a href="../Enums/GameSignalInputMethod.html">GameSignalInputMethod</a>
-                </li>
-                <li class="nav-group-task">
                   <a href="../Enums/GameSignalMethod.html">GameSignalMethod</a>
                 </li>
                 <li class="nav-group-task">
@@ -319,6 +339,9 @@
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
                   <a href="../Classes/AIPredeterminedTreeStrategist.html">AIPredeterminedTreeStrategist</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/AITealConverseStrategist.html">AITealConverseStrategist</a>
                 </li>
               </ul>
             </li>
@@ -448,9 +471,6 @@
               <a href="../Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
-                  <a href="../Classes/AIRandomNetworkStrategist.html">AIRandomNetworkStrategist</a>
-                </li>
-                <li class="nav-group-task">
                   <a href="../Classes/GameDeathPit.html">GameDeathPit</a>
                 </li>
                 <li class="nav-group-task">
@@ -458,6 +478,15 @@
                 </li>
                 <li class="nav-group-task">
                   <a href="../Classes/GameTileSpriteNode.html">GameTileSpriteNode</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/TealConverse.html">TealConverse</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/TealConverseInput.html">TealConverseInput</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/TealConverseOutput.html">TealConverseOutput</a>
                 </li>
               </ul>
             </li>
@@ -480,6 +509,9 @@
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
                   <a href="../Extensions/Binding.html">Binding</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Extensions/Bool.html">Bool</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="../Extensions/CGPoint.html">CGPoint</a>
@@ -558,7 +590,7 @@
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-11-05)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-11-11)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

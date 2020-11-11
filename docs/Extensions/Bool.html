@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AIRandomNetworkStrategist Class Reference</title>
+    <title>Bool Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <link rel="stylesheet" type="text/css" href="../css/katex.min.css" />
@@ -13,8 +13,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/AIRandomNetworkStrategist" class="dashAnchor"></a>
-    <a title="AIRandomNetworkStrategist Class Reference"></a>
+    <a name="//apple_ref/swift/Extension/Bool" class="dashAnchor"></a>
+    <a title="Bool Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -38,7 +38,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          AIRandomNetworkStrategist Class Reference
+          Bool Extension Reference
         </p>
       </div>
     </div>
@@ -47,24 +47,15 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>AIRandomNetworkStrategist</h1>
+              <h1>Bool</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"This strategist will be removed in a future release."</span><span class="p">)</span>
-<span class="kd">class</span> <span class="kt">AIRandomNetworkStrategist</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKStrategist</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Bool</span></code></pre>
 
                   </div>
                 </div>
-              <p>A explorative strategist that uses Random Network Distillation to determine the most optimal move.</p>
-
-<p>Random Network Distillation (RND) is a reinforcement learning-based strategy that places emphasis on unexplored
-states, encouraging the strategist to explore the game with rewards for encountering new states. RND scores states
-by measuring how difficult it is to predict the output based on previous experience.</p>
-
-<p>For more information, consult the OpenAI article titled
-<a href="https://1n.pm/df0Ui">Reinforcement Learning with Prediction-Based Rewards</a>.</p>
-
+              
             </section>
             <section class="section task-group-section">
               <div class="task-group">
@@ -72,9 +63,9 @@ by measuring how difficult it is to predict the output based on previous experie
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC11lookupTableSDyAA19AIAbstractGameStateCSiGvp"></a>
-                      <a name="//apple_ref/swift/Property/lookupTable" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC11lookupTableSDyAA19AIAbstractGameStateCSiGvp">lookupTable</a>
+                      <a name="/s:Sb17The_CostumemasterE14toPythonStringSSyF"></a>
+                      <a name="//apple_ref/swift/Method/toPythonString()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:Sb17The_CostumemasterE14toPythonStringSSyF">toPythonString()</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -82,122 +73,14 @@ by measuring how difficult it is to predict the output based on previous experie
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>A lookup table containing states the strategist has seen before, along with their score.</p>
+                          <p>Returns a Python string representation of itself.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">lookupTable</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/AIAbstractGameState.html">AIAbstractGameState</a></span> <span class="p">:</span> <span class="kt">Int</span><span class="p">]</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist(py)gameModel"></a>
-                      <a name="//apple_ref/swift/Property/gameModel" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist(py)gameModel">gameModel</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The game model that the strategist will assess.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">gameModel</span><span class="p">:</span> <span class="kt">GKGameModel</span><span class="p">?</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist(py)randomSource"></a>
-                      <a name="//apple_ref/swift/Property/randomSource" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist(py)randomSource">randomSource</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The random source for the strategist.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">randomSource</span><span class="p">:</span> <span class="kt">GKRandom</span><span class="p">?</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist(im)bestMoveForActivePlayer"></a>
-                      <a name="//apple_ref/swift/Method/bestMoveForActivePlayer()" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@The_Costumemaster@objc(cs)AIRandomNetworkStrategist(im)bestMoveForActivePlayer">bestMoveForActivePlayer()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Determine the best move for the currently active player.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">bestMoveForActivePlayer</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">GKGameModelUpdate</span><span class="p">?</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster25AIRandomNetworkStrategistC5trainyyF"></a>
-                      <a name="//apple_ref/swift/Method/train()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AIRandomNetworkStrategistC5trainyyF">train()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Train the strategist.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">train</span><span class="p">()</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">toPythonString</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                           </div>
                         </div>
@@ -291,9 +174,6 @@ by measuring how difficult it is to predict the output based on previous experie
                   <a href="../Enums/GameSignalKind.html">GameSignalKind</a>
                 </li>
                 <li class="nav-group-task">
-                  <a href="../Enums/GameSignalInputMethod.html">GameSignalInputMethod</a>
-                </li>
-                <li class="nav-group-task">
                   <a href="../Enums/GameSignalMethod.html">GameSignalMethod</a>
                 </li>
                 <li class="nav-group-task">
@@ -377,6 +257,9 @@ by measuring how difficult it is to predict the output based on previous experie
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
                   <a href="../Classes/AIPredeterminedTreeStrategist.html">AIPredeterminedTreeStrategist</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/AITealConverseStrategist.html">AITealConverseStrategist</a>
                 </li>
               </ul>
             </li>
@@ -506,9 +389,6 @@ by measuring how difficult it is to predict the output based on previous experie
               <a href="../Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
-                  <a href="../Classes/AIRandomNetworkStrategist.html">AIRandomNetworkStrategist</a>
-                </li>
-                <li class="nav-group-task">
                   <a href="../Classes/GameDeathPit.html">GameDeathPit</a>
                 </li>
                 <li class="nav-group-task">
@@ -516,6 +396,15 @@ by measuring how difficult it is to predict the output based on previous experie
                 </li>
                 <li class="nav-group-task">
                   <a href="../Classes/GameTileSpriteNode.html">GameTileSpriteNode</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/TealConverse.html">TealConverse</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/TealConverseInput.html">TealConverseInput</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/TealConverseOutput.html">TealConverseOutput</a>
                 </li>
               </ul>
             </li>
@@ -538,6 +427,9 @@ by measuring how difficult it is to predict the output based on previous experie
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
                   <a href="../Extensions/Binding.html">Binding</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Extensions/Bool.html">Bool</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="../Extensions/CGPoint.html">CGPoint</a>
@@ -616,7 +508,7 @@ by measuring how difficult it is to predict the output based on previous experie
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-11-05)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-11-11)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>
