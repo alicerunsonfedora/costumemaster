@@ -37,7 +37,7 @@
 		<key>Description</key>
 		<string>Determines the next set of moves by picking random actions without any assessement.</string>
 	</dict>
-	<key>yellowConverse</key>
+	<key>tealConverse</key>
 	<dict>
 		<key>Title</key>
 		<string>Machine Learning Tree</string>

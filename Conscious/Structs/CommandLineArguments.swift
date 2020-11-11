@@ -42,6 +42,6 @@ struct CommandLineArguments {
         case predeterminedTree = "predTree"
 
         /// An agent that uses a trained machine learning model to make decisions.
-        case yellowConverse = "yellowConverse"
+        case tealConverse = "tealConverse"
     }
 }

@@ -285,8 +285,8 @@ class AIGameScene: ChallengeGameScene {
             strategist = AIGameStrategist(with: AIReflexStrategist(), reading: state)
         case .predeterminedTree:
             strategist = AIGameStrategist(with: AIPredeterminedTreeStrategist(), reading: state)
-        case .yellowConverse:
-            strategist = AIGameStrategist(with: AIYellowConverseStrategist(), reading: state)
+        case .tealConverse:
+            strategist = AIGameStrategist(with: AITealConverseStrategist(), reading: state)
         default:
             console.error("Agent type \(AppDelegate.arguments.agentTestingType.rawValue) cannot be found.")
             console.warn("Using fallback agent \"randomMove\".")

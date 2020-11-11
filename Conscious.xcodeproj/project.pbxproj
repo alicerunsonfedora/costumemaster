@@ -59,7 +59,7 @@
 		BF4744D3255B33CA001EE6DD /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4744D2255B33C9001EE6DD /* CoreML.framework */; };
 		BF4744DA255B348D001EE6DD /* AIYellowConverseStrategist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4744D9255B348D001EE6DD /* AIYellowConverseStrategist.swift */; };
 		BF4744DE255B3792001EE6DD /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4744DD255B3792001EE6DD /* Bool.swift */; };
-		BF4744E2255B3F65001EE6DD /* YellowConverse.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BF4744E1255B3F65001EE6DD /* YellowConverse.mlmodel */; };
+		BF4744E2255B3F65001EE6DD /* TealConverse.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BF4744E1255B3F65001EE6DD /* TealConverse.mlmodel */; };
 		BF4A451F2501B683008BDD5A /* Entry.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF4A451E2501B683008BDD5A /* Entry.sks */; };
 		BF4CD5A92513F96E00C021BC /* Chained.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF4CD5A82513F96E00C021BC /* Chained.sks */; };
 		BF4CD5AD251410A800C021BC /* Player_Change_Final.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BF4CD5AC251410A800C021BC /* Player_Change_Final.atlas */; };
@@ -227,7 +227,7 @@
 		BF4744D2255B33C9001EE6DD /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
 		BF4744D9255B348D001EE6DD /* AIYellowConverseStrategist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIYellowConverseStrategist.swift; sourceTree = "<group>"; };
 		BF4744DD255B3792001EE6DD /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
-		BF4744E1255B3F65001EE6DD /* YellowConverse.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YellowConverse.mlmodel; sourceTree = "<group>"; };
+		BF4744E1255B3F65001EE6DD /* TealConverse.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TealConverse.mlmodel; sourceTree = "<group>"; };
 		BF4A451E2501B683008BDD5A /* Entry.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Entry.sks; sourceTree = "<group>"; };
 		BF4CD5A82513F96E00C021BC /* Chained.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Chained.sks; sourceTree = "<group>"; };
 		BF4CD5AC251410A800C021BC /* Player_Change_Final.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Change_Final.atlas; sourceTree = "<group>"; };
@@ -570,7 +570,7 @@
 		BF4744E4255B3F6B001EE6DD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BF4744E1255B3F65001EE6DD /* YellowConverse.mlmodel */,
+				BF4744E1255B3F65001EE6DD /* TealConverse.mlmodel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1197,7 +1197,7 @@
 				BF7C5EF3250AB2F30062B1CC /* DivergentChallenge.swift in Sources */,
 				BFAD7FF9250FFD8D00768609 /* CostumemasteryInheritable.swift in Sources */,
 				BFE92330254F6A350091396D /* AIGameScene_Extension.swift in Sources */,
-				BF4744E2255B3F65001EE6DD /* YellowConverse.mlmodel in Sources */,
+				BF4744E2255B3F65001EE6DD /* TealConverse.mlmodel in Sources */,
 				BFB621CA2512CFD4003940CF /* GameStructureBlock.swift in Sources */,
 				BF0D2C1E24FADD1F00AEF86F /* Keyboard.swift in Sources */,
 				BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */,

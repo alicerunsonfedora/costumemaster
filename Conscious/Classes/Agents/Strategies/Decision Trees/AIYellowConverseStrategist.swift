@@ -14,17 +14,17 @@ import GameplayKit
 import CoreML
 
 /// A decision tree-based agent that uses a model trained with CoreML to produce results.
-class AIYellowConverseStrategist: AITreeStrategy {
+class AITealConverseStrategist: AITreeStrategy {
 
     /// The ML model the agent will use to make decisions.
-    var model: YellowConverse?
+    var model: TealConverse?
 
     /// Initialize the strategist.
     override init() {
         super.init()
 
         do {
-            self.model = try YellowConverse(contentsOf: YellowConverse.urlOfModelInThisBundle)
+            self.model = try TealConverse(contentsOf: TealConverse.urlOfModelInThisBundle)
             console?.debug("Loaded decision tree model into the agent.")
         } catch {
             console?.error("Failed to load ML model for the agent.")
@@ -75,9 +75,9 @@ class AIYellowConverseStrategist: AITreeStrategy {
 
     /// Returns an input that satisfies the ML model with a state assessement.
     /// - Parameter state The state to make an assessement for.
-    func assessToInput(state: AIAbstractGameState) -> YellowConverseInput {
+    func assessToInput(state: AIAbstractGameState) -> TealConverseInput {
         let data = self.assess(state: state)
-        return YellowConverseInput(
+        return TealConverseInput(
             canEscape: data.canEscape.toPythonString(),
             nearExit: data.nearExit.toPythonString(),
             nearInput: data.nearInput.toPythonString(),
