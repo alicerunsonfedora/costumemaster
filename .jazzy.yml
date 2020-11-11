@@ -79,6 +79,7 @@ custom_categories:
     children:
     - AIPredeterminedTreeStrategist
     - AIHistoryTreeStrategist
+    - AIYellowConverseStrategist
   
   - name: AI - Other Strategies
     children:
