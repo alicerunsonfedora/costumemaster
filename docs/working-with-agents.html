@@ -134,17 +134,13 @@ For all possible movement actions:
         Set the current action to the movement action that caused the distance change.
 Finally, return the current action.
 </code></pre>
-<h3 id='code-airandomnetworkstrategist-code' class='heading'><code>AIRandomNetworkStrategist</code></h3>
+<h3 id='code-aitealconversestrategist-code' class='heading'><code><a href="Classes/AITealConverseStrategist.html">AITealConverseStrategist</a></code></h3>
 
-<p>The <code>AIRandomNetworkStrategist</code> is a strategist that uses reinforcement learning to determine the best move, learning from its
-previous actions and mistakes. The agent will favor unexplored and/or unfamiliar states using the <a href="https://1n.pm/df0Ui">random network distillation
-algorithm</a>.</p>
-<div class="aside aside-warning">
-    <p class="aside-title">Warning</p>
-    This agent has not been fully implemented due to the complexity of the algorithms involved, and it is not accessible
-through any tools. This agent class may be deprecated in a future release.
+<p>The <code><a href="Classes/AITealConverseStrategist.html">AITealConverseStrategist</a></code> is a strategy that uses a decision tree generated from CoreML and/or Create ML to make
+decisions. The agent asks the same questions as the <code><a href="Classes/AIPredeterminedTreeStrategist.html">AIPredeterminedTreeStrategist</a></code>, but uses the capabilities of CoreML to
+answer those questions with an ML model.</p>
 
-</div>
+<p>Details on how the model is generated can be found on the <a href="https://github.com/alicerunsonfedora/CS400-ml-playground">Teal Converse repository</a>.</p>
 <h2 id='testing-the-included-agents' class='heading'>Testing the Included Agents</h2>
 <h3 id='via-the-simulator-tool' class='heading'>Via the Simulator Tool</h3>
 <div class="aside aside-important">
@@ -223,8 +219,8 @@ that you have the required software to build the project.</p>
 method and return an action of type <code><a href="Classes/AIGameDecision.html">AIGameDecision</a></code>.</li>
 <li>Add an entry in the <code><a href="Structs/CommandLineArguments/AgentTestingType.html">CommandLineArguments.AgentTestingType</a></code> enumeration that will represent your custom agent.</li>
 <li>Modify the method <code><a href="Classes/AIGameScene.html#/s:17The_Costumemaster11AIGameSceneC11getStrategy4withQrAA19AIAbstractGameStateC_tF">AIGameScene.getStrategy(with:)</a></code> and include a case that instantiates your strategy.</li>
-<li>Add a pictogram to the game&rsquo;s Assets.xcassets that represents your agent with the same name as what you supplied in the
-previous step.</li>
+<li>Add a symbol from SF Symbols that best represents your agent, then update <code><a href="Structs/AISimulatorAgentImage.html">AISimulatorAgentImage</a></code> to include backgrounds
+and the symbol image for your agent accordingly.</li>
 <li>Add a dictionary entry in AgentTypes.plist with a title and description for your agent.</li>
 <li>Build and run The Costumemaster.</li>
 </ol>
@@ -648,6 +644,12 @@ method <a href="https://docs.swift.org/swift-book/LanguageGuide/OpaqueTypes.html
             <li class="nav-group-name">
               <a href="Other%20Structs.html">Other Structures</a>
               <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Structs/AISimulatorAgentImage.html">AISimulatorAgentImage</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Structs/AISimulatorAgentImage_Previews.html">AISimulatorAgentImage_Previews</a>
+                </li>
                 <li class="nav-group-task">
                   <a href="Structs/GameLevelItem.html">GameLevelItem</a>
                 </li>

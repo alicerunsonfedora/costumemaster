@@ -84,14 +84,13 @@ For all possible movement actions:
 Finally, return the current action.
 ```
 
-### `AIRandomNetworkStrategist`
+### `AITealConverseStrategist`
 
-The `AIRandomNetworkStrategist` is a strategist that uses reinforcement learning to determine the best move, learning from its
-previous actions and mistakes. The agent will favor unexplored and/or unfamiliar states using the [random network distillation
-algorithm][#rnd].
+The `AITealConverseStrategist` is a strategy that uses a decision tree generated from CoreML and/or Create ML to make
+decisions. The agent asks the same questions as the `AIPredeterminedTreeStrategist`, but uses the capabilities of CoreML to
+answer those questions with an ML model.
 
-- Warning: This agent has not been fully implemented due to the complexity of the algorithms involved, and it is not accessible
-through any tools. This agent class may be deprecated in a future release.
+Details on how the model is generated can be found on the [Teal Converse repository][#tealconverse].
 
 ## Testing the Included Agents
 
@@ -152,8 +151,8 @@ that you have the required software to build the project.
 method and return an action of type `AIGameDecision`.
 2. Add an entry in the `CommandLineArguments.AgentTestingType` enumeration that will represent your custom agent.
 3. Modify the method `AIGameScene.getStrategy(with:)` and include a case that instantiates your strategy.
-4. Add a pictogram to the game's Assets.xcassets that represents your agent with the same name as what you supplied in the
-previous step.
+4. Add a symbol from SF Symbols that best represents your agent, then update `AISimulatorAgentImage` to include backgrounds
+and the symbol image for your agent accordingly.
 5. Add a dictionary entry in AgentTypes.plist with a title and description for your agent.
 6. Build and run The Costumemaster.
 
@@ -171,3 +170,4 @@ method [opaquely returns a type][#opaque] of `AIGameStrategist` and will not pro
 
 [#opaque]: https://docs.swift.org/swift-book/LanguageGuide/OpaqueTypes.html
 [#rnd]: https://1n.pm/df0Ui
+[#tealconverse]: https://github.com/alicerunsonfedora/CS400-ml-playground
