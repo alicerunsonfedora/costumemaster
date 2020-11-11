@@ -79,7 +79,7 @@ struct AISimulatorView: View {
 
             Divider()
 
-            HStack(alignment: .top, spacing: 8) {
+            HStack(alignment: .top) {
                 Image(agentType.rawValue)
                     .resizable()
                     .scaledToFill()
@@ -87,13 +87,13 @@ struct AISimulatorView: View {
                     .cornerRadius(12.0)
                 VStack(alignment: .leading) {
                     Text(self.getName(of: agentType))
-                        .font(.title)
+                        .font(.system(.title, design: .rounded))
                         .bold()
                     Text(self.getAgentDescription())
                         .multilineTextAlignment(.leading)
                 }
+                .frame(minHeight: 76, alignment: Alignment.top)
             }
-            .frame(maxHeight: .infinity)
 
             Picker("Run simulation with agent:", selection: $agentType) {
                 ForEach(CommandLineArguments.AgentTestingType.allCases, id: \.self) { type in
