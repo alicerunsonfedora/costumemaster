@@ -17,13 +17,6 @@ import SpriteKit
 /// Heavy objects can be manipulated by the player when wearing the sorceress costume.
 class GameHeavyObject: GameTileSpriteNode {
 
-    /// The location of this heavy object.
-    /// - Important: This property has been renamed to worldPosition.
-    @available(*, deprecated, renamed: "worldPosition")
-    public var location: CGPoint {
-        return self.worldPosition
-    }
-
     /// Whether the object is being carried by the player.
     public var carrying: Bool {
         return self.parent is Player

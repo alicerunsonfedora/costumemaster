@@ -146,22 +146,6 @@ class AIGameScene: ChallengeGameScene {
         return states
     }
 
-    /// Get a predetermined set of actions with a maximum budget.
-    ///
-    /// After every move, the state is reassesed. If the state resulting from an action causes the solution, no further
-    /// actions will be generated.
-    ///
-    /// - Parameter budget: The maximum number of moves to get a strategy for.
-    /// - Returns: A list of actions for the agent to take.
-    /// - Complexity: This method takes O(n) time since, at the very worst case, a list of actions with the max
-    /// budget can be created.
-    /// - Important: This method has been renamed to `AIGameScene.strategize(with budget:)`.
-    @available(*, deprecated, renamed: "strategize")
-    func getPredeterminedStrategy(max budget: Int) -> [AIGameDecision] {
-        console.warn("AIGameScene.getPredeterminedStrategy has been renamed to AIGameScene.strategize.")
-        return self.strategize(with: budget)
-    }
-
     /// Prevent the player from doing anything that could influence state updates.
     func blockInput() {
         console.error("Keyboard input is blocked in an AI game scene.")
@@ -210,15 +194,6 @@ class AIGameScene: ChallengeGameScene {
         state.escapable = self.exitNode?.active ?? false
 
         return state
-    }
-
-    /// Apply a game state update to the scene.
-    /// - Parameter state: The action that will be performed to change the state.
-    /// - Important: This function has been renamed to `AIGameScene.apply(_ action:)`.
-    @available(*, deprecated, renamed: "AIGameScene.apply")
-    func setUpdate(_ state: AIGameDecision) {
-        console.warn("AIGameScene.setUpdate is deprecated and will be removed in a future release.")
-        self.apply(state)
     }
 
     /// Apply a game state update to the scene.

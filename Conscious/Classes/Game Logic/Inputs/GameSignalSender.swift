@@ -35,14 +35,6 @@ public class GameSignalSender: GameStructureObject {
     /// The number of seconds it takes for the input to toggle.
     var cooldown: Double
 
-    /// The position of this input in context with the level.
-    /// - Note: Use `self.position` for position of the _actual_ node.
-    /// - Important: This property has been renamed to worldPosition.
-    @available(*, deprecated, renamed: "worldPosition")
-    var levelPosition: CGPoint {
-        return self.worldPosition
-    }
-
     // MARK: COMPUTED PROPERTIES
     /// The texture for this input, accounting for active states.
     var activeTexture: SKTexture {
@@ -102,50 +94,6 @@ public class GameSignalSender: GameStructureObject {
         self.baseTexture = textureName
         self.cooldown = timer
         self.activationMethod = inputMethods
-        self.receivers = []
-        super.init(
-            with: SKTexture(imageNamed: textureName + "_off"),
-            size: SKTexture(imageNamed: textureName + "_off").size()
-        )
-        self.worldPosition = position
-        self.texture = self.activeTexture
-    }
-
-    // MARK: CONSTRUCTOR
-    /// Initialize the input.
-    /// - Parameter textureName: The name of the texture for this input.
-    /// - Parameter inputMethod: The means of which this input will be activated by.
-    /// - Important: This method is deprecated. Use an initializer with a list of input methods.
-    @available(*, deprecated, message: "Please use an initializer with a list of input methods.")
-    public init(textureName: String, by inputMethod: InputMethod, at position: CGPoint) {
-        self.baseTexture = textureName
-        self.activationMethod = [inputMethod]
-        self.cooldown = 0
-        self.receivers = []
-        super.init(
-            with: SKTexture(imageNamed: textureName + "_off"),
-            size: SKTexture(imageNamed: textureName + "_off").size()
-        )
-        self.worldPosition = position
-        self.texture = self.activeTexture
-    }
-
-    // MARK: CONSTRUCTOR
-    /// Initialize the input.
-    /// - Parameter textureName: The name of the texture for this input.
-    /// - Parameter inputMethod: The means of which this input will be activated by.
-    /// - Parameter timer: The number of seconds it takes for this input to toggle states.
-    /// - Important: This method is deprecated. Use an initializer with a list of input methods.
-    @available(*, deprecated, message: "Please use an initializer with a list of input methods.")
-    public init(
-        textureName: String,
-        by inputMethod: InputMethod,
-        at position: CGPoint,
-        with timer: Double
-    ) {
-        self.baseTexture = textureName
-        self.cooldown = timer
-        self.activationMethod = [inputMethod]
         self.receivers = []
         super.init(
             with: SKTexture(imageNamed: textureName + "_off"),

@@ -43,7 +43,6 @@
 		BF3A0B7824F6CB0C00575F72 /* GameSignalReceivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7724F6CB0C00575F72 /* GameSignalReceivable.swift */; };
 		BF3A0B7A24F6CB4D00575F72 /* GameSignalSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7924F6CB4D00575F72 /* GameSignalSender.swift */; };
 		BF3A0B7C24F6CB9900575F72 /* GameSignalMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7B24F6CB9900575F72 /* GameSignalMethod.swift */; };
-		BF3A0B7F24F6EB4900575F72 /* GameSignalInputMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */; };
 		BF3A0B8124F703F400575F72 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8024F703F400575F72 /* MainMenu.sks */; };
 		BF3A0B8424F7046900575F72 /* DoorReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A0B8324F7046900575F72 /* DoorReceiver.swift */; };
 		BF3A0B8A24F733C400575F72 /* Cabin-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF3A0B8924F733C400575F72 /* Cabin-Regular.ttf */; };
@@ -212,7 +211,6 @@
 		BF3A0B7724F6CB0C00575F72 /* GameSignalReceivable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalReceivable.swift; sourceTree = "<group>"; };
 		BF3A0B7924F6CB4D00575F72 /* GameSignalSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalSender.swift; sourceTree = "<group>"; };
 		BF3A0B7B24F6CB9900575F72 /* GameSignalMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalMethod.swift; sourceTree = "<group>"; };
-		BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSignalInputMethod.swift; sourceTree = "<group>"; };
 		BF3A0B8024F703F400575F72 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
 		BF3A0B8324F7046900575F72 /* DoorReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorReceiver.swift; sourceTree = "<group>"; };
 		BF3A0B8924F733C400575F72 /* Cabin-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Regular.ttf"; sourceTree = "<group>"; };
@@ -420,7 +418,6 @@
 			isa = PBXGroup;
 			children = (
 				BF3A0B7B24F6CB9900575F72 /* GameSignalMethod.swift */,
-				BF3A0B7E24F6EB4900575F72 /* GameSignalInputMethod.swift */,
 				BF109CD824FB20B400F06E47 /* GameSignalKind.swift */,
 			);
 			path = Signals;
@@ -1213,7 +1210,6 @@
 				BF93338A2532224300C78B44 /* IAPManager.swift in Sources */,
 				BFE0AE9D250C2A33003C6780 /* GameLeaderboards.swift in Sources */,
 				BFAD134A25028C0F0074DCBA /* GameAlarmClock.swift in Sources */,
-				BF3A0B7F24F6EB4900575F72 /* GameSignalInputMethod.swift in Sources */,
 				BF18AAC0252B9EC200577BF6 /* GameScene_Extension.swift in Sources */,
 				BF4630EC255068DB00EB606D /* Binding.swift in Sources */,
 				BF63E65B24F84BAC00429247 /* GeneralPrefsViewController.swift in Sources */,

@@ -26,19 +26,6 @@ class ViewController: NSViewController, NSWindowDelegate {
     /// Use this sparingly.
     var rootScene: SKScene?
 
-    /// Sign in to Game Center and present the resulting controller.
-    @available(*, deprecated, message: "This has been moved to AppDelegate.")
-    func authenticateWithGameCenter() {
-        let localPlayer = GKLocalPlayer.local
-        localPlayer.authenticateHandler = { (viewC: NSViewController?, error) in
-            guard error == nil else { return }
-
-            if let controller = viewC {
-                self.presentAsSheet(controller)
-            }
-        }
-    }
-
     override func viewDidAppear() {
         self.view.window?.delegate = self
     }

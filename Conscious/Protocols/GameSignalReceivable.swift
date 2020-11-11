@@ -37,11 +37,6 @@ protocol GameSignalReceivable: GameTileSpriteNode {
     /// Whether the receiver is active.
     var active: Bool { get }
 
-    /// The position of the output in context with the level world.
-    /// - Note: Use `self.position` to determine the position of the _actual_ note.
-    @available(*, deprecated, renamed: "worldPosition")
-    var levelPosition: CGPoint { get }
-
     // MARK: METHODS
     /// Initialize a game receiver.
     /// - Parameter inputs: The inputs that the receiver will listen to for signal updates.
