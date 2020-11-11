@@ -60,26 +60,40 @@ public class Player: SKSpriteNode {
     /// The heads-up display for the player.
     var hud: SKNode = SKNode()
 
+    /// Whether to enable ML mode.
+    var machine: Bool = false {
+        didSet {
+            if !self.animating {
+                let property = self.costume.rawValue + (self.machine ? " ML" : "")
+                self.texture = SKTexture(imageNamed: "Player (Idle, \(property))")
+            }
+        }
+    }
+
     // MARK: COMPUTED PROPERTIES
 
     /// The SKTexture frames that play when a player is changing costumes.
     var changingFrames: [SKTexture] {
-        return animated(fromAtlas: SKTextureAtlas(named: "Player_Change"), reversable: true)
+        let atlas = "Player_Change" + (self.machine ? "_ML" : "")
+        return animated(fromAtlas: SKTextureAtlas(named: atlas), reversable: true)
     }
 
     /// The walk cycle animation when moving south.
     var forwardWalkCycle: [SKTexture] {
-        return animated(fromAtlas: SKTextureAtlas(named: "Player_Forward_\(self.costume.rawValue)"))
+        let property = self.costume.rawValue + (self.machine ? "_ML" : "")
+        return animated(fromAtlas: SKTextureAtlas(named: "Player_Forward_\(property)"))
     }
 
     /// The walk cycle animation when moving north.
     var backwardWalkCycle: [SKTexture] {
-        return animated(fromAtlas: SKTextureAtlas(named: "Player_Backward_\(self.costume.rawValue)"))
+        let property = self.costume.rawValue + (self.machine ? "_ML" : "")
+        return animated(fromAtlas: SKTextureAtlas(named: "Player_Backward_\(property)"))
     }
 
     /// The walk cycle animation when moving north.
     var sidewardWalkCycle: [SKTexture] {
-        return animated(fromAtlas: SKTextureAtlas(named: "Player_Side_\(self.costume.rawValue)"))
+        let property = self.costume.rawValue + (self.machine ? "_ML" : "")
+        return animated(fromAtlas: SKTextureAtlas(named: "Player_Side_\(property)"))
     }
 
     /// The player's mass, accounting for the costume.
@@ -146,7 +160,8 @@ public class Player: SKSpriteNode {
             self.costumeQueue.enqueue(costume)
         }
 
-        self.texture = SKTexture(imageNamed: "Player (Idle, \(costume.rawValue))")
+        let property = costume.rawValue + (self.machine ? " ML" : "")
+        self.texture = SKTexture(imageNamed: "Player (Idle, \(property))")
         self.texture?.filteringMode = .nearest
         self.createHUD()
     }
@@ -211,8 +226,9 @@ public class Player: SKSpriteNode {
         self.isChangingCostumes = true
 
         // Create a ghost sprite for animation purposes.
+        let ghostProperty = costume.rawValue + (self.machine ? " ML" : "")
         let ghostSprite = SKSpriteNode(
-            texture: SKTexture(imageNamed: "Player (Idle, \(costume.rawValue))"),
+            texture: SKTexture(imageNamed: "Player (Idle, \(ghostProperty))"),
             size: self.size
         )
         ghostSprite.name = "ghost"
@@ -224,11 +240,12 @@ public class Player: SKSpriteNode {
 
         // Play the animations and remove the ghost from the player's node heirarchy.
         self.animating = true
+        let property = self.costume.rawValue + (self.machine ? " ML" : "")
         self.run(SKAction.sequence([
             SKAction.run {
                 ghostSprite.run(SKAction.sequence([
                     SKAction.wait(forDuration: Double(self.changingFrames.count) / 2 / 10),
-                    SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(self.costume.rawValue))")),
+                    SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(property))")),
                     SKAction.wait(forDuration: Double(self.changingFrames.count) / 0.61 / 10)
                 ])
             )},
@@ -238,7 +255,7 @@ public class Player: SKSpriteNode {
                 }
             },
             SKAction.animate(with: self.changingFrames, timePerFrame: 0.1, resize: false, restore: false),
-            SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(self.costume.rawValue))")),
+            SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(property))")),
             SKAction.run { self.texture?.filteringMode = .nearest },
             SKAction.run { self.isChangingCostumes = false },
             SKAction.run { ghostSprite.removeFromParent() }
@@ -427,7 +444,8 @@ public class Player: SKSpriteNode {
         self.animating = false
         if self.xScale < 0 { self.xScale *= -1 }
         if self.hud.xScale < 0 { self.hud.xScale *= -1 }
-        self.run(SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(self.costume.rawValue))")))
+        let property = self.costume.rawValue + (self.machine ? " ML" : "")
+        self.run(SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(property))")))
     }
 
     /// Make a copy of the player's sprite body in the map.
