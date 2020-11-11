@@ -65,9 +65,9 @@ struct AISimulatorView: View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Image("dpad.fill")
-                    .font(.largeTitle)
+                    .font(.system(.largeTitle, design: .rounded))
                 Text("Run an AI simulation")
-                    .font(.largeTitle)
+                    .font(.system(.largeTitle, design: .rounded))
                     .bold()
             }
 
@@ -80,10 +80,8 @@ struct AISimulatorView: View {
             Divider()
 
             HStack(alignment: .top) {
-                Image(agentType.rawValue)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(maxWidth: 76, maxHeight: 76)
+                AISimulatorAgentImage(agent: agentType)
+                    .frame(width: 76, height: 76)
                     .cornerRadius(12.0)
                 VStack(alignment: .leading) {
                     Text(self.getName(of: agentType))
