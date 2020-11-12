@@ -21,7 +21,8 @@ extension GKLeaderboard {
     /// - Parameter score: The score to submit to the leaderboard.
     /// - Important: This function is only available on Macs running macOS 11.0.
     @available(OSX 11.0, *) static func submit(to leaderboard: String, with score: Int) {
-        if !GKLocalPlayer.local.isAuthenticated { return }
+        if !GKLocalPlayer.local.isAuthenticated
+            || !UserDefaults.standard.bool(forKey: "gcSubmitLeaderboardScores") { return }
         GKLeaderboard.submitScore(
             score,
             context: 0,

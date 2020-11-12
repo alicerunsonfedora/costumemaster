@@ -23,6 +23,9 @@ extension Preferences.PaneIdentifier {
     /// The controls category.
     static let controls = Self("controls")
 
+    /// The Game Center category.
+    static let gameCenter = Self("gamecenter")
+
     /// The advanced category.
     static let advanced = Self("advanced")
 }

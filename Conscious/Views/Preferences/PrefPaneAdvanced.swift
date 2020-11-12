@@ -23,11 +23,6 @@ struct PrefPaneAdvanced: View {
     @AppStorageCompat("debugShowPhysics")
     var physics: Bool = false
 
-    @AppStorageCompat("advShowUnmodeledOnMenu")
-    var unmodeled: Bool = false
-
-    @State private var canShowUnmodeled: Bool = UserDefaults.canShowUnmodeled
-
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .top) {
@@ -39,10 +34,6 @@ struct PrefPaneAdvanced: View {
                     Text("Debugging options take effect after restarting the game.")
                         .foregroundColor(.secondary)
                 }
-            }
-
-            if canShowUnmodeled {
-                Toggle(isOn: $unmodeled) { Text("Show character on main menu with face reveal") }
             }
         }
         .padding()

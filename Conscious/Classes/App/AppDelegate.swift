@@ -32,12 +32,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     static var arguments: CommandLineArguments = CommandLine.parse()
 
     /// The window controller that corresponds to the preferences pane.
-    private lazy var preferencesWindowController = PreferencesWindowController(
+    private lazy var preferencesWindowController: PreferencesWindowController = {
+        let controller = PreferencesWindowController(
             panes: [
                 Preferences.Pane(
                     identifier: .general,
-                    title: "General",
-                    toolbarIcon: NSImage(named: "gearshape")!
+                    title: "Appearance",
+                    toolbarIcon: NSImage(named: "paintpalette")!
                 ) { PrefPaneGeneral() },
                 Preferences.Pane(
                     identifier: .sound,
@@ -50,12 +51,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     toolbarIcon: NSImage(named: "keyboard")!
                 ) { PrefPaneControls() },
                 Preferences.Pane(
+                    identifier: .gameCenter,
+                    title: "Game Center",
+                    toolbarIcon: NSImage(named: "gamecontroller")!
+                ) { PrefPaneGC() },
+                Preferences.Pane(
                     identifier: .advanced,
                     title: "Advanced",
                     toolbarIcon: NSImage(named: "gearshape.2")!
                 ) { PrefPaneAdvanced() }
             ]
         )
+        controller.window?.appearance = NSAppearance(named: .darkAqua)
+        return controller
+    }()
+
+    static func updateDockTile(_ iconName: String?) {
+        let name = (iconName ?? "AppIcon") + "Representable"
+        let dockTile = NSApplication.shared.dockTile
+        if let icon = NSImage(named: name) {
+            dockTile.contentView = NSImageView(image: icon)
+            dockTile.display()
+        }
+    }
 
     /// Open the preferences window.
     @IBAction func instantiatePreferencesWindow(_ sender: Any) {
@@ -188,6 +206,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        AppDelegate.updateDockTile(UserDefaults.standard.string(forKey: "dockIconName"))
         GameManagerDelegate.canRunSimulator = true
         DispatchQueue.main.async {
             SKPaymentQueue.default().add(IAPObserver.shared)

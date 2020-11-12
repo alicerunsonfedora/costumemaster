@@ -51,7 +51,7 @@ class ViewController: NSViewController, NSWindowDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.settings = GamePreferences()
+//        self.settings = GamePreferences()
         AppDelegate.arguments = CommandLine.parse()
         let interfaceScenes = ["MainMenu", "Splash", "Intro", "About", "PauseMenu", "End"]
 

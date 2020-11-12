@@ -16,10 +16,11 @@ extension GKAchievement {
     /// Earn an achievment with a given identifier.
     /// - Parameter identifier: The identifier that links to the achievement to earn.
     static func earn(with identifier: String) {
-        if !GKLocalPlayer.local.isAuthenticated { return }
+        if !GKLocalPlayer.local.isAuthenticated
+            || !UserDefaults.standard.bool(forKey: "gcSubmitAchievements") { return }
         let achievement = GKAchievement(identifier: identifier)
         achievement.percentComplete = 100
-        achievement.showsCompletionBanner = true
+        achievement.showsCompletionBanner = UserDefaults.standard.bool(forKey: "gcNotifications")
         GKAchievement.report([achievement]) { error in
             guard error == nil else {
                 sendAlert(
