@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>FilterType Enumeration Reference</title>
+    <title>PaneIdentifier Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/katex.min.css" />
     <meta charset='utf-8'>
 	<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0" />
     <script src="../../js/jquery.min.js" defer></script>
-    <script src="../../js/katex.min.js" defer></script>
     <script src="../../js/jazzy.js" defer></script>
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/FilterType" class="dashAnchor"></a>
-    <a title="FilterType Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Extension/PaneIdentifier" class="dashAnchor"></a>
+    <a title="PaneIdentifier Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -38,7 +36,7 @@
             <a href="../../index.html"> Reference</a>
             <img id="carat" src="../../img/carat.png" />
           </span>
-          FilterType Enumeration Reference
+          PaneIdentifier Extension Reference
         </p>
       </div>
     </div>
@@ -47,16 +45,15 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>FilterType</h1>
+              <h1>PaneIdentifier</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">FilterType</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Preferences</span><span class="o">.</span><span class="kt">PaneIdentifier</span></code></pre>
 
                   </div>
                 </div>
-              <p>An enumeration that represents the different filters for the console.</p>
-
+              
             </section>
             <section class="section task-group-section">
               <div class="task-group">
@@ -64,9 +61,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster25AISimulatorConsoleToolbarV10FilterTypeO11allMessagesyA2EmF"></a>
-                      <a name="//apple_ref/swift/Element/allMessages" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AISimulatorConsoleToolbarV10FilterTypeO11allMessagesyA2EmF">allMessages</a>
+                      <a name="/s:11PreferencesAAO14PaneIdentifierV17The_CostumemasterE7generalADvpZ"></a>
+                      <a name="//apple_ref/swift/Variable/general" class="dashAnchor"></a>
+                      <a class="token" href="#/s:11PreferencesAAO14PaneIdentifierV17The_CostumemasterE7generalADvpZ">general</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -74,14 +71,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>All types of messages are allowed.</p>
+                          <p>The general category.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">allMessages</span> <span class="o">=</span> <span class="s">"All Messages"</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">general</span><span class="p">:</span> <span class="kt">Preferences</span><span class="o">.</span><span class="kt">PaneIdentifier</span></code></pre>
 
                           </div>
                         </div>
@@ -91,9 +88,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster25AISimulatorConsoleToolbarV10FilterTypeO8infoOnlyyA2EmF"></a>
-                      <a name="//apple_ref/swift/Element/infoOnly" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AISimulatorConsoleToolbarV10FilterTypeO8infoOnlyyA2EmF">infoOnly</a>
+                      <a name="/s:11PreferencesAAO14PaneIdentifierV17The_CostumemasterE5soundADvpZ"></a>
+                      <a name="//apple_ref/swift/Variable/sound" class="dashAnchor"></a>
+                      <a class="token" href="#/s:11PreferencesAAO14PaneIdentifierV17The_CostumemasterE5soundADvpZ">sound</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -101,14 +98,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Only info messages are allowed.</p>
+                          <p>The sound category.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">infoOnly</span> <span class="o">=</span> <span class="s">"Info Messages"</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">sound</span><span class="p">:</span> <span class="kt">Preferences</span><span class="o">.</span><span class="kt">PaneIdentifier</span></code></pre>
 
                           </div>
                         </div>
@@ -118,9 +115,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster25AISimulatorConsoleToolbarV10FilterTypeO9debugOnlyyA2EmF"></a>
-                      <a name="//apple_ref/swift/Element/debugOnly" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AISimulatorConsoleToolbarV10FilterTypeO9debugOnlyyA2EmF">debugOnly</a>
+                      <a name="/s:11PreferencesAAO14PaneIdentifierV17The_CostumemasterE8controlsADvpZ"></a>
+                      <a name="//apple_ref/swift/Variable/controls" class="dashAnchor"></a>
+                      <a class="token" href="#/s:11PreferencesAAO14PaneIdentifierV17The_CostumemasterE8controlsADvpZ">controls</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -128,14 +125,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Only debugging messages are allowed.</p>
+                          <p>The controls category.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">debugOnly</span> <span class="o">=</span> <span class="s">"Debug Messages"</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">controls</span><span class="p">:</span> <span class="kt">Preferences</span><span class="o">.</span><span class="kt">PaneIdentifier</span></code></pre>
 
                           </div>
                         </div>
@@ -145,9 +142,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster25AISimulatorConsoleToolbarV10FilterTypeO21errorsAndWarningsOnlyyA2EmF"></a>
-                      <a name="//apple_ref/swift/Element/errorsAndWarningsOnly" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster25AISimulatorConsoleToolbarV10FilterTypeO21errorsAndWarningsOnlyyA2EmF">errorsAndWarningsOnly</a>
+                      <a name="/s:11PreferencesAAO14PaneIdentifierV17The_CostumemasterE8advancedADvpZ"></a>
+                      <a name="//apple_ref/swift/Variable/advanced" class="dashAnchor"></a>
+                      <a class="token" href="#/s:11PreferencesAAO14PaneIdentifierV17The_CostumemasterE8advancedADvpZ">advanced</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -155,14 +152,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Only errors and warnings are allowed.</p>
+                          <p>The advanced category.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">case</span> <span class="n">errorsAndWarningsOnly</span> <span class="o">=</span> <span class="s">"Errors and Warnings"</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">advanced</span><span class="p">:</span> <span class="kt">Preferences</span><span class="o">.</span><span class="kt">PaneIdentifier</span></code></pre>
 
                           </div>
                         </div>
@@ -202,7 +199,10 @@
                   <a href="../../Structs/GameStore.html">GameStore</a>
                 </li>
                 <li class="nav-group-task">
-                  <a href="../../Structs/Preferences.html">Preferences</a>
+                  <a href="../../Extensions/Preferences.html">Preferences</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../../Extensions/Preferences/PaneIdentifier.html">– PaneIdentifier</a>
                 </li>
               </ul>
             </li>
@@ -427,47 +427,6 @@
               </ul>
             </li>
             <li class="nav-group-name">
-              <a href="../../Views.html">Views</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../../Structs/GameLevelSelector.html">GameLevelSelector</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../../Structs/GameLevelSelector_Previews.html">GameLevelSelector_Previews</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../../Structs/WatchYourStepView.html">WatchYourStepView</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../../Structs/AISimulatorView.html">AISimulatorView</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../../Structs/AISimulatorView/AgentLevels.html">– AgentLevels</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../../Structs/AISimulatorConsole.html">AISimulatorConsole</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../../Structs/AISimulatorConsoleToolbar.html">AISimulatorConsoleToolbar</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../../Structs/AISimulatorConsoleToolbar/FilterType.html">– FilterType</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../../Structs/WatchYourStepView_Previews.html">WatchYourStepView_Previews</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../../Structs/AISimulatorView_Previews.html">AISimulatorView_Previews</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../../Structs/AISimulatorConsole_Previews.html">AISimulatorConsole_Previews</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../../Structs/AISimulatorConsoleToolbar_Previews.html">AISimulatorConsoleToolbar_Previews</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
               <a href="../../Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
@@ -578,13 +537,10 @@
               <a href="../../Other%20Structs.html">Other Structures</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
-                  <a href="../../Structs/AISimulatorAgentImage.html">AISimulatorAgentImage</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../../Structs/AISimulatorAgentImage_Previews.html">AISimulatorAgentImage_Previews</a>
-                </li>
-                <li class="nav-group-task">
                   <a href="../../Structs/GameLevelItem.html">GameLevelItem</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../../Structs/GamePreferences.html">GamePreferences</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="../../Structs/Tooltip.html">Tooltip</a>

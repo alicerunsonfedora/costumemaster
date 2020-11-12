@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AISimulatorView Structure Reference</title>
+    <title>GamePreferences Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <link rel="stylesheet" type="text/css" href="../css/katex.min.css" />
@@ -13,8 +13,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/AISimulatorView" class="dashAnchor"></a>
-    <a title="AISimulatorView Structure Reference"></a>
+    <a name="//apple_ref/swift/Struct/GamePreferences" class="dashAnchor"></a>
+    <a title="GamePreferences Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -38,7 +38,7 @@
             <a href="../index.html"> Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          AISimulatorView Structure Reference
+          GamePreferences Structure Reference
         </p>
       </div>
     </div>
@@ -47,26 +47,36 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>AISimulatorView</h1>
+              <h1>GamePreferences</h1>
                 <div class="declaration">
                   <div class="language">
                     
-                    <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AISimulatorView</span> <span class="p">:</span> <span class="kt">View</span></code></pre>
+                    <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"Preferences have moved to UserDefults as static variables and AppStorage."</span><span class="p">)</span>
+<span class="kd">struct</span> <span class="kt">GamePreferences</span></code></pre>
 
                   </div>
                 </div>
-              <p>A view that allows player to customize AI simulation features</p>
+              <p>A data structure that represents the preferences in the game using the standard user defaults.</p>
 
             </section>
             <section class="section task-group-section">
               <div class="task-group">
+                <div class="task-name-container">
+                  <a name="/GENERAL"></a>
+                  <a name="//apple_ref/swift/Section/GENERAL" class="dashAnchor"></a>
+                  <div class="section-name-container">
+                    <a class="section-name-link" href="#/GENERAL"></a>
+                    <h3 class="section-name"><p>GENERAL</p>
+</h3>
+                  </div>
+                </div>
                 <ul>
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster15AISimulatorViewV9agentTypeAA20CommandLineArgumentsV012AgentTestingF0Ovp"></a>
-                      <a name="//apple_ref/swift/Property/agentType" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster15AISimulatorViewV9agentTypeAA20CommandLineArgumentsV012AgentTestingF0Ovp">agentType</a>
+                      <a name="/s:17The_Costumemaster15GamePreferencesV11cameraScaleSfvp"></a>
+                      <a name="//apple_ref/swift/Property/cameraScale" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesV11cameraScaleSfvp">cameraScale</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -74,15 +84,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The type of agent to run in the simulation.</p>
+                          <p>The scale of the camera size for the levels.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@State</span>
-<span class="k">var</span> <span class="nv">agentType</span><span class="p">:</span> <span class="kt"><a href="../Structs/CommandLineArguments.html">CommandLineArguments</a></span><span class="o">.</span><span class="kt">AgentTestingType</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">cameraScale</span><span class="p">:</span> <span class="kt">Float</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                           </div>
                         </div>
@@ -92,9 +101,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster15AISimulatorViewV15simulationLevelAC11AgentLevelsOvp"></a>
-                      <a name="//apple_ref/swift/Property/simulationLevel" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster15AISimulatorViewV15simulationLevelAC11AgentLevelsOvp">simulationLevel</a>
+                      <a name="/s:17The_Costumemaster15GamePreferencesV25intelligentCameraMovementSbvp"></a>
+                      <a name="//apple_ref/swift/Property/intelligentCameraMovement" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesV25intelligentCameraMovementSbvp">intelligentCameraMovement</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -102,15 +111,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The level to run the simulation on.</p>
+                          <p>Whether to move the camera intelligently based on constraints or to always follow the player.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@State</span>
-<span class="k">var</span> <span class="nv">simulationLevel</span><span class="p">:</span> <span class="kt"><a href="../Structs/AISimulatorView/AgentLevels.html">AgentLevels</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">intelligentCameraMovement</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                           </div>
                         </div>
@@ -120,9 +128,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster15AISimulatorViewV11agentBudgetSivp"></a>
-                      <a name="//apple_ref/swift/Property/agentBudget" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster15AISimulatorViewV11agentBudgetSivp">agentBudget</a>
+                      <a name="/s:17The_Costumemaster15GamePreferencesV17showDustParticlesSbvp"></a>
+                      <a name="//apple_ref/swift/Property/showDustParticles" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesV17showDustParticlesSbvp">showDustParticles</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -130,15 +138,54 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The agent&rsquo;s budget.</p>
+                          <p>Whether to show dust particles.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@State</span>
-<span class="k">var</span> <span class="nv">agentBudget</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">showDustParticles</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="task-group">
+                <div class="task-name-container">
+                  <a name="/SOUND"></a>
+                  <a name="//apple_ref/swift/Section/SOUND" class="dashAnchor"></a>
+                  <div class="section-name-container">
+                    <a class="section-name-link" href="#/SOUND"></a>
+                    <h3 class="section-name"><p>SOUND</p>
+</h3>
+                  </div>
+                </div>
+                <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster15GamePreferencesV11musicVolumeSfvp"></a>
+                      <a name="//apple_ref/swift/Property/musicVolume" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesV11musicVolumeSfvp">musicVolume</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>The volume at which the music should play.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">musicVolume</span><span class="p">:</span> <span class="kt">Float</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                           </div>
                         </div>
@@ -148,9 +195,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster15AISimulatorViewV17onStartSimulationyyAA20CommandLineArgumentsV16AgentTestingTypeO_AC0K6LevelsOSitcvp"></a>
-                      <a name="//apple_ref/swift/Property/onStartSimulation" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster15AISimulatorViewV17onStartSimulationyyAA20CommandLineArgumentsV16AgentTestingTypeO_AC0K6LevelsOSitcvp">onStartSimulation</a>
+                      <a name="/s:17The_Costumemaster15GamePreferencesV15playChangeSoundSbvp"></a>
+                      <a name="//apple_ref/swift/Property/playChangeSound" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesV15playChangeSoundSbvp">playChangeSound</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -158,15 +205,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>A closure that executes when the player clicks &ldquo;Start Simulation&rdquo;.</p>
+                          <p>Whether to play the costume changing sound.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@State</span>
-<span class="k">var</span> <span class="nv">onStartSimulation</span><span class="p">:</span> <span class="p">(</span><span class="kt"><a href="../Structs/CommandLineArguments.html">CommandLineArguments</a></span><span class="o">.</span><span class="kt">AgentTestingType</span><span class="p">,</span> <span class="kt"><a href="../Structs/AISimulatorView/AgentLevels.html">AgentLevels</a></span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">playChangeSound</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                           </div>
                         </div>
@@ -176,9 +222,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster15AISimulatorViewV11AgentLevelsO"></a>
-                      <a name="//apple_ref/swift/Enum/AgentLevels" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster15AISimulatorViewV11AgentLevelsO">AgentLevels</a>
+                      <a name="/s:17The_Costumemaster15GamePreferencesV17playComputerSoundSbvp"></a>
+                      <a name="//apple_ref/swift/Property/playComputerSound" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesV17playComputerSoundSbvp">playComputerSound</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -186,15 +232,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>An enumeration that represents the levels agents can play.</p>
+                          <p>Whether to play the computer turn-on sound.</p>
 
-                          <a href="../Structs/AISimulatorView/AgentLevels.html" class="slightly-smaller">See more</a>
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">AgentLevels</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">playComputerSound</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                           </div>
                         </div>
@@ -204,9 +249,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster15AISimulatorViewV7getName2ofSSAA20CommandLineArgumentsV16AgentTestingTypeO_tF"></a>
-                      <a name="//apple_ref/swift/Method/getName(of:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster15AISimulatorViewV7getName2ofSSAA20CommandLineArgumentsV16AgentTestingTypeO_tF">getName(of:<wbr>)</a>
+                      <a name="/s:17The_Costumemaster15GamePreferencesV14playLeverSoundSbvp"></a>
+                      <a name="//apple_ref/swift/Property/playLeverSound" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesV14playLeverSoundSbvp">playLeverSound</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -214,14 +259,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Returns the title for the agent type.</p>
+                          <p>Whether to play the lever toggle sound.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getName</span><span class="p">(</span><span class="n">of</span> <span class="nv">agent</span><span class="p">:</span> <span class="kt"><a href="../Structs/CommandLineArguments.html">CommandLineArguments</a></span><span class="o">.</span><span class="kt">AgentTestingType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">playLeverSound</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                           </div>
                         </div>
@@ -231,9 +276,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster15AISimulatorViewV19getAgentDescriptionSSyF"></a>
-                      <a name="//apple_ref/swift/Method/getAgentDescription()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster15AISimulatorViewV19getAgentDescriptionSSyF">getAgentDescription()</a>
+                      <a name="/s:17The_Costumemaster15GamePreferencesV14playAlarmSoundSbvp"></a>
+                      <a name="//apple_ref/swift/Property/playAlarmSound" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesV14playAlarmSoundSbvp">playAlarmSound</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -241,14 +286,58 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Returns the description for the agent type.</p>
+                          <p>Whether to play the alarm clock enable/disable sound.</p>
+
+<p>This setting does <em>not</em> control the sound for the ticks while the alarm is active.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getAgentDescription</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">playAlarmSound</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="task-group">
+                <div class="task-name-container">
+                  <a name="/ADVANCED%20PROPERTIES"></a>
+                  <a name="//apple_ref/swift/Section/ADVANCED PROPERTIES" class="dashAnchor"></a>
+                  <div class="section-name-container">
+                    <a class="section-name-link" href="#/ADVANCED%20PROPERTIES"></a>
+                    <h3 class="section-name"><p>ADVANCED PROPERTIES</p>
+</h3>
+                  </div>
+                </div>
+                <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster15GamePreferencesV22canShowUnmodeledOnMenuSbvp"></a>
+                      <a name="//apple_ref/swift/Property/canShowUnmodeledOnMenu" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesV22canShowUnmodeledOnMenuSbvp">canShowUnmodeledOnMenu</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Whether the player can see the main character with the USB costume partially undone on the main menu.</p>
+
+<p>This preference is enabled after earning the <em>Face Reveal</em> achievement.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">canShowUnmodeledOnMenu</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                           </div>
                         </div>
@@ -258,9 +347,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster15AISimulatorViewV4bodyQrvp"></a>
-                      <a name="//apple_ref/swift/Property/body" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster15AISimulatorViewV4bodyQrvp">body</a>
+                      <a name="/s:17The_Costumemaster15GamePreferencesV19showUnmodeledOnMenuSbvp"></a>
+                      <a name="//apple_ref/swift/Property/showUnmodeledOnMenu" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesV19showUnmodeledOnMenuSbvp">showUnmodeledOnMenu</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -268,14 +357,54 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The main body of the view.</p>
+                          <p>Whether to show the main character with the USB costume partially undone.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">showUnmodeledOnMenu</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="task-group">
+                <div class="task-name-container">
+                  <a name="/DEBUGGING%20PROPERTIES"></a>
+                  <a name="//apple_ref/swift/Section/DEBUGGING PROPERTIES" class="dashAnchor"></a>
+                  <div class="section-name-container">
+                    <a class="section-name-link" href="#/DEBUGGING%20PROPERTIES"></a>
+                    <h3 class="section-name"><p>DEBUGGING PROPERTIES</p>
+</h3>
+                  </div>
+                </div>
+                <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster15GamePreferencesV13showNodeCountSbvp"></a>
+                      <a name="//apple_ref/swift/Property/showNodeCount" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesV13showNodeCountSbvp">showNodeCount</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Whether to show the number of nodes in the debugging screen.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">showNodeCount</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                           </div>
                         </div>
@@ -285,9 +414,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/s:17The_Costumemaster15AISimulatorViewV9buttonBarQrvp"></a>
-                      <a name="//apple_ref/swift/Property/buttonBar" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster15AISimulatorViewV9buttonBarQrvp">buttonBar</a>
+                      <a name="/s:17The_Costumemaster15GamePreferencesV19showFramesPerSecondSbvp"></a>
+                      <a name="//apple_ref/swift/Property/showFramesPerSecond" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesV19showFramesPerSecondSbvp">showFramesPerSecond</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -295,14 +424,70 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The bottom button bar of the view.</p>
+                          <p>Whether to show the number of frames per second in the debugging screen.</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">buttonBar</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">showFramesPerSecond</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster15GamePreferencesV17showPhysicsBodiesSbvp"></a>
+                      <a name="//apple_ref/swift/Property/showPhysicsBodies" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesV17showPhysicsBodiesSbvp">showPhysicsBodies</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Whether to show the outlines of physics bodies in the debugging screen.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">showPhysicsBodies</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:17The_Costumemaster15GamePreferencesVACycfc"></a>
+                      <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster15GamePreferencesVACycfc">init()</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Instantiate the preferences.</p>
+
+<p>Default values are assigned if no values exist.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="nf">init</span><span class="p">()</span></code></pre>
 
                           </div>
                         </div>
@@ -342,7 +527,10 @@
                   <a href="../Structs/GameStore.html">GameStore</a>
                 </li>
                 <li class="nav-group-task">
-                  <a href="../Structs/Preferences.html">Preferences</a>
+                  <a href="../Extensions/Preferences.html">Preferences</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Extensions/Preferences/PaneIdentifier.html">– PaneIdentifier</a>
                 </li>
               </ul>
             </li>
@@ -567,47 +755,6 @@
               </ul>
             </li>
             <li class="nav-group-name">
-              <a href="../Views.html">Views</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Structs/GameLevelSelector.html">GameLevelSelector</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/GameLevelSelector_Previews.html">GameLevelSelector_Previews</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/WatchYourStepView.html">WatchYourStepView</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/AISimulatorView.html">AISimulatorView</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/AISimulatorView/AgentLevels.html">– AgentLevels</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/AISimulatorConsole.html">AISimulatorConsole</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/AISimulatorConsoleToolbar.html">AISimulatorConsoleToolbar</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/AISimulatorConsoleToolbar/FilterType.html">– FilterType</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/WatchYourStepView_Previews.html">WatchYourStepView_Previews</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/AISimulatorView_Previews.html">AISimulatorView_Previews</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/AISimulatorConsole_Previews.html">AISimulatorConsole_Previews</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/AISimulatorConsoleToolbar_Previews.html">AISimulatorConsoleToolbar_Previews</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
               <a href="../Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
@@ -718,13 +865,10 @@
               <a href="../Other%20Structs.html">Other Structures</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
-                  <a href="../Structs/AISimulatorAgentImage.html">AISimulatorAgentImage</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/AISimulatorAgentImage_Previews.html">AISimulatorAgentImage_Previews</a>
-                </li>
-                <li class="nav-group-task">
                   <a href="../Structs/GameLevelItem.html">GameLevelItem</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Structs/GamePreferences.html">GamePreferences</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="../Structs/Tooltip.html">Tooltip</a>
