@@ -14,8 +14,15 @@ import Foundation
 import Preferences
 
 extension Preferences.PaneIdentifier {
+    /// The general category.
     static let general = Self("general")
+
+    /// The sound category.
     static let sound = Self("sound")
+
+    /// The controls category.
     static let controls = Self("controls")
+
+    /// The advanced category.
     static let advanced = Self("advanced")
 }

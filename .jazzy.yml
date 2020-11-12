@@ -8,9 +8,7 @@ min_acl: internal
 build_tool_arguments: ["-workspace", "Conscious.xcodeproj/project.xcworkspace", "-scheme" ,"Conscious"]
 documentation: "./Guides/*.md"
 
-exclude:
-  - "./Conscious/Classes/App/*"
-  - "./Conscious/Views/Preferences/*"
+exclude: "./Conscious/Classes/App/*,./Conscious/Views/*,./Conscious/Assets/TealConverse.mlmodel/*"
 
 custom_categories:
   - name: Information Center

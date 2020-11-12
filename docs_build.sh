@@ -8,7 +8,7 @@ bundle exec jazzy \
 --github_url https://github.com/alicerunsonfedora/CS400 \
 --min-acl internal \
 --title "The Costumemaster" \
---exclude=/*/Classes/App/* \
+--exclude="./Conscious/Classes/App/*,./Conscious/Views/*,./Conscious/Assets/TealConverse.mlmodel/*" \
 --documentation=Guides/*.md \
 --config .jazzy.yml \
 --build-tool-arguments -workspace,Conscious.xcodeproj/project.xcworkspace,-scheme,"Game"
