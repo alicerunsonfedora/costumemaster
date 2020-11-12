@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "AppStorage",
+        "repositoryURL": "https://github.com/alicerunsonfedora/AppStorage.git",
+        "state": {
+          "branch": "main",
+          "revision": "9d2ae94313c671fce83f769e6e35617ef39047d3",
+          "version": null
+        }
+      },
+      {
         "package": "GBMKUtils",
         "repositoryURL": "https://github.com/alicerunsonfedora/GBMKUtils.git",
         "state": {
@@ -17,6 +26,15 @@
           "branch": null,
           "revision": "81e72f4787f2d642d788594834f42431f079e505",
           "version": "0.6.0"
+        }
+      },
+      {
+        "package": "Preferences",
+        "repositoryURL": "https://github.com/sindresorhus/Preferences",
+        "state": {
+          "branch": null,
+          "revision": "ad69881dc060cd590d3edfb84c7cc444d87e280a",
+          "version": "2.1.0"
         }
       }
     ]

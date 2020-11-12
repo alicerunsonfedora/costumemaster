@@ -33,7 +33,7 @@ class GameLever: GameSignalSender {
     /// - Parameter player: The player to watch and track.
     override func activate(with event: NSEvent?, player: Player?, objects: [SKSpriteNode?]) {
         super.activate(with: event, player: player)
-        if AppDelegate.preferences.playLeverSound {
+        if UserDefaults.playLeverSound {
             self.run(SKAction.playSoundFileNamed("leverToggle", waitForCompletion: true))
         }
     }

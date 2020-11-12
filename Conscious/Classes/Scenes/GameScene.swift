@@ -278,11 +278,11 @@ class GameScene: SKScene {
             return
         }
         self.camera = pCam
-        self.camera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
+        self.camera?.setScale(CGFloat(UserDefaults.cameraScale))
         self.camera?.position = self.playerNode!.position
         let bounds = SKRange(
-            lowerLimit: 0, upperLimit: AppDelegate.preferences.intelligentCameraMovement
-                ? 256 * CGFloat(AppDelegate.preferences.cameraScale) : 0
+            lowerLimit: 0, upperLimit: UserDefaults.intelligentCamera
+                ? 256 * CGFloat(UserDefaults.cameraScale) : 0
         )
         self.camera?.constraints = [SKConstraint.distance(bounds, to: self.playerNode!)]
 
@@ -299,7 +299,7 @@ class GameScene: SKScene {
         music.name = "music"
         music.autoplayLooped = true; music.isPositional = false
         music.run(SKAction.sequence([
-            SKAction.changeVolume(to: AppDelegate.preferences.musicVolume, duration: 0.01),
+            SKAction.changeVolume(to: UserDefaults.musicVolume, duration: 0.01),
             SKAction.play()
         ]))
         self.addChild(music)
@@ -308,20 +308,22 @@ class GameScene: SKScene {
     // MARK: LIFE CYCLE UPDATES
     /// Run scene-related lifecycle updates.
     override func update(_ currentTime: TimeInterval) {
-        self.camera?.setScale(CGFloat(AppDelegate.preferences.cameraScale))
+        self.camera?.setScale(CGFloat(UserDefaults.standard.float(forKey: "cameraScale")))
         self.receivers.forEach { output in output.update() }
         self.playerNode?.update()
 
         if let music = self.childNode(withName: "music") as? SKAudioNode {
-            music.run(SKAction.changeVolume(to: AppDelegate.preferences.musicVolume, duration: 0.01))
+            music.run(
+                SKAction.changeVolume(to: UserDefaults.standard.float(forKey: "soundMusicVolume"), duration: 0.01)
+            )
         }
 
         let bounds = SKRange(
-            lowerLimit: 0, upperLimit: AppDelegate.preferences.intelligentCameraMovement
-                ? 256 * CGFloat(AppDelegate.preferences.cameraScale) : 0
+            lowerLimit: 0, upperLimit: UserDefaults.standard.bool(forKey: "intelligentCameraMovement")
+                ? 256 * CGFloat(UserDefaults.standard.float(forKey: "cameraScale")) : 0
         )
         self.camera?.constraints = [SKConstraint.distance(bounds, to: self.playerNode!)]
-        self.camera?.childNode(withName: "dust")?.alpha = AppDelegate.preferences.showDustParticles ? 0.15 : 0
+        self.camera?.childNode(withName: "dust")?.alpha = UserDefaults.dustParticles ? 0.15 : 0
     }
 
     /// Run any post-update logic and check input states.

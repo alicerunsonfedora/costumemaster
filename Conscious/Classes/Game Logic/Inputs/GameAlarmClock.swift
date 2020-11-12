@@ -27,7 +27,7 @@ class GameAlarmClock: GameSignalSender {
 
     /// Trigger the alarm sound and continously play the tick sound.
     override func onActivate(with event: NSEvent?, player: Player?) {
-        if AppDelegate.preferences.playAlarmSound {
+        if UserDefaults.playAlarmSound {
             self.run(SKAction.playSoundFileNamed("alarmEnable", waitForCompletion: true))
             let tick = SKAction.sequence(
                 [
@@ -41,7 +41,7 @@ class GameAlarmClock: GameSignalSender {
 
     /// Play the alarm when deactivated.
     override func onDeactivate(with event: NSEvent?, player: Player?) {
-        if AppDelegate.preferences.playAlarmSound {
+        if UserDefaults.playAlarmSound {
             self.run(
                 SKAction.repeat(SKAction.playSoundFileNamed("alarmDisable", waitForCompletion: true), count: 2)
             )

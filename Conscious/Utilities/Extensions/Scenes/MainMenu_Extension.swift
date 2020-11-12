@@ -49,7 +49,7 @@ extension MainMenuScene {
         let tappedLocation = event.location(in: self)
 
         if self.atPoint(tappedLocation) == self.character {
-            if !AppDelegate.preferences.canShowUnmodeledOnMenu {
+            if !UserDefaults.canShowUnmodeled {
                 self.getCharacterAttributes()
             }
         }
@@ -58,9 +58,9 @@ extension MainMenuScene {
     /// Run post-update logic to refresh scene properties.
     override func didFinishUpdate() {
         // Update character preferences based on UserDefaults.
-        if AppDelegate.preferences.canShowUnmodeledOnMenu {
+        if UserDefaults.standard.bool(forKey: "advShowUnmodeledOnMenuAbility") {
             self.character?.texture = SKTexture(
-                imageNamed: AppDelegate.preferences.showUnmodeledOnMenu
+                imageNamed: UserDefaults.standard.bool(forKey: "advShowUnmodeledOnMenu")
                     ? "Character_Unmodeled"
                     : "Character"
             )
@@ -72,7 +72,9 @@ extension MainMenuScene {
         }
 
         if let music = self.childNode(withName: "music") as? SKAudioNode {
-            music.run(SKAction.changeVolume(to: AppDelegate.preferences.musicVolume, duration: 0.01))
+            music.run(
+                SKAction.changeVolume(to: UserDefaults.standard.float(forKey: "soundMusicVolume"), duration: 0.01)
+            )
         }
 
 //        if #available(OSX 11.0, *) {
@@ -148,7 +150,6 @@ extension MainMenuScene {
 
         if self.interactiveLevel == 10000 {
             UserDefaults.standard.setValue(true, forKey: "advShowUnmodeledOnMenuAbility")
-            AppDelegate.preferences.showUnmodeledOnMenu = true
             self.character?.texture = SKTexture(imageNamed: "Character_Unmodeled")
             self.character?.texture?.filteringMode = .nearest
 

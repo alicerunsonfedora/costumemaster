@@ -18,7 +18,8 @@ class ViewController: NSViewController, NSWindowDelegate {
     @IBOutlet var skView: SKView!
 
     /// A private tunnled copy of AppDelegate's preferences.
-    private var settings: Preferences = AppDelegate.preferences
+    @available(*, deprecated, message: "Use static vars from UserDefaults instead.")
+    private var settings: GamePreferences = AppDelegate.preferences
 
     /// The root scene for this controller.
     ///
@@ -50,7 +51,7 @@ class ViewController: NSViewController, NSWindowDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.settings = Preferences()
+        self.settings = GamePreferences()
         AppDelegate.arguments = CommandLine.parse()
         let interfaceScenes = ["MainMenu", "Splash", "Intro", "About", "PauseMenu", "End"]
 
@@ -114,9 +115,9 @@ class ViewController: NSViewController, NSWindowDelegate {
 
         view.presentScene(sceneNode)
         view.ignoresSiblingOrder = true
-        view.showsFPS = settings.showFramesPerSecond
-        view.showsNodeCount = settings.showNodeCount
-        view.showsPhysics = settings.showPhysicsBodies
+        view.showsFPS = UserDefaults.debugFPS
+        view.showsNodeCount = UserDefaults.debugNode
+        view.showsPhysics = UserDefaults.debugShowPhysics
         view.shouldCullNonVisibleNodes = true
 
     }

@@ -127,7 +127,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         if let char = self.childNode(withName: "character") as? SKSpriteNode {
             self.character = char
 
-            if AppDelegate.preferences.canShowUnmodeledOnMenu && AppDelegate.preferences.showUnmodeledOnMenu {
+            if UserDefaults.canShowUnmodeled && UserDefaults.showUnmodeled {
                 self.character?.texture = SKTexture(imageNamed: "Character_Unmodeled")
             }
 
@@ -139,7 +139,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         music.autoplayLooped = true
         music.isPositional = false
         music.run(SKAction.sequence([
-            SKAction.changeVolume(to: AppDelegate.preferences.musicVolume, duration: 0.01),
+            SKAction.changeVolume(to: UserDefaults.musicVolume, duration: 0.01),
             SKAction.play()
         ]))
         self.addChild(music)

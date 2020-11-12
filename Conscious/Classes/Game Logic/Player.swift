@@ -250,7 +250,7 @@ public class Player: SKSpriteNode {
                 ])
             )},
             SKAction.run {
-                if AppDelegate.preferences.playChangeSound {
+                if UserDefaults.playChangeSound {
                     self.run(SKAction.playSoundFileNamed("changeCostume", waitForCompletion: false))
                 }
             },

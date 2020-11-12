@@ -12,7 +12,8 @@
 import Foundation
 
 /// A data structure that represents the preferences in the game using the standard user defaults.
-struct Preferences {
+@available(*, deprecated, message: "Preferences have moved to UserDefults as static variables and AppStorage.")
+struct GamePreferences {
 
     /// Whether the preferences are being initialized.
     ///

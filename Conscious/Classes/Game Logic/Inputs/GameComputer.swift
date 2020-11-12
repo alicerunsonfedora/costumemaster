@@ -38,7 +38,7 @@ class GameComputer: GameSignalSender {
     /// - Parameter player: The player to watch and track.
     override func activate(with event: NSEvent?, player: Player?, objects: [SKSpriteNode?]) {
         super.activate(with: event, player: player)
-        if AppDelegate.preferences.playComputerSound {
+        if UserDefaults.playComputerSound {
             self.run(SKAction.playSoundFileNamed("computerPowerOn", waitForCompletion: true))
         }
     }

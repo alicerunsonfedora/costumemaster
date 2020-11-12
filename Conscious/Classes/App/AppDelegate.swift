@@ -14,6 +14,7 @@ import SpriteKit
 import GameKit
 import KeyboardShortcuts
 import StoreKit
+import Preferences
 
 #if canImport(SwiftUI)
 import SwiftUI
@@ -24,20 +25,41 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     /// A global instance of the preferences.
     /// Ony preference panes will really update this field.
-    static var preferences = Preferences()
+    @available(*, deprecated, message: "Use static variables from UserDefaults instead.")
+    static var preferences = GamePreferences()
 
     /// The arguments passed with the application.
     static var arguments: CommandLineArguments = CommandLine.parse()
 
     /// The window controller that corresponds to the preferences pane.
-    private lazy var preferencesWindowController: NSWindowController? = {
-        let storyboard: NSStoryboard = NSStoryboard(name: NSStoryboard.Name("Preferences"), bundle: nil)
-            return storyboard.instantiateInitialController() as? NSWindowController
-    }()
+    private lazy var preferencesWindowController = PreferencesWindowController(
+            panes: [
+                Preferences.Pane(
+                    identifier: .general,
+                    title: "General",
+                    toolbarIcon: NSImage(named: "gearshape")!
+                ) { PrefPaneGeneral() },
+                Preferences.Pane(
+                    identifier: .sound,
+                    title: "Sound",
+                    toolbarIcon: NSImage(named: "speaker.wave.3.fill")!
+                ) { PrefPaneSound() },
+                Preferences.Pane(
+                    identifier: .controls,
+                    title: "Controls",
+                    toolbarIcon: NSImage(named: "keyboard")!
+                ) { PrefPaneControls() },
+                Preferences.Pane(
+                    identifier: .advanced,
+                    title: "Advanced",
+                    toolbarIcon: NSImage(named: "gearshape.2")!
+                ) { PrefPaneAdvanced() }
+            ]
+        )
 
     /// Open the preferences window.
     @IBAction func instantiatePreferencesWindow(_ sender: Any) {
-        self.preferencesWindowController?.showWindow(self)
+        preferencesWindowController.show()
     }
 
     @IBAction func clearStore(_ sender: Any) {
@@ -77,7 +99,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             viewController.view = view
 
             if let main = NSApplication.shared.mainWindow?.contentViewController {
-                if main == self.preferencesWindowController?.contentViewController {
+                if main == self.preferencesWindowController.contentViewController {
                     NSSound.beep()
                     print("Preferences must be closed before opening a new level.")
                     return

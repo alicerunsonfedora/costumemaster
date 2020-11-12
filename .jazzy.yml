@@ -10,6 +10,7 @@ documentation: "./Guides/*.md"
 
 exclude:
   - "./Conscious/Classes/App/*"
+  - "./Conscious/Views/Preferences/*"
 
 custom_categories:
   - name: Information Center
