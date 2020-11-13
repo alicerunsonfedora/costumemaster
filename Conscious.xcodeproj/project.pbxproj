@@ -131,7 +131,6 @@
 		BFB621CC2512DB1B003940CF /* SeededChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB621CB2512DB1B003940CF /* SeededChallenge.swift */; };
 		BFBCA1C62506A883001FFA91 /* Simultaneous.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFBCA1C52506A883001FFA91 /* Simultaneous.sks */; };
 		BFBCA1C82506B0E5001FFA91 /* Swiftly.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFBCA1C72506B0E5001FFA91 /* Swiftly.sks */; };
-		BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBEB33024F80ACE00162B06 /* Preferences.storyboard */; };
 		BFBEB33324F8439900162B06 /* GamePreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBEB33224F8439900162B06 /* GamePreferences.swift */; };
 		BFBF844D254F4A2C00DF3243 /* AISimulatorConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBF844C254F4A2C00DF3243 /* AISimulatorConsole.swift */; };
 		BFBF8450254F50F100DF3243 /* ConsoleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBF844F254F50F100DF3243 /* ConsoleViewModel.swift */; };
@@ -321,7 +320,6 @@
 		BFB621CB2512DB1B003940CF /* SeededChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeededChallenge.swift; sourceTree = "<group>"; };
 		BFBCA1C52506A883001FFA91 /* Simultaneous.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Simultaneous.sks; sourceTree = "<group>"; };
 		BFBCA1C72506B0E5001FFA91 /* Swiftly.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Swiftly.sks; sourceTree = "<group>"; };
-		BFBEB33024F80ACE00162B06 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		BFBEB33224F8439900162B06 /* GamePreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePreferences.swift; sourceTree = "<group>"; };
 		BFBF844C254F4A2C00DF3243 /* AISimulatorConsole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISimulatorConsole.swift; sourceTree = "<group>"; };
 		BFBF844F254F50F100DF3243 /* ConsoleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewModel.swift; sourceTree = "<group>"; };
@@ -838,7 +836,6 @@
 			isa = PBXGroup;
 			children = (
 				BF6FBAE224A8BDDB00996890 /* Main.storyboard */,
-				BFBEB33024F80ACE00162B06 /* Preferences.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1136,7 +1133,6 @@
 				BFAD7FFB251006BC00768609 /* Unmonitored.sks in Resources */,
 				BF982750255C7C6F00E2D9DB /* Player_Side_Sorceress_ML.atlas in Resources */,
 				BF4A451F2501B683008BDD5A /* Entry.sks in Resources */,
-				BFBEB33124F80ACE00162B06 /* Preferences.storyboard in Resources */,
 				BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */,
 				BF153F9324FC3DF3007B20B4 /* computerPowerOn.wav in Resources */,
 				BF3A0B8124F703F400575F72 /* MainMenu.sks in Resources */,
