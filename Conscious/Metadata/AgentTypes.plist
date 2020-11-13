@@ -40,9 +40,9 @@
 	<key>tealConverse</key>
 	<dict>
 		<key>Title</key>
-		<string>Machine Learning Tree</string>
+		<string>Teal Converse</string>
 		<key>Description</key>
-		<string>Determines the next set of moves by asking questions about the current state of the level and making a decision from a decision tree built with a machine learning model trained with many examples from many puzzles.</string>
+		<string>Determines the next best move by assessing the game state and using a machine learning model with a decision tree.</string>
 	</dict>
 </dict>
 </plist>

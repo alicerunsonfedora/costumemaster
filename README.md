@@ -22,8 +22,6 @@ make it out and figure out what's going on?
 
 ![Feature Set](https://github.com/alicerunsonfedora/CS400/raw/root/.readme/featureset.png)
 
-![In-game screenshot](https://github.com/alicerunsonfedora/CS400/raw/root/.readme/game.png)
-
 ## Objective
 
 The primary objective of this project is to take the concepts from _CS440: Principles of Artificial Intelligence_ and build a better 
@@ -37,8 +35,8 @@ More information on the objective of this repository can be found in the [design
 | ------ | ----------- | ----------- |
 | 🟢 | September 21, 2020 | Working Game |
 | ❎ | October 19, 2020 | Adding Apple's agents with GameplayKit* |
-| 🟡 | November 9, 2020 | Adding custom agents and beating Apple |
-| 🟡 | November 16, 2020 | Final presentation and cleanup |
+| ✳️ | November 9, 2020 | Adding custom agents and beating Apple<sup>✝</sup> |
+| 🟢 | November 16, 2020 | Final presentation and cleanup |
 
 Details on these milestones can be found on the [Milestones page on GitHub][milestones].
 
@@ -46,6 +44,8 @@ Documentation on how to work with agents [can be found on the documentation page
 
 <small>*Due to the nature of the strategists with GameplayKit's AIs, it is impossible to complete this milestone. Currently, the goal
 is to supply custom agents that attempt to solve the world.</small>
+
+<small><sup>✝</sup>Due to limitations with the second milestone, beating Apple is not really possible.</small>
 
 ## Build instructions
 

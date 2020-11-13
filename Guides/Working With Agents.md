@@ -119,7 +119,7 @@ There are extra commands you can supply to the game to control the overall outpu
 | Command | Value type | Description |
 | ------------ | ------------ | ------------- |
 | `--start-level` | String | The name of the level to run the AI simulation in*. |
-| `--agent-type` | String | The type of agent to use (`random`, `randomWeight`, `predTree`). |
+| `--agent-type` | String | The type of agent to use (`random`, `randomWeight`, `reflex`, `predTree`, `tealConverse`). |
 | `--agent-move-rate` | Integer | The maximum number of moves the agent can make at a given time in a batch. |
 
 - Note: *Due to limited testing, there is only one level available for testing, Entry. Additional AI levels may be added in the future.

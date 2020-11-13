@@ -21,7 +21,6 @@ custom_categories:
     - CommandLineArguments
     - GameStore
     - Preferences
-    - ConsoleViewModel
 
   - name: Game Levels
     children:
@@ -42,7 +41,6 @@ custom_categories:
     children:
     - GameSignalSender
     - GameSignalKind
-    - GameSignalInputMethod
     - GameSignalMethod
     - GameAchievementTrigger
     - GameAlarmClock
@@ -77,12 +75,7 @@ custom_categories:
   - name: AI - Decision Tree Strategies
     children:
     - AIPredeterminedTreeStrategist
-    - AIHistoryTreeStrategist
     - AITealConverseStrategist
-  
-  - name: AI - Other Strategies
-    children:
-    - AIReflexStrategist
     
   - name: AI - Components
     children:
@@ -113,16 +106,3 @@ custom_categories:
     - GameLeaderboard
     - GKAchievement
     - GKLeaderboard
-    
-  - name: Views
-    children:
-    - GameLevelSelector
-    - GameLevelSelector_Previews
-    - WatchYourStepView
-    - AISimulatorView
-    - AISimulatorConsole
-    - AISimulatorConsoleToolbar
-    - WatchYourStepView_Previews
-    - AISimulatorView_Previews
-    - AISimulatorConsole_Previews
-    - AISimulatorConsoleToolbar_Previews
