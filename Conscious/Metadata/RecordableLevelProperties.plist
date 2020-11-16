@@ -12,6 +12,14 @@
 	</dict>
 	<dict>
 		<key>Title</key>
+		<string>Multi Input Basic</string>
+		<key>Description</key>
+		<string>Two levers, one exit.</string>
+		<key>Is DLC</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Title</key>
 		<string>Entry</string>
 		<key>Description</key>
 		<string>Where it all begins.</string>

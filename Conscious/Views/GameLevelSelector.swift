@@ -49,10 +49,12 @@ struct GameLevelSelector: View {
                                 .listRowInsets(.init(top: 4, leading: 8, bottom: 4, trailing: 8))
                         }
                     }
-                    Section(header: Text("Watch Your Step")) {
-                        ForEach(realData.filter { ent in ent.isDownloadableContent }) { entry in
-                            self.entryItem(entry)
-                                .listRowInsets(.init(top: 4, leading: 8, bottom: 4, trailing: 8))
+                    if !realData.filter { ent in ent.isDownloadableContent }.isEmpty {
+                        Section(header: Text("Watch Your Step")) {
+                            ForEach(realData.filter { ent in ent.isDownloadableContent }) { entry in
+                                self.entryItem(entry)
+                                    .listRowInsets(.init(top: 4, leading: 8, bottom: 4, trailing: 8))
+                            }
                         }
                     }
                 }
