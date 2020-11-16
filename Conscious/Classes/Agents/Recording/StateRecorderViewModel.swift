@@ -57,6 +57,8 @@ class StateRecorderViewModel: ObservableObject {
         self.entries.append(AIStateRecordable(from: assessment, with: action))
     }
 
+    /// Export the list of entries to a CSV file.
+    /// - Parameter csvPath: The URL to save the data to.
     func export(to csvPath: URL) {
         let encoder = CSVEncoder {
             $0.headers = AIStateRecordable.csvHeaders

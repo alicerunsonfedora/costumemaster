@@ -58,6 +58,7 @@ class AIRecordableGameScene: GameScene {
         self.recorder?.close()
     }
 
+    /// Make the state recorder window and display it.
     func makeRecorder() {
         guard let journal = self.journal else { return }
         let recordingView = NSHostingView(rootView: AIStateRecordingView(journal: journal))

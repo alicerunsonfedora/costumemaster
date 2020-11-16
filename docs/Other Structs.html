@@ -57,6 +57,37 @@
                   <li class="item">
                     <div>
                       <code>
+                      <a name="/s:17The_Costumemaster17AIStateRecordableV"></a>
+                      <a name="//apple_ref/swift/Struct/AIStateRecordable" class="dashAnchor"></a>
+                      <a class="token" href="#/s:17The_Costumemaster17AIStateRecordableV">AIStateRecordable</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>A data structure that represents a recorded state assessment and its resulting action.</p>
+
+<p>This is typically used to construct a state recording to be fed into a machine learning
+model for the Teal Converse agent.</p>
+
+                          <a href="Structs/AIStateRecordable.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AIStateRecordable</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
                       <a name="/s:17The_Costumemaster13GameLevelItemV"></a>
                       <a name="//apple_ref/swift/Struct/GameLevelItem" class="dashAnchor"></a>
                       <a class="token" href="#/s:17The_Costumemaster13GameLevelItemV">GameLevelItem</a>
@@ -105,35 +136,6 @@
                             <p class="aside-title">Swift</p>
                             <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"Preferences have moved to UserDefults as static variables and AppStorage."</span><span class="p">)</span>
 <span class="kd">struct</span> <span class="kt">GamePreferences</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:17The_Costumemaster7TooltipV"></a>
-                      <a name="//apple_ref/swift/Struct/Tooltip" class="dashAnchor"></a>
-                      <a class="token" href="#/s:17The_Costumemaster7TooltipV">Tooltip</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>A view that displays a tooltip.
-Credit goes to onmyway133: <a href="https://onmyway133.github.io/blog/How-to-make-tooltip-in-SwiftUI-for-macOS/">https://onmyway133.github.io/blog/How-to-make-tooltip-in-SwiftUI-for-macOS/</a></p>
-
-                          <a href="Structs/Tooltip.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Tooltip</span> <span class="p">:</span> <span class="kt">NSViewRepresentable</span></code></pre>
 
                           </div>
                         </div>
@@ -404,6 +406,9 @@ Credit goes to onmyway133: <a href="https://onmyway133.github.io/blog/How-to-mak
               <a href="Other%20Classes.html">Other Classes</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
+                  <a href="Classes/AIRecordableGameScene.html">AIRecordableGameScene</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="Classes/GameDeathPit.html">GameDeathPit</a>
                 </li>
                 <li class="nav-group-task">
@@ -411,6 +416,9 @@ Credit goes to onmyway133: <a href="https://onmyway133.github.io/blog/How-to-mak
                 </li>
                 <li class="nav-group-task">
                   <a href="Classes/GameTileSpriteNode.html">GameTileSpriteNode</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/StateRecorderViewModel.html">StateRecorderViewModel</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="Classes/TealConverse.html">TealConverse</a>
@@ -488,6 +496,9 @@ Credit goes to onmyway133: <a href="https://onmyway133.github.io/blog/How-to-mak
                   <a href="Other%20Functions.html#/s:17The_Costumemaster18getLevelPropertiesSayAA04GameD4ItemVGSgyF">getLevelProperties()</a>
                 </li>
                 <li class="nav-group-task">
+                  <a href="Other%20Functions.html#/s:17The_Costumemaster28getRecordableLevelPropertiesSayAA04GameE4ItemVGSgyF">getRecordableLevelProperties()</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="Other%20Functions.html#/s:17The_Costumemaster11getTileType14fromDefinitionAA04GamedE0OSo06SKTileG0C_tF">getTileType(fromDefinition:)</a>
                 </li>
                 <li class="nav-group-task">
@@ -511,13 +522,13 @@ Credit goes to onmyway133: <a href="https://onmyway133.github.io/blog/How-to-mak
               <a href="Other%20Structs.html">Other Structures</a>
               <ul class="nav-group-tasks">
                 <li class="nav-group-task">
+                  <a href="Structs/AIStateRecordable.html">AIStateRecordable</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="Structs/GameLevelItem.html">GameLevelItem</a>
                 </li>
                 <li class="nav-group-task">
                   <a href="Structs/GamePreferences.html">GamePreferences</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Structs/Tooltip.html">Tooltip</a>
                 </li>
               </ul>
             </li>
@@ -526,7 +537,7 @@ Credit goes to onmyway133: <a href="https://onmyway133.github.io/blog/How-to-mak
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-11-13)</p>
+          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-11-16)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>
