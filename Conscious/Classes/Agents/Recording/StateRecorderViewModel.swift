@@ -58,7 +58,11 @@ class StateRecorderViewModel: ObservableObject {
     }
 
     func export(to csvPath: URL) {
-        let encoder = CSVEncoder { $0.headers = AIStateRecordable.csvHeaders }
+        let encoder = CSVEncoder {
+            $0.headers = AIStateRecordable.csvHeaders
+            $0.encoding = .utf8
+            $0.delimiters.row = "\n"
+        }
         do {
             try encoder.encode(entries, into: csvPath)
         } catch {

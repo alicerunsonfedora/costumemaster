@@ -53,6 +53,10 @@ class AIRecordableGameScene: GameScene {
         }
         self.makeRecorder()
     }
+    
+    override func willMove(from view: SKView) {
+        self.recorder?.close()
+    }
 
     func makeRecorder() {
         guard let journal = self.journal else { return }
