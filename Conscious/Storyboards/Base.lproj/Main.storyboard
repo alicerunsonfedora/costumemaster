@@ -104,6 +104,11 @@
                                                 <action selector="openSimulator:" target="Voe-Tx-rLC" id="NXw-N8-WXL"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Record Simulation..." enabled="NO" keyEquivalent="R" id="GxQ-H9-r1L">
+                                            <connections>
+                                                <action selector="recordSimulation:" target="Voe-Tx-rLC" id="hb8-Tg-xva"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Open Simulator Console" enabled="NO" keyEquivalent="c" id="QIP-Yu-QAe" userLabel="AI Simulator Console">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>

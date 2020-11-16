@@ -38,32 +38,30 @@ struct AISimulatorConsoleToolbar: View {
 
     /// The body of the view.
     var body: some View {
-        HStack(spacing: 10) {
+        HStack {
             Picker("", selection: $filter.onChange(self.changeFilter)) {
                 ForEach(FilterType.allCases, id: \.self) { type in
                     Text(type.rawValue)
                 }
             }
-
-            VStack(spacing: 0) {
+            HStack(spacing: 0) {
                 Button { self.console.nowMode.toggle() }
                     label: {
                         Image("arrow.up.backward.circle\(self.console.nowMode ? ".fill" : "")")
-                        .font(.body)
                         .foregroundColor(self.console.nowMode ? .accentColor : Color(.controlTextColor))
+                            .overlay(
+                                Tooltip(
+                                    tooltip: "View the console as a stack of messages with the most recent on the top."
+                                )
+                            )
                 }
-                    .overlay(
-                        Tooltip(tooltip: "View the console as a stack of messages with the most recent on the top.")
-                    )
-            }
-            VStack(spacing: 0) {
+                    .buttonStyle(ToolbarButtonStyle())
                 Button { self.console.clear() }
                     label: {
                     Image("clear")
-                        .font(.body)
-                        .foregroundColor(.primary)
+                        .overlay(Tooltip(tooltip: "Clear the console."))
                 }
-                    .overlay(Tooltip(tooltip: "Clear the console."))
+                    .buttonStyle(ToolbarButtonStyle())
             }
         }
         .padding(.trailing)

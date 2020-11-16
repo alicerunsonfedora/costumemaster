@@ -48,6 +48,13 @@ class AITreeStrategy: AIGameStrategy {
     }
 
     // MARK: - State Assessements
+
+    /// Recalculates the closest input and object.
+    func evaluateEnvironmentVariables(from state: AIAbstractGameState) {
+        self.closestInput = self.closestInput(in: state)
+        self.closestObject = self.closestObject(in: state)
+    }
+
     /// Returns a given decision tree that the agent will use to grab its next best move.
     /// - Returns: A decision tree (GKDecisionTree)
     /// - Important: This method must be overridden in all subclasses; otherwise, the decision tree may not be able
@@ -128,10 +135,7 @@ class AITreeStrategy: AIGameStrategy {
             }
         }
 
-        // Assess the state and prepare it for submission to the decision tree.
-        self.closestInput = self.closestInput(in: state)
-        self.closestObject = self.closestObject(in: state)
-
+        self.evaluateEnvironmentVariables(from: state)
         let assessement = self.assess(state: state)
 
         // Get a response from the decision tree.

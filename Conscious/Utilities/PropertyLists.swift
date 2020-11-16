@@ -36,3 +36,18 @@ func getLevelProperties() -> [GameLevelItem]? {
         return nil
     }
 }
+
+/// Returns the level properties file as a list of level items.
+///
+/// - Returns: A list of level items, or nil if an unexpected error occurs.
+func getRecordableLevelProperties() -> [GameLevelItem]? {
+    guard let dataURL = Bundle.main.url(forResource: "RecordableLevelProperties", withExtension: "plist") else {
+        return nil
+    }
+    do {
+        return try PropertyListDecoder().decode([GameLevelItem].self, from: Data(contentsOf: dataURL))
+    } catch {
+        print("An unknown error occurred: \(error)")
+        return nil
+    }
+}

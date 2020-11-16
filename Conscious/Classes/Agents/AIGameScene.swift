@@ -12,10 +12,7 @@
 import Foundation
 import SpriteKit
 import GameplayKit
-
-#if canImport(SwiftUI)
 import SwiftUI
-#endif
 
 /// A game scene that an AI agent can control.
 ///

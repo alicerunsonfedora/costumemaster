@@ -105,32 +105,48 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func openLevel(_ sender: Any) {
-        if #available(OSX 10.15, *) {
-            let viewController = NSViewController()
-            let levelSelector = GameLevelSelector(levels: getLevelProperties()) { name in
-                viewController.dismiss(self)
-                GameManagerDelegate.loadScene(with: name, fadeDuration: 3.0)
-            } dismiss: {
-                viewController.dismiss(self)
-            }
-            let view = NSHostingView(rootView: levelSelector)
-            viewController.view = view
+        let viewController = NSViewController()
+        let levelSelector = GameLevelSelector(levels: getLevelProperties()) { name in
+            viewController.dismiss(self)
+            GameManagerDelegate.loadScene(with: name, fadeDuration: 3.0)
+        } dismiss: {
+            viewController.dismiss(self)
+        }
+        let view = NSHostingView(rootView: levelSelector)
+        viewController.view = view
 
-            if let main = NSApplication.shared.mainWindow?.contentViewController {
-                if main == self.preferencesWindowController.contentViewController {
-                    NSSound.beep()
-                    print("Preferences must be closed before opening a new level.")
-                    return
-                }
-                main.presentAsSheet(viewController)
+        if let main = NSApplication.shared.mainWindow?.contentViewController {
+            if main == self.preferencesWindowController.contentViewController {
+                NSSound.beep()
+                print("Preferences must be closed before opening a new level.")
+                return
             }
+            main.presentAsSheet(viewController)
+        }
+    }
 
-        } else {
-            sendAlert(
-                "Ensure that you're running the latest macOS version before running the Level Selector.",
-                withTitle: "Your Mac does not support this function.",
-                level: .warning
-            ) { _ in }
+    @IBAction func recordSimulation(_ sender: Any) {
+        let viewController = NSViewController()
+        let levelSelector = GameLevelSelector(levels: getRecordableLevelProperties()) { name in
+            viewController.dismiss(self)
+
+            let recordableName = name.replacingOccurrences(of: " ", with: "")
+
+            GameManagerDelegate.loadRecording(with: recordableName)
+        } dismiss: {
+            viewController.dismiss(self)
+        }
+        let view = NSHostingView(rootView: levelSelector)
+        viewController.view = view
+
+        if let main = NSApplication.shared.mainWindow?.contentViewController {
+            if main == self.preferencesWindowController.contentViewController {
+                NSSound.beep()
+                print("Preferences must be closed before starting a recording.")
+                return
+            }
+            main.presentAsSheet(viewController)
+            GameManagerDelegate.canRunSimulator = false
         }
     }
 
@@ -151,32 +167,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func openSimulator(_ sender: Any) {
-        if #available(OSX 10.15, *) {
-            let hostingController = NSApplication.shared.mainWindow?.contentViewController
-            let viewController = NSViewController()
-            let hostingView = NSHostingView(rootView: AISimulatorView { agentType, level, budget in
-                hostingController?.dismiss(viewController)
-                self.runAgentSimulation(agentType, level.rawValue, budget)
-            })
-            viewController.view = hostingView
-            viewController.title = "AI Simulator"
-            hostingController?.presentAsModalWindow(viewController)
-        }
+        let hostingController = NSApplication.shared.mainWindow?.contentViewController
+        let viewController = NSViewController()
+        let hostingView = NSHostingView(rootView: AISimulatorView { agentType, level, budget in
+            hostingController?.dismiss(viewController)
+            self.runAgentSimulation(agentType, level.rawValue, budget)
+        })
+        viewController.view = hostingView
+        viewController.title = "AI Simulator"
+        hostingController?.presentAsModalWindow(viewController)
     }
 
     @IBAction func openSimulatorConsole(_ sender: Any) {
-        if #available(OSX 10.15, *) {
-            if let controller = NSApplication.shared.mainWindow?.contentViewController as? ViewController {
-                if let view = controller.view as? SKView {
-                    if let scene = view.scene as? AIGameScene {
-                        scene.initConsole()
-                        scene.console.info("Restored console window.")
-                    } else {
-                        sendAlert(
-                            "The simulator console is only available when running an AI simulation.",
-                            withTitle: "Please run a simulation.",
-                            level: .informational) { _ in }
-                    }
+        if let controller = NSApplication.shared.mainWindow?.contentViewController as? ViewController {
+            if let view = controller.view as? SKView {
+                if let scene = view.scene as? AIGameScene {
+                    scene.initConsole()
+                    scene.console.info("Restored console window.")
+                } else {
+                    sendAlert(
+                        "The simulator console is only available when running an AI simulation.",
+                        withTitle: "Please run a simulation.",
+                        level: .informational) { _ in }
                 }
             }
         }

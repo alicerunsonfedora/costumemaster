@@ -23,6 +23,7 @@ class GameManagerDelegate {
                 if let game = main.item(withTitle: "Game")?.submenu {
                     game.item(withTitle: "Run AI Simulation...")?.isEnabled = canRunSimulator
                     game.item(withTitle: "Open Simulator Console")?.isEnabled = !canRunSimulator
+                    game.item(withTitle: "Record Simulation...")?.isEnabled = canRunSimulator
                 }
             }
         }
@@ -59,6 +60,9 @@ class GameManagerDelegate {
                 }
             }
         }
+        if !GameManagerDelegate.canRunSimulator {
+            GameManagerDelegate.canRunSimulator = true
+        }
     }
 
     /// Start the game.
@@ -77,6 +81,19 @@ class GameManagerDelegate {
     /// Resume the game from the last saved scene.
     static func resumeGame() {
         GameManagerDelegate.loadScene(with: GameStore.shared.lastSavedScene, fadeDuration: 3.0)
+    }
+
+    static func loadRecording(with name: String) {
+        if let view = GameManagerDelegate.gameView {
+            if let gameScene = AIRecordableGameScene(fileNamed: name + "AIRecordable") {
+                print(gameScene.className)
+                if view.scene != nil { GameManagerDelegate.gameController?.rootScene = view.scene }
+                if #available(OSX 11.0, *) { GKAccessPoint.shared.isActive = name == "MainMenu" }
+                view.presentScene(gameScene, transition: SKTransition.fade(withDuration: 2.0))
+            } else {
+                print("Failed to load scene.")
+            }
+        }
     }
 
     /// Load a scene with a given name.

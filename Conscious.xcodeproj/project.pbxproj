@@ -23,6 +23,17 @@
 		BF18AAC0252B9EC200577BF6 /* GameScene_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF18AABF252B9EC200577BF6 /* GameScene_Extension.swift */; };
 		BF18AAC4252BB73000577BF6 /* GameTileSpriteNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF18AAC3252BB73000577BF6 /* GameTileSpriteNote.swift */; };
 		BF18AAD1252D0BAE00577BF6 /* GameDeathPit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF18AAD0252D0BAE00577BF6 /* GameDeathPit.swift */; };
+		BF1938BF2562D51F00452D70 /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = BF1938BE2562D51F00452D70 /* CodableCSV */; };
+		BF1938C32562D55600452D70 /* StateRecorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1938C22562D55600452D70 /* StateRecorderViewModel.swift */; };
+		BF1938C62562D59200452D70 /* AIStateRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1938C52562D59200452D70 /* AIStateRecordable.swift */; };
+		BF1938C92562DAB000452D70 /* AIRecordableGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1938C82562DAB000452D70 /* AIRecordableGameScene.swift */; };
+		BF1938CC2562DD1E00452D70 /* AIStateRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1938CB2562DD1E00452D70 /* AIStateRecordingView.swift */; };
+		BF1938D22562ED7000452D70 /* BasicAIRecordable.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF1938CF2562ED7000452D70 /* BasicAIRecordable.sks */; };
+		BF1938D32562ED7000452D70 /* EntryAIRecordable.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF1938D02562ED7000452D70 /* EntryAIRecordable.sks */; };
+		BF1938D42562ED7000452D70 /* MultiInputBasicAIRecordable.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF1938D12562ED7000452D70 /* MultiInputBasicAIRecordable.sks */; };
+		BF1938D72562EDFC00452D70 /* RecordableLevelProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF1938D62562EDFC00452D70 /* RecordableLevelProperties.plist */; };
+		BF1938DB2562F77700452D70 /* AIStateRecordingToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1938DA2562F77700452D70 /* AIStateRecordingToolbar.swift */; };
+		BF1938E3256306C100452D70 /* ToolbarButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1938E2256306C100452D70 /* ToolbarButtonStyle.swift */; };
 		BF1FF2F4250FD4ED0053D1A4 /* CycleChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2F3250FD4ED0053D1A4 /* CycleChallenge.swift */; };
 		BF233390251D0D2E0018C854 /* AIGamePlayerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF23338F251D0D2E0018C854 /* AIGamePlayerAction.swift */; };
 		BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF2514B424F45DB8000300B7 /* Tileset.sks */; };
@@ -208,6 +219,16 @@
 		BF18AABF252B9EC200577BF6 /* GameScene_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene_Extension.swift; sourceTree = "<group>"; };
 		BF18AAC3252BB73000577BF6 /* GameTileSpriteNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTileSpriteNote.swift; sourceTree = "<group>"; };
 		BF18AAD0252D0BAE00577BF6 /* GameDeathPit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDeathPit.swift; sourceTree = "<group>"; };
+		BF1938C22562D55600452D70 /* StateRecorderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateRecorderViewModel.swift; sourceTree = "<group>"; };
+		BF1938C52562D59200452D70 /* AIStateRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIStateRecordable.swift; sourceTree = "<group>"; };
+		BF1938C82562DAB000452D70 /* AIRecordableGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRecordableGameScene.swift; sourceTree = "<group>"; };
+		BF1938CB2562DD1E00452D70 /* AIStateRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIStateRecordingView.swift; sourceTree = "<group>"; };
+		BF1938CF2562ED7000452D70 /* BasicAIRecordable.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BasicAIRecordable.sks; sourceTree = "<group>"; };
+		BF1938D02562ED7000452D70 /* EntryAIRecordable.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EntryAIRecordable.sks; sourceTree = "<group>"; };
+		BF1938D12562ED7000452D70 /* MultiInputBasicAIRecordable.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MultiInputBasicAIRecordable.sks; sourceTree = "<group>"; };
+		BF1938D62562EDFC00452D70 /* RecordableLevelProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RecordableLevelProperties.plist; sourceTree = "<group>"; };
+		BF1938DA2562F77700452D70 /* AIStateRecordingToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIStateRecordingToolbar.swift; sourceTree = "<group>"; };
+		BF1938E2256306C100452D70 /* ToolbarButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarButtonStyle.swift; sourceTree = "<group>"; };
 		BF1FF2F3250FD4ED0053D1A4 /* CycleChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleChallenge.swift; sourceTree = "<group>"; };
 		BF23338F251D0D2E0018C854 /* AIGamePlayerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIGamePlayerAction.swift; sourceTree = "<group>"; };
 		BF2514B424F45DB8000300B7 /* Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tileset.sks; sourceTree = "<group>"; };
@@ -387,6 +408,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1938BF2562D51F00452D70 /* CodableCSV in Frameworks */,
 				BF982772255CA21200E2D9DB /* Preferences in Frameworks */,
 				BF93337C25320DC900C78B44 /* StoreKit.framework in Frameworks */,
 				BFDBE7AE24F955EE00FD75BF /* GameKit.framework in Frameworks */,
@@ -446,6 +468,42 @@
 			path = "Decision Trees";
 			sourceTree = "<group>";
 		};
+		BF1938C12562D53C00452D70 /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				BF1938C22562D55600452D70 /* StateRecorderViewModel.swift */,
+				BF1938C82562DAB000452D70 /* AIRecordableGameScene.swift */,
+			);
+			path = Recording;
+			sourceTree = "<group>";
+		};
+		BF1938CE2562ED2500452D70 /* Recordable */ = {
+			isa = PBXGroup;
+			children = (
+				BF1938CF2562ED7000452D70 /* BasicAIRecordable.sks */,
+				BF1938D02562ED7000452D70 /* EntryAIRecordable.sks */,
+				BF1938D12562ED7000452D70 /* MultiInputBasicAIRecordable.sks */,
+			);
+			path = Recordable;
+			sourceTree = "<group>";
+		};
+		BF1938D92562F76500452D70 /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				BF1938CB2562DD1E00452D70 /* AIStateRecordingView.swift */,
+				BF1938DA2562F77700452D70 /* AIStateRecordingToolbar.swift */,
+			);
+			path = Recording;
+			sourceTree = "<group>";
+		};
+		BF1938E525630FF300452D70 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				BF1938E2256306C100452D70 /* ToolbarButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		BF23338B251D0CFE0018C854 /* Signals */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,7 +548,6 @@
 				BFE6475524F88B1300230F93 /* SwitchRequisite.swift */,
 				BF109CDA24FB26FB00F06E47 /* Store.swift */,
 				BF2B5E4625016CFB001EC2E7 /* CommandLineArguments.swift */,
-				BF4630EE255077A000EB606D /* Tooltip.swift */,
 				BFEB76DF2554A1A8004587E2 /* GameLevelItem.swift */,
 			);
 			path = Structs;
@@ -522,6 +579,7 @@
 				BFF9C063253261B90066F345 /* LevelStructure.plist */,
 				BFD25F57254F279700FDA1C3 /* AgentTypes.plist */,
 				BFEB76E22554A442004587E2 /* LevelProperties.plist */,
+				BF1938D62562EDFC00452D70 /* RecordableLevelProperties.plist */,
 			);
 			path = Metadata;
 			sourceTree = "<group>";
@@ -576,10 +634,13 @@
 		BF41A4B72533754600AC6001 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF1938E525630FF300452D70 /* Styles */,
+				BF1938D92562F76500452D70 /* Recording */,
 				BF98275B255C803200E2D9DB /* Preferences */,
 				BF98275A255C801600E2D9DB /* Simulator */,
 				BF41A4B82533757B00AC6001 /* WatchYourStepView.swift */,
 				BFEB76E52554BE58004587E2 /* GameLevelSelector.swift */,
+				BF4630EE255077A000EB606D /* Tooltip.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -621,8 +682,9 @@
 		BF4A451D2501B575008BDD5A /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				BFF9C061253261820066F345 /* DLC */,
 				BFF9C0602532616F0066F345 /* Core */,
+				BFF9C061253261820066F345 /* DLC */,
+				BF1938CE2562ED2500452D70 /* Recordable */,
 				BFC140DD25252539007D65DC /* Agents */,
 			);
 			path = Levels;
@@ -822,6 +884,7 @@
 		BFB0CE122518FBCF0015FE6C /* Agents */ = {
 			isa = PBXGroup;
 			children = (
+				BF1938C12562D53C00452D70 /* Recording */,
 				BF5FAB40254335440008E8B3 /* Strategies */,
 				BFC140C9252517A5007D65DC /* AIGameScene.swift */,
 				BFC140CC252517DB007D65DC /* AIGamePlayer.swift */,
@@ -845,6 +908,7 @@
 			children = (
 				BFC140D2252518F6007D65DC /* AIAbstractGameSignalSender.swift */,
 				BFC140D625251955007D65DC /* AIAbstractGameSignalReceivable.swift */,
+				BF1938C52562D59200452D70 /* AIStateRecordable.swift */,
 			);
 			path = Agents;
 			sourceTree = "<group>";
@@ -1016,6 +1080,7 @@
 				BF37C7F52539F31900CC156E /* GBMKUtils */,
 				BF982771255CA21200E2D9DB /* Preferences */,
 				BFA94B52255CBB320056C5D5 /* AppStorage */,
+				BF1938BE2562D51F00452D70 /* CodableCSV */,
 			);
 			productName = Conscious;
 			productReference = BF6FBAD324A8BDD400996890 /* The Costumemaster.app */;
@@ -1050,6 +1115,7 @@
 				BF37C7F42539F31900CC156E /* XCRemoteSwiftPackageReference "GBMKUtils" */,
 				BF982770255CA21200E2D9DB /* XCRemoteSwiftPackageReference "Preferences" */,
 				BFA94B51255CBB320056C5D5 /* XCRemoteSwiftPackageReference "AppStorage" */,
+				BF1938BD2562D51F00452D70 /* XCRemoteSwiftPackageReference "CodableCSV" */,
 			);
 			productRefGroup = BF6FBAD424A8BDD400996890 /* Products */;
 			projectDirPath = "";
@@ -1093,6 +1159,7 @@
 				BF8C30F2250304B700A29425 /* Hacker.sks in Resources */,
 				BF982751255C7C6F00E2D9DB /* Player_Forward_Bird_ML.atlas in Resources */,
 				BFBCA1C62506A883001FFA91 /* Simultaneous.sks in Resources */,
+				BF1938D42562ED7000452D70 /* MultiInputBasicAIRecordable.sks in Resources */,
 				BFEE78C724FC04EC006FBFF0 /* PauseMenu.sks in Resources */,
 				BF982752255C7C6F00E2D9DB /* Player_Side_Bird_ML.atlas in Resources */,
 				BF982743255C79D000E2D9DB /* Player_Backward_Sorceress_ML.atlas in Resources */,
@@ -1102,6 +1169,7 @@
 				BF982744255C79D000E2D9DB /* Player_Backward_USB_ML.atlas in Resources */,
 				BF153F9224FC3DF3007B20B4 /* cantUse.wav in Resources */,
 				BFB0CE18251914BB0015FE6C /* EntryAI.sks in Resources */,
+				BF1938D72562EDFC00452D70 /* RecordableLevelProperties.plist in Resources */,
 				BF982757255C7C6F00E2D9DB /* Player_Forward_Default_ML.atlas in Resources */,
 				BFEB76E32554A442004587E2 /* LevelProperties.plist in Resources */,
 				BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */,
@@ -1110,6 +1178,7 @@
 				BFF9C064253261B90066F345 /* LevelStructure.plist in Resources */,
 				BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */,
 				BFDF94EA25084600004F5BE7 /* Rushed.sks in Resources */,
+				BF1938D22562ED7000452D70 /* BasicAIRecordable.sks in Resources */,
 				BF3A0B8A24F733C400575F72 /* Cabin-Regular.ttf in Resources */,
 				BF982755255C7C6F00E2D9DB /* Player_Side_Default_ML.atlas in Resources */,
 				BF4630FE2550D85800EB606D /* BasicAI.sks in Resources */,
@@ -1139,6 +1208,7 @@
 				BFDC7B3B25096B1E00ED4DB9 /* alarmTick.wav in Resources */,
 				BF6FBAE124A8BDDB00996890 /* Assets.xcassets in Resources */,
 				BF9279EC252D3F3A004B548E /* Consequences.sks in Resources */,
+				BF1938D32562ED7000452D70 /* EntryAIRecordable.sks in Resources */,
 				BF6D83372551EEF9009B6890 /* Costumemaster.help in Resources */,
 				BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */,
 				BFD8796324F5C63C00552EDD /* Player_Backward_USB.atlas in Resources */,
@@ -1198,6 +1268,7 @@
 				BF3A0B7824F6CB0C00575F72 /* GameSignalReceivable.swift in Sources */,
 				BF41A4B92533757B00AC6001 /* WatchYourStepView.swift in Sources */,
 				BF08BA392553007500BE3460 /* AITreeStrategy.swift in Sources */,
+				BF1938DB2562F77700452D70 /* AIStateRecordingToolbar.swift in Sources */,
 				BFEE78C324FBF1FC006FBFF0 /* GameAchievments.swift in Sources */,
 				BF4630F62550A34400EB606D /* AIReflexStrategist.swift in Sources */,
 				BFAD7FF5250FF4CD00768609 /* ExposureChallenge.swift in Sources */,
@@ -1210,6 +1281,7 @@
 				BF1FF2F4250FD4ED0053D1A4 /* CycleChallenge.swift in Sources */,
 				BF2B5E4925016D2D001EC2E7 /* Arguments.swift in Sources */,
 				BFBEB33324F8439900162B06 /* GamePreferences.swift in Sources */,
+				BF1938C62562D59200452D70 /* AIStateRecordable.swift in Sources */,
 				BFEB76E02554A1A8004587E2 /* GameLevelItem.swift in Sources */,
 				BF18AAC4252BB73000577BF6 /* GameTileSpriteNote.swift in Sources */,
 				BFC140CA252517A5007D65DC /* AIGameScene.swift in Sources */,
@@ -1221,11 +1293,13 @@
 				BF3977BD2530C44600BBD591 /* Player_Extension.swift in Sources */,
 				BFD25F55254F1B4600FDA1C3 /* AISimulatorView.swift in Sources */,
 				BF98276D255C971F00E2D9DB /* PrefPaneAdvanced.swift in Sources */,
+				BF1938C32562D55600452D70 /* StateRecorderViewModel.swift in Sources */,
 				BFCE7C3625474623005FBFA2 /* AIPredeterminedTreeStrategist.swift in Sources */,
 				BF93337F2532157700C78B44 /* IAPObserver.swift in Sources */,
 				BF7C5EEE250AA30B0062B1CC /* ChallengeGameScene.swift in Sources */,
 				BFC78F3D24F48731004E85A9 /* Player.swift in Sources */,
 				BFC140C625250D10007D65DC /* Splash.swift in Sources */,
+				BF1938CC2562DD1E00452D70 /* AIStateRecordingView.swift in Sources */,
 				BFC140E0252525EB007D65DC /* AIGameStrategist.swift in Sources */,
 				BFD8796024F5B61D00552EDD /* GameTileType.swift in Sources */,
 				BFE9232D254F65A00091396D /* AISimulatorConsoleToolbar.swift in Sources */,
@@ -1246,6 +1320,7 @@
 				BF982738255C5B5800E2D9DB /* AISimulatorAgentImage.swift in Sources */,
 				BF69F2C324F4B11200BBF518 /* Alerts.swift in Sources */,
 				BF4744DA255B348D001EE6DD /* AIYellowConverseStrategist.swift in Sources */,
+				BF1938C92562DAB000452D70 /* AIRecordableGameScene.swift in Sources */,
 				BF7C5EFB250ACE530062B1CC /* AboutScene.swift in Sources */,
 				BF93338E2532237100C78B44 /* IAPManager_Extension.swift in Sources */,
 				BF37C7FD253A07A000CC156E /* AIRandomMoveStrategist.swift in Sources */,
@@ -1271,6 +1346,7 @@
 				BFE92330254F6A350091396D /* AIGameScene_Extension.swift in Sources */,
 				BF4744E2255B3F65001EE6DD /* TealConverse.mlmodel in Sources */,
 				BFB621CA2512CFD4003940CF /* GameStructureBlock.swift in Sources */,
+				BF1938E3256306C100452D70 /* ToolbarButtonStyle.swift in Sources */,
 				BF0D2C1E24FADD1F00AEF86F /* Keyboard.swift in Sources */,
 				BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */,
 				BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */,
@@ -1504,6 +1580,14 @@
 				minimumVersion = 0.5.0;
 			};
 		};
+		BF1938BD2562D51F00452D70 /* XCRemoteSwiftPackageReference "CodableCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dehesa/CodableCSV.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.3;
+			};
+		};
 		BF37C7F42539F31900CC156E /* XCRemoteSwiftPackageReference "GBMKUtils" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alicerunsonfedora/GBMKUtils.git";
@@ -1535,6 +1619,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BF0D2C1A24FADC4E00AEF86F /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
 			productName = KeyboardShortcuts;
+		};
+		BF1938BE2562D51F00452D70 /* CodableCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF1938BD2562D51F00452D70 /* XCRemoteSwiftPackageReference "CodableCSV" */;
+			productName = CodableCSV;
 		};
 		BF37C7F52539F31900CC156E /* GBMKUtils */ = {
 			isa = XCSwiftPackageProductDependency;
