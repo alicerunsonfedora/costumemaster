@@ -295,7 +295,9 @@ class GameScene: SKScene {
             self.camera?.addChild(dustEmitter)
         }
 
-        let music = SKAudioNode(fileNamed: ["September", "November"].randomElement() ?? "September")
+        let music = SKAudioNode(
+            fileNamed: self.configuration?.trackName ?? (["minute", "phase"].randomElement() ?? "minute")
+        )
         music.name = "music"
         music.autoplayLooped = true; music.isPositional = false
         music.run(SKAction.sequence([

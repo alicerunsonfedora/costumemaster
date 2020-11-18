@@ -25,6 +25,7 @@ import Foundation
 /// through an achievement trigger.
 /// - `timer` field: (Int) determines how long a timer in the level will last. Defaults to 3 seconds.
 /// - `disallowCostume` field: (String) determines which costume cannot be used in this level.
+/// - `trackName` field: (String) determines what music track to play.
 public struct LevelDataConfiguration {
     /// The ID that determines what costumes are avaiable, with 0 indicating no costumes annd 3 indicating all costumes.
     public let costumeID: Int
@@ -50,6 +51,9 @@ public struct LevelDataConfiguration {
     /// A costume to remove from the queue.
     let disallowCostume: PlayerCostumeType?
 
+    /// The track name to play as music.
+    let trackName: String?
+
     /// A default level configuration with no costumes loaded and the next scene set to the main menu.
     static var `default`: LevelDataConfiguration {
         return LevelDataConfiguration(
@@ -60,7 +64,8 @@ public struct LevelDataConfiguration {
             under: [],
             with: CGPoint(x: 0, y: 0),
             timed: 3.0,
-            earning: nil
+            earning: nil,
+            playing: nil
         )
     }
 
@@ -80,7 +85,8 @@ public struct LevelDataConfiguration {
         under requisites: [SwitchRequisite],
         with exit: CGPoint,
         timed delay: Double,
-        earning achievement: GameAchievement?
+        earning achievement: GameAchievement?,
+        playing music: String?
     ) {
         self.costumeID = costumeID
         self.linksToNextScene = nextScene
@@ -90,6 +96,7 @@ public struct LevelDataConfiguration {
         self.defaultTimerDelay = delay
         self.achievementTrigger = achievement
         self.disallowCostume = disallowedCostume
+        self.trackName = music
     }
 
     /// Initialize a level configuration.
@@ -111,6 +118,8 @@ public struct LevelDataConfiguration {
         }
         self.exitLocation = exit
         self.achievementTrigger = GameAchievement(rawValue: userData["achievementTrigger"] as? String ?? "null")
+        self.trackName = userData["trackName"] as? String
+
         guard let disallowed = userData["disallowCostume"] as? String else {
             self.disallowCostume = nil
             return
