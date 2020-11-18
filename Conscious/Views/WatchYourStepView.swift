@@ -24,14 +24,14 @@ struct WatchYourStepView: View {
     /// The main structure of the view.
     var body: some View {
         VStack {
-            Image("WatchYourStep")
+            Image("AppIconDLCRepresentable")
                 .resizable()
                 .scaledToFit()
                 .cornerRadius(6.0)
-                .frame(maxWidth: 76)
+                .frame(maxWidth: 100)
                 .shadow(radius: 8)
             Text("Watch Your Step!")
-                .font(.title)
+                .font(.system(.title, design: .rounded))
                 .bold()
             Text(
                 "Want to get more out of The Costumemaster? Avoid dangerous abysses and work with new elements like"
@@ -61,6 +61,13 @@ struct WatchYourStepView: View {
                     Text("Play Now")
                 }
                 .disabled(!self.dlcIsAvailable)
+                .overlay(
+                    Tooltip(
+                        tooltip: self.dlcIsAvailable
+                            ? "You have already purchased the DLC."
+                            : "Purchase the DLC."
+                    )
+                )
             }
             .padding(.top)
         }
