@@ -134,7 +134,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
             self.character?.texture?.filteringMode = .nearest
         }
 
-        let music = SKAudioNode(fileNamed: "Smoldering")
+        let music = SKAudioNode(fileNamed: "minute")
         music.name = "music"
         music.autoplayLooped = true
         music.isPositional = false
