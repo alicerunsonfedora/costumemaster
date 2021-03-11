@@ -60,7 +60,7 @@ public class ConsoleViewModel: ObservableObject {
 
         /// A(n) unique identifier for this message.
         public let id = UUID()
-        //swiftlint:disable:previous identifier_name
+        // swiftlint:disable:previous identifier_name
     }
 
     /// Returns a tuple containing the hour, minute, and second logged.

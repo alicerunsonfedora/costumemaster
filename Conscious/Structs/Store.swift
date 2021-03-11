@@ -82,6 +82,12 @@ struct GameStore {
         self.costumeIncrementUSB = UserDefaults.store.integer(forKey: "costumeIncrementUSB")
         self.costumeIncrementBird = UserDefaults.store.integer(forKey: "costumeIncrementBird")
         self.costumeIncrementSorceress = UserDefaults.store.integer(forKey: "costumeIncrementSorceress")
+
+        let shared = UserDefaults(suiteName: "group.net.marquiskurt.costumemaster")
+        if shared?.string(forKey: "lastAchievement") == nil {
+            shared?.setValue(GameAchievement.none.rawValue, forKey: "lastAchievement")
+        }
+
         self.inInit = false
     }
 }

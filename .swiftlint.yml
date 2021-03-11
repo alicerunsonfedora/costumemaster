@@ -7,6 +7,7 @@ opt_in_rules:
 
 disabled_rules:
   - function_body_length
+  - inclusive_language
 
 type_body_length:
   - 250 # warning

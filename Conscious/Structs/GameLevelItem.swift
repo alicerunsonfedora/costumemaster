@@ -16,7 +16,7 @@ struct GameLevelItem: Codable, Identifiable {
 
     /// A unique ID for this item.
     let id = UUID()
-    //swiftlint:disable:previous identifier_name
+    // swiftlint:disable:previous identifier_name
 
     /// The name of the level.
     let name: String

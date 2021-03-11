@@ -11,6 +11,7 @@
 
 import Foundation
 import GameKit
+import WidgetKit
 
 extension GKAchievement {
     /// Earn an achievment with a given identifier.
@@ -29,6 +30,10 @@ extension GKAchievement {
                     level: .critical) { _ in }
                 return
             }
+        }
+        UserDefaults(suiteName: "group.net.marquiskurt.costumemaster")?.setValue(identifier, forKey: "lastAchievement")
+        if #available(OSX 11, *) {
+            WidgetCenter.shared.reloadTimelines(ofKind: "CSWidgetAchievement")
         }
     }
 

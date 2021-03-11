@@ -57,4 +57,8 @@ public enum GameAchievement: String {
     /// - **ID**: costumemaster.visibility
     case visibility = "costumemaster.visibility"
 
+    /// No Achievement
+    /// This is used in cases where this isn't an achievement. Only for use with WidgetKit.
+    case none = "costumemaster.none"
+
 }
