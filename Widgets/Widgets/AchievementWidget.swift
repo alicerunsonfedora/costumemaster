@@ -10,7 +10,6 @@ import SwiftUI
 import Intents
 
 @available(OSX 11, *)
-@main
 struct AchievementWidget: Widget {
     let kind: String = "CSWidgetAchievement"
 

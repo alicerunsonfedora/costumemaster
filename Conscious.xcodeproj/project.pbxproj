@@ -45,6 +45,7 @@
 		BF37C7ED2538E5B500CC156E /* Management.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF37C7EC2538E5B500CC156E /* Management.sks */; };
 		BF37C7F62539F31900CC156E /* GBMKUtils in Frameworks */ = {isa = PBXBuildFile; productRef = BF37C7F52539F31900CC156E /* GBMKUtils */; };
 		BF37C7FD253A07A000CC156E /* AIRandomMoveStrategist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37C7FC253A07A000CC156E /* AIRandomMoveStrategist.swift */; };
+		BF37D5172603995F00878C29 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37D5162603995F00878C29 /* Bundle.swift */; };
 		BF3977B92530B2D900BBD591 /* Traverse.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF3977B82530B2D900BBD591 /* Traverse.sks */; };
 		BF3977BD2530C44600BBD591 /* Player_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3977BC2530C44600BBD591 /* Player_Extension.swift */; };
 		BF3977C32530DB5B00BBD591 /* GameIrisScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3977C22530DB5B00BBD591 /* GameIrisScanner.swift */; };
@@ -274,6 +275,7 @@
 		BF33A188250BFC060064A219 /* Cycle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cycle.sks; sourceTree = "<group>"; };
 		BF37C7EC2538E5B500CC156E /* Management.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Management.sks; sourceTree = "<group>"; };
 		BF37C7FC253A07A000CC156E /* AIRandomMoveStrategist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRandomMoveStrategist.swift; sourceTree = "<group>"; };
+		BF37D5162603995F00878C29 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		BF3977B82530B2D900BBD591 /* Traverse.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Traverse.sks; sourceTree = "<group>"; };
 		BF3977BC2530C44600BBD591 /* Player_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player_Extension.swift; sourceTree = "<group>"; };
 		BF3977C22530DB5B00BBD591 /* GameIrisScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameIrisScanner.swift; sourceTree = "<group>"; };
@@ -602,6 +604,14 @@
 			path = Agents;
 			sourceTree = "<group>";
 		};
+		BF37D5132603994F00878C29 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				BF45766025F93141000E706B /* AchievementWidget.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 		BF3A0B7024F6B71200575F72 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,13 +735,14 @@
 		BF45765F25F93141000E706B /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				BF37D5132603994F00878C29 /* Widgets */,
 				BF115A2625FA767700DE7ACE /* Providers */,
 				BF88BC6E25F93C0A000B2A95 /* Entries */,
 				BF88BC6925F93BA5000B2A95 /* Views */,
-				BF45766025F93141000E706B /* AchievementWidget.swift */,
 				BF45766325F93144000E706B /* Assets.xcassets */,
 				BF45766525F93144000E706B /* Info.plist */,
 				BF45766625F93144000E706B /* Costumemaster_Widgets.entitlements */,
+				BF37D5162603995F00878C29 /* Bundle.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -1395,6 +1406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF88BC7C25F93D39000B2A95 /* GameAchievments.swift in Sources */,
+				BF37D5172603995F00878C29 /* Bundle.swift in Sources */,
 				BF115A2D25FA780F00DE7ACE /* AchievementWidgetProvider.swift in Sources */,
 				BF88BC7625F93CA6000B2A95 /* AchievementEntry.swift in Sources */,
 				BF45766125F93141000E706B /* AchievementWidget.swift in Sources */,
