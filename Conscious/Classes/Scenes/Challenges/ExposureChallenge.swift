@@ -19,9 +19,7 @@ class ExposureChallenge: CostumemasteryInheritable {
     /// Submit the score to the daily leaderboards.
     override func willCalculateChallengeResults() {
         super.willCalculateChallengeResults()
-        if #available(OSX 11.0, *) {
-            GKLeaderboard.submit(to: .exposureDaily, with: Int(self.currentTime))
-        }
+        GKLeaderboard.submit(to: .exposureDaily, with: Int(self.currentTime))
         self.announceTimeResults()
     }
 

@@ -23,9 +23,7 @@ class SeededChallenge: CostumemasteryInheritable {
     /// Submit the latest time to the leaderboards.
     override func willCalculateChallengeResults() {
         super.willCalculateChallengeResults()
-        if #available(OSX 11.0, *) {
-            GKLeaderboard.submit(to: .seededDaily, with: Int(self.currentTime))
-        }
+        GKLeaderboard.submit(to: .seededDaily, with: Int(self.currentTime))
         self.announceTimeResults()
     }
 

@@ -46,29 +46,8 @@ extension AIGameScene {
         window.appearance = NSAppearance(named: .darkAqua)
         window.toolbar = NSToolbar()
 
-        if #available(OSX 11.0, *) {
-            window.title = "AI Simulator Console"
-            window.subtitle = name
-        } else {
-            // Create the hosting view for the title and subtitle view of the window.
-            window.titleVisibility = .hidden
-
-            let toolbarTitle = NSHostingView(
-                rootView: VStack(alignment: .leading) {
-                    Text(window.title)
-                        .font(.headline)
-                    Text(name)
-                        .font(.subheadline)
-                }.padding(.leading)
-            )
-            toolbarTitle.frame.size = toolbarTitle.fittingSize
-
-            let titleAccessory = NSTitlebarAccessoryViewController()
-            titleAccessory.view = toolbarTitle
-            titleAccessory.layoutAttribute = .leading
-
-            window.addTitlebarAccessoryViewController(titleAccessory)
-        }
+        window.title = "AI Simulator Console"
+        window.subtitle = name
 
         // Create the hosting view for the toolbar buttons.
         let toolbarButtons = NSHostingView(

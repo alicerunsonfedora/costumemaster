@@ -39,10 +39,15 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
 
     /// The Game Center sprite node for the Game Center dashboard.
     /// - Note: This should only be used in older versions of macOS. In macOS 11.0, the GKAccessPoint is used instead.
+    /// - Important: This field has been deprecated and will be removed in a future release. Please use ``GKAccessPoint`` instead.
+    @available(*, deprecated, message: "Game Center button has been fully replaced with GKAccessPoint.")
     var gameCenterButton: SKSpriteNode?
 
     /// The sprite node for the Watch Your Step DLC.
     var watchYourStepButton: SKSpriteNode?
+    
+    /// The sprite node for the 'Try The Costumemaster: Reloaded' button.
+    var reloadedButton: SKSpriteNode?
 
     /// The level of interactivity from this scene.
     var interactiveLevel: Int = 0
@@ -53,28 +58,18 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
     /// Instantiate the Game Center access point.
     ///
     /// In macOS 11.0, this will use the native access point and put it in the bottom left. For older versions, a sprite
-    /// node will be used to present a game center view.
+    /// node will be used to present a Game Center view.
+    ///
+    /// - Important: This method has been deprecated and will be replaced by ``instantiateAccessPoint``.
+    /// - SeeAlso: ``instantiateAccessPoint``
+    @available(*, deprecated, renamed: "instantiateAccessPoint")
     func setUpGameCenterProperties() {
-        if #available(OSX 11.0, *) {
-            self.gameCenterButton?.isHidden = true
-
-            GKAccessPoint.shared.location = .bottomLeading
-            GKAccessPoint.shared.showHighlights = true
-            GKAccessPoint.shared.isActive = true
-            GKAccessPoint.shared.parentWindow = self.view?.window
-
-            self.watchYourStepButton?.position.x = 0
-        }
+        self.instantiateAccessPoint()
     }
 
     /// Set up the Game Center button for the main menu.
     override func didMove(to view: SKView) {
-        if let gCenter = self.childNode(withName: "gameCenter") as? SKSpriteNode {
-            self.gameCenterButton = gCenter
-        }
-
-        // Display the Game Center access point.
-        self.setUpGameCenterProperties()
+        self.instantiateAccessPoint()
     }
 
     /// Set up the scene and play the main menu music.
@@ -122,6 +117,10 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
             self.watchYourStepButton = dlcButton
             self.watchYourStepButton?.texture?.filteringMode = .nearest
         }
+        
+        if let reloadedButton = self.childNode(withName: "reloadedButton") as? SKSpriteNode {
+            self.reloadedButton = reloadedButton
+        }
 
         // Get the character sprite and change the interpolation method to nearest neighbor.
         if let char = self.childNode(withName: "character") as? SKSpriteNode {
@@ -150,6 +149,16 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         if let sceneViewController = self.view?.window?.contentViewController {
             sceneViewController.dismiss(gameCenterViewController)
         }
+    }
+    
+    /// Insantiates the Game Center access point introduced in macOS 11.
+    ///
+    /// This is used to show the player their Game Center achievements and leaderboard scores.
+    private func instantiateAccessPoint() {
+        GKAccessPoint.shared.location = .bottomLeading
+        GKAccessPoint.shared.showHighlights = true
+        GKAccessPoint.shared.isActive = true
+        GKAccessPoint.shared.parentWindow = self.view?.window
     }
 
 }

@@ -17,10 +17,6 @@ import GameKit
 class ViewController: NSViewController, NSWindowDelegate {
     @IBOutlet var skView: SKView!
 
-    /// A private tunnled copy of AppDelegate's preferences.
-    @available(*, deprecated, message: "Use static vars from UserDefaults instead.")
-    private var settings: GamePreferences = AppDelegate.preferences
-
     /// The root scene for this controller.
     ///
     /// This is typically used when switching between scenes, but wanting to preserve the scene's state.

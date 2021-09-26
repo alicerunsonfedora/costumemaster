@@ -38,6 +38,8 @@ extension MainMenuScene {
             watchYourStepAction()
         case self.gameCenterButton where self.gameCenterButton?.isHidden != true:
             self.gameCenterAction()
+        case self.reloadedButton:
+            self.reloadedAction()
         default:
             break
         }
@@ -76,20 +78,13 @@ extension MainMenuScene {
                 SKAction.changeVolume(to: UserDefaults.standard.float(forKey: "soundMusicVolume"), duration: 0.01)
             )
         }
-
-//        if #available(OSX 11.0, *) {
-//            self.gameCenterButton?.isHidden = true
-//            self.watchYourStepButton?.position.x = 0
-//        }
     }
 
     /// Start the game by presenting the first level scene.
     private func startAction() {
         self.startButton?.fontColor = NSColor.init(named: "AccentColor")
         guard let intro = SKScene(fileNamed: "Intro") else { return }
-        if #available(OSX 11.0, *) {
-             GKAccessPoint.shared.isActive = false
-        }
+         GKAccessPoint.shared.isActive = false
 
         if GameStore.shared.lastSavedScene != "" {
             confirm("You'll lose your level progress.",
@@ -110,9 +105,7 @@ extension MainMenuScene {
     /// Resume the game by loading the last saved scene.
     private func resumeAction() {
         self.resumeButton?.fontColor = NSColor.init(named: "AccentColor")
-        if #available(OSX 11.0, *) {
-             GKAccessPoint.shared.isActive = false
-        }
+         GKAccessPoint.shared.isActive = false
         if let firstScene = SKScene(fileNamed: GameStore.shared.lastSavedScene) {
             self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
         }
@@ -166,6 +159,10 @@ extension MainMenuScene {
         if let sceneViewController = self.view?.window?.contentViewController {
             sceneViewController.presentAsSheet(gameCenterController)
         }
+    }
+    
+    private func reloadedAction() {
+        AppDelegate.showReloadedPrompt()
     }
 
     private func watchYourStepAction() {

@@ -23,11 +23,6 @@ import SwiftUI
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    /// A global instance of the preferences.
-    /// Ony preference panes will really update this field.
-    @available(*, deprecated, message: "Use static variables from UserDefaults instead.")
-    static var preferences = GamePreferences()
-
     /// The arguments passed with the application.
     static var arguments: CommandLineArguments = CommandLine.parse()
 
@@ -73,6 +68,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             dockTile.contentView = NSImageView(image: icon)
             dockTile.display()
         }
+    }
+    
+    static func showReloadedPrompt() {
+        guard let sceneController = NSApplication.shared.mainWindow?.contentViewController else { return }
+        let viewController = NSViewController()
+        let reloadedView = ReloadedView { sceneController.dismiss(viewController) }
+        viewController.view = NSHostingView(rootView: reloadedView)
+        viewController.title = "Try The Costumemaster: Reloaded"
+        sceneController.presentAsSheet(viewController)
     }
 
     /// Open the preferences window.
@@ -164,6 +168,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBAction func restorePurchases(_ sender: Any) {
         IAPObserver.shared.restore()
+    }
+    
+    @IBAction func showReloadedPromptFromMenu(_ sender: Any) {
+        AppDelegate.showReloadedPrompt()
     }
 
     @IBAction func openSimulator(_ sender: Any) {

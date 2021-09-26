@@ -88,7 +88,7 @@ class GameManagerDelegate {
             if let gameScene = AIRecordableGameScene(fileNamed: name + "AIRecordable") {
                 print(gameScene.className)
                 if view.scene != nil { GameManagerDelegate.gameController?.rootScene = view.scene }
-                if #available(OSX 11.0, *) { GKAccessPoint.shared.isActive = name == "MainMenu" }
+                GKAccessPoint.shared.isActive = name == "MainMenu"
                 view.presentScene(gameScene, transition: SKTransition.fade(withDuration: 2.0))
             } else {
                 print("Failed to load scene.")
@@ -101,7 +101,7 @@ class GameManagerDelegate {
         if let view = GameManagerDelegate.gameView {
             if let scene = SKScene(fileNamed: name) {
                 if view.scene != nil { GameManagerDelegate.gameController?.rootScene = view.scene }
-                if #available(OSX 11.0, *) { GKAccessPoint.shared.isActive = name == "MainMenu" }
+                GKAccessPoint.shared.isActive = name == "MainMenu"
                 view.presentScene(scene)
             }
         }
@@ -112,7 +112,7 @@ class GameManagerDelegate {
         if let view = GameManagerDelegate.gameView {
             if let scene = SKScene(fileNamed: name) {
                 if view.scene != nil { GameManagerDelegate.gameController?.rootScene = view.scene }
-                if #available(OSX 11.0, *) { GKAccessPoint.shared.isActive = name == "MainMenu" }
+                GKAccessPoint.shared.isActive = name == "MainMenu"
                 view.presentScene(scene, transition: SKTransition.fade(withDuration: fadeDuration))
             }
         }

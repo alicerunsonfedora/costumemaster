@@ -37,11 +37,7 @@ struct AISimulatorAgentImage: View {
 
     /// Returns the image view that hosts the symbol.
     func image() -> some View {
-        if #available(OSX 11.0, *) {
-            return Image(systemName: self.symbol())
-        } else {
-            return Image(self.symbol())
-        }
+        return Image(systemName: self.symbol())
     }
 
     /// Returns the background for the image view.

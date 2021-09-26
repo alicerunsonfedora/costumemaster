@@ -19,9 +19,7 @@ class RushedChallenge: ChallengeGameScene {
     /// Submit the leaderboard scores for the daily fastest.
     override func willCalculateChallengeResults() {
         super.willCalculateChallengeResults()
-        if #available(OSX 11.0, *) {
-            GKLeaderboard.submit(to: .rushedDaily, with: Int(self.currentTime))
-        }
+        GKLeaderboard.submit(to: .rushedDaily, with: Int(self.currentTime))
         self.announceTimeResults()
     }
 
