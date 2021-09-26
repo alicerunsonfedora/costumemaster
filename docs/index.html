@@ -18,7 +18,7 @@
       <div class="content-wrapper">
         <p>
           <a href="index.html">The Costumemaster</a>
-          <span class="no-mobile"> (100% documented)</span>
+          <span class="no-mobile"> (98% documented)</span>
         </p>
     
         <p class="header-right">
@@ -55,9 +55,9 @@
 
 <p><a href="LICENSE.txt"><img src="https://img.shields.io/github/license/alicerunsonfedora/CS400" alt="License"></a> <img src="https://img.shields.io/github/v/release/alicerunsonfedora/CS400" alt="Version"> <img src="https://img.shields.io/badge/swift-5.3-orange.svg" alt="Swift 5"> <a href="https://costumemaster.marquiskurt.net"><img src="https://costumemaster.marquiskurt.net/badge.svg" alt="Documentation"></a></p>
 
-<p>An acclaimed costume designer and software engineer wakes up from a blackout to an eerily familiar scene. But, something isn&rsquo;t
-quite&hellip; right&hellip;. Traverse through a dream-like, constantly changing bedroom and office and get out as quickly as you can. Can you
-make it out and figure out what&rsquo;s going on?</p>
+<p>An acclaimed costume designer and software engineer wakes up from a blackout to an eerily familiar scene. But, something
+isn&rsquo;t quite&hellip; right&hellip;. Traverse through a dream-like, constantly changing bedroom and office and get out as quickly as
+you can. Can you make it out and figure out what&rsquo;s going on?</p>
 
 <div>
 <a href="https://apps.apple.com/us/app/the-costumemaster/id1529632296">
@@ -65,13 +65,24 @@ make it out and figure out what&rsquo;s going on?</p>
 </a>
 <a href="https://www.producthunt.com/posts/the-costumemaster?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-the-costumemaster" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=270923&theme=light" alt="The Costumemaster - A puzzle game where you switch costumes and escape | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 </div>
+<h2 id='try-em-the-costumemaster-reloaded-em' class='heading'>Try <em>The Costumemaster: Reloaded</em></h2>
+
+<p><em>The Costumemaster: Reloaded</em> is a completely redesigned version of <em>The Costumemaster</em> with support for controllers,
+new features and improvements, and compatibility with Windows and Linux. You can get <em>The Costumemaster: Reloaded</em> today
+from the Mac App Store or from <a href="https://marquiskurt.itch.io/costumemaster-reloaded">itch.io</a> today.</p>
+
+<div>
+<a href="https://apps.apple.com/us/app/the-costumemaster-reloaded/id1573181569">
+<img height="54" src="https://github.com/alicerunsonfedora/CS400/raw/root/.readme/macappstore.svg" alt="Get it on the Mac App Store"/>
+</a>
+</div>
 <h2 id='features' class='heading'>Features</h2>
 
 <p><img src="https://github.com/alicerunsonfedora/CS400/raw/root/.readme/featureset.png" alt="Feature Set"></p>
 <h2 id='objective' class='heading'>Objective</h2>
 
-<p>The primary objective of this project is to take the concepts from <em>CS440: Principles of Artificial Intelligence</em> and build a better 
-understanding of agents and apply these concepts by implementing and comparing agents in a video game.</p>
+<p>The primary objective of this project is to take the concepts from <em>CS440: Principles of Artificial Intelligence</em> and
+build a better understanding of agents and apply these concepts by implementing and comparing agents in a video game.</p>
 
 <p>More information on the objective of this repository can be found in the <a href="./Guides/Project%20Proposal.md">design proposal</a>.</p>
 <h3 id='project-roadmap' class='heading'>Project Roadmap</h3>
@@ -109,8 +120,8 @@ understanding of agents and apply these concepts by implementing and comparing a
 
 <p>Documentation on how to work with agents <a href="https://costumemaster.marquiskurt.net/working-with-agents.html">can be found on the documentation pages</a>.</p>
 
-<p><small>*Due to the nature of the strategists with GameplayKit&rsquo;s AIs, it is impossible to complete this milestone. Currently, the goal
-is to supply custom agents that attempt to solve the world.</small></p>
+<p><small>*Due to the nature of the strategists with GameplayKit&rsquo;s AIs, it is impossible to complete this milestone.
+Currently, the goal is to supply custom agents that attempt to solve the world.</small></p>
 
 <p><small><sup>✝</sup>Due to limitations with the second milestone, beating Apple is not really possible.</small></p>
 <h2 id='build-instructions' class='heading'>Build instructions</h2>
@@ -118,7 +129,7 @@ is to supply custom agents that attempt to solve the world.</small></p>
 
 <ul>
 <li>Xcode 12.2* or higher</li>
-<li>macOS 10.15.6 (Catalina) or higher</li>
+<li>macOS 11.0 (Big Sur) or higher</li>
 <li><a href="https://github.com/sindresorhus/KeyboardShortcuts">KeyboardShortcuts</a> (added when cloning)</li>
 <li><a href="https://github.com/alicerunsonfedora/GBMKUtils">GBMKUtils</a> (added when cloning)</li>
 <li>(Optional, but recommended) <a href="https://realm.github.io/SwiftLint/">SwiftLint</a></li>
@@ -126,36 +137,37 @@ is to supply custom agents that attempt to solve the world.</small></p>
 
 <ol>
 <li>Clone the Xcode project and ensure that dependencies are install with the Swift Package Manager.</li>
-<li>In the project settings, change the bundle identifier to your own bundle identifier (See Game Center, In-App Purchases).</li>
+<li>In the project settings, change the bundle identifier to your own bundle identifier (See Game Center, In-App
+Purchases).</li>
 <li>Run the <strong>Game</strong> scheme to build the project in Xcode.</li>
 </ol>
 
-<p>To make a release version, click on the destination (&ldquo;My Mac&rdquo;) and select &ldquo;Any Mac (Apple Silicon, Intel)&rdquo;, then go to <strong>Product &rsaquo;
-Archive</strong>.</p>
-
-<p><small>*The release version of Xcode 12.0 and the GM seed are not compatible with this project due to the macOS 11 SDK not being
-present. To build with Xcode 12.0, you will need to comment out code for GKAccessPoint and GKLeaderboards.</small></p>
+<p>To make a release version, click on the destination (&ldquo;My Mac&rdquo;) and select &ldquo;Any Mac (Apple Silicon, Intel)&rdquo;, then go to
+<strong>Product &rsaquo; Archive</strong>.</p>
 <h3 id='game-center' class='heading'>Game Center</h3>
 
-<p>The Costumemaster integrates with Game Center to allow players to earn achievements, challenge others, and rank in the leaderboards
-for the best scores on levels (scoring system similar to what AI agents use). Game Center is a service that requires an Apple Developer
-account and an app registered in App Store Connect with the bundle identifier of the game. To test Game Center achievements, make
-sure that you update the build identifier in the project to the app&rsquo;s identifier in App Store Connect and make sure that the achievements
-with the IDs listed in <a href="./Conscious/Enums/GameAchievments.swift">GameAchievements.swift</a> in the Achievements list of the Game Center section.</p>
+<p>The Costumemaster integrates with Game Center to allow players to earn achievements, challenge others, and rank in the
+leaderboards for the best scores on levels (scoring system similar to what AI agents use). Game Center is a service that
+requires an Apple Developer account and an app registered in App Store Connect with the bundle identifier of the game.
+To test Game Center achievements, make sure that you update the build identifier in the project to the app&rsquo;s identifier
+in App Store Connect and make sure that the achievements with the IDs listed in <a href="./Conscious/Enums/GameAchievments.swift">GameAchievements.swift</a> in
+the Achievements list of the Game Center section.</p>
 
 <p><img src="https://github.com/alicerunsonfedora/CS400/raw/root/.readme/gamecenter.png" alt="Game Center"></p>
 
-<p>To access features like the new access point and leaderboard submission, ensure that Xcode includes at least the macOS 11.0 SDK.</p>
+<p>To access features like the new access point and leaderboard submission, ensure that Xcode includes at least the macOS
+11.0 SDK.</p>
 <h3 id='in-app-purchases' class='heading'>In-App Purchases</h3>
 
-<p>The Costumemaster also integrates with StoreKit to provide in-app purchase support for DLC content such as &ldquo;Watch Your Step!&rdquo;.
-In-app purchases require an Apple Developer account with an app registered in App Store Connect with the bundle identifier of the
-game. In-app purchases will need to be configured with the IDs listed in <a href="./Conscious/Classes/App/Purchases/IAPManager.swift">IAPManager.PurchaseableContent</a> in App Store
-Connect.</p>
+<p>The Costumemaster also integrates with StoreKit to provide in-app purchase support for DLC content such as &ldquo;Watch Your
+Step!&rdquo;. In-app purchases require an Apple Developer account with an app registered in App Store Connect with the bundle
+identifier of the game. In-app purchases will need to be configured with the IDs listed in 
+<a href="./Conscious/Classes/App/Purchases/IAPManager.swift">IAPManager.PurchaseableContent</a> in App Store Connect.</p>
 <h3 id='about-swiftlint' class='heading'>About SwiftLint</h3>
 
-<p>This project includes support for SwiftLint, a utility that enforces recommended Swift styling practices. While it is not required to install
-SwiftLint to build the project, it is highly recommended. The project, during build, will do the following with SwiftLint:</p>
+<p>This project includes support for SwiftLint, a utility that enforces recommended Swift styling practices. While it is
+not required to install SwiftLint to build the project, it is highly recommended. The project, during build, will do the
+following with SwiftLint:</p>
 
 <ul>
 <li>Resolve any quick, auto-correctable fixes with <code>swiftlint autocorrect</code>.</li>
@@ -173,19 +185,19 @@ SwiftLint to build the project, it is highly recommended. The project, during bu
 </ul>
 <h3 id='documentation' class='heading'>Documentation</h3>
 
-<p>Documentation is handled by <a href="https://github.com/realm/jazzy">Jazzy</a>, a documentation generator provided by Realm. Follow the instructions to build the
-documentation:</p>
+<p>Documentation is handled by <a href="https://github.com/realm/jazzy">Jazzy</a>, a documentation generator provided by Realm. Follow the instructions to
+build the documentation:</p>
 
 <ol>
-<li>Run <code>bundle install</code> to install the dependencies needed. In some cases, you may need to set parameters for installing sqlite3 or for
-installing the Xcode Command Line Tools.</li>
+<li>Run <code>bundle install</code> to install the dependencies needed. In some cases, you may need to set parameters for installing
+sqlite3 or for installing the Xcode Command Line Tools.</li>
 <li>Run <code>docs_build.sh</code> to build the docs.</li>
 </ol>
 
 <hr>
 
-<p>&copy; 2020 Marquis Kurt. All rights reserved. Game Center, the Game Center logo, SF Symbols, and macOS are registered trademarks of 
-Apple Inc.</p>
+<p>&copy; 2020 Marquis Kurt. All rights reserved. Game Center, the Game Center logo, SF Symbols, and macOS are registered
+trademarks of Apple Inc.</p>
 
 <blockquote>
 <p>For olders versions of The Costumemaster (v1.x-v2.0.0), music is written by Kai Engel.</p>
@@ -576,10 +588,10 @@ Apple Inc.</p>
                   <a href="Structs/AIStateRecordable.html">AIStateRecordable</a>
                 </li>
                 <li class="nav-group-task">
-                  <a href="Structs/GameLevelItem.html">GameLevelItem</a>
+                  <a href="Structs/AchievementEntry.html">AchievementEntry</a>
                 </li>
                 <li class="nav-group-task">
-                  <a href="Structs/GamePreferences.html">GamePreferences</a>
+                  <a href="Structs/GameLevelItem.html">GameLevelItem</a>
                 </li>
               </ul>
             </li>
@@ -588,8 +600,8 @@ Apple Inc.</p>
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://marquiskurt.net" target="_blank" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2020-11-18)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2021 <a class="link" href="https://marquiskurt.net" target="_blank" rel="noopener" rel="external">Marquis Kurt</a>. All rights reserved. (Last updated: 2021-09-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="noopener" rel="external">jazzy ♪♫ v0.14.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="noopener" rel="external">Realm</a> project.</p>
         </section>
       </div>
     </div>

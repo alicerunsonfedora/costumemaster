@@ -5,7 +5,7 @@ github_url: "https://github.com/alicerunsonfedora/CS400"
 theme: jony
 
 min_acl: internal
-build_tool_arguments: ["-workspace", "Conscious.xcodeproj/project.xcworkspace", "-scheme" ,"Conscious"]
+build_tool_arguments: ["-workspace", "Conscious.xcodeproj/project.xcworkspace", "-scheme" ,"Game", "-destination", "arch=arm64"]
 documentation: "./Guides/*.md"
 
 exclude: "./Conscious/Classes/App/*,./Conscious/Views/*,./Conscious/Assets/TealConverse.mlmodel/*"

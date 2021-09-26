@@ -69,7 +69,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             dockTile.display()
         }
     }
-    
+
     static func showReloadedPrompt() {
         guard let sceneController = NSApplication.shared.mainWindow?.contentViewController else { return }
         let viewController = NSViewController()
@@ -169,7 +169,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func restorePurchases(_ sender: Any) {
         IAPObserver.shared.restore()
     }
-    
+
     @IBAction func showReloadedPromptFromMenu(_ sender: Any) {
         AppDelegate.showReloadedPrompt()
     }

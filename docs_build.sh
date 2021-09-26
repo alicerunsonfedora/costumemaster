@@ -1,6 +1,6 @@
 
 echo "Starting Jazzy build..."
-bundle exec jazzy \
+jazzy \
 --clean \
 --theme jony \
 --author "Marquis Kurt" \

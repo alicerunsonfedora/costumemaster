@@ -45,7 +45,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
 
     /// The sprite node for the Watch Your Step DLC.
     var watchYourStepButton: SKSpriteNode?
-    
+
     /// The sprite node for the 'Try The Costumemaster: Reloaded' button.
     var reloadedButton: SKSpriteNode?
 
@@ -117,7 +117,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
             self.watchYourStepButton = dlcButton
             self.watchYourStepButton?.texture?.filteringMode = .nearest
         }
-        
+
         if let reloadedButton = self.childNode(withName: "reloadedButton") as? SKSpriteNode {
             self.reloadedButton = reloadedButton
         }
@@ -150,7 +150,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
             sceneViewController.dismiss(gameCenterViewController)
         }
     }
-    
+
     /// Insantiates the Game Center access point introduced in macOS 11.
     ///
     /// This is used to show the player their Game Center achievements and leaderboard scores.

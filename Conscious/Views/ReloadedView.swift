@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ReloadedView: View {
-    
+
     var onDismiss: () -> Void
-    
+
     var body: some View {
         VStack {
             HStack(alignment: .top, spacing: 16) {
@@ -22,7 +22,9 @@ struct ReloadedView: View {
                     Text("It's time to reload.")
                         .font(.system(.title, design: .monospaced))
                         .bold()
-                    Text("The Costumemaster: Reloaded brings you the Costumemaster experience you love and more, with support for controllers, a brand new design with better graphics, localizations for Spanish and French, and other improvements.")
+                    Text("The Costumemaster: Reloaded brings you the Costumemaster experience you love and more, "
+                         + "with support for controllers, a brand new design with better graphics, localizations for "
+                         + "Spanish and French, and other improvements.")
                 }
                 .padding(.top, 8)
             }
@@ -49,7 +51,7 @@ struct ReloadedView: View {
         .preferredColorScheme(.dark)
         .frame(width: 600)
     }
-    
+
     func openStoreUrl() {
         NSWorkspace.shared.open(
             URL(string: "https://apps.apple.com/us/app/the-costumemaster-reloaded/id1573181569")!
@@ -59,7 +61,7 @@ struct ReloadedView: View {
 
 struct ReloadedView_Previews: PreviewProvider {
     static var previews: some View {
-        ReloadedView() {
+        ReloadedView {
             print("Hi")
         }
     }

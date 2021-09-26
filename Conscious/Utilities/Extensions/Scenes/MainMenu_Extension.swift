@@ -160,7 +160,7 @@ extension MainMenuScene {
             sceneViewController.presentAsSheet(gameCenterController)
         }
     }
-    
+
     private func reloadedAction() {
         AppDelegate.showReloadedPrompt()
     }

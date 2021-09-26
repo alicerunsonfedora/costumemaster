@@ -1,6 +1,82 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/marquis/Developer/Costumemaster/Widgets/Entries/AchievementEntry.swift",
+      "line": 15,
+      "symbol": "AchievementEntry",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquis/Developer/Costumemaster/Widgets/Entries/AchievementEntry.swift",
+      "line": 17,
+      "symbol": "AchievementEntry.achievementId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquis/Developer/Costumemaster/Widgets/Entries/AchievementEntry.swift",
+      "line": 19,
+      "symbol": "AchievementEntry.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquis/Library/Developer/Xcode/DerivedData/Conscious-atakaqkvbmrslfccsvkmigiyxztw/Build/Intermediates.noindex/Conscious.build/Debug/Costumemaster.build/DerivedSources/CoreMLGenerated/TealConverse/TealConverse.swift",
+      "line": 47,
+      "symbol": "TealConverseInput.featureNames",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquis/Library/Developer/Xcode/DerivedData/Conscious-atakaqkvbmrslfccsvkmigiyxztw/Build/Intermediates.noindex/Conscious.build/Debug/Costumemaster.build/DerivedSources/CoreMLGenerated/TealConverse/TealConverse.swift",
+      "line": 53,
+      "symbol": "TealConverseInput.featureValue(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquis/Library/Developer/Xcode/DerivedData/Conscious-atakaqkvbmrslfccsvkmigiyxztw/Build/Intermediates.noindex/Conscious.build/Debug/Costumemaster.build/DerivedSources/CoreMLGenerated/TealConverse/TealConverse.swift",
+      "line": 90,
+      "symbol": "TealConverseInput.init(canEscape:nearExit:nearInput:inputActive:inputRelevant:requiresObject:requiresCostume:wearingCostume:hasObject:nearObject:allInputsActive:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquis/Library/Developer/Xcode/DerivedData/Conscious-atakaqkvbmrslfccsvkmigiyxztw/Build/Intermediates.noindex/Conscious.build/Debug/Costumemaster.build/DerivedSources/CoreMLGenerated/TealConverse/TealConverse.swift",
+      "line": 124,
+      "symbol": "TealConverseOutput.featureNames",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquis/Library/Developer/Xcode/DerivedData/Conscious-atakaqkvbmrslfccsvkmigiyxztw/Build/Intermediates.noindex/Conscious.build/Debug/Costumemaster.build/DerivedSources/CoreMLGenerated/TealConverse/TealConverse.swift",
+      "line": 128,
+      "symbol": "TealConverseOutput.featureValue(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquis/Library/Developer/Xcode/DerivedData/Conscious-atakaqkvbmrslfccsvkmigiyxztw/Build/Intermediates.noindex/Conscious.build/Debug/Costumemaster.build/DerivedSources/CoreMLGenerated/TealConverse/TealConverse.swift",
+      "line": 132,
+      "symbol": "TealConverseOutput.init(action:actionProbability:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquis/Library/Developer/Xcode/DerivedData/Conscious-atakaqkvbmrslfccsvkmigiyxztw/Build/Intermediates.noindex/Conscious.build/Debug/Costumemaster.build/DerivedSources/CoreMLGenerated/TealConverse/TealConverse.swift",
+      "line": 136,
+      "symbol": "TealConverseOutput.init(features:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marquis/Library/Developer/Xcode/DerivedData/Conscious-atakaqkvbmrslfccsvkmigiyxztw/Build/Intermediates.noindex/Conscious.build/Debug/Costumemaster.build/DerivedSources/CoreMLGenerated/TealConverse/TealConverse.swift",
+      "line": 145,
+      "symbol": "TealConverse.model",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
   ],
-  "source_directory": "/Users/marquiskurt/Developer/CS400"
+  "source_directory": "/Users/marquis/Developer/Costumemaster"
 }
