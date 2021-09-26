@@ -10,18 +10,17 @@
 //
 
 import SwiftUI
-import AppStorage
 import GameKit
 
 struct PrefPaneGC: View {
 
-    @AppStorageCompat("gcSubmitAchievements")
+    @AppStorage("gcSubmitAchievements")
     var achievements: Bool = true
 
-    @AppStorageCompat("gcNotifications")
+    @AppStorage("gcNotifications")
     var notifications: Bool = true
 
-    @AppStorageCompat("gcSubmitLeaderboardScores")
+    @AppStorage("gcSubmitLeaderboardScores")
     var leaderboards: Bool = true
 
     @State private var playerImage: NSImage?

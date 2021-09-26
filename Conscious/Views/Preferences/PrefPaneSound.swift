@@ -10,23 +10,22 @@
 //
 
 import SwiftUI
-import AppStorage
 
 struct PrefPaneSound: View {
 
-    @AppStorageCompat("soundMusicVolume")
-    var musicVolume: Float = 0.5
+    @AppStorage("soundMusicVolume")
+    var musicVolume: Double = 0.5
 
-    @AppStorageCompat("soundPlayChangeNoise")
+    @AppStorage("soundPlayChangeNoise")
     var costumeChange: Bool = true
 
-    @AppStorageCompat("soundPlayComputerNoise")
+    @AppStorage("soundPlayComputerNoise")
     var computer: Bool = true
 
-    @AppStorageCompat("soundPlayAlarmNoise")
+    @AppStorage("soundPlayAlarmNoise")
     var alarm: Bool = true
 
-    @AppStorageCompat("soundPlayLeverNoise")
+    @AppStorage("soundPlayLeverNoise")
     var lever: Bool = true
 
     var body: some View {

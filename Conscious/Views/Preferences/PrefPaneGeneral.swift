@@ -10,23 +10,22 @@
 //
 
 import SwiftUI
-import AppStorage
 
 struct PrefPaneGeneral: View {
 
-    @AppStorageCompat("cameraScale")
-    var cameraScale: Float = 0.5
+    @AppStorage("cameraScale")
+    var cameraScale: Double = 0.5
 
-    @AppStorageCompat("intelligentCameraMovement")
+    @AppStorage("intelligentCameraMovement")
     var intelligentCameraMovement: Bool = true
 
-    @AppStorageCompat("showDustParticles")
+    @AppStorage("showDustParticles")
     var showDustParticles: Bool = true
 
-    @AppStorageCompat("dockIconName")
+    @AppStorage("dockIconName")
     var appIcon: AppIconKind = .standard
 
-    @AppStorageCompat("advShowUnmodeledOnMenu")
+    @AppStorage("advShowUnmodeledOnMenu")
     var unmodeled: Bool = false
 
     @State private var canShowUnmodeled: Bool = UserDefaults.canShowUnmodeled

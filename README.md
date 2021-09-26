@@ -34,7 +34,7 @@ More information on the objective of this repository can be found in the [design
 | Status | Due Date | Milestone |
 | ------ | ----------- | ----------- |
 | 🟢 | September 21, 2020 | Working Game |
-| ❎ | October 19, 2020 | Adding Apple's agents with GameplayKit* |
+| ❎ | October 19, 2020 | Adding Apple's agents with GameplayKit\* |
 | ✳️ | November 9, 2020 | Adding custom agents and beating Apple<sup>✝</sup> |
 | 🟢 | November 16, 2020 | Final presentation and cleanup |
 
@@ -51,8 +51,8 @@ is to supply custom agents that attempt to solve the world.</small>
 
 ### Requirements
 
-- Xcode 12.2* or higher
-- macOS 10.15.6 (Catalina) or higher
+- Xcode 12.2\* or higher
+- macOS 11.0 (Big Sur) or higher
 - [KeyboardShortcuts][keys] (added when cloning)
 - [GBMKUtils][utils] (added when cloning)
 - (Optional, but recommended) [SwiftLint][linter]
@@ -63,9 +63,6 @@ is to supply custom agents that attempt to solve the world.</small>
 
 To make a release version, click on the destination ("My Mac") and select "Any Mac (Apple Silicon, Intel)", then go to **Product &rsaquo;
 Archive**.
-
-<small>*The release version of Xcode 12.0 and the GM seed are not compatible with this project due to the macOS 11 SDK not being
-present. To build with Xcode 12.0, you will need to comment out code for GKAccessPoint and GKLeaderboards.</small>
 
 ### Game Center
 

@@ -20,9 +20,8 @@ struct ToolbarButtonStyle: ButtonStyle {
                 configuration.label
                     .font(.title2)
                     .padding(8)
-                    .background(configuration.isPressed
-                                    ? Color(.controlHighlightColor)
-                                    : Color.clear
+                    .background(
+                        configuration.isPressed ? Color(.separatorColor) : Color.clear
                     )
                     .compositingGroup()
                     .cornerRadius(6.0)

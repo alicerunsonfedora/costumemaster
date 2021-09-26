@@ -137,7 +137,6 @@
 		BF98276D255C971F00E2D9DB /* PrefPaneAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF98276C255C971F00E2D9DB /* PrefPaneAdvanced.swift */; };
 		BF982772255CA21200E2D9DB /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = BF982771255CA21200E2D9DB /* Preferences */; };
 		BF982775255CA24B00E2D9DB /* Preferences_Win.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF982774255CA24B00E2D9DB /* Preferences_Win.swift */; };
-		BFA94B53255CBB320056C5D5 /* AppStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BFA94B52255CBB320056C5D5 /* AppStorage */; };
 		BFA94B57255CBD590056C5D5 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA94B56255CBD590056C5D5 /* UserDefaults.swift */; };
 		BFAD1346250285F60074DCBA /* GameLever.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD1345250285F60074DCBA /* GameLever.swift */; };
 		BFAD1348250286E20074DCBA /* GameComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD1347250286E20074DCBA /* GameComputer.swift */; };
@@ -472,7 +471,6 @@
 				BF4744D3255B33CA001EE6DD /* CoreML.framework in Frameworks */,
 				BF0D2C1C24FADC4E00AEF86F /* KeyboardShortcuts in Frameworks */,
 				BF37C7F62539F31900CC156E /* GBMKUtils in Frameworks */,
-				BFA94B53255CBB320056C5D5 /* AppStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1207,7 +1205,6 @@
 				BF0D2C1B24FADC4E00AEF86F /* KeyboardShortcuts */,
 				BF37C7F52539F31900CC156E /* GBMKUtils */,
 				BF982771255CA21200E2D9DB /* Preferences */,
-				BFA94B52255CBB320056C5D5 /* AppStorage */,
 				BF1938BE2562D51F00452D70 /* CodableCSV */,
 			);
 			productName = Conscious;
@@ -1244,7 +1241,6 @@
 				BF0D2C1A24FADC4E00AEF86F /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 				BF37C7F42539F31900CC156E /* XCRemoteSwiftPackageReference "GBMKUtils" */,
 				BF982770255CA21200E2D9DB /* XCRemoteSwiftPackageReference "Preferences" */,
-				BFA94B51255CBB320056C5D5 /* XCRemoteSwiftPackageReference "AppStorage" */,
 				BF1938BD2562D51F00452D70 /* XCRemoteSwiftPackageReference "CodableCSV" */,
 			);
 			productRefGroup = BF6FBAD424A8BDD400996890 /* Products */;
@@ -1730,7 +1726,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.costumemaster;
 				PRODUCT_NAME = "The $(TARGET_NAME)";
@@ -1756,7 +1752,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.costumemaster;
 				PRODUCT_NAME = "The $(TARGET_NAME)";
@@ -1829,14 +1825,6 @@
 				minimumVersion = 2.1.0;
 			};
 		};
-		BFA94B51255CBB320056C5D5 /* XCRemoteSwiftPackageReference "AppStorage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/alicerunsonfedora/AppStorage.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1859,11 +1847,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BF982770255CA21200E2D9DB /* XCRemoteSwiftPackageReference "Preferences" */;
 			productName = Preferences;
-		};
-		BFA94B52255CBB320056C5D5 /* AppStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BFA94B51255CBB320056C5D5 /* XCRemoteSwiftPackageReference "AppStorage" */;
-			productName = AppStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

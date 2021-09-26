@@ -10,17 +10,16 @@
 //
 
 import SwiftUI
-import AppStorage
 
 struct PrefPaneAdvanced: View {
 
-    @AppStorageCompat("debugShowNodeCount")
+    @AppStorage("debugShowNodeCount")
     var nodeCount: Bool = false
 
-    @AppStorageCompat("debugShowFPS")
+    @AppStorage("debugShowFPS")
     var fps: Bool = false
 
-    @AppStorageCompat("debugShowPhysics")
+    @AppStorage("debugShowPhysics")
     var physics: Bool = false
 
     var body: some View {

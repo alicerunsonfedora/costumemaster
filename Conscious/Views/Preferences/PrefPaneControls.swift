@@ -12,7 +12,6 @@
 import SwiftUI
 import Combine
 import KeyboardShortcuts
-import AppStorage
 
 struct PrefPaneControls: View {
     var body: some View {
