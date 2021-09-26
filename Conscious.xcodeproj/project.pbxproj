@@ -1718,7 +1718,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Conscious/Metadata/Info.plist;
@@ -1727,7 +1727,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.costumemaster;
 				PRODUCT_NAME = "The $(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1744,7 +1744,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Conscious/Metadata/Info.plist;
@@ -1753,7 +1753,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.costumemaster;
 				PRODUCT_NAME = "The $(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
