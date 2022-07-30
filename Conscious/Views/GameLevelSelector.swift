@@ -87,24 +87,44 @@ struct GameLevelSelector: View {
                     .font(.subheadline)
             }
             Spacer()
-            Button {
-                onLevelSelect(entry.name)
-            } label: {
-                Text("Play")
-                    .padding(.horizontal)
-                    .padding(.vertical, 6)
-                    .background(
-                        Color(.controlAccentColor)
-                            .opacity(
-                                canPlayLevel(with: entry) ? 1.0: 0.3
-                            )
-                    )
-                    .foregroundColor(.black)
-                    .cornerRadius(6.0)
-                    .shadow(color: Color(.shadowColor), radius: 10, x: 0, y: 8)
+            if #available(macOS 12.0, *) {
+                makeModernButton(for: entry)
+                    .buttonStyle(.borderedProminent)
+                    .disabled(!canPlayLevel(with: entry))
+            } else {
+                button(for: entry)
+                    .buttonStyle(BorderlessButtonStyle())
+                    .disabled(!canPlayLevel(with: entry))
             }
-            .buttonStyle(BorderlessButtonStyle())
-            .disabled(!canPlayLevel(with: entry))
+        }
+    }
+
+    @available(macOS 12.0, *)
+    func makeModernButton(for entry: GameLevelItem) -> some View {
+        Button {
+            onLevelSelect(entry.name)
+        } label: {
+            Text("Play")
+        }
+    }
+
+    @available(macOS, introduced: 11.0, deprecated: 12.0, message: "Use makeModernButton instead.")
+    func button(for entry: GameLevelItem) -> some View {
+        Button {
+            onLevelSelect(entry.name)
+        } label: {
+            Text("Play")
+                .padding(.horizontal)
+                .padding(.vertical, 6)
+                .background(
+                    Color(.controlAccentColor)
+                        .opacity(
+                            canPlayLevel(with: entry) ? 1.0: 0.3
+                        )
+                )
+                .foregroundColor(.black)
+                .cornerRadius(6.0)
+                .shadow(color: Color(.shadowColor), radius: 10, x: 0, y: 8)
         }
     }
 }
