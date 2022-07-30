@@ -33,8 +33,9 @@ class ViewController: NSViewController, NSWindowDelegate {
             NSApplication.shared.terminate(self)
             return true
         }
-        confirm("Any unsaved progress will be lost.",
-                withTitle: "Are you sure you want to quit?",
+        confirm(
+            NSLocalizedString("costumemaster.confirm.quit", comment: "Confirm quit"),
+                withTitle: NSLocalizedString("costumemaster.confirm.quit_title", comment: "Confirm quit title"),
                 level: .warning) { resp in
             if resp.rawValue == 1000 {
                 NSApplication.shared.terminate(self)
@@ -46,8 +47,6 @@ class ViewController: NSViewController, NSWindowDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.settings = GamePreferences()
         AppDelegate.arguments = CommandLine.parse()
         let interfaceScenes = ["MainMenu", "Splash", "Intro", "About", "PauseMenu", "End"]
 
@@ -59,25 +58,17 @@ class ViewController: NSViewController, NSWindowDelegate {
 
         var levelName = AppDelegate.arguments.startLevel ?? "Splash"
 
-        if #available(OSX 10.15, *) {
-            if levelName.hasSuffix("AI") && !AppDelegate.arguments.useAgentTesting {
-                sendAlert(
-                    "Run The Costumemaster with agent testing enabled via --agent-test-mode to run this level.",
-                    withTitle: "You don't have permission to run \(levelName).",
-                    level: .critical
-                ) { _ in NSApplication.shared.terminate(nil) }
-            }
-
-            if AppDelegate.arguments.useAgentTesting && !interfaceScenes.contains(levelName)
-                && !levelName.hasSuffix("AI") {
-                levelName += "AI"
-            }
-        } else {
+        if levelName.hasSuffix("AI") && !AppDelegate.arguments.useAgentTesting {
             sendAlert(
-                "Ensure you are running the latest macOS version before running a map under Agent Testing Mode.",
-                withTitle: "Your Mac is not compatible with Agent Testing Mode.",
+                NSLocalizedString("costumemaster.alert.load_ai_bad_ctx_error", comment: "AI loaded without AI context error"),
+                withTitle: NSLocalizedString("costumemaster.alert.load_ai_bad_ctx_error_title", comment: "AI loaded with AI context error title"),
                 level: .critical
             ) { _ in NSApplication.shared.terminate(nil) }
+        }
+
+        if AppDelegate.arguments.useAgentTesting && !interfaceScenes.contains(levelName)
+            && !levelName.hasSuffix("AI") {
+            levelName += "AI"
         }
 
         if dlcWatchYourStepLevels.contains(levelName)
@@ -100,8 +91,7 @@ class ViewController: NSViewController, NSWindowDelegate {
             return
         }
 
-        // swiftlint:disable:next force_cast
-        guard let sceneNode = scene.rootNode as! SKScene? else {
+        guard let sceneNode = scene.rootNode as? SKScene? else {
             return
         }
 
@@ -116,9 +106,5 @@ class ViewController: NSViewController, NSWindowDelegate {
         view.showsPhysics = UserDefaults.debugShowPhysics
         view.shouldCullNonVisibleNodes = true
 
-    }
-
-    override func viewWillAppear() {
-//        self.authenticateWithGameCenter()
     }
 }

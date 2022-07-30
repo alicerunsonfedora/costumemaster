@@ -86,9 +86,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBAction func clearStore(_ sender: Any) {
         confirm(
-            "Clearing the game store will reset your statistics and clear your current game session's save data. This "
-            + "will not affect your achievements and leaderboards in Game Center. This action cannot be undone.",
-            withTitle: "Clear Game Store?",
+            NSLocalizedString("costumemaster.confirm.clear_store", comment: "Clear store confirmation"),
+            withTitle: NSLocalizedString("costumemaster.confirm.clear_store_title", comment: "Clear game store title"),
             level: .warning
         ) { response in
             if response.rawValue != 1000 { return }
@@ -159,7 +158,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func showGithub(_ sender: Any) {
-        NSWorkspace.shared.open(URL(string: "https://github.com/alicerunsonfedora/CS400/issues/new")!)
+        NSWorkspace.shared.open(URL(string: "https://github.com/alicerunsonfedora/costumemaster/issues/new")!)
     }
 
     @IBAction func showDocumentation(_ sender: Any) {
@@ -194,8 +193,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     scene.console.info("Restored console window.")
                 } else {
                     sendAlert(
-                        "The simulator console is only available when running an AI simulation.",
-                        withTitle: "Please run a simulation.",
+                        NSLocalizedString("costumemaster.alert.simulator_console_invalid_error", comment: "Simulator invalid error"),
+                        withTitle: NSLocalizedString("costumemaster.alert.simulator_console_invalid_error_title", comment: "Simulator invalid error title"),
                         level: .informational) { _ in }
                 }
             }

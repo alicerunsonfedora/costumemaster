@@ -57,8 +57,8 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
         DispatchQueue.main.async {
             sendAlert(
-                "An unknown error occured when trying to restore purchases.",
-                withTitle: "Couldn't restore purchases.",
+                NSLocalizedString("costumemaster.alert.iap_error", comment: "IAP error"),
+                withTitle: NSLocalizedString("costumemaster.alert.iap_error_title", comment: "IAP error title"),
                 level: .informational,
                 attachToMainWindow: false
             ) { _ in }
@@ -82,8 +82,8 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
     /// Handle a transaction with a failed payment.
     func onFailedPayment(with transaction: SKPaymentTransaction) {
         sendAlert(
-            "The content requested couldn't be purchased at this time.",
-            withTitle: "Couldn't process the transaction.",
+            NSLocalizedString("costumemaster.alert.iap_transaction_error", comment: "Transaction failed"),
+            withTitle: NSLocalizedString("costumemaster.alert.iap_transaction_error_title", comment: "Transaction failed title"),
             level: .warning
         ) { _ in }
         SKPaymentQueue.default().finishTransaction(transaction)

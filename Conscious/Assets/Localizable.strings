@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  Conscious
+
+  Created by Marquis Kurt on 30/7/22.
+  
+*/
+
+// MARK: Achievement Names
+"costumemaster.face_reveal" = "Face Reveal";
+"costumemaster.new_bird" = "Learning to Fly";
+"costumemaster.new_sorceress" = "Thinking with Magic";
+"costumemaster.end_reveal" = "Underneath It All";
+"costumemaster.quickfooted" = "Quickfooted";
+"costumemaster.superliminal" = "It's About Perspective";
+"costumemaster.overclocker" = "Overclocker";
+"costumemaster.costumemaster" = "Costumemastery";
+"costumemaster.cloned" = "Cut and Paste";
+"costumemaster.visibility" = "Now You See Me";
+"costumemaster.none" = "No achievement";
+
+// MARK: IAP Management
+"costumemaster.alert.iap_error" = "An unknown error occured when trying to restore purchases.";
+"cosutemaster.alert.iap_error_title" = "Couldn't restore purchases.";
+"costumemaster.alert.iap_transaction_error" = "The content requested couldn't be purchased at this time.";
+"costumemaster.alert.iap_transaction_error_title" = "Couldn't process the transaction.";
+
+// MARK: App Delegate
+"costumemaster.confirm.clear_store" = "Clearing the game store will reset your statistics and clear your current game session's save data. This will not affect your achievements and leaderboards in Game Center. This action cannot be undone.";
+"costumemaster.confirm.clear_store_title" = "Clear Game Store?";
+"costumemaster.alert.simulator_console_invalid_error" = "The simulator console is only available when running an AI simulation.";
+"costumemaster.alert.simulator_console_invalid_error_title" = "Please run a simulation.";
+
+// MARK: View Controller
+"costumemaster.confirm.quit" = "Any unsaved progress will be lost.";
+"costumemaster.confirm.quit_title" = "Are you sure you want to quit?";
+"costumemaster.alert.load_ai_bad_ctx_error" = "Run The Costumemaster with agent testing enabled via --agent-test-mode to run this level.";
+"costumemaster.alert.load_ai_bad_ctx_error_title" = "You don't have permission to run this level.";

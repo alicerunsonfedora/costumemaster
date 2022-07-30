@@ -11,6 +11,7 @@
 		95BB7C4E2700E1B000122188 /* ReloadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB7C4D2700E1B000122188 /* ReloadedView.swift */; };
 		95CFFD902895BB530006E166 /* GameSceneStructuralGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFFD8F2895BB530006E166 /* GameSceneStructuralGenerator.swift */; };
 		95CFFD922895BC150006E166 /* GameSceneConformances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFFD912895BC150006E166 /* GameSceneConformances.swift */; };
+		95CFFD942895C0BE0006E166 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95CFFD932895C0BE0006E166 /* Localizable.strings */; };
 		BF02CB12252E343E00E16EC9 /* Stack.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB11252E343E00E16EC9 /* Stack.sks */; };
 		BF02CB16252E454700E16EC9 /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB15252E454700E16EC9 /* death.wav */; };
 		BF02CB19252E50F600E16EC9 /* Dust.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB18252E50F600E16EC9 /* Dust.sks */; };
@@ -245,6 +246,7 @@
 		95BB7C4D2700E1B000122188 /* ReloadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadedView.swift; sourceTree = "<group>"; };
 		95CFFD8F2895BB530006E166 /* GameSceneStructuralGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneStructuralGenerator.swift; sourceTree = "<group>"; };
 		95CFFD912895BC150006E166 /* GameSceneConformances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneConformances.swift; sourceTree = "<group>"; };
+		95CFFD932895C0BE0006E166 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BF02CB11252E343E00E16EC9 /* Stack.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Stack.sks; sourceTree = "<group>"; };
 		BF02CB15252E454700E16EC9 /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death.wav; sourceTree = "<group>"; };
 		BF02CB18252E50F600E16EC9 /* Dust.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Dust.sks; sourceTree = "<group>"; };
@@ -673,6 +675,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6FBAE024A8BDDB00996890 /* Assets.xcassets */,
+				95CFFD932895C0BE0006E166 /* Localizable.strings */,
 				BF6D83362551EEF9009B6890 /* Costumemaster.help */,
 				BF3A0B8824F733AE00575F72 /* Fonts */,
 				BF4744E4255B3F6B001EE6DD /* Models */,
@@ -1298,6 +1301,7 @@
 				BF8DF6752565820F00F45C1F /* watchyourstep.wav in Resources */,
 				BF02CB20252E553D00E16EC9 /* ElectricalSpark.sks in Resources */,
 				BFC140E325252B96007D65DC /* .jazzy.yml in Resources */,
+				95CFFD942895C0BE0006E166 /* Localizable.strings in Resources */,
 				BFD8797624F5DE3E00552EDD /* Player_Side_USB.atlas in Resources */,
 				BF02CB19252E50F600E16EC9 /* Dust.sks in Resources */,
 				BFAD7FF3250FEB0700768609 /* Exposure.sks in Resources */,
