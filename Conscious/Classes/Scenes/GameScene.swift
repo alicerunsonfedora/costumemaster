@@ -67,57 +67,26 @@ class GameScene: SKScene {
 
             switch type {
             case .wall:
-                guard let wallName = data.definition.name else { return }
-                let wallTexture = wallName.starts(with: "wall_edge") ? "wall_edge_physics_mask" : wallName
-                let wall = GameStructureObject(with: data.sprite.texture, size: data.sprite.size)
-                if wallName.contains("passable") {
-                    wall.locked = false
-                }
-                wall.position = data.sprite.position
-                wall.instantiateBody(with: getWallPhysicsBody(with: wallTexture))
-                wall.name = "wall_\(data.column)_\(data.row)\(wallName.starts(with: "wall_edge") ? "_edge": ""))"
-                wall.worldPosition = CGPoint(x: data.column, y: data.row)
-
-                if wallName.contains("dbroken"), let sparks = SKEmitterNode(fileNamed: "ElectricalSpark") {
-                    sparks.zPosition = 100
-                    sparks.position = CGPoint(x: wall.position.x + 40, y: wall.position.y - 16)
-                    self.addChild(sparks)
-                }
-
+                guard let wall = makeWall(from: data) else { return }
                 self.structure.addChild(wall)
 
             case .player:
-                self.playerNode = Player(
-                    texture: data.texture,
-                    allowCostumes: Player.getCostumeSet(id: self.configuration?.costumeID ?? 0),
-                    startingWith: self.configuration?.startWithCostume ?? .flashDrive
-                )
-                self.playerNode?.position = data.sprite.position
-                self.playerNode?.size = data.sprite.size
-                if let disallow = self.configuration?.disallowCostume {
-                    self.playerNode?.remove(costume: disallow)
-                }
+                self.playerNode = makePlayer(from: data, with: configuration)
                 self.addChild(self.playerNode!)
                 data.sprite.texture = SKTexture(imageNamed: "floor")
                 data.sprite.zPosition = -999
                 self.addChild(data.sprite)
 
             case .triggerGameCenter:
-                let trigger = GameAchievementTrigger(
-                    with: self.configuration?.achievementTrigger, at: CGPoint(x: data.column, y: data.row)
-                )
-                trigger.position = data.sprite.position
-                trigger.size = data.sprite.size
+                guard let trigger = makeGameCenterTrigger(from: data, with: configuration) else {
+                    return
+                }
                 self.switches.append(trigger)
 
             case .deathPit, .triggerKill:
-                let killer = GameDeathPit(color: .clear, size: data.sprite.size)
-                killer.trigger = type == .triggerKill
-                if type == .deathPit {
-                    killer.texture = data.sprite.texture
+                guard let killer = makeDeathPit(from: data, type: type) else {
+                    return
                 }
-                killer.zPosition = -999
-                killer.position = data.sprite.position
                 self.structure.addChild(killer)
 
             case .floor:
@@ -125,67 +94,36 @@ class GameScene: SKScene {
                 self.structure.addChild(data.sprite)
 
             case .door:
-                let receiver = DoorReceiver(
-                    fromInput: [],
-                    reverseSignal: false,
-                    baseTexture: "door",
-                    at: CGPoint(x: data.column, y: data.row)
-                )
-                receiver.activationMethod = .anyInput
-                receiver.position = data.sprite.position
+                guard let receiver = makeDoor(from: data) else { return }
                 receiver.playerListener = self.playerNode
-                receiver.size = data.sprite.size
                 self.receivers.append(receiver)
 
             case .lever:
-                let lever = GameLever(at: CGPoint(x: data.column, y: data.row))
-                lever.position = data.sprite.position
-                lever.size = data.sprite.size
+                guard let lever = makeLever(from: data) else { return }
                 self.switches.append(lever)
 
             case .alarmClock:
-                let alarm = GameAlarmClock(
-                    with: self.configuration?.defaultTimerDelay ?? 3.0,
-                    at: CGPoint(x: data.column, y: data.row)
-                )
-                alarm.position = data.sprite.position
-                alarm.size = data.sprite.size
+                guard let alarm = makeAlarmClock(from: data) else { return }
                 self.switches.append(alarm)
 
             case .computerT1, .computerT2:
-                let computer = GameComputer(
-                    at: CGPoint(x: data.column, y: data.row),
-                    with: getTileType(fromDefinition: data.definition) == .computerT1
-                )
-                computer.position = data.sprite.position
-                computer.size = data.sprite.size
+                guard let computer = makeComputer(from: data, type: type) else { return }
                 self.switches.append(computer)
 
             case .pressurePlate:
-                let plate = GamePressurePlate(at: CGPoint(x: data.column, y: data.row))
-                plate.position = data.sprite.position
-                plate.size = data.sprite.size
+                guard let plate = makePressurePlate(from: data) else { return }
                 self.switches.append(plate)
 
             case .biometricScanner:
-                let iris = GameIrisScanner(at: CGPoint(x: data.column, y: data.row))
-                iris.position = data.sprite.position
-                iris.size = data.sprite.size
+                guard let iris = makeBiometrics(from: data) else { return }
                 self.switches.append(iris)
 
             case .heavyObject:
-                let object = GameHeavyObject(
-                    with: data.definition.name?.replacingOccurrences(of: "floor_ho_", with: "") ?? "cabinet",
-                    at: CGPoint(x: data.column, y: data.row)
-                )
-                object.position = data.sprite.position
-                object.zPosition = self.playerNode?.zPosition ?? 5
-                object.size = data.sprite.size
+                guard let object = makeHeavyObject(from: data) else { return }
                 self.interactables.append(object)
                 data.sprite.texture = SKTexture(imageNamed: "floor")
                 data.sprite.zPosition = -999
                 self.addChild(data.sprite)
-
             default:
                 break
             }
@@ -211,19 +149,18 @@ class GameScene: SKScene {
     // MARK: SWITCH REQUISITE HANDLERS
     /// Parse the requisites and hook up the appropriate signal senders to their receivers.
     private func linkSignalsAndReceivers() {
-        if let requisites = self.configuration?.requisites {
-            for req in requisites {
-                let correspondingOutputs = self.receivers.filter({rec in rec.worldPosition == req.outputLocation})
-                if correspondingOutputs.isEmpty { continue }
-                let output = correspondingOutputs.first
-                let inputs = self.switches
-                if inputs.isEmpty { continue }
-                for input in inputs where req.requiredInputs.contains(input.worldPosition) {
-                    output?.inputs.append(input)
-                    output?.activationMethod = req.requisite ?? .noInput
-                }
-                output?.updateInputs()
+        guard let requisites = self.configuration?.requisites else { return }
+        for req in requisites {
+            let correspondingOutputs = self.receivers.filter({rec in rec.worldPosition == req.outputLocation})
+            if correspondingOutputs.isEmpty { continue }
+            let output = correspondingOutputs.first
+            let inputs = self.switches
+            if inputs.isEmpty { continue }
+            for input in inputs where req.requiredInputs.contains(input.worldPosition) {
+                output?.inputs.append(input)
+                output?.activationMethod = req.requisite ?? .noInput
             }
+            output?.updateInputs()
         }
     }
 
