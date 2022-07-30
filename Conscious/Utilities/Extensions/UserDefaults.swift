@@ -23,6 +23,9 @@ extension UserDefaults {
     /// Whether to display dust particles.
     static var dustParticles = UserDefaults.standard.bool(forKey: "showDustParticles")
 
+    /// Whether to use physics-based movement.
+    static var usePhysicsMovement = UserDefaults.standard.bool(forKey: "usePhysicsMovement")
+
     // MARK: - Sound
     /// The music volume.
     static var musicVolume = UserDefaults.standard.float(forKey: "soundMusicVolume")

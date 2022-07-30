@@ -19,6 +19,9 @@ struct PrefPaneGeneral: View {
     @AppStorage("intelligentCameraMovement")
     var intelligentCameraMovement: Bool = true
 
+    @AppStorage("usePhysicsMovement")
+    var usePhysicsMovement: Bool = true
+
     @AppStorage("showDustParticles")
     var showDustParticles: Bool = true
 
@@ -66,6 +69,15 @@ struct PrefPaneGeneral: View {
                         Text("The camera will move based on how far the player has moved instead of putting the player"
                             + " at the center of the camera.")
                             .foregroundColor(.secondary)
+                    }
+                }
+
+                Toggle(isOn: $usePhysicsMovement) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Use physics-based movement")
+                        Text("Player controls will use physics-based calculations. Turning this off will move the " +
+                             "player, regardless of physics forces.")
+                        .foregroundColor(.secondary)
                     }
                 }
 

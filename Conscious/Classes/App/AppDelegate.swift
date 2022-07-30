@@ -228,6 +228,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         AppDelegate.updateDockTile(UserDefaults.standard.string(forKey: "dockIconName"))
         GameManagerDelegate.canRunSimulator = true
+
+        // NOTE: Use for migration of preferences.
+        if UserDefaults.standard.value(forKey: "usePhysicsMovement") == nil {
+            UserDefaults.standard.set(true, forKey: "usePhysicsMovement")
+        }
+
         DispatchQueue.main.async {
             SKPaymentQueue.default().add(IAPObserver.shared)
             IAPManager.shared.makeAllProductRequests()

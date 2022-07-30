@@ -429,6 +429,11 @@ public class Player: SKSpriteNode {
     ///
     /// - Parameter delta: A vector that represents the delta to move by.
     public func move(_ delta: CGVector) {
+        guard UserDefaults.usePhysicsMovement else {
+            self.run(SKAction.move(by: delta, duration: 4.0))
+            return
+        }
+
         self.physicsBody?.applyImpulse(delta)
 
         guard var velocity = self.physicsBody?.velocity else { return }
