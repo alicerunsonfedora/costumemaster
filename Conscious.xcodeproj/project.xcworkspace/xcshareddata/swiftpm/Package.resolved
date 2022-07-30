@@ -1,43 +1,50 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "CodableCSV",
-        "repositoryURL": "https://github.com/dehesa/CodableCSV.git",
-        "state": {
-          "branch": null,
-          "revision": "99ace2cfdfbc19108b529c021005fb57a460e715",
-          "version": "0.6.7"
-        }
-      },
-      {
-        "package": "GBMKUtils",
-        "repositoryURL": "https://github.com/alicerunsonfedora/GBMKUtils.git",
-        "state": {
-          "branch": null,
-          "revision": "398d79a21f8afe511db90adcabfe7858560aacdb",
-          "version": "0.2.1"
-        }
-      },
-      {
-        "package": "KeyboardShortcuts",
-        "repositoryURL": "https://github.com/sindresorhus/KeyboardShortcuts",
-        "state": {
-          "branch": null,
-          "revision": "f09de800a4f05d66fe2a9924c81a932454a9f39a",
-          "version": "0.7.1"
-        }
-      },
-      {
-        "package": "Preferences",
-        "repositoryURL": "https://github.com/sindresorhus/Preferences",
-        "state": {
-          "branch": null,
-          "revision": "ffeaaad1def45d0625720dc1adae3789cd9c167d",
-          "version": "2.5.0"
-        }
+  "pins" : [
+    {
+      "identity" : "bunker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alicerunsonfedora/bunker.git",
+      "state" : {
+        "branch" : "root",
+        "revision" : "a60d1816cc23de85496d901b12c4057561eb0713"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "codablecsv",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dehesa/CodableCSV.git",
+      "state" : {
+        "revision" : "99ace2cfdfbc19108b529c021005fb57a460e715",
+        "version" : "0.6.7"
+      }
+    },
+    {
+      "identity" : "gbmkutils",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alicerunsonfedora/GBMKUtils.git",
+      "state" : {
+        "revision" : "398d79a21f8afe511db90adcabfe7858560aacdb",
+        "version" : "0.2.1"
+      }
+    },
+    {
+      "identity" : "keyboardshortcuts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/KeyboardShortcuts",
+      "state" : {
+        "revision" : "f09de800a4f05d66fe2a9924c81a932454a9f39a",
+        "version" : "0.7.1"
+      }
+    },
+    {
+      "identity" : "preferences",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/Preferences",
+      "state" : {
+        "revision" : "2651cd144615009242c994b087508fef99e9275c",
+        "version" : "2.6.0"
+      }
+    }
+  ],
+  "version" : 2
 }

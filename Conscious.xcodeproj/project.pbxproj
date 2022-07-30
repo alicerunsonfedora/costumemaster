@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9546A6142895AD6C00459F90 /* Bunker in Frameworks */ = {isa = PBXBuildFile; productRef = 9546A6132895AD6C00459F90 /* Bunker */; };
 		95BB7C4E2700E1B000122188 /* ReloadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB7C4D2700E1B000122188 /* ReloadedView.swift */; };
 		BF02CB12252E343E00E16EC9 /* Stack.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB11252E343E00E16EC9 /* Stack.sks */; };
 		BF02CB16252E454700E16EC9 /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB15252E454700E16EC9 /* death.wav */; };
@@ -469,6 +470,7 @@
 				BF93337C25320DC900C78B44 /* StoreKit.framework in Frameworks */,
 				BFDBE7AE24F955EE00FD75BF /* GameKit.framework in Frameworks */,
 				BF4744D3255B33CA001EE6DD /* CoreML.framework in Frameworks */,
+				9546A6142895AD6C00459F90 /* Bunker in Frameworks */,
 				BF0D2C1C24FADC4E00AEF86F /* KeyboardShortcuts in Frameworks */,
 				BF37C7F62539F31900CC156E /* GBMKUtils in Frameworks */,
 			);
@@ -1206,6 +1208,7 @@
 				BF37C7F52539F31900CC156E /* GBMKUtils */,
 				BF982771255CA21200E2D9DB /* Preferences */,
 				BF1938BE2562D51F00452D70 /* CodableCSV */,
+				9546A6132895AD6C00459F90 /* Bunker */,
 			);
 			productName = Conscious;
 			productReference = BF6FBAD324A8BDD400996890 /* The Costumemaster.app */;
@@ -1242,6 +1245,7 @@
 				BF37C7F42539F31900CC156E /* XCRemoteSwiftPackageReference "GBMKUtils" */,
 				BF982770255CA21200E2D9DB /* XCRemoteSwiftPackageReference "Preferences" */,
 				BF1938BD2562D51F00452D70 /* XCRemoteSwiftPackageReference "CodableCSV" */,
+				9546A6122895AD6C00459F90 /* XCRemoteSwiftPackageReference "bunker" */,
 			);
 			productRefGroup = BF6FBAD424A8BDD400996890 /* Products */;
 			projectDirPath = "";
@@ -1549,7 +1553,7 @@
 				CODE_SIGN_ENTITLEMENTS = Widgets/Costumemaster_Widgets.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Widgets/Info.plist;
@@ -1559,7 +1563,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.costumemaster.widgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1575,7 +1579,7 @@
 				CODE_SIGN_ENTITLEMENTS = Widgets/Costumemaster_Widgets.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Widgets/Info.plist;
@@ -1585,7 +1589,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.costumemaster.widgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1718,7 +1722,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Conscious/Metadata/Info.plist;
@@ -1727,7 +1731,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.1.2;
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.costumemaster;
 				PRODUCT_NAME = "The $(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1744,7 +1748,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Conscious/Metadata/Info.plist;
@@ -1753,7 +1757,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.1.2;
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.costumemaster;
 				PRODUCT_NAME = "The $(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1793,6 +1797,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9546A6122895AD6C00459F90 /* XCRemoteSwiftPackageReference "bunker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alicerunsonfedora/bunker.git";
+			requirement = {
+				branch = root;
+				kind = branch;
+			};
+		};
 		BF0D2C1A24FADC4E00AEF86F /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
@@ -1828,6 +1840,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9546A6132895AD6C00459F90 /* Bunker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9546A6122895AD6C00459F90 /* XCRemoteSwiftPackageReference "bunker" */;
+			productName = Bunker;
+		};
 		BF0D2C1B24FADC4E00AEF86F /* KeyboardShortcuts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BF0D2C1A24FADC4E00AEF86F /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
