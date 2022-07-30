@@ -278,7 +278,11 @@ class GameScene: SKScene {
             return
         }
         self.camera = pCam
-        self.camera?.setScale(CGFloat(UserDefaults.cameraScale))
+        self.camera?.setScale(
+            CGFloat(
+                UserDefaults.cameraScale.clamp(lower: 0.25, upper: 1.0)
+            )
+        )
         self.camera?.position = self.playerNode!.position
         let bounds = SKRange(
             lowerLimit: 0, upperLimit: UserDefaults.intelligentCamera
