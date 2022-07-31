@@ -54,7 +54,14 @@ class GameManagerDelegate {
     static func callMainMenu() {
         if let view = GameManagerDelegate.gameView {
             if view.scene != nil && view.scene?.name != "MainMenu" {
-                confirm("You'll lose any unsaved progress.", withTitle: "Go back to menu?", level: .warning) { resp in
+                confirm(
+                    NSLocalizedString("costumemaster.confirm.back_to_main", comment: "Back to main menu"),
+                    withTitle: NSLocalizedString(
+                        "costumemaster.confirm.back_to_main_title",
+                        comment: "Back to main menu title"
+                    ),
+                    level: .warning
+                ) { resp in
                     if resp.rawValue != 1000 { return }
                     GameManagerDelegate.loadScene(with: "MainMenu")
                 }
@@ -68,9 +75,10 @@ class GameManagerDelegate {
     /// Start the game.
     static func startGame() {
         if GameStore.shared.lastSavedScene != "" {
-            confirm("You'll lose your level progress.",
-                    withTitle: "Are you sure you want to start a new game?",
-                    level: .warning
+            confirm(
+                NSLocalizedString("costumemaster.confirm.new_game", comment: "New game"),
+                withTitle: NSLocalizedString("costumemaster.confirm.new_game_title", comment: "New game title"),
+                level: .warning
             ) { response in
                 if response.rawValue != 1000 { return }
                 GameManagerDelegate.loadScene(with: "Intro", fadeDuration: 3.0)

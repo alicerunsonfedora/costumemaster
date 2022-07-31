@@ -74,7 +74,11 @@ class PauseScene: SKScene {
 
     /// Execute the action that corresponds to the main menu button.
     private func mainMenuAction() {
-        confirm("You'll lose any unsaved progress.", withTitle: "Go back to menu?", level: .warning) { resp in
+        confirm(
+            NSLocalizedString("costumemaster.confirm.back_to_main", comment: "Back to main menu"),
+            withTitle: NSLocalizedString("costumemaster.confirm.back_to_main_title", comment: "Back to main title"),
+            level: .warning
+        ) { resp in
             if resp.rawValue != 1000 { return }
             if let scene = SKScene(fileNamed: "MainMenu") as? MainMenuScene {
                 self.view?.presentScene(scene)
@@ -100,7 +104,11 @@ class PauseScene: SKScene {
 
     /// Excecute the action that corresponds to the restart button.
     private func restartAction() {
-        confirm("You'll lose any unsaved progress.", withTitle: "Restart the level?", level: .warning) { resp in
+        confirm(
+            NSLocalizedString("costumemaster.confirm.restart", comment: "Restart level"),
+            withTitle: NSLocalizedString("costumemaster.confirm.restart_title", comment: "Restart level title"),
+            level: .warning
+        ) { resp in
             if resp.rawValue != 1000 { return }
             if let controller = self.view?.window?.contentViewController as? ViewController {
                 if let scene = SKScene(fileNamed: controller.rootScene?.name ?? "") {

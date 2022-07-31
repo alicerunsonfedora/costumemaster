@@ -12,6 +12,7 @@
 		95CFFD902895BB530006E166 /* GameSceneStructuralGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFFD8F2895BB530006E166 /* GameSceneStructuralGenerator.swift */; };
 		95CFFD922895BC150006E166 /* GameSceneConformances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFFD912895BC150006E166 /* GameSceneConformances.swift */; };
 		95CFFD942895C0BE0006E166 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95CFFD932895C0BE0006E166 /* Localizable.strings */; };
+		95CFFD95289608BD0006E166 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95CFFD932895C0BE0006E166 /* Localizable.strings */; };
 		BF02CB12252E343E00E16EC9 /* Stack.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB11252E343E00E16EC9 /* Stack.sks */; };
 		BF02CB16252E454700E16EC9 /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB15252E454700E16EC9 /* death.wav */; };
 		BF02CB19252E50F600E16EC9 /* Dust.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF02CB18252E50F600E16EC9 /* Dust.sks */; };
@@ -1272,6 +1273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF45766425F93144000E706B /* Assets.xcassets in Resources */,
+				95CFFD95289608BD0006E166 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

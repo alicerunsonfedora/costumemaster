@@ -6,7 +6,7 @@
   
 */
 
-// MARK: Achievement Names
+// MARK: - Achievement Names
 "costumemaster.face_reveal" = "Face Reveal";
 "costumemaster.new_bird" = "Learning to Fly";
 "costumemaster.new_sorceress" = "Thinking with Magic";
@@ -18,6 +18,8 @@
 "costumemaster.cloned" = "Cut and Paste";
 "costumemaster.visibility" = "Now You See Me";
 "costumemaster.none" = "No achievement";
+
+// MARK: - Alerts and Confirmations
 
 // MARK: IAP Management
 "costumemaster.alert.iap_error" = "An unknown error occured when trying to restore purchases.";
@@ -36,3 +38,30 @@
 "costumemaster.confirm.quit_title" = "Are you sure you want to quit?";
 "costumemaster.alert.load_ai_bad_ctx_error" = "Run The Costumemaster with agent testing enabled via --agent-test-mode to run this level.";
 "costumemaster.alert.load_ai_bad_ctx_error_title" = "You don't have permission to run this level.";
+"costumemaster.alert.dlc_error" = "Please purchase the Watch Your Step DLC from within the game to run this level via the command line.";
+"costumemaster.alert.level_missing_error" = "Check that the level is installed properly. If the problem persists, please reinstall the game.";
+"costumemaster.alert.level_missing_error_title" = "The level scene file is missing.";
+
+// MARK: Game Scene
+"costumemaster.alert.user_data_missing_error" = "Check that the level file contains data in the User Data section in Xcode.";
+"costumemaster.alert.user_data_missing_error_title" = "The properties for this level are missing.";
+"costumemaster.alert.tilemap_missing_error" = "Check the appropriate level file and ensure an SKTilemapNode called \"Tile Map Node\" exists.";
+"costumemaster.alert.tilemap_missing_error_title" = "The tilemap for this level is missing.";
+"costumemaster.alert.player_missing_error" = "Check the appropriate level file and ensure the SKTileMapNode includes a tile definition for the player.";
+"costumemaster.alert.player_missing_error_title" = "The player for this level is missing.";
+"costumemaster.alert.camera_missing_error" = "Check the appropriate level file and ensure an SKCameraNode called \"Camera\" exists.";
+"costumemaster.alert.camera_missing_title" = "The camera for this level is missing.";
+
+// MARK: Achievements and Leaderboards
+"costumemaster.alert.achievement_earn_error_title" = "This achievement couldn't be earned.";
+"costumemaster.alert.achievement_update_error_title" = "This achievement couldn't be updated.";
+"costumemaster.alert.leaderboard_submit_error_title" = "The score could not be sent to the leaderboard.";
+
+
+// MARK: Game Manager Delegate
+"costumemaster.confirm.back_to_main" = "You'll lose any unsaved progress.";
+"costumemaster.confirm.back_to_main_title" = "Go back to menu?";
+"costumemaster.confirm.new_game" = "You'll lose your level progress.";
+"costumemaster.confirm.new_game_title" = "Are you sure you want to start a new game?";
+"costumemaster.confirm.restart" = "You'll lose any unsaved progress.";
+"costumemaster.confirm.restart_title" = "Restart the level?";

@@ -31,7 +31,7 @@ extension GKLeaderboard {
             guard error == nil else {
                 sendAlert(
                     error.debugDescription,
-                    withTitle: "The score could not be sent to the leaderboard.",
+                    withTitle: NSLocalizedString("costumemaster.alert.leaderboard_submit_error_title", comment: "Leaderboard submit error"),
                     level: .critical) { _ in }
                 return
             }

@@ -25,8 +25,8 @@ extension GKAchievement {
         GKAchievement.report([achievement]) { error in
             guard error == nil else {
                 sendAlert(
-                    error.debugDescription,
-                    withTitle: "This achievement couldn't be earned.",
+                    error?.localizedDescription ?? error.debugDescription,
+                    withTitle: NSLocalizedString("costumemaster.alert.achievement_earn_error_title", comment: "Achievement earn error"),
                     level: .critical) { _ in }
                 return
             }
@@ -51,8 +51,8 @@ extension GKAchievement {
         GKAchievement.report([achievement]) { error in
             guard error == nil else {
                 sendAlert(
-                    error.debugDescription,
-                    withTitle: "This achievement couldn't be updated.",
+                    error?.localizedDescription ?? error.debugDescription,
+                    withTitle: NSLocalizedString("costumemaster.alert.achievement_update_error_title", comment: "Achievement progress error"),
                     level: .critical) { _ in }
                 return
             }

@@ -87,9 +87,10 @@ extension MainMenuScene {
          GKAccessPoint.shared.isActive = false
 
         if GameStore.shared.lastSavedScene != "" {
-            confirm("You'll lose your level progress.",
-                    withTitle: "Are you sure you want to start a new game?",
-                    level: .warning
+            confirm(
+                NSLocalizedString("costumemaster.confirm.new_game", comment: "New Game"),
+                withTitle: NSLocalizedString("costumemaster.confirm.new_game_title", comment: "New game title"),
+                level: .warning
             ) { response in
                 if response.rawValue != 1000 {
                     self.startButton?.fontColor = .black

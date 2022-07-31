@@ -74,8 +74,8 @@ class ViewController: NSViewController, NSWindowDelegate {
         if dlcWatchYourStepLevels.contains(levelName)
             && !UserDefaults.iapModule.bool(forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue) {
             sendAlert(
-                "Please purchase the Watch Your Step DLC from within the game to run this level via the command line.",
-                withTitle: "You don't have permission to play the level \(levelName).",
+                NSLocalizedString("costumemaster.alert.dlc_error", comment: "DLC Load error"),
+                withTitle: NSLocalizedString("costumemaster.alert.load_ai_bad_ctx_error_title", comment: "DLC load error title"),
                 level: .critical
             ) { _ in
                 levelName = "Splash"
@@ -84,8 +84,8 @@ class ViewController: NSViewController, NSWindowDelegate {
 
         guard let scene = GKScene(fileNamed: levelName) else {
             sendAlert(
-                "Check that \(levelName) is installed properly. If the problem persists, please reinstall the game.",
-                withTitle: "The scene \(levelName) is missing.",
+                NSLocalizedString("costumemaster.alert.level_missing_error", comment: "Level file not found."),
+                withTitle: NSLocalizedString("costumemaster.alert.level_missing_error_title", comment: "Level file not found title"),
                 level: .critical
             ) { _ in NSApplication.shared.terminate(nil) }
             return

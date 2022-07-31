@@ -175,8 +175,8 @@ class GameScene: SKScene {
         // Instantiate the level configuration.
         guard let userData = self.userData else {
             sendAlert(
-                "Check that the level file contains data in the User Data.",
-                withTitle: "The properties for \"\(self.name ?? "GameScene")\" are missing.",
+                NSLocalizedString("costumemaster.alert.user_data_missing_error", comment: "User data missing"),
+                withTitle: NSLocalizedString("costumemaster.alert.user_data_missing_error_title", comment: "User data missing title"),
                 level: .critical
             ) { _ in self.callScene(name: "MainMenu") }
             return
@@ -186,8 +186,8 @@ class GameScene: SKScene {
         // Get the tilemap for this scene.
         guard let tilemap = childNode(withName: "Tile Map Node") as? SKTileMapNode else {
             sendAlert(
-                "Check the appropriate level file and ensure an SKTilemapNode called \"Tile Map Node\" exists.",
-                withTitle: "The tilemap for the map \"\(self.name ?? "GameScene")\" is missing.",
+                NSLocalizedString("costumemaster.alert.tilemap_missing_error", comment: "Tile map missing"),
+                withTitle: NSLocalizedString("costumemaster.alert.tilemap_missing_error_title", comment: "Tile map missing title"),
                 level: .critical) { _ in self.callScene(name: "MainMenu") }
             return
         }
@@ -199,9 +199,9 @@ class GameScene: SKScene {
         // Check that a player was generated.
         if playerNode == nil {
             sendAlert(
-                "Check the appropriate level file and ensure the SKTileMapNode includes a tile definition for the"
-                + " player.",
-                withTitle: "The player for the map \"\(self.name ?? "GameScene")\" is missing.",
+                NSLocalizedString("costumemaster.alert.player_missing_error", comment: "Player missing")
+                + "",
+                withTitle: NSLocalizedString("costumemaster.alert.player_missing_error_title", comment: "Player missing title"),
                 level: .critical) { _ in self.callScene(name: "MainMenu") }
             return
         }
@@ -209,8 +209,8 @@ class GameScene: SKScene {
         // Get the camera for this scene.
         guard let pCam = childNode(withName: "Camera") as? SKCameraNode else {
             sendAlert(
-                "Check the appropriate level file and ensure an SKCameraNode called \"Camera\" exists.",
-                withTitle: "The camera for the map \"\(self.name ?? "GameScene")\" is missing.",
+                NSLocalizedString("costumemaster.alert.camera_missing_error", comment: "Camera missing"),
+                withTitle: NSLocalizedString("costumemaster.alert.camera_missing_error_title", comment: "Camera missing title"),
                 level: .critical) { _ in self.callScene(name: "MainMenu") }
             return
         }
