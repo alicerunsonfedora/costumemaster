@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9546A6142895AD6C00459F90 /* Bunker in Frameworks */ = {isa = PBXBuildFile; productRef = 9546A6132895AD6C00459F90 /* Bunker */; };
 		95BB7C4E2700E1B000122188 /* ReloadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB7C4D2700E1B000122188 /* ReloadedView.swift */; };
+		95BBAC76289C97E200C8B84F /* CranberrySprite in Frameworks */ = {isa = PBXBuildFile; productRef = 95BBAC75289C97E200C8B84F /* CranberrySprite */; };
 		95CFFD902895BB530006E166 /* GameSceneStructuralGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFFD8F2895BB530006E166 /* GameSceneStructuralGenerator.swift */; };
 		95CFFD922895BC150006E166 /* GameSceneConformances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFFD912895BC150006E166 /* GameSceneConformances.swift */; };
 		95CFFD942895C0BE0006E166 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95CFFD932895C0BE0006E166 /* Localizable.strings */; };
@@ -49,7 +50,6 @@
 		BF2B5E4925016D2D001EC2E7 /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2B5E4825016D2D001EC2E7 /* Arguments.swift */; };
 		BF33A189250BFC060064A219 /* Cycle.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF33A188250BFC060064A219 /* Cycle.sks */; };
 		BF37C7ED2538E5B500CC156E /* Management.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF37C7EC2538E5B500CC156E /* Management.sks */; };
-		BF37C7F62539F31900CC156E /* GBMKUtils in Frameworks */ = {isa = PBXBuildFile; productRef = BF37C7F52539F31900CC156E /* GBMKUtils */; };
 		BF37C7FD253A07A000CC156E /* AIRandomMoveStrategist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37C7FC253A07A000CC156E /* AIRandomMoveStrategist.swift */; };
 		BF37D5172603995F00878C29 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37D5162603995F00878C29 /* Bundle.swift */; };
 		BF3977B92530B2D900BBD591 /* Traverse.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF3977B82530B2D900BBD591 /* Traverse.sks */; };
@@ -71,7 +71,7 @@
 		BF45765E25F93141000E706B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF45765D25F93141000E706B /* SwiftUI.framework */; };
 		BF45766125F93141000E706B /* AchievementWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF45766025F93141000E706B /* AchievementWidget.swift */; };
 		BF45766425F93144000E706B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF45766325F93144000E706B /* Assets.xcassets */; };
-		BF45766B25F93144000E706B /* Costumemaster WidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BF45765A25F93141000E706B /* Costumemaster WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BF45766B25F93144000E706B /* Costumemaster WidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BF45765A25F93141000E706B /* Costumemaster WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BF4630EC255068DB00EB606D /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4630EB255068DB00EB606D /* Binding.swift */; };
 		BF4630EF255077A000EB606D /* Tooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4630EE255077A000EB606D /* Tooltip.swift */; };
 		BF4630F225508E2200EB606D /* GameManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4630F125508E2200EB606D /* GameManagerDelegate.swift */; };
@@ -230,15 +230,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BF45766C25F93144000E706B /* Embed App Extensions */ = {
+		BF45766C25F93144000E706B /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				BF45766B25F93144000E706B /* Costumemaster WidgetsExtension.appex in Embed App Extensions */,
+				BF45766B25F93144000E706B /* Costumemaster WidgetsExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -475,11 +475,11 @@
 				BF1938BF2562D51F00452D70 /* CodableCSV in Frameworks */,
 				BF982772255CA21200E2D9DB /* Preferences in Frameworks */,
 				BF93337C25320DC900C78B44 /* StoreKit.framework in Frameworks */,
+				95BBAC76289C97E200C8B84F /* CranberrySprite in Frameworks */,
 				BFDBE7AE24F955EE00FD75BF /* GameKit.framework in Frameworks */,
 				BF4744D3255B33CA001EE6DD /* CoreML.framework in Frameworks */,
 				9546A6142895AD6C00459F90 /* Bunker in Frameworks */,
 				BF0D2C1C24FADC4E00AEF86F /* KeyboardShortcuts in Frameworks */,
-				BF37C7F62539F31900CC156E /* GBMKUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1205,7 +1205,7 @@
 				BF6FBACF24A8BDD400996890 /* Sources */,
 				BF6FBAD024A8BDD400996890 /* Frameworks */,
 				BF6FBAD124A8BDD400996890 /* Resources */,
-				BF45766C25F93144000E706B /* Embed App Extensions */,
+				BF45766C25F93144000E706B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -1215,10 +1215,10 @@
 			name = Costumemaster;
 			packageProductDependencies = (
 				BF0D2C1B24FADC4E00AEF86F /* KeyboardShortcuts */,
-				BF37C7F52539F31900CC156E /* GBMKUtils */,
 				BF982771255CA21200E2D9DB /* Preferences */,
 				BF1938BE2562D51F00452D70 /* CodableCSV */,
 				9546A6132895AD6C00459F90 /* Bunker */,
+				95BBAC75289C97E200C8B84F /* CranberrySprite */,
 			);
 			productName = Conscious;
 			productReference = BF6FBAD324A8BDD400996890 /* The Costumemaster.app */;
@@ -1231,7 +1231,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					BF45765925F93141000E706B = {
 						CreatedOnToolsVersion = 12.4;
@@ -1252,10 +1252,10 @@
 			mainGroup = BF6FBACA24A8BDD400996890;
 			packageReferences = (
 				BF0D2C1A24FADC4E00AEF86F /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
-				BF37C7F42539F31900CC156E /* XCRemoteSwiftPackageReference "GBMKUtils" */,
 				BF982770255CA21200E2D9DB /* XCRemoteSwiftPackageReference "Preferences" */,
 				BF1938BD2562D51F00452D70 /* XCRemoteSwiftPackageReference "CodableCSV" */,
 				9546A6122895AD6C00459F90 /* XCRemoteSwiftPackageReference "bunker" */,
+				95BBAC74289C97E200C8B84F /* XCRemoteSwiftPackageReference "cranberrysprite" */,
 			);
 			productRefGroup = BF6FBAD424A8BDD400996890 /* Products */;
 			projectDirPath = "";
@@ -1568,6 +1568,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Widgets/Info.plist;
@@ -1594,6 +1595,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Widgets/Info.plist;
@@ -1645,6 +1647,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1706,6 +1709,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1737,6 +1741,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 11;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Conscious/Metadata/Info.plist;
@@ -1763,6 +1768,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 11;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Conscious/Metadata/Info.plist;
@@ -1819,6 +1825,14 @@
 				kind = branch;
 			};
 		};
+		95BBAC74289C97E200C8B84F /* XCRemoteSwiftPackageReference "cranberrysprite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alicerunsonfedora/cranberrysprite";
+			requirement = {
+				branch = root;
+				kind = branch;
+			};
+		};
 		BF0D2C1A24FADC4E00AEF86F /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
@@ -1833,14 +1847,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.6.3;
-			};
-		};
-		BF37C7F42539F31900CC156E /* XCRemoteSwiftPackageReference "GBMKUtils" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/alicerunsonfedora/GBMKUtils.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
 			};
 		};
 		BF982770255CA21200E2D9DB /* XCRemoteSwiftPackageReference "Preferences" */ = {
@@ -1859,6 +1865,11 @@
 			package = 9546A6122895AD6C00459F90 /* XCRemoteSwiftPackageReference "bunker" */;
 			productName = Bunker;
 		};
+		95BBAC75289C97E200C8B84F /* CranberrySprite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95BBAC74289C97E200C8B84F /* XCRemoteSwiftPackageReference "cranberrysprite" */;
+			productName = CranberrySprite;
+		};
 		BF0D2C1B24FADC4E00AEF86F /* KeyboardShortcuts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BF0D2C1A24FADC4E00AEF86F /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
@@ -1868,11 +1879,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BF1938BD2562D51F00452D70 /* XCRemoteSwiftPackageReference "CodableCSV" */;
 			productName = CodableCSV;
-		};
-		BF37C7F52539F31900CC156E /* GBMKUtils */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BF37C7F42539F31900CC156E /* XCRemoteSwiftPackageReference "GBMKUtils" */;
-			productName = GBMKUtils;
 		};
 		BF982771255CA21200E2D9DB /* Preferences */ = {
 			isa = XCSwiftPackageProductDependency;

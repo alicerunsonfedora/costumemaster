@@ -13,7 +13,7 @@ import GameKit
 import SpriteKit
 import GameplayKit
 import KeyboardShortcuts
-import GBMKUtils
+import CranberrySprite
 
 /// The base class for a given level.
 ///
@@ -51,100 +51,8 @@ class GameScene: SKScene {
     /// Whether the player has died on this level.
     var playerDied: Bool = false
 
-    // MARK: CONSTRUCTION METHODS
-    /// Create children nodes from a tile map node and add them to the scene's view heirarchy.
-    private func setupTilemap(tilemap: SKTileMapNode) {
-        // swiftlint:disable:previous cyclomatic_complexity
-
-        // Instantiate the unit first.
-        let mapUnit = tilemap.tileSize; self.unit = mapUnit
-
-        // Parse the tilemap and set up the nodes accordingly.
-        tilemap.parse { (data: GBMKTilemapParseData) in
-            // Offset by one to prevent texture collisions.
-            data.sprite.size = CGSize(width: data.unit.width + 1, height: data.unit.height + 1)
-            let type = getTileType(fromDefinition: data.definition)
-
-            switch type {
-            case .wall:
-                guard let wall = makeWall(from: data) else { return }
-                self.structure.addChild(wall)
-
-            case .player:
-                self.playerNode = makePlayer(from: data, with: configuration)
-                self.addChild(self.playerNode!)
-                data.sprite.texture = SKTexture(imageNamed: "floor")
-                data.sprite.zPosition = -999
-                self.addChild(data.sprite)
-
-            case .triggerGameCenter:
-                guard let trigger = makeGameCenterTrigger(from: data, with: configuration) else {
-                    return
-                }
-                self.switches.append(trigger)
-
-            case .deathPit, .triggerKill:
-                guard let killer = makeDeathPit(from: data, type: type) else {
-                    return
-                }
-                self.structure.addChild(killer)
-
-            case .floor:
-                data.sprite.zPosition = -999
-                self.structure.addChild(data.sprite)
-
-            case .door:
-                guard let receiver = makeDoor(from: data) else { return }
-                receiver.playerListener = self.playerNode
-                self.receivers.append(receiver)
-
-            case .lever:
-                guard let lever = makeLever(from: data) else { return }
-                self.switches.append(lever)
-
-            case .alarmClock:
-                guard let alarm = makeAlarmClock(from: data) else { return }
-                self.switches.append(alarm)
-
-            case .computerT1, .computerT2:
-                guard let computer = makeComputer(from: data, type: type) else { return }
-                self.switches.append(computer)
-
-            case .pressurePlate:
-                guard let plate = makePressurePlate(from: data) else { return }
-                self.switches.append(plate)
-
-            case .biometricScanner:
-                guard let iris = makeBiometrics(from: data) else { return }
-                self.switches.append(iris)
-
-            case .heavyObject:
-                guard let object = makeHeavyObject(from: data) else { return }
-                self.interactables.append(object)
-                data.sprite.texture = SKTexture(imageNamed: "floor")
-                data.sprite.zPosition = -999
-                self.addChild(data.sprite)
-            default:
-                break
-            }
-        }
-
-        for node in self.switches { node.zPosition -= 5; self.addChild(node) }
-        for node in self.receivers { node.zPosition -= 5; self.addChild(node) }
-        for node in self.interactables { self.addChild(node) }
-
-        for node in self.receivers where node.worldPosition == self.configuration?.exitLocation {
-            if let door = node as? DoorReceiver { self.exitNode = door }
-        }
-
-        // Delete the tilemap from memory.
-        tilemap.tileSet = SKTileSet(tileGroups: []); tilemap.removeFromParent()
-
-        // Finally, clump all of the non-player sprites under the structure node to prevent scene
-        // overbearing.
-        self.structure.zPosition = -5
-        self.addChild(self.structure)
-    }
+    /// The tile map node that contains the information about the world.
+    var world: CSTileMapParseable? = nil
 
     // MARK: SWITCH REQUISITE HANDLERS
     /// Parse the requisites and hook up the appropriate signal senders to their receivers.
@@ -191,9 +99,10 @@ class GameScene: SKScene {
                 level: .critical) { _ in self.callScene(name: "MainMenu") }
             return
         }
+        world = tilemap
 
         // Create switch requisites, parse the tilemap, then hook tp the signals/receivers according to the requisites.
-        self.setupTilemap(tilemap: tilemap)
+        self.generateWorld()
         self.linkSignalsAndReceivers()
 
         // Check that a player was generated.

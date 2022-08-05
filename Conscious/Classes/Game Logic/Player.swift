@@ -12,7 +12,8 @@
 import Foundation
 import SpriteKit
 import GameKit
-import GBMKUtils
+import CranberrySprite
+import Bunker
 
 /// A class representation of the game player.
 ///
@@ -438,8 +439,8 @@ public class Player: SKSpriteNode {
 
         guard var velocity = self.physicsBody?.velocity else { return }
         let maxSpeed: Float = 1.4
-        velocity.dx = CGFloat(Float(velocity.dx).clamp(in: (-1*maxSpeed)..<maxSpeed))
-        velocity.dy = CGFloat(Float(velocity.dy).clamp(in: (-1*maxSpeed)..<maxSpeed))
+        velocity.dx = CGFloat(Float(velocity.dx).clamp(to: (-1*maxSpeed)..<maxSpeed))
+        velocity.dy = CGFloat(Float(velocity.dy).clamp(to: (-1*maxSpeed)..<maxSpeed))
     }
 
     /// Stop the player from moving and remove all current animations.

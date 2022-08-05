@@ -19,12 +19,12 @@
       }
     },
     {
-      "identity" : "gbmkutils",
+      "identity" : "cranberrysprite",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/alicerunsonfedora/GBMKUtils.git",
+      "location" : "https://github.com/alicerunsonfedora/cranberrysprite",
       "state" : {
-        "revision" : "398d79a21f8afe511db90adcabfe7858560aacdb",
-        "version" : "0.2.1"
+        "branch" : "root",
+        "revision" : "3923a3189f63d857b86412fe070056b4fcc8789b"
       }
     },
     {

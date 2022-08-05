@@ -13,6 +13,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 import SwiftUI
+import CranberrySprite
 
 /// A subclass of a challenge game scene that allows users to record states.
 class AIRecordableGameScene: GameScene {
@@ -185,7 +186,7 @@ class AIRecordableGameScene: GameScene {
                     for _ in 1 ... 14 {
                         self.playerNode?.move(
                             PlayerMoveDirection.mappedFromAction(action.action),
-                            unit: self.unit ?? CGSize(squareOf: 128)
+                            unit: self.unit ?? .init(width: 128, height: 128)
                         )
                     }
                 },

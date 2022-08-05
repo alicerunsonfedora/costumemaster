@@ -6,20 +6,20 @@
 //
 
 import Foundation
-import GBMKUtils
+import CranberrySprite
 
 protocol GameSceneStructuralGenerator {
 
-    func makeWall(from data: GBMKTilemapParseData) -> GameStructureObject?
-    func makePlayer(from data: GBMKTilemapParseData, with configuration: LevelDataConfiguration?) -> Player?
-    func makeGameCenterTrigger(from data: GBMKTilemapParseData, with configuration:  LevelDataConfiguration?) -> GameAchievementTrigger?
-    func makeDeathPit(from data: GBMKTilemapParseData, type: GameTileType) -> GameDeathPit?
-    func makeDoor(from data: GBMKTilemapParseData) -> DoorReceiver?
-    func makeLever(from data: GBMKTilemapParseData) -> GameLever?
-    func makeAlarmClock(from data: GBMKTilemapParseData) -> GameAlarmClock?
-    func makeComputer(from data: GBMKTilemapParseData, type: GameTileType) -> GameComputer?
-    func makePressurePlate(from data: GBMKTilemapParseData) -> GamePressurePlate?
-    func makeBiometrics(from data: GBMKTilemapParseData) -> GameIrisScanner?
-    func makeHeavyObject(from data: GBMKTilemapParseData) -> GameHeavyObject?
+    func makeWall(from data: CSTileMapDefinition) -> GameStructureObject?
+    func makePlayer(from data: CSTileMapDefinition, with configuration: LevelDataConfiguration?) -> Player?
+    func makeGameCenterTrigger(from data: CSTileMapDefinition, with configuration:  LevelDataConfiguration?) -> GameAchievementTrigger?
+    func makeDeathPit(from data: CSTileMapDefinition, type: GameTileType) -> GameDeathPit?
+    func makeDoor(from data: CSTileMapDefinition) -> DoorReceiver?
+    func makeLever(from data: CSTileMapDefinition) -> GameLever?
+    func makeAlarmClock(from data: CSTileMapDefinition) -> GameAlarmClock?
+    func makeComputer(from data: CSTileMapDefinition, type: GameTileType) -> GameComputer?
+    func makePressurePlate(from data: CSTileMapDefinition) -> GamePressurePlate?
+    func makeBiometrics(from data: CSTileMapDefinition) -> GameIrisScanner?
+    func makeHeavyObject(from data: CSTileMapDefinition) -> GameHeavyObject?
 
 }

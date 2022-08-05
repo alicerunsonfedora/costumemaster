@@ -10,6 +10,7 @@
 //
 
 import Foundation
+import Bunker
 
 extension CommandLine {
     /// Parse the command line arguments to get the settings for this execution context.
@@ -21,7 +22,7 @@ extension CommandLine {
             agentTestingType: CommandLineArguments.AgentTestingType(
                 rawValue: CommandLine.getArgument(of: "--agent-type") ?? "random"
             ) ?? CommandLineArguments.AgentTestingType.randomMove,
-            agentMoveRate: Int(CommandLine.getArgument(of: "--agent-move-rate") ?? "")?.clamp(in: 1..<Int.max)
+            agentMoveRate: Int(CommandLine.getArgument(of: "--agent-move-rate") ?? "")?.clamp(to: 1..<Int.max)
         )
     }
 
@@ -37,7 +38,7 @@ extension CommandLine {
             ) ?? CommandLineArguments.AgentTestingType.randomMove,
             agentMoveRate: Int(
                 CommandLine.getArgument(of: "--agent-move-rate", from: arguments) ?? ""
-            )?.clamp(in: 1..<Int.max)
+            )?.clamp(to: 1..<Int.max)
         )
     }
 

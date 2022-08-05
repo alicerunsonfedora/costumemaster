@@ -13,6 +13,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 import SwiftUI
+import CranberrySprite
 
 /// A game scene that an AI agent can control.
 ///
@@ -206,7 +207,7 @@ class AIGameScene: ChallengeGameScene {
                     for _ in 1 ... 14 {
                         self.playerNode?.move(
                             PlayerMoveDirection.mappedFromAction(action.action),
-                            unit: self.unit ?? CGSize(squareOf: 128)
+                            unit: self.unit ?? .init(width: 128, height: 128)
                         )
                     }
                 },
