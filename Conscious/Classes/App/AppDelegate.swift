@@ -10,19 +10,18 @@
 //
 
 import Cocoa
-import SpriteKit
 import GameKit
 import KeyboardShortcuts
-import StoreKit
 import Preferences
+import SpriteKit
+import StoreKit
 
 #if canImport(SwiftUI)
-import SwiftUI
+    import SwiftUI
 #endif
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
     /// The arguments passed with the application.
     static var arguments: CommandLineArguments = CommandLine.parse()
 
@@ -66,7 +65,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         systemSymbolName: "gearshape.2",
                         accessibilityDescription: "Advanced settings icon"
                     )!
-                ) { PrefPaneAdvanced() }
+                ) { PrefPaneAdvanced() },
             ]
         )
         controller.window?.appearance = NSAppearance(named: .darkAqua)
@@ -92,11 +91,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     /// Open the preferences window.
-    @IBAction func instantiatePreferencesWindow(_ sender: Any) {
+    @IBAction func instantiatePreferencesWindow(_: Any) {
         preferencesWindowController.show()
     }
 
-    @IBAction func clearStore(_ sender: Any) {
+    @IBAction func clearStore(_: Any) {
         confirm(
             NSLocalizedString("costumemaster.confirm.clear_store", comment: "Clear store confirmation"),
             withTitle: NSLocalizedString("costumemaster.confirm.clear_store_title", comment: "Clear game store title"),
@@ -107,19 +106,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    @IBAction func showAbout(_ sender: Any) {
+    @IBAction func showAbout(_: Any) {
         GameManagerDelegate.loadScene(with: "About", keepHistory: true)
     }
 
-    @IBAction func startGame(_ sender: Any) {
+    @IBAction func startGame(_: Any) {
         GameManagerDelegate.startGame()
     }
 
-    @IBAction func resumeGame(_ sender: Any) {
+    @IBAction func resumeGame(_: Any) {
         GameManagerDelegate.resumeGame()
     }
 
-    @IBAction func openLevel(_ sender: Any) {
+    @IBAction func openLevel(_: Any) {
         let viewController = NSViewController()
         let levelSelector = GameLevelSelector(levels: getLevelProperties()) { name in
             viewController.dismiss(self)
@@ -131,7 +130,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         viewController.view = view
 
         if let main = NSApplication.shared.mainWindow?.contentViewController {
-            if main == self.preferencesWindowController.contentViewController {
+            if main == preferencesWindowController.contentViewController {
                 NSSound.beep()
                 print("Preferences must be closed before opening a new level.")
                 return
@@ -140,7 +139,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    @IBAction func recordSimulation(_ sender: Any) {
+    @IBAction func recordSimulation(_: Any) {
         let viewController = NSViewController()
         let levelSelector = GameLevelSelector(levels: getRecordableLevelProperties()) { name in
             viewController.dismiss(self)
@@ -155,7 +154,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         viewController.view = view
 
         if let main = NSApplication.shared.mainWindow?.contentViewController {
-            if main == self.preferencesWindowController.contentViewController {
+            if main == preferencesWindowController.contentViewController {
                 NSSound.beep()
                 print("Preferences must be closed before starting a recording.")
                 return
@@ -165,11 +164,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    @IBAction func callMainMenu(_ sender: Any) {
+    @IBAction func callMainMenu(_: Any) {
         GameManagerDelegate.callMainMenu()
     }
 
-    @IBAction func showGithub(_ sender: Any) {
+    @IBAction func showGithub(_: Any) {
         NSWorkspace.shared.open(URL(string: "https://github.com/alicerunsonfedora/costumemaster/issues/new")!)
     }
 
@@ -177,15 +176,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApplication.shared.showHelp(sender)
     }
 
-    @IBAction func restorePurchases(_ sender: Any) {
+    @IBAction func restorePurchases(_: Any) {
         IAPObserver.shared.restore()
     }
 
-    @IBAction func showReloadedPromptFromMenu(_ sender: Any) {
+    @IBAction func showReloadedPromptFromMenu(_: Any) {
         AppDelegate.showReloadedPrompt()
     }
 
-    @IBAction func openSimulator(_ sender: Any) {
+    @IBAction func openSimulator(_: Any) {
         let hostingController = NSApplication.shared.mainWindow?.contentViewController
         let viewController = NSViewController()
         let hostingView = NSHostingView(rootView: AISimulatorView { agentType, level, budget in
@@ -197,7 +196,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         hostingController?.presentAsModalWindow(viewController)
     }
 
-    @IBAction func openSimulatorConsole(_ sender: Any) {
+    @IBAction func openSimulatorConsole(_: Any) {
         if let controller = NSApplication.shared.mainWindow?.contentViewController as? ViewController {
             if let view = controller.view as? SKView {
                 if let scene = view.scene as? AIGameScene {
@@ -207,7 +206,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     sendAlert(
                         NSLocalizedString("costumemaster.alert.simulator_console_invalid_error", comment: "Simulator invalid error"),
                         withTitle: NSLocalizedString("costumemaster.alert.simulator_console_invalid_error_title", comment: "Simulator invalid error title"),
-                        level: .informational) { _ in }
+                        level: .informational
+                    ) { _ in }
                 }
             }
         }
@@ -229,14 +229,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             [
                 "--agent-test-mode", "true",
                 "--agent-type", agentType.rawValue,
-                "--agent-move-rate", "\(budget)"
+                "--agent-move-rate", "\(budget)",
             ]
         )
         GameManagerDelegate.loadScene(with: level + "AI", keepHistory: true, fadeDuration: 3.0)
         GameManagerDelegate.canRunSimulator = false
     }
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    func applicationDidFinishLaunching(_: Notification) {
         AppDelegate.updateDockTile(UserDefaults.standard.string(forKey: "dockIconName"))
         GameManagerDelegate.canRunSimulator = true
 
@@ -257,10 +257,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
+    func applicationWillTerminate(_: Notification) {
         DispatchQueue.main.async {
             SKPaymentQueue.default().remove(IAPObserver.shared)
         }
     }
-
 }

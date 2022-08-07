@@ -13,7 +13,6 @@ import SwiftUI
 
 /// A view that allows player to read console messages about a game scene.
 struct AISimulatorConsole: View {
-
     /// The console model.
     @ObservedObject var console: ConsoleViewModel
 
@@ -59,7 +58,7 @@ struct AISimulatorConsole: View {
     /// A list of the console's messages.
     var messageList: [ConsoleViewModel.Message] {
         let history = console.messages.filter { mes in console.filter.contains(mes.type) }
-        return self.console.nowMode ? history.reversed() : history
+        return console.nowMode ? history.reversed() : history
     }
 
     /// The color-coded icon for the console message.

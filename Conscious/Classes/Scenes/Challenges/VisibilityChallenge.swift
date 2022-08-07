@@ -10,16 +10,14 @@
 //
 
 import Foundation
-import SpriteKit
 import GameKit
+import SpriteKit
 
 /// The challenge scene associated with "Visibility".
 class VisibilityChallenge: ChallengeGameScene {
-
     /// Grant the "Now You See Me" achievement.
     override func willCalculateChallengeResults() {
         super.willCalculateChallengeResults()
         GKAchievement.earn(with: .visibility)
     }
-
 }

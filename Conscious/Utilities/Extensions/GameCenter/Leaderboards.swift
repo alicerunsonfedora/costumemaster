@@ -27,12 +27,14 @@ extension GKLeaderboard {
             score,
             context: 0,
             player: GKLocalPlayer.local,
-            leaderboardIDs: [leaderboard]) { (error) in
+            leaderboardIDs: [leaderboard]
+        ) { error in
             guard error == nil else {
                 sendAlert(
                     error.debugDescription,
                     withTitle: NSLocalizedString("costumemaster.alert.leaderboard_submit_error_title", comment: "Leaderboard submit error"),
-                    level: .critical) { _ in }
+                    level: .critical
+                ) { _ in }
                 return
             }
         }

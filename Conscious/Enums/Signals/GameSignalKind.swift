@@ -13,7 +13,6 @@ import Foundation
 
 /// An enumeration that represent the different kinds of inputs.
 public enum GameSignalKind {
-
     /// A computer with the "T1" security lock.
     case computerT1
 

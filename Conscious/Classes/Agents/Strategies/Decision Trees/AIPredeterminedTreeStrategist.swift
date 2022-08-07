@@ -14,11 +14,10 @@ import GameplayKit
 
 /// A strategist that will pick the best move based on a predetermined GKDecisionTree.
 class AIPredeterminedTreeStrategist: AITreeStrategy {
-
     /// Initialize a predetermined tree strategist.
     override init() {
         super.init()
-        self.recordsHistory = false
+        recordsHistory = false
     }
 
     /// Returns the decision tree that the agent will use to determine its next best move.

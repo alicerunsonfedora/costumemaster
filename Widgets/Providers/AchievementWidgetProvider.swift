@@ -10,24 +10,24 @@
 //
 
 import Foundation
-import WidgetKit
 import Intents
+import WidgetKit
 
 @available(OSX 11, *)
 struct AchievementWidgetProvider: TimelineProvider {
-    func placeholder(in context: Context) -> AchievementEntry {
-        return AchievementEntry(date: Date(), achievementId: .superliminal)
+    func placeholder(in _: Context) -> AchievementEntry {
+        AchievementEntry(date: Date(), achievementId: .superliminal)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (AchievementEntry) -> Void) {
+    func getSnapshot(in _: Context, completion: @escaping (AchievementEntry) -> Void) {
         let entry = AchievementEntry(date: Date(), achievementId: getAchievementInStore())
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<AchievementEntry>) -> Void) {
+    func getTimeline(in _: Context, completion: @escaping (Timeline<AchievementEntry>) -> Void) {
         var entries: [AchievementEntry] = []
         let currentDate = Date()
-        for hourOffset in 0..<3 {
+        for hourOffset in 0 ..< 3 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
             let entry = AchievementEntry(date: entryDate, achievementId: getAchievementInStore())
             entries.append(entry)

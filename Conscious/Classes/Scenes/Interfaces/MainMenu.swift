@@ -10,12 +10,11 @@
 //
 
 import Foundation
-import SpriteKit
 import GameKit
+import SpriteKit
 
 /// The scene class for the main menu.
 class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
-
     /// The label node for the word "The".
     var labelSmall: SKLabelNode?
 
@@ -64,78 +63,76 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
     /// - SeeAlso: ``instantiateAccessPoint``
     @available(*, deprecated, renamed: "instantiateAccessPoint")
     func setUpGameCenterProperties() {
-        self.instantiateAccessPoint()
+        instantiateAccessPoint()
     }
 
     /// Set up the Game Center button for the main menu.
-    override func didMove(to view: SKView) {
-        self.instantiateAccessPoint()
+    override func didMove(to _: SKView) {
+        instantiateAccessPoint()
     }
 
     /// Set up the scene and play the main menu music.
     override func sceneDidLoad() {
-
         // Reset the scale mode to fit accordingly.
-        self.scaleMode = .aspectFill
+        scaleMode = .aspectFill
 
         // Instantiate the appropriate label nodes and add their fonts, respectively.
-        if let label = self.childNode(withName: "smallLabel") as? SKLabelNode {
-            self.labelSmall = label
-            self.labelSmall?.fontName = "Cabin Regular"
+        if let label = childNode(withName: "smallLabel") as? SKLabelNode {
+            labelSmall = label
+            labelSmall?.fontName = "Cabin Regular"
         }
 
-        if let title = self.childNode(withName: "titleLabel") as? SKLabelNode {
-            self.labelTitle = title
-            self.labelTitle?.fontName = "Dancing Script Regular Regular"
+        if let title = childNode(withName: "titleLabel") as? SKLabelNode {
+            labelTitle = title
+            labelTitle?.fontName = "Dancing Script Regular Regular"
         }
 
-        if let start = self.childNode(withName: "startGame") as? SKLabelNode {
-            self.startButton = start
-            self.startButton?.fontName = "Cabin Regular"
-            self.startButton?.text = NSLocalizedString("costumemaster.ui.main_new_game", comment: "New Game")
+        if let start = childNode(withName: "startGame") as? SKLabelNode {
+            startButton = start
+            startButton?.fontName = "Cabin Regular"
+            startButton?.text = NSLocalizedString("costumemaster.ui.main_new_game", comment: "New Game")
         }
 
-        if let options = self.childNode(withName: "showOptions") as? SKLabelNode {
-            self.optionsButton = options
-            self.optionsButton?.fontName = "Cabin Regular"
-            self.optionsButton?.text = NSLocalizedString("costumemaster.ui.main_options", comment: "Options")
-
+        if let options = childNode(withName: "showOptions") as? SKLabelNode {
+            optionsButton = options
+            optionsButton?.fontName = "Cabin Regular"
+            optionsButton?.text = NSLocalizedString("costumemaster.ui.main_options", comment: "Options")
         }
 
-        if let quit = self.childNode(withName: "quitGame") as? SKLabelNode {
-            self.quitButton = quit
-            self.quitButton?.fontName = "Cabin Regular"
-            self.quitButton?.text = NSLocalizedString("costumemaster.ui.main_quit", comment: "Quit Game")
+        if let quit = childNode(withName: "quitGame") as? SKLabelNode {
+            quitButton = quit
+            quitButton?.fontName = "Cabin Regular"
+            quitButton?.text = NSLocalizedString("costumemaster.ui.main_quit", comment: "Quit Game")
         }
 
-        if let resume = self.childNode(withName: "resumeGame") as? SKLabelNode {
-            self.resumeButton = resume
-            self.resumeButton?.fontName = "Cabin Regular"
-            self.resumeButton?.text = NSLocalizedString("costumemaster.ui.main_load_game", comment: "Resume Game")
+        if let resume = childNode(withName: "resumeGame") as? SKLabelNode {
+            resumeButton = resume
+            resumeButton?.fontName = "Cabin Regular"
+            resumeButton?.text = NSLocalizedString("costumemaster.ui.main_load_game", comment: "Resume Game")
 
             if GameStore.shared.lastSavedScene == "" {
-                self.resumeButton?.alpha = 0.1
+                resumeButton?.alpha = 0.1
             }
         }
 
-        if let dlcButton = self.childNode(withName: "dlcButton") as? SKSpriteNode {
-            self.watchYourStepButton = dlcButton
-            self.watchYourStepButton?.texture?.filteringMode = .nearest
+        if let dlcButton = childNode(withName: "dlcButton") as? SKSpriteNode {
+            watchYourStepButton = dlcButton
+            watchYourStepButton?.texture?.filteringMode = .nearest
         }
 
-        if let reloadedButton = self.childNode(withName: "reloadedButton") as? SKSpriteNode {
+        if let reloadedButton = childNode(withName: "reloadedButton") as? SKSpriteNode {
             self.reloadedButton = reloadedButton
         }
 
         // Get the character sprite and change the interpolation method to nearest neighbor.
-        if let char = self.childNode(withName: "character") as? SKSpriteNode {
-            self.character = char
+        if let char = childNode(withName: "character") as? SKSpriteNode {
+            character = char
 
-            if UserDefaults.canShowUnmodeled && UserDefaults.showUnmodeled {
-                self.character?.texture = SKTexture(imageNamed: "Character_Unmodeled")
+            if UserDefaults.canShowUnmodeled, UserDefaults.showUnmodeled {
+                character?.texture = SKTexture(imageNamed: "Character_Unmodeled")
             }
 
-            self.character?.texture?.filteringMode = .nearest
+            character?.texture?.filteringMode = .nearest
         }
 
         let music = SKAudioNode(fileNamed: "minute")
@@ -144,14 +141,14 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         music.isPositional = false
         music.run(SKAction.sequence([
             SKAction.changeVolume(to: UserDefaults.musicVolume, duration: 0.01),
-            SKAction.play()
+            SKAction.play(),
         ]))
-        self.addChild(music)
+        addChild(music)
     }
 
     /// Dismiss the Game Center view controller when done.
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-        if let sceneViewController = self.view?.window?.contentViewController {
+        if let sceneViewController = view?.window?.contentViewController {
             sceneViewController.dismiss(gameCenterViewController)
         }
     }
@@ -165,5 +162,4 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         GKAccessPoint.shared.isActive = true
         GKAccessPoint.shared.parentWindow = NSApplication.shared.mainWindow
     }
-
 }

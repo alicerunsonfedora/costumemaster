@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ReloadedView: View {
-
     var onDismiss: () -> Void
 
     var body: some View {

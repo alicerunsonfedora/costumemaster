@@ -9,12 +9,11 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 /// A class for handling console output.
 public class ConsoleViewModel: ObservableObject {
-
     /// The list of console messages that have been logged.
     @Published public var messages: [Message] = []
 
@@ -26,7 +25,6 @@ public class ConsoleViewModel: ObservableObject {
 
     /// An enumeration that represents the type of messages that can be logged.
     public enum MessageType: String {
-
         /// An informational message.
         case info = "INFO"
 
@@ -48,7 +46,6 @@ public class ConsoleViewModel: ObservableObject {
 
     /// A data structure that represents a console message.
     public struct Message: Identifiable {
-
         /// The contents of the message.
         public let contents: String
 
@@ -75,7 +72,7 @@ public class ConsoleViewModel: ObservableObject {
     }
 
     private func sendMessage(with data: String, type: MessageType, silent: Bool) {
-        let (hour, min, sec) = self.time()
+        let (hour, min, sec) = time()
         let timestamp = String(format: "%02d:%02d:%02d", hour, min, sec)
         if !silent { print("[\(type.rawValue)]\t\(timestamp)\t" + data) }
         messages.append(Message(contents: data, type: type, timestamp: timestamp))
@@ -85,47 +82,47 @@ public class ConsoleViewModel: ObservableObject {
     /// - Parameter message: The contents of the message entry.
     /// - Parameter silent: Whether to skip printing the message to the terminal.
     public func log(_ message: String, silent: Bool = false) {
-        self.sendMessage(with: message, type: .unknown, silent: silent)
+        sendMessage(with: message, type: .unknown, silent: silent)
     }
 
     /// Log an informational message to the console.
     /// - Parameter message: The contents of the message entry.
     /// - Parameter silent: Whether to skip printing the message to the terminal.
     public func info(_ message: String, silent: Bool = false) {
-        self.sendMessage(with: message, type: .info, silent: silent)
+        sendMessage(with: message, type: .info, silent: silent)
     }
 
     /// Log a warning to the console.
     /// - Parameter message: The contents of the message entry.
     /// - Parameter silent: Whether to skip printing the message to the terminal.
     public func warn(_ message: String, silent: Bool = false) {
-        self.sendMessage(with: message, type: .warning, silent: silent)
+        sendMessage(with: message, type: .warning, silent: silent)
     }
 
     /// Log an error message to the console.
     /// - Parameter message: The contents of the message entry.
     /// - Parameter silent: Whether to skip printing the message to the terminal.
     public func error(_ message: String, silent: Bool = false) {
-        self.sendMessage(with: message, type: .error, silent: silent)
+        sendMessage(with: message, type: .error, silent: silent)
     }
 
     /// Log a debugging message to the console.
     /// - Parameter message: The contents of the message entry.
     /// - Parameter silent: Whether to skip printing the message to the terminal.
     public func debug(_ message: String, silent: Bool = true) {
-        self.sendMessage(with: message, type: .debug, silent: silent)
+        sendMessage(with: message, type: .debug, silent: silent)
     }
 
     /// Log a success message to the console.
     /// - Parameter message: The contents of the message entry.
     /// - Parameter silent: Whether to skip printing the message to the terminal.
     public func success(_ message: String, silent: Bool = false) {
-        self.sendMessage(with: message, type: .success, silent: silent)
+        sendMessage(with: message, type: .success, silent: silent)
     }
 
     /// Clears the console.
     public func clear() {
-        self.messages = []
-        self.info("Console cleared.", silent: true)
+        messages = []
+        info("Console cleared.", silent: true)
     }
 }

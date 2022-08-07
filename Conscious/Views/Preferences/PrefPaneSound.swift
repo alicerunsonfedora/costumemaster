@@ -12,7 +12,6 @@
 import SwiftUI
 
 struct PrefPaneSound: View {
-
     @AppStorage("soundMusicVolume")
     var musicVolume: Double = 0.5
 
@@ -32,7 +31,7 @@ struct PrefPaneSound: View {
         VStack(alignment: .leading) {
             Slider(
                 value: $musicVolume,
-                in: 0...1.0,
+                in: 0 ... 1.0,
                 minimumValueLabel: Image("speaker.fill"),
                 maximumValueLabel: Image("speaker.wave.3.fill")
             ) { Text("costumemaster.settings.sound_music_volume") }
@@ -44,7 +43,6 @@ struct PrefPaneSound: View {
                     Toggle(isOn: $computer) { Text("costumemaster.settings.sound_sfx_computer") }
                     Toggle(isOn: $alarm) { Text("costumemaster.settings.sound_sfx_alarm") }
                     Toggle(isOn: $lever) { Text("costumemaster.settings.sound_sfx_lever") }
-
                 }
             }
         }

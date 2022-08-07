@@ -13,7 +13,6 @@ import SwiftUI
 
 /// A view that allows player to customize AI simulation features
 struct AISimulatorView: View {
-
     /// The type of agent to run in the simulation.
     @State var agentType: CommandLineArguments.AgentTestingType = .randomMove
 
@@ -69,7 +68,7 @@ struct AISimulatorView: View {
             Label("costumemaster.ai_sim.select_title", image: "dpad.fill")
                 .font(
                     .system(.largeTitle, design: .rounded)
-                    .bold()
+                        .bold()
                 )
             Text("costumemaster.ai_sim.select_detail")
 
@@ -106,8 +105,8 @@ struct AISimulatorView: View {
                 HStack {
                     Text("costumemaster.ai_sim.select_limit_prompt")
                     Spacer()
-                    Stepper(value: $agentBudget, in: 1...Int.max, step: 1) {
-                        Text("\(agentBudget) move\(agentBudget > 1 ? "s": "")")
+                    Stepper(value: $agentBudget, in: 1 ... Int.max, step: 1) {
+                        Text("\(agentBudget) move\(agentBudget > 1 ? "s" : "")")
                     }
                 }
 
@@ -115,7 +114,6 @@ struct AISimulatorView: View {
                     Label("costumemaster.ai_sim.select_exceed_warn", systemImage: "exclamationmark.triangle")
                         .foregroundColor(.secondary)
                 }
-
             }
 
             Spacer()
@@ -164,7 +162,7 @@ struct AISimulatorView: View {
 /// A preview container for the simulator view.
 struct AISimulatorView_Previews: PreviewProvider {
     static var previews: some View {
-        AISimulatorView { (_, _, _) in }
+        AISimulatorView { _, _, _ in }
             .frame(width: 400, height: 450)
     }
 }

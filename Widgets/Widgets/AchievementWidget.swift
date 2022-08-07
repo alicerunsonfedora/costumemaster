@@ -5,9 +5,9 @@
 //  Created by Marquis Kurt on 3/10/21.
 //
 
-import WidgetKit
-import SwiftUI
 import Intents
+import SwiftUI
+import WidgetKit
 
 @available(OSX 11, *)
 struct AchievementWidget: Widget {

@@ -13,8 +13,8 @@ import Foundation
 
 /// An enumeration that represents the moves an agent can make.
 public enum AIGamePlayerAction: String, CaseIterable {
-
     // MARK: - MOVEMENT
+
     /// Move the agent left.
     case moveLeft = "MOVE_LEFT"
 

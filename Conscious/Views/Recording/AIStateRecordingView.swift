@@ -12,7 +12,6 @@
 import SwiftUI
 
 struct AIStateRecordingView: View {
-
     @ObservedObject var journal: StateRecorderViewModel
 
     @State private var action: NextAction = .nothing
@@ -90,7 +89,6 @@ struct AIStateRecordingView: View {
                         )
                     }
                 }
-
             }
 
             HStack {
@@ -119,8 +117,8 @@ struct AIStateRecordingView: View {
                     journal.currentAction = action.rawValue
                 }
                     label: {
-                        Text("costumemaster.ai_record.perform_button")
-                    }
+                    Text("costumemaster.ai_record.perform_button")
+                }
             }
         }
         .padding()

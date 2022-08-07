@@ -14,10 +14,8 @@ import GameplayKit
 
 /// An abstract class that represents a game state/model.
 class AIAbstractGameState: NSObject, GKGameModel {
-
     /// A structure that defines a state assessement.
     public struct Assessement {
-
         /// Can the agent escape?
         let canEscape: Bool
 
@@ -64,48 +62,48 @@ class AIAbstractGameState: NSObject, GKGameModel {
                 wearingCostume,
                 hasObject,
                 nearObject,
-                allInputsActive
+                allInputsActive,
             ]
         }
 
         /// Returns a copy of the assessement as a dictionary suitable for decision trees.
         func toDict() -> [AnyHashable: NSObjectProtocol] {
-            return [
-                "canEscape?": self.canEscape as NSObjectProtocol,
-                "nearExit?": self.nearExit as NSObjectProtocol,
-                "nearInput?": self.nearInput as NSObjectProtocol,
-                "inputActive?": self.inputActive as NSObjectProtocol,
-                "inputRelevant?": self.inputRelevant as NSObjectProtocol,
-                "requiresObject?": self.requiresObject as NSObjectProtocol,
-                "wearingCostume?": self.wearingCostume as NSObjectProtocol,
-                "requiresCostume?": self.requiresCostume as NSObjectProtocol,
-                "hasObject?": self.hasObject as NSObjectProtocol,
-                "nearObj?": self.nearObject as NSObjectProtocol,
-                "allInputsActive?": self.allInputsActive as NSObjectProtocol
+            [
+                "canEscape?": canEscape as NSObjectProtocol,
+                "nearExit?": nearExit as NSObjectProtocol,
+                "nearInput?": nearInput as NSObjectProtocol,
+                "inputActive?": inputActive as NSObjectProtocol,
+                "inputRelevant?": inputRelevant as NSObjectProtocol,
+                "requiresObject?": requiresObject as NSObjectProtocol,
+                "wearingCostume?": wearingCostume as NSObjectProtocol,
+                "requiresCostume?": requiresCostume as NSObjectProtocol,
+                "hasObject?": hasObject as NSObjectProtocol,
+                "nearObj?": nearObject as NSObjectProtocol,
+                "allInputsActive?": allInputsActive as NSObjectProtocol,
             ]
         }
     }
 
     /// The list of players in this model.
     var players: [GKGameModelPlayer]? {
-        return [player]
+        [player]
     }
 
     /// The currently active player in this model.
     var activePlayer: GKGameModelPlayer? {
-        return player
+        player
     }
 
     /// A string that describes the state to a receiver.
     override var description: String {
-        return "AIGameState(at exit: \(self.exit), inputs: \(self.inputs), outputs: \(self.outputs))"
+        "AIGameState(at exit: \(exit), inputs: \(inputs), outputs: \(outputs))"
     }
 
     /// The player in the game state.
     var player: AIAbstractGamePlayer
 
     /// The position of the exit door.
-    public var exit: CGPoint = CGPoint.zero
+    public var exit: CGPoint = .zero
 
     /// Whether the player can leave the world successfully.
     public var escapable: Bool = false
@@ -129,16 +127,15 @@ class AIAbstractGameState: NSObject, GKGameModel {
     /// - Parameter gameModel: The game model to set the internal model to.
     func setGameModel(_ gameModel: GKGameModel) {
         guard let model = gameModel as? AIAbstractGameState else { return }
-        self.exit = model.exit
-        self.inputs = model.inputs
-        self.outputs = model.outputs
-        self.interactableObjects = model.interactableObjects
-        self.player = model.player
+        exit = model.exit
+        inputs = model.inputs
+        outputs = model.outputs
+        interactableObjects = model.interactableObjects
+        player = model.player
 
-        self.escapable = !model.inputs.filter { (input: AIAbstractGameSignalSender) in
+        escapable = !model.inputs.filter { (input: AIAbstractGameSignalSender) in
             input.outputs.contains(self.exit)
         }.isEmpty
-
     }
 
     /// Returns the set of moves available to the specified player.
@@ -147,7 +144,7 @@ class AIAbstractGameState: NSObject, GKGameModel {
     func gameModelUpdates(for player: GKGameModelPlayer) -> [GKGameModelUpdate]? {
         var moves = [AIGameDecision]()
         for move in AIGamePlayerAction.allCases {
-            moves.append(AIGameDecision(by: move, with: self.score(for: player)))
+            moves.append(AIGameDecision(by: move, with: score(for: player)))
         }
         return moves
     }
@@ -159,17 +156,17 @@ class AIAbstractGameState: NSObject, GKGameModel {
         guard let update = gameModelUpdate as? AIGameDecision else { return }
         switch update.action {
         case .moveUp, .moveDown:
-            self.player.position.y += 64 * (update.action == .moveUp ? 1 : -1)
+            player.position.y += 64 * (update.action == .moveUp ? 1 : -1)
         case .moveLeft, .moveRight:
-            self.player.position.x += 64 * (update.action == .moveRight ? 1 : -1)
+            player.position.x += 64 * (update.action == .moveRight ? 1 : -1)
         case .deployClone, .retractClone:
-            self.player.deployedClone.toggle()
+            player.deployedClone.toggle()
         case .switchToNextCostume:
-            self.player.nextCostume()
+            player.nextCostume()
         case .switchToPreviousCostume:
-            self.player.prevCostume()
+            player.prevCostume()
         case .pickup, .drop:
-            for object in self.interactableObjects where object.distance(between: self.player.position) < 64 {
+            for object in interactableObjects where object.distance(between: player.position) < 64 {
                 if self.player.inventory.contains(object) {
                     self.player.inventory.removeAll { obj in obj == object }
                 } else {
@@ -182,14 +179,14 @@ class AIAbstractGameState: NSObject, GKGameModel {
     }
 
     /// Create a copy of this object.
-    func copy(with zone: NSZone? = nil) -> Any {
-        let copy = AIAbstractGameState(with: self.player)
-        copy.exit = self.exit
-        copy.inputs = self.inputs
-        copy.outputs = self.outputs
-        copy.escapable = self.escapable
-        copy.player = self.player
-        copy.interactableObjects = self.interactableObjects
+    func copy(with _: NSZone? = nil) -> Any {
+        let copy = AIAbstractGameState(with: player)
+        copy.exit = exit
+        copy.inputs = inputs
+        copy.outputs = outputs
+        copy.escapable = escapable
+        copy.player = player
+        copy.interactableObjects = interactableObjects
         copy.setGameModel(self)
         return copy
     }
@@ -197,13 +194,12 @@ class AIAbstractGameState: NSObject, GKGameModel {
     /// Returns whether the current state is a winning state.
     func isWin(for player: GKGameModelPlayer) -> Bool {
         guard let agent = player as? AIAbstractGamePlayer else { return false }
-        return agent.position.distance(between: self.exit) < 64 && self.escapable
+        return agent.position.distance(between: exit) < 64 && escapable
     }
 
     /// Returns an integer that scores the current state.
     func score(for player: GKGameModelPlayer) -> Int {
         guard let agent = player as? AIAbstractGamePlayer else { return -999 }
-        return agent.playerId * Int.random(in: 1...10)
+        return agent.playerId * Int.random(in: 1 ... 10)
     }
-
 }

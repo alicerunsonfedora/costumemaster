@@ -16,7 +16,6 @@ import Foundation
 /// This is typically used to construct a state recording to be fed into a machine learning
 /// model for the Teal Converse agent.
 struct AIStateRecordable: Codable {
-
     /// The CSV file headers for this structure.
     static let csvHeaders = [
         "canEscape",
@@ -30,7 +29,7 @@ struct AIStateRecordable: Codable {
         "hasObject",
         "nearObject",
         "allInputsActive",
-        "action"
+        "action",
     ]
 
     /// Can the agent escape?
@@ -73,17 +72,17 @@ struct AIStateRecordable: Codable {
     /// - Parameter assessment: The assessment to use
     /// - Parameter result: The resulting action from the assessment
     init(from assessment: AIAbstractGameState.Assessement, with result: String) {
-        self.allInputsActive = assessment.allInputsActive
-        self.canEscape = assessment.canEscape
-        self.hasObject = assessment.hasObject
-        self.inputActive = assessment.inputActive
-        self.inputRelevant = assessment.inputRelevant
-        self.nearExit = assessment.nearExit
-        self.nearInput = assessment.nearInput
-        self.nearObject = assessment.nearObject
-        self.requiresCostume = assessment.requiresCostume
-        self.requiresObject = assessment.requiresObject
-        self.wearingCostume = assessment.wearingCostume
-        self.action = result
+        allInputsActive = assessment.allInputsActive
+        canEscape = assessment.canEscape
+        hasObject = assessment.hasObject
+        inputActive = assessment.inputActive
+        inputRelevant = assessment.inputRelevant
+        nearExit = assessment.nearExit
+        nearInput = assessment.nearInput
+        nearObject = assessment.nearObject
+        requiresCostume = assessment.requiresCostume
+        requiresObject = assessment.requiresObject
+        wearingCostume = assessment.wearingCostume
+        action = result
     }
 }

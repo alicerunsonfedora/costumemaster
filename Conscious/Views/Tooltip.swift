@@ -16,19 +16,18 @@ import SwiftUI
 /// Credit goes to onmyway133: https://onmyway133.github.io/blog/How-to-make-tooltip-in-SwiftUI-for-macOS/
 @available(macOS, introduced: 10.15, deprecated: 11.0, message: "Use the .help modifier instead.")
 struct Tooltip: NSViewRepresentable {
-
     /// The tooltip message to display.
     let tooltip: String
 
     /// Create the view.
-    func makeNSView(context: NSViewRepresentableContext<Tooltip>) -> NSView {
+    func makeNSView(context _: NSViewRepresentableContext<Tooltip>) -> NSView {
         let view = NSView()
         view.toolTip = tooltip
         return view
     }
 
     /// Update the view.
-    func updateNSView(_ nsView: NSView, context: NSViewRepresentableContext<Tooltip>) {
+    func updateNSView(_ nsView: NSView, context _: NSViewRepresentableContext<Tooltip>) {
         nsView.toolTip = tooltip
     }
 }

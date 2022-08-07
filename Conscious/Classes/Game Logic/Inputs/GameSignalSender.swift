@@ -14,7 +14,6 @@ import SpriteKit
 
 /// A base class that determines an input.
 public class GameSignalSender: GameStructureObject {
-
     // MARK: STORED PROPERTIES
 
     /// Whether the input is currently active. Defaults to false.
@@ -36,20 +35,20 @@ public class GameSignalSender: GameStructureObject {
     var cooldown: Double
 
     // MARK: COMPUTED PROPERTIES
+
     /// The texture for this input, accounting for active states.
     var activeTexture: SKTexture {
-        return SKTexture(imageNamed: self.baseTexture + (self.active ? "_on" : "_off"))
+        SKTexture(imageNamed: self.baseTexture + (self.active ? "_on" : "_off"))
     }
 
     /// The description for this class.
-    public override var description: String {
-        return "\(self.className)(active: \(self.active), gate: \(self.activationMethod), "
-        + "outputs: \(self.receivers), position: \(self.worldPosition))"
+    override public var description: String {
+        "\(className)(active: \(active), gate: \(activationMethod), "
+            + "outputs: \(receivers), position: \(worldPosition))"
     }
 
     /// An enumeration that defines the different types of inputs that are used in the game.
     public enum InputMethod {
-
         /// The input is active once and remains active permanently.
         case activeOncePermanently
 
@@ -64,23 +63,25 @@ public class GameSignalSender: GameStructureObject {
     }
 
     // MARK: CONSTRUCTOR
+
     /// Initialize the input.
     /// - Parameter textureName: The name of the texture for this input.
     /// - Parameter inputMethods: The means of which this input will be activated by.
     public init(textureName: String, by inputMethods: [InputMethod], at position: CGPoint) {
-        self.baseTexture = textureName
-        self.activationMethod = inputMethods
-        self.cooldown = 0
-        self.receivers = []
+        baseTexture = textureName
+        activationMethod = inputMethods
+        cooldown = 0
+        receivers = []
         super.init(
             with: SKTexture(imageNamed: textureName + "_off"),
             size: SKTexture(imageNamed: textureName + "_off").size()
         )
-        self.worldPosition = position
-        self.texture = self.activeTexture
+        worldPosition = position
+        texture = activeTexture
     }
 
     // MARK: CONSTRUCTOR
+
     /// Initialize the input.
     /// - Parameter textureName: The name of the texture for this input.
     /// - Parameter inputMethods: The means of which this input will be activated by.
@@ -91,43 +92,45 @@ public class GameSignalSender: GameStructureObject {
         at position: CGPoint,
         with timer: Double
     ) {
-        self.baseTexture = textureName
-        self.cooldown = timer
-        self.activationMethod = inputMethods
-        self.receivers = []
+        baseTexture = textureName
+        cooldown = timer
+        activationMethod = inputMethods
+        receivers = []
         super.init(
             with: SKTexture(imageNamed: textureName + "_off"),
             size: SKTexture(imageNamed: textureName + "_off").size()
         )
-        self.worldPosition = position
-        self.texture = self.activeTexture
+        worldPosition = position
+        texture = activeTexture
     }
 
     /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.
-    required init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: METHODS
+
     /// Toggle the active state for this input.
     private func toggle() {
-        self.active.toggle()
-        self.texture = self.activeTexture
+        active.toggle()
+        texture = activeTexture
     }
 
     /// Set the state of this input as active.
     private func setActiveState() {
-        self.active = true
-        self.texture = self.activeTexture
-        for receiver in self.receivers {
+        active = true
+        texture = activeTexture
+        for receiver in receivers {
             receiver.update()
         }
     }
 
     /// Set the state of this input as inactive.
     private func setInactiveState() {
-        self.active = false
-        self.texture = self.activeTexture
+        active = false
+        texture = activeTexture
     }
 
     /// Activate the input given an event and player.
@@ -166,16 +169,15 @@ public class GameSignalSender: GameStructureObject {
 
         if activationMethod.contains(.activeOnTimer) {
             activationEvents += [
-                SKAction.wait(forDuration: self.cooldown),
+                SKAction.wait(forDuration: cooldown),
                 SKAction.run {
                     self.setInactiveState()
                     self.onDeactivate(with: event, player: player)
-                }
+                },
             ]
         }
 
-        self.run(SKAction.sequence(activationEvents))
-
+        run(SKAction.sequence(activationEvents))
     }
 
     /// Whether the input should turn on/off based on player or object intervention.
@@ -184,21 +186,21 @@ public class GameSignalSender: GameStructureObject {
     /// - Returns: Whether the input should activate given the intervention criteria.
     /// - Important: This method should be implemented on inputs that listen to player intervention.
     /// This will default to false otherwise.
-    public func shouldActivateOnIntervention(with player: Player?, objects: [SKSpriteNode?]) -> Bool {
-        return false
+    public func shouldActivateOnIntervention(with _: Player?, objects _: [SKSpriteNode?]) -> Bool {
+        false
     }
 
     /// Run any post-activation methods.
     /// - Parameter event: The event handler that triggered the activation.
     /// - Parameter player: The player that triggered the activation.
-    public func onActivate(with event: NSEvent?, player: Player?) {
+    public func onActivate(with _: NSEvent?, player _: Player?) {
         print("onActivate has not been implemented.")
     }
 
     /// Run any post-deactivation methods.
     /// - Parameter event: The event handler that triggered the activation.
     /// - Parameter player: The player that triggered the activation.
-    public func onDeactivate(with event: NSEvent?, player: Player?) {
+    public func onDeactivate(with _: NSEvent?, player _: Player?) {
         print("onDeactivate has not been implemented.")
     }
 }

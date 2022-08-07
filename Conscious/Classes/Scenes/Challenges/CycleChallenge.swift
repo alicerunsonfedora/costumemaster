@@ -10,16 +10,14 @@
 //
 
 import Foundation
-import SpriteKit
 import GameKit
+import SpriteKit
 
 /// The game scene specific to the level "Cycle".
 class CycleChallenge: ChallengeGameScene {
-
     /// Submit the current time to the dailly leaderboards if running on macOS Big Sur.
     override func willCalculateChallengeResults() {
-        GKLeaderboard.submit(to: .cycleDaily, with: Int(self.currentTime))
-        self.announceTimeResults()
+        GKLeaderboard.submit(to: .cycleDaily, with: Int(currentTime))
+        announceTimeResults()
     }
-
 }

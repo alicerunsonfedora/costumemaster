@@ -5,10 +5,11 @@
 //  Created by Marquis Kurt on 30/7/22.
 //
 
-import SpriteKit
 import CranberrySprite
+import SpriteKit
 
 // MARK: Structural Object Generator Conformance
+
 extension GameScene: GameSceneStructuralGenerator {
     func makePlayer(from data: CSTileMapDefinition, with configuration: LevelDataConfiguration?) -> Player? {
         let playerNode = Player(
@@ -66,7 +67,7 @@ extension GameScene: GameSceneStructuralGenerator {
 
     func makeAlarmClock(from data: CSTileMapDefinition) -> GameAlarmClock? {
         let alarm = GameAlarmClock(
-            with: self.configuration?.defaultTimerDelay ?? 3.0,
+            with: configuration?.defaultTimerDelay ?? 3.0,
             at: data.position
         )
         alarm.position = data.sprite.position
@@ -104,7 +105,7 @@ extension GameScene: GameSceneStructuralGenerator {
             at: data.position
         )
         object.position = data.sprite.position
-        object.zPosition = self.playerNode?.zPosition ?? 5
+        object.zPosition = playerNode?.zPosition ?? 5
         object.size = data.sprite.size
         return object
     }
@@ -118,22 +119,22 @@ extension GameScene: GameSceneStructuralGenerator {
         }
         wall.position = data.sprite.position
         wall.instantiateBody(with: getWallPhysicsBody(with: wallTexture))
-        wall.name = "wall_\(data.position.x)_\(data.position.y)\(wallName.starts(with: "wall_edge") ? "_edge": ""))"
+        wall.name = "wall_\(data.position.x)_\(data.position.y)\(wallName.starts(with: "wall_edge") ? "_edge" : ""))"
         wall.worldPosition = data.position
 
         if wallName.contains("dbroken"), let sparks = SKEmitterNode(fileNamed: "ElectricalSpark") {
             sparks.zPosition = 100
             sparks.position = CGPoint(x: wall.position.x + 40, y: wall.position.y - 16)
-            self.addChild(sparks)
+            addChild(sparks)
         }
         return wall
     }
 }
 
 // MARK: - Game World Conformance
+
 extension GameScene: CSWorldCreateable {
     func applyOnTile(from definition: CranberrySprite.CSTileMapDefinition) {
-
         // Offset by one to prevent texture collisions.
         definition.sprite.size = CGSize(width: definition.unitSize.width + 1, height: definition.unitSize.height + 1)
 
@@ -142,62 +143,62 @@ extension GameScene: CSWorldCreateable {
         switch type {
         case .wall:
             guard let wall = makeWall(from: definition) else { return }
-            self.structure.addChild(wall)
+            structure.addChild(wall)
 
         case .player:
-            self.playerNode = makePlayer(from: definition, with: configuration)
-            self.addChild(self.playerNode!)
+            playerNode = makePlayer(from: definition, with: configuration)
+            addChild(playerNode!)
             definition.sprite.texture = SKTexture(imageNamed: "floor")
             definition.sprite.zPosition = -999
-            self.addChild(definition.sprite)
+            addChild(definition.sprite)
 
         case .triggerGameCenter:
             guard let trigger = makeGameCenterTrigger(from: definition, with: configuration) else {
                 return
             }
-            self.switches.append(trigger)
+            switches.append(trigger)
 
         case .deathPit, .triggerKill:
             guard let killer = makeDeathPit(from: definition, type: type) else {
                 return
             }
-            self.structure.addChild(killer)
+            structure.addChild(killer)
 
         case .floor:
             definition.sprite.zPosition = -999
-            self.structure.addChild(definition.sprite)
+            structure.addChild(definition.sprite)
 
         case .door:
             guard let receiver = makeDoor(from: definition) else { return }
-            receiver.playerListener = self.playerNode
-            self.receivers.append(receiver)
+            receiver.playerListener = playerNode
+            receivers.append(receiver)
 
         case .lever:
             guard let lever = makeLever(from: definition) else { return }
-            self.switches.append(lever)
+            switches.append(lever)
 
         case .alarmClock:
             guard let alarm = makeAlarmClock(from: definition) else { return }
-            self.switches.append(alarm)
+            switches.append(alarm)
 
         case .computerT1, .computerT2:
             guard let computer = makeComputer(from: definition, type: type) else { return }
-            self.switches.append(computer)
+            switches.append(computer)
 
         case .pressurePlate:
             guard let plate = makePressurePlate(from: definition) else { return }
-            self.switches.append(plate)
+            switches.append(plate)
 
         case .biometricScanner:
             guard let iris = makeBiometrics(from: definition) else { return }
-            self.switches.append(iris)
+            switches.append(iris)
 
         case .heavyObject:
             guard let object = makeHeavyObject(from: definition) else { return }
-            self.interactables.append(object)
+            interactables.append(object)
             definition.sprite.texture = SKTexture(imageNamed: "floor")
             definition.sprite.zPosition = -999
-            self.addChild(definition.sprite)
+            addChild(definition.sprite)
         default:
             break
         }
@@ -205,14 +206,14 @@ extension GameScene: CSWorldCreateable {
 
     func generateWorld() {
         guard let world = world as? SKTileMapNode else { return }
-        let mapUnit = world.tileSize; self.unit = mapUnit
+        let mapUnit = world.tileSize; unit = mapUnit
         world.parseTilemap(applicator: applyOnTile)
 
-        for node in self.switches { node.zPosition -= 5; self.addChild(node) }
-        for node in self.receivers { node.zPosition -= 5; self.addChild(node) }
-        for node in self.interactables { self.addChild(node) }
+        for node in switches { node.zPosition -= 5; addChild(node) }
+        for node in receivers { node.zPosition -= 5; addChild(node) }
+        for node in interactables { addChild(node) }
 
-        for node in self.receivers where node.worldPosition == self.configuration?.exitLocation {
+        for node in receivers where node.worldPosition == configuration?.exitLocation {
             if let door = node as? DoorReceiver { self.exitNode = door }
         }
 
@@ -222,7 +223,7 @@ extension GameScene: CSWorldCreateable {
 
         // Finally, clump all of the non-player sprites under the structure node to prevent scene
         // overbearing.
-        self.structure.zPosition = -5
-        self.addChild(self.structure)
+        structure.zPosition = -5
+        addChild(structure)
     }
 }

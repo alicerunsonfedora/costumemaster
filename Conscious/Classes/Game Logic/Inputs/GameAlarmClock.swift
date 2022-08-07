@@ -14,43 +14,42 @@ import SpriteKit
 
 /// A class representation of an alarm clock (timer).
 class GameAlarmClock: GameSignalSender {
-
     /// Initialze an alarm clock.
     /// - Parameter delay: The number of seconds it takes for the alarm clock to turn off.
     /// - Parameter position: The world matrix position of the alarm clock.
     init(with delay: Double = 3.0, at position: CGPoint) {
         super.init(textureName: "alarm_clock_wallup", by: [.activeOnTimer], at: position)
-        self.cooldown = delay
-        self.kind = .alarmClock
-        self.instantiateBody(with: getWallPhysicsBody(with: "wall_edge_physics_mask"))
+        cooldown = delay
+        kind = .alarmClock
+        instantiateBody(with: getWallPhysicsBody(with: "wall_edge_physics_mask"))
     }
 
     /// Trigger the alarm sound and continously play the tick sound.
-    override func onActivate(with event: NSEvent?, player: Player?) {
+    override func onActivate(with _: NSEvent?, player _: Player?) {
         if UserDefaults.playAlarmSound {
-            self.run(SKAction.playSoundFileNamed("alarmEnable", waitForCompletion: true))
+            run(SKAction.playSoundFileNamed("alarmEnable", waitForCompletion: true))
             let tick = SKAction.sequence(
                 [
                     SKAction.playSoundFileNamed("alarmTick", waitForCompletion: true),
-                    SKAction.wait(forDuration: 1.0)
+                    SKAction.wait(forDuration: 1.0),
                 ]
             )
-            self.run(SKAction.repeat(tick, count: Int(self.cooldown - 1)))
+            run(SKAction.repeat(tick, count: Int(cooldown - 1)))
         }
     }
 
     /// Play the alarm when deactivated.
-    override func onDeactivate(with event: NSEvent?, player: Player?) {
+    override func onDeactivate(with _: NSEvent?, player _: Player?) {
         if UserDefaults.playAlarmSound {
-            self.run(
+            run(
                 SKAction.repeat(SKAction.playSoundFileNamed("alarmDisable", waitForCompletion: true), count: 2)
             )
         }
     }
 
     /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.
-    required init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }

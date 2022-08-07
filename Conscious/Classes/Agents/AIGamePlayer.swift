@@ -14,7 +14,6 @@ import GameplayKit
 
 /// An abstract class that represents a game player.
 class AIAbstractGamePlayer: NSObject, GKGameModelPlayer {
-
     /// The player's ID (required by GKGameModelPlayer).
     var playerId: Int = 0
 
@@ -46,22 +45,21 @@ class AIAbstractGamePlayer: NSObject, GKGameModelPlayer {
             first = cos.removeFirst()
         }
         self.position = position
-        self.currentCostume = first
-        self.costumeQueue = cos
+        currentCostume = first
+        costumeQueue = cos
     }
 
     /// Switch to the next available costume.
     func nextCostume() {
         var costumes = costumeQueue + [currentCostume]
-        self.currentCostume = costumes.removeFirst()
-        self.costumeQueue = costumes
+        currentCostume = costumes.removeFirst()
+        costumeQueue = costumes
     }
 
     /// Switch to the previous available costume.
     func prevCostume() {
         var costumes = [currentCostume] + costumeQueue
-        self.currentCostume = costumes.removeLast()
-        self.costumeQueue = costumes
+        currentCostume = costumes.removeLast()
+        costumeQueue = costumes
     }
-
 }

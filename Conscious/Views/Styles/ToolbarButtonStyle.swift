@@ -13,7 +13,6 @@ import Foundation
 import SwiftUI
 
 struct ToolbarButtonStyle: ButtonStyle {
-
     func makeBody(configuration: ToolbarButtonStyle.Configuration) -> some View {
         Group {
             configuration.label

@@ -10,12 +10,11 @@
 //
 
 import Cocoa
+import Foundation
 import GameKit
 import SpriteKit
-import Foundation
 
 class GameManagerDelegate {
-
     /// Whether the game's AI simulator can be run.
     static var canRunSimulator: Bool = true {
         didSet {
@@ -47,13 +46,13 @@ class GameManagerDelegate {
 
     /// The ViewController associated with the current window.
     static var gameController: ViewController? {
-        return NSApplication.shared.mainWindow?.contentViewController as? ViewController
+        NSApplication.shared.mainWindow?.contentViewController as? ViewController
     }
 
     /// Open the main menu.
     static func callMainMenu() {
         if let view = GameManagerDelegate.gameView {
-            if view.scene != nil && view.scene?.name != "MainMenu" {
+            if view.scene != nil, view.scene?.name != "MainMenu" {
                 confirm(
                     NSLocalizedString("costumemaster.confirm.back_to_main", comment: "Back to main menu"),
                     withTitle: NSLocalizedString(
@@ -105,7 +104,7 @@ class GameManagerDelegate {
     }
 
     /// Load a scene with a given name.
-    static func loadScene(with name: String, keepHistory: Bool = false) {
+    static func loadScene(with name: String, keepHistory _: Bool = false) {
         if let view = GameManagerDelegate.gameView {
             if let scene = SKScene(fileNamed: name) {
                 if view.scene != nil { GameManagerDelegate.gameController?.rootScene = view.scene }
@@ -116,7 +115,7 @@ class GameManagerDelegate {
     }
 
     /// Load a scene with a given name.
-    static func loadScene(with name: String, keepHistory: Bool = false, fadeDuration: TimeInterval) {
+    static func loadScene(with name: String, keepHistory _: Bool = false, fadeDuration: TimeInterval) {
         if let view = GameManagerDelegate.gameView {
             if let scene = SKScene(fileNamed: name) {
                 if view.scene != nil { GameManagerDelegate.gameController?.rootScene = view.scene }
@@ -125,5 +124,4 @@ class GameManagerDelegate {
             }
         }
     }
-
 }

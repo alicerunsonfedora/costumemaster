@@ -14,7 +14,6 @@ import SpriteKit
 
 /// The scene that corresponds to the splash screen.
 class SplashScene: SKScene {
-
     /// The label node that contains the by text.
     var byText: SKLabelNode?
 
@@ -23,7 +22,7 @@ class SplashScene: SKScene {
 
     /// Load the splashscreen then fade into the main menu.
     override func sceneDidLoad() {
-        self.scaleMode = .aspectFill
+        scaleMode = .aspectFill
 
         guard let byText = childNode(withName: "byText") as? SKLabelNode else {
             return
@@ -50,10 +49,10 @@ class SplashScene: SKScene {
             SKAction.wait(forDuration: 3.0),
             SKAction.run {
                 self.launchMain()
-            }
+            },
         ]
 
-        self.run(SKAction.sequence(actions))
+        run(SKAction.sequence(actions))
     }
 
     /// Launch the main menu.
@@ -63,7 +62,6 @@ class SplashScene: SKScene {
             return
         }
 
-        self.view?.presentScene(mainMenu, transition: SKTransition.fade(withDuration: 1.5))
+        view?.presentScene(mainMenu, transition: SKTransition.fade(withDuration: 1.5))
     }
-
 }

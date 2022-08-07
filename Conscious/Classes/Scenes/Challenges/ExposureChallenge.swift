@@ -10,17 +10,15 @@
 //
 
 import Foundation
-import SpriteKit
 import GameKit
+import SpriteKit
 
 /// The game scene corresponding to the level "Exposure".
 class ExposureChallenge: CostumemasteryInheritable {
-
     /// Submit the score to the daily leaderboards.
     override func willCalculateChallengeResults() {
         super.willCalculateChallengeResults()
-        GKLeaderboard.submit(to: .exposureDaily, with: Int(self.currentTime))
-        self.announceTimeResults()
+        GKLeaderboard.submit(to: .exposureDaily, with: Int(currentTime))
+        announceTimeResults()
     }
-
 }

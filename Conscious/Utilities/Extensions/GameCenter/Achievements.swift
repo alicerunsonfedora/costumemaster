@@ -27,7 +27,8 @@ extension GKAchievement {
                 sendAlert(
                     error?.localizedDescription ?? error.debugDescription,
                     withTitle: NSLocalizedString("costumemaster.alert.achievement_earn_error_title", comment: "Achievement earn error"),
-                    level: .critical) { _ in }
+                    level: .critical
+                ) { _ in }
                 return
             }
         }
@@ -53,7 +54,8 @@ extension GKAchievement {
                 sendAlert(
                     error?.localizedDescription ?? error.debugDescription,
                     withTitle: NSLocalizedString("costumemaster.alert.achievement_update_error_title", comment: "Achievement progress error"),
-                    level: .critical) { _ in }
+                    level: .critical
+                ) { _ in }
                 return
             }
         }

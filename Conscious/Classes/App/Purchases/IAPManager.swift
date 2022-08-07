@@ -14,7 +14,6 @@ import StoreKit
 
 /// A base class that manages in-app purchaes (IAP).
 class IAPManager: NSObject {
-
     /// A shared instance of the IAP Manager.
     static let shared = IAPManager()
 
@@ -32,25 +31,24 @@ class IAPManager: NSObject {
 
     /// An enumeration that represents the available content to purchase.
     enum PurchaseableContent: String, CaseIterable {
-
         /// The "Watch Your Step!" DLC.
         case watchYourStep = "net.marquiskurt.costumemaster_dlc_wys"
 
         /// Returns all cases as a set.
         static func toSet() -> Set<String> {
-            return Set(PurchaseableContent.allCases.map { content in content.rawValue })
+            Set(PurchaseableContent.allCases.map { content in content.rawValue })
         }
     }
 
     /// Query a request for all products.
     func makeAllProductRequests() {
-        self.makeProductRequests(with: PurchaseableContent.toSet())
+        makeProductRequests(with: PurchaseableContent.toSet())
     }
 
     /// Request for a specific item.
     /// - Parameter identifier: The identifier of the item to request for.
     func makeProductRequest(with identifier: PurchaseableContent) {
-        self.makeProductRequests(with: [identifier.rawValue])
+        makeProductRequests(with: [identifier.rawValue])
     }
 
     /// Request for a specific set of items.
@@ -80,5 +78,4 @@ class IAPManager: NSObject {
             SKPaymentQueue.default().add(payment)
         }
     }
-
 }

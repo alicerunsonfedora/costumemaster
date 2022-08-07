@@ -13,7 +13,6 @@ import SwiftUI
 
 /// A view that represents the console window's toolbar.
 struct AISimulatorConsoleToolbar: View {
-
     /// The console model.
     @ObservedObject var console: ConsoleViewModel
 
@@ -22,7 +21,6 @@ struct AISimulatorConsoleToolbar: View {
 
     /// An enumeration that represents the different filters for the console.
     enum FilterType: String, CaseIterable {
-
         /// All types of messages are allowed.
         case allMessages = "costumemaster.ai_console.level_all"
 
@@ -48,15 +46,15 @@ struct AISimulatorConsoleToolbar: View {
                 Button { self.console.nowMode.toggle() }
                     label: {
                         Image("arrow.up.backward.circle\(self.console.nowMode ? ".fill" : "")")
-                        .foregroundColor(self.console.nowMode ? .accentColor : Color(.controlTextColor))
-                        .help("costumemaster.ai_console.now_help")
-                }
+                            .foregroundColor(self.console.nowMode ? .accentColor : Color(.controlTextColor))
+                            .help("costumemaster.ai_console.now_help")
+                    }
                     .buttonStyle(ToolbarButtonStyle())
                 Button { self.console.clear() }
                     label: {
-                    Image("clear")
-                        .help("costumemaster.ai_console.clear_help")
-                }
+                        Image("clear")
+                            .help("costumemaster.ai_console.clear_help")
+                    }
                     .buttonStyle(ToolbarButtonStyle())
             }
         }

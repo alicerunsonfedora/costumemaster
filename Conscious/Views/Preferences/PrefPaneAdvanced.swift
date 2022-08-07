@@ -12,7 +12,6 @@
 import SwiftUI
 
 struct PrefPaneAdvanced: View {
-
     @AppStorage("debugShowNodeCount")
     var nodeCount: Bool = false
 

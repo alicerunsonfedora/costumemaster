@@ -13,7 +13,6 @@ import Foundation
 
 /// An enumeration for the different types of game tiles that the level can consist of.
 public enum GameTileType {
-
     /// A player tile.
     case player
 

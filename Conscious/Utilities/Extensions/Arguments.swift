@@ -9,20 +9,20 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
-import Foundation
 import Bunker
+import Foundation
 
 extension CommandLine {
     /// Parse the command line arguments to get the settings for this execution context.
     /// - Returns: A structure that contains the argument data.
     static func parse() -> CommandLineArguments {
-        return CommandLineArguments(
+        CommandLineArguments(
             startLevel: CommandLine.getArgument(of: "--start-level"),
             useAgentTesting: CommandLine.getArgument(of: "--agent-test-mode") == "true",
             agentTestingType: CommandLineArguments.AgentTestingType(
                 rawValue: CommandLine.getArgument(of: "--agent-type") ?? "random"
             ) ?? CommandLineArguments.AgentTestingType.randomMove,
-            agentMoveRate: Int(CommandLine.getArgument(of: "--agent-move-rate") ?? "")?.clamp(to: 1..<Int.max)
+            agentMoveRate: Int(CommandLine.getArgument(of: "--agent-move-rate") ?? "")?.clamp(to: 1 ..< Int.max)
         )
     }
 
@@ -30,7 +30,7 @@ extension CommandLine {
     /// - Parameter arguments: The list of arguments to parse.
     /// - Returns: A structure that contains the argument data.
     static func parse(_ arguments: [String]) -> CommandLineArguments {
-        return CommandLineArguments(
+        CommandLineArguments(
             startLevel: CommandLine.getArgument(of: "--start-level", from: arguments),
             useAgentTesting: CommandLine.getArgument(of: "--agent-test-mode", from: arguments) == "true",
             agentTestingType: CommandLineArguments.AgentTestingType(
@@ -38,7 +38,7 @@ extension CommandLine {
             ) ?? CommandLineArguments.AgentTestingType.randomMove,
             agentMoveRate: Int(
                 CommandLine.getArgument(of: "--agent-move-rate", from: arguments) ?? ""
-            )?.clamp(to: 1..<Int.max)
+            )?.clamp(to: 1 ..< Int.max)
         )
     }
 

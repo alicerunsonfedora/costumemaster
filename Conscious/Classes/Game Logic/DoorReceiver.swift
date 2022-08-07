@@ -14,8 +14,8 @@ import SpriteKit
 
 /// A class that represents a door. This is commonly used for exit doors, but can be adapted to use any door.
 public class DoorReceiver: GameStructureObject, GameSignalReceivable {
-
     // MARK: STORED PROPERTIES
+
     /// Whether the door is on by default.
     var defaultOn: Bool
 
@@ -26,7 +26,7 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
     var inputs: [GameSignalSender] {
         didSet {
             if reverseSignal {
-                self.defaultOn.toggle()
+                defaultOn.toggle()
             }
         }
     }
@@ -40,9 +40,10 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
     private var reverseSignal: Bool = false
 
     // MARK: COMPUTED PROPERTIES
+
     /// The activation-based texture for this door.
     var activeTexture: SKTexture {
-        return SKTexture(imageNamed: baseTextureName + (self.active ? "_on" : "_off"))
+        SKTexture(imageNamed: baseTextureName + (active ? "_on" : "_off"))
     }
 
     /// Whether the door is activated.
@@ -60,40 +61,42 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
     }
 
     /// The description for this class.
-    public override var description: String {
-        return "\(self.className)(active: \(self.active), gate: \(self.activationMethod), " +
+    override public var description: String {
+        "\(self.className)(active: \(self.active), gate: \(self.activationMethod), " +
             "position: \(self.worldPosition))"
     }
 
     // MARK: CONSTRUCTORS
+
     required init(
         fromInput inputs: [GameSignalSender],
         reverseSignal: Bool,
         baseTexture: String,
         at location: CGPoint
     ) {
-        self.defaultOn = reverseSignal
+        defaultOn = reverseSignal
         self.inputs = inputs
-        self.baseTextureName = baseTexture
-        self.activationMethod = .allInputs
+        baseTextureName = baseTexture
+        activationMethod = .allInputs
 
         self.reverseSignal = reverseSignal
-        if reverseSignal { self.defaultOn.toggle() }
+        if reverseSignal { defaultOn.toggle() }
 
         super.init(
             with: SKTexture(imageNamed: baseTexture + "_off"),
             size: SKTexture(imageNamed: baseTexture + "_off").size()
         )
 
-        self.worldPosition = location
+        worldPosition = location
         self.inputs.forEach { input in input.receivers.append(self) }
-        self.texture = self.activeTexture
-        self.instantiateBody(with: instantiatePhysicsBody())
-        self.locked = false
+        texture = activeTexture
+        instantiateBody(with: instantiatePhysicsBody())
+        locked = false
     }
 
     /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.
-    required init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -101,11 +104,11 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
 
     /// Initialize the physics body for the door.
     private func instantiatePhysicsBody() -> SKPhysicsBody {
-        return getWallPhysicsBody(with: SKTexture(imageNamed: "wall_edge_physics_mask"))
+        getWallPhysicsBody(with: SKTexture(imageNamed: "wall_edge_physics_mask"))
     }
 
     /// Receive input from a player or event.
-    func receive(with player: Player?, event: NSEvent?, handler: ((Any?) -> Void)) {
+    func receive(with player: Player?, event _: NSEvent?, handler: (Any?) -> Void) {
         if let position = player?.position {
             if position.distance(between: self.position) < 36 {
                 handler(nil)
@@ -115,12 +118,12 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
 
     /// Update the texture for this door.
     func update() {
-        self.texture = self.activeTexture
+        texture = activeTexture
     }
 
     /// Update the list of inputs and their receivers.
     func updateInputs() {
-        for input in self.inputs {
+        for input in inputs {
             input.receivers.append(self)
         }
     }
@@ -128,10 +131,9 @@ public class DoorReceiver: GameStructureObject, GameSignalReceivable {
     /// Toggle the physics body for the door.
     /// - Note: This method should apply for all doors that are not exits.
     func togglePhysicsBody() {
-        if self.active && self.getBody() != nil { self.releaseBody() }
-        if !self.active && self.getBody() == nil {
-            self.instantiateBody(with: getWallPhysicsBody(with: "wall_edge_physics_mask"))
+        if active, getBody() != nil { releaseBody() }
+        if !active, getBody() == nil {
+            instantiateBody(with: getWallPhysicsBody(with: "wall_edge_physics_mask"))
         }
     }
-
 }

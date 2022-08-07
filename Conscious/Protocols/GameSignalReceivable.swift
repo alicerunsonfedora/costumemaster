@@ -14,7 +14,6 @@ import SpriteKit
 
 /// A base protocol that defines an object that receives signals from inputs.
 protocol GameSignalReceivable: GameTileSpriteNode {
-
     // MARK: STORED PROPERTIES
 
     /// Whether the device is on by default.
@@ -38,6 +37,7 @@ protocol GameSignalReceivable: GameTileSpriteNode {
     var active: Bool { get }
 
     // MARK: METHODS
+
     /// Initialize a game receiver.
     /// - Parameter inputs: The inputs that the receiver will listen to for signal updates.
     /// - Parameter reverseSignal: Whether to reverse the signal.
@@ -52,5 +52,4 @@ protocol GameSignalReceivable: GameTileSpriteNode {
 
     /// Update the status of this receiver based on new inputs.
     func updateInputs()
-
 }

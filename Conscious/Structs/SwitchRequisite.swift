@@ -16,7 +16,6 @@ import Foundation
 /// This structure is used to describe what inputs will trigger an output, and how many inputs are needed to
 /// activate the switch.
 struct SwitchRequisite {
-
     /// The location in the map that corresponds to the output.
     var outputLocation: CGPoint
 

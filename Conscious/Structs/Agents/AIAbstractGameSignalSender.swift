@@ -9,7 +9,6 @@ import Foundation
 
 /// An abstract data structure that represents an input device.
 struct AIAbstractGameSignalSender {
-
     /// The kind of signal sender.
     var kind: GameSignalKind
 

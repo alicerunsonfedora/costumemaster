@@ -10,21 +10,19 @@
 //
 
 import Foundation
-import SpriteKit
 import GameKit
+import SpriteKit
 
 /// A challenge game scene that listens for whether the player has earned the Costumemastery achievement.
 class CostumemasteryInheritable: ChallengeGameScene {
-
     /// Determine if the player is eligible to receive the Costumemastery achievement and grant it.
     /// - Important: For subclasses that will override this method, make sure to call the parent to make this
     /// achievement accessible in the challenge.
     override func willCalculateChallengeResults() {
         super.willCalculateChallengeResults()
 
-        if self.totalCostumeIncrement <= 10 {
+        if totalCostumeIncrement <= 10 {
             GKAchievement.earn(with: .costumemastery)
         }
     }
-
 }

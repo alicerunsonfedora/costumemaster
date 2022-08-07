@@ -56,7 +56,7 @@ public struct LevelDataConfiguration {
 
     /// A default level configuration with no costumes loaded and the next scene set to the main menu.
     static var `default`: LevelDataConfiguration {
-        return LevelDataConfiguration(
+        LevelDataConfiguration(
             costumeID: 0,
             nextScene: "MainMenu",
             startingWith: .default,
@@ -89,26 +89,26 @@ public struct LevelDataConfiguration {
         playing music: String?
     ) {
         self.costumeID = costumeID
-        self.linksToNextScene = nextScene
-        self.startWithCostume = costume
+        linksToNextScene = nextScene
+        startWithCostume = costume
         self.requisites = requisites
-        self.exitLocation = exit
-        self.defaultTimerDelay = delay
-        self.achievementTrigger = achievement
-        self.disallowCostume = disallowedCostume
-        self.trackName = music
+        exitLocation = exit
+        defaultTimerDelay = delay
+        achievementTrigger = achievement
+        disallowCostume = disallowedCostume
+        trackName = music
     }
 
     /// Initialize a level configuration.
     /// - Parameter userData: The user data dictionary to read data from and generate a configuration.
     public init(from userData: NSMutableDictionary) {
-        self.costumeID = userData["availableCostumes"] as? Int ?? 0
-        self.linksToNextScene = userData["levelLink"] as? String ?? "MainMenu"
-        self.startWithCostume = PlayerCostumeType(
+        costumeID = userData["availableCostumes"] as? Int ?? 0
+        linksToNextScene = userData["levelLink"] as? String ?? "MainMenu"
+        startWithCostume = PlayerCostumeType(
             rawValue: userData["startingCostume"] as? String ?? "Default"
         ) ?? .default
-        self.defaultTimerDelay = Double(userData["timer"] as? Int ?? 3)
-        self.requisites = LevelDataConfiguration.parseRequisites(from: userData)
+        defaultTimerDelay = Double(userData["timer"] as? Int ?? 3)
+        requisites = LevelDataConfiguration.parseRequisites(from: userData)
         var exit = CGPoint(x: 0, y: 0)
         if let exitData = userData["exitAt"] as? String {
             let exitCoords = exitData.split(separator: ",")
@@ -116,15 +116,15 @@ public struct LevelDataConfiguration {
                 exit = CGPoint(x: Int(exitCoords.first!) ?? -1, y: Int(exitCoords.last!) ?? -1)
             }
         }
-        self.exitLocation = exit
-        self.achievementTrigger = GameAchievement(rawValue: userData["achievementTrigger"] as? String ?? "null")
-        self.trackName = userData["trackName"] as? String
+        exitLocation = exit
+        achievementTrigger = GameAchievement(rawValue: userData["achievementTrigger"] as? String ?? "null")
+        trackName = userData["trackName"] as? String
 
         guard let disallowed = userData["disallowCostume"] as? String else {
-            self.disallowCostume = nil
+            disallowCostume = nil
             return
         }
-        self.disallowCostume = PlayerCostumeType(rawValue: disallowed)
+        disallowCostume = PlayerCostumeType(rawValue: disallowed)
     }
 
     /// Parse a given dictionary into a list of requisites.

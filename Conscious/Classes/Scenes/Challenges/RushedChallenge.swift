@@ -10,17 +10,15 @@
 //
 
 import Foundation
-import SpriteKit
 import GameKit
+import SpriteKit
 
 /// The game scene specific to the level "Rushed."
 class RushedChallenge: ChallengeGameScene {
-
     /// Submit the leaderboard scores for the daily fastest.
     override func willCalculateChallengeResults() {
         super.willCalculateChallengeResults()
-        GKLeaderboard.submit(to: .rushedDaily, with: Int(self.currentTime))
-        self.announceTimeResults()
+        GKLeaderboard.submit(to: .rushedDaily, with: Int(currentTime))
+        announceTimeResults()
     }
-
 }

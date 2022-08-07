@@ -9,11 +9,10 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
-import SwiftUI
 import GameKit
+import SwiftUI
 
 struct PrefPaneGC: View {
-
     @AppStorage("gcSubmitAchievements")
     var achievements: Bool = true
 

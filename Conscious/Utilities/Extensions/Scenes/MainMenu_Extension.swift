@@ -9,13 +9,13 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
-import Foundation
-import SpriteKit
-import GameKit
 import Cocoa
+import Foundation
+import GameKit
+import SpriteKit
 
 #if canImport(SwiftUI)
-import SwiftUI
+    import SwiftUI
 #endif
 
 extension MainMenuScene {
@@ -25,21 +25,21 @@ extension MainMenuScene {
         let tappedLocation = event.location(in: self)
 
         // Hook up the button's location tap to the respective action and run it.
-        switch self.atPoint(tappedLocation) {
-        case self.startButton:
-            self.startAction()
-        case self.resumeButton where GameStore.shared.lastSavedScene != "":
-            self.resumeAction()
-        case self.optionsButton:
-            self.optionsAction()
-        case self.quitButton:
+        switch atPoint(tappedLocation) {
+        case startButton:
+            startAction()
+        case resumeButton where GameStore.shared.lastSavedScene != "":
+            resumeAction()
+        case optionsButton:
+            optionsAction()
+        case quitButton:
             quitAction()
-        case self.watchYourStepButton:
+        case watchYourStepButton:
             watchYourStepAction()
 //        case self.gameCenterButton where self.gameCenterButton?.isHidden != true:
 //            self.gameCenterAction()
-        case self.reloadedButton:
-            self.reloadedAction()
+        case reloadedButton:
+            reloadedAction()
         default:
             break
         }
@@ -50,9 +50,9 @@ extension MainMenuScene {
         // Grab where the player clicked.
         let tappedLocation = event.location(in: self)
 
-        if self.atPoint(tappedLocation) == self.character {
+        if atPoint(tappedLocation) == character {
             if !UserDefaults.canShowUnmodeled {
-                self.getCharacterAttributes()
+                getCharacterAttributes()
             }
         }
     }
@@ -61,19 +61,19 @@ extension MainMenuScene {
     override func didFinishUpdate() {
         // Update character preferences based on UserDefaults.
         if UserDefaults.standard.bool(forKey: "advShowUnmodeledOnMenuAbility") {
-            self.character?.texture = SKTexture(
+            character?.texture = SKTexture(
                 imageNamed: UserDefaults.standard.bool(forKey: "advShowUnmodeledOnMenu")
                     ? "Character_Unmodeled"
                     : "Character"
             )
-            self.character?.texture?.filteringMode = .nearest
+            character?.texture?.filteringMode = .nearest
         }
 
         if GameStore.shared.lastSavedScene == "" {
-            self.resumeButton?.alpha = 0.1
+            resumeButton?.alpha = 0.1
         }
 
-        if let music = self.childNode(withName: "music") as? SKAudioNode {
+        if let music = childNode(withName: "music") as? SKAudioNode {
             music.run(
                 SKAction.changeVolume(to: UserDefaults.standard.float(forKey: "soundMusicVolume"), duration: 0.01)
             )
@@ -82,9 +82,9 @@ extension MainMenuScene {
 
     /// Start the game by presenting the first level scene.
     private func startAction() {
-        self.startButton?.fontColor = NSColor.init(named: "AccentColor")
+        startButton?.fontColor = NSColor(named: "AccentColor")
         guard let intro = SKScene(fileNamed: "Intro") else { return }
-         GKAccessPoint.shared.isActive = false
+        GKAccessPoint.shared.isActive = false
 
         if GameStore.shared.lastSavedScene != "" {
             confirm(
@@ -99,16 +99,16 @@ extension MainMenuScene {
                 self.view?.presentScene(intro, transition: SKTransition.fade(with: .black, duration: 2.0))
             }
         } else {
-            self.view?.presentScene(intro, transition: SKTransition.fade(with: .black, duration: 2.0))
+            view?.presentScene(intro, transition: SKTransition.fade(with: .black, duration: 2.0))
         }
     }
 
     /// Resume the game by loading the last saved scene.
     private func resumeAction() {
-        self.resumeButton?.fontColor = NSColor.init(named: "AccentColor")
-         GKAccessPoint.shared.isActive = false
+        resumeButton?.fontColor = NSColor(named: "AccentColor")
+        GKAccessPoint.shared.isActive = false
         if let firstScene = SKScene(fileNamed: GameStore.shared.lastSavedScene) {
-            self.view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
+            view?.presentScene(firstScene, transition: SKTransition.fade(with: .black, duration: 2.0))
         }
     }
 
@@ -121,7 +121,7 @@ extension MainMenuScene {
 
     /// Close the application.
     private func quitAction() {
-        self.startButton?.fontColor = NSColor.init(named: "AccentColor")
+        startButton?.fontColor = NSColor(named: "AccentColor")
         NSApplication.shared.terminate(nil)
     }
 
@@ -130,22 +130,22 @@ extension MainMenuScene {
     /// This is primarily inspired by Chumbus from Apollo for iOS where a player has to keep interacting with the
     /// character on the main menu.
     private func getCharacterAttributes() {
-        self.interactiveLevel += 1
+        interactiveLevel += 1
         var title = ""
         var message = ""
 
         if let menuData = plist(from: "MenuContent") {
-            if let data = menuData["Click_\(self.interactiveLevel)"] as? NSDictionary {
+            if let data = menuData["Click_\(interactiveLevel)"] as? NSDictionary {
                 title = data["Title"] as? String ?? ""
                 message = data["Message"] as? String ?? ""
                 sendAlert(message, withTitle: title, level: .informational) { _ in }
             }
         }
 
-        if self.interactiveLevel == 10000 {
+        if interactiveLevel == 10000 {
             UserDefaults.standard.setValue(true, forKey: "advShowUnmodeledOnMenuAbility")
-            self.character?.texture = SKTexture(imageNamed: "Character_Unmodeled")
-            self.character?.texture?.filteringMode = .nearest
+            character?.texture = SKTexture(imageNamed: "Character_Unmodeled")
+            character?.texture?.filteringMode = .nearest
 
             // Unlock the "Face Reveal" achievement in Game Center.
             GKAchievement.earn(with: .faceReveal)
@@ -157,7 +157,7 @@ extension MainMenuScene {
     private func gameCenterAction() {
         let gameCenterController = GKGameCenterViewController()
         gameCenterController.gameCenterDelegate = self
-        if let sceneViewController = self.view?.window?.contentViewController {
+        if let sceneViewController = view?.window?.contentViewController {
             sceneViewController.presentAsSheet(gameCenterController)
         }
     }
@@ -167,7 +167,7 @@ extension MainMenuScene {
     }
 
     private func watchYourStepAction() {
-        guard let sceneController = self.view?.window?.contentViewController else { return }
+        guard let sceneController = view?.window?.contentViewController else { return }
         guard let first = SKScene(fileNamed: "Consequences") else {
             return
         }
@@ -184,15 +184,15 @@ extension MainMenuScene {
             sceneController.presentAsModalWindow(viewController)
         } else {
             if UserDefaults.iapModule.bool(forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue) {
-                self.view?.presentScene(first, transition: SKTransition.fade(withDuration: 3.0))
+                view?.presentScene(first, transition: SKTransition.fade(withDuration: 3.0))
             } else {
                 sendAlert(
                     "In order to purchase the Watch Your Step DLC, you need a Mac running macOS Catalina (10.15) or "
-                    + "higher. If you've already purchased the DLC, you can restore your purchase by clicking 'The "
-                    + "Costumemaster > Restore Purchases' in the menu bar.",
+                        + "higher. If you've already purchased the DLC, you can restore your purchase by clicking 'The "
+                        + "Costumemaster > Restore Purchases' in the menu bar.",
                     withTitle: "You cannot purchase Watch Your Step on this Mac.",
                     level: .warning
-                    ) { _ in }
+                ) { _ in }
             }
         }
     }

@@ -9,8 +9,8 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
-import Foundation
 import Cocoa
+import Foundation
 
 /// Send an alert.
 /// This a convenience utility to create an NSAlert with some properties.
@@ -21,7 +21,8 @@ import Cocoa
 func sendAlert(_ message: String,
                withTitle: String?,
                level: NSAlert.Style,
-               handler: @escaping ((NSApplication.ModalResponse) -> Void)) {
+               handler: @escaping ((NSApplication.ModalResponse) -> Void))
+{
     let alert = NSAlert()
     alert.alertStyle = level
     alert.messageText = withTitle ?? "The Costumemaster"
@@ -46,7 +47,8 @@ func sendAlert(_ message: String,
                withTitle: String?,
                level: NSAlert.Style,
                attachToMainWindow: Bool,
-               handler: @escaping ((NSApplication.ModalResponse) -> Void)) {
+               handler: @escaping ((NSApplication.ModalResponse) -> Void))
+{
     let alert = NSAlert()
     alert.alertStyle = level
     alert.messageText = withTitle ?? "The Costumemaster"
@@ -69,7 +71,8 @@ func sendAlert(_ message: String,
 func confirm(_ message: String,
              withTitle: String?,
              level: NSAlert.Style,
-             handler: @escaping ((NSApplication.ModalResponse) -> Void)) {
+             handler: @escaping ((NSApplication.ModalResponse) -> Void))
+{
     let alert = NSAlert()
     alert.alertStyle = level
     alert.messageText = withTitle ?? "The Costumemaster"

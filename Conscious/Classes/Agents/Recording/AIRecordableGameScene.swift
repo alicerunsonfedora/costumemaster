@@ -9,15 +9,14 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
-import Foundation
-import SpriteKit
-import GameplayKit
-import SwiftUI
 import CranberrySprite
+import Foundation
+import GameplayKit
+import SpriteKit
+import SwiftUI
 
 /// A subclass of a challenge game scene that allows users to record states.
 class AIRecordableGameScene: GameScene {
-
     /// The state recording machine.
     var journal: StateRecorderViewModel?
 
@@ -33,35 +32,35 @@ class AIRecordableGameScene: GameScene {
     /// Set up the scene, journal, and strategy to begin recording.
     override func sceneDidLoad() {
         super.sceneDidLoad()
-        self.state = self.getState()
-        self.strategy = AITreeStrategy()
-        self.strategy?.gameModel = self.state
+        state = getState()
+        strategy = AITreeStrategy()
+        strategy?.gameModel = state
 
         print("TEST")
 
-        guard let firstAssessment = self.strategy?.assess(state: self.state!) else {
+        guard let firstAssessment = strategy?.assess(state: state!) else {
             return
         }
 
-        self.journal = StateRecorderViewModel(from: firstAssessment) { _, action in
+        journal = StateRecorderViewModel(from: firstAssessment) { _, action in
             let realActionName = self.strategy?.process(action, from: self.state!)
             self.apply(
                 AIGameDecision(
                     by: AIGamePlayerAction(rawValue: realActionName ?? "stop") ?? .stop,
-                        with: 0
+                    with: 0
                 )
             )
         }
-        self.makeRecorder()
+        makeRecorder()
     }
 
-    override func willMove(from view: SKView) {
-        self.recorder?.close()
+    override func willMove(from _: SKView) {
+        recorder?.close()
     }
 
     /// Make the state recorder window and display it.
     func makeRecorder() {
-        guard let journal = self.journal else { return }
+        guard let journal = journal else { return }
         let recordingView = NSHostingView(rootView: AIStateRecordingView(journal: journal))
         let viewController = NSViewController()
         viewController.view = recordingView
@@ -82,7 +81,7 @@ class AIRecordableGameScene: GameScene {
         window.appearance = NSAppearance(named: .darkAqua)
 
         let windowController = NSWindowController(window: window)
-        self.recorder = windowController
+        recorder = windowController
         windowController.showWindow(nil)
     }
 
@@ -92,33 +91,35 @@ class AIRecordableGameScene: GameScene {
     }
 
     /// Prevent keyboard input.
-    override func keyDown(with event: NSEvent) {
+    override func keyDown(with _: NSEvent) {
         blockInput()
     }
 
     /// Run the AI's version of didFinishUpdate.
     override func didFinishUpdate() {
-        self.aiFinish()
+        aiFinish()
     }
 
     /// Run any post-update logic and check input states.
     func aiFinish() {
-        for input in self.switches where input.activationMethod.contains(.activeByPlayerIntervention) {
-            if [GameSignalKind.pressurePlate, GameSignalKind.trigger].contains(input.kind)
-                && !(input is GameIrisScanner) {
+        for input in switches where input.activationMethod.contains(.activeByPlayerIntervention) {
+            if [GameSignalKind.pressurePlate, GameSignalKind.trigger].contains(input.kind),
+               !(input is GameIrisScanner)
+            {
                 input.activate(with: nil, player: self.playerNode, objects: self.interactables)
-            } else if input is GameIrisScanner &&
-                        input.shouldActivateOnIntervention(with: self.playerNode, objects: self.interactables) {
+            } else if input is GameIrisScanner,
+                      input.shouldActivateOnIntervention(with: self.playerNode, objects: self.interactables)
+            {
                 input.activate(with: nil, player: self.playerNode, objects: self.interactables)
             }
         }
-        self.checkDoorStates()
-        if self.exitNode?.active == true {
-            self.exitNode?.receive(with: self.playerNode, event: nil) { _ in }
+        checkDoorStates()
+        if exitNode?.active == true {
+            exitNode?.receive(with: playerNode, event: nil) { _ in }
         }
-        for child in self.structure.children where child is GameDeathPit {
+        for child in structure.children where child is GameDeathPit {
             guard let pit = child as? GameDeathPit else { continue }
-            if pit.shouldKill(self.playerNode) && !self.playerDied {
+            if pit.shouldKill(self.playerNode), !self.playerDied {
                 self.kill()
             }
         }
@@ -129,10 +130,10 @@ class AIRecordableGameScene: GameScene {
     func getState() -> AIAbstractGameState? {
         guard let player = playerNode else { return nil }
         let state = AIAbstractGameState(with: AIAbstractGamePlayer(at: player.position, with: player.costumes))
-        state.exit = self.exitNode?.position ?? CGPoint.zero
+        state.exit = exitNode?.position ?? CGPoint.zero
 
         var signals = [AIAbstractGameSignalSender]()
-        for input in self.switches {
+        for input in switches {
             var signal = AIAbstractGameSignalSender(
                 kind: input.kind,
                 position: input.position,
@@ -153,25 +154,25 @@ class AIRecordableGameScene: GameScene {
 
         state.inputs = signals
         state.outputs = receivers
-        state.escapable = self.exitNode?.active ?? false
+        state.escapable = exitNode?.active ?? false
 
         return state
     }
 
     /// Re-evaluate the state and update the assessments.
     func reevaluate() {
-        guard let newState = self.getState() else { return }
-        self.state = newState
-        self.strategy?.gameModel = newState
+        guard let newState = getState() else { return }
+        state = newState
+        strategy?.gameModel = newState
 
-        guard let gameState = self.strategy?.gameModel as? AIAbstractGameState else {
+        guard let gameState = strategy?.gameModel as? AIAbstractGameState else {
             return
         }
-        self.strategy?.evaluateEnvironmentVariables(from: gameState)
-        guard let assessment = self.strategy?.assess(state: gameState) else {
+        strategy?.evaluateEnvironmentVariables(from: gameState)
+        guard let assessment = strategy?.assess(state: gameState) else {
             return
         }
-        self.journal?.currentAssessment = assessment
+        journal?.currentAssessment = assessment
     }
 
     /// Apply a game state update to the scene.
@@ -191,7 +192,7 @@ class AIRecordableGameScene: GameScene {
                     }
                 },
                 SKAction.wait(forDuration: 2.5),
-                SKAction.run { self.playerNode?.halt() }
+                SKAction.run { self.playerNode?.halt() },
             ]
         case .switchToNextCostume, .switchToPreviousCostume:
             actions = [
@@ -199,13 +200,13 @@ class AIRecordableGameScene: GameScene {
                     _ = action.action == .switchToNextCostume
                         ? self.playerNode?.nextCostume()
                         : self.playerNode?.previousCostume()
-                }
+                },
             ]
         case .deployClone, .retractClone:
             actions = [
                 SKAction.run {
                     self.playerNode?.copyAsObject()
-                }
+                },
             ]
         case .pickup:
             actions = [
@@ -213,7 +214,7 @@ class AIRecordableGameScene: GameScene {
                     for object in self.interactables {
                         object.attach(to: self.playerNode)
                     }
-                }
+                },
             ]
         case .drop:
             actions = [
@@ -221,20 +222,19 @@ class AIRecordableGameScene: GameScene {
                     for object in self.interactables {
                         object.resign(from: self.playerNode)
                     }
-                }
+                },
             ]
         case .activate:
             actions = [
                 SKAction.run {
                     self.checkInputStates(NSEvent())
-                }
+                },
             ]
         default:
-            self.playerNode?.halt()
+            playerNode?.halt()
         }
-        self.run(SKAction.sequence(actions))
+        run(SKAction.sequence(actions))
 
-        self.reevaluate()
+        reevaluate()
     }
-
 }

@@ -14,28 +14,27 @@ import SpriteKit
 
 /// A class that represents a lever.
 class GameLever: GameSignalSender {
-
     /// Initialize a lever.
     /// - Parameter position: The world matrix position of the lever.
     init(at position: CGPoint) {
         super.init(textureName: "lever_wallup", by: [.activeOncePermanently], at: position)
-        self.kind = .lever
-        self.instantiateBody(with: getWallPhysicsBody(with: "wall_edge_physics_mask"))
+        kind = .lever
+        instantiateBody(with: getWallPhysicsBody(with: "wall_edge_physics_mask"))
     }
 
     /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.
-    required init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     /// Activate the lever.
     /// - Parameter event: The event handler to listen to and track.
     /// - Parameter player: The player to watch and track.
-    override func activate(with event: NSEvent?, player: Player?, objects: [SKSpriteNode?]) {
+    override func activate(with event: NSEvent?, player: Player?, objects _: [SKSpriteNode?]) {
         super.activate(with: event, player: player)
         if UserDefaults.playLeverSound {
-            self.run(SKAction.playSoundFileNamed("leverToggle", waitForCompletion: true))
+            run(SKAction.playSoundFileNamed("leverToggle", waitForCompletion: true))
         }
     }
-
 }

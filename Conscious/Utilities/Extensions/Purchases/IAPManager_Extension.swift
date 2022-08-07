@@ -14,20 +14,20 @@ import StoreKit
 
 extension IAPManager: SKProductsRequestDelegate {
     /// Make a product request.
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+    func productsRequest(_: SKProductsRequest, didReceive response: SKProductsResponse) {
         if !response.products.isEmpty {
-            self.available = response.products
+            available = response.products
         }
 
         if !response.invalidProductIdentifiers.isEmpty {
-            self.invalid = response.invalidProductIdentifiers
+            invalid = response.invalidProductIdentifiers
         }
     }
 }
 
 extension IAPManager: SKRequestDelegate {
     /// Make a products request that handles an error.
-    func request(_ request: SKRequest, didFailWithError error: Error) {
+    func request(_: SKRequest, didFailWithError _: Error) {
 //        print(error.localizedDescription)
     }
 }

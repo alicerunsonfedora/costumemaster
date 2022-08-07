@@ -13,7 +13,6 @@ import Foundation
 
 /// A data structure that contains the command line arguments for the execution context.
 struct CommandLineArguments {
-
     /// The name of the file to open on startup. Defaults to nil (no file).
     public let startLevel: String?
 
@@ -28,7 +27,6 @@ struct CommandLineArguments {
 
     /// An enumeration that represents the AI mode types.
     enum AgentTestingType: String, CaseIterable {
-
         /// A randomly-moving agent.
         case randomMove = "random"
 
@@ -36,12 +34,12 @@ struct CommandLineArguments {
         case randomWeightMove = "randomWeighted"
 
         /// A reflex agent.
-        case reflex = "reflex"
+        case reflex
 
         /// An agent with a pre-determined decision tree.
         case predeterminedTree = "predTree"
 
         /// An agent that uses a trained machine learning model to make decisions.
-        case tealConverse = "tealConverse"
+        case tealConverse
     }
 }

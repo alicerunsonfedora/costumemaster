@@ -15,7 +15,6 @@ import SpriteKit
 
 /// The SpriteKit scene associated with the intro scene.
 class IntroScene: SKScene {
-
     /// The sprite associated with the level.
     var character: SKSpriteNode?
 
@@ -46,69 +45,69 @@ class IntroScene: SKScene {
     /// Set up the scene and load in the corresponding keyboard shortcuts.
     override func sceneDidLoad() {
         // swiftlint:disable:previous cyclomatic_complexity
-        for child in self.children where child is SKLabelNode {
+        for child in children where child is SKLabelNode {
             if let transformedChild = child as? SKLabelNode {
                 transformedChild.fontName = "Cabin Regular"
             }
         }
 
-        for child in self.children where child is SKSpriteNode {
+        for child in children where child is SKSpriteNode {
             if let transformedChild = child as? SKSpriteNode {
                 transformedChild.texture?.filteringMode = .nearest
             }
         }
 
-        if let upKey = self.childNode(withName: "moveUpKey") as? SKLabelNode {
-            self.moveUpKey = upKey
-            self.moveUpKey?.text = KeyboardShortcuts.getShortcut(for: .moveUp)?.description
+        if let upKey = childNode(withName: "moveUpKey") as? SKLabelNode {
+            moveUpKey = upKey
+            moveUpKey?.text = KeyboardShortcuts.getShortcut(for: .moveUp)?.description
                 ?? "?"
         }
 
-        if let downKey = self.childNode(withName: "moveDownKey") as? SKLabelNode {
-            self.moveDownKey = downKey
-            self.moveDownKey?.text = KeyboardShortcuts.getShortcut(for: .moveDown)?.description
+        if let downKey = childNode(withName: "moveDownKey") as? SKLabelNode {
+            moveDownKey = downKey
+            moveDownKey?.text = KeyboardShortcuts.getShortcut(for: .moveDown)?.description
                 ?? "?"
         }
 
-        if let leftKey = self.childNode(withName: "moveLeftKey") as? SKLabelNode {
-            self.moveLeftKey = leftKey
-            self.moveLeftKey?.text = KeyboardShortcuts.getShortcut(for: .moveLeft)?.description
+        if let leftKey = childNode(withName: "moveLeftKey") as? SKLabelNode {
+            moveLeftKey = leftKey
+            moveLeftKey?.text = KeyboardShortcuts.getShortcut(for: .moveLeft)?.description
                 ?? "?"
         }
 
-        if let rightKey = self.childNode(withName: "moveRightKey") as? SKLabelNode {
-            self.moveRightKey = rightKey
-            self.moveRightKey?.text = KeyboardShortcuts.getShortcut(
+        if let rightKey = childNode(withName: "moveRightKey") as? SKLabelNode {
+            moveRightKey = rightKey
+            moveRightKey?.text = KeyboardShortcuts.getShortcut(
                 for: .moveRight
             )?.description ?? "?"
         }
 
-        if let prevKey = self.childNode(withName: "prevCostumeKey") as? SKLabelNode {
-            self.prevCostumeKey = prevKey
-            self.prevCostumeKey?.text = KeyboardShortcuts.getShortcut(
+        if let prevKey = childNode(withName: "prevCostumeKey") as? SKLabelNode {
+            prevCostumeKey = prevKey
+            prevCostumeKey?.text = KeyboardShortcuts.getShortcut(
                 for: .previousCostume
             )?.description ?? "?"
         }
 
-        if let nextKey = self.childNode(withName: "nextCostumeKey") as? SKLabelNode {
-            self.nextCostumeKey = nextKey
-            self.nextCostumeKey?.text = KeyboardShortcuts.getShortcut(
+        if let nextKey = childNode(withName: "nextCostumeKey") as? SKLabelNode {
+            nextCostumeKey = nextKey
+            nextCostumeKey?.text = KeyboardShortcuts.getShortcut(
                 for: .nextCostume
             )?.description ?? "?"
         }
 
-        if let useKey = self.childNode(withName: "useKey") as? SKLabelNode {
+        if let useKey = childNode(withName: "useKey") as? SKLabelNode {
             self.useKey = useKey
             self.useKey?.text = KeyboardShortcuts.getShortcut(
                 for: .use
             )?.description ?? "?"
         }
 
-        if let start = self.childNode(withName: "startButton") as? SKLabelNode {
-            self.startButton = start
+        if let start = childNode(withName: "startButton") as? SKLabelNode {
+            startButton = start
         }
 
-        if let character = self.childNode(withName: "character") as? SKSpriteNode {
+        if let character = childNode(withName: "character") as? SKSpriteNode {
             self.character = character
         }
     }
@@ -117,12 +116,11 @@ class IntroScene: SKScene {
     override func mouseDown(with event: NSEvent) {
         let location = event.location(in: self)
 
-        if self.atPoint(location) == self.startButton {
-            self.startButton?.color = .controlAccentColor
+        if atPoint(location) == startButton {
+            startButton?.color = .controlAccentColor
             if let scene = SKScene(fileNamed: "Entry") {
-                self.view?.presentScene(scene, transition: SKTransition.fade(withDuration: 2.0))
+                view?.presentScene(scene, transition: SKTransition.fade(withDuration: 2.0))
             }
         }
     }
-
 }

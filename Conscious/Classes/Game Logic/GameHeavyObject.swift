@@ -16,10 +16,9 @@ import SpriteKit
 ///
 /// Heavy objects can be manipulated by the player when wearing the sorceress costume.
 class GameHeavyObject: GameTileSpriteNode {
-
     /// Whether the object is being carried by the player.
     public var carrying: Bool {
-        return self.parent is Player
+        parent is Player
     }
 
     /// Whether the object can be carried by the player. Defaults to true.
@@ -30,38 +29,36 @@ class GameHeavyObject: GameTileSpriteNode {
     /// - Parameter location: The matrix location of the heavy object.
     public init(with texture: String, at location: CGPoint) {
         super.init(texture: SKTexture(imageNamed: texture), color: .clear, size: SKTexture(imageNamed: texture).size())
-        self.worldPosition = location
+        worldPosition = location
         self.texture?.filteringMode = .nearest
-        self.physicsBody = getHeavyObjectPhysicsBody(with: texture)
+        physicsBody = getHeavyObjectPhysicsBody(with: texture)
     }
 
     /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.
-    required init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     /// Attach the heavy object to the player.
     /// - Parameter player: The player object to attach to.
     public func attach(to player: Player?) {
-        if self.parent == player || !self.canBeCarried { return }
+        if parent == player || !canBeCarried { return }
         guard let costume = player?.costume else { return }
-        if costume == .sorceress && player?.position.distance(between: self.position) ?? 99 <= 64 {
-            self.removeFromParent()
+        if costume == .sorceress, player?.position.distance(between: position) ?? 99 <= 64 {
+            removeFromParent()
             player?.addChild(self)
         }
-
     }
 
     /// Resign the attachment status from the player.
     /// - Parameter player: The player object to detach or resign from.
     public func resign(from player: Player?) {
-        if self.parent != player || !self.canBeCarried { return }
+        if parent != player || !canBeCarried { return }
         if let pos = player?.position {
-            self.position = CGPoint(x: pos.x - 16, y: pos.y)
-            self.removeFromParent()
+            position = CGPoint(x: pos.x - 16, y: pos.y)
+            removeFromParent()
             player?.parent?.addChild(self)
         }
-
     }
-
 }

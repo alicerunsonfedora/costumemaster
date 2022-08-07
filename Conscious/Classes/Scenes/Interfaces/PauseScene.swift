@@ -10,12 +10,11 @@
 //
 
 import Foundation
-import SpriteKit
 import KeyboardShortcuts
+import SpriteKit
 
 /// The SpriteKit scene class for the pause menu.
 class PauseScene: SKScene {
-
     /// The label node that corresponds to the main menu button.
     var mainMenuButton: SKLabelNode?
 
@@ -30,40 +29,40 @@ class PauseScene: SKScene {
 
     /// Set up the scene and hook up the buttons to make the pause menu functional.
     override func sceneDidLoad() {
-        guard let mainMenu = self.childNode(withName: "mainMenuButton") as? SKLabelNode else { return }
-        self.mainMenuButton = mainMenu
-        self.mainMenuButton?.fontName = "Cabin Regular"
-        self.mainMenuButton?.text = NSLocalizedString("costumemaster.ui.pause_main", comment: "Back to main menu")
+        guard let mainMenu = childNode(withName: "mainMenuButton") as? SKLabelNode else { return }
+        mainMenuButton = mainMenu
+        mainMenuButton?.fontName = "Cabin Regular"
+        mainMenuButton?.text = NSLocalizedString("costumemaster.ui.pause_main", comment: "Back to main menu")
 
-        guard let options = self.childNode(withName: "optionsButton") as? SKLabelNode else { return }
-        self.optionsButton = options
-        self.optionsButton?.fontName = "Cabin Regular"
-        self.optionsButton?.text = NSLocalizedString("costumemaster.ui.pause_options", comment: "Options")
+        guard let options = childNode(withName: "optionsButton") as? SKLabelNode else { return }
+        optionsButton = options
+        optionsButton?.fontName = "Cabin Regular"
+        optionsButton?.text = NSLocalizedString("costumemaster.ui.pause_options", comment: "Options")
 
-        guard let resume = self.childNode(withName: "resumeButton") as? SKLabelNode else { return }
-        self.resumeButton = resume
-        self.resumeButton?.fontName = "Cabin Regular"
-        self.resumeButton?.text = NSLocalizedString("costumemaster.ui.pause_resume", comment: "Resume")
+        guard let resume = childNode(withName: "resumeButton") as? SKLabelNode else { return }
+        resumeButton = resume
+        resumeButton?.fontName = "Cabin Regular"
+        resumeButton?.text = NSLocalizedString("costumemaster.ui.pause_resume", comment: "Resume")
 
-        guard let restart = self.childNode(withName: "restartButton") as? SKLabelNode else { return }
-        self.restartButton = restart
-        self.restartButton?.fontName = "Cabin Regular"
-        self.restartButton?.text = NSLocalizedString("costumemaster.ui.pause_restart", comment: "Restart")
+        guard let restart = childNode(withName: "restartButton") as? SKLabelNode else { return }
+        restartButton = restart
+        restartButton?.fontName = "Cabin Regular"
+        restartButton?.text = NSLocalizedString("costumemaster.ui.pause_restart", comment: "Restart")
     }
 
     /// Listen for mouse events and trigger the corresponding menu action.
     override func mouseDown(with event: NSEvent) {
         let tapped = event.location(in: self)
 
-        switch self.atPoint(tapped) {
+        switch atPoint(tapped) {
         case resumeButton:
-            self.resumeAction()
+            resumeAction()
         case restartButton:
-            self.restartAction()
+            restartAction()
         case optionsButton:
-            self.optionsAction()
+            optionsAction()
         case mainMenuButton:
-            self.mainMenuAction()
+            mainMenuAction()
         default:
             break
         }
@@ -72,7 +71,7 @@ class PauseScene: SKScene {
     /// Listen for keyboard events and return when the user presses the pause key.
     override func keyDown(with event: NSEvent) {
         if Int(event.keyCode) == KeyboardShortcuts.getShortcut(for: .pause)?.carbonKeyCode {
-            self.resumeAction()
+            resumeAction()
         }
     }
 
@@ -99,9 +98,9 @@ class PauseScene: SKScene {
 
     /// Execute the action that corresponds to the resume button.
     private func resumeAction() {
-        if let controller = self.view?.window?.contentViewController as? ViewController {
+        if let controller = view?.window?.contentViewController as? ViewController {
             if controller.rootScene == nil { return }
-            self.view?.presentScene(controller.rootScene!, transition: SKTransition.fade(withDuration: 0.10))
+            view?.presentScene(controller.rootScene!, transition: SKTransition.fade(withDuration: 0.10))
             controller.rootScene = nil
         }
     }
@@ -121,5 +120,4 @@ class PauseScene: SKScene {
             }
         }
     }
-
 }

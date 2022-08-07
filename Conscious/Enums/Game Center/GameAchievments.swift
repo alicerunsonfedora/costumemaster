@@ -13,7 +13,6 @@ import Foundation
 
 /// A enumeration that represents the different achievements players can earn in the game.
 public enum GameAchievement: String {
-
     /// The typealias for this enumeration.
     public typealias RawValue = String
 
@@ -60,5 +59,4 @@ public enum GameAchievement: String {
     /// No Achievement
     /// This is used in cases where this isn't an achievement. Only for use with WidgetKit.
     case none = "costumemaster.none"
-
 }

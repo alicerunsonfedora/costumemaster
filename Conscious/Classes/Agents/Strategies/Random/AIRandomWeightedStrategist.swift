@@ -14,7 +14,6 @@ import GameplayKit
 
 /// A strategist that will pick a random move from a random list of actions with the highest weight.
 class AIRandomWeightedStrategist: AIGameStrategy {
-
     /// Returns the best move for the player.
     /// - Returns: A random move with the highest weight.
     override func bestMoveForActivePlayer() -> GKGameModelUpdate? {
@@ -24,5 +23,4 @@ class AIRandomWeightedStrategist: AIGameStrategy {
         }
         return actions.max { first, second in first.value > second.value }
     }
-
 }

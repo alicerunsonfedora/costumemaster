@@ -13,7 +13,6 @@ import Foundation
 
 /// An enumerated representation of costume types.
 public enum PlayerCostumeType: String {
-
     /// The "default" costume (no costume).
     case `default` = "Default"
 

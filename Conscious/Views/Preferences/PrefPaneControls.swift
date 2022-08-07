@@ -9,9 +9,9 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
-import SwiftUI
 import Combine
 import KeyboardShortcuts
+import SwiftUI
 
 struct PrefPaneControls: View {
     var body: some View {
@@ -48,13 +48,12 @@ struct PrefPaneControls: View {
     }
 
     func shortcut(for key: KeyboardShortcuts.Name, @ViewBuilder _ label: () -> Text) -> some View {
-        return HStack {
+        HStack {
             label()
             KeyboardShortcuts.Recorder(for: key) { iKey in
                 PrefPaneControls.stripModifiers(.moveUp)(iKey)
             }
         }
-
     }
 
     /// Strip the modifiers from a shortcut and re-apply the shortcut.
@@ -64,8 +63,9 @@ struct PrefPaneControls: View {
     /// - Parameter name: The shortcut to strip the mofidier for.
     /// - Returns: A function that will strip the modifier.
     static func stripModifiers(_ name: KeyboardShortcuts.Name) ->
-        (_ shortcut: KeyboardShortcuts.Shortcut?) -> Void {
-        return { (_ short: KeyboardShortcuts.Shortcut?) in
+        (_ shortcut: KeyboardShortcuts.Shortcut?) -> Void
+    {
+        { (_ short: KeyboardShortcuts.Shortcut?) in
             if short?.modifiers == [NSEvent.ModifierFlags.control] {
                 let newShortcut: KeyboardShortcuts.Shortcut? = KeyboardShortcuts.Shortcut(short?.key ?? .f19)
                 KeyboardShortcuts.setShortcut(newShortcut, for: name)

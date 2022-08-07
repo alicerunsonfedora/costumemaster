@@ -13,9 +13,8 @@ import Foundation
 
 /// A structure that represents the game's store data.
 struct GameStore {
-
     /// A shared copy of the game store.
-    static var shared: GameStore = GameStore()
+    static var shared: GameStore = .init()
 
     /// Whether the store is being initialized.
     private var inInit: Bool = false
@@ -68,38 +67,38 @@ struct GameStore {
     ///
     /// Values that don't exist in the game store will be initialized with default values.
     init() {
-        self.inInit = true
+        inInit = true
         if UserDefaults.store.value(forKey: "lastSavedScene") == nil {
             UserDefaults.store.set("", forKey: "lastSavedScene")
         }
-        self.lastSavedScene = UserDefaults.store.string(forKey: "lastSavedScene") ?? ""
+        lastSavedScene = UserDefaults.store.string(forKey: "lastSavedScene") ?? ""
 
         for increment in ["USB", "Bird", "Sorceress"] {
             if UserDefaults.store.value(forKey: "costumeIncrement\(increment)") == nil {
                 UserDefaults.store.setValue(0, forKey: "costumeIncrement\(increment)")
             }
         }
-        self.costumeIncrementUSB = UserDefaults.store.integer(forKey: "costumeIncrementUSB")
-        self.costumeIncrementBird = UserDefaults.store.integer(forKey: "costumeIncrementBird")
-        self.costumeIncrementSorceress = UserDefaults.store.integer(forKey: "costumeIncrementSorceress")
+        costumeIncrementUSB = UserDefaults.store.integer(forKey: "costumeIncrementUSB")
+        costumeIncrementBird = UserDefaults.store.integer(forKey: "costumeIncrementBird")
+        costumeIncrementSorceress = UserDefaults.store.integer(forKey: "costumeIncrementSorceress")
 
         let shared = UserDefaults(suiteName: "group.net.marquiskurt.costumemaster")
         if shared?.string(forKey: "lastAchievement") == nil {
             shared?.setValue(GameAchievement.none.rawValue, forKey: "lastAchievement")
         }
 
-        self.inInit = false
+        inInit = false
     }
 }
 
 extension UserDefaults {
     /// The game's stored data.
     static var store: UserDefaults {
-        return UserDefaults(suiteName: "net.marquiskurt.costumemaster_store")!
+        UserDefaults(suiteName: "net.marquiskurt.costumemaster_store")!
     }
 
     /// The IAP module containing IAP content flags.
     static var iapModule: UserDefaults {
-        return UserDefaults(suiteName: "net.marquiskurt.costumemaster_iap")!
+        UserDefaults(suiteName: "net.marquiskurt.costumemaster_iap")!
     }
 }

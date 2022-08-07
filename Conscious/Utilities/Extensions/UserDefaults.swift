@@ -12,8 +12,8 @@
 import Foundation
 
 extension UserDefaults {
-
     // MARK: - General
+
     /// The scale zoom for the camera.
     static var cameraScale = UserDefaults.standard.float(forKey: "cameraScale")
 
@@ -27,6 +27,7 @@ extension UserDefaults {
     static var usePhysicsMovement = UserDefaults.standard.bool(forKey: "usePhysicsMovement")
 
     // MARK: - Sound
+
     /// The music volume.
     static var musicVolume = UserDefaults.standard.float(forKey: "soundMusicVolume")
 
@@ -43,6 +44,7 @@ extension UserDefaults {
     static var playAlarmSound = UserDefaults.standard.bool(forKey: "soundPlayAlarmNoise")
 
     // MARK: - Advanced
+
     /// Whether the player has the ability to use character attributes on the main menu.
     static var canShowUnmodeled = UserDefaults.standard.bool(forKey: "advShowUnmodeledOnMenuAbility")
 

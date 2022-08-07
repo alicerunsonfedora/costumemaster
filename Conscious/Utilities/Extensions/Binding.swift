@@ -17,7 +17,7 @@ extension Binding {
     /// - Parameter handler: An escaping closure that executes when a value is set.
     /// - Returns: The binding with the changed value.
     func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {
-        return Binding(
+        Binding(
             get: { self.wrappedValue },
             set: { selection in
                 self.wrappedValue = selection

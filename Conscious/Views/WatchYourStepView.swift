@@ -9,7 +9,6 @@ import SwiftUI
 
 /// A view that handles the "Watch Your Step" DLC content, including IAP.
 struct WatchYourStepView: View {
-
     /// A closure that executes when the DLC content starts.
     var onStartDLCContent: () -> Void = {}
 
@@ -54,11 +53,11 @@ struct WatchYourStepView: View {
                 .disabled(self.dlcIsAvailable)
                 .help(
                     self.dlcIsAvailable
-                    ? NSLocalizedString(
-                        "costumemaster.dialog.dlc_purchase_button_disabled_help",
-                        comment: "DLC already purchased"
-                    )
-                    : NSLocalizedString("costumemaster.dialog.dlc_purchase_button_enabled_help", comment: "Purchase")
+                        ? NSLocalizedString(
+                            "costumemaster.dialog.dlc_purchase_button_disabled_help",
+                            comment: "DLC already purchased"
+                        )
+                        : NSLocalizedString("costumemaster.dialog.dlc_purchase_button_enabled_help", comment: "Purchase")
                 )
                 Button {
                     self.onStartDLCContent()
@@ -96,10 +95,8 @@ struct WatchYourStepView: View {
 
 /// The preview for the WatchYourStepView view.
 struct WatchYourStepView_Previews: PreviewProvider {
-
     /// The preview content.
     static var previews: some View {
         WatchYourStepView()
-
     }
 }

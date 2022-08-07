@@ -13,7 +13,6 @@ import SwiftUI
 
 /// A view that lets players select a level and play it.
 struct GameLevelSelector: View {
-
     /// The list of levels to choose from.
     @State var levels: [GameLevelItem]?
 
@@ -119,7 +118,7 @@ struct GameLevelSelector: View {
                 .background(
                     Color(.controlAccentColor)
                         .opacity(
-                            canPlayLevel(with: entry) ? 1.0: 0.3
+                            canPlayLevel(with: entry) ? 1.0 : 0.3
                         )
                 )
                 .foregroundColor(.black)
@@ -134,8 +133,8 @@ struct GameLevelSelector_Previews: PreviewProvider {
     static var previews: some View {
         GameLevelSelector(levels: [
             GameLevelItem(name: "Entry", description: "Where it all begins.", isDownloadableContent: false),
-            GameLevelItem(name: "Consequences", description: "Think about them.", isDownloadableContent: true)
+            GameLevelItem(name: "Consequences", description: "Think about them.", isDownloadableContent: true),
         ]) { name in print(name) }
-        dismiss: { }
+        dismiss: {}
     }
 }

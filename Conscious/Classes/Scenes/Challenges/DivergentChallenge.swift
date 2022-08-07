@@ -6,13 +6,12 @@
 //
 
 import Foundation
-import SpriteKit
 import GameKit
 import KeyboardShortcuts
+import SpriteKit
 
 /// The game scene specific to the level "Divergent".
 class DivergentChallenge: ChallengeGameScene {
-
     /// Whether the player is eligible for receiving the achievement.
     var eligible: Bool = true
 
@@ -20,19 +19,19 @@ class DivergentChallenge: ChallengeGameScene {
     override func keyDown(with event: NSEvent) {
         let keyCode = Int(event.keyCode)
         if keyCode == KeyboardShortcuts.getShortcut(for: .nextCostume)?.carbonKeyCode
-            || keyCode == KeyboardShortcuts.getShortcut(for: .previousCostume)?.carbonKeyCode {
-            self.eligible = false
+            || keyCode == KeyboardShortcuts.getShortcut(for: .previousCostume)?.carbonKeyCode
+        {
+            eligible = false
         }
         super.keyDown(with: event)
     }
 
     /// Determine if the time to complete the level is less than 100 seconds and grant an achievement.
     override func willCalculateChallengeResults() {
-        if self.currentTime <= 100 && self.eligible {
+        if currentTime <= 100, eligible {
             GKAchievement.earn(with: .overclocker)
         }
-        GKLeaderboard.submit(to: .divergentDaily, with: Int(self.currentTime))
-        self.announceTimeResults()
+        GKLeaderboard.submit(to: .divergentDaily, with: Int(currentTime))
+        announceTimeResults()
     }
-
 }

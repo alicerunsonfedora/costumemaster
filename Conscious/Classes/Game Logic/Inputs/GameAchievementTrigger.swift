@@ -10,13 +10,12 @@
 //
 
 import Foundation
-import SpriteKit
 import GameKit
+import SpriteKit
 
 /// A class representation of a Game Center achievement trigger.
 /// Game Center triggers will trigger earning an achievement upon player contact.
 class GameAchievementTrigger: GameSignalSender {
-
     /// The achievement to earn when passing through the trigger.
     let gameAchievement: GameAchievement?
 
@@ -25,20 +24,21 @@ class GameAchievementTrigger: GameSignalSender {
 
     /// The active texture for the trigger.
     override var activeTexture: SKTexture {
-        return SKTexture(imageNamed: "floor")
+        SKTexture(imageNamed: "floor")
     }
 
     /// Initialize a Game Center trigger.
     /// - Parameter achievement: The game achievement to earn when passing through.
     /// - Parameter location: The level position of the trigger.
     init(with achievement: GameAchievement?, at location: CGPoint) {
-        self.gameAchievement = achievement
+        gameAchievement = achievement
         super.init(textureName: "floor", by: [.activeByPlayerIntervention], at: location)
-        self.kind = .trigger
+        kind = .trigger
     }
 
     /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.
-    required init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -46,19 +46,17 @@ class GameAchievementTrigger: GameSignalSender {
     /// - Parameter player: The player to listen to for intervention.
     /// - Parameter objects: The objects to listen to for intervention.
     /// - Returns: Whether the input should activate given the intervention criteria.
-    public override func shouldActivateOnIntervention(with player: Player?, objects: [SKSpriteNode?]) -> Bool {
-        return player?.position.distance(between: self.position) ?? 0 < 64 && !self.didActivate
+    override public func shouldActivateOnIntervention(with player: Player?, objects _: [SKSpriteNode?]) -> Bool {
+        player?.position.distance(between: position) ?? 0 < 64 && !didActivate
     }
 
     /// Activate an achievement when entering the field.
-    public override func onActivate(with event: NSEvent?, player: Player?) {
-        self.didActivate = true
-        if let achievementID = self.gameAchievement {
+    override public func onActivate(with _: NSEvent?, player _: Player?) {
+        didActivate = true
+        if let achievementID = gameAchievement {
             GKAchievement.earn(with: achievementID)
         }
     }
 
-    public override func onDeactivate(with event: NSEvent?, player: Player?) {
-
-    }
+    override public func onDeactivate(with _: NSEvent?, player _: Player?) {}
 }

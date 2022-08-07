@@ -13,7 +13,6 @@ import SwiftUI
 
 /// A view that constructs an agent image.
 struct AISimulatorAgentImage: View {
-
     /// The agent type that will be used for the image.
     var agent: CommandLineArguments.AgentTestingType
 
@@ -37,7 +36,7 @@ struct AISimulatorAgentImage: View {
 
     /// Returns the image view that hosts the symbol.
     func image() -> some View {
-        return Image(systemName: self.symbol())
+        Image(systemName: symbol())
     }
 
     /// Returns the background for the image view.
@@ -59,7 +58,7 @@ struct AISimulatorAgentImage: View {
             return LinearGradient(
                 gradient: Gradient(colors: [
                     .init(red: 0.3, green: 1, blue: 0.8),
-                    .init(red: 0.1, green: 0.5, blue: 0.7)
+                    .init(red: 0.1, green: 0.5, blue: 0.7),
                 ]),
                 startPoint: .top,
                 endPoint: .bottom

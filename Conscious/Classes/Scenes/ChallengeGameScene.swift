@@ -10,8 +10,8 @@
 //
 
 import Foundation
-import SpriteKit
 import GameKit
+import SpriteKit
 
 /// An extended class of the game level scene dedicated to challenges.
 ///
@@ -19,7 +19,6 @@ import GameKit
 /// and costume changes. The purpose of this subclass is to provide extensions to the level for challenges
 /// for things such as achievements, leaderboards, and "advanced levels".
 class ChallengeGameScene: GameScene {
-
     /// The current time in this level.
     public var currentTime: TimeInterval = 0.0
 
@@ -42,8 +41,8 @@ class ChallengeGameScene: GameScene {
     /// Set up the scene and set the cached costume.
     override func sceneDidLoad() {
         super.sceneDidLoad()
-        if let costume = self.playerNode?.costume {
-            self.cachedCostume = costume
+        if let costume = playerNode?.costume {
+            cachedCostume = costume
         }
     }
 
@@ -52,15 +51,16 @@ class ChallengeGameScene: GameScene {
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
         let interval = Int(currentTime) % 60
-        if interval > self.previousInterval
-            || (interval == 0 && self.previousInterval != interval) {
+        if interval > previousInterval
+            || (interval == 0 && previousInterval != interval)
+        {
             self.currentTime += 1
-            self.previousInterval = interval
+            previousInterval = interval
         }
 
-        if self.playerNode?.costume != self.cachedCostume {
-            var (usb, bird, sorceress) = self.costumeIncrements
-            switch self.playerNode?.costume {
+        if playerNode?.costume != cachedCostume {
+            var (usb, bird, sorceress) = costumeIncrements
+            switch playerNode?.costume {
             case .bird:
                 bird += 1
             case .flashDrive:
@@ -70,9 +70,9 @@ class ChallengeGameScene: GameScene {
             default:
                 break
             }
-            self.costumeIncrements = (usb, bird, sorceress)
-            self.cachedCostume = self.playerNode?.costume ?? .default
-            self.totalCostumeIncrement += 1
+            costumeIncrements = (usb, bird, sorceress)
+            cachedCostume = playerNode?.costume ?? .default
+            totalCostumeIncrement += 1
         }
     }
 
@@ -81,9 +81,9 @@ class ChallengeGameScene: GameScene {
     /// Challenge scores are activated only when the player is near the exit and the exit is activated.
     override func willMove(from view: SKView) {
         super.willMove(from: view)
-        guard let playerPos = self.playerNode?.position else { return }
-        if self.exitNode?.position.distance(between: playerPos) ?? 128 < 64 && self.exitNode?.active == true {
-            self.willCalculateChallengeResults()
+        guard let playerPos = playerNode?.position else { return }
+        if exitNode?.position.distance(between: playerPos) ?? 128 < 64, exitNode?.active == true {
+            willCalculateChallengeResults()
         }
     }
 
@@ -98,9 +98,9 @@ class ChallengeGameScene: GameScene {
     /// - Important: This method will automatically trigger when the scene moves (`SKScene.willMove`)
     /// and should not be called directly.
     func willCalculateChallengeResults() {
-        let (usb, bird, sorceress) = self.costumeIncrements
-        print("Time to complete: \(self.currentTime) seconds")
-        print("Total costume changes: \(self.totalCostumeIncrement)")
+        let (usb, bird, sorceress) = costumeIncrements
+        print("Time to complete: \(currentTime) seconds")
+        print("Total costume changes: \(totalCostumeIncrement)")
         print("Costume changes: USB - \(usb), Bird - \(bird), Sorceress - \(sorceress)")
     }
 
@@ -113,8 +113,7 @@ class ChallengeGameScene: GameScene {
         GKNotificationBanner
             .show(
                 withTitle: "Great work!",
-                message: "You finished \(self.name ?? "Level") in \(self.currentTime) seconds."
-            ) { }
+                message: "You finished \(name ?? "Level") in \(currentTime) seconds."
+            ) {}
     }
-
 }

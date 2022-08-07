@@ -23,7 +23,7 @@ struct AchievementView: View {
                 .scaledToFill()
             LinearGradient(
                 gradient:
-                    Gradient(colors: [Color.clear, Color.black.opacity(0.8)]),
+                Gradient(colors: [Color.clear, Color.black.opacity(0.8)]),
                 startPoint: .top,
                 endPoint: .bottom
             )

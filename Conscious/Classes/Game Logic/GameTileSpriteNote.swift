@@ -14,8 +14,6 @@ import SpriteKit
 
 /// A special subclass of a sprite node that contains a special field for matrix positioning.
 public class GameTileSpriteNode: SKSpriteNode {
-
     /// The world position of this node.
     var worldPosition: CGPoint = .zero
-
 }

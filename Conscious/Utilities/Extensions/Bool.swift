@@ -12,7 +12,6 @@
 import Foundation
 
 extension Bool {
-
     /// Returns a Python string representation of itself.
     func toPythonString() -> String { self ? "True" : "False" }
 }

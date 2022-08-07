@@ -12,7 +12,6 @@
 import SwiftUI
 
 struct PrefPaneGeneral: View {
-
     @AppStorage("cameraScale")
     var cameraScale: Double = 0.5
 
@@ -49,8 +48,8 @@ struct PrefPaneGeneral: View {
                 .scaledToFill()
                 .frame(width: iconSize, height: iconSize)
         }
-            .tag(option)
-            .help(tooltipText)
+        .tag(option)
+        .help(tooltipText)
     }
 
     var body: some View {
@@ -82,9 +81,9 @@ struct PrefPaneGeneral: View {
                             comment: "Watch Your Step!"
                         )
                     )
-                        .disabled(
-                            !UserDefaults.iapModule.bool(forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue)
-                        )
+                    .disabled(
+                        !UserDefaults.iapModule.bool(forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue)
+                    )
                     self.appIconOption(
                         for: .machineLearning,
                         help: NSLocalizedString(
@@ -103,7 +102,7 @@ struct PrefPaneGeneral: View {
 
             Slider(
                 value: $cameraScale,
-                in: 0.25...1.0,
+                in: 0.25 ... 1.0,
                 step: 0.25,
                 minimumValueLabel: Image("largecircle.fill.circle"),
                 maximumValueLabel: Image("smallcircle.fill.circle")
@@ -123,7 +122,7 @@ struct PrefPaneGeneral: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("costumemaster.settings.general_player_physics_title")
                         Text("costumemaster.settings.general_player_physics_detail")
-                        .foregroundColor(.secondary)
+                            .foregroundColor(.secondary)
                     }
                 }
 

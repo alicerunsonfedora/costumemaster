@@ -9,11 +9,11 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
-import Foundation
-import SpriteKit
-import GameplayKit
-import SwiftUI
 import CranberrySprite
+import Foundation
+import GameplayKit
+import SpriteKit
+import SwiftUI
 
 /// A game scene that an AI agent can control.
 ///
@@ -22,7 +22,6 @@ import CranberrySprite
 ///
 /// - Important: Scenes that subclass the AI game scene must be running macOS 10.15 Catalina or higher.
 class AIGameScene: ChallengeGameScene {
-
     /// The console view model that hosts all of the console messages.
     var console = ConsoleViewModel()
 
@@ -40,36 +39,36 @@ class AIGameScene: ChallengeGameScene {
         console.debug("Setting up level for AI interaction.", silent: true)
         super.sceneDidLoad()
 
-        console.success("Loaded level successfully: \(self.name ?? "AI Level")", silent: true)
+        console.success("Loaded level successfully: \(name ?? "AI Level")", silent: true)
 
-        guard let initialState = self.getState() else {
+        guard let initialState = getState() else {
             console.error("Could not capture the initial state. Aborting simulation.")
             return
         }
         console.info("Captured initial state: \(initialState)")
 
-        self.strategist = self.getStrategy(with: initialState)
+        strategist = getStrategy(with: initialState)
 
-        if let strat = self.strategist {
+        if let strat = strategist {
             console.debug("Initialized strategist: \(strat.strategy.description)")
         }
 
         // Wait until the window has opened (generally ~5 sec) before starting to solve.
-        self.run(SKAction.wait(forDuration: 5.0))
+        run(SKAction.wait(forDuration: 5.0))
 
         // Start attempting to solve the puzzle, creating a set of moves in batches based on user preferences.
         // This should help prevent infinite recursion in such a way that prevents the window from ever showing.
         console.debug("Move generation rate set to: \(AppDelegate.arguments.agentMoveRate ?? 1) moves per update.")
-        self.solve(with: AppDelegate.arguments.agentMoveRate)
+        solve(with: AppDelegate.arguments.agentMoveRate)
     }
 
     /// Close the simulator console and prevent scene-saving.
-    override func willMove(from view: SKView) {
+    override func willMove(from _: SKView) {
         consoleWindowController?.close()
     }
 
     /// Close out of the current console and re-initialize the console.
-    override func didMove(to view: SKView) {
+    override func didMove(to _: SKView) {
         consoleWindowController?.close()
         initConsole()
         console.info("Initialized simulation console.", silent: true)
@@ -84,7 +83,7 @@ class AIGameScene: ChallengeGameScene {
     /// of 10.
     func solve(with rate: Int?) {
         // Set up the initial values.
-        guard let agent = self.strategist else { return }
+        guard let agent = strategist else { return }
         var solvedState = agent.state.isWin(for: agent.state.player)
         var moves = [AIGameDecision]()
 
@@ -113,7 +112,7 @@ class AIGameScene: ChallengeGameScene {
 
         // Create the action for repeating these moves and run them with the "AI Thread" key.
         let repeatable = SKAction.repeatForever(SKAction.sequence(sequence))
-        self.run(repeatable, withKey: "AI Thread")
+        run(repeatable, withKey: "AI Thread")
     }
 
     /// Get a predetermined set of actions with a maximum budget.
@@ -127,7 +126,7 @@ class AIGameScene: ChallengeGameScene {
     /// budget can be created.
     func strategize(with budget: Int) -> [AIGameDecision] {
         var states = [AIGameDecision]()
-        if let strat = self.strategist {
+        if let strat = strategist {
             for index in 1 ... budget {
                 if strat.state.isWin(for: strat.state.player) {
                     console.debug("Reached winning state after \(index) iterations. Stopping batch generation...")
@@ -135,7 +134,7 @@ class AIGameScene: ChallengeGameScene {
                 }
                 let move = strat.nextAction()
                 states.append(move)
-                if let newState = self.getState() {
+                if let newState = getState() {
                     strat.state = newState
                     strat.state.apply(move)
                 }
@@ -151,13 +150,13 @@ class AIGameScene: ChallengeGameScene {
     }
 
     /// Prevent keyboard input.
-    override func keyDown(with event: NSEvent) {
+    override func keyDown(with _: NSEvent) {
         blockInput()
     }
 
     /// Run the AI's version of didFinishUpdate.
     override func didFinishUpdate() {
-        self.aiFinish()
+        aiFinish()
     }
 
     /// Capture the current scene as a game state.
@@ -165,10 +164,10 @@ class AIGameScene: ChallengeGameScene {
     func getState() -> AIAbstractGameState? {
         guard let player = playerNode else { return nil }
         let state = AIAbstractGameState(with: AIAbstractGamePlayer(at: player.position, with: player.costumes))
-        state.exit = self.exitNode?.position ?? CGPoint.zero
+        state.exit = exitNode?.position ?? CGPoint.zero
 
         var signals = [AIAbstractGameSignalSender]()
-        for input in self.switches {
+        for input in switches {
             var signal = AIAbstractGameSignalSender(
                 kind: input.kind,
                 position: input.position,
@@ -189,7 +188,7 @@ class AIGameScene: ChallengeGameScene {
 
         state.inputs = signals
         state.outputs = receivers
-        state.escapable = self.exitNode?.active ?? false
+        state.escapable = exitNode?.active ?? false
 
         return state
     }
@@ -212,7 +211,7 @@ class AIGameScene: ChallengeGameScene {
                     }
                 },
                 SKAction.wait(forDuration: 2.5),
-                SKAction.run { self.playerNode?.halt() }
+                SKAction.run { self.playerNode?.halt() },
             ]
         case .switchToNextCostume, .switchToPreviousCostume:
             actions = [
@@ -220,13 +219,13 @@ class AIGameScene: ChallengeGameScene {
                     _ = action.action == .switchToNextCostume
                         ? self.playerNode?.nextCostume()
                         : self.playerNode?.previousCostume()
-                }
+                },
             ]
         case .deployClone, .retractClone:
             actions = [
                 SKAction.run {
                     self.playerNode?.copyAsObject()
-                }
+                },
             ]
         case .pickup:
             actions = [
@@ -234,7 +233,7 @@ class AIGameScene: ChallengeGameScene {
                     for object in self.interactables {
                         object.attach(to: self.playerNode)
                     }
-                }
+                },
             ]
         case .drop:
             actions = [
@@ -242,18 +241,18 @@ class AIGameScene: ChallengeGameScene {
                     for object in self.interactables {
                         object.resign(from: self.playerNode)
                     }
-                }
+                },
             ]
         case .activate:
             actions = [
                 SKAction.run {
                     self.checkInputStates(NSEvent())
-                }
+                },
             ]
         default:
-            self.playerNode?.halt()
+            playerNode?.halt()
         }
-        self.run(SKAction.sequence(actions))
+        run(SKAction.sequence(actions))
     }
 
     /// Perform a set of actions and update the state of the scene.
@@ -263,7 +262,7 @@ class AIGameScene: ChallengeGameScene {
         for action in moves {
             steps += [SKAction.run { self.apply(action) }, SKAction.wait(forDuration: 2.5)]
         }
-        self.run(SKAction.sequence(steps))
+        run(SKAction.sequence(steps))
     }
 
     /// Get the appropriate strategy based on the type of input passed.
@@ -285,15 +284,14 @@ class AIGameScene: ChallengeGameScene {
             strategist = AIGameStrategist(with: AIPredeterminedTreeStrategist(), reading: state)
         case .tealConverse:
             strategist = AIGameStrategist(with: AITealConverseStrategist(), reading: state)
-            self.playerNode?.machine = true
+            playerNode?.machine = true
         default:
             console.error("Agent type \(AppDelegate.arguments.agentTestingType.rawValue) cannot be found.")
             console.warn("Using fallback agent \"randomMove\".")
             strategist = AIGameStrategist(with: AIRandomMoveStrategist(), reading: state)
         }
 
-        strategist.strategy.console = self.console
+        strategist.strategy.console = console
         return strategist
     }
-
 }

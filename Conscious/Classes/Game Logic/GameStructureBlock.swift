@@ -18,7 +18,6 @@ import SpriteKit
 /// - Note: Currently, static sprites suffer from a drifting issue. Details on this issue can be found on the
 /// [Apple Developer Forums](https://developer.apple.com/forums/thread/27057).
 public class GameStructureObject: GameTileSpriteNode {
-
     /// The child node that hosts the physics body.
     private var child: SKNode
 
@@ -29,32 +28,32 @@ public class GameStructureObject: GameTileSpriteNode {
     /// - Parameter texture: The texture for this sprite.
     /// - Parameter size: The size for this sprite.
     public init(with texture: SKTexture?, size: CGSize) {
-        self.child = SKNode()
+        child = SKNode()
         super.init(texture: texture, color: .clear, size: size)
-        self.child.position = self.position
-        self.addChild(self.child)
+        child.position = position
+        addChild(child)
     }
 
     /// Required initializer for this class. Will result in a fatal error if you initialize the object this way.
-    required init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     /// Instantiate the physics body for this sprite.
     /// - Parameter physicsBody: The physics body to assign to the sprite.
     public func instantiateBody(with physicsBody: SKPhysicsBody?) {
-        self.child.physicsBody = physicsBody
+        child.physicsBody = physicsBody
     }
 
     /// Release the physics body from the sprite if the sprite is not locked.
     public func releaseBody() {
-        if self.locked { return }
-        self.child.physicsBody = nil
+        if locked { return }
+        child.physicsBody = nil
     }
 
     /// Get the physics body for this sprite.
     public func getBody() -> SKPhysicsBody? {
-        return self.child.physicsBody
+        child.physicsBody
     }
-
 }

@@ -13,28 +13,26 @@ import Foundation
 import SwiftUI
 
 extension AIGameScene {
-
     private func getConsoleWindow() -> some View {
-        AISimulatorConsole(console: self.console)
+        AISimulatorConsole(console: console)
     }
 
     /// Initialize the console window and begin streaming information to the console view model.
     func initConsole() {
-
         // If we already initialized the console, just bring the window forward. There is no need to create a new
         // console window.
-        if self.consoleWindowController != nil {
-            self.consoleWindowController?.window?.orderFront(self)
+        if consoleWindowController != nil {
+            consoleWindowController?.window?.orderFront(self)
             return
         }
 
         // Get the name of the level and change it accordingly.
-        var name = self.name ?? "AI Level"
+        var name = name ?? "AI Level"
         if name.hasSuffix("AI") {
             name = String(name.dropLast(name.suffix(2).count))
         }
 
-        let host = NSHostingView(rootView: self.getConsoleWindow())
+        let host = NSHostingView(rootView: getConsoleWindow())
         let viewController = NSViewController()
         viewController.view = host
         viewController.title = "AI Simulator Console"
@@ -51,7 +49,7 @@ extension AIGameScene {
 
         // Create the hosting view for the toolbar buttons.
         let toolbarButtons = NSHostingView(
-            rootView: AISimulatorConsoleToolbar(console: self.console)
+            rootView: AISimulatorConsoleToolbar(console: console)
         )
         toolbarButtons.frame.size = toolbarButtons.fittingSize
 
@@ -69,30 +67,31 @@ extension AIGameScene {
         let windowController = NSWindowController(window: window)
         windowController.showWindow(self)
 
-        self.consoleWindowController = windowController
+        consoleWindowController = windowController
     }
 
     /// Run any post-update logic and check input states.
     func aiFinish() {
-        for input in self.switches where input.activationMethod.contains(.activeByPlayerIntervention) {
-            if [GameSignalKind.pressurePlate, GameSignalKind.trigger].contains(input.kind)
-                && !(input is GameIrisScanner) {
+        for input in switches where input.activationMethod.contains(.activeByPlayerIntervention) {
+            if [GameSignalKind.pressurePlate, GameSignalKind.trigger].contains(input.kind),
+               !(input is GameIrisScanner)
+            {
                 input.activate(with: nil, player: self.playerNode, objects: self.interactables)
-            } else if input is GameIrisScanner &&
-                        input.shouldActivateOnIntervention(with: self.playerNode, objects: self.interactables) {
+            } else if input is GameIrisScanner,
+                      input.shouldActivateOnIntervention(with: self.playerNode, objects: self.interactables)
+            {
                 input.activate(with: nil, player: self.playerNode, objects: self.interactables)
             }
         }
-        self.checkDoorStates()
-        if self.exitNode?.active == true {
-            self.exitNode?.receive(with: self.playerNode, event: nil) { _ in }
+        checkDoorStates()
+        if exitNode?.active == true {
+            exitNode?.receive(with: playerNode, event: nil) { _ in }
         }
-        for child in self.structure.children where child is GameDeathPit {
+        for child in structure.children where child is GameDeathPit {
             guard let pit = child as? GameDeathPit else { continue }
-            if pit.shouldKill(self.playerNode) && !self.playerDied {
+            if pit.shouldKill(self.playerNode), !self.playerDied {
                 self.kill()
             }
         }
     }
-
 }

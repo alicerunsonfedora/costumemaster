@@ -10,30 +10,28 @@
 //
 
 import Foundation
-import SpriteKit
 import GameKit
 import KeyboardShortcuts
+import SpriteKit
 
 /// The challenge scene for the level "Seeded".
 class SeededChallenge: CostumemasteryInheritable {
-
     /// Whether the player has earned the achievement for this room.
     private var eligible: Bool = false
 
     /// Submit the latest time to the leaderboards.
     override func willCalculateChallengeResults() {
         super.willCalculateChallengeResults()
-        GKLeaderboard.submit(to: .seededDaily, with: Int(self.currentTime))
-        self.announceTimeResults()
+        GKLeaderboard.submit(to: .seededDaily, with: Int(currentTime))
+        announceTimeResults()
     }
 
     /// Perform the key down events and earn the "Cut and Paste" achievement if not earned already.
     override func keyDown(with event: NSEvent) {
         super.keyDown(with: event)
-        if !self.eligible && Int(event.keyCode) == KeyboardShortcuts.getShortcut(for: .copy)?.carbonKeyCode {
+        if !eligible, Int(event.keyCode) == KeyboardShortcuts.getShortcut(for: .copy)?.carbonKeyCode {
             GKAchievement.earn(with: .cloned)
-            self.eligible = true
+            eligible = true
         }
     }
-
 }

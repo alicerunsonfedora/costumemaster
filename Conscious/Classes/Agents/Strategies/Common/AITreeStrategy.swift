@@ -17,7 +17,6 @@ import GameplayKit
 /// Agents that use the tree strategy will attempt to use a state assessement and determine the best action by
 /// submitting that assessement to a decision tree, depending on the tree's implementation.
 class AITreeStrategy: AIGameStrategy {
-
     /// A history of all of the previous assessements this agent has made.
     var history: [ActionHistoryItem] = []
 
@@ -33,7 +32,6 @@ class AITreeStrategy: AIGameStrategy {
 
     /// A structure that represents an action history item.
     public struct ActionHistoryItem {
-
         /// The assessement of the state.
         let assessement: AIAbstractGameState.Assessement
 
@@ -51,8 +49,8 @@ class AITreeStrategy: AIGameStrategy {
 
     /// Recalculates the closest input and object.
     func evaluateEnvironmentVariables(from state: AIAbstractGameState) {
-        self.closestInput = self.closestInput(in: state)
-        self.closestObject = self.closestObject(in: state)
+        closestInput = closestInput(in: state)
+        closestObject = closestObject(in: state)
     }
 
     /// Returns a given decision tree that the agent will use to grab its next best move.
@@ -69,11 +67,11 @@ class AITreeStrategy: AIGameStrategy {
     func assess(state: AIAbstractGameState) -> AIAbstractGameState.Assessement {
         var nearInput = false, nearObject = false
 
-        if let input = self.closestInput {
+        if let input = closestInput {
             nearInput = input.position.distance(between: state.player.position) < 64
         }
 
-        if let object = self.closestObject {
+        if let object = closestObject {
             nearObject = object.distance(between: state.player.position) < 64
         }
 
@@ -82,15 +80,15 @@ class AITreeStrategy: AIGameStrategy {
 
         return AIAbstractGameState.Assessement(
             canEscape: state.isWin(for: state.player),
-            nearExit: (state.exit.distance(between: state.player.position) < 36),
+            nearExit: state.exit.distance(between: state.player.position) < 36,
             nearInput: nearInput,
-            inputActive: (self.closestInput?.active ?? false),
-            inputRelevant: (self.closestInput?.outputs.contains(state.exit) ?? false),
-            requiresObject: (self.closestInput?.kind == GameSignalKind.pressurePlate),
-            requiresCostume: (
-                [GameSignalKind.computerT2, GameSignalKind.computerT1].contains(self.closestInput?.kind) == true
-            ),
-            wearingCostume: self.wearingCorrectCostume(for: self.closestInput, in: state),
+            inputActive: closestInput?.active ?? false,
+            inputRelevant: closestInput?.outputs.contains(state.exit) ?? false,
+            requiresObject: closestInput?.kind == GameSignalKind.pressurePlate,
+            requiresCostume:
+            [GameSignalKind.computerT2, GameSignalKind.computerT1].contains(closestInput?.kind) == true,
+
+            wearingCostume: wearingCorrectCostume(for: closestInput, in: state),
             hasObject: state.player.carryingItems,
             nearObject: nearObject,
             allInputsActive: allActive
@@ -129,14 +127,14 @@ class AITreeStrategy: AIGameStrategy {
             return defaultAction()
         }
 
-        if let prevCloseInput = self.closestInput {
+        if let prevCloseInput = closestInput {
             for input in state.inputs where input.position == prevCloseInput.position && input.active {
                 activated.append(input.position)
             }
         }
 
-        self.evaluateEnvironmentVariables(from: state)
-        let assessement = self.assess(state: state)
+        evaluateEnvironmentVariables(from: state)
+        let assessement = assess(state: state)
 
         // Get a response from the decision tree.
         guard var response = makeDecisionTree().findAction(forAnswers: assessement.toDict()) as? String else {
@@ -158,7 +156,7 @@ class AITreeStrategy: AIGameStrategy {
 
         // The process function will look for special responses and convert them in actual actions based on context.
         let originalResponse = response
-        response = self.process(response, from: state)
+        response = process(response, from: state)
         let action = AIGameDecision(by: AIGamePlayerAction(rawValue: response) ?? .stop, with: 1)
 
         // If we can record our actions, create a history item and add it to the list.
@@ -184,16 +182,16 @@ class AITreeStrategy: AIGameStrategy {
         switch action {
         case "MOVE_EXIT_CLOSER":
             console?.debug("MOVE_EXIT_CLOSER detected. Getting action that moves closest to exit.")
-            return self.closestPath(in: state)
+            return closestPath(in: state)
         case "MOVE_INPUT_CLOSER":
             console?.debug("MOVE_INPUT_CLOSER detected. Getting action that moves closest to closet input.")
-            return self.closestPath(to: self.closestInput, in: state)
+            return closestPath(to: closestInput, in: state)
         case "MOVE_OBJ_CLOSER":
             console?.debug("MOVE_OBJ_CLOSER detected. Getting action that moves closest to closet object.")
-            return self.closestPath(to: self.closestObject, in: state)
+            return closestPath(to: closestObject, in: state)
         case "MOVE_RANDOM":
             console?.warn("MOVE_RANDOM detected. Getting random movement action.")
-            return self.moveRandom()
+            return moveRandom()
         default:
             console?.debug("No special processing needed on response.")
             return action
@@ -202,12 +200,12 @@ class AITreeStrategy: AIGameStrategy {
 
     /// Returns the default action from the response tree.
     func defaultAction() -> AIGameDecision {
-        return AIGameDecision(by: .stop, with: 0)
+        AIGameDecision(by: .stop, with: 0)
     }
 
     /// Returns a random move.
     /// - Returns: A random move from the movement set of actions.
     func moveRandom() -> String {
-        return (AIGamePlayerAction.movement().randomElement() ?? .stop).rawValue
+        (AIGamePlayerAction.movement().randomElement() ?? .stop).rawValue
     }
 }

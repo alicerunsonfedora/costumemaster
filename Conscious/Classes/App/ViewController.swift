@@ -10,9 +10,9 @@
 //
 
 import Cocoa
-import SpriteKit
-import GameplayKit
 import GameKit
+import GameplayKit
+import SpriteKit
 
 class ViewController: NSViewController, NSWindowDelegate {
     @IBOutlet var skView: SKView!
@@ -24,19 +24,20 @@ class ViewController: NSViewController, NSWindowDelegate {
     var rootScene: SKScene?
 
     override func viewDidAppear() {
-        self.view.window?.delegate = self
+        view.window?.delegate = self
     }
 
-    func windowShouldClose(_ sender: NSWindow) -> Bool {
+    func windowShouldClose(_: NSWindow) -> Bool {
         var shouldClose = false
-        if self.skView.scene?.name == "MainMenu" {
+        if skView.scene?.name == "MainMenu" {
             NSApplication.shared.terminate(self)
             return true
         }
         confirm(
             NSLocalizedString("costumemaster.confirm.quit", comment: "Confirm quit"),
-                withTitle: NSLocalizedString("costumemaster.confirm.quit_title", comment: "Confirm quit title"),
-                level: .warning) { resp in
+            withTitle: NSLocalizedString("costumemaster.confirm.quit_title", comment: "Confirm quit title"),
+            level: .warning
+        ) { resp in
             if resp.rawValue == 1000 {
                 NSApplication.shared.terminate(self)
                 shouldClose = true
@@ -51,14 +52,14 @@ class ViewController: NSViewController, NSWindowDelegate {
         let interfaceScenes = ["MainMenu", "Splash", "Intro", "About", "PauseMenu", "End"]
 
         guard let dlcWatchYourStepLevels = plist(
-                from: "LevelStructure")?.value(forKey: "WatchYourStep"
+            from: "LevelStructure")?.value(forKey: "WatchYourStep"
         ) as? [String?] else {
             return
         }
 
         var levelName = AppDelegate.arguments.startLevel ?? "Splash"
 
-        if levelName.hasSuffix("AI") && !AppDelegate.arguments.useAgentTesting {
+        if levelName.hasSuffix("AI"), !AppDelegate.arguments.useAgentTesting {
             sendAlert(
                 NSLocalizedString("costumemaster.alert.load_ai_bad_ctx_error", comment: "AI loaded without AI context error"),
                 withTitle: NSLocalizedString("costumemaster.alert.load_ai_bad_ctx_error_title", comment: "AI loaded with AI context error title"),
@@ -66,13 +67,15 @@ class ViewController: NSViewController, NSWindowDelegate {
             ) { _ in NSApplication.shared.terminate(nil) }
         }
 
-        if AppDelegate.arguments.useAgentTesting && !interfaceScenes.contains(levelName)
-            && !levelName.hasSuffix("AI") {
+        if AppDelegate.arguments.useAgentTesting, !interfaceScenes.contains(levelName),
+           !levelName.hasSuffix("AI")
+        {
             levelName += "AI"
         }
 
-        if dlcWatchYourStepLevels.contains(levelName)
-            && !UserDefaults.iapModule.bool(forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue) {
+        if dlcWatchYourStepLevels.contains(levelName),
+           !UserDefaults.iapModule.bool(forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue)
+        {
             sendAlert(
                 NSLocalizedString("costumemaster.alert.dlc_error", comment: "DLC Load error"),
                 withTitle: NSLocalizedString("costumemaster.alert.load_ai_bad_ctx_error_title", comment: "DLC load error title"),
@@ -95,7 +98,7 @@ class ViewController: NSViewController, NSWindowDelegate {
             return
         }
 
-        guard let view = self.skView else {
+        guard let view = skView else {
             return
         }
 
@@ -105,6 +108,5 @@ class ViewController: NSViewController, NSWindowDelegate {
         view.showsNodeCount = UserDefaults.debugNode
         view.showsPhysics = UserDefaults.debugShowPhysics
         view.shouldCullNonVisibleNodes = true
-
     }
 }

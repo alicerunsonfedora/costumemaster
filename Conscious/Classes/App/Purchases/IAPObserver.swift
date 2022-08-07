@@ -14,7 +14,6 @@ import StoreKit
 
 /// A base class responsible for observing in-app purchase transactions (IAP).
 class IAPObserver: NSObject, SKPaymentTransactionObserver {
-
     /// A shared instance of the IAP manager.
     static let shared = IAPObserver()
 
@@ -26,7 +25,7 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
 
     /// Whether the IAP manager can handle payments.
     var authorizedToHandlePayments: Bool {
-        return SKPaymentQueue.canMakePayments()
+        SKPaymentQueue.canMakePayments()
     }
 
     /// Initialize the payment observer.
@@ -35,15 +34,15 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
     }
 
     /// Tells an observer that one or more transactions have been updated.
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    func paymentQueue(_: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchased:
-                self.onSuccessfulPayment(with: transaction)
+                onSuccessfulPayment(with: transaction)
             case .failed:
-                self.onFailedPayment(with: transaction)
+                onFailedPayment(with: transaction)
             case .restored:
-                self.onRestorePayment(with: transaction)
+                onRestorePayment(with: transaction)
             case .deferred:
                 print("Deferring this payment transaction")
             case .purchasing:
@@ -54,7 +53,7 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
         }
     }
 
-    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+    func paymentQueue(_: SKPaymentQueue, restoreCompletedTransactionsFailedWithError _: Error) {
         DispatchQueue.main.async {
             sendAlert(
                 NSLocalizedString("costumemaster.alert.iap_error", comment: "IAP error"),
@@ -63,18 +62,17 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
                 attachToMainWindow: false
             ) { _ in }
         }
-
     }
 
     /// Restore IAPs.
     func restore() {
-        if !self.restored.isEmpty { self.restored.removeAll() }
+        if !restored.isEmpty { restored.removeAll() }
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
 
     /// Handle a transaction with a successful payment.
     func onSuccessfulPayment(with transaction: SKPaymentTransaction) {
-        self.purchasedContent.append(transaction)
+        purchasedContent.append(transaction)
         UserDefaults.iapModule.setValue(true, forKey: transaction.payment.productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
     }
@@ -91,7 +89,7 @@ class IAPObserver: NSObject, SKPaymentTransactionObserver {
 
     /// Handle a transactiom with a restored payment.
     func onRestorePayment(with transaction: SKPaymentTransaction) {
-        self.restored.append(transaction)
+        restored.append(transaction)
         UserDefaults.iapModule.setValue(true, forKey: transaction.payment.productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
     }

@@ -9,13 +9,12 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
+import CranberrySprite
 import Foundation
 import GameplayKit
-import CranberrySprite
 
 /// A base strategy class.
 class AIGameStrategy: NSObject, GKStrategist {
-
     // MARK: - Properties
 
     /// The console that the strategy will send messages to.

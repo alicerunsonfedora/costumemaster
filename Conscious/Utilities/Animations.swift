@@ -20,14 +20,14 @@ public func animated(fromAtlas atlas: SKTextureAtlas, reversable: Bool = false) 
     var frames: [SKTexture] = []
     let useDoubles: Bool = atlas.textureNames.count > 9
 
-    for iter in 0..<atlas.textureNames.count {
-        let format = useDoubles && iter < 10 ? "0": ""
+    for iter in 0 ..< atlas.textureNames.count {
+        let format = useDoubles && iter < 10 ? "0" : ""
         let name = "sprite_\(format)\(iter)"
         frames.append(atlas.textureNamed(name))
     }
 
     if reversable {
-       frames += frames.reversed()
+        frames += frames.reversed()
     }
 
     for frame in frames {
@@ -37,11 +37,11 @@ public func animated(fromAtlas atlas: SKTextureAtlas, reversable: Bool = false) 
     return frames
 }
 
-extension SKTextureAtlas {
+public extension SKTextureAtlas {
     /// Convert this atlas to a list of animated frames.
     /// - Parameter reversable: Whether the animation should play in reverse afterwards. Defaults to false.
     /// - Returns: A list of textures that make up the animation.
-    public func toFrames(reversable: Bool = false) -> [SKTexture] {
-        return animated(fromAtlas: self, reversable: reversable)
+    func toFrames(reversable: Bool = false) -> [SKTexture] {
+        animated(fromAtlas: self, reversable: reversable)
     }
 }

@@ -6,12 +6,11 @@
 //
 
 import Foundation
-import SpriteKit
 import KeyboardShortcuts
+import SpriteKit
 
 /// The SpriteKit scene class for the about screen.
 class AboutScene: SKScene {
-
     /// The label node that corresponds to the back button.
     var backButton: SKLabelNode?
 
@@ -23,16 +22,16 @@ class AboutScene: SKScene {
 
     /// Go back to the previous scene.
     private func goBack() {
-        if let controller = self.view?.window?.contentViewController as? ViewController {
+        if let controller = view?.window?.contentViewController as? ViewController {
             guard let home = SKScene(fileNamed: "MainMenu") else { return }
-            self.view?.presentScene(controller.rootScene != nil ? controller.rootScene : home)
+            view?.presentScene(controller.rootScene != nil ? controller.rootScene : home)
         }
     }
 
     /// Set up the about scene and fill in the appropriate data.
     override func sceneDidLoad() {
         // Reset the scale mode to fit accordingly.
-        self.scaleMode = .aspectFill
+        scaleMode = .aspectFill
 
         for child in children where child is SKLabelNode {
             if let text = child as? SKLabelNode {
@@ -46,12 +45,12 @@ class AboutScene: SKScene {
             }
         }
 
-        if let title = self.childNode(withName: "title") as? SKLabelNode {
+        if let title = childNode(withName: "title") as? SKLabelNode {
             self.title = title
             self.title?.fontName = "Dancing Script Regular"
         }
 
-        if let versionString = self.childNode(withName: "version") as? SKLabelNode {
+        if let versionString = childNode(withName: "version") as? SKLabelNode {
             self.versionString = versionString
             let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
                 ?? "0.0"
@@ -59,13 +58,13 @@ class AboutScene: SKScene {
             self.versionString?.text = "Version \(version) (Build \(build))"
         }
 
-        if let copyString = self.childNode(withName: "copyrightText") as? SKLabelNode {
+        if let copyString = childNode(withName: "copyrightText") as? SKLabelNode {
             copyString.text = NSLocalizedString("costumemaster.ui.about_copyright", comment: "Copyright text")
         }
 
-        if let back = self.childNode(withName: "back") as? SKLabelNode {
-            self.backButton = back
-            self.backButton?.text = NSLocalizedString("costumemaster.ui.about_back", comment: "Back to menu")
+        if let back = childNode(withName: "back") as? SKLabelNode {
+            backButton = back
+            backButton?.text = NSLocalizedString("costumemaster.ui.about_back", comment: "Back to menu")
         }
     }
 
@@ -73,7 +72,7 @@ class AboutScene: SKScene {
     override func mouseDown(with event: NSEvent) {
         let tapped = event.location(in: self)
 
-        if self.atPoint(tapped) == backButton {
+        if atPoint(tapped) == backButton {
             goBack()
         }
     }
@@ -85,5 +84,4 @@ class AboutScene: SKScene {
             goBack()
         }
     }
-
 }

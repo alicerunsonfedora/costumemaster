@@ -13,7 +13,6 @@ import Foundation
 
 /// An enumeration for the different directions a player can move.
 public enum PlayerMoveDirection {
-
     /// The direction "north".
     case north
 

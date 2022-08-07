@@ -9,13 +9,12 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
+import CranberrySprite
 import Foundation
 import SpriteKit
-import CranberrySprite
 
 /// A class that represents a death pit.
 class GameDeathPit: GameTileSpriteNode {
-
     /// Whether the death pit sprite is based off of a texture.
     var trigger: Bool = false
 
@@ -24,7 +23,6 @@ class GameDeathPit: GameTileSpriteNode {
     func shouldKill(_ player: Player?) -> Bool {
         guard let play = player else { return false }
         if player?.costume == .bird { return false }
-        return play.position.distance(between: self.position) <= (self.trigger ? 64 : 56)
+        return play.position.distance(between: position) <= (trigger ? 64 : 56)
     }
-
 }

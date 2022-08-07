@@ -13,7 +13,6 @@ import Foundation
 
 /// A data structure that represents a game level item.
 struct GameLevelItem: Codable, Identifiable {
-
     /// A unique ID for this item.
     let id = UUID()
     // swiftlint:disable:previous identifier_name
@@ -29,7 +28,6 @@ struct GameLevelItem: Codable, Identifiable {
 
     /// A enumeration representing the coding keys.
     private enum CodingKeys: String, CodingKey {
-
         /// The name of the level.
         case name = "Title"
 
@@ -39,5 +37,4 @@ struct GameLevelItem: Codable, Identifiable {
         /// Whether the level is part of a DLC.
         case isDownloadableContent = "Is DLC"
     }
-
 }

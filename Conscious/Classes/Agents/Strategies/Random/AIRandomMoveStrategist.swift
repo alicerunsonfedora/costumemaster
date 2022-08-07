@@ -14,12 +14,10 @@ import GameplayKit
 
 /// A strategist that will pick random moves.
 class AIRandomMoveStrategist: AIGameStrategy {
-
     /// Returns the best move for the player.
     /// - Returns: A random move.
     override func bestMoveForActivePlayer() -> GKGameModelUpdate? {
         let choice = AIGamePlayerAction.allCases.randomElement() ?? .stop
         return AIGameDecision(by: choice, with: 0)
     }
-
 }

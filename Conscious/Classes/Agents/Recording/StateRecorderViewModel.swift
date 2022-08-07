@@ -9,13 +9,12 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
+import CodableCSV
 import Combine
 import Foundation
-import CodableCSV
 
 /// An observable class that handles state recording for machine learning.
 class StateRecorderViewModel: ObservableObject {
-
     /// The list of entries to include.
     @Published var entries: [AIStateRecordable] = []
 
@@ -28,8 +27,8 @@ class StateRecorderViewModel: ObservableObject {
     /// and action. This assessment-action pair will automatically be added to the entries list.
     @Published var currentAction: String = "" {
         didSet {
-            self.onReceiveAction(currentAssessment, currentAction)
-            self.addEntry(from: currentAssessment, with: currentAction)
+            onReceiveAction(currentAssessment, currentAction)
+            addEntry(from: currentAssessment, with: currentAction)
         }
     }
 
@@ -42,19 +41,19 @@ class StateRecorderViewModel: ObservableObject {
         from assessment: AIAbstractGameState.Assessement,
         onReceiveAction: @escaping (AIAbstractGameState.Assessement, String) -> Void
     ) {
-        self.currentAssessment = assessment
+        currentAssessment = assessment
         self.onReceiveAction = onReceiveAction
     }
 
     /// Add an entry to the list of entries.
     /// - Parameter entry: The entry to include in the new
     func add(_ entry: AIStateRecordable) {
-        self.entries.append(entry)
+        entries.append(entry)
     }
 
     /// Add an assessment and action to the list of entries as a new entry.
     func addEntry(from assessment: AIAbstractGameState.Assessement, with action: String) {
-        self.entries.append(AIStateRecordable(from: assessment, with: action))
+        entries.append(AIStateRecordable(from: assessment, with: action))
     }
 
     /// Export the list of entries to a CSV file.
@@ -71,5 +70,4 @@ class StateRecorderViewModel: ObservableObject {
             print("Failed to record states to URL \(csvPath.absoluteString)")
         }
     }
-
 }

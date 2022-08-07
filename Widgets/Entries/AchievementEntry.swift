@@ -17,6 +17,6 @@ struct AchievementEntry: TimelineEntry {
     var achievementId: GameAchievement
 
     var name: String {
-        return NSLocalizedString(achievementId.rawValue, comment: "Achievement name")
+        NSLocalizedString(achievementId.rawValue, comment: "Achievement name")
     }
 }
