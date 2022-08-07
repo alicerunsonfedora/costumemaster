@@ -35,15 +35,15 @@ struct PrefPaneSound: View {
                 in: 0...1.0,
                 minimumValueLabel: Image("speaker.fill"),
                 maximumValueLabel: Image("speaker.wave.3.fill")
-            ) { Text("Music volume") }
+            ) { Text("costumemaster.settings.sound_music_volume") }
 
             HStack(alignment: .top) {
-                Text("Play sound effects: ")
+                Text("costumemaster.settings.sound_sfx_title")
                 VStack(alignment: .leading) {
-                    Toggle(isOn: $costumeChange) { Text("When I change costumes") }
-                    Toggle(isOn: $computer) { Text("When I turn on a computer") }
-                    Toggle(isOn: $alarm) { Text("When I turn on an alarm clock") }
-                    Toggle(isOn: $lever) { Text("When I flip a lever switch") }
+                    Toggle(isOn: $costumeChange) { Text("costumemaster.settings.sound_sfx_change") }
+                    Toggle(isOn: $computer) { Text("costumemaster.settings.sound_sfx_computer") }
+                    Toggle(isOn: $alarm) { Text("costumemaster.settings.sound_sfx_alarm") }
+                    Toggle(isOn: $lever) { Text("costumemaster.settings.sound_sfx_lever") }
 
                 }
             }

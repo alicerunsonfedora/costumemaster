@@ -18,27 +18,27 @@ struct PrefPaneControls: View {
         VStack(spacing: 16) {
             VStack(alignment: .trailing, spacing: 32) {
                 VStack(alignment: .trailing) {
-                    self.shortcut(for: .moveUp) { Text("Move up") }
-                    self.shortcut(for: .moveDown) { Text("Move down") }
-                    self.shortcut(for: .moveLeft) { Text("Move left") }
-                    self.shortcut(for: .moveRight) { Text("Move right") }
+                    self.shortcut(for: .moveUp) { Text("costumemaster.settings.controls_move_up") }
+                    self.shortcut(for: .moveDown) { Text("costumemaster.settings.controls_move_down") }
+                    self.shortcut(for: .moveLeft) { Text("costumemaster.settings.controls_move_left") }
+                    self.shortcut(for: .moveRight) { Text("costumemaster.settings.controls_move_right") }
                 }
                 VStack(alignment: .trailing) {
-                    self.shortcut(for: .nextCostume) { Text("Next costume") }
-                    self.shortcut(for: .previousCostume) { Text("Previous costume") }
+                    self.shortcut(for: .nextCostume) { Text("costumemaster.settings.controls_next_costume") }
+                    self.shortcut(for: .previousCostume) { Text("costumemaster.settings.controls_prev_costume") }
                 }
                 VStack(alignment: .trailing) {
-                    self.shortcut(for: .use) { Text("Use/pick up item") }
-                    self.shortcut(for: .pause) { Text("Open pause menu") }
+                    self.shortcut(for: .use) { Text("costumemaster.settings.controls_use") }
+                    self.shortcut(for: .pause) { Text("costumemaster.settings.controls_pause") }
                 }
             }
-            Text("To bind a key to a standard alphanumeric key, use the Control (⌃) key modifier.")
+            Text("costumemaster.settings.controls_detail")
                 .foregroundColor(.secondary)
             HStack {
                 Spacer()
                 Button { KeyboardShortcuts.resetAll() }
                     label: {
-                        Text("Reset All")
+                        Text("costumemaster.settings.controls_reset")
                     }
             }
         }

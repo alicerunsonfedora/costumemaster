@@ -27,6 +27,62 @@
 "costumemaster.ui.about_copyright" = "© 2020-2022 Marquis Kurt. Licensed under the Mozilla Public License, v2.0. Game Center, macOS, and the Game Center logo are registered trademarks of Apple Inc.";
 "costumemaster.ui.about_back" = "‹ Back to Menu";
 
+// MARK: Preference Pane Names
+"costumemaster.ui.settings_general" = "General";
+"costumemaster.ui.settings_sound" = "Sound";
+"costumemaster.ui.settings_controls" = "Controls";
+"costumemaster.ui.settings_game_center" = "Game Center";
+"costumemaster.ui.settings_advanced" = "Advanced";
+
+// MARK: - Settings
+
+// MARK: General Settings
+"costumemaster.settings.general_camera_movement_title" = "Move player camera intelligently";
+"costumemaster.settings.general_camera_movement_detail" = "The camera will move based on how far the player has moved instead of putting the player at the center of the camera.";
+"costumemaster.settings.general_player_physics_title" = "Use physics-based player movement";
+"costumemaster.settings.general_player_physics_detail" = "The player will move based on physics calculations rather than a fixed speed.";
+"costumemaster.settings.general_show_dust_title" = "Display dust particles in environment when playing";
+"costumemaster.settings.general_show_unmodeled_title" = "Show character on main menu with USB helmet off";
+"costumemaster.settings.general_dock_icon_title" = "Dock icon: ";
+"costumemaster.settings.general_dock_icon_detail" = "While the game is running, the Dock will display the selected icon.";
+"costumemaster.settings.general_dock_icon_default" = "Standard";
+"costumemaster.settings.general_dock_icon_unzipped" = "Unzipped";
+"costumemaster.settings.general_dock_icon_dlc" = "Watch Your Step!";
+"costumemaster.settings.general_dock_icon_silicon" = "Swiftly ML";
+
+// MARK: Sound Settings
+"costumemaster.settings.sound_music_volume" = "Music volume";
+"costumemaster.settings.sound_sfx_title" = "Play sound effects: ";
+"costumemaster.settings.sound_sfx_change" = "When I change costumes";
+"costumemaster.settings.sound_sfx_computer" = "When I turn on a computer";
+"costumemaster.settings.sound_sfx_alarm" = "When I turn on an alarm clock";
+"costumemaster.settings.sound_sfx_lever" = "When I flip a lever switch";
+
+// MARK: Control Settings
+"costumemaster.settings.controls_move_up" = "Move up";
+"costumemaster.settings.controls_move_down" = "Move down";
+"costumemaster.settings.controls_move_left" = "Move left";
+"costumemaster.settings.controls_move_right" = "Move right";
+"costumemaster.settings.controls_next_costume" = "Swtich to next costume";
+"costumemaster.settings.controls_prev_costume" = "Swtich to previous costume";
+"costumemaster.settings.controls_use" = "Use/pick up item";
+"costumemaster.settings.controls_pause" = "Open pause menu";
+"costumemaster.settings.controls_detail" = "Use the Control (⌃) key modifier to bind a key to a standard alphanumeric key.";
+"costumemaster.settings.controls_reset" = "Reset Bindings";
+
+// MARK: Game Center Settings
+"costumemaster.settings.gc_achievements" = "Earn achievements in Game Center";
+"costumemaster.settings.gc_leaderboards_title" = "Submit daily leaderboard scores on challenge levels";
+"costumemaster.settings.gc_leaderboards_detail" = "Your completion time will be submitted to the daily leaderboards in Game Center for challenge levels. You can view your scores in Game Center.";
+"costumemaster.settings.gc_notifications" = "Send in-game notifications when earning an achievement or submitting scores.";
+
+// MARK: Advanced Settings
+"costumemaster.settings.advanced_debug_title" = "Debug options: ";
+"costumemaster.settings.advanced_debug_nodes" = "Show node count";
+"costumemaster.settings.advanced_debug_fps" = "Show frames per second";
+"costumemaster.settings.advanced_debug_physics" = "Show physics body collision outlines";
+"costumemaster.settings.advanced_debug_detail" = "Debugging options take effect after restarting the game.";
+
 // MARK: - Achievement Names
 "costumemaster.face_reveal" = "Face Reveal";
 "costumemaster.new_bird" = "Learning to Fly";

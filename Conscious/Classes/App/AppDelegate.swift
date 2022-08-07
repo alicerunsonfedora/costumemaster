@@ -32,28 +32,40 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             panes: [
                 Preferences.Pane(
                     identifier: .general,
-                    title: "Appearance",
-                    toolbarIcon: NSImage(named: "paintpalette")!
+                    title: NSLocalizedString("costumemaster.ui.settings_general", comment: "General settings"),
+                    toolbarIcon: NSImage(
+                        systemSymbolName: "gearshape",
+                        accessibilityDescription: "General settings icon"
+                    )!
                 ) { PrefPaneGeneral() },
                 Preferences.Pane(
                     identifier: .sound,
-                    title: "Sound",
-                    toolbarIcon: NSImage(named: "speaker.wave.3.fill")!
+                    title: NSLocalizedString("costumemaster.ui.settings_sound", comment: "Sound settings"),
+                    toolbarIcon: NSImage(
+                        systemSymbolName: "speaker.wave.3.fill",
+                        accessibilityDescription: "Sound settings icon"
+                    )!
                 ) { PrefPaneSound() },
                 Preferences.Pane(
                     identifier: .controls,
-                    title: "Controls",
-                    toolbarIcon: NSImage(named: "keyboard")!
+                    title: NSLocalizedString("costumemaster.ui.settings_controls", comment: "Controls settings"),
+                    toolbarIcon: NSImage(
+                        systemSymbolName: "keyboard",
+                        accessibilityDescription: "Controls settings icon"
+                    )!
                 ) { PrefPaneControls() },
                 Preferences.Pane(
                     identifier: .gameCenter,
-                    title: "Game Center",
-                    toolbarIcon: NSImage(named: "gamecontroller")!
+                    title: NSLocalizedString("costumemaster.ui.settings_game_center", comment: "Game Center settings"),
+                    toolbarIcon: NSImage(named: "GameCenter")!
                 ) { PrefPaneGC() },
                 Preferences.Pane(
                     identifier: .advanced,
-                    title: "Advanced",
-                    toolbarIcon: NSImage(named: "gearshape.2")!
+                    title: NSLocalizedString("costumemaster.ui.settings_advanced", comment: "Advanced settings"),
+                    toolbarIcon: NSImage(
+                        systemSymbolName: "gearshape.2",
+                        accessibilityDescription: "Advanced settings icon"
+                    )!
                 ) { PrefPaneAdvanced() }
             ]
         )

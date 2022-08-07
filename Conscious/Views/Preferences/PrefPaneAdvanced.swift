@@ -25,12 +25,12 @@ struct PrefPaneAdvanced: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .top) {
-                Text("Debug options: ")
+                Text("costumemaster.settings.advanced_debug_title")
                 VStack(alignment: .leading) {
-                    Toggle(isOn: $nodeCount) { Text("Show node count") }
-                    Toggle(isOn: $fps) { Text("Show frames per second") }
-                    Toggle(isOn: $physics) { Text("Show physics body outlines") }
-                    Text("Debugging options take effect after restarting the game.")
+                    Toggle(isOn: $nodeCount) { Text("costumemaster.settings.advanced_debug_nodes") }
+                    Toggle(isOn: $fps) { Text("costumemaster.settings.advanced_debug_fps") }
+                    Toggle(isOn: $physics) { Text("costumemaster.settings.advanced_debug_physics") }
+                    Text("costumemaster.settings.advanced_debug_detail")
                         .foregroundColor(.secondary)
                 }
             }

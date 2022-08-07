@@ -36,8 +36,8 @@ extension MainMenuScene {
             quitAction()
         case self.watchYourStepButton:
             watchYourStepAction()
-        case self.gameCenterButton where self.gameCenterButton?.isHidden != true:
-            self.gameCenterAction()
+//        case self.gameCenterButton where self.gameCenterButton?.isHidden != true:
+//            self.gameCenterAction()
         case self.reloadedButton:
             self.reloadedAction()
         default:

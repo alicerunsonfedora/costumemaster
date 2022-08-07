@@ -58,18 +58,17 @@ struct PrefPaneGC: View {
             Divider()
             VStack(alignment: .leading, spacing: 8) {
                 Toggle(isOn: $achievements) {
-                    Text("Earn game achievements")
+                    Text("costumemaster.settings.gc_achievements")
                 }
                 Toggle(isOn: $leaderboards) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Submit daily challenge leaderboard scores")
-                        Text("In applicable levels, your time score will be submitted to the daily leaderboards in "
-                             + "Game Center.")
+                        Text("costumemaster.settings.gc_leaderboards_title")
+                        Text("costumemaster.settings.gc_leaderboards_detail")
                             .foregroundColor(.secondary)
                     }
                 }
                 Toggle(isOn: $notifications) {
-                    Text("Send notifications when earning an achievement or submitting scores")
+                    Text("costumemaster.settings.gc_notifications")
                 }
             }
         }

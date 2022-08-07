@@ -55,6 +55,52 @@ struct PrefPaneGeneral: View {
 
     var body: some View {
         VStack(spacing: 16) {
+            VStack(alignment: .leading) {
+                Picker(selection: $appIcon.onChange { icon in
+                    AppDelegate.updateDockTile(icon.rawValue)
+                }, label: Text("costumemaster.settings.general_dock_icon_title")) {
+                    self.appIconOption(
+                        for: .standard,
+                        help: NSLocalizedString(
+                            "costumemaster.settings.general_dock_icon_default",
+                            comment: "Standard"
+                        )
+                    )
+                    if UserDefaults.standard.bool(forKey: "advShowUnmodeledOnMenuAbility") {
+                        self.appIconOption(
+                            for: .unzipped,
+                            help: NSLocalizedString(
+                                "costumemaster.settings.general_dock_icon_unzipped",
+                                comment: "Unzipped"
+                            )
+                        )
+                    }
+                    self.appIconOption(
+                        for: .watchYourStep,
+                        help: NSLocalizedString(
+                            "costumemaster.settings.general_dock_icon_dlc",
+                            comment: "Watch Your Step!"
+                        )
+                    )
+                        .disabled(
+                            !UserDefaults.iapModule.bool(forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue)
+                        )
+                    self.appIconOption(
+                        for: .machineLearning,
+                        help: NSLocalizedString(
+                            "costumemaster.settings.general_dock_icon_silicon",
+                            comment: "Swiftly ML"
+                        )
+                    )
+                }
+                .pickerStyle(RadioGroupPickerStyle())
+                .horizontalRadioGroupLayout()
+                Text("costumemaster.settings.general_dock_icon_detail")
+                    .foregroundColor(.secondary)
+            }
+
+            Divider()
+
             Slider(
                 value: $cameraScale,
                 in: 0.25...1.0,
@@ -65,50 +111,28 @@ struct PrefPaneGeneral: View {
             VStack(alignment: .leading) {
                 Toggle(isOn: $intelligentCameraMovement) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Move player camera intelligently")
-                        Text("The camera will move based on how far the player has moved instead of putting the player"
-                            + " at the center of the camera.")
+                        Text("costumemaster.settings.general_camera_movement_title")
+                        Text("costumemaster.settings.general_camera_movement_detail")
                             .foregroundColor(.secondary)
-                    }
-                }
-
-                Toggle(isOn: $usePhysicsMovement) {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("Use physics-based movement")
-                        Text("Player controls will use physics-based calculations. Turning this off will move the " +
-                             "player, regardless of physics forces.")
-                        .foregroundColor(.secondary)
                     }
                 }
 
                 Divider()
 
+                Toggle(isOn: $usePhysicsMovement) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("costumemaster.settings.general_player_physics_title")
+                        Text("costumemaster.settings.general_player_physics_detail")
+                        .foregroundColor(.secondary)
+                    }
+                }
+
                 Toggle(isOn: $showDustParticles) {
-                    Text("Display dust particles in environment when playing")
+                    Text("costumemaster.settings.general_show_dust_title")
                 }
                 if canShowUnmodeled {
-                    Toggle(isOn: $unmodeled) { Text("Show character on main menu with face reveal") }
+                    Toggle(isOn: $unmodeled) { Text("costumemaster.settings.general_show_unmodeled_title") }
                 }
-            }
-            Divider()
-            VStack(alignment: .leading) {
-                Picker(selection: $appIcon.onChange { icon in
-                    AppDelegate.updateDockTile(icon.rawValue)
-                }, label: Text("Dock icon: ")) {
-                    self.appIconOption(for: .standard, help: "Standard")
-                    if UserDefaults.standard.bool(forKey: "advShowUnmodeledOnMenuAbility") {
-                        self.appIconOption(for: .unzipped, help: "Unzipped")
-                    }
-                    self.appIconOption(for: .watchYourStep, help: "Watch Your Step!")
-                    .disabled(
-                        !UserDefaults.iapModule.bool(forKey: IAPManager.PurchaseableContent.watchYourStep.rawValue)
-                    )
-                    self.appIconOption(for: .machineLearning, help: "Swiftly ML")
-                }
-                .pickerStyle(RadioGroupPickerStyle())
-                .horizontalRadioGroupLayout()
-                Text("While The Costumemaster is running, the Dock will display the selected icon.")
-                    .foregroundColor(.secondary)
             }
         }
         .padding()
