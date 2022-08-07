@@ -6,7 +6,7 @@
   
 */
 
-// MARK: - User Interface Components
+// MARK: - In-Game User Interface Components
 
 // MARK: Splash Screen
 "costumemaster.ui.splash_by" = "Created by";
@@ -181,3 +181,51 @@
 // MARK: AI Recording Toolbar
 "costumemaster.ai_record.toolbar_export" = "Export to CSV";
 "costumemaster.ai_record.toolbar_export_prompt" = "Select the destination to save the recorded file to.";
+
+// MARK: - AI Simulations
+"costumemaster.ai_sim.select_title" = "Run an AI Simulation";
+"costumemaster.ai_sim.select_detail" = "Watch artificial intelligence agents attempt to play the game and solve puzzles! The simulator will create the level you choose and prepare the agent so that it can begin making moves and play the level.";
+"costumemaster.ai_sim.select_desc_default" = "Select an agent to get its description.";
+"costumemaster.ai_sim.select_desc_missing" = "No description provided.";
+"costumemaster.ai_sim.select_agent_prompt" = "Run simulation with agent: ";
+"costumemaster.ai_sim.select_level_prompt" = "Run simulation in level: ";
+"costumemaster.ai_sim.select_limit_prompt" = "Limit move generation per batch to: ";
+"costumemaster.ai_sim.select_exceed_warn" = "Increasing the budget rate may cause performance issues with the simulation.";
+"costumemaster.ai_sim.select_start" = "Start Simulation";
+
+// MARK: AI Simulation Console
+"costumemaster.ai_console.performance_warn" = "The console stack's current size may cause performance issues.";
+"costumemaster.ai_console.clear_button" = "Clear";
+
+"costumemaster.ai_console.level_all" = "All Messages";
+"costumemaster.ai_console.level_info" = "Info Messages";
+"costumemaster.ai_console.level_debug" = "Debugging Messages";
+"costumemaster.ai_console.level_error" = "Errors and Warnings";
+
+"costumemaster.ai_console.now_help" = "View the console as a stack of messages with the most recent on the top.";
+"costumemaster.ai_console.clear_help" = "Clears the console.";
+
+// MARK: - UI Game Dialogs
+
+// MARK: Watch Your Step DLC
+"costumemaster.dialog.dlc_title" = "Watch Your Step!";
+"costumemaster.dialog.dlc_detail" = "Want to get more out of The Costumemaster? Avoid dangerous abysses and work with new elements like the iris scanner to solve new puzzles.";
+"costumemaster.dialog.dlc_dismiss_button" = "Not Now";
+"costumemaster.dialog.dlc_purchase_button" = "Purchase";
+"costumemaster.dialog.dlc_play_button" = "Play Now";
+"costumemaster.dialog.dlc_purchase_button_disabled_help" = "You have already purchased the DLC.";
+"costumemaster.dialog.dlc_purchase_button_enabled_help" = "Purchase the DLC.";
+
+// MARK: Game Level Selector
+"costumemaster.dialog.load_title" = "Select a level";
+"costumemaster.dialog.load_detail" = "Select a level from one of the packs below.";
+"costumemaster.dialog.load_pack_original" = "The Costumemaster";
+"costumemaster.dialog.load_pack_dlc" = "Watch Your Step!";
+"costumemaster.dialog.load_no_data" = "There isn't any data available.";
+"costumemaster.dialog.load_dismiss_button" = "Close";
+
+// MARK: Reloaded Dialog
+"costumemaster.dialog.reload_title" = "It's time to reload.";
+"costumemaster.dialog.reload_detail" = "The Costumemaster: Reloaded brings you the Costumemaster experience you love and more, with support for controllers, a brand new design with better graphics, localizations for Spanish and French, and other improvements.";
+"costumemaster.dialog.reload_dismiss_button" = "Not Now";
+"costumemaster.dialog.reload_get_button" = "Get on the App Store";

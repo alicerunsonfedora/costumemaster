@@ -14,6 +14,7 @@ import SwiftUI
 
 /// A view that displays a tooltip.
 /// Credit goes to onmyway133: https://onmyway133.github.io/blog/How-to-make-tooltip-in-SwiftUI-for-macOS/
+@available(macOS, introduced: 10.15, deprecated: 11.0, message: "Use the .help modifier instead.")
 struct Tooltip: NSViewRepresentable {
 
     /// The tooltip message to display.

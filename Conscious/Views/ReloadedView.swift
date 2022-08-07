@@ -12,31 +12,25 @@ struct ReloadedView: View {
     var onDismiss: () -> Void
 
     var body: some View {
-        VStack {
-            HStack(alignment: .top, spacing: 16) {
-                Image("reloaded_icon")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 128, height: 128)
-                VStack(alignment: .leading) {
-                    Text("It's time to reload.")
-                        .font(.system(.title, design: .monospaced))
-                        .bold()
-                    Text("The Costumemaster: Reloaded brings you the Costumemaster experience you love and more, "
-                         + "with support for controllers, a brand new design with better graphics, localizations for "
-                         + "Spanish and French, and other improvements.")
-                }
-                .padding(.top, 8)
-            }
-            .padding(.bottom)
+        VStack(spacing: 8) {
+            Image("reloaded_icon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 76, height: 76)
+            Text("costumemaster.dialog.reload_title")
+                .font(.system(.title3, design: .monospaced))
+                .bold()
+            Text("costumemaster.dialog.reload_detail")
+                .lineLimit(10)
+            Spacer()
             HStack {
                 Spacer()
                 Button(action: onDismiss) {
-                    Text("Not Now")
+                    Text("costumemaster.dialog.reload_dismiss_button")
                 }
                 .keyboardShortcut(.cancelAction)
                 Button(action: openStoreUrl) {
-                    Text("Get on the App Store")
+                    Text("costumemaster.dialog.reload_get_button")
                 }
                 .keyboardShortcut(.defaultAction)
             }
@@ -49,7 +43,7 @@ struct ReloadedView: View {
                 .scaledToFill()
         )
         .preferredColorScheme(.dark)
-        .frame(width: 600)
+        .frame(width: 300, height: 350)
     }
 
     func openStoreUrl() {

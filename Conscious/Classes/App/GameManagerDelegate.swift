@@ -39,7 +39,7 @@ class GameManagerDelegate {
 
     /// The SKView associated with the current window.
     static var gameView: SKView? {
-        if let controller = NSApplication.shared.mainWindow?.contentViewController as? ViewController {
+        if let controller = NSApplication.shared.windows.first?.contentViewController as? ViewController {
             return controller.skView
         }
         return nil

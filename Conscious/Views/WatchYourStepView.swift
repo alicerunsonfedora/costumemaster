@@ -30,13 +30,10 @@ struct WatchYourStepView: View {
                 .cornerRadius(6.0)
                 .frame(maxWidth: 100)
                 .shadow(radius: 8)
-            Text("Watch Your Step!")
+            Text("costumemaster.dialog.dlc_title")
                 .font(.system(.title, design: .rounded))
                 .bold()
-            Text(
-                "Want to get more out of The Costumemaster? Avoid dangerous abysses and work with new elements like"
-                + " the iris scanner to solve new puzzles."
-            )
+            Text("costumemaster.dialog.dlc_detail")
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
 
@@ -44,7 +41,7 @@ struct WatchYourStepView: View {
                 Button {
                     self.onDismiss()
                 } label: {
-                    Text("Not Now")
+                    Text("costumemaster.dialog.dlc_dismiss_button")
                 }
 
                 Spacer()
@@ -52,22 +49,23 @@ struct WatchYourStepView: View {
                 Button {
                     self.purchase()
                 } label: {
-                    Text("Purchase")
+                    Text("costumemaster.dialog.dlc_purchase_button")
                 }
                 .disabled(self.dlcIsAvailable)
+                .help(
+                    self.dlcIsAvailable
+                    ? NSLocalizedString(
+                        "costumemaster.dialog.dlc_purchase_button_disabled_help",
+                        comment: "DLC already purchased"
+                    )
+                    : NSLocalizedString("costumemaster.dialog.dlc_purchase_button_enabled_help", comment: "Purchase")
+                )
                 Button {
                     self.onStartDLCContent()
                 } label: {
-                    Text("Play Now")
+                    Text("costumemaster.dialog.dlc_play_button")
                 }
                 .disabled(!self.dlcIsAvailable)
-                .overlay(
-                    Tooltip(
-                        tooltip: self.dlcIsAvailable
-                            ? "You have already purchased the DLC."
-                            : "Purchase the DLC."
-                    )
-                )
             }
             .padding(.top)
         }

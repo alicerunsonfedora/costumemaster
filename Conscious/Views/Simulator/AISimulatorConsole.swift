@@ -22,11 +22,11 @@ struct AISimulatorConsole: View {
         VStack(alignment: .leading) {
             if self.messageList.count > 150 {
                 HStack {
-                    Text("The console stack's current size may cause performance issues.")
+                    Text("costumemaster.ai_console.performance_warn")
                     Spacer()
                     Button { self.console.clear() }
                         label: {
-                            Text("Clear")
+                            Text("costumemaster.ai_console.clear_button")
                                 .foregroundColor(.primary)
                         }
                 }

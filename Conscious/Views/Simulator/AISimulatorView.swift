@@ -54,28 +54,24 @@ struct AISimulatorView: View {
     func getAgentDescription() -> String {
         if let dict = plist(from: "AgentTypes") {
             if let zone = dict[agentType.rawValue] as? NSMutableDictionary {
-                return zone["Description"] as? String ?? "No description provided."
+                return zone["Description"] as? String ?? NSLocalizedString(
+                    "costumemaster.ai_sim.select_desc_missing",
+                    comment: "Missing description"
+                )
             }
         }
-        return "Select an agent to get its description."
+        return NSLocalizedString("costumemaster.ai_sim.select_desc_default", comment: "Default text")
     }
 
     /// The main body of the view.
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Image("dpad.fill")
-                    .font(.system(.largeTitle, design: .rounded))
-                Text("Run an AI simulation")
-                    .font(.system(.largeTitle, design: .rounded))
+            Label("costumemaster.ai_sim.select_title", image: "dpad.fill")
+                .font(
+                    .system(.largeTitle, design: .rounded)
                     .bold()
-            }
-
-            Text(
-                "Watch artificial intelligence agents attempt to play levels and solve puzzles!"
-                + " The simulator will create the level you choose and prepare the agent so that"
-                + " it can begin making moves and attempt to solve the puzzle."
-            )
+                )
+            Text("costumemaster.ai_sim.select_detail")
 
             Divider()
 
@@ -93,7 +89,7 @@ struct AISimulatorView: View {
                 .frame(minHeight: 76, alignment: Alignment.top)
             }
 
-            Picker("Run simulation with agent:", selection: $agentType) {
+            Picker("costumemaster.ai_sim.select_agent_prompt", selection: $agentType) {
                 ForEach(CommandLineArguments.AgentTestingType.allCases, id: \.self) { type in
                     Text(self.getName(of: type)).tag(type)
                 }
@@ -101,14 +97,14 @@ struct AISimulatorView: View {
 
             Divider()
 
-            Picker("Run simulation in level: ", selection: $simulationLevel) {
+            Picker("costumemaster.ai_sim.select_level_prompt", selection: $simulationLevel) {
                 ForEach(AgentLevels.allCases, id: \.self) { level in
                     Text(level.rawValue).tag(level)
                 }
             }
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Limit move generation per batch to: ")
+                    Text("costumemaster.ai_sim.select_limit_prompt")
                     Spacer()
                     Stepper(value: $agentBudget, in: 1...Int.max, step: 1) {
                         Text("\(agentBudget) move\(agentBudget > 1 ? "s": "")")
@@ -116,13 +112,8 @@ struct AISimulatorView: View {
                 }
 
                 if self.agentBudget > 250 {
-                    HStack {
-                        Image("exclamationmark.triangle")
-                            .foregroundColor(.secondary)
-                            .font(.body)
-                        Text("Increasing the budget rate may cause performance issues with the simulation.")
-                            .foregroundColor(.secondary)
-                    }
+                    Label("costumemaster.ai_sim.select_exceed_warn", systemImage: "exclamationmark.triangle")
+                        .foregroundColor(.secondary)
                 }
 
             }
@@ -164,7 +155,7 @@ struct AISimulatorView: View {
             Button {
                 self.onStartSimulation(self.agentType, self.simulationLevel, self.agentBudget)
             } label: {
-                Text("Start Simulation")
+                Text("costumemaster.ai_sim.select_start")
             }
         }
     }

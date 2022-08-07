@@ -24,16 +24,16 @@ struct AISimulatorConsoleToolbar: View {
     enum FilterType: String, CaseIterable {
 
         /// All types of messages are allowed.
-        case allMessages = "All Messages"
+        case allMessages = "costumemaster.ai_console.level_all"
 
         /// Only info messages are allowed.
-        case infoOnly = "Info Messages"
+        case infoOnly = "costumemaster.ai_console.level_info"
 
         /// Only debugging messages are allowed.
-        case debugOnly = "Debug Messages"
+        case debugOnly = "costumemaster.ai_console.level_debug"
 
         /// Only errors and warnings are allowed.
-        case errorsAndWarningsOnly = "Errors and Warnings"
+        case errorsAndWarningsOnly = "costumemaster.ai_console.level_error"
     }
 
     /// The body of the view.
@@ -41,7 +41,7 @@ struct AISimulatorConsoleToolbar: View {
         HStack {
             Picker("", selection: $filter.onChange(self.changeFilter)) {
                 ForEach(FilterType.allCases, id: \.self) { type in
-                    Text(type.rawValue)
+                    Text(NSLocalizedString(type.rawValue, comment: "Console message level"))
                 }
             }
             HStack(spacing: 0) {
@@ -49,17 +49,13 @@ struct AISimulatorConsoleToolbar: View {
                     label: {
                         Image("arrow.up.backward.circle\(self.console.nowMode ? ".fill" : "")")
                         .foregroundColor(self.console.nowMode ? .accentColor : Color(.controlTextColor))
-                            .overlay(
-                                Tooltip(
-                                    tooltip: "View the console as a stack of messages with the most recent on the top."
-                                )
-                            )
+                        .help("costumemaster.ai_console.now_help")
                 }
                     .buttonStyle(ToolbarButtonStyle())
                 Button { self.console.clear() }
                     label: {
                     Image("clear")
-                        .overlay(Tooltip(tooltip: "Clear the console."))
+                        .help("costumemaster.ai_console.clear_help")
                 }
                     .buttonStyle(ToolbarButtonStyle())
             }

@@ -50,7 +50,7 @@ struct PrefPaneGeneral: View {
                 .frame(width: iconSize, height: iconSize)
         }
             .tag(option)
-            .overlay(Tooltip(tooltip: tooltipText))
+            .help(tooltipText)
     }
 
     var body: some View {

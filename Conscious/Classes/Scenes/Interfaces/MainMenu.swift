@@ -163,7 +163,7 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         GKAccessPoint.shared.location = .bottomLeading
         GKAccessPoint.shared.showHighlights = true
         GKAccessPoint.shared.isActive = true
-        GKAccessPoint.shared.parentWindow = self.view?.window
+        GKAccessPoint.shared.parentWindow = NSApplication.shared.mainWindow
     }
 
 }

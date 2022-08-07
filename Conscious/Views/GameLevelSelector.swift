@@ -36,21 +36,21 @@ struct GameLevelSelector: View {
         VStack {
             if let realData = levels {
                 VStack {
-                    Text("Select a level.")
+                    Text("costumemaster.dialog.load_title")
                         .font(.title)
                         .bold()
-                    Text("Select a level from one of the packs below.")
+                    Text("costumemaster.dialog.load_detail")
                 }
 //                Divider()
                 List {
-                    Section(header: Text("The Costumemaster")) {
+                    Section(header: Text("costumemaster.dialog.load_pack_original")) {
                         ForEach(realData.filter { ent in !ent.isDownloadableContent }) { entry in
                             self.entryItem(entry)
                                 .listRowInsets(.init(top: 4, leading: 8, bottom: 4, trailing: 8))
                         }
                     }
                     if !realData.filter { ent in ent.isDownloadableContent }.isEmpty {
-                        Section(header: Text("Watch Your Step")) {
+                        Section(header: Text("costumemaster.dialog.load_pack_dlc")) {
                             ForEach(realData.filter { ent in ent.isDownloadableContent }) { entry in
                                 self.entryItem(entry)
                                     .listRowInsets(.init(top: 4, leading: 8, bottom: 4, trailing: 8))
@@ -59,10 +59,10 @@ struct GameLevelSelector: View {
                     }
                 }
             } else {
-                Text("There isn't any data available.")
+                Text("costumemaster.dialog.load_no_data")
             }
             Button { dismiss() }
-                label: { Text("Close") }
+                label: { Text("costumemaster.dialog.load_dismiss_button") }
         }
         .padding()
         .frame(minWidth: 600, minHeight: 400)

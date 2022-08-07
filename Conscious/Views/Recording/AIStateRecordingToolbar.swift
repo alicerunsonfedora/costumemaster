@@ -19,11 +19,7 @@ struct AIStateRecordingToolbar: View {
             Button { promptSave() }
                 label: {
                     Image("square.and.arrow.down")
-                        .overlay(
-                            Tooltip(tooltip:
-                                        NSLocalizedString("costumemaster.ai_record.toolbar_export", comment: "Export")
-                                   )
-                        )
+                        .help("costumemaster.ai_record.toolbar_export")
                 }
                 .buttonStyle(ToolbarButtonStyle())
         }
