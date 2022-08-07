@@ -1,0 +1,117 @@
+
+/* Class = "NSMenuItem"; title = "Customize Toolbar…"; ObjectID = "1UK-8n-QPP"; */
+"1UK-8n-QPP.title" = "Customize Toolbar…";
+
+/* Class = "NSMenuItem"; title = "$(TARGET_NAME)"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "$(TARGET_NAME)";
+
+/* Class = "NSMenuItem"; title = "Enter Full Screen"; ObjectID = "4J7-dP-txa"; */
+"4J7-dP-txa.title" = "Enter Full Screen";
+
+/* Class = "NSMenuItem"; title = "Quit Costumemaster"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Quit Costumemaster";
+
+/* Class = "NSMenuItem"; title = "About Costumemaster"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "About Costumemaster";
+
+/* Class = "NSMenuItem"; title = "Game"; ObjectID = "A07-iA-z37"; */
+"A07-iA-z37.title" = "Game";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Main Menu";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "Preferences…";
+
+/* Class = "NSMenuItem"; title = "Restore Purchases..."; ObjectID = "Ejy-Wy-t7e"; */
+"Ejy-Wy-t7e.title" = "Restore Purchases...";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "The Costumemaster Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "The Costumemaster Help";
+
+/* Class = "NSMenuItem"; title = "Record Simulation..."; ObjectID = "GxQ-H9-r1L"; */
+"GxQ-H9-r1L.title" = "Record Simulation...";
+
+/* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
+"H8h-7b-M4v.title" = "View";
+
+/* Class = "NSMenu"; title = "View"; ObjectID = "HyV-fh-RgO"; */
+"HyV-fh-RgO.title" = "View";
+
+/* Class = "NSWindow"; title = "The Costumemaster"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "The Costumemaster";
+
+/* Class = "NSMenu"; title = "Game"; ObjectID = "Kb2-x0-BVM"; */
+"Kb2-x0-BVM.title" = "Game";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Show All";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
+"LE2-aR-0XJ.title" = "Bring All to Front";
+
+/* Class = "NSMenuItem"; title = "Send Feedback on GitHub"; ObjectID = "LwW-Wv-hpy"; */
+"LwW-Wv-hpy.title" = "Send Feedback on GitHub";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "Resume Game"; ObjectID = "OBB-xj-5xN"; */
+"OBB-xj-5xN.title" = "Resume Game";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
+"OY7-WF-poV.title" = "Minimize";
+
+/* Class = "NSMenuItem"; title = "Hide Costumemaster"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Hide Costumemaster";
+
+/* Class = "NSMenuItem"; title = "Open Simulator Console"; ObjectID = "QIP-Yu-QAe"; */
+"QIP-Yu-QAe.title" = "Open Simulator Console";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
+"R4o-n2-Eq4.title" = "Zoom";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "Window";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Hide Others";
+
+/* Class = "NSMenuItem"; title = "Back to Main Menu..."; ObjectID = "XNn-GZ-Mfm"; */
+"XNn-GZ-Mfm.title" = "Back to Main Menu...";
+
+/* Class = "NSMenuItem"; title = "Start Game"; ObjectID = "Zre-wF-Fi2"; */
+"Zre-wF-Fi2.title" = "Start Game";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
+"aUF-d1-5bR.title" = "Window";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "Try The Costumemaster: Reloaded..."; ObjectID = "jhi-0Z-tFm"; */
+"jhi-0Z-tFm.title" = "Try The Costumemaster: Reloaded...";
+
+/* Class = "NSMenuItem"; title = "Show Sidebar"; ObjectID = "kIP-vf-haE"; */
+"kIP-vf-haE.title" = "Show Sidebar";
+
+/* Class = "NSMenuItem"; title = "Clear Game Store..."; ObjectID = "oIi-P3-8Y9"; */
+"oIi-P3-8Y9.title" = "Clear Game Store...";
+
+/* Class = "NSMenuItem"; title = "Open Level..."; ObjectID = "oc2-ll-R5t"; */
+"oc2-ll-R5t.title" = "Open Level...";
+
+/* Class = "NSMenuItem"; title = "Show Toolbar"; ObjectID = "snW-S8-Cw5"; */
+"snW-S8-Cw5.title" = "Show Toolbar";
+
+/* Class = "NSMenuItem"; title = "Run AI Simulation..."; ObjectID = "tCR-K0-86F"; */
+"tCR-K0-86F.title" = "Run AI Simulation...";
+
+/* Class = "NSMenu"; title = "$(TARGET_NAME)"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "$(TARGET_NAME)";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "Help";

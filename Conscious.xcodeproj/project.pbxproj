@@ -244,6 +244,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		95A8295E28A056F6002C5FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		95BB7C4D2700E1B000122188 /* ReloadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadedView.swift; sourceTree = "<group>"; };
 		95CFFD8F2895BB530006E166 /* GameSceneStructuralGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneStructuralGenerator.swift; sourceTree = "<group>"; };
 		95CFFD912895BC150006E166 /* GameSceneConformances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneConformances.swift; sourceTree = "<group>"; };
@@ -1552,6 +1553,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BF6FBAE324A8BDDB00996890 /* Base */,
+				95A8295E28A056F6002C5FFB /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
