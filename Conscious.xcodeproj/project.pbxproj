@@ -102,7 +102,6 @@
 		BF6FBAE124A8BDDB00996890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBAE024A8BDDB00996890 /* Assets.xcassets */; };
 		BF6FBAE424A8BDDB00996890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6FBAE224A8BDDB00996890 /* Main.storyboard */; };
 		BF735B4C250D5BFA0007844C /* RushedChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF735B4B250D5BFA0007844C /* RushedChallenge.swift */; };
-		BF7C4120254B7FA400449C5B /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C411F254B7FA400449C5B /* CGPoint.swift */; };
 		BF7C5EEE250AA30B0062B1CC /* ChallengeGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C5EED250AA30B0062B1CC /* ChallengeGameScene.swift */; };
 		BF7C5EF0250AB2CA0062B1CC /* Divergent.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF7C5EEF250AB2CA0062B1CC /* Divergent.sks */; };
 		BF7C5EF3250AB2F30062B1CC /* DivergentChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C5EF2250AB2F30062B1CC /* DivergentChallenge.swift */; };
@@ -343,7 +342,6 @@
 		BF6FBB0A24A8BF1400996890 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BF6FBB0B24A8BF2000996890 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
 		BF735B4B250D5BFA0007844C /* RushedChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RushedChallenge.swift; sourceTree = "<group>"; };
-		BF7C411F254B7FA400449C5B /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		BF7C5EED250AA30B0062B1CC /* ChallengeGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeGameScene.swift; sourceTree = "<group>"; };
 		BF7C5EEF250AB2CA0062B1CC /* Divergent.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Divergent.sks; sourceTree = "<group>"; };
 		BF7C5EF2250AB2F30062B1CC /* DivergentChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivergentChallenge.swift; sourceTree = "<group>"; };
@@ -990,7 +988,6 @@
 				BF0D2C1D24FADD1F00AEF86F /* Keyboard.swift */,
 				BF3977BC2530C44600BBD591 /* Player_Extension.swift */,
 				BF81B9EB254B2FB10001B350 /* String.swift */,
-				BF7C411F254B7FA400449C5B /* CGPoint.swift */,
 				BF4630EB255068DB00EB606D /* Binding.swift */,
 				BF4744DD255B3792001EE6DD /* Bool.swift */,
 				BF982774255CA24B00E2D9DB /* Preferences_Win.swift */,
@@ -1519,7 +1516,6 @@
 				BF0D2C1E24FADD1F00AEF86F /* Keyboard.swift in Sources */,
 				BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */,
 				BF6FBAD724A8BDD400996890 /* AppDelegate.swift in Sources */,
-				BF7C4120254B7FA400449C5B /* CGPoint.swift in Sources */,
 				BF735B4C250D5BFA0007844C /* RushedChallenge.swift in Sources */,
 				BF18AAD1252D0BAE00577BF6 /* GameDeathPit.swift in Sources */,
 				BF81B9EC254B2FB10001B350 /* String.swift in Sources */,

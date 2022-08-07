@@ -11,6 +11,7 @@
 
 import Foundation
 import GameplayKit
+import CranberrySprite
 
 /// A base strategy class.
 class AIGameStrategy: NSObject, GKStrategist {

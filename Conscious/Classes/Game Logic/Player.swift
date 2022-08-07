@@ -281,10 +281,10 @@ public class Player: SKSpriteNode {
 
         // Re-order the queue.
         let currentCostume = self.costume
-        let newCostume = self.costumeQueue.back
+        let newCostume = self.costumeQueue.last
 
         self.costumeQueue.enqueue(currentCostume)
-        while self.costumeQueue.front != newCostume {
+        while self.costumeQueue.first != newCostume {
             self.costumeQueue.enqueue(self.costumeQueue.dequeue() ?? .default)
         }
 
@@ -329,7 +329,7 @@ public class Player: SKSpriteNode {
     /// Remove a costume from the costume queue.
     /// - Parameter costume: The costume to remove from the queue.
     func remove(costume: PlayerCostumeType) {
-        while self.costumeQueue.front != costume {
+        while self.costumeQueue.first != costume {
             self.costumeQueue.enqueue(self.costumeQueue.dequeue() ?? .default)
         }
         _ = self.costumeQueue.dequeue()
