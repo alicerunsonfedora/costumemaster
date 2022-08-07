@@ -142,3 +142,42 @@
 "costumemaster.confirm.new_game_title" = "Are you sure you want to start a new game?";
 "costumemaster.confirm.restart" = "You'll lose any unsaved progress.";
 "costumemaster.confirm.restart_title" = "Restart the level?";
+
+// MARK: - AI Recording View
+"costumemaster.ai_record.current_title" = "Current assessment";
+"costumemaster.ai_record.current_detail" = "The following table contains an assessment for the current game state that an AI agent will collect. The information provided should be used to assist the agent in making a decision.";
+"costumemaster.ai_record.perform_title" = "Perform the following action: ";
+"costumemaster.ai_record.perform_button" = "Submit Action";
+
+// MARK: AI Recording View Table
+"costumemaster.ai_record.table_basic_header" = "Basic Information";
+"costumemaster.ai_record.table_basic_escape" = "Can the agent escape the room?";
+"costumemaster.ai_record.table_basic_inputs_active" = "Are all of the inputs needed to open exit door active?";
+"costumemaster.ai_record.table_basic_has_heavy" = "Is the agent currently carrying a heavy object?";
+
+"costumemaster.ai_record.table_env_header" = "Environment Variables";
+"costumemaster.ai_record.table_env_near_exit" = "Is the agent near the exit door?";
+"costumemaster.ai_record.table_env_near_input" = "Is the agent near an input device?";
+"costumemaster.ai_record.table_env_near_object" = "Is the agent near a heavy object?";
+
+"costumemaster.ai_record.table_input_header" = "Nearest Input Information";
+"costumemaster.ai_record.table_input_active" = "Is the nearest input active?";
+"costumemaster.ai_record.table_input_exit_link" = "Does the nearest input link to the exit?";
+"costumemaster.ai_record.table_input_requires_costume" = "Does the nearest input require the agent to wear a specific costume?";
+"costumemaster.ai_record.table_input_wearing_costume" = "Is the agent wearing the required costume to interact with this input?";
+"costumemaster.ai_record.table_input_heavy_object" = "Does the nearest input require the use of a heavy object?";
+
+// MARK: AI Recording Actions
+"costumemaster.ai_record.action_move_random" = "Move in a random direction.";
+"costumemaster.ai_record.action_move_exit" = "Move in the direction closest to the exit.";
+"costumemaster.ai_record.action_move_input" = "Move in the direction closest to the nearest input.";
+"costumemaster.ai_record.action_move_object" = "Move in the direction closest to the nearest heavy object.";
+"costumemaster.ai_record.action_activate" = "Activate the nearest input.";
+"costumemaster.ai_record.action_costumes" = "Switch costumes.";
+"costumemaster.ai_record.action_pick" = "Pick up the nearest object.";
+"costumemaster.ai_record.action_drop" = "Drop the currently picked up object.";
+"costumemaster.ai_record.action_nothing" = "Do nothing.";
+
+// MARK: AI Recording Toolbar
+"costumemaster.ai_record.toolbar_export" = "Export to CSV";
+"costumemaster.ai_record.toolbar_export_prompt" = "Select the destination to save the recorded file to.";

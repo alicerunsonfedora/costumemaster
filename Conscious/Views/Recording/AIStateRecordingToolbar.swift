@@ -19,7 +19,11 @@ struct AIStateRecordingToolbar: View {
             Button { promptSave() }
                 label: {
                     Image("square.and.arrow.down")
-                        .overlay(Tooltip(tooltip: "Export to CSV"))
+                        .overlay(
+                            Tooltip(tooltip:
+                                        NSLocalizedString("costumemaster.ai_record.toolbar_export", comment: "Export")
+                                   )
+                        )
                 }
                 .buttonStyle(ToolbarButtonStyle())
         }
@@ -30,7 +34,7 @@ struct AIStateRecordingToolbar: View {
         let panel = NSSavePanel()
         panel.allowedFileTypes = ["csv", "txt"]
         panel.allowsOtherFileTypes = true
-        panel.message = "Select the destination to save the CSV file to."
+        panel.message = NSLocalizedString("costumemaster.ai_record.toolbar_export_prompt", comment: "Export prompt")
         panel.titleVisibility = .hidden
 
         if panel.runModal() == NSApplication.ModalResponse.OK {

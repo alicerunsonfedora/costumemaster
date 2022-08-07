@@ -31,63 +31,61 @@ struct AIStateRecordingView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Current assessment")
+            Text("costumemaster.ai_record.current_title")
                 .bold()
-            Text(
-                "Below is the assessment of the current game state. "
-                + "The information provided should assist in making a decision."
-            )
+            Text("costumemaster.ai_record.current_detail")
+                .foregroundColor(.secondary)
             List {
-                Section(header: Text("Basic information")) {
+                Section(header: Text("costumemaster.ai_record.table_basic_header")) {
                     self.entry(
-                        "Can the agent escape?",
+                        "costumemaster.ai_record.table_basic_escape",
                         with: journal.currentAssessment.canEscape
                     )
                     self.entry(
-                        "Are all of the necessary inputs active?",
+                        "costumemaster.ai_record.table_basic_inputs_active",
                         with: journal.currentAssessment.allInputsActive
                     )
                     self.entry(
-                        "Is the agent carrying a heavy object?",
+                        "costumemaster.ai_record.table_basic_has_heavy",
                         with: journal.currentAssessment.hasObject
                     )
                 }
 
-                Section(header: Text("Nearby environment variables")) {
+                Section(header: Text("costumemaster.ai_record.table_env_header")) {
                     self.entry(
-                        "Is the agent near the exit?",
+                        "costumemaster.ai_record.table_env_near_exit",
                         with: journal.currentAssessment.nearExit
                     )
                     self.entry(
-                        "Is the agent near an input?",
+                        "costumemaster.ai_record.table_env_near_input",
                         with: journal.currentAssessment.nearInput
                     )
                     self.entry(
-                        "Is the agent near an object?",
+                        "costumemaster.ai_record.table_env_near_object",
                         with: journal.currentAssessment.nearObject
                     )
                 }
 
                 if journal.currentAssessment.nearInput {
-                    Section(header: Text("About nearest input")) {
+                    Section(header: Text("costumemaster.ai_record.table_input_header")) {
                         self.entry(
-                            "Is the input active?",
+                            "costumemaster.ai_record.table_input_active",
                             with: journal.currentAssessment.inputActive
                         )
                         self.entry(
-                            "Does the input link to exit?",
+                            "costumemaster.ai_record.table_input_exit_link",
                             with: journal.currentAssessment.inputRelevant
                         )
                         self.entry(
-                            "Does the input require a specific costume?",
+                            "costumemaster.ai_record.table_input_requires_costume",
                             with: journal.currentAssessment.requiresCostume
                         )
                         self.entry(
-                            "Is the agent wearing the correct costume to activate this input?",
+                            "costumemaster.ai_record.table_input_wearing_costume",
                             with: journal.currentAssessment.wearingCostume
                         )
                         self.entry(
-                            "Does the input require a heavy object?",
+                            "costumemaster.ai_record.table_input_heavy_object",
                             with: journal.currentAssessment.requiresObject
                         )
                     }
@@ -96,24 +94,24 @@ struct AIStateRecordingView: View {
             }
 
             HStack {
-                Picker(selection: $action, label: Text("Perform the following action: ")) {
-                    Text("Move randomly")
+                Picker(selection: $action, label: Text("costumemaster.ai_record.perform_title")) {
+                    Text("costumemaster.ai_record.action_move_random")
                         .tag(NextAction.moveRandom)
-                    Text("Move closer to the exit")
+                    Text("costumemaster.ai_record.action_move_exit")
                         .tag(NextAction.moveExitCloser)
-                    Text("Move closer to the nearest input")
+                    Text("costumemaster.ai_record.action_move_input")
                         .tag(NextAction.moveInputCloser)
-                    Text("Move closer to the nearest object")
+                    Text("costumemaster.ai_record.action_move_object")
                         .tag(NextAction.moveObjectCloser)
-                    Text("Activate the input")
+                    Text("costumemaster.ai_record.action_activate")
                         .tag(NextAction.activate)
-                    Text("Switch costumes")
+                    Text("costumemaster.ai_record.action_costumes")
                         .tag(NextAction.switchCostume)
-                    Text("Pick up the nearest obbject")
+                    Text("costumemaster.ai_record.action_pick")
                         .tag(NextAction.pickupObject)
-                    Text("Drop the current object")
+                    Text("costumemaster.ai_record.action_drop")
                         .tag(NextAction.drop)
-                    Text("Do nothing")
+                    Text("costumemaster.ai_record.action_nothing")
                         .tag(NextAction.nothing)
                 }
                 Spacer()
@@ -121,7 +119,7 @@ struct AIStateRecordingView: View {
                     journal.currentAction = action.rawValue
                 }
                     label: {
-                        Text("Submit")
+                        Text("costumemaster.ai_record.perform_button")
                     }
             }
         }
@@ -129,7 +127,7 @@ struct AIStateRecordingView: View {
         .frame(minWidth: 600, minHeight: 400)
     }
 
-    func entry(_ property: String, with answer: Bool) -> some View {
+    func entry(_ property: LocalizedStringKey, with answer: Bool) -> some View {
         HStack {
             Text(property)
             Spacer()
