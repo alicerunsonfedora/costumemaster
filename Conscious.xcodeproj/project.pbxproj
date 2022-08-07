@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9546A6142895AD6C00459F90 /* Bunker in Frameworks */ = {isa = PBXBuildFile; productRef = 9546A6132895AD6C00459F90 /* Bunker */; };
+		95A8295F28A058E9002C5FFB /* MenuContent.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A8296128A058E9002C5FFB /* MenuContent.plist */; };
+		95A8296228A058EE002C5FFB /* LevelStructure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A8296428A058EE002C5FFB /* LevelStructure.plist */; };
+		95A8296528A058F1002C5FFB /* AgentTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A8296728A058F1002C5FFB /* AgentTypes.plist */; };
+		95A8296828A058F3002C5FFB /* LevelProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A8296A28A058F3002C5FFB /* LevelProperties.plist */; };
+		95A8296B28A058F6002C5FFB /* RecordableLevelProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A8296D28A058F6002C5FFB /* RecordableLevelProperties.plist */; };
 		95BB7C4E2700E1B000122188 /* ReloadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB7C4D2700E1B000122188 /* ReloadedView.swift */; };
 		95BBAC76289C97E200C8B84F /* CranberrySprite in Frameworks */ = {isa = PBXBuildFile; productRef = 95BBAC75289C97E200C8B84F /* CranberrySprite */; };
 		95CFFD902895BB530006E166 /* GameSceneStructuralGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFFD8F2895BB530006E166 /* GameSceneStructuralGenerator.swift */; };
@@ -39,7 +44,6 @@
 		BF1938D22562ED7000452D70 /* BasicAIRecordable.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF1938CF2562ED7000452D70 /* BasicAIRecordable.sks */; };
 		BF1938D32562ED7000452D70 /* EntryAIRecordable.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF1938D02562ED7000452D70 /* EntryAIRecordable.sks */; };
 		BF1938D42562ED7000452D70 /* MultiInputBasicAIRecordable.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF1938D12562ED7000452D70 /* MultiInputBasicAIRecordable.sks */; };
-		BF1938D72562EDFC00452D70 /* RecordableLevelProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF1938D62562EDFC00452D70 /* RecordableLevelProperties.plist */; };
 		BF1938DB2562F77700452D70 /* AIStateRecordingToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1938DA2562F77700452D70 /* AIStateRecordingToolbar.swift */; };
 		BF1938E3256306C100452D70 /* ToolbarButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1938E2256306C100452D70 /* ToolbarButtonStyle.swift */; };
 		BF1FF2F4250FD4ED0053D1A4 /* CycleChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1FF2F3250FD4ED0053D1A4 /* CycleChallenge.swift */; };
@@ -177,7 +181,6 @@
 		BFD10ED72502CF0400BCDAA9 /* plateOn.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFD10ED52502CF0400BCDAA9 /* plateOn.wav */; };
 		BFD10ED82502CF0400BCDAA9 /* plateOff.wav in Resources */ = {isa = PBXBuildFile; fileRef = BFD10ED62502CF0400BCDAA9 /* plateOff.wav */; };
 		BFD25F55254F1B4600FDA1C3 /* AISimulatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD25F54254F1B4600FDA1C3 /* AISimulatorView.swift */; };
-		BFD25F58254F279700FDA1C3 /* AgentTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFD25F57254F279700FDA1C3 /* AgentTypes.plist */; };
 		BFD8795524F5A2FF00552EDD /* Player_Forward_Bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */; };
 		BFD8795624F5A2FF00552EDD /* Player_Forward_USB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */; };
 		BFD8795724F5A2FF00552EDD /* Player_Forward_Default.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */; };
@@ -206,17 +209,14 @@
 		BFE9232D254F65A00091396D /* AISimulatorConsoleToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE9232C254F65A00091396D /* AISimulatorConsoleToolbar.swift */; };
 		BFE92330254F6A350091396D /* AIGameScene_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE9232F254F6A350091396D /* AIGameScene_Extension.swift */; };
 		BFEB76E02554A1A8004587E2 /* GameLevelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB76DF2554A1A8004587E2 /* GameLevelItem.swift */; };
-		BFEB76E32554A442004587E2 /* LevelProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFEB76E22554A442004587E2 /* LevelProperties.plist */; };
 		BFEB76E62554BE58004587E2 /* GameLevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB76E52554BE58004587E2 /* GameLevelSelector.swift */; };
 		BFED62B924F5814B00BB6AA2 /* PlayerMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */; };
 		BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */; };
 		BFEE78C324FBF1FC006FBFF0 /* GameAchievments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEE78C224FBF1FC006FBFF0 /* GameAchievments.swift */; };
 		BFEE78C524FBFDB4006FBFF0 /* PauseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEE78C424FBFDB4006FBFF0 /* PauseScene.swift */; };
 		BFEE78C724FC04EC006FBFF0 /* PauseMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = BFEE78C624FC04EC006FBFF0 /* PauseMenu.sks */; };
-		BFF9C064253261B90066F345 /* LevelStructure.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFF9C063253261B90066F345 /* LevelStructure.plist */; };
 		BFF9C06E25326B340066F345 /* MainMenu_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9C06D25326B340066F345 /* MainMenu_Extension.swift */; };
 		BFFF892C24F93FF800D405CC /* PropertyLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFF892B24F93FF800D405CC /* PropertyLists.swift */; };
-		BFFF892D24F943E400D405CC /* MenuContent.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFF892A24F93F6A00D405CC /* MenuContent.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -245,6 +245,11 @@
 
 /* Begin PBXFileReference section */
 		95A8295E28A056F6002C5FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		95A8296F28A0591A002C5FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/MenuContent.plist; sourceTree = "<group>"; };
+		95A8297028A05924002C5FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/LevelStructure.plist; sourceTree = "<group>"; };
+		95A8297128A05929002C5FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/AgentTypes.plist; sourceTree = "<group>"; };
+		95A8297228A05933002C5FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/LevelProperties.plist; sourceTree = "<group>"; };
+		95A8297328A05936002C5FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/RecordableLevelProperties.plist; sourceTree = "<group>"; };
 		95BB7C4D2700E1B000122188 /* ReloadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadedView.swift; sourceTree = "<group>"; };
 		95CFFD8F2895BB530006E166 /* GameSceneStructuralGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneStructuralGenerator.swift; sourceTree = "<group>"; };
 		95CFFD912895BC150006E166 /* GameSceneConformances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneConformances.swift; sourceTree = "<group>"; };
@@ -272,7 +277,6 @@
 		BF1938CF2562ED7000452D70 /* BasicAIRecordable.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BasicAIRecordable.sks; sourceTree = "<group>"; };
 		BF1938D02562ED7000452D70 /* EntryAIRecordable.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EntryAIRecordable.sks; sourceTree = "<group>"; };
 		BF1938D12562ED7000452D70 /* MultiInputBasicAIRecordable.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MultiInputBasicAIRecordable.sks; sourceTree = "<group>"; };
-		BF1938D62562EDFC00452D70 /* RecordableLevelProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RecordableLevelProperties.plist; sourceTree = "<group>"; };
 		BF1938DA2562F77700452D70 /* AIStateRecordingToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIStateRecordingToolbar.swift; sourceTree = "<group>"; };
 		BF1938E2256306C100452D70 /* ToolbarButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarButtonStyle.swift; sourceTree = "<group>"; };
 		BF1FF2F3250FD4ED0053D1A4 /* CycleChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleChallenge.swift; sourceTree = "<group>"; };
@@ -416,7 +420,6 @@
 		BFD10ED52502CF0400BCDAA9 /* plateOn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plateOn.wav; sourceTree = "<group>"; };
 		BFD10ED62502CF0400BCDAA9 /* plateOff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plateOff.wav; sourceTree = "<group>"; };
 		BFD25F54254F1B4600FDA1C3 /* AISimulatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISimulatorView.swift; sourceTree = "<group>"; };
-		BFD25F57254F279700FDA1C3 /* AgentTypes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AgentTypes.plist; sourceTree = "<group>"; };
 		BFD8795124F5A2FE00552EDD /* Player_Forward_Bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Bird.atlas; sourceTree = "<group>"; };
 		BFD8795224F5A2FF00552EDD /* Player_Forward_USB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_USB.atlas; sourceTree = "<group>"; };
 		BFD8795324F5A2FF00552EDD /* Player_Forward_Default.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Forward_Default.atlas; sourceTree = "<group>"; };
@@ -445,7 +448,6 @@
 		BFE9232C254F65A00091396D /* AISimulatorConsoleToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISimulatorConsoleToolbar.swift; sourceTree = "<group>"; };
 		BFE9232F254F6A350091396D /* AIGameScene_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIGameScene_Extension.swift; sourceTree = "<group>"; };
 		BFEB76DF2554A1A8004587E2 /* GameLevelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelItem.swift; sourceTree = "<group>"; };
-		BFEB76E22554A442004587E2 /* LevelProperties.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LevelProperties.plist; sourceTree = "<group>"; };
 		BFEB76E52554BE58004587E2 /* GameLevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelSelector.swift; sourceTree = "<group>"; };
 		BFED62B824F5814B00BB6AA2 /* PlayerMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMoveDirection.swift; sourceTree = "<group>"; };
 		BFED62BF24F5954000BB6AA2 /* Player_Change.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Change.atlas; sourceTree = "<group>"; };
@@ -453,9 +455,7 @@
 		BFEE78C424FBFDB4006FBFF0 /* PauseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseScene.swift; sourceTree = "<group>"; };
 		BFEE78C624FC04EC006FBFF0 /* PauseMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PauseMenu.sks; sourceTree = "<group>"; };
 		BFEE78C824FC1E61006FBFF0 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		BFF9C063253261B90066F345 /* LevelStructure.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LevelStructure.plist; sourceTree = "<group>"; };
 		BFF9C06D25326B340066F345 /* MainMenu_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu_Extension.swift; sourceTree = "<group>"; };
-		BFFF892A24F93F6A00D405CC /* MenuContent.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MenuContent.plist; sourceTree = "<group>"; };
 		BFFF892B24F93FF800D405CC /* PropertyLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyLists.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -655,11 +655,11 @@
 			children = (
 				BF6FBAE624A8BDDB00996890 /* Conscious.entitlements */,
 				BF6FBAE524A8BDDB00996890 /* Info.plist */,
-				BFFF892A24F93F6A00D405CC /* MenuContent.plist */,
-				BFF9C063253261B90066F345 /* LevelStructure.plist */,
-				BFD25F57254F279700FDA1C3 /* AgentTypes.plist */,
-				BFEB76E22554A442004587E2 /* LevelProperties.plist */,
-				BF1938D62562EDFC00452D70 /* RecordableLevelProperties.plist */,
+				95A8296128A058E9002C5FFB /* MenuContent.plist */,
+				95A8296428A058EE002C5FFB /* LevelStructure.plist */,
+				95A8296728A058F1002C5FFB /* AgentTypes.plist */,
+				95A8296A28A058F3002C5FFB /* LevelProperties.plist */,
+				95A8296D28A058F6002C5FFB /* RecordableLevelProperties.plist */,
 			);
 			path = Metadata;
 			sourceTree = "<group>";
@@ -1287,14 +1287,14 @@
 				BF982754255C7C6F00E2D9DB /* Player_Forward_Sorceress_ML.atlas in Resources */,
 				BF982745255C79D000E2D9DB /* Player_Backward_Bird_ML.atlas in Resources */,
 				BF41E5DF2511714C006527CA /* Seeded.sks in Resources */,
-				BFFF892D24F943E400D405CC /* MenuContent.plist in Resources */,
+				95A8295F28A058E9002C5FFB /* MenuContent.plist in Resources */,
 				BF2514B524F45DB8000300B7 /* Tileset.sks in Resources */,
 				BFD8797124F5D8BB00552EDD /* Player_Side_Default.atlas in Resources */,
 				BFE6475824F8B03500230F93 /* MenuTileset.sks in Resources */,
 				BFD8795724F5A2FF00552EDD /* Player_Forward_Default.atlas in Resources */,
 				BFAD134E250298970074DCBA /* alarmDisable.wav in Resources */,
 				BFED62C024F5954000BB6AA2 /* Player_Change.atlas in Resources */,
-				BFD25F58254F279700FDA1C3 /* AgentTypes.plist in Resources */,
+				95A8296528A058F1002C5FFB /* AgentTypes.plist in Resources */,
 				BF982746255C79D000E2D9DB /* Player_Backward_Default_ML.atlas in Resources */,
 				BF93127D2553624500B17A8B /* MultiInputBasicAI.sks in Resources */,
 				BF982756255C7C6F00E2D9DB /* Player_Side_USB_ML.atlas in Resources */,
@@ -1322,13 +1322,13 @@
 				BF982744255C79D000E2D9DB /* Player_Backward_USB_ML.atlas in Resources */,
 				BF153F9224FC3DF3007B20B4 /* cantUse.wav in Resources */,
 				BFB0CE18251914BB0015FE6C /* EntryAI.sks in Resources */,
-				BF1938D72562EDFC00452D70 /* RecordableLevelProperties.plist in Resources */,
+				95A8296B28A058F6002C5FFB /* RecordableLevelProperties.plist in Resources */,
 				BF982757255C7C6F00E2D9DB /* Player_Forward_Default_ML.atlas in Resources */,
-				BFEB76E32554A442004587E2 /* LevelProperties.plist in Resources */,
+				95A8296828A058F3002C5FFB /* LevelProperties.plist in Resources */,
 				BFD8797724F5DE3E00552EDD /* Player_Side_Bird.atlas in Resources */,
 				BF4CD5A92513F96E00C021BC /* Chained.sks in Resources */,
 				BFDF94E825080C3D004F5BE7 /* Boundary.sks in Resources */,
-				BFF9C064253261B90066F345 /* LevelStructure.plist in Resources */,
+				95A8296228A058EE002C5FFB /* LevelStructure.plist in Resources */,
 				BFD8795C24F5AE7F00552EDD /* Player_Backward_Default.atlas in Resources */,
 				BFDF94EA25084600004F5BE7 /* Rushed.sks in Resources */,
 				BF1938D22562ED7000452D70 /* BasicAIRecordable.sks in Resources */,
@@ -1549,6 +1549,46 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		95A8296128A058E9002C5FFB /* MenuContent.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95A8296F28A0591A002C5FFB /* en */,
+			);
+			name = MenuContent.plist;
+			sourceTree = "<group>";
+		};
+		95A8296428A058EE002C5FFB /* LevelStructure.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95A8297028A05924002C5FFB /* en */,
+			);
+			name = LevelStructure.plist;
+			sourceTree = "<group>";
+		};
+		95A8296728A058F1002C5FFB /* AgentTypes.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95A8297128A05929002C5FFB /* en */,
+			);
+			name = AgentTypes.plist;
+			sourceTree = "<group>";
+		};
+		95A8296A28A058F3002C5FFB /* LevelProperties.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95A8297228A05933002C5FFB /* en */,
+			);
+			name = LevelProperties.plist;
+			sourceTree = "<group>";
+		};
+		95A8296D28A058F6002C5FFB /* RecordableLevelProperties.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95A8297328A05936002C5FFB /* en */,
+			);
+			name = RecordableLevelProperties.plist;
+			sourceTree = "<group>";
+		};
 		BF6FBAE224A8BDDB00996890 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
