@@ -27,7 +27,7 @@ class EndGameScene: SKScene {
             character?.texture?.filteringMode = .nearest
         }
 
-        let animation = SKTextureAtlas(named: "Player_Change_Final").toFrames()
+        let animation = SKTextureAtlas(named: "Player_Change_Final").animated()
 
         let sequence = [
             SKAction.animate(with: animation, timePerFrame: 0.15),

@@ -75,25 +75,25 @@ public class Player: SKSpriteNode {
     /// The SKTexture frames that play when a player is changing costumes.
     var changingFrames: [SKTexture] {
         let atlas = "Player_Change" + (machine ? "_ML" : "")
-        return animated(fromAtlas: SKTextureAtlas(named: atlas), reversable: true)
+        return SKTextureAtlas(named: atlas).animated(reversible: true)
     }
 
     /// The walk cycle animation when moving south.
     var forwardWalkCycle: [SKTexture] {
         let property = costume.rawValue + (machine ? "_ML" : "")
-        return animated(fromAtlas: SKTextureAtlas(named: "Player_Forward_\(property)"))
+        return SKTextureAtlas(named: "Player_Forward_\(property)").animated()
     }
 
     /// The walk cycle animation when moving north.
     var backwardWalkCycle: [SKTexture] {
         let property = costume.rawValue + (machine ? "_ML" : "")
-        return animated(fromAtlas: SKTextureAtlas(named: "Player_Backward_\(property)"))
+        return SKTextureAtlas(named: "Player_Backward_\(property)").animated()
     }
 
     /// The walk cycle animation when moving north.
     var sidewardWalkCycle: [SKTexture] {
         let property = costume.rawValue + (machine ? "_ML" : "")
-        return animated(fromAtlas: SKTextureAtlas(named: "Player_Side_\(property)"))
+        return SKTextureAtlas(named: "Player_Side_\(property)").animated()
     }
 
     /// The player's mass, accounting for the costume.

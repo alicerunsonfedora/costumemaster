@@ -189,7 +189,6 @@
 		BFD8795E24F5B60900552EDD /* GameSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8795D24F5B60900552EDD /* GameSetup.swift */; };
 		BFD8796024F5B61D00552EDD /* GameTileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8795F24F5B61D00552EDD /* GameTileType.swift */; };
 		BFD8796324F5C63C00552EDD /* Player_Backward_USB.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8796224F5C63C00552EDD /* Player_Backward_USB.atlas */; };
-		BFD8796524F5C68700552EDD /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8796424F5C68700552EDD /* Animations.swift */; };
 		BFD8796F24F5CA4000552EDD /* Player_Backward_Sorceress.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8796E24F5CA4000552EDD /* Player_Backward_Sorceress.atlas */; };
 		BFD8797124F5D8BB00552EDD /* Player_Side_Default.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8797024F5D8BB00552EDD /* Player_Side_Default.atlas */; };
 		BFD8797524F5DE3E00552EDD /* Player_Side_Sorceress.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BFD8797224F5DE3E00552EDD /* Player_Side_Sorceress.atlas */; };
@@ -427,7 +426,6 @@
 		BFD8795D24F5B60900552EDD /* GameSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetup.swift; sourceTree = "<group>"; };
 		BFD8795F24F5B61D00552EDD /* GameTileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTileType.swift; sourceTree = "<group>"; };
 		BFD8796224F5C63C00552EDD /* Player_Backward_USB.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Backward_USB.atlas; sourceTree = "<group>"; };
-		BFD8796424F5C68700552EDD /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		BFD8796E24F5CA4000552EDD /* Player_Backward_Sorceress.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Backward_Sorceress.atlas; sourceTree = "<group>"; };
 		BFD8797024F5D8BB00552EDD /* Player_Side_Default.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Side_Default.atlas; sourceTree = "<group>"; };
 		BFD8797224F5DE3E00552EDD /* Player_Side_Sorceress.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player_Side_Sorceress.atlas; sourceTree = "<group>"; };
@@ -803,7 +801,6 @@
 				BFA77631252A39280093D4D7 /* Extensions */,
 				BF69F2C224F4B11200BBF518 /* Alerts.swift */,
 				BFD8795D24F5B60900552EDD /* GameSetup.swift */,
-				BFD8796424F5C68700552EDD /* Animations.swift */,
 				BFFF892B24F93FF800D405CC /* PropertyLists.swift */,
 			);
 			path = Utilities;
@@ -1491,7 +1488,6 @@
 				BFEB76E62554BE58004587E2 /* GameLevelSelector.swift in Sources */,
 				BF4630F92550A45D00EB606D /* AIGameStrategy.swift in Sources */,
 				BFF9C06E25326B340066F345 /* MainMenu_Extension.swift in Sources */,
-				BFD8796524F5C68700552EDD /* Animations.swift in Sources */,
 				BF233390251D0D2E0018C854 /* AIGamePlayerAction.swift in Sources */,
 				BF8C30F02502E0BD00A29425 /* GameHeavyObject.swift in Sources */,
 				BF109CDB24FB26FB00F06E47 /* Store.swift in Sources */,
