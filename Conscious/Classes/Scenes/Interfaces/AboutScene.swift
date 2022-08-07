@@ -59,8 +59,13 @@ class AboutScene: SKScene {
             self.versionString?.text = "Version \(version) (Build \(build))"
         }
 
+        if let copyString = self.childNode(withName: "copyrightText") as? SKLabelNode {
+            copyString.text = NSLocalizedString("costumemaster.ui.about_copyright", comment: "Copyright text")
+        }
+
         if let back = self.childNode(withName: "back") as? SKLabelNode {
             self.backButton = back
+            self.backButton?.text = NSLocalizedString("costumemaster.ui.about_back", comment: "Back to menu")
         }
     }
 

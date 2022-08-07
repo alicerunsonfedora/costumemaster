@@ -33,18 +33,22 @@ class PauseScene: SKScene {
         guard let mainMenu = self.childNode(withName: "mainMenuButton") as? SKLabelNode else { return }
         self.mainMenuButton = mainMenu
         self.mainMenuButton?.fontName = "Cabin Regular"
+        self.mainMenuButton?.text = NSLocalizedString("costumemaster.ui.pause_main", comment: "Back to main menu")
 
         guard let options = self.childNode(withName: "optionsButton") as? SKLabelNode else { return }
         self.optionsButton = options
         self.optionsButton?.fontName = "Cabin Regular"
+        self.optionsButton?.text = NSLocalizedString("costumemaster.ui.pause_options", comment: "Options")
 
         guard let resume = self.childNode(withName: "resumeButton") as? SKLabelNode else { return }
         self.resumeButton = resume
         self.resumeButton?.fontName = "Cabin Regular"
+        self.resumeButton?.text = NSLocalizedString("costumemaster.ui.pause_resume", comment: "Resume")
 
         guard let restart = self.childNode(withName: "restartButton") as? SKLabelNode else { return }
         self.restartButton = restart
         self.restartButton?.fontName = "Cabin Regular"
+        self.restartButton?.text = NSLocalizedString("costumemaster.ui.pause_restart", comment: "Restart")
     }
 
     /// Listen for mouse events and trigger the corresponding menu action.

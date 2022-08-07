@@ -92,21 +92,26 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         if let start = self.childNode(withName: "startGame") as? SKLabelNode {
             self.startButton = start
             self.startButton?.fontName = "Cabin Regular"
+            self.startButton?.text = NSLocalizedString("costumemaster.ui.main_new_game", comment: "New Game")
         }
 
         if let options = self.childNode(withName: "showOptions") as? SKLabelNode {
             self.optionsButton = options
             self.optionsButton?.fontName = "Cabin Regular"
+            self.optionsButton?.text = NSLocalizedString("costumemaster.ui.main_options", comment: "Options")
+
         }
 
         if let quit = self.childNode(withName: "quitGame") as? SKLabelNode {
             self.quitButton = quit
             self.quitButton?.fontName = "Cabin Regular"
+            self.quitButton?.text = NSLocalizedString("costumemaster.ui.main_quit", comment: "Quit Game")
         }
 
         if let resume = self.childNode(withName: "resumeGame") as? SKLabelNode {
             self.resumeButton = resume
             self.resumeButton?.fontName = "Cabin Regular"
+            self.resumeButton?.text = NSLocalizedString("costumemaster.ui.main_load_game", comment: "Resume Game")
 
             if GameStore.shared.lastSavedScene == "" {
                 self.resumeButton?.alpha = 0.1

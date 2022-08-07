@@ -38,6 +38,8 @@ class SplashScene: SKScene {
         self.byText?.alpha = 0
         self.logomark?.alpha = 0
 
+        self.byText?.text = NSLocalizedString("costumemaster.ui.splash_by", comment: "Created by")
+
         let actions: [SKAction] = [
             SKAction.run {
                 self.byText?.run(SKAction.fadeAlpha(to: 1.0, duration: 1.0))

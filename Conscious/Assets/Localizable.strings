@@ -6,6 +6,27 @@
   
 */
 
+// MARK: - User Interface Components
+
+// MARK: Splash Screen
+"costumemaster.ui.splash_by" = "Created by";
+
+// MARK: Main Menu
+"costumemaster.ui.main_new_game" = "Start Game";
+"costumemaster.ui.main_load_game" = "Resume Game";
+"costumemaster.ui.main_options" = "Options";
+"costumemaster.ui.main_quit" = "Quit";
+
+// MARK: Pause Menu
+"costumemaster.ui.pause_resume" = "Resume";
+"costumemaster.ui.pause_restart" = "Restart Level";
+"costumemaster.ui.pause_options" = "Options";
+"costumemaster.ui.pause_main" = "Back to Main Menu";
+
+// MARK: About Screen
+"costumemaster.ui.about_copyright" = "© 2020-2022 Marquis Kurt. Licensed under the Mozilla Public License, v2.0. Game Center, macOS, and the Game Center logo are registered trademarks of Apple Inc.";
+"costumemaster.ui.about_back" = "‹ Back to Menu";
+
 // MARK: - Achievement Names
 "costumemaster.face_reveal" = "Face Reveal";
 "costumemaster.new_bird" = "Learning to Fly";
