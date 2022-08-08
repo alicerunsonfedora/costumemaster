@@ -49,10 +49,10 @@ class GamePressurePlate: GameSignalSender {
     override public func onActivate(with _: NSEvent?, player _: Player?) {
         leftRange = false
         if !inRange {
-            run(SKAction.sequence([
-                SKAction.run { self.inRange = true },
-                SKAction.playSoundFileNamed("plateOn", waitForCompletion: true),
-            ]))
+            runSequence {
+                SKAction.run { self.inRange = true }
+                SKAction.playSoundFileNamed("plateOn", waitForCompletion: true)
+            }
         }
     }
 
@@ -60,11 +60,11 @@ class GamePressurePlate: GameSignalSender {
     override public func onDeactivate(with _: NSEvent?, player: Player?) {
         if let playerPos = player?.position {
             if playerPos.distance(between: position) >= 16, !leftRange {
-                run(SKAction.sequence([
-                    SKAction.run { self.leftRange = true },
-                    SKAction.run { self.inRange = false },
-                    SKAction.playSoundFileNamed("plateOff", waitForCompletion: true),
-                ]))
+                runSequence {
+                    SKAction.run { self.leftRange = true }
+                    SKAction.run { self.inRange = false }
+                    SKAction.playSoundFileNamed("plateOff", waitForCompletion: true)
+                }
             }
         }
     }

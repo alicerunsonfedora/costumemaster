@@ -95,7 +95,7 @@ public class Player: SKSpriteNode {
     /// The walk cycle animation when moving north.
     var backwardWalkCycle: [SKTexture] {
         let property = costume.rawValue + (machine ? "_ML" : "")
-        return SKTextureAtlas(named: "Player_Backward_\(property)").animated { iter in "sprite_\(iter)"}
+        return SKTextureAtlas(named: "Player_Backward_\(property)").animated { iter in "sprite_\(iter)" }
             .map { texture in
                 texture.configureForPixelArt()
                 return texture
@@ -258,26 +258,25 @@ public class Player: SKSpriteNode {
         // Play the animations and remove the ghost from the player's node heirarchy.
         animating = true
         let property = self.costume.rawValue + (machine ? " ML" : "")
-        run(SKAction.sequence([
+        runSequence {
             SKAction.run {
-                ghostSprite.run(SKAction.sequence([
-                    SKAction.wait(forDuration: Double(self.changingFrames.count) / 2 / 10),
-                    SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(property))")),
-                    SKAction.wait(forDuration: Double(self.changingFrames.count) / 0.61 / 10),
-                ])
-                )
-            },
+                ghostSprite.runSequence {
+                    SKAction.wait(forDuration: Double(self.changingFrames.count) / 2 / 10)
+                    SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(property))"))
+                    SKAction.wait(forDuration: Double(self.changingFrames.count) / 0.61 / 10)
+                }
+            }
             SKAction.run {
                 if UserDefaults.playChangeSound {
                     self.run(SKAction.playSoundFileNamed("changeCostume", waitForCompletion: false))
                 }
-            },
-            SKAction.animate(with: changingFrames, timePerFrame: 0.1, resize: false, restore: false),
-            SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(property))")),
-            SKAction.run { self.texture?.filteringMode = .nearest },
-            SKAction.run { self.isChangingCostumes = false },
-            SKAction.run { ghostSprite.removeFromParent() },
-        ]))
+            }
+            SKAction.animate(with: changingFrames, timePerFrame: 0.1, resize: false, restore: false)
+            SKAction.setTexture(SKTexture(imageNamed: "Player (Idle, \(property))"))
+            SKAction.run { self.texture?.filteringMode = .nearest }
+            SKAction.run { self.isChangingCostumes = false }
+            SKAction.run { ghostSprite.removeFromParent() }
+        }
 
         animating = false
         physicsBody?.mass = mass

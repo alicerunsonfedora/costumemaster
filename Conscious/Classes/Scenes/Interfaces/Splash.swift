@@ -52,7 +52,7 @@ class SplashScene: SKScene {
             },
         ]
 
-        run(SKAction.sequence(actions))
+        runSequence(actions)
     }
 
     /// Launch the main menu.

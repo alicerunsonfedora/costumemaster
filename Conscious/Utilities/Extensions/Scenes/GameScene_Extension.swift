@@ -90,21 +90,19 @@ extension GameScene {
         deathOverlay.alpha = 0
         addChild(deathOverlay)
         playerNode?.halt()
-        run(SKAction.sequence(
-            [
-                SKAction.run { self.playerNode?.run(SKAction.fadeAlpha(to: 0.0, duration: 0.5)) },
-                SKAction.run { deathOverlay.run(SKAction.fadeAlpha(to: 0.5, duration: 2.0)) },
-                SKAction.playSoundFileNamed("death", waitForCompletion: true),
-                SKAction.run {
-                    GKNotificationBanner.show(
-                        withTitle: "You fell down the abyss!",
-                        message: "The level will restart shortly."
-                    ) {}
-                },
-                SKAction.wait(forDuration: 3.0),
-                SKAction.run { self.callScene(name: self.name) },
-            ]
-        ))
+        runSequence {
+            SKAction.run { self.playerNode?.run(SKAction.fadeAlpha(to: 0.0, duration: 0.5)) }
+            SKAction.run { deathOverlay.run(SKAction.fadeAlpha(to: 0.5, duration: 2.0)) }
+            SKAction.playSoundFileNamed("death", waitForCompletion: true)
+            SKAction.run {
+                GKNotificationBanner.show(
+                    withTitle: "You fell down the abyss!",
+                    message: "The level will restart shortly."
+                ) {}
+            }
+            SKAction.wait(forDuration: 3.0)
+            SKAction.run { self.callScene(name: self.name) }
+        }
     }
 
     // MARK: INPUT TRIGGER EVENTS

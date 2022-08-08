@@ -139,10 +139,10 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         music.name = "music"
         music.autoplayLooped = true
         music.isPositional = false
-        music.run(SKAction.sequence([
-            SKAction.changeVolume(to: UserDefaults.musicVolume, duration: 0.01),
-            SKAction.play(),
-        ]))
+        music.runSequence {
+            SKAction.changeVolume(to: UserDefaults.musicVolume, duration: 0.01)
+            SKAction.play()
+        }
         addChild(music)
     }
 

@@ -233,7 +233,7 @@ class AIRecordableGameScene: GameScene {
         default:
             playerNode?.halt()
         }
-        run(SKAction.sequence(actions))
+        runSequence(actions)
 
         reevaluate()
     }

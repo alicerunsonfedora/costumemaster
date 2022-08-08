@@ -252,7 +252,7 @@ class AIGameScene: ChallengeGameScene {
         default:
             playerNode?.halt()
         }
-        run(SKAction.sequence(actions))
+        runSequence(actions)
     }
 
     /// Perform a set of actions and update the state of the scene.
@@ -262,7 +262,7 @@ class AIGameScene: ChallengeGameScene {
         for action in moves {
             steps += [SKAction.run { self.apply(action) }, SKAction.wait(forDuration: 2.5)]
         }
-        run(SKAction.sequence(steps))
+        runSequence(steps)
     }
 
     /// Get the appropriate strategy based on the type of input passed.

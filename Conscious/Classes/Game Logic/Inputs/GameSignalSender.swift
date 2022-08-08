@@ -177,7 +177,7 @@ public class GameSignalSender: GameStructureObject {
             ]
         }
 
-        run(SKAction.sequence(activationEvents))
+        runSequence(activationEvents)
     }
 
     /// Whether the input should turn on/off based on player or object intervention.

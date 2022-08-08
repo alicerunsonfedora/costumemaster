@@ -9,10 +9,10 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 
+import CranberrySprite
 import Foundation
 import GameKit
 import SpriteKit
-import CranberrySprite
 
 /// The SpriteKit scene class that runs the end animation.
 class EndGameScene: SKScene {
@@ -34,13 +34,12 @@ class EndGameScene: SKScene {
                 return texture
             }
 
-        let sequence = [
-            SKAction.animate(with: animation, timePerFrame: 0.15),
-            SKAction.run { GKAchievement.earn(with: .endReveal) },
-            SKAction.wait(forDuration: 2.0),
-            SKAction.run { self.didFinish() },
-        ]
-        character?.run(SKAction.sequence(sequence))
+        character?.runSequence {
+            SKAction.animate(with: animation, timePerFrame: 0.15)
+            SKAction.run { GKAchievement.earn(with: .endReveal) }
+            SKAction.wait(forDuration: 2.0)
+            SKAction.run { self.didFinish() }
+        }
     }
 
     /// Return back to the main menu.
