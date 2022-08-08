@@ -12,6 +12,7 @@
 import Foundation
 import GameKit
 import SpriteKit
+import CranberrySprite
 
 /// The SpriteKit scene class that runs the end animation.
 class EndGameScene: SKScene {
