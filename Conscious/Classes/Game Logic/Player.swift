@@ -76,24 +76,40 @@ public class Player: SKSpriteNode {
     var changingFrames: [SKTexture] {
         let atlas = "Player_Change" + (machine ? "_ML" : "")
         return SKTextureAtlas(named: atlas).animated(reversible: true)
+            .map { texture in
+                texture.configureForPixelArt()
+                return texture
+            }
     }
 
     /// The walk cycle animation when moving south.
     var forwardWalkCycle: [SKTexture] {
         let property = costume.rawValue + (machine ? "_ML" : "")
-        return SKTextureAtlas(named: "Player_Forward_\(property)").animated()
+        return SKTextureAtlas(named: "Player_Forward_\(property)").animated { iter in "sprite_\(iter)" }
+            .map { texture in
+                texture.configureForPixelArt()
+                return texture
+            }
     }
 
     /// The walk cycle animation when moving north.
     var backwardWalkCycle: [SKTexture] {
         let property = costume.rawValue + (machine ? "_ML" : "")
-        return SKTextureAtlas(named: "Player_Backward_\(property)").animated()
+        return SKTextureAtlas(named: "Player_Backward_\(property)").animated { iter in "sprite_\(iter)"}
+            .map { texture in
+                texture.configureForPixelArt()
+                return texture
+            }
     }
 
     /// The walk cycle animation when moving north.
     var sidewardWalkCycle: [SKTexture] {
         let property = costume.rawValue + (machine ? "_ML" : "")
-        return SKTextureAtlas(named: "Player_Side_\(property)").animated()
+        return SKTextureAtlas(named: "Player_Side_\(property)").animated { iter in "sprite_\(iter)" }
+            .map { texture in
+                texture.configureForPixelArt()
+                return texture
+            }
     }
 
     /// The player's mass, accounting for the costume.
