@@ -29,7 +29,7 @@ class EndGameScene: SKScene {
         }
 
         let animation = SKTextureAtlas(named: "Player_Change_Final").animated()
-            .map { texture in
+            .map { (texture: SKTexture) -> SKTexture in
                 texture.configureForPixelArt()
                 return texture
             }

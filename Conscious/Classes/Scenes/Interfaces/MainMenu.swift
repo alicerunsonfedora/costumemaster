@@ -14,7 +14,7 @@ import GameKit
 import SpriteKit
 
 /// The scene class for the main menu.
-class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
+class MainMenuScene: SKScene {
     /// The label node for the word "The".
     var labelSmall: SKLabelNode?
 
@@ -146,13 +146,6 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         addChild(music)
     }
 
-    /// Dismiss the Game Center view controller when done.
-    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-        if let sceneViewController = view?.window?.contentViewController {
-            sceneViewController.dismiss(gameCenterViewController)
-        }
-    }
-
     /// Insantiates the Game Center access point introduced in macOS 11.
     ///
     /// This is used to show the player their Game Center achievements and leaderboard scores.
@@ -161,5 +154,14 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
         GKAccessPoint.shared.showHighlights = true
         GKAccessPoint.shared.isActive = true
         GKAccessPoint.shared.parentWindow = NSApplication.shared.mainWindow
+    }
+}
+
+extension MainMenuScene: GKGameCenterControllerDelegate {
+    /// Dismiss the Game Center view controller when done.
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        if let sceneViewController = view?.window?.contentViewController {
+            sceneViewController.dismiss(gameCenterViewController)
+        }
     }
 }
